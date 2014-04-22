@@ -1,1 +1,1 @@
-faves = ["tomatoes", "pizza", "fish", "mango", "cheese"]
+faves = ["tomatoes", "pizzaa", "fish", "mango", "cheese"]
