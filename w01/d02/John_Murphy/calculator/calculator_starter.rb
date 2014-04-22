@@ -28,9 +28,27 @@ def basic_calc
     basic_calc
   end
 end
-basic_calc
+
 def advanced_calc
   print "(p)ower, (s)qrt: "
+  choice = gets.chomp
+  print "What number would you like to manipulate?"
+  num_1 = gets.chomp.to_i
+
+  case choice
+  when 'p'
+    puts "What power would you like to raise #{choice} to?"
+    power=gets.chomp.to_i
+    puts num_1**power
+  when 's'
+    puts  num_1**0.5
+  else
+    puts "Try again!"
+    advanced_calc
+  end
+
+end
+advanced_calc
 
 end
 
