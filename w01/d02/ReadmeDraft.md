@@ -75,7 +75,14 @@ ___
 #Part 3: ***Calculator***
 
 ###Objectives:
-- Practice with functions, loops, conditions, user-input, switch/case
+
+Practice with: 
+- ***functions***
+- ***loops***
+- ***conditions***
+- ***conditions***
+- ***user-input***
+- ***switch/case***
 
 ###Prompt
 - You will be building a calculator.  A calculator can perform multiple arithmetic operations.  Your function should allow the user to choose which operation is expected, enter in the values to perform the operation on, and ultimately view the result.
