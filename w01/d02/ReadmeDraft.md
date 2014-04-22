@@ -23,6 +23,7 @@ At the end of the day, you should have a folder structure that looks something l
 
 ___
 
+
 # Part 1: ***Name Generator***
 
 ###Objectives: 
@@ -109,5 +110,4 @@ Practice with:
 - After each operation, the user should be returned to the menu until they quit
 
 #####Commit 4 (Bonus)
-- Add functionality for trigonometric functions (sin, cos, tan)
 - Add functionality to include a factorial option
