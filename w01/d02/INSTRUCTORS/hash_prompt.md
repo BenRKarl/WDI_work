@@ -19,7 +19,7 @@
 2. What is the return value of is["Matt" == "Aldric"]?
 3. What is the return value of is[9 > 10]?
 4. What is the return value of is[0]?
-5. What is the return value of is["PJ"]?
+5. What is the return value of is["Andrew"]?
 6. What is the return value of is[false || true]?
 7. What is the return value of is[false && true ]?
 8. What is the return value of is[nil]?
