@@ -20,14 +20,21 @@ At the end of the day, you should have a folder structure that looks something l
         - WDI_NYC_Apr14_Proto
 ```
 
+___
+
 ## Name Generator
 ###Objective: ***Access and manipulate array data.***
-###Spec:
 
-Create a file called `name.rb`
+###Prompt
+
+In a file called `name.rb`, write Ruby code that completes the specified objectives.  
+
+###Specification:
+
+Create a file called `name.rb`.
 
 1. Retrieve "Bumblebee" from the firstname list
-2. Add "Jeff" to the firstnamelist
+2. Add "Matt" to the firstnamelist
 3. Remove "Muffintop" from the firstnamelist
 4. Find out the index of "Gigglesnort" in lastnamelist
 5. Combine 1 randomly selected name from `firstnamelist` and 1 randomly selected name from `lastnamelist` to form a name.
@@ -38,3 +45,21 @@ firstnamelist = ["Bumblebee", "Bandersnatch", "Broccoli", "Rinkydink", "Bombadil
 
 lastnamelist = ["Coddleswort", "Curdlesnoot", "Calldispatch", "Humperdinck", "Rivendell", "Cuttlefish", "Lingerie", "Vegemite", "Ampersand", "Cumberbund", "Candycrush", "Clombyclomp", "Cragglethatch", "Nottinghill", "Cabbagepatch", "Camouflage","Creamsicle", "Curdlemilk", "Upperclass", "Frumblesnatch", "Crumplehorn", "Talisman", "Candlestick", "Chesterfield", "Bumbersplat", "Scratchnsniff", "Snugglesnatch", "Charizard", "Ballsacksnip", "Carrotstick", "Cumbercooch", "Crackerjack", "Crucifix", "Cuckatoo", "Cockletit", "Collywog", "Gigglesnort", "Capncrunch", "Covergirl", "Cumbersnatch", "Countryside","Coggleswort", "Splishnsplash", "Copperwire", "Animorph", "Curdledmilk", "Cheddarcheese", "Cottagecheese", "Crumplehorn", "Snickersbar", "Banglesnatch", "Stinkyrash", "Cameltoe", "Chickenbroth", "Concubine", "Candygram", "Moldyspore", "Chuckecheese", "Cankersore", "Crimpysnitch", "Wafflesmack", "Chowderpants", "Toodlesnoot", "Clavichord", "Cuckooclock", "Oxfordshire", "Cumbersome", "Chickenstrips", "Battleship", "Commonwealth", "Cunningsnatch", "Custardbath", "Kryptonite"]
 ```
+
+___
+
+#Guess the number
+
+###Prompt:
+- Create a ruby file `guess_the_number.rb`
+- You are to generate a basic "guess my number" game.  The computer will pick a random number between 0 and 10.  The user will guess the number until they guess correctly.
+
+###Specification:
+- The user should be asked to guess a number
+- If the user's guess is correct, the user should see a congratulatory message
+- If the user's guess is not correct, the user should be asked to guess the number again.
+- This should be done in a new file called guess_the_number.rb
+
+###Bonuses
+- When the user guesses incorrectly, tell them whether they guess too high or too low
+- When the user guesses the number correctly, tell them how many guesses it took them.
