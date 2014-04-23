@@ -4,6 +4,7 @@
 def menu
 
   basic_calc
+  advanced_calc
 
   print "type q to exit calculator or anything else to continue: "
   user_input = gets.chomp
@@ -40,7 +41,25 @@ end
 
 
 def advanced_calc
-  print "(p)ower, (s)qrt, (f)actorial: "
+  print "(p)ower, (s)qrt: "
+  operation = gets.chomp 
+
+  result = 0
+
+  case operation
+  when "p"    
+    print "Enter base number: "
+    base = gets.chomp
+    print "Enter exponent number: "
+    exponent = gets.chomp
+    result = base.to_i**exponent.to_i
+  when "s"
+    print "Enter number: "
+    number = gets.chomp
+    result = Math.sqrt(number.to_f)  
+  end
+
+  puts "The result is #{result}." 
   
 end
 
