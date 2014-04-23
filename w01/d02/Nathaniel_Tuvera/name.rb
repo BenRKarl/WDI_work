@@ -13,5 +13,5 @@ lastnamelist = ["Coddleswort", "Curdlesnoot", "Calldispatch", "Humperdinck", "Ri
 #4 Find out the index of "Gigglesnort" in the lastnamelist
   lastnamelist.index("Gigglesnort")
 
-#5 Combine 1 randomly selected name from [firstnamelist] and 1 randomly selected name from [lastnamelist] to form a name.
+#5 Combine 1 randomly selected name from [firstnamelist] and 1 randomly selected name from [lastnamelist] to form a name.'
   firstnamelist.sample + " " +lastnamelist.sample
