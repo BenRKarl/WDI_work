@@ -1,0 +1,1 @@
+fave food = [ 'cornichons', 'good cheese', 'endives', 'olives', 'baguette', 'asparagus']
