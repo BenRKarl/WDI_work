@@ -1,13 +1,13 @@
-# A user should be given a menu of operations
-# A user should be able to choose from the menu
 def menu
   puts "Which calculator would you like to use?"
   puts "Choose one: basic or advanced?"
-  calc_choice = gets.chomp
-  if calc_choice == "basic"
-    basic–calc
-  elsif calc–choice == "advanced"
-    advanced–calc
+  response = gets.chomp
+  if response == "basic"
+    basic_calc
+  elsif response == "advanced"
+    advanced_calc
+  elsif response == "factorials"
+    factor_calc
   end
 end
 
@@ -22,19 +22,19 @@ def basic_calc
   case
     when operation == "a"
       puts "You chose addition."
-      add_answer = first_number + second_number
+      add_answer = n1 + n2
       puts add_answer
     when operation == "s"
       puts "You chose subtraction."
-      sub_answer = first_number - second_number
+      sub_answer = n1 - n2
       puts sub_answer
     when operation == "m"
       puts "You chose multiplication"
-      multip_answer = first_number * second_number
+      multip_answer = n1 * n2
       puts multip_answer
     when operation == "d"
       puts "You chose division."
-      div_answer = first_number / second_number
+      div_answer = n1 / n2
       puts div_answer
     else
       puts "That's not a choice ding dong! Try again."
@@ -46,12 +46,39 @@ end
 
 def advanced_calc
   print "(p)ower, (s)qrt: "
+  operation = gets.chomp
+
+  case
+    when operation == "p"
+      puts "You chose power."
+      puts "What's your first number?"
+      n1 = gets.chomp!.to_i
+      puts "What's your second number?"
+      n2 = gets.chomp!.to_i
+      power_answer = n1*n1
+      puts add_answer
+    when operation == "s"
+      puts "You chose square root."
+      puts "What number would you like to do?"
+      n1 = gets.chomp!.to_i
+      sqr_answer = n1**2
+      puts sub_answer
+    else
+      puts "That's not a choice ding dong! Try again."
+  end
+
+def factor_calc
+  facto = []
+  puts "Let's do factorials!"
+  puts "Gimme a number."
+  response = gets.chomp.to_i
+  facto.push(0..response)
+  (1..response).inject(:*)
+  puts facto
+end
 
 end
 
-response = menu
-
-# This process should continue until the user selects a quit option from the menu
 while response != 'q'
   response = menu
 end
