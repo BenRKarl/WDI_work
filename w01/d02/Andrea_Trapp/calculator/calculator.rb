@@ -2,12 +2,19 @@
 # A user should be able to choose from the menu
 
 def menu
+  puts "Choose \"b\" for basic calculations add, subtract, multiply or divide."
+  puts "Choose \"a\" for advanced calculations power, sqrt and factorial."
+  puts "Choose \"q\" to exit calculator."
+  print "Please enter your choice (a,b or q): "
+  menu_item = gets.chomp
 
-  basic_calc
-  advanced_calc
+  if menu_item == "b"
+    basic_calc      
+  elsif menu_item == "a"
+    advanced_calc
+  end   
 
-  print "type q to exit calculator or anything else to continue: "
-  user_input = gets.chomp
+  menu_item
 
 end
 
