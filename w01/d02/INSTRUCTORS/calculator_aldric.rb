@@ -1,5 +1,9 @@
 def main_loop
-  # T
+  # This does a lot of things:
+  # - display a menu
+  # - manage user input
+  # - do something with user input
+  # Each of these things could be put into its own method
   print "(b)asic, (a)dvanced, (q)uit?: "
   valid_input = ['a', 'b', 'q']
   user_input = gets.chomp.downcase until valid_input.include?(user_input)
