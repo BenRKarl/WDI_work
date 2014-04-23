@@ -8,9 +8,10 @@ def menu
   elsif choice == "b"
     basic_calc
   else
-    "invalid choice, try again. *hint either a or b*"
+    puts "invalid choice, try again. *hint either a or b*"
   end
 end
+
 
 
 # A user should be able to enter numbers to perform the operation on
@@ -38,13 +39,24 @@ def basic_calc
     quot = x / y
     puts "#{x} / #{y} = #{quot}"
   end
-
-
 end
 
 def advanced_calc
   print "(p)ower, (s)qrt: "
-
+  operation = gets.chomp
+  if operation == "p"
+    print "Enter first number: "
+    x = gets.chomp.to_i
+    print "Enter second number: "
+    y = gets.chomp.to_i
+    pow = x ** y
+    puts "#{x} ** #{y} = #{pow}"
+  elsif operation == "s"
+    print "Enter number to find sqrt of: "
+    x = gets.chomp.to_i
+    sqrt = Math.sqrt(x)
+    puts "sqrt = #{sqrt}"
+  end
 end
 
 response = menu
