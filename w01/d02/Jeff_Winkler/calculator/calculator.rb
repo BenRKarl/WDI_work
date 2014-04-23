@@ -47,10 +47,10 @@ def basic_calc
 end
 
 def advanced_calc
-  print "(p)ower, (s)qrt: "
+  print "(p)ower, (s)qrt, (f)actorial: "
   user_choice = gets.chomp
   # check to see if user response one of the options.  If not return their choice.
-  if ["p", "s"].include?(user_choice)
+  if ["p", "s", "f"].include?(user_choice)
     case user_choice
     when "p"
       puts "Please enter number you want raised to a power"
@@ -64,6 +64,24 @@ def advanced_calc
       first_num=gets.chomp
       result = first_num.to_f**0.5
       puts "The square root of #{first_num} equals #{result}"
+    when "f"
+      puts "Enter a positive integer you want the factorial for"
+      first_num = gets.chomp.to_i
+      orig_num = first_num
+      if first_num < 0
+        puts "That was not a positive integer"
+      else
+        result = first_num
+        while first_num > 1
+          first_num -= 1
+          result = result * first_num
+        end
+        if orig_num == 0
+          result = 1
+        end
+        puts "#{orig_num}! equals #{result}"
+      end
+
     end
   else
     return user_choice
