@@ -41,13 +41,15 @@ def basic_calc
 end
 
 def advanced_calc
-  print "(p)ower, (s)qrt: "
+  print "(p)ower, (s)qrt, (f)actorial: "
   operation = gets.chomp
   case operation
   when "p"
     power
   when "s"
     square_root
+  when "f"
+    factorial
   else
     puts "Sorry that's not an advanced operation."
     advanced_calc
@@ -91,6 +93,22 @@ def square_root
   num = gets.to_f
   square = Math.sqrt(num)
   puts "The square root of " + num.to_s + " is " + (square).to_s
+end
+
+def factorial
+  puts "Please enter the positive integer you'd like to factorialize."
+  seed = gets.to_i
+  while seed <= 0
+    puts "Please make sure your number is an integer greater than 1."
+    seed = gets.to_i
+  end
+  x = 1
+  n = seed
+  while  n > 0
+    x = x * n
+    n = n - 1
+  end
+  puts "The factorial of " + seed.to_s + " is " + x.to_s + "."
 end
 
 
