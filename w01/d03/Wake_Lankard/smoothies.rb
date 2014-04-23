@@ -34,10 +34,17 @@ smoothie_ingredients = {
 # and output a mixed string of characters
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
+val = "thing"
+
 def blend(smoothie_ingredients)
+  arr = []
+  smoothie_ingredients.each { |ingredient, amnt|
+  arr = arr + ingredient.scan(/\w/)
+  puts arr
+}
 end
 
-
+blend(smoothie_ingredients)
 # create a class called Blender
 # It should have a method that takes an array of ingredients and returns a mixed string of characters.
 # Give the blender an on and off switch and only allow the blender to function when it's on.
