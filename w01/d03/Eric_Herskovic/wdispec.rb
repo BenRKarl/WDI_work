@@ -1,5 +1,4 @@
 #def assert_equal(parameter1, parameter2)
-
 #end
 
 require 'rainbow'
@@ -21,14 +20,16 @@ def add(x,y)
 end
 
 def divide(x,y)
-  if y == 0
-    return "NaN"
-  end
+  #if y == 0
+  #  return "NaN"
+  # end
+  return "NaN" if y == 0
+  #return "NaN" if y.zero?
+  #return x.to_f / y.to_f
   x / y
   x.to_f / y. to_f
+
 end
-
-
 
 actual = add(2,2)
 expected = 4
