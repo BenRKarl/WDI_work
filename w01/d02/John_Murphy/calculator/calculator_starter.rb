@@ -1,7 +1,20 @@
 # A user should be given a menu of operations
 # A user should be able to choose from the menu
 def menu
+  puts "Hey user! Do you want to do some basic math (ie. add, subtract, multiply, or divide) or advanced (ie. x to the power of y and finding squareroots) (choose either 'basic' or 'advanced')? (enter 'q' to quit)"
+  response = gets.chomp
 
+  case response
+  when "basic"
+    basic_calc
+  when "advanced"
+    advanced_calc
+  when "q"
+    exit
+  else
+    puts "Choose 'basic' or 'advanced'"
+    menu
+  end
 end
 
 
@@ -27,10 +40,11 @@ def basic_calc
     puts "Choose 'a', 's', 'm', or 'd' for (a)dd, (s)ubtract, (m)ultiply, or (d)ivide."
     basic_calc
   end
+  menu
 end
 
 def advanced_calc
-  print "(p)ower, (s)qrt: "
+  print "(p)ower, (s)qrt, (f)actorial: "
   choice = gets.chomp
   print "What number would you like to manipulate?"
   num_1 = gets.chomp.to_i
@@ -42,19 +56,19 @@ def advanced_calc
     puts num_1**power
   when 's'
     puts  num_1**0.5
+  when 'f'
+    factorial = 1
+    while num_1 != 0
+      factorial = factorial * num_1
+      num_1 = num_1 - 1
+    end
+    puts factorial
   else
     puts "Try again!"
     advanced_calc
   end
-
-end
-advanced_calc
-
+  menu
 end
 
-response = menu
+menu
 
-# This process should continue until the user selects a quit option from the menu
-while response != 'q'
-  response = menu
-end
