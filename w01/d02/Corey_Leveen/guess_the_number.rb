@@ -21,11 +21,11 @@ def guess_my_number
   number = rand(1..10)
   guesses = 0
   puts "Guess a number 1 through 10"
-  guess = gets.chomp
+  guess = gets.chomp.to_i
 
   while number != guess
     puts "That's not it, guess again."
-    guess = gets.chomp
+    guess = gets.chomp.to_i
     guesses += 1
   end
     guesses += 1
