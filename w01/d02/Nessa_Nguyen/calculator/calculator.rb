@@ -66,7 +66,7 @@ def advanced_calc
   when 's'
   	puts "Give a number"
   	num = gets.chomp.to_i
-  	puts "The squareroot of #{num} is #{ num**power }"	
+  	puts "The squareroot of #{num} is #{ Math.sqrt(num) }"	
   end
 end
 
