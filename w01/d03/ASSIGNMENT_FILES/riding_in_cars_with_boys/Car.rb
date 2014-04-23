@@ -1,8 +1,10 @@
-require 'pry'
 class Car
-  attr_reader :upholstery
+  attr_reader :upholstery, :passengers
   # def upholstery
   #   @upholstery
+  # end
+  # def passengers
+  #   @passengers
   # end
 
   attr_accessor :top_speed
@@ -17,10 +19,15 @@ class Car
     @num_wheels = 4
     @upholstery = "vinyl"
     @top_speed  = 70
+    @passengers = []
   end
 
   def num_wheels
     @num_wheels
+  end
+
+  def accept_passenger(passenger)
+    @passengers.push(passenger)
   end
 
   def num_wheels=(value)
@@ -37,6 +44,3 @@ class Car
 
 end
 
-car = Car.new
-
-binding.pry
