@@ -48,7 +48,7 @@ end
 
 
 def advanced_calc
-  print "(p)ower, (s)qrt: "
+  print "(p)ower, (s)qrt, (f)actorial: "
   operation = gets.chomp 
 
   result = 0
@@ -64,10 +64,25 @@ def advanced_calc
     print "Enter number: "
     number = gets.chomp
     result = Math.sqrt(number.to_f)  
+  when "f"
+    print "Enter number: "
+    number = gets.chomp
+    result = factorial(number.to_i)
   end
 
   puts "The result is #{result}." 
   
+end
+
+
+
+def factorial(number)
+
+  if number == 0
+    return 1
+  end
+
+  number * factorial(number-1)
 end
 
 
