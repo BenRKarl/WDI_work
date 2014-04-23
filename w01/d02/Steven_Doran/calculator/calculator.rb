@@ -1,16 +1,19 @@
 # A user should be given a menu of operations
 # A user should be able to choose from the menu
 def menu
-	
+	puts "Please enter the first letter of the operation you would like to carry out: \n (A)ddition \n (S)ubtraction \n (M)ultiplication \n (D)ivision \n (P)ower \n (S)quare root \n (Q)uit"
 end
 
+menu
+
+response = gets.chomp.downcase
 
 # A user should be able to enter numbers to perform the operation on
 # A user should be shown the result
-def basic_calc
-  print "Please select (a)dd, (s)ubtract, (m)ultiply, or (d)ivide: "
-  operation = gets.chomp.downcase
-  case operation
+def calc
+#  print "Please select (a)dd, (s)ubtract, (m)ultiply, (d)ivide, (p)ower, or (s)quare root: "
+#   operation = gets.chomp.downcase
+  case response
   when "a"
   	puts "You have selected addition. Please enter the first number: "
   	num1 = gets.chomp.to_f
@@ -39,18 +42,6 @@ def basic_calc
   	num2 = gets.chomp.to_f
   	ans = num1 / num2
   	puts "#{num1} divided by #{num2} equals #{ans}."
-  else
-  	puts "Please try again."
-  	basic_calc
-  end
-end
-
-
-
-def advanced_calc
-  print "Please select (p)ower, (s)quare root: "
-  operation = gets.chomp.downcase
-  case operation
   when "p"
   	puts "You have selected power. Please enter the first number: "
   	num1 = gets.chomp.to_f
@@ -65,11 +56,11 @@ def advanced_calc
   	puts "The square root of #{num1} equals #{ans}."
   else
   	puts "Please try again."
-  	advanced_calc
+  	calc
   end
 end
 
-response = menu
+calc
 
 # This process should continue until the user selects a quit option from the menu
 while response != 'q'
