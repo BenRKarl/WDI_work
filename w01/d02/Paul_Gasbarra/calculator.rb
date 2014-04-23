@@ -119,3 +119,11 @@ response = menu
 while response != 'q'
   response = menu
 end
+
+
+# ideas for improvement
+# Better number verification
+# More funtions cos, tan, log
+# Move all the functions to one menu rather than splitting them up
+# Allowing for more than just 2 numbers in arithmatic operations
+# Number print outs should be prettier. No .0 hanging off the end.
