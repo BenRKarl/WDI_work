@@ -2,21 +2,19 @@ firstnamelist = ["Bumblebee", "Bandersnatch", "Broccoli", "Rinkydink", "Bombadil
 
 lastnamelist = ["Coddleswort", "Curdlesnoot", "Calldispatch", "Humperdinck", "Rivendell", "Cuttlefish", "Lingerie", "Vegemite", "Ampersand", "Cumberbund", "Candycrush", "Clombyclomp", "Cragglethatch", "Nottinghill", "Cabbagepatch", "Camouflage","Creamsicle", "Curdlemilk", "Upperclass", "Frumblesnatch", "Crumplehorn", "Talisman", "Candlestick", "Chesterfield", "Bumbersplat", "Scratchnsniff", "Snugglesnatch", "Charizard", "Ballsacksnip", "Carrotstick", "Cumbercooch", "Crackerjack", "Crucifix", "Cuckatoo", "Cockletit", "Collywog", "Gigglesnort", "Capncrunch", "Covergirl", "Cumbersnatch", "Countryside","Coggleswort", "Splishnsplash", "Copperwire", "Animorph", "Curdledmilk", "Cheddarcheese", "Cottagecheese", "Crumplehorn", "Snickersbar", "Banglesnatch", "Stinkyrash", "Cameltoe", "Chickenbroth", "Concubine", "Candygram", "Moldyspore", "Chuckecheese", "Cankersore", "Crimpysnitch", "Wafflesmack", "Chowderpants", "Toodlesnoot", "Clavichord", "Cuckooclock", "Oxfordshire", "Cumbersome", "Chickenstrips", "Battleship", "Commonwealth", "Cunningsnatch", "Custardbath", "Kryptonite"]
 
-#Question 1: find Bumblebee
-firstnamelist.include? "Bumblebee"
+puts firstnamelist[0]
 
-#Question 2: add Matt
-#gistpages suggested there are 3 methods plus including ".insert" (advantage: can pick place), ">>", and "push"
-firstnamelist.push("Matt")
+firstnamelist.push "Matt"
 
-#Question 3: remove Muffintop
-firstnamelist.delete!("Muffintop")
+firstnamelist.delete("Muffintop")
 
-#Question 4: find index of "Gigglesnort"
-lastnamelist.index("Gigglesnort")
-# check with
-  lastnamelist[36]
+puts "Gigglesnort index = #{lastnamelist.index("Gigglesnort")}"
 
-#Question 5: combine randomly selected first and last names
-# size and length return same?
-firstnamelist[rand(0..firstnamelist.length)] +" "+ lastnamelist[rand(0..lastnamelist.length)]
+first_rand = rand(firstnamelist.length)
+last_rand = rand(lastnamelist.length)
+
+whole_name = firstnamelist[first_rand] + " " + lastnamelist[last_rand]
+
+puts whole_name
+
+
