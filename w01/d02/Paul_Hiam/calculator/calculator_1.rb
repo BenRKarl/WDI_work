@@ -1,7 +1,7 @@
 # A user should be given a menu of operations
 # A user should be able to choose from the menu
 def menu
-	puts "menu - advanced or basic calculations?"
+	puts "menu - advanced or basic calculations? *(q = exit)"
 	choice = gets.chomp
 		if choice == "basic"
 			response = basic_calc
@@ -33,7 +33,7 @@ def basic_calc
   	num2 = gets.chomp.to_i
   	puts num1 - num2
   	
-  	elsif op == 'm'
+  elsif op == 'm'
   	puts "first num?"
   	num1 = gets.chomp.to_i
   	puts "#{num1} times ___?"
@@ -56,7 +56,22 @@ end
 def advanced_calc
   print "(p)ower, (s)qrt:"
   op = gets.chomp.to_s
+  if op == 'p'
+  	puts "first num?"
+  	num1 = gets.chomp.to_i
+  	puts "#{num1} to the ___?"
+  	num2 = gets.chomp.to_i
+  	puts num1 ** num2
 
+  elsif op == 's'
+  	puts "SQUAWROOT'of WHAAT!?"
+  	num1 = gets.chomp.to_i
+  	puts Math.sqrt(num1)
+
+  else
+  	puts "whaat?"
+  end
+ 
 end
 
 response = menu
