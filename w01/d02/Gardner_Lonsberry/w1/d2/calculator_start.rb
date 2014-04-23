@@ -1,7 +1,7 @@
 # A user should be given a menu of operations
 # A user should be able to choose from the menu
 def menu
-
+gets.chomp "Do you want to use a basic of advanced calculator?"
 end
 
 
