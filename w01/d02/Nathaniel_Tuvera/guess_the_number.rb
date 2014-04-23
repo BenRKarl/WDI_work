@@ -16,4 +16,4 @@ while guess != answer
   tries += 1
 guess = gets.chomp.to_i
   end
-puts "Congrats, you win. It took you #{tries}."
+puts "Congrats, you win. It took you #{tries} tries."
