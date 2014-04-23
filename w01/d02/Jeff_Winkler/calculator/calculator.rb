@@ -1,9 +1,17 @@
 # A user should be given a menu of operations
 # A user should be able to choose from the menu
 def menu
-  puts "Please choose an operation.  To quit type q."
-  #basic_calc
-  advanced_calc
+  puts "Please choose a calculator functionality.  To quit type q."
+  print "(b)asic, (a)dvanced:  "
+  functionality = gets.chomp
+  case functionality
+  when "b"
+    basic_calc
+  when "a"
+    advanced_calc
+  else
+    return functionality
+  end
 end
 
 
