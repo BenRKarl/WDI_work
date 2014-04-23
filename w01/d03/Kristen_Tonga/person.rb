@@ -39,3 +39,8 @@ end
 Person.new("Bilbo","111","green on yellow, or yellow on green","seed cakes")
 Person.new("Kristen","23","rainbow","squa candy")
 Person.new("Blue","infinite","navy","sea-water")
+
+=begin
+NOTE: If Person.new is created without (1,2,3,4) error says "wrong number of arguments (0 for 4)"
+NOTE: If attr_accessors are removed, @1, @2, @3, @4 is needed to link when calling the method .about, with the error message: "undefined local variable or method 'name'"
+=end
