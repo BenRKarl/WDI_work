@@ -40,17 +40,33 @@ def basic_calc
   	ans = num1 / num2
   	puts "#{num1} divided by #{num2} equals #{ans}."
   else
+  	puts "Please try again."
   	basic_calc
   end
- 
-  end
-  	
-
 end
 
-def advanced_calc
-  print "(p)ower, (s)qrt: "
 
+
+def advanced_calc
+  print "Please select (p)ower, (s)quare root: "
+  operation = gets.chomp.downcase
+  case operation
+  when "p"
+  	puts "You have selected power. Please enter the first number: "
+  	num1 = gets.chomp.to_f
+  	puts "Please enter the power which you would like that to be raised: "
+  	num2 = gets.chomp.to_f
+  	ans = num1**num2
+  	puts "#{num1} to the power of #{num2} equals #{ans}."
+  when "s"
+  	puts "You have selected square root. Please enter the number you would like to know the square root of: "
+  	num1 = gets.chomp.to_f
+  	ans = Math.sqrt(num1)
+  	puts "The square root of #{num1} equals #{ans}."
+  else
+  	puts "Please try again."
+  	advanced_calc
+  end
 end
 
 response = menu
