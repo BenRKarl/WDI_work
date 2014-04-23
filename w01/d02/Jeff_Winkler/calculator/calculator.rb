@@ -2,7 +2,8 @@
 # A user should be able to choose from the menu
 def menu
   puts "Please choose an operation.  To quit type q."
-  basic_calc
+  #basic_calc
+  advanced_calc
 end
 
 
@@ -11,6 +12,8 @@ end
 def basic_calc
   print "(a)dd, (s)ubtract, (m)ultiply, (d)ivide: "
   user_choice = gets.chomp
+
+  # check to see if user repsonse one of the options.  If not return their choice.
   if ["a", "s", "m", "d"].include?(user_choice)
     puts "Please enter first number:"
     first_num = gets.chomp
@@ -37,6 +40,26 @@ end
 
 def advanced_calc
   print "(p)ower, (s)qrt: "
+  user_choice = gets.chomp
+  # check to see if user response one of the options.  If not return their choice.
+  if ["p", "s"].include?(user_choice)
+    case user_choice
+    when "p"
+      puts "Please enter number you want raised to a power"
+      first_num = gets.chomp
+      puts "Please enter the power you want the first number raised to"
+      second_num = gets.chomp
+      result = first_num.to_f**second_num.to_f
+      puts "#{first_num} to the power of #{second_num} equals #{result}"
+    when "s"
+      puts "Enter number you would like the square root of"
+      first_num=gets.chomp
+      result = first_num.to_f**0.5
+      puts "The square root of #{first_num} equals #{result}"
+    end
+  else
+    return user_choice
+  end
 
 end
 
