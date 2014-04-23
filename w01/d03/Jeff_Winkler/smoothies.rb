@@ -1,3 +1,9 @@
+# Homework Day 3.
+#  Jeff Winkler
+
+
+
+
 # docs you may enjoy
 # http://www.ruby-doc.org/core-2.0/Hash.html
 # http://ruby-doc.org/core-2.0/String.html
@@ -34,8 +40,34 @@ smoothie_ingredients = {
 # and output a mixed string of characters
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
+# Wish I had found split!  Just did two while loops, one for each ingredient and one
+# for each letter in each ingredient.
+
 def blend(smoothie_ingredients)
+  to_mix = smoothie_ingredients.keys
+  num_elem =  to_mix.length
+  all_letters = Array.new
+
+  while num_elem > 0
+    curr_ingred = to_mix[num_elem-1].delete(' ')
+    num_letters = curr_ingred.length
+    while num_letters > 0
+      all_letters.push(curr_ingred[num_letters-1])
+      num_letters -= 1
+    end
+
+    num_elem -= 1
+  end
+
+  jumbled = all_letters.shuffle.join
+  puts jumbled
+  return jumbled
+
 end
+
+blend(smoothie_ingredients)
+
+
 
 
 # create a class called Blender
@@ -45,5 +77,54 @@ end
 # Blend the the smoothie array
 
 class Blender
+
+  def initialize
+    @on_off = false
+  end
+
+  def turn_on
+    @on_off = true
+  end
+
+  def turn_off
+    @on_off = false
+  end
+
+
+  def blend(smoothie_ingredients)
+    if @on_off
+      to_mix = smoothie_ingredients.keys
+      num_elem =  to_mix.length
+      all_letters = Array.new
+
+      while num_elem > 0
+        curr_ingred = to_mix[num_elem-1].delete(' ')
+        num_letters = curr_ingred.length
+        while num_letters > 0
+          all_letters.push(curr_ingred[num_letters-1])
+          num_letters -= 1
+        end
+
+        num_elem -= 1
+      end
+      jumbled = all_letters.shuffle.join
+      puts jumbled
+      return jumbled
+    else
+      puts "Blender is not on"
+    end
+  end
 end
+
+fancy_blen = Blender.new
+fancy_blen.blend(smoothie_ingredients)
+fancy_blen.turn_on
+fancy_blen.blend(smoothie_ingredients)
+fancy_blen.turn_off
+fancy_blen.blend(smoothie_ingredients)
+
+
+
+
+
 
