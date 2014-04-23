@@ -9,12 +9,13 @@ def menu
   menu_item = gets.chomp
 
   if menu_item == "b"
-    basic_calc			
+    basic_calc      
   elsif menu_item == "a"
     advanced_calc
-  end		
+  end   
 
   menu_item
+
 end
 
 
@@ -53,35 +54,37 @@ def advanced_calc
   result = 0
 
   case operation
-  when "p"  	
+  when "p"    
     print "Enter base number: "
-  	base = gets.chomp
-  	print "Enter exponent number: "
-  	exponent = gets.chomp
-  	result = base.to_i**exponent.to_i
+    base = gets.chomp
+    print "Enter exponent number: "
+    exponent = gets.chomp
+    result = base.to_i**exponent.to_i
   when "s"
-  	print "Enter number: "
-  	number = gets.chomp
-  	result = Math.sqrt(number.to_f)
+    print "Enter number: "
+    number = gets.chomp
+    result = Math.sqrt(number.to_f)  
   when "f"
-  	print "Enter number: "
-  	number = gets.chomp
-  	result = factorial(number.to_i)
+    print "Enter number: "
+    number = gets.chomp
+    result = factorial(number.to_i)
   end
 
   puts "The result is #{result}." 
-
+  
 end
+
 
 
 def factorial(number)
 
-	if number == 0
-		return 1
-	end
+  if number == 0
+    return 1
+  end
 
-	number * factorial(number-1)
+  number * factorial(number-1)
 end
+
 
 
 response = menu

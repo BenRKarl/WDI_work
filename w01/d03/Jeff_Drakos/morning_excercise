@@ -1,0 +1,8 @@
+legal_age = 20
+puts "How old are you?"
+age = gets.chomp.to_i
+if age > legal_age
+print "it's party time"
+else
+print "No Booze for you"
+end
