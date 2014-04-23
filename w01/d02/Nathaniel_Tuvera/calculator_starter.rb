@@ -10,7 +10,7 @@ def menu
   elsif choice == "q"
     exit(0)
   else
-    puts "invalid choice, try again. *hint either a or b*"
+    puts "invalid choice, try again. *hint either a or b (maybe even q?)*"
   end
 end
 
