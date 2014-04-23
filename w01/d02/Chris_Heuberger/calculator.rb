@@ -1,6 +1,7 @@
 def menu
   puts "Which calculator would you like to use?"
-  puts "Choose one: basic or advanced?"
+  puts "Choose one: basic, advanced or factorials?"
+  puts "Or type q to quit."
   response = gets.chomp
   if response == "basic"
     basic_calc
@@ -8,6 +9,11 @@ def menu
     advanced_calc
   elsif response == "factorials"
     factor_calc
+  elsif response == "q"
+    puts "k see ya. quitter."
+  else
+    puts "What did you say ding dong?"
+    response = menu
   end
 end
 
@@ -42,8 +48,6 @@ def basic_calc
 
 end
 
-end
-
 def advanced_calc
   print "(p)ower, (s)qrt: "
   operation = gets.chomp
@@ -54,31 +58,31 @@ def advanced_calc
       puts "What's your first number?"
       n1 = gets.chomp!.to_i
       puts "What's your second number?"
-      n2 = gets.chomp!.to_i
-      power_answer = n1*n1
-      puts add_answer
+      n2 = gets.chomp.to_i
+      p_answer = n1**n2
+      puts p_answer
     when operation == "s"
       puts "You chose square root."
       puts "What number would you like to do?"
-      n1 = gets.chomp!.to_i
-      sqr_answer = n1**2
-      puts sub_answer
+      n1 = gets.chomp.to_i
+      s_answer = Math.sqrt(n1)
+      puts s_answer
     else
       puts "That's not a choice ding dong! Try again."
   end
 
+end
+
 def factor_calc
-  facto = []
   puts "Let's do factorials!"
   puts "Gimme a number."
-  response = gets.chomp.to_i
-  facto.push(0..response)
-  (1..response).inject(:*)
-  puts facto
-end
+  fput = gets.chomp.to_i
+  if fput == 0
+    1
+  else
+    fput * fput(fput-1)
+  end
 
 end
 
-while response != 'q'
-  response = menu
-end
+response = menu
