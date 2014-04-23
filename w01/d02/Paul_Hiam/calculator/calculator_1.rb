@@ -3,11 +3,12 @@
 def menu
 	puts "menu - advanced or basic calculations? *(q = exit)"
 	choice = gets.chomp
-		if choice == "basic"
+		case choice
+		when "basic"
 			response = basic_calc
-		elsif choice == "advanced"
+		when "advanced"
 			response = advanced_calc
-		elsif  choice == "q"
+		when "q"
 			response = "q"	
 		end
 end
@@ -19,28 +20,29 @@ end
 def basic_calc
   print "(a)dd, (s)ubtract, (m)ultiply, (d)ivide? "
   op = gets.chomp.to_s
-  if op == 'a'
+  case op 
+  when 'a'
   	puts "first num?"
   	num1 = gets.chomp.to_i
   	puts "#{num1} plus ___?"
   	num2 = gets.chomp.to_i
   	puts num1 + num2
 
-  elsif op == 's'
+  when 's'
   	puts "first num?"
   	num1 = gets.chomp.to_i
   	puts "#{num1} minus ___?"
   	num2 = gets.chomp.to_i
   	puts num1 - num2
   	
-  elsif op == 'm'
+  when'm'
   	puts "first num?"
   	num1 = gets.chomp.to_i
   	puts "#{num1} times ___?"
   	num2 = gets.chomp.to_i
   	puts num1 * num2
 
-  elsif op == 'd'
+  when 'd'
   	puts "first num?"
   	num1 = gets.chomp.to_i
   	puts "#{num1} divided by ___?"
@@ -56,14 +58,15 @@ end
 def advanced_calc
   print "(p)ower, (s)qrt:"
   op = gets.chomp.to_s
-  if op == 'p'
+  case op 
+  when'p'
   	puts "first num?"
   	num1 = gets.chomp.to_i
   	puts "#{num1} to the ___?"
   	num2 = gets.chomp.to_i
   	puts num1 ** num2
 
-  elsif op == 's'
+  when 's'
   	puts "SQUAWROOT'of WHAAT!?"
   	num1 = gets.chomp.to_i
   	puts Math.sqrt(num1)
