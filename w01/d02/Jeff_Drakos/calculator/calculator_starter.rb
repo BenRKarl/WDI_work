@@ -3,7 +3,7 @@
 
 
 def menu
-  puts "Choose a calculator. (a)dvanced or (b)asic or press (q)uit"
+  puts "Choose a calculator, (a)dvanced or (b)asic or press (q)uit"
   response = get.chomp
 
   case response
@@ -45,6 +45,17 @@ end
 
 def advanced_calc
   print "(p)ower, (s)qrt: "
+  choice = gets.chomp
+  print "Input number"
+  num_3 = gets.chomp.to_i
+
+case choice
+when "p"
+  puts "To what power?"
+  power=gets.chomp.to_i
+  puts num_3**power
+when "s"
+  puts num_3**.5
 
 end
 
