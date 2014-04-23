@@ -29,7 +29,7 @@ def guess_my_number
     guesses += 1
   end
     guesses += 1
-    puts "Congratulations! You guessed right! It took you #{guesses} guesses." if guess == number
+    puts "Congratulations! You guessed right! It took you #{guesses} guesses."
 end
 
 guess_my_number
