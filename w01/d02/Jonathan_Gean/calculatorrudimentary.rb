@@ -1,8 +1,8 @@
 # A user should be given a menu of operations
 # A user should be able to choose from the menu
 def menu
-  
-        
+
+
 
 end
 
