@@ -9,6 +9,8 @@ desired_temp = gets.chomp.to_i
 
 if (ac == "y" || ac == "yes") && curr_temp > desired_temp
   puts "Turn on the A/C please."
+elsif (ac == "y" || ac == "yes") && curr_temp < desired_temp
+  puts "It's all good. If it gets too hot the AC will kick on."
 elsif (ac == "n" || ac == "no") && curr_temp > desired_temp
   puts "Fix the A/C now! It's hot!"
 elsif (ac == "n" || ac == "no") && curr_temp < desired_temp
