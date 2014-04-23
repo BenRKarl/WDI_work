@@ -1,0 +1,5 @@
+favorite_foods = ['icecream', 'smoked salmon', 'self-picked fruit', 'almonds', 'mate']
+
+# I just thought maybe this line was important? But I wasn't sure why...
+
+kristen = Student.new(favorite_foods: favorite_foods)
