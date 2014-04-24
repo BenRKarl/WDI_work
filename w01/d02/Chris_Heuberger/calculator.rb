@@ -76,13 +76,12 @@ end
 def factor_calc
   puts "Let's do factorials!"
   puts "Gimme a number."
-  fput = gets.chomp.to_i
-  if fput == 0
+  fget = gets.chomp.to_i
+  if fget = 0
     1
   else
-    fput * fput(fput-1)
+    fget * fget(fget-1)
   end
-
 end
 
 response = menu
