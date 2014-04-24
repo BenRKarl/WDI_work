@@ -13,7 +13,6 @@ actual  = calc.add(2,4)
 expected = 6
 assert_equal(actual, expected, test)
 
-
 test = "calculator has a .subtract method that subtracts two numbers"
 actual = calc.subtract(4,2)
 expected = 2
@@ -32,4 +31,4 @@ assert_equal(actual, expected, test)
 test = "it doesn't allow divison by zero"
 actual = calc.divide(1,0)
 expected = "NaN"
-assert_equal(actual, expected)
+assert_equal(actual, expected, test)
