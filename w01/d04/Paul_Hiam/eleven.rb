@@ -6,7 +6,7 @@ puts 'want to push it harder? (say yes/no wankah)'
 higher = gets.chomp.downcase[0].to_s
 
 	if now_vol < 11 && higher == 'y'
-		puts 'Crank to eleven'
+		puts 'Crank it up'
 		now_vol = 11
 	elsif now_vol <= 11 && higher == 'n'
 		puts 'go stuff it'
