@@ -30,27 +30,18 @@ smoothie_ingredients = {
 }
 
 # Write a function called blend.
-# It should take all the smoothie ingredients (not the measurements)
-# and chop up and mix all the characters
+# It should take all the smoothie ingredients (not the measurements) and chop up and mix all the characters
 # and output a mixed string of characters
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
-# string = "whatever".split("")
-#   print string
-# string
+  def blend(smoothie_ingredients)
+    all_ingredients=""
+    smoothie_ingredients.keys.each { |ingredient| all_ingredients += ingredient.gsub(" ", "") }
+  all_ingredients
 
-# string.each do |i|
-#   x = string.length
-#   i = string[rand(0...x)]
-#   #puts i
-# end
-
-def blend(smoothie_ingredients)
-    smoothie_ingredients.each do |key, value|
-      print key.split("").shuffle.join("")
-    end
+    puts blend(smoothie_ingredients)
 end
-blend(smoothie_ingredients)
+
 
 # create a class called Blender
 # It should have a method that takes an array of ingredients and returns a mixed string of characters.
@@ -58,11 +49,26 @@ blend(smoothie_ingredients)
 # FOR SAFETY'S SAKE When you create a new blender by default it should be off.
 # Blend the the smoothie array
 
-#new_smoothie = smoothie_ingredients.to_a
-#print new_smoothie
-
 class Blender
+
   def initialize
+    @switch = "off"
+  end
+  def Mixology101 (magic_mix)
+    all_ingredients=""
+    magic_mix.each { |ingredient| all_ingredients += ingredient.gsub(" ", "") }
+    all_ingredients_mixed = all_ingredients.split("").shuffle.join
+  end
+
+  def blend
+    @switch="on"
+  end
+
+    def switch
+      if @switch=="off"
+        @switch="off"
+      else @switch="on"
+    end
+
   end
 end
-
