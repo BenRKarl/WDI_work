@@ -1,3 +1,8 @@
+# Homework day 3
+# Jeff Winkler
+
+
+
 class SubwayManager
   def initialize()
     n = ['ts', '34th', '28th-n', '23rd-n', 'us']
@@ -10,15 +15,17 @@ class SubwayManager
   end
 
   def menu
+    # prompts (puts) and allow the user to enter information (gets)
+    # consider defining values keys for :start_train, :start_station, :stop_train, :stop_station
     travel_plan = {}
     puts "Here are the train/station options.  Please type these in exactly."
     all_stops = Array.new
     all_stops.push(@network[:n], @network[:l], @network[:s]).flatten!.uniq!.sort!
-    #all_stops.each {|stop| print "#{stop} "}
-    #print "\n"
+
     puts "n train:  #{@network[:n]}"
     puts "l train:  #{@network[:l]}"
     puts "s train:  #{@network[:s]}"
+
     puts "What train are you starting from"
     travel_plan[:start_train] = gets.chomp
 
@@ -31,7 +38,7 @@ class SubwayManager
     puts "What station are you starting from"
     travel_plan[:stop_station] = gets.chomp
 
-    #puts travel_plan
+    # error check for reasonable input
 
     start_s_ok = all_stops.include?(travel_plan[:start_station])
     start_t_ok = ["n","l","s"].include?(travel_plan[:start_train])
@@ -45,41 +52,19 @@ class SubwayManager
     else
       return travel_plan
     end
-
-    # prompts (puts) and allow the user to enter information (gets)
-    # consider defining values keys for :start_train, :start_station, :stop_train, :stop_station
-
-
   end
-
-
 
   def travel_distance(travel_plan)
 
-    #if travel_plan[:start_train] == travel_plan[:stop_train]
-    case travel_plan[:start_train]
-    when "n"
-      start_index = @network[:n].index(travel_plan[:start_station])
-      start_us_index = @network[:n].index('us')
-    when "l"
-      start_index = @network[:l].index(travel_plan[:start_station])
-      start_us_index = @network[:l].index('us')
-    when "s"
-      start_index = @network[:s].index(travel_plan[:start_station])
-      start_us_index = @network[:s].index('us')
+    if travel_plan == 1
+      return "NA"
     end
 
-    case travel_plan[:stop_train]
-    when "n"
-      stop_index = @network[:n].index(travel_plan[:stop_station])
-      stop_us_index = @network[:n].index('us')
-    when "l"
-      stop_index = @network[:l].index(travel_plan[:stop_station])
-      stop_us_index = @network[:l].index('us')
-    when "s"
-      stop_index = @network[:s].index(travel_plan[:stop_station])
-      stop_us_index = @network[:s].index('us')
-    end
+    # Find the indices for the train/station combos for start/stop along with index for union square
+    start_index = @network[travel_plan[:start_train].to_sym].index(travel_plan[:start_station])
+    start_us_index = @network[travel_plan[:start_train].to_sym].index('us')
+    stop_index = @network[travel_plan[:stop_train].to_sym].index(travel_plan[:stop_station])
+    stop_us_index = @network[travel_plan[:stop_train].to_sym].index('us')
 
     if travel_plan[:start_train] ==  travel_plan[:stop_train]
       total_length_of_trip = (start_index - stop_index).abs
@@ -89,16 +74,25 @@ class SubwayManager
       total_length_of_trip= first_leg+second_leg
     end
 
-    puts "Total stops: #{total_length_of_trip}"
     return total_length_of_trip
   end
 
   def help
     travel_plan = menu
     total_length_of_trip = travel_distance(travel_plan)
-    puts "\n\nYour trip length is #{total_length_of_trip} stops.\n\n"
+    if total_length_of_trip == "NA"
+      puts "Error somewhere with input"
+    else
+      if total_length_of_trip > 1 || total_length_of_trip == 0
+        puts "\n\nYour trip length is #{total_length_of_trip} stops.\n\n"
+      else
+        puts "\n\nYour trip length is #{total_length_of_trip} stop.\n\n"
+      end
+    end
   end
 end
 
 mgr = SubwayManager.new
-mgr.travel_distance(mgr.menu)
+mgr.help
+
+

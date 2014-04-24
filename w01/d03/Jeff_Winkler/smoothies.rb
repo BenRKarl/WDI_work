@@ -1,8 +1,5 @@
 # Homework Day 3.
-#  Jeff Winkler
-
-
-
+# Jeff Winkler
 
 # docs you may enjoy
 # http://www.ruby-doc.org/core-2.0/Hash.html
@@ -44,31 +41,12 @@ smoothie_ingredients = {
 # for each letter in each ingredient.
 
 def blend(smoothie_ingredients)
-  to_mix = smoothie_ingredients.keys
-  num_elem =  to_mix.length
-  all_letters = Array.new
-
-  while num_elem > 0
-    curr_ingred = to_mix[num_elem-1].delete(' ')
-    num_letters = curr_ingred.length
-    while num_letters > 0
-      all_letters.push(curr_ingred[num_letters-1])
-      num_letters -= 1
-    end
-
-    num_elem -= 1
-  end
-
-  jumbled = all_letters.shuffle.join
-  puts jumbled
-  return jumbled
-
+  all_letters = smoothie_ingredients.keys.join.delete(' ').split("").shuffle.join
+  puts all_letters
+  return all_letters
 end
 
 blend(smoothie_ingredients)
-
-
-
 
 # create a class called Blender
 # It should have a method that takes an array of ingredients and returns a mixed string of characters.
@@ -90,26 +68,11 @@ class Blender
     @on_off = false
   end
 
-
   def blend(smoothie_ingredients)
     if @on_off
-      to_mix = smoothie_ingredients.keys
-      num_elem =  to_mix.length
-      all_letters = Array.new
-
-      while num_elem > 0
-        curr_ingred = to_mix[num_elem-1].delete(' ')
-        num_letters = curr_ingred.length
-        while num_letters > 0
-          all_letters.push(curr_ingred[num_letters-1])
-          num_letters -= 1
-        end
-
-        num_elem -= 1
-      end
-      jumbled = all_letters.shuffle.join
-      puts jumbled
-      return jumbled
+      all_letters = smoothie_ingredients.keys.join.delete(' ').split("").shuffle.join
+      puts all_letters
+      return all_letters
     else
       puts "Blender is not on"
     end
@@ -117,14 +80,8 @@ class Blender
 end
 
 fancy_blen = Blender.new
-fancy_blen.blend(smoothie_ingredients)
 fancy_blen.turn_on
 fancy_blen.blend(smoothie_ingredients)
 fancy_blen.turn_off
-fancy_blen.blend(smoothie_ingredients)
-
-
-
-
 
 
