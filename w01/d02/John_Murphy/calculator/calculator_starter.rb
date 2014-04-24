@@ -29,7 +29,7 @@ def basic_calc
   num_2 = gets.chomp.to_i
   case choice
   when 'a'
-    puts num_1 + num_2
+    puts "Your answer is #{num_1 + num_2}"
   when 's'
     puts num_1 - num_2
   when 'm'

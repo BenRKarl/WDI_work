@@ -34,9 +34,16 @@ smoothie_ingredients = {
 # and output a mixed string of characters
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
-def blend(smoothie_ingredients)
+
+
+def blend(stuff)
+  smoothie = ""
+  stuff.each { |ing, meas| smoothie<<ing }
+  smoothie = smoothie.delete(" ").split(//).shuffle.join
+  puts smoothie
 end
 
+blend(smoothie_ingredients)
 
 # create a class called Blender
 # It should have a method that takes an array of ingredients and returns a mixed string of characters.
@@ -44,6 +51,30 @@ end
 # FOR SAFETY'S SAKE When you create a new blender by default it should be off.
 # Blend the the smoothie array
 
+
 class Blender
+
+attr_accessor :power
+
+  def initialize
+  @power = "off"
+  end
+
+  def power_switch
+    if @power == "on"
+      @power = "off"
+    else
+      @power = "on"
+    end
+  end
+
+
+  def mix(smoothie_ingredients)
+    if @power == "on"
+      puts smoothie_ingredients.join.delete(" ").split(//).shuffle.join
+    else
+      puts "Turn on the blender first"
+    end
+  end
 end
 

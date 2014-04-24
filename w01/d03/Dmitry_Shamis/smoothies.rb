@@ -4,7 +4,7 @@
 # http://ruby-doc.org/core-2.0/Array.html
 
 # Every Morning I make a smoothie with the follow ingredients:
-smoothie_ingredients = {
+@smoothie_ingredients = {
   'flax seeds' => '1 tbsp',
   'chia seeds' => '1 tbsp',
   'coconut flakes' => '1 tbsp',
@@ -33,8 +33,15 @@ smoothie_ingredients = {
 # It should take all the smoothie ingredients (not the measurements) and chop up and mix all the characters
 # and output a mixed string of characters
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
-
-def blend(smoothie_ingredients)
+def string_shuffle(smoothie_ingredients)
+  smoothie_ingredients.split("").shuffle.join
+end
+def blend(x)
+  array = x.keys
+  word_array = array.map { |smoothie| smoothie }.join
+  smoothie_mix = word_array.gsub(/\s+/, "")
+  smoothie_jumble = string_shuffle(smoothie_mix)
+  puts "#{smoothie_jumble}"
 end
 
 
@@ -45,5 +52,41 @@ end
 # Blend the the smoothie array
 
 class Blender
+
+  def initialize
+    @power = "off"
+    puts "Turn on the power."
+  end
+
+  def power
+    @power
+  end
+
+  def change_power
+     if @power == "off"
+      @power = "on"
+    else
+      @power = "off"
+    end
+  end
+
+  def string_shuffle(smoothie_ingredients)
+    smoothie_ingredients.split("").shuffle.join
+  end
+
+  def blend(x)
+    if @power == "on"
+      array = x.keys
+      word_array = array.map { |smoothie| smoothie }.join
+      smoothie_mix = word_array.gsub(/\s+/, "")
+      smoothie_jumble = string_shuffle(smoothie_mix)
+      puts "#{smoothie_jumble}"
+    end
+  end
+
+
 end
+
+@b = Blender.new
+@b.blend(@smoothie_ingredients)
 
