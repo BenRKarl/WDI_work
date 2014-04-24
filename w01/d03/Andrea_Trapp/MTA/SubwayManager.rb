@@ -51,30 +51,31 @@ class SubwayManager
 
  def travel_distance(travel_plan)
  
-    start_station = travel_plan[:start_station]
-    stop_station = travel_plan[:stop_station]
-    start_train = travel_plan[:start_train]
-    stop_train = travel_plan[:stop_train]
+    stations_start_train = @network[travel_plan[:start_train]]
+    # puts "stations start_train: #{stations_start_train}"
 
-    stations = []
+    stations_stop_train = @network[travel_plan[:stop_train]]
+    # puts "stations stop_train: #{stations_stop_train}"
 
-    stations_start_train = @network[start_train.to_sym]
-    #puts "stations start_train: #{stations_start_train}"
+    # check if stations are on same line, if not use station "us" to switch trains
+    if travel_plan[:start_train] == travel_plan[:stop_train]
+      index_start = stations_start_train.index(travel_plan[:start_station])
+      index_stop = stations_stop_train.index(travel_plan[:stop_station])
 
-    stations_stop_train = @network[stop_train.to_sym]
-    #puts "stations stop_train: #{stations_stop_train}"
+      total_length_of_trip = (index_start - index_stop).abs
+    else
+      index_start_train_start = stations_start_train.index(travel_plan[:start_station])
+      index_start_train_stop = stations_start_train.index("us")
 
-    index_start_train_start = stations_start_train.index(start_station)
-    index_start_train_stop = stations_start_train.index("us")
+      index_stop_train_start = stations_stop_train.index("us")
+      index_stop_train_stop = stations_stop_train.index(travel_plan[:stop_station])
 
-    index_stop_train_start = stations_stop_train.index("us")
-    index_stop_train_stop = stations_stop_train.index(stop_station)
+      start_train_length_of_trip = (index_start_train_start - index_start_train_stop).abs
+      stop_train_length_of_trip = (index_stop_train_start - index_stop_train_stop).abs
 
-    start_train_length_of_trip = (index_start_train_start - index_start_train_stop).abs
-    stop_train_length_of_trip = (index_stop_train_start - index_stop_train_stop).abs
+      total_length_of_trip = start_train_length_of_trip + stop_train_length_of_trip
+    end
 
-    total_length_of_trip = start_train_length_of_trip + stop_train_length_of_trip
-  
     return total_length_of_trip
   end
 
