@@ -35,6 +35,9 @@ smoothie_ingredients = {
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
 def blend(smoothie_ingredients)
+  ingredients_string = smoothie_ingredients.keys.shuffle.join().gsub(/\s+/, "")
+  reshuffled_string = ingredients_string.split("").shuffle.join()
+   puts reshuffled_string
 end
 
 
@@ -45,5 +48,29 @@ end
 # Blend the the smoothie array
 
 class Blender
-end
+  attr_accessor :power
+  def initialize()
+    @power = "off"
+  end
+#attempted to create blender with name result "undefined local variable or method 'mixxy' for main:object"
+  def switch
+    if @power == "off"
+      @power = "on"
+    puts "Blender is now ON"
+    elsif @power == "on"
+      @power = "off"
+      puts "Blender is now OFF"
+    end
+  end
 
+  def blend(smoothie_ingredients)
+    if @power == "on"
+      ingredients_string = smoothie_ingredients.keys.shuffle.join().gsub(/\s+/, "")
+      reshuffled_string = ingredients_string.split("").shuffle.join()
+      puts "ingredients mixing....."
+      puts reshuffled_string
+    elsif @power == "off"
+      puts "please turn on your blender by using the '.switch'"
+    end
+  end
+end

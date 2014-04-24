@@ -35,9 +35,15 @@ smoothie_ingredients = {
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
 def blend(smoothie_ingredients)
+  ingredients = []
+  smoothie_ingredients.each_key {|ingredient, amount| ingredients.push(ingredient)}
+  ingredients = ingredients.join
+  ingredients.delete! " "
+  ingredients = ingredients.split(//).shuffle!.join
+  #puts ingredients
 end
 
-
+blend(smoothie_ingredients)
 # create a class called Blender
 # It should have a method that takes an array of ingredients and returns a mixed string of characters.
 # Give the blender an on and off switch and only allow the blender to function when it's on.
@@ -45,5 +51,17 @@ end
 # Blend the the smoothie array
 
 class Blender
+
+  def blend_it(ingreeds, status="off")
+    if status.downcase == "on"
+      ingreeds = ingreeds.join
+      ingreeds.delete! " "
+      ingreeds = ingreeds.split(//).shuffle!.join
+      puts ingreeds
+    else puts "The blender can't blend because it's off."
+    end
+  end
 end
 
+my_blender = Blender.new
+my_blender.blend_it(["Pumpernickel bread", "Corn bread", "Honey", "Sausage", "Oatmeal", "Orange juice"], "on")
