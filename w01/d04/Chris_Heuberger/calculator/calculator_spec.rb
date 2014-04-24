@@ -1,4 +1,4 @@
-require_relative '../wdispec.rb'
+require_relative '../wdispec_instructor.rb'
 require_relative 'calculator.rb'
 
 calc = Calculator.new
@@ -12,7 +12,6 @@ test = "calculator has an .add method that adds two numbers"
 actual  = calc.add(2,4)
 expected = 6
 assert_equal(actual, expected, test)
-
 
 test = "calculator has a .subtract method that subtracts two numbers"
 actual = calc.subtract(4,2)
