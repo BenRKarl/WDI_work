@@ -10,6 +10,45 @@ class SubwayManager
   end
 
   def menu
+<<<<<<< HEAD
+
+    # prompts (puts) and allow the user to enter information (gets)
+    # consider defining values keys for
+    # :start_train, :start_station, :stop_train, :stop_station
+    
+    travel_plan = {}
+
+    puts "what train do you take first?"
+    travel_plan[:start_train] = gets.chomp.to_sym
+
+    puts "what station do you start at?"
+    travel_plan[:start_station] = gets.chomp.to_sym
+
+    puts "what train do you take last?"
+    travel_plan[:end_train] = gets.chomp.to_sym
+
+    puts "what station do you get off?"
+    travel_plan[:end_station] = gets.chomp.to_sym
+
+    return travel_plan
+
+  end
+
+  def travel_distance(travel_plan)
+      # Calculate the total_length_of_trip here!
+      if travel_plan[:start_train] == travel_plan[:end_train]
+        train = travel_plan[:start_train]
+        start_pos = @network[train].index(travel_plan[:start_station])
+        end_pos = @network[train].index(travel_plan[:end_station])
+        total_length_of_trip = (end_pos - start_pos).abs
+      else
+        train_1 = travel_plan[:start_train]
+        train_2 = travel_plan[:end_train]
+        start_pos = @network[train].index(travel_plan[:start_station])
+        end_pos = @network[train].index(travel_plan[:end_station])
+        total_length_of_trip = (start_pos - us).abs + (us - end_pos).abs
+      end
+=======
     travel_plan = {}
 
     # prompts (puts) and allow the user to enter information (gets)
@@ -22,6 +61,7 @@ class SubwayManager
 
     # Calculate the total_length_of_trip here!
 
+>>>>>>> a37bb935d733af032f211959b3cfc511de17c29d
     return total_length_of_trip
   end
 
