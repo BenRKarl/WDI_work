@@ -4,7 +4,7 @@
 # http://ruby-doc.org/core-2.0/Array.html
 
 # Every Morning I make a smoothie with the follow ingredients:
-smoothie_ingredients = {
+@smoothie_ingredients = {
   'flax seeds' => '1 tbsp',
   'chia seeds' => '1 tbsp',
   'coconut flakes' => '1 tbsp',
@@ -34,8 +34,22 @@ smoothie_ingredients = {
 # and output a mixed string of characters
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
-def blend(smoothie_ingredients)
-end
+#PSUDO Code for blend
+#pull all the key names into a string, remove all the spaces, randomize the order of the string
+smoothie_string =""
+
+# def blend(smoothie_ingredients)
+#   #Create an empty string
+#   smoothie_string = ""
+#   #Takes each key, strips out white space, and adds it to smoothie_string
+#   smoothie_ingredients.each{|key,value| smoothie_string += key.tr_s(" ", "")}
+#   #Populates an array, making each letter a single element
+#   smoothie_array = smoothie_string.split(//)
+#   #Jumbles elements
+#   smoothie_array = smoothie_array.shuffle
+#   #puts a join of array
+#   puts smoothie_array.join
+# end
 
 
 # create a class called Blender
@@ -45,5 +59,45 @@ end
 # Blend the the smoothie array
 
 class Blender
+
+  attr_accessor :power
+
+  def initialize
+    @power = "off"
+  end
+
+  def blend(smoothie_ingredients)
+    if @power == "on"
+      #Create an empty string
+      smoothie_string = ""
+      #Takes each key, strips out white space, and adds it to smoothie_string
+      smoothie_ingredients.each{|key,value| smoothie_string += key.tr_s(" ", "")}
+      #Populates an array, making each letter a single element
+      smoothie_array = smoothie_string.split(//)
+      #Jumbles elements
+      smoothie_array = smoothie_array.shuffle
+      #puts a join of array
+      puts smoothie_array.join
+    end
+  end
+
+  def power
+    if @power == "off"
+      @power = "on"
+      puts "Power on."
+    else
+      @power = "off"
+      puts "Power off."
+    end
+  end
+
 end
+
+#Blender.blend(smoothie_ingredients)
+#puts "Expect 'Turn on'"
+#Blender.power("on")
+#puts "Expect 'power on'"
+#Blender.blend(smoothie_ingredients)
+#puts "Expect 'smoothie"
+
 
