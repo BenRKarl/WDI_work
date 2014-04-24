@@ -8,7 +8,7 @@
 # Morning Exercise
 ### ***Prime Number***
 ######***Key Skills:*** Looping, Conditionals
-- In a file `prime.rb`,  write a method `prime?` that takes an integer as its only argument.  
+- In a file `prime.rb`,  write a method `prime?` that takes an integer as its only argument.
 - It should return `true` if the number is prime 
 - It should return `false` if the number is not prime.
 
@@ -37,39 +37,8 @@
 ###Overview:
 * Owners of buildings can rent apartments to potential tenants
 * You are building the app
-* This is a multi-file project that has a main file for working with the objects, and each class as separate files.  
+* This is a multi-file project that has a main file for working with the objects, and each class as separate files.
 
-###Spec:
-
-|Building - attribute|type|
-|:----------|:-----------|
-|address|string|
-|style|string|
-|has_doorman|boolean|
-|is_walkup|boolean|
-|num_floors|integer|
-|apartments|array of apartment objects|
-
-|Apartment - attribute|type|
-|:----------|:-----------|
-|price|decimal|
-|is_occupied|boolean|
-|sqft|integer|
-|num_beds|integer|
-|num_baths|integer|
-|renters|array of person objects|
-
-|Person (assume tenants or prospective tenants)|type|
-|:----------|:-----------|
-|name|string|
-|age|integer|
-|gender|string|
-|apartment|apartment object|
-
-* Write attr_accessors for each object
-* Write initialize methods for each object
-* Write to_s methods for each object
-* In a main.rb file, demonstrate the functionality of your classes.  
-
-	
-
+* The tests are in the rental_app/spec/ folder, just put the production code in the rental_app/ directory.
+* In a main.rb file, demonstrate the functionality of your classes.
+* Write a loop: until the user wants to quit, iterate and be able to create a building, an apartment or a tenant. It is completely OK if your code dies because you try to modify an object that doesn't exist, but if you put guards (conditionals) to avoid that, bonus points! (well, if there were points)
