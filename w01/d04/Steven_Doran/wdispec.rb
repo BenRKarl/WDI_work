@@ -1,4 +1,4 @@
-require "Rainbow"
+require "Rainbow" #EDIT EDIT EDIT
 
 def assert_equal(actual, expected, statement=nil)
   comparison_string = "Actual: #{actual}\nExpected: #{expected}"
