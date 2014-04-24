@@ -1,7 +1,9 @@
 puts "What is the current temperature?"
 temperature = gets.chomp.to_i
+
 puts "Is the Air Conditioner working? (y) for yes or (n) for no."
 ac_working = gets.chomp
+
 puts "What temperature do you wish it was?"
 desired_temp = gets.chomp.to_i
 
