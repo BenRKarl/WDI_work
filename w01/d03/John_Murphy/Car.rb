@@ -9,7 +9,7 @@ class Car
   end
 
   def num_wheels=(value)
-    @num_wheels=valuesub
+    @num_wheels=value
   end
 end
 
