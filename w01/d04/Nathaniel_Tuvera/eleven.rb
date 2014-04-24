@@ -1,7 +1,7 @@
 print "what is the volume set at? "
 current_vol = gets.chomp.to_i
-print "Do you want to be awesome? "
-awesome_val = gets.chomp.to_s
+print "Do you want to be awesome? (y/n)"
+awesome_val = gets.chomp.downcase[0]
 
 if current_vol >= 11 && awesome_val == 'y'
   puts "GO HIGHER... #{current_vol + 1 }!!!"
