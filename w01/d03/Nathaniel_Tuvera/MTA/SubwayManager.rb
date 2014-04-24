@@ -21,15 +21,17 @@ class SubwayManager
     travel_plan[:end_train] = gets.chomp
     # prompts (puts) and allow the user to enter information (gets)
     # consider defining values keys for :start_train, :start_station, :stop_train, :stop_station
-
+    # puts travel_plan
     return travel_plan
   end
-
+    # need travel_plan hash created in menu to apply to travel_distance
   def travel_distance(travel_plan)
+      # travel_plan = menu
       # total_length_of_trip = index value of :start_station - index value of :end_station
       n = ['ts', '34th', '28th-n', '23rd-n', 'us']
+      # n = @network[:start_train]
       # total_length_of_trip = n.index(travel_plan[":start_station"]) - n.index[":end_station"]
-      total_length_of_trip = (n.index(travel_plan[:start_station]) - n.index(travel_plan[:end_station])).abs
+      total_length_of_trip = (n.index(travel_plan[:start_station]).to_i - n.index(travel_plan[:end_station]).to_i).abs
 
       # n = ['ts', '34th', '28th-n', '23rd-n', 'us']
       # total_length_of_trip = n.index('ts') - n.index('us')
@@ -39,6 +41,6 @@ class SubwayManager
   def help
     travel_plan = menu
     total_length_of_trip = travel_distance(travel_plan)
-    puts "\n\nYour trip length is #{total_length_of_trip} stops.\n\n"
+    puts "\n\nYour trip length is #{total_length_of_trip} stop(s).\n\n"
   end
 end
