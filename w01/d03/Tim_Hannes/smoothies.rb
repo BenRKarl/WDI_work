@@ -35,8 +35,8 @@ smoothie_ingredients = {
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
 def blend(smoothie_ingredients)
+  mixed_ingredients = smoothie_ingredients.keys.join.gsub(' ', "").split("").shuffle.join
 end
-
 
 # create a class called Blender
 # It should have a method that takes an array of ingredients and returns a mixed string of characters.
@@ -45,5 +45,12 @@ end
 # Blend the the smoothie array
 
 class Blender
+  def mixer
+    puts "Would you like to turn on the blender? (y / n)"
+    if user_input = ('y')
+      smoothie_ingredients = smoothie_ingredients.keys.join.gsub(' ', "").split("").shuffle.join
+    else
+    end
+  end
 end
 

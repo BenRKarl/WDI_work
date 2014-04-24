@@ -1,9 +1,3 @@
-# docs you may enjoy
-# http://www.ruby-doc.org/core-2.0/Hash.html
-# http://ruby-doc.org/core-2.0/String.html
-# http://ruby-doc.org/core-2.0/Array.html
-
-# Every Morning I make a smoothie with the follow ingredients:
 smoothie_ingredients = {
   'flax seeds' => '1 tbsp',
   'chia seeds' => '1 tbsp',
@@ -35,15 +29,62 @@ smoothie_ingredients = {
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
 def blend(smoothie_ingredients)
+  ingredients = []
+  smoothie_ingredients.each do |ingredient, measurement|
+    ingredients.push(ingredient)
+  end
+
+  smoothie = ingredients.shuffle.join.delete(" ")
+  puts smoothie 
+  puts " "
+  mix = smoothie.split("").shuffle.join  # make sure it's nicely blended
+  puts mix
 end
+
+blend(smoothie_ingredients)
+
+puts " "
 
 
 # create a class called Blender
-# It should have a method that takes an array of ingredients and returns a mixed string of characters.
-# Give the blender an on and off switch and only allow the blender to function when it's on.
+# It should have a method that takes an array of ingredients and 
+# returns a mixed string of characters.
+# Give the blender an on and off switch and only allow the blender 
+# to function when it's on.
 # FOR SAFETY'S SAKE When you create a new blender by default it should be off.
 # Blend the the smoothie array
 
 class Blender
+  def initialize (ingredients, power)
+    @ingredients = ingredients
+    @power = power
+  end
+  
+  attr_accessor :power, :ingredients
 end
+
+breakfast_smoothie = Blender.new(["banana", "strawberry", "mango"], "on")
+
+  if breakfast_smoothie.power == "on" 
+    smoothie = breakfast_smoothie.ingredients.join.delete(" ")
+    mix = smoothie.split("").shuffle.join
+    puts mix
+  end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
