@@ -21,4 +21,3 @@ def assert_equal(actual, expected, statement=nil)
   end
   puts Rainbow(a_single_message).send (color)
 end
-
