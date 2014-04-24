@@ -11,3 +11,16 @@
 - In a file `prime.rb`,  write a method `prime?` that takes an integer as its only argument.  
 - It should return `true` if the number is prime 
 - It should return `false` if the number is not prime.
+
+### ***Taking it to Eleven***
+######***Key Skills:*** Control Flow, Conditionals
+
+- In a file `eleven.rb`
+- Prompt the user for: 
+	- The volume of their amplifier
+	- Whether or not that want to push it over the cliff
+
+- Then handle some conditional logic: 
+	- If volume is less than 11 and they have a desire to push it over the cliff, print a message: "Crank it to eleven"
+	- If volume is less than 11 and they don't want to push it over the cliff, insult their feeble propensity for rock: "That's not very rock, man."
+	- If volume is greater than or equal to 11, tell them to crank it one level higher.
