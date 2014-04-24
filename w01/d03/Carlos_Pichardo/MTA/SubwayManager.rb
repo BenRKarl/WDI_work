@@ -11,6 +11,20 @@ class SubwayManager
 
   def menu
     travel_plan = {}
+    puts "I'm going to ask you questions about your travel plans?"
+    puts "What is your starting train?"
+    starting_train = gets.chomp
+    puts "What is your starting station?"
+    starting_station = gets.chomp
+    puts "What is your last train?"
+    stop_train = gets.chomp
+    puts "what is your last station?"
+    stop_station = gets.chomp
+    
+    travel_plan.start_train.join
+    travel_plan.start_station.join
+    travel_plan.stop_train.join
+    travel_plan.stop_station
 
     # prompts (puts) and allow the user to enter information (gets)
     # consider defining values keys for :start_train, :start_station, :stop_train, :stop_station
