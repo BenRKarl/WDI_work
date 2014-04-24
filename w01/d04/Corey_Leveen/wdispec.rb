@@ -4,6 +4,7 @@ def assert_equal(actual, expected, statement=nil)
   if actual == expected
     if statement
       puts Rainbow(statement).green
+      display_message(actual, expected, "green")
     else
       display_message(actual, expected, "green")
     end
