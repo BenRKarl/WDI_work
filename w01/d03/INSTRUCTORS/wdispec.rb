@@ -40,15 +40,7 @@ expected = "NaN"
 statement = "Method returns NaN when division by zero"
 assert_equal(actual, expected, statement)
 
-op = "a"
 
-result =
-case op
-when "a"
-  "add"
-else
-  "other"
-end
 
 
 
