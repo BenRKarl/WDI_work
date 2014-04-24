@@ -7,11 +7,8 @@ class Person
     @profile = profile
   end
 
-  def person
-    puts "#{name} is #{age} years old and earns $#{income} per year."
+  def to_s
+    return "#{name} is #{age} years old and earns $#{income} per year."
   end
-
-
-
 end
 
