@@ -30,13 +30,27 @@ smoothie_ingredients = {
 }
 
 # Write a function called blend.
-# It should take all the smoothie ingredients (not the measurements) and chop up and mix all the characters
+# It should take all the smoothie ingredients (not the measurements)
+# and chop up and mix all the characters
 # and output a mixed string of characters
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
-def blend(smoothie_ingredients)
-end
+# string = "whatever".split("")
+#   print string
+# string
 
+# string.each do |i|
+#   x = string.length
+#   i = string[rand(0...x)]
+#   #puts i
+# end
+
+def blend(smoothie_ingredients)
+    smoothie_ingredients.each do |key, value|
+      print key.split("").shuffle.join("")
+    end
+end
+blend(smoothie_ingredients)
 
 # create a class called Blender
 # It should have a method that takes an array of ingredients and returns a mixed string of characters.
@@ -44,6 +58,11 @@ end
 # FOR SAFETY'S SAKE When you create a new blender by default it should be off.
 # Blend the the smoothie array
 
+#new_smoothie = smoothie_ingredients.to_a
+#print new_smoothie
+
 class Blender
+  def initialize
+  end
 end
 

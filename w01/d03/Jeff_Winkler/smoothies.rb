@@ -1,3 +1,6 @@
+# Homework Day 3.
+# Jeff Winkler
+
 # docs you may enjoy
 # http://www.ruby-doc.org/core-2.0/Hash.html
 # http://ruby-doc.org/core-2.0/String.html
@@ -34,9 +37,16 @@ smoothie_ingredients = {
 # and output a mixed string of characters
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
+# Wish I had found split!  Just did two while loops, one for each ingredient and one
+# for each letter in each ingredient.
+
 def blend(smoothie_ingredients)
+  all_letters = smoothie_ingredients.keys.join.delete(' ').split("").shuffle.join
+  puts all_letters
+  return all_letters
 end
 
+blend(smoothie_ingredients)
 
 # create a class called Blender
 # It should have a method that takes an array of ingredients and returns a mixed string of characters.
@@ -45,5 +55,33 @@ end
 # Blend the the smoothie array
 
 class Blender
+
+  def initialize
+    @on_off = false
+  end
+
+  def turn_on
+    @on_off = true
+  end
+
+  def turn_off
+    @on_off = false
+  end
+
+  def blend(smoothie_ingredients)
+    if @on_off
+      all_letters = smoothie_ingredients.keys.join.delete(' ').split("").shuffle.join
+      puts all_letters
+      return all_letters
+    else
+      puts "Blender is not on"
+    end
+  end
 end
+
+fancy_blen = Blender.new
+fancy_blen.turn_on
+fancy_blen.blend(smoothie_ingredients)
+fancy_blen.turn_off
+
 
