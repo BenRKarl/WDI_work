@@ -13,21 +13,78 @@ class SubwayManager
     travel_plan = {}
 
     # prompts (puts) and allow the user to enter information (gets)
-    # consider defining values keys for :start_train, :start_station, :stop_train, :stop_station
+    puts "Enter the start station:" 
+    start_station = gets.chomp
 
+    puts "Enter the stop station:" 
+    stop_station = gets.chomp
+
+    start_train = ""
+    stop_train = ""
+
+    if start_station == "us"
+      #then check stop_station and take that line for both stations
+      @network.each { |line, stations| start_train = line if stations.include?(stop_station) }  
+      stop_train = start_train  
+    else
+      #check every array (n,l,s), if it includes the start_station
+      @network.each { |line, stations| start_train = line if stations.include?(start_station) }  
+    end
+  
+    if stop_train == ""
+      #check every array (n,l,s), if it includes the stop_station      
+      @network.each { |line, stations| stop_train = line if stations.include?(stop_station) }
+    end
+  
+    travel_plan[:start_station] = start_station
+    travel_plan[:stop_station] = stop_station
+    travel_plan[:start_train] = start_train
+    travel_plan[:stop_train] = stop_train
+
+    # puts "start_station: #{travel_plan[:start_station]}"
+    # puts "stop_station: #{travel_plan[:stop_station]}"
+    # puts "start_train: #{travel_plan[:start_train]}"
+    # puts "stop_train: #{travel_plan[:stop_train]}"
+    
     return travel_plan
   end
 
-  def travel_distance(travel_plan)
+ def travel_distance(travel_plan)
+ 
+    stations_start_train = @network[travel_plan[:start_train]]
+    # puts "stations start_train: #{stations_start_train}"
 
-    # Calculate the total_length_of_trip here!
+    stations_stop_train = @network[travel_plan[:stop_train]]
+    # puts "stations stop_train: #{stations_stop_train}"
+
+    # check if stations are on same line, if not use station "us" to switch trains
+    if travel_plan[:start_train] == travel_plan[:stop_train]
+      index_start = stations_start_train.index(travel_plan[:start_station])
+      index_stop = stations_stop_train.index(travel_plan[:stop_station])
+
+      total_length_of_trip = (index_start - index_stop).abs
+    else
+      index_start_train_start = stations_start_train.index(travel_plan[:start_station])
+      index_start_train_stop = stations_start_train.index("us")
+
+      index_stop_train_start = stations_stop_train.index("us")
+      index_stop_train_stop = stations_stop_train.index(travel_plan[:stop_station])
+
+      start_train_length_of_trip = (index_start_train_start - index_start_train_stop).abs
+      stop_train_length_of_trip = (index_stop_train_start - index_stop_train_stop).abs
+
+      total_length_of_trip = start_train_length_of_trip + stop_train_length_of_trip
+    end
 
     return total_length_of_trip
   end
 
   def help
     travel_plan = menu
-    total_length_of_trip = travel_distance(travel_plan)
+    total_length_of_trip = travel_distance(travel_plan)  
     puts "\n\nYour trip length is #{total_length_of_trip} stops.\n\n"
   end
 end
+
+plan = SubwayManager.new 
+plan.help
