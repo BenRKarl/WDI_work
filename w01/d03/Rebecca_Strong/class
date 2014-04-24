@@ -1,0 +1,15 @@
+class Forest
+  attr_accessor :trees
+
+  def initialize
+    @trees = []
+    end
+
+    def treest
+    @trees
+    end
+
+    def trees=something
+    @trees=something
+
+    forest = Forest.new

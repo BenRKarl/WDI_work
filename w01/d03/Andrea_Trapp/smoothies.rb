@@ -1,3 +1,5 @@
+require 'pry'
+
 # docs you may enjoy
 # http://www.ruby-doc.org/core-2.0/Hash.html
 # http://ruby-doc.org/core-2.0/String.html
@@ -29,13 +31,20 @@ smoothie_ingredients = {
   'hemp milk' => '1 cup'
 }
 
+
 # Write a function called blend.
 # It should take all the smoothie ingredients (not the measurements) and chop up and mix all the characters
 # and output a mixed string of characters
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
 def blend(smoothie_ingredients)
+  all_ingredients = ""
+  smoothie_ingredients.keys.each { |ingredient| all_ingredients += ingredient.gsub(" ","") }
+  all_ingredients_blended = all_ingredients.split("").shuffle.join
 end
+
+#puts blend(smoothie_ingredients)
+
 
 
 # create a class called Blender
@@ -45,5 +54,43 @@ end
 # Blend the the smoothie array
 
 class Blender
+  attr_reader :all_mixed
+
+  def initialize
+    @switch = "off"
+    @all_mixed = ""
+  end  
+
+  def blend(smoothie_ingredients)  
+    if @switch == "on"
+      # all_ingredients = ""
+      # smoothie_ingredients.each { |ingredient| all_ingredients += ingredient.gsub(" ","") }
+      # all_ingredients_blended = all_ingredients.split("").shuffle.join
+      all_ingredients = ""
+      smoothie_ingredients.each { |ingredient| all_ingredients += ingredient.gsub(" ","") }
+      @all_mixed = all_ingredients.split("").shuffle.join
+    else
+      puts "Blender is off. Switch it on with \"switch\""
+    end
+  end
+
+  def switch    
+    if @switch == "off"
+      @switch = "on"
+    else
+      @switch = "off"
+    end
+  end
+
 end
+
+
+binding.pry
+
+new_cocktail = Blender.new
+new_cocktail.blend(["blue berries","straw berries","mango","hemp milk"])
+
+new_cocktail.switch
+new_cocktail.blend(["blue berries","straw berries","mango","hemp milk"])
+new_cocktail.all_mixed
 

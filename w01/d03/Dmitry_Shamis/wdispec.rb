@@ -1,5 +1,6 @@
 require 'rainbow'
 
+# This is a control flow
 def assert_equal(actual, expected, statement)
   if actual == expected
     # print the statement in green
@@ -23,6 +24,7 @@ def divide(x,y)
     x.to_f / y.to_f
 end
 
+# These are tests of the control flow
 actual = add(2,2)
 expected = 4
 statement = "We have a functioning add method."
