@@ -1,5 +1,7 @@
 def prime?(number)
   
+  return false if number <= 1
+
   i = 2
   
   while i < number
@@ -10,6 +12,3 @@ def prime?(number)
   true
 
 end
-
-# prime?(7)
-# prime?(16)
