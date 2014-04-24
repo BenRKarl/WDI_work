@@ -17,7 +17,7 @@
 
 - In a file `eleven.rb`
 - Prompt the user for: 
-	- The volume of their amplifier
+	- The volume of their amplifier volume
 	- Whether or not that want to push it over the cliff
 
 - Then handle some conditional logic: 
