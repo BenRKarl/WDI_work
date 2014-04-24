@@ -2,7 +2,7 @@ puts "What's the current temperature?"
 current_temp = gets.chomp.to_i
 
 puts "Is the AC functional? Put 'y' or 'n'."
-function = gets.chomp.downcase
+function = gets.chomp.downcase[0]
 
 puts "What do you want the temperature to be?"
 desired_temp = gets.chomp.to_i

@@ -34,9 +34,15 @@ smoothie_ingredients = {
 # and output a mixed string of characters
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
-def blend(smoothie_ingredients)
+def string_shuffle(s)
+  s.split("").shuffle.join
 end
 
+def blend(smoothie_ingredients)
+    string_shuffle(smoothie_ingredients.keys.shuffle.join("").gsub(/\s+/, ""))
+end
+
+puts puts blend(smoothie_ingredients) #Two puts here in order to create an extra space between the outputs, just making it more readable.
 
 # create a class called Blender
 # It should have a method that takes an array of ingredients and returns a mixed string of characters.
@@ -45,5 +51,37 @@ end
 # Blend the the smoothie array
 
 class Blender
+attr_accessor :power
+
+def initialize
+  @power = false
 end
+
+def string_shuffle(s)
+  s.split("").shuffle.join
+end
+
+def mixer(ingredients_array)
+  if @power == false
+    puts "You should turn on the power with <BlenderName>.power_switch"
+    return
+  else
+    puts string_shuffle(ingredients_array.shuffle.join("").gsub(/\s+/, ""))
+  end
+end
+
+def power_switch
+  if @power == true
+    @power = false
+  else
+    @power = true
+end
+end
+end
+
+lil_blend = Blender.new
+lil_blend.power_switch
+puts lil_blend.mixer(smoothie_ingredients.keys)
+
+
 
