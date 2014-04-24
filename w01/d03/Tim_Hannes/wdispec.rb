@@ -5,11 +5,9 @@ def assert_equal(actual, expected, statement)
     #print the statement in green
     puts Rainbow(statement).green
   else
-    # print the statement in red
+    #print the statement in red
     puts Rainbow(statement).red
   end
-  puts actual
-  puts expected
 end
 
 def add(x,y)
@@ -17,17 +15,15 @@ def add(x,y)
 end
 
 def divide(x,y)
-  # if y == 0
-  #   return "NaN"
-  # end
-  return "NaN" if y.zero?
-  return x.to_f / y.to_f
+  if y = 0
+      return "NaN"
+  end
+  x.to_f / y.to_f
 end
 
-
-actual   = add(2,2)
+actual = add(2,2)
 expected = 4
-statement = "We have a functioning add method"
+statement = "We have a functioning add method."
 assert_equal(actual, expected, statement)
 
 actual = divide(8,5)
@@ -39,8 +35,5 @@ actual = divide(1,0)
 expected = "NaN"
 statement = "Method returns NaN when division by zero"
 assert_equal(actual, expected, statement)
-
-
-
 
 
