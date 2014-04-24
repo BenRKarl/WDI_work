@@ -1,6 +1,6 @@
 def eleven(curr_volume, cliff)
   
-  puts "Crank it to eleven!" if curr_volume < 11 && cliff == "y"
+  puts "Crank it to 11!" if curr_volume < 11 && cliff == "y"
   
   puts "That's not very rock, man." if curr_volume < 11 && cliff == "n"
   
