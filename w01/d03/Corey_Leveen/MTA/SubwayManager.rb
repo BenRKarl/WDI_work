@@ -14,15 +14,15 @@ class SubwayManager
 
     lno = ['8th', '6th', 'us']
     lno_n = ['8th', '6th', 'us', '23rd-n', '28th-n', '34th', 'ts']
-    lno_s = []
+    lno_s = ['8th', '6th', 'us']
 
     lso = ['3rd', '1st']
     lso_n = ['1st', '3rd', 'us', '23rd-n', '28th-n', '34th', 'ts']
-    lso_s = []
+    lso_s = ['1st', '3rd', 'us', '23rd-s', '28th-s', '33rd', 'gc']
 
-    s_n = []
-    s_lno = []
-    s_lso = []
+    s_n = ['gc', '33rd', '28th-s', '23rd-s', 'us', '23rd-n', '28th-n', '34th', 'ts']
+    s_lno = ['gc', '33rd', '28th-s', '23rd-s', 'us', '6th', '8th']
+    s_lso = ['gc', '33rd', '28th-s', '23rd-s', 'us', '3rd', '1st']
   end
 
   def menu

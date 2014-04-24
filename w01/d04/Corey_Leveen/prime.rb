@@ -1,7 +1,7 @@
 def prime?(int)
 
   case int
-  when 1, 2, 3, 5, 7
+  when 2, 3, 5, 7
     return true
   end
   if int % 2 == 0
@@ -18,8 +18,3 @@ def prime?(int)
     return true
   end
 end
-
-prime?(2)
-prime?(3)
-prime?(8)
-
