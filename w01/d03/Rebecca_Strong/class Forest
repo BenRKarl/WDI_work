@@ -1,0 +1,9 @@
+class Forest
+def initialize
+  puts "I have trees! Or do I?"
+    @trees = []
+    end
+end
+
+forest = Forest.new
+forest - Forest.new
