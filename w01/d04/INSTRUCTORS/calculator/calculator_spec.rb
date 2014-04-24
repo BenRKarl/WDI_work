@@ -1,4 +1,8 @@
-require_relative '../wdispec.rb'
+
+require_relative '../wdispec.rb'  # The version you were mananging
+# require_relative '../wdispec_instructor.rb'  # The version we refactored together
+
+
 require_relative 'calculator.rb'
 
 calc = Calculator.new
