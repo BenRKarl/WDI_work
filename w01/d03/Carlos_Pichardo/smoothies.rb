@@ -35,6 +35,7 @@ smoothie_ingredients = {
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
 def blend(smoothie_ingredients)
+  smoothie_ingredients.each {|key,value| print key.to_s.delete(' ')}
 end
 
 
@@ -44,6 +45,18 @@ end
 # FOR SAFETY'S SAKE When you create a new blender by default it should be off.
 # Blend the the smoothie array
 
-class Blender
+class Blender 
+
+  def mixed_strings(strings)
+    strings.split(" ").shuffle.join
+    
+  end
+
+  def ingred_arr(smoothie_ingredients)
+    mixed_strings(smoothie_ingredients.keys.shuffle.join(" ").gsub(/\s+, " "))
+
+  end
 end
+
+puts ingred_arr(smoothie_ingredients)
 
