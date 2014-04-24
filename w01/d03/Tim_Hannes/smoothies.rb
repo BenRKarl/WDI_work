@@ -38,6 +38,7 @@ def blend(smoothie_ingredients)
   mixed_ingredients = smoothie_ingredients.keys.join.gsub(' ', "").split("").shuffle.join
 end
 
+
 # create a class called Blender
 # It should have a method that takes an array of ingredients and returns a mixed string of characters.
 # Give the blender an on and off switch and only allow the blender to function when it's on.
@@ -45,6 +46,7 @@ end
 # Blend the the smoothie array
 
 class Blender
+<<<<<<< HEAD
   def mixer
     puts "Would you like to turn on the blender? (y / n)"
     if user_input = ('y')
@@ -54,3 +56,7 @@ class Blender
 
   end
 end
+=======
+end
+
+>>>>>>> a37bb935d733af032f211959b3cfc511de17c29d
