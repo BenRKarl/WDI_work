@@ -34,8 +34,15 @@ smoothie_ingredients = {
 # and output a mixed string of characters
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
+
+
 def blend(smoothie_ingredients)
+string_shuffle(smoothie_ingredients.keys.shuffle.join("").gsub(/\s+/, ""))
 end
+def string_shuffle(s)
+  s.split("").shuffle.join
+end
+puts blend(smoothie_ingredients)
 
 
 # create a class called Blender
@@ -45,5 +52,44 @@ end
 # Blend the the smoothie array
 
 class Blender
+attr_accessor :function
+
+def initialize
+  @function = false
 end
+
+def string_shuffle(s)
+  s.split("").shuffle.join
+end
+
+def mixer(ingredients_array)
+  if @function == false
+    puts "Turn on power?. (y)es or (n)o"
+    response = gets.chomp
+    if response == "y"
+      function_switch
+      else
+        print "Ok"
+    end
+    return
+  else
+    puts string_shuffle(ingredients_array.shuffle.join("").gsub(/\s+/, ""))
+  end
+end
+
+def function_switch
+  if @function == true
+    @function = false
+  else
+    @function = true
+end
+end
+end
+
+blend_one = Blender.new
+blend_one.function_switch
+puts blend_one.mixer(smoothie_ingredients.keys)
+
+
+
 
