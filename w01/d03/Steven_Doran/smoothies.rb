@@ -35,6 +35,11 @@ smoothie_ingredients = {
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
 def blend(smoothie_ingredients)
+  smoothie = [] #empty array
+  smoothie_ingredients.each { |ingredients, measurements| smoothie.push(ingredients) }    #populates smoothie array with ingredients (keys) from hash
+  smoothie2 = smoothie.join.delete" "   #string variable joining all array entries and deleting white space
+  smoothie = smoothie2.split(//).shuffle!   #inserts all letters from smoothies2 as entries in smoothie array and then shufflea the array
+  smoothie.join   #convert array into string
 end
 
 
@@ -45,5 +50,34 @@ end
 # Blend the the smoothie array
 
 class Blender
+
+  attr_accessor :switch, :smoothie_ingredients
+
+  def initialize
+    @switch = "off"
+    @smoothie_ingredients = []
+
+  end
+
+  def blend
+    smoothie = smoothie_ingredients.join.delete" "
+    smoothie = smoothie.split(//).shuffle!
+    smoothie.join 
+  end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
