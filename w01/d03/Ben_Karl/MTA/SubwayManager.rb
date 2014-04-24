@@ -1,5 +1,4 @@
 class SubwayManager
-  attr_accessor :network
   def initialize()
     @network = {}
     @network[:n] = ['ts', '34th', '28th-n', '23rd-n', 'us']
@@ -10,18 +9,24 @@ class SubwayManager
 
   def menu
     travel_plan = {}
+
     print "What train are you starting on? (n, l or s): "
     travel_plan[:start_train] = gets.chomp
+
     puts "At which station are you starting your trip?"
     print "Choose one of the following #{@network[travel_plan[:start_train].to_sym]}: "
     travel_plan[:start_station] = gets.chomp
+
     print "Which train will you end your trip on? (n, l or s): "
     travel_plan[:stop_train] = gets.chomp
+
     puts "At which stop will you end?"
     print "Choose one of the following #{@network[travel_plan[:stop_train].to_sym]}: "
     travel_plan[:stop_station] = gets.chomp
+
     # prompts (puts) and allow the user to enter information (gets)
     # consider defining values keys for :start_train, :start_station, :stop_train, :stop_station
+
     return travel_plan
   end
   #travel_plan = {:start_train=>"INPUT", :start_station=>"INPUT", :stop_train=>"INPUT", :stop_station=>"INPUT"}
