@@ -39,14 +39,26 @@ class SubwayManager
 
     if travel_plan[:start_train] == travel_plan[:stop_train]
       total_length_of_trip = (((@network[travel_plan[:start_train].to_sym]).index(travel_plan[:start_station])) - ((@network[travel_plan[:stop_train].to_sym]).index(travel_plan[:stop_station]))).abs
+    else
+
+      first_leg = 
+      (((@network[:travel_plan[:start_train].to_sym]).index(travel_plan[:start_station])) - 
+       ((@network[:travel_plan[:start_train].to_sym]).index(travel_plan["us"]))).abs
+      
+      second_leg =
+      (((@network[:travel_plan[:stop_train].to_sym]).index(travel_plan[:stop_station])) - 
+       ((@network[:travel_plan[:stop_train].to_sym]).index(travel_plan["us"]))).abs
+
+      total_length_of_trip = frist_leg + second_leg
+
     end
 
 
       # {
       # :start_train => "n",
       # :start_station => "28th-n",
-      # :stop_train => "n",
-      # :stop_station => "us"
+      # :stop_train => "s",
+      # :stop_station => "8th"
       # }
 
 
