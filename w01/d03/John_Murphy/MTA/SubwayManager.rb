@@ -1,3 +1,4 @@
+
 class SubwayManager
   def initialize()
     n = ['ts', '34th', '28th-n', '23rd-n', 'us']
