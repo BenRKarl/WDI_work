@@ -49,11 +49,8 @@ class SubwayManager
 
   def travel_distance(travel_plan)
     # Calculate the total_length_of_trip here!
-    # Check to see if trip starts or stops at the junction. If yes, then only calculate the distance from start_station to 'us'
-    if travel_plan[:start_station] == 'us' || travel_plan[:stop_station] == 'us'
-      total_length_of_trip = (@network[travel_plan[:start_train]].index(travel_plan[:start_station]) - @network[travel_plan[:start_train]].index('us')).abs
-    #Check if stations are on the same line.
-    elsif travel_plan[:start_train] == travel_plan[:stop_train]
+    # Check to see if trip starts or stops at the junction or is on same line. If yes, then only calculate the distance from start_station to stop_station
+    if travel_plan[:start_station] == 'us' || travel_plan[:stop_station] == 'us' || travel_plan[:start_train] == travel_plan[:stop_train]
       total_length_of_trip = (@network[travel_plan[:start_train]].index(travel_plan[:start_station]) - @network[travel_plan[:start_train]].index(travel_plan[:stop_station])).abs
     else
       #This doosy plugs the values of the travel_plan key into the init hash to get the index values and then uses .abs to calculate the difference.
