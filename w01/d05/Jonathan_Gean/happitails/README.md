@@ -86,8 +86,4 @@ while response != "Q"
 end
 
 ```
----
-
-##Bonus
-- Create a seed.rb file that initializes a shelter as well as a few animals and clients so you have some data to start with when you run your program.
 
