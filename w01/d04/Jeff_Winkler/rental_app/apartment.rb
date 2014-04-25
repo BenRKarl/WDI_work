@@ -1,7 +1,7 @@
 
 class Apartment
 
-  attr_accessor :unit, :rent, :sqft, :bedrooms, :bathrooms, :tenants
+  attr_accessor :unit, :rent, :sqft, :bedrooms, :bathrooms, :tenants, :building
   def initialize(unit, rent, sqft, bedrooms, bathrooms)
     @unit = unit
     @rent = rent
@@ -9,6 +9,7 @@ class Apartment
     @bedrooms = bedrooms
     @bathrooms = bathrooms
     @tenants = []
+    @building = "unassigned"
   end
 
   def occupied?
