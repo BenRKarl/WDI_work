@@ -33,4 +33,5 @@ describe Person do
     profile = "Rebecca is 25 years old and earns $100000 per year."
     expect(person.to_s).to eq profile
   end
+
 end
