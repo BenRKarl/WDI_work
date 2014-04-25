@@ -22,10 +22,12 @@ main_choice = gets.chomp.to_i
   if main_choice = 1
     print "Building:: Please select an option: "
     puts "1) Register building 2) Status of building"
-    sub_menu1 = gets.chomp
+    sub_menu = gets.chomp
     if sub_menu == 1
+      building_arg = []
       puts "please indicate Address..."
       @address = gets.chomp
+      building_arg << @address
       puts "the number of floors..."
       @num_floors = gets.chomp
       puts "Building Style..."
@@ -36,7 +38,7 @@ main_choice = gets.chomp.to_i
       @is_walkup = gets.chomp
       puts "any included apartments..."
       @apartments = gets.chomp
-      Building.new(@address, @style, @has_doorman, @is_walkup, @num_floors, @apartments)
+      Building.new(building_arg)
     elsif sub_menu == 2
       puts "Buildings"
     end
