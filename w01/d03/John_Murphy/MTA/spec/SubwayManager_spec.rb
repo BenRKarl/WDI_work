@@ -6,10 +6,10 @@ describe SubwayManager, "#travel_distance" do
 
     travel_plan = {}
 
-    travel_plan[:start_train] = :n
-    travel_plan[:start_station] = 'ts'
-    travel_plan[:stop_train] = :l
-    travel_plan[:stop_station] = '6th'
+    travel_plan[:sl] = :n
+    travel_plan[:ss] = 'ts'
+    travel_plan[:el] = :l
+    travel_plan[:es] = '6th'
 
     actual = subway_manager.travel_distance(travel_plan)
     expected = 5
