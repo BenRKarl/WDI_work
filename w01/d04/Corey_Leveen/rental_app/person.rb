@@ -11,4 +11,3 @@ class Person
     return "#{name} is #{age} years old and earns $#{income} per year."
   end
 end
-
