@@ -15,7 +15,8 @@ class Calculator
     x * y
   end
 
-  def div_zero (x, y)
-    return NaN if y == 0
+  def div_zero (x)
+    if x / 0
+      return NaN
   end
 end

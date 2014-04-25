@@ -49,7 +49,6 @@ class SubwayManager
     }  
   end 
 
-
   def travel_distance(menu)       
 # Get absolute value of difference between stops
       def absolute(num)
