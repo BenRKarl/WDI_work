@@ -53,4 +53,3 @@ class Blender
     end
   end
 end
-

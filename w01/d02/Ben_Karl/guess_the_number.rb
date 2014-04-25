@@ -10,7 +10,7 @@ while guess != comp_choice
     puts "Sorry, your guess is too high"
   elsif guess < comp_choice
     puts "Sorry, your guess is too low"
-  else
+  els
     puts "Is that even a number? Try again."
   end
 
