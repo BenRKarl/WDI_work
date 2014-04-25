@@ -29,7 +29,8 @@ describe Client do
   end
 
   it "can describe itself" do
-    expect(@client.to_s).to eql("Beth is a 30 year old with 0 pets")
+    string_version_of_object = @client.to_s
+    expect(string_version_of_object).to eql("Beth is a 30 year old with 0 pets")
   end
 
   it 'counts the number of pets' do
