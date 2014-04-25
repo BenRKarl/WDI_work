@@ -1,5 +1,9 @@
+require 'pry'
 # This exercise is about nested arrays and hashes
 # Questions are at the bottom of the code
+
+
+
 
 general_assembly = {
   moto: 'TRANSFORMING THINKERS INTO CREATORS.',
@@ -15,7 +19,7 @@ general_assembly = {
 }
 
 # GA has many campuses
-c1 = {name: 'GA Berlin (Betahaus)', address: '19 Prinzessinnenstraße, Berlin 10969', email: 'berlin@generalassemb.ly'}
+c1 = {name: 'GA Berlin (Betahaus)', address: '19 Prinzessinnenstrasse, Berlin 10969', email: 'berlin@generalassemb.ly'}
 c2 = {name: 'GA Berlin', address: 'Winterfeldtstrasse 21, Berlin 10781', email: 'berlin@generalassemb.ly'}
 c3 = {name: 'GA Boston', address: '101 Main Street, 14th floor, Cambridge 02142', email: 'boston@generalassemb.ly'}
 c4 = {name: 'GA Hong Kong', address: 'The Hive, 21/F, The Phoenix, Luard Road No. 23, Wan Chai', email: 'hk@generalassemb.ly'}
@@ -49,3 +53,16 @@ general_assembly[:campuses] = {
 # How many campuses does GA have?
 # How many campuses does GA have in Berlin?
 # Print out all GA's campuses addresses
+
+general_assembly[:topics].index("Web Development")
+general_assembly[:campuses].length
+general_assembly[:campuses].values.flatten.count
+general_assembly[:campuses][:berlin].count
+general_assembly[:campuses].values.flatten.each do |x| puts x[:address]
+
+
+
+
+
+
+binding.pry
