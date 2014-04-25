@@ -1,5 +1,5 @@
 class Person
-  attr_accessor :name, :age, :income,
+  attr_accessor :name, :age, :income
 
   def initialize(name, age, income)
     @name = name
@@ -12,7 +12,7 @@ class Person
   # end
 
   def to_s
-    return "#{@name} is #{@age} years old and earns #{@income} per year."
+    return "#{@name} is #{@age} years old and earns $#{@income} per year."
   end
 
 end
