@@ -1,6 +1,6 @@
 class Apartment
 
-  attr_accessor :unit, :rent, :sqft, :bedrooms, :bathrooms, :occupied, :tenants, :profile
+  attr_accessor :unit, :rent, :sqft, :bedrooms, :bathrooms, :tenants, :profile
 
   def initialize(unit, rent, sqft, bedrooms, bathrooms)
     @unit = unit
@@ -8,7 +8,6 @@ class Apartment
     @sqft = sqft
     @bedrooms = bedrooms
     @bathrooms = bathrooms
-    @occupied
     @tenants = []
     @profile
   end
