@@ -1,3 +1,6 @@
+
+
+
 problem = false
 print "Good to go!" unless problem
 then print "hmmm..."
@@ -430,3 +433,51 @@ my_hash = {
 }
 
 
+
+
+
+
+
+class Forest
+  attr_accessor :trees
+  def initialize
+    @trees = []
+  end
+end
+
+100.times do
+  Forest.new
+end
+
+
+
+
+
+
+
+
+
+
+ a class is an object factory
+
+
+
+def to_s
+  "An awesome forest."
+
+f= Forest.new
+f.inspect
+
+
+
+
+class Ferrari
+  attr_accessor :tires
+  def initialize
+      @tires = 'stock'
+    end
+
+
+def tires
+  @tires
+end
