@@ -3,7 +3,7 @@ require_relative '../building'
 
 describe Building do
   def new_building
-    Building.new('21 East 21st Street', 'Art-Deco', 8)
+    Building.new('21 East 21st Street', 'Art-Deco', 8, 0, {})
   end
   # address, style, floors, (apartment count)
   it 'has a changeable address' do
