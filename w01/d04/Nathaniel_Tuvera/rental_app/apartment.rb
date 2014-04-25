@@ -16,7 +16,7 @@ class Apartment
     puts "This is an unoccupied #{sqft}-sqft apartment priced at #{@price}.  It has #{num_beds} bedrooms and #{num_baths} bath(s)."
     else @is_occupied == false
     puts "This is an occupied #{sqft}-sqft apartment priced at #{@price}.  It has #{num_beds} bedrooms and #{num_baths} bath(s)."
+    end
   end
-
 
 end
