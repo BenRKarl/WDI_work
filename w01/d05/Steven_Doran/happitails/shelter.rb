@@ -14,7 +14,7 @@ class Shelter
   end
 
   def display_clients
-    @clients.each { |client, v| puts client}
+    @clients.each { |client, client_index| puts client}
   end
 
   def animal_count
@@ -22,19 +22,19 @@ class Shelter
   end
 
   def display_animals
-    @animals.each { |animal, v| puts animal}
+    @animals.each { |animal, animal_index| puts animal}
   end
 
   def give_away_animal(animal_name)
     @animals.delete(animal_name)
   end
 
-  def accept_animal(animal_name, value)
-    @animals[animal_name] = value
+  def accept_animal(animal_name, animal_index)
+    @animals[animal_name] = animal_index
   end
 
-  def accept_client(client_name, value)
-    @clients[client_name] = value
+  def accept_client(client_name, client_index)
+    @clients[client_name] = client_index
   end
 
   def to_s
