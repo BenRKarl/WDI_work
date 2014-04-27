@@ -15,7 +15,7 @@
 
 |Monday	|Tuesday|Wednesday	|Thursday	|Friday
 |:-----	|:-----	|:-----		|:-----		|:-----
-|HTTP Protocol, Sinatra|ERB, Bundler, HTML & CSS|APIs, HTML & CSS|Ruby Blocks|Review|
+|HTTP Protocol, Sinatra|ERB, Bundler, HTML & CSS|APIs, HTML & CSS|Ruby Blocks|Recap, Sinatra & APIs Lab|
 
 
 ---
