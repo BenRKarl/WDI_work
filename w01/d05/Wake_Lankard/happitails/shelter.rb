@@ -25,9 +25,11 @@ class Shelter
     @clients[client_name] = client
   end
 
-  def give_away_animal(animal)
-    @animals.delete(animal.name)
-    puts "Animal given away: #{animal}"
+  def give_away_animal(name)
+    temp = @animals[name]
+    @animals.delete(name)
+    puts "Animal given away: #{name}"
+    return temp
   end
 
   def accept_animal(name, animal)
