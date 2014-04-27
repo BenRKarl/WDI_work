@@ -16,6 +16,10 @@ class Animal
 
   end
 
+  def accept_toy(toy)
+    @toys.push(toy)
+  end
+  
 
 
   # When we display the animal using puts or print, the
