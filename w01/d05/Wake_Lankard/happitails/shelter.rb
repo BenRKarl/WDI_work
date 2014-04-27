@@ -16,21 +16,30 @@ class Shelter
     @animals.count 
   end
 
+
   def display_animals
-    puts @animals.each
+    @animals.keys.each { |x| puts x }
   end
 
   def accept_client (client_name, client)
     @clients[client_name] = client
   end
 
-  def give_away_animal(name)
-    @animals.delete(name)
+  def give_away_animal(animal)
+    @animals.delete(animal.name)
+    puts "Animal given away: #{animal}"
   end
 
   def accept_animal(name, animal)
     @animals[name]=animal
+    puts "Animal accepted: #{animal}"
+    display_animals
   end
+
+  def display_clients
+    @clients.keys.each { |x| puts x }
+  end
+
 
   def to_s
     "#{@name} shelter at #{@address} has #{animal_count} animals and #{client_count} people"

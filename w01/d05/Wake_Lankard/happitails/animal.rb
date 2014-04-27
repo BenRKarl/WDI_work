@@ -16,11 +16,19 @@ class Animal
 
   end
 
+
+
   # When we display the animal using puts or print, the
   #   to_s method is called to pretty print an Animal
   def to_s
 
-    "#{name} is a #{age} year old #{species} that loves " + toys.join(", ")
+    string1 = "#{name} is a #{age} year old #{species} "
+    if toys.any? 
+      string2 = "that loves " + toys.join(", ")
+    else
+      string2 = ""
+    end
+    string1 + string2
    
   end
-  end
+end

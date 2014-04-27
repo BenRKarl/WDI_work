@@ -18,11 +18,13 @@ def to_s
 end
 
 def display_pets()
-  @pets[name]
+  @pets.keys.each { |x| puts x }
 end
 
-def accept_pet(name, species)
-  @pets[name] = species
+def accept_pet(name, animal)
+  @pets[name] = animal
+  puts "Accepted pet: #{animal}"
+  #todo: pull the accepted pet name from the last member of the pets has to make sure that it was accepted.
 end
 
 def give_away_pet(name)
