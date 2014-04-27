@@ -1,4 +1,4 @@
-puts "I am a basic Calculator. Do you want to do some math? Please answer YES or NO."
+ruputs "I am a basic Calculator. Do you want to do some math? Please answer YES or NO."
   math_question = gets.chomp.upcase[0]
 
 while math_question == "Y" do
