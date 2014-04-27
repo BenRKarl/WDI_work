@@ -5,7 +5,7 @@ class Shelter
     @name = name
     @address = address
     @clients = {}
-    @animals = {}
+    @animals = {"Fluffy" => "Cat"}
   end
 
   def client_count

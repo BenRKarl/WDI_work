@@ -17,12 +17,15 @@ def menu(shelter)
   puts ""
   command = gets.chomp.upcase
 
-
   case command
+
   when "A"
-     display_animals
+     shelter.display_animals
+
   when "B"
-     display_clients
+     shelter.display_clients
+     puts "No clients to display." if @clients.nil?
+
   when "C"
    puts "What's the animal's name?"
    animal_name = gets.chomp
@@ -31,16 +34,38 @@ def menu(shelter)
    puts "What's the animal's species?"
    animal_species = gets.chomp
    @animals[animal_name] = Animal.new(animal_name, animal_age, animal_species)
+   puts "Your animal was created! #{animal_name} the #{animal_species} is #{animal_age} years old."
 
   when "D"
     # Create Client
    puts "Please enter your name."
    client_name = gets.chomp
-   accept_client(client_name)
+   puts "Please enter your age."
+   client_age = gets.chomp.to_i
+   @clients[client_name] = Client.new(client_name, client_age)
+   puts "#{@clients[client_name]} is #{client_age} years old and is now a client of
+   #{shelter.name} at #{shelter.address}."
+
   when "E"
     # Adopt Animal
+    puts "Which animal would you like to adopt?"
+    display_animals
+    adoption_choice = gets.chomp
+    @animals[adoption].give_away_animal
   when "F"
     # Put Animal Up For Adoption
+    puts "What's your name?"
+    client_to_give_up_animal = gets.chomp
+    if @clients[client_to_give_up_animal] == nil
+      puts "You are not a registered client. Please create yourself using 'D'."
+    else
+      puts "What's the name of the animal you would like to put up for adoption?"
+      name_of_animal = gets.chomp
+      @animals[name_of_animal] = @pets[name_of_animal]
+      @pets[name_of_animal].delete
+      puts "#{name_of_animal} is now kept at #{shelter.name} at #{shelter.address}"
+      puts "#{name_of_animal} no longer belongs to #{@clients[client_to_give_up_animal]}."
+    end
   when "Q"
     Kernel.exit
   end
