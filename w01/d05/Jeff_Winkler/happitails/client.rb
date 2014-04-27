@@ -2,10 +2,10 @@ class Client
 
 attr_accessor :name, :age, :pets
 
-  def initialize(name, age)
+  def initialize(name, age, pets={})
     @name = name
     @age = age
-    @pets = {}
+    @pets = pets
   end
 
   def pet_count
@@ -15,6 +15,25 @@ attr_accessor :name, :age, :pets
   def to_s
     #Beth is a 30 year old with 0 pets
     "#{@name} is a #{@age} year old with #{pet_count} pets"
+  end
+
+  def description
+    if @pets.empty?
+      puts "#{@name} is a #{@age} year old with no pets."
+    else
+      if pet_count == 1
+        print "#{@name} is a #{@age} year old with #{pet_count} pet:  "
+      else
+        print "#{@name} is a #{@age} year old with #{pet_count} pets:  "
+      end
+      @pets.each do |pet_name, type|
+        print "#{pet_name} the #{type.species}"
+        if pet_name != @pets.keys.last
+          print ", "
+        end
+      end
+      puts ""
+    end
   end
 
   def display_pets
