@@ -28,7 +28,7 @@ class Client
 		pet_names.each do |pet_name|
 			puts pet_name
 		end
-	end
+		end
 
 	def pet_names
 		@pets.keys
