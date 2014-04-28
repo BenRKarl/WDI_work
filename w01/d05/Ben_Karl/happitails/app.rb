@@ -26,7 +26,7 @@ puts "..... LOADED BRO!"
 
 def menu new_shelter
 
-  #puts "\e[H\e[2J" <--- Putting menu on mew screen. Doesn't work.
+  #puts "\e[H\e[2J"
   puts ""
   puts ""
   puts Rainbow("Welcome to #{new_shelter.name} Shelter!").yellow
