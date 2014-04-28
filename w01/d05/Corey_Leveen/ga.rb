@@ -1,5 +1,6 @@
 # This exercise is about nested arrays and hashes
 # Questions are at the bottom of the code
+require 'pry'
 
 general_assembly = {
   moto: 'TRANSFORMING THINKERS INTO CREATORS.',
@@ -43,9 +44,17 @@ general_assembly[:campuses] = {
 
 # Questions: Write a line of code for each
 # Example: How many topics does GA have?
-# ga[:topics].count => 7
+general_assembly[:topics].size
 # What number topic is 'Web Development'?
+general_assembly[:topics].index('Web Development')
 # How many cities does GA have campuses in?
+general_assembly[:campuses].count
 # How many campuses does GA have?
-# How many campuses does GA have in Berlin?
-# Print out all GA's campuses addresses
+general_assembly[:campuses].values.flatten.size
+# How many campuses does GA have in Berlin?XX
+# Print out all GA's campuses addresses XX
+general_assembly[:campuses].values.flatten.each do |campus_hash|
+  puts campus_hash[:address]
+end
+
+binding.pry
