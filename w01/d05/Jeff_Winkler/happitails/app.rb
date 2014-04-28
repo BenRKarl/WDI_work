@@ -140,7 +140,7 @@ def create_client(shelter_obj)
     puts "Any other pets?  (Y)es or (N)o."
     has_pets = gets.chomp.downcase[0]
   end
-
+  puts `clear`
 end
 
 def make_animal(shelter_obj, client_name=nil)
