@@ -5,7 +5,7 @@ class Shelter
     @name = name
     @address = address
     @clients = {}
-    @animals = {"Fluffy" => "Cat"}
+    @animals = {}
   end
 
   def client_count
@@ -20,16 +20,16 @@ class Shelter
     "#{@name} shelter at #{@address} has #{@animals.length} animals and #{@clients.length} people"
   end
 
-  def accept_animal(animal_name, dof)
-    @animals[animal_name] = dof
+  def accept_animal(animal_name, animal_object)
+    @animals[animal_name] = animal_object
   end
 
   def give_away_animal(animal_to_give_away)
     @animals.delete(animal_to_give_away)
   end
 
-  def accept_client(client_name, client)
-    @clients[client_name] = client
+  def accept_client(client_name, client_object)
+    @clients[client_name] = client_object
   end
 
   def display_animals

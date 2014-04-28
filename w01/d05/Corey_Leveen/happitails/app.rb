@@ -24,7 +24,6 @@ def menu(shelter)
 
   when "B"
      shelter.display_clients
-     puts "No clients to display." if @clients.nil?
 
   when "C"
    puts "What's the animal's name?"
@@ -33,8 +32,9 @@ def menu(shelter)
    animal_age = gets.chomp.to_i
    puts "What's the animal's species?"
    animal_species = gets.chomp
-   @animals[animal_name] = Animal.new(animal_name, animal_age, animal_species)
-   puts "Your animal was created! #{animal_name} the #{animal_species} is #{animal_age} years old."
+   new_animal = Animal.new(animal_name, animal_age, animal_species)
+   shelter.accept_animal(animal_name, new_animal)
+   puts "Your animal was created! #{animal_name} the #{animal_species} is #{animal_age} years old.\n"
 
   when "D"
     # Create Client
@@ -42,14 +42,14 @@ def menu(shelter)
    client_name = gets.chomp
    puts "Please enter your age."
    client_age = gets.chomp.to_i
-   @clients[client_name] = Client.new(client_name, client_age)
-   puts "#{@clients[client_name]} is #{client_age} years old and is now a client of
-   #{shelter.name} at #{shelter.address}."
+   new_client = Client.new(client_name, client_age)
+   shelter.accept_client(client_name, new_client)
+   puts "#{client_name} is #{client_age} years old and is now a client of #{shelter.name} at #{shelter.address}."
 
   when "E"
     # Adopt Animal
     puts "Which animal would you like to adopt?"
-    display_animals
+    shelter.display_animals
     adoption_choice = gets.chomp
     @animals[adoption].give_away_animal
   when "F"
