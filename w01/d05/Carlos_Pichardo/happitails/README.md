@@ -46,7 +46,7 @@
 
 ```ruby
 
-def menu
+def menu(shelter)
   puts ""
   puts "Welcome to HappiTails Animal Shelter!"
   puts "Please choose from the menu below: "
@@ -65,6 +65,7 @@ def menu
   case command
   when "A"
     # Display Animals
+    shelter.display_animals
   when "B"
     # Display Clients
   when "C"
@@ -80,6 +81,7 @@ def menu
   end
 end
 
+shelter = Shelter.new(name, address, )
 response = menu
 while response != "Q"
   response = menu
