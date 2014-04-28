@@ -8,13 +8,21 @@ class Animal
   # Used when creating a new animal.
   #   Example:
   #       Animal.new('Timmy', 4, 'toad')
-  def initialize(name, age, species)
-
+  def initialize(name, age, species, toys = [])
+    @name = name
+    @age = age
+    @species = species
+    @toys = toys
   end
 
   # When we display the animal using puts or print, the
   #   to_s method is called to pretty print an Animal
   def to_s
-
+  #Tiny is a 3 year old cat that loves mice, yarn
+  if @toys.empty?
+    "#{@name} is a #{@age} year old #{@species}"
+  else
+    "#{@name} is a #{@age} year old #{@species} that loves #{@toys.join(', ')}"
+  end
   end
 end

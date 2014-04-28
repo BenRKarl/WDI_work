@@ -56,7 +56,7 @@ describe Client do
 
   it 'accepts a pet' do
     dof_pet = Object.new
-    @client.accept_pet('Dof', dof_pet)
+    @client.adopt('Dof', dof_pet)
     expect(@client.pets['Dof']).to eq dof_pet
   end
 
