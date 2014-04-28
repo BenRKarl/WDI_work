@@ -1,16 +1,6 @@
-def menu
-
-require_relative 'animal'
-require_relative 'client'
 require_relative 'shelter'
 
-shelter = Shelter.new("Happytails", "521 West End Ave")
-# Create some existing animals &  clients
-shelter.accept_animal("Sammy", "cat")
-shelter.accept_animal("Buck", "dog")
-shelter.accept_client("Melanie", 24)
-shelter.accept_client("Andru", 28)
-
+def menu(shelter)
   puts `clear`
   puts "Welcome to Happytails Animal Shelter"
   puts "Please choose what you want to do:"
@@ -49,7 +39,7 @@ shelter.accept_client("Andru", 28)
     puts "What's the client's ID?" 
     new_client = gets.chomp.downcase
     shelter.accept_client(client_name, new_client)
-    puts "There are #{shelter.animal_count} client(s) at this shelter."
+    puts "There are #{shelter.client_count} client(s) at this shelter."
     puts "Clients at the shelter include:"
     shelter.display_clients
 
@@ -81,4 +71,13 @@ shelter.accept_client("Andru", 28)
 
 end
 
-menu
+
+shelter = Shelter.new("Happytails", "521 West End Ave")
+
+# Create some existing animals &  clients
+shelter.accept_animal("Sammy", "cat")
+shelter.accept_animal("Buck", "dog")
+shelter.accept_client("Melanie", 24)
+shelter.accept_client("Andru", 28)
+
+menu(shelter)
