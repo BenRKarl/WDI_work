@@ -20,7 +20,7 @@ class Shelter
 
   def display_animals
   	@animals.each do |name, obj|
-  		puts name
+  		puts "#{name} the #{obj} "
   	end
   end 
   def display_clients
