@@ -1,14 +1,27 @@
+# require 'animal.rb'
+# require 'shelter.rb'
+
 class Client
 
-  attr_accessor :name, :age
+  attr_reader :name, :age
+  attr_writer: :animals
 
-  def initialize(name, age)
-    @name = name
-    @age = age
-    # @@clients = 0
-  end
+def initialize(name, age)
+@name = name
+@age = age
+@animals = animals
+# @@clients = 0
 
-  def name()
-  end
 
+def to_s
+  puts "#{name} is #{age}" + animals
 end
+
+
+c = Client.new('Beth', 30')
+puts c.inspect
+
+
+
+
+
