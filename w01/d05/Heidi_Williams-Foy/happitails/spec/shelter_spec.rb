@@ -18,6 +18,10 @@ describe Shelter do
     expect(@shelter.name).to eq 'SuprHappiTails'
   end
 
+  it "can have another name" do
+    shelter = Shelter.new('OtherName', 'SomeAddress')
+    expect(shelter.name).to eq 'OtherName'
+  end
 
   it 'can store clients' do
     @shelter.clients['Lichard'] = "a client"
