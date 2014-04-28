@@ -13,16 +13,26 @@ class Apartment
   end
 
   def occupied?
-   !@tenants.empty?
+   @tenants.any? #SAME AS !@tenants.empty?, empty? and any? are opposites
   end
 
   def tenants
     @tenants
   end
 
-  def to_s
-    puts = "#{@unit} costs $#{@rent} a month, has #{@sqft} sqft, has #{@bedrooms} bedrooms and #{@bathrooms} bathrooms."
+  def to_s #THIS REDEFINES to_s WITHIN THE CLASS APARTMENT
+    "#{@unit} costs $#{@rent} a month, has #{@sqft} sqft, has #{@bedrooms} bedrooms and #{@bathrooms} bathrooms."
   end 
+
+  # def test_method
+  #   puts "I am a method."
+  # end
+
+  # def test_method2r
+  #   var = 44
+  #   var.to_s
+  #   puts var
+  # end
 
 end
 
