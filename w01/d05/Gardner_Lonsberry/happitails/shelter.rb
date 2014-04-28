@@ -6,7 +6,6 @@ class Shelter
   attr_reader :shelter, :animals, :clients
   attr_writer :name, :address
 
-
   def initialize(animals, clients)
     @address = address
     @name = name
@@ -30,17 +29,17 @@ class Shelter
     @client.count
   end
 
-  # @shelter = Shelter.new("x", "x")
+ @shelter = Shelter.new("x", "x")
 
 
-# def initialize(shelter, animal, clients)
-#   @shelter = {}
-#   @animal = {}
-#   @clients = clients
-#   #@clients = clients
-# end
+  # def initialize(shelter, animal, clients)
+  #   @shelter = {}
+  #   @animal = {}
+  #   @clients = clients
 
-# def self.create(params)
-#   @name = params[:name]
-#   @age  = params[:age]
-# end
+  end
+
+def self.create(params)
+  @name = params[:name]
+  @age  = params[:age]
+end
