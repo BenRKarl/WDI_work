@@ -4,7 +4,7 @@ describe Animal do
   before :each do
     @animal = Animal.new("Tiny", 3, "cat")
   end
-
+#PASSES
   describe "#new" do
     it "takes three parameters and returns an Animal object" do
       expect(@animal).to be_an_instance_of(Animal)
