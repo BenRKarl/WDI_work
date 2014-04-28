@@ -1,6 +1,6 @@
-require_relative 'happitails/animal'
-require_relative 'happitails/shelter'
-require_relative 'happitails/client'
+require_relative ('animal.rb')
+require_relative ('shelter.rb')
+require_relative ('client.rb')
 
 def menu(shelter)
   puts ""
@@ -20,36 +20,27 @@ def menu(shelter)
 
   case command
   when "A"
-    # Display Animals
-   puts shelter.display_animals
+    #Display Animals
+    shelter.display_animals
   when "B"
-    # Display Clients
-   puts shelter.display_clients
+    shelter.display_client
   when "C"
-    # Create Animal
-    client.accept_pet
+    shelter.accept_animal('')
   when "D"
-    shelter.accept_client
     # Create Client
   when "E"
     # Adopt Animal
-    client.accept_pet
   when "F"
     # Put Animal Up For Adoption
-    client.give_away_pet
   when "Q"
     Kernel.exit
   end
 end
 
-
 shelter = Shelter.new('happitails', '10 est')
 
-response = menu(shelter)
+shelter = menu(shelter)
+
 while response != "Q"
-  response = menu(shelter)
+  response = menu shelter
 end
-
-client = Client.new('Beth', 30)
-
-
