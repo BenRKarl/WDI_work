@@ -1,7 +1,8 @@
-
-require 'faker'
-require 'sinatra'
-require 'sinatra/reloader'
+require 'bundler/setup'
+# Bundler.require
+# require 'faker'
+# require 'sinatra'
+# require 'sinatra/reloader'
 
 get '/' do
   @name = Faker::Name.name
