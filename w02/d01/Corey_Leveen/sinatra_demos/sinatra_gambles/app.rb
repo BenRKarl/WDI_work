@@ -43,8 +43,35 @@ get '/magic8ball/:question' do
 erb :magic8ball
 end
 
-get 'rps/:choice' do
-@choice = params[:choice]
-computer_choice = ["Rock", "Paper", "Scissors"].sample
-erb :rps
+get '/rps/:choice' do
+  @choice = params[:choice]
+  @computer_choice = ["rock", "paper", "scissors"].sample
+  @outcome = ''
+  case @choice
+    when 'rock'
+      if @computer_choice == "paper"
+        @outcome = 'lose'
+      elsif @computer_choice == "scissors"
+        @outcome = 'win'
+      else
+        @outcome = 'tie'
+      end
+    when 'paper'
+      if @computer_choice == "rock"
+        @outcome = 'win'
+      elsif @computer_choice == "scissors"
+        @outcome = 'lose'
+      else
+        @outcome = 'tie'
+      end
+    when 'scissors'
+      if @computer_choice == "rock"
+        @outcome = 'lose'
+      elsif @computer_choice == "paper"
+        @outcome = 'win'
+      else
+        @outcome = 'tie'
+      end
+  end
+  erb :rps
 end
