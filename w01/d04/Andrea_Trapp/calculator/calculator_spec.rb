@@ -32,4 +32,4 @@ assert_equal(actual, expected, test)
 test = "it doesn't allow divison by zero"
 actual = calc.divide(1,0)
 expected = "NaN"
-assert_equal(actual, expected)
+assert_equal(actual, expected, test)
