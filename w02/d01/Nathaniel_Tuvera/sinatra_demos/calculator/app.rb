@@ -33,10 +33,17 @@ get '/divide/:num1/:num2' do
   erb :divide
 end
 
-# get '/sqrt' do
+get '/powers/:num1/:num2' do
+  @num1 = params[:num1]
+  @num2 = params[:num2]
+  @result = params[:num1].to_i ** params[:num2].to_i
+  erb :powers
+end
 
-# end
+get '/sqrt/:num1' do
+  @num1 = params[:num1]
+  @result = Math.sqrt(params[:num1].to_i)
+  erb :sqrt
+end
 
-# get '/powers' do
 
-# end
