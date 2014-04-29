@@ -59,7 +59,8 @@ while !quit
 				new_apartment = Apartment.new(unit, rent, sqft, bedrooms, bathrooms)
 				building.apartments[unit] = new_apartment
 
-				puts building.to_s
+				# puts building.to_s --> puts calls to_s 
+				puts building
 			end
 		when "t"
 			# check if there is a least one building
@@ -105,8 +106,9 @@ while !quit
 							new_tenant = Person.new(name, age, income)
 							building.apartments[unit].tenants << new_tenant
 
-						else
-							puts apartment.to_s
+						else						
+							# puts apartment.to_s
+							puts apartment
 							puts "Sorry, this apartment is already occupied. Please choose another one."													
 						end
 						
