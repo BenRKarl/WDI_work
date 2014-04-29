@@ -1,0 +1,93 @@
+class Calculator
+
+#attr_accessor :
+
+  #def initialize (a,b)
+  #end
+
+# HERE'S THE LOOP
+  def main_loop
+    print "(bas)ic, (adv)anced, (q)uit"
+    valid_input = ['adv', 'bas', 'q']
+    user_input = gets.chomp.downcase
+    case user_input
+    when 'bas' then basic_calc
+    when 'adv' then advanced_calc
+    when 'q' then quit
+    end
+  end
+
+  def basic_calc
+    puts "(ad)d, (s)ubtract, (m)ultiply, (d)ivide"
+      user_input = gets.chomp
+    puts "Pick a number."
+      a = gets.chomp.to_f
+    puts "Pick a number."
+      b = gets.chomp.to_f
+    if user_input == "ad"
+      puts "Hey"
+      self.ad(a, b)
+    elsif user_input == "s"
+      s(a, b)
+    elsif user_input == "m"
+      m(a, b)
+    elsif user_input == "d"
+      d(a, b)
+    end
+  end
+
+  def advanced_calc
+    puts "(p)ower, (sq)uare root"
+      user_input = gets.chomp [0]
+    puts "Pick a number."
+      number1 = gets.chomp.to_f
+    puts "Pick a number."
+      number2 = gets.chomp.to_f
+    if user_input == "p"
+      p(a, b)
+    elsif user_input == "sq"
+      sq(a, b)
+  end
+
+  def quit
+    'q'
+  end
+
+#HERE'S THE ACTUAL MATH FUNCTIONS
+  def ad(a, b)
+    answer = a + b
+    puts answer
+  end
+
+  def s(a, b)
+    answer = a - b
+  end
+
+  def d(a, b)
+    if b == 0
+      puts "You can't divide by 0!!"
+    else
+      answer = (a / b).to_f
+    end
+  end
+
+  def m(a, b)
+    answer = a * b
+  end
+
+  def e(a, b)
+    answer = a ** b
+  end
+
+  def sq(a)
+    answer = Math.sqrt(a)
+  end
+end
+
+my_calc = Calculator.new
+#TO MAKE IT A LOOP
+  response = my_calc.main_loop
+  while response != 'q'
+    response = my_calc.main_loop
+  end
+end
