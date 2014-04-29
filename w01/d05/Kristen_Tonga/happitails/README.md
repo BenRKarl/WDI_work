@@ -1,4 +1,4 @@
-#HappiTails
+rs#HappiTails
 - You are the manager at HappiTails animal shelter.
 - You need to manage your shelter by storing and manipulating information about clients and animals.
 

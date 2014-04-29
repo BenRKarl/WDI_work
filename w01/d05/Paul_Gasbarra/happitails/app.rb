@@ -1,6 +1,7 @@
 require_relative "shelter.rb"
 require_relative "client.rb"
 require_relative "animal.rb"
+require_relative "seed2.rb"
 
 @shelter = Shelter.new("HappiTails", "1 1st St")
 
