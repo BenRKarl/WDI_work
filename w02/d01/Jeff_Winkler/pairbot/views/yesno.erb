@@ -1,3 +1,5 @@
+<DOCTYPE! html>
+
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -6,14 +8,14 @@
   </head>
   <body>
     <div class="start">
-    <h1><%= @message %></h1>
-    <br/>
-    <br/>
-    <a href=<%= @yeslink %>><%= @yesmessage %></a>
-    <br/>
-    <br/>
-    <a href=<%= @nolink %>><%= @nomessage%></a>
-  </div>
+      <h1><%= @message %></h1>
+    </div>
+    <div class="button">
+      <a href=<%= @yeslink %>><%= @yesmessage %></a>
+     </div>
+    <div class = "button">
+      <a href=<%= @nolink %>><%= @nomessage%></a>
+    </div>
   </body>
 
 </html>

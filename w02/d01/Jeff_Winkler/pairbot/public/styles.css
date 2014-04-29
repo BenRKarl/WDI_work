@@ -3,16 +3,30 @@ html {
     font-family: 'Hammersmith One', sans-serif;
 }
 
-a {
-
-  text-decoration: none;
-  font-size: 1.5em;
-  color: rgb(96, 130, 182);;
-}
 
 body {
   margin-top: 50px;
-  text-align: center;
   background-color: rgb(200, 200, 200);
 
+}
+
+.start {
+
+  text-align: center;
+}
+
+.button {
+  text-align: center;
+  font-size: 1.5em;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+a {
+  font-style: bold;
+  text-decoration: none;
+  color: rgb(96, 130, 182);
 }
