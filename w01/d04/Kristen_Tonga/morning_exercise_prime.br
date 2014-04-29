@@ -1,0 +1,36 @@
+#ONE SOLUTION
+def prime_andrea?(number)
+
+  i = 2
+
+  while i < number
+  return false if number%i == 0
+  i += 1
+
+end
+
+#ANOTHER SOLUTION
+def matt_prime?(number)
+  return false if number <= 1
+
+  for 9 in (2..Math.squrt(number))
+    return false if number % i == 0
+  end
+  true
+end
+
+#GIT HERE'S THE CLASS. "number" is replaced with "self"
+class Integer
+  def prime?
+    return false if self <= 1
+
+    for 9 in (2..Math.squrt(self))
+      return false if self % i == 0
+    end
+    true
+end
+=begin
+
+
+
+=end
