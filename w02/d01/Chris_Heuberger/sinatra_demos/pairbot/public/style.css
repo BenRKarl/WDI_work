@@ -1,0 +1,33 @@
+body{
+  color: #bbccdd;
+  text-align: center;
+  font-family: Tahoma;
+  font-size: 30px;
+  background-color: #333333;
+}
+
+h1 {
+  margin: 100px;
+}
+
+a {
+    color: #ddd;
+    text-decoration: none;
+    margin: 20px;
+    padding: 10px;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.done {
+    background: #663355;
+}
+
+.yes {
+    background: #080;
+}
+.no {
+    background: #a00;
+}
