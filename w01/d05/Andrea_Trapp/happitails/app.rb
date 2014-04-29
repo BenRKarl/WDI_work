@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require "pry"
 
 require_relative "animal.rb"
@@ -9,6 +10,10 @@ new_shelter = Shelter.new("HappiTails","10 East 21st Street")
 
 def menu(new_shelter)
   
+=======
+
+def menu(shelter)
+>>>>>>> 35bea1daeb6416ae4017754e8d2434487c439bf0
   puts ""
   puts "Welcome to HappiTails Animal Shelter!"
   puts "Please choose from the menu below: "
@@ -26,6 +31,7 @@ def menu(new_shelter)
 
   case command
   when "A"
+<<<<<<< HEAD
     # Display Animals   
     animals = new_shelter.animals
 
@@ -181,3 +187,29 @@ while response != "Q"
   response = menu(new_shelter)
 end
 
+=======
+    # Display Animals
+    shelter.display_animals
+  when "B"
+    # Display Clients
+  when "C"
+    # Create Animal
+  when "D"
+    # Create Client
+  when "E"
+    # Adopt Animal
+  when "F"
+    # Put Animal Up For Adoption
+  when "Q"
+    Kernel.exit
+  end
+end
+
+
+shelter = Shelter.new('happitails', '10 est')
+
+response = menu(shelter)
+while response != "Q"
+  response = menu(shelter)
+end
+>>>>>>> 35bea1daeb6416ae4017754e8d2434487c439bf0
