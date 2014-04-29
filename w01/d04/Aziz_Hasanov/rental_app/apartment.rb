@@ -11,12 +11,11 @@ class Apartment
 	end
 
 	def occupied?
-		!@tenants.empty?
-		# if occupied
-		# 	return true
-		# else
-		# 	return false
-		# end
+		@tenants.any?
+		# @tenants.length > 0
+
+		# another way
+		# !@tenants.empty?
 	end
 
 	def tenants
@@ -26,13 +25,5 @@ class Apartment
 	def to_s
 		"#{@unit} costs $#{@rent} a month, has #{@sqft} sqft, has #{@bedrooms} bedrooms and #{@bathrooms} bathrooms."
 	end
-
-	# def push
-	# 	@tenants.push = Apartment.new if occupied?
-	# end
-
-	# def profile
-	# 	puts "#{@unit} costs #{@rent}, has #{@sqft} sqft, has #{@bedrooms} bedrooms and #{@bathrooms} bathrooms."
-	# end
 
 end
