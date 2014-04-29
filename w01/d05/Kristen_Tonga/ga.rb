@@ -1,6 +1,9 @@
 # This exercise is about nested arrays and hashes
 # Questions are at the bottom of the code
 
+#gives access to finding.pry, which when you load the file, pry opens
+require 'pry'
+
 general_assembly = {
   moto: 'TRANSFORMING THINKERS INTO CREATORS.',
   topics: [
@@ -15,7 +18,7 @@ general_assembly = {
 }
 
 # GA has many campuses
-c1 = {name: 'GA Berlin (Betahaus)', address: '19 Prinzessinnenstraße, Berlin 10969', email: 'berlin@generalassemb.ly'}
+c1 = {name: 'GA Berlin (Betahaus)', address: '19 PrinzessinnenstraBe, Berlin 10969', email: 'berlin@generalassemb.ly'}
 c2 = {name: 'GA Berlin', address: 'Winterfeldtstrasse 21, Berlin 10781', email: 'berlin@generalassemb.ly'}
 c3 = {name: 'GA Boston', address: '101 Main Street, 14th floor, Cambridge 02142', email: 'boston@generalassemb.ly'}
 c4 = {name: 'GA Hong Kong', address: 'The Hive, 21/F, The Phoenix, Luard Road No. 23, Wan Chai', email: 'hk@generalassemb.ly'}
@@ -41,11 +44,37 @@ general_assembly[:campuses] = {
   :washington_dc => [c12]
 }
 
+general_assembly.keys => {:moto, :topics, :campuses}
 # Questions: Write a line of code for each
-# Example: How many topics does GA have?
-# ga[:topics].count => 7
+# Example: How many topics does GA have? == 7
+ga[:topics].count => 7
+
 # What number topic is 'Web Development'?
-# How many cities does GA have campuses in?
-# How many campuses does GA have?
+# assoc(obj) for array
+general_assembly[:topics].index("Web Development")+1
+
+# How many cities does GA have campuses in? == 9
+general_assembly[:campuses].count
+
+# How many campuses does GA have? == 12
+number = 0
+general_assembly[:campuses].each{|k, v| number = number+v.length }
+##also written as:
+general_assembly[:campuses].each do |k,v|
+  number = number + v.length
+end
+##and another possibility
+general_assembly[:campuses].values.flatten.length
+##and another. NOTE w/ inject the initial sum = 0, and updates w each iteration... also written inject(&:+)
+total = general_assembly[campuses].map { |x,y| y.length }
+puts total.inject { |sum, n| sum + n}
+
 # How many campuses does GA have in Berlin?
+general_assembly[:campuses][:berlin].length
+
 # Print out all GA's campuses addresses
+print general_assembly[:campuses].values.flatten.each do |campus_hash|
+  puts campus_hash[:address]
+
+
+binding.pry

@@ -1,7 +1,7 @@
-puts "I am a basic Calculator. Do you want to do some math? Please answer YES or NO."
-  math_question = gets.chomp.upcase
+ruputs "I am a basic Calculator. Do you want to do some math? Please answer YES or NO."
+  math_question = gets.chomp.upcase[0]
 
-while math_question == "YES" do
+while math_question == "Y" do
 
   puts "Pick a number, any number!"
     integer_1=gets.chomp.to_i
@@ -38,8 +38,8 @@ while math_question == "YES" do
       answer = integer_1 / integer_2
       puts "#{integer_1} / #{integer_2} = #{answer}"
       puts "Do you want to know the remainder? Please answer YES or NO."
-        remainder_decision=gets.chomp.upcase
-        if remainder_decision == "YES"
+        remainder_decision=gets.chomp.upcase[0]
+        if remainder_decision == "Y"
             remainder = integer_1 % integer_2
             puts "#{integer_1} divided by #{integer_2} is #{answer} with a remainder of #{remainder}!"
         else
@@ -92,6 +92,6 @@ while math_question == "YES" do
   end
 
   puts "Would you like to do more math? YES or NO?"
-    math_question = gets.chomp.upcase
+    math_question = gets.chomp.upcase[0]
 
 end
