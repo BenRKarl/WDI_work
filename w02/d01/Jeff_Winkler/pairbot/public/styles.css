@@ -1,0 +1,18 @@
+
+html {
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+a {
+
+  text-decoration: none;
+  font-size: 1.5em;
+  color: rgb(96, 130, 182);;
+}
+
+body {
+  margin-top: 50px;
+  text-align: center;
+  background-color: rgb(200, 200, 200);
+
+}
