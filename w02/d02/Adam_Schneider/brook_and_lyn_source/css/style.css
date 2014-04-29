@@ -1,12 +1,71 @@
-/* 
+body{
+  min-width: 900px;
+}
 
-## Style Hints: 
+*, body {
+  margin: 0px;
+  padding: 0px;
+}
 
-Body Font Size = 12px
-	 Line Height = 17px
-	 Font Family = "Times New Roman", serif
-	 Font Color = #656565
+nav {
+  background-color: pink;
+  font-size: 22px;
+}
 
-Link Hover Color = #20222a
+nav li {
+background-color: blue;
+display: inline-block;
+padding: 5px;
+margin: 5px;
+color: black;
+}
 
-*/
+.container {
+  background-color: lightgray;
+  margin: 5px;
+  padding: 5px;
+}
+
+.container .box {
+  height: 150px;
+  width: 150px;
+  border: 1px solid black;
+  margin: 5px;
+  background-color: lightblue;
+}
+
+.box.right{
+  background-color: pink;
+  float: right;
+}
+.box.left {
+background-color: chartreuse;
+float: left;
+}
+
+
+.container .center {
+  margin: 5px auto;
+}
+
+.right {
+  float: right;
+}
+
+.other:after, .clear:after { /* expands collapsed parent to clear its height past its floating children */
+
+  content: " "; /* adds html text of period symbol (:after) all opther children inside the parent with is .clear:after class applied to it. */
+
+  display: block; /* set newly created content: to display block */
+
+  clear: both; /* sets the '.' content to clear past all of the floating children giving a height reference. */
+
+  visibility: hidden; /* make the '.' content invisible. */
+
+  line-height: 0; /* make sure it has no text line-height */
+
+  height: 0; /* make sue it has no physical height */
+}
+
+
+
