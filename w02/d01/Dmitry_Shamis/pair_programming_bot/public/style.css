@@ -1,0 +1,26 @@
+body {
+  margin-top: 50px;
+  text-align: center;
+  background-color: green;
+}
+
+h1 {
+  font-size: 75px;
+}
+
+ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  padding: 20px;
+}
+
+button {
+  padding: 15px;
+  font-size: 35px;
+}
