@@ -1,3 +1,5 @@
+# main objective: create customizable classes
+
 require 'rspec'
 require_relative '../apartment'
 
