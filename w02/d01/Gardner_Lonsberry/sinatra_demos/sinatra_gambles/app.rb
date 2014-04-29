@@ -27,22 +27,38 @@ get '/magic_8ball' do
 end
 
 
+# get '/rps/:scissors' do
+#   @scissors = params[:scissors]
+#   erb :rps
+# end
+
+# get '/rps/:result' do
+#   array = param['Rock', 'Paper', 'Scissor'].sample
+#   @result = array
+#   erb :rps
+# end
+
+# get '/location/:local' do
+#   @local = params[:local]
+#   @found_item = ['gold', 'magic spells', 'soup'].sample
+#     erb :location
+# end
 
 
 
-get '/rps/:rock_result' do
-  @rock_result = params[:rock_result]
-  erb :rock_result
-end
 
-get '/rps/:paper_result' do
-  @paper_result = params[:paper_result]
-  erb :rps
-end
+#   rock = rps[0]
+#   paper= rps[1]
+#   scissors = rps[2]
+#   random_rps = rps.sample
+#   erb      = :rps
+# end
 
-get 'rps/scissors_result' do
-  @scissors_result =params[:scissors_result]
-  erb :rps
-end
+# if rps
+
+# def winner(p1, p2)
+#   wins = {rock: :scissors, scissors: :paper, paper: :rock}
+#   {true => p1, false => p2}[wins[p1] == p2]
+# end
 
 
