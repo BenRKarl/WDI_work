@@ -1,0 +1,31 @@
+body {
+	background-color: #111;
+	margin: 0 auto;
+	text-align: center;
+	color: #fff;
+}
+h1 {
+	font-family: Verdana;
+	margin: 100px auto;
+	font-size: 45px;
+}
+a {
+	color: #fff;
+	margin: 0 20px;
+	height: 15px;
+	width: 40px;
+	border-radius: 5px;
+	text-decoration: none;
+	font-size: 25px;
+	font-family: Verdana;
+	padding: 15px;
+}
+.yes {
+	background-color: #00aa00;
+}
+.no {
+	background-color: #aa0000;
+}
+.done {
+	background-color: #0000aa;
+}
