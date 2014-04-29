@@ -19,7 +19,8 @@ class Building
   end
 
   def apartment_count
-    @apartments.keys.count
+    #@apartments.keys.count
+    @apartment.count
   end
   
 end
