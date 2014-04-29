@@ -19,19 +19,12 @@ What makes something an anagram? The two words have the same letters...
 How can we check to see if they have exactly the same letters?
 
 
-<!--
-### ***A Fake Person Ditty.***
-######***Key Skills:*** Sinatra, Custom Class Definitions, Faker, RTFM
 
-###Phase 1: 
+### ***Another Fake Person.***
+######***Key Skills:*** Custom Class Definitions, Faker, RTFM
+
 * In a `person.rb` file, define a `Person` class.  
-	* An instance of the class should be initialized with two instance variables, name and email, both set using the `Faker` gem.  
-	* Take a look at the Faker documentation to determine how to generate an email.
+	* An instance of the class should be initialized with three instance variables, name, email and tagline, each set using the `Faker` gem.  
+	* Take a look at the Faker documentation to determine how to generate an email / tagline. 
 	
-###Phase 2:
-* In an `app.rb` file, write a `Sinatra` application.  
-	* An HTTP `GET` request to '/person' should: 
-		* Create a new person
-		* Render that person's name and email attributes to the page
--->
 ___
