@@ -26,6 +26,15 @@ How can we check to see if they have exactly the same letters?
 * In a `person.rb` file, define a `Person` class.  
 	* An instance of the class should be initialized with three instance variables, name, email and tagline, each set using the `Faker` gem.  
 	* Take a look at the Faker documentation to determine how to generate an email / tagline. 
+
+
+---
+
+#Sinatra Names
+
+- Watch this:  [http://youtu.be/sFkCGassvoQ](http://youtu.be/sFkCGassvoQ)
+- Build the same app as seen in this video
+ 
 	
 ___
 
@@ -56,4 +65,4 @@ ___
 
 - Style your html to look like the ***mockup.png***
 
----
+
