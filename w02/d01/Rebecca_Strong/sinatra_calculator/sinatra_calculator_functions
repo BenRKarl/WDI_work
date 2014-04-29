@@ -1,0 +1,29 @@
+<h4>Sinatra Calculator Functions</h4>
+
+<a href="/add">
+Add
+</a>
+
+</br>
+
+<a href="/subtract">
+Subtract
+</a>
+
+</br>
+
+<a href="/multiply">
+Multiply
+</a>
+
+</br>
+
+<a href="/divide">
+Divide
+</a>
+
+</br>
+
+<a href="/squareroot">
+Squareroot
+</a>

@@ -28,3 +28,32 @@ How can we check to see if they have exactly the same letters?
 	* Take a look at the Faker documentation to determine how to generate an email / tagline. 
 	
 ___
+
+#HTML and CSS PARTY
+
+###***General thoughts***:
+
+* For each of these exercises, you must write HTML and CSS to produce facsimiles of the included screenshots.  
+* If you are feeling particularly ambitious, here is a:
+
+***challenge: *** Make the page responsive.  That is, unbroken and usable across a range of screen sizes.  
+
+##Box model
+
+- Style your html to look like the ***screenshot_complete.png***
+
+
+---
+
+##Ecardly
+
+- Style your html to look like the ***screenshot.png***
+
+
+---
+
+##Brook and Lyn
+
+- Style your html to look like the ***mockup.png***
+
+---
