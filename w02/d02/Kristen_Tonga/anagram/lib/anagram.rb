@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 listen = ["enlists", "google", "inlets","bannana"]
 
 def anagram?(word_1, word_2)
@@ -21,3 +22,6 @@ end
   end
 
 =end
+=======
+# Check if two words are anagrams of each other
+>>>>>>> 240f51101b497b5e115daf7cc1b4c6c2a41663ac
