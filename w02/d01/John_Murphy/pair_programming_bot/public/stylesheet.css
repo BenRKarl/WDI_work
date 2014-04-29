@@ -1,0 +1,43 @@
+body {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-family: open sans;
+    text-align: center;
+}
+
+h1 {
+
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+a {
+  text-decoration: none;
+  padding: 10px;
+  display: inline;
+  text-align: center;
+  margin: 10px;
+}
+
+a:visited {
+  color: #ddd;
+}
+a:hover {
+  color: white;
+}
+
+.green {
+  background-color: green;
+    border: white 1px solid;
+}
+
+.red {
+   background-color: red;
+     border: white 1px solid;
+  }
+
+.done {
+  background-color: blue;
+  border: white 1px solid;
+}
