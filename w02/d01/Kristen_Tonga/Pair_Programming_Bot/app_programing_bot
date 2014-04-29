@@ -1,0 +1,41 @@
+require 'sinatra'
+require 'sinatra/reloader'
+
+get '/yn/'
+  @text = "Do you have a test for that?"
+  @link1 = params[:pass]
+  @link2 = params[:write]
+  erb :test_for_that
+end
+
+get '/yn/pass'
+  @text = "Does the test pass?"
+  @link1 = params[:refactor]
+  @link2 = params[:write]
+  erb :pass
+end
+
+get '/yn/refactor'
+  @text = "Need to refactor?"
+  @link1 = params[:do_refactor]
+  @link2 = params[:feature]
+  erb :refactor
+end
+
+get '/d/do_refactor'
+  @text = "Refactor the Code!"
+  @link1 = paramas[:test_for_that]
+  erb :do_refactor
+end
+
+get '/d/feature'
+  @text = "Select a new feature to implement!"
+  @link1 = paramas[:test_for_that]
+  erb :feature
+end
+
+get '/d/write'
+  @text = "Write just enough code for the test to pass."
+  @link1 = paramas[:test_for_that]
+  erb :write
+end

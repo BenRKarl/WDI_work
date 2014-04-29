@@ -9,3 +9,14 @@ end
 
 puts "Party, party, party time!"
 
+=begin
+
+ #Another possibility
+
+puts "How old are you, dude?"
+  response = gets.chomp.to_i
+response >= 21
+  puts ""
+
+=end
+
