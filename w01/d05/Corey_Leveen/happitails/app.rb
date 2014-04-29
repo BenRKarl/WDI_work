@@ -51,12 +51,13 @@ def menu(shelter)
     puts "Which animal would you like to adopt?"
     shelter.display_animals
     adoption_choice = gets.chomp
-    @animals[adoption].give_away_animal
+    shelter.give_away_animal(adoption_choice)
+
   when "F"
     # Put Animal Up For Adoption
     puts "What's your name?"
     client_to_give_up_animal = gets.chomp
-    if @clients[client_to_give_up_animal] == nil
+    if shelter.clients[client_to_give_up_animal] == nil
       puts "You are not a registered client. Please create yourself using 'D'."
     else
       puts "What's the name of the animal you would like to put up for adoption?"
