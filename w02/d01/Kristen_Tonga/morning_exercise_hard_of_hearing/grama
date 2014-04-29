@@ -1,0 +1,29 @@
+class Grama
+
+attr_accessor :deaf,
+
+  def initialize (deaf=true)
+    @deaf = deaf
+  end
+
+  def listen(sound)
+
+    var i=0;
+    var ch='';
+    while (i <= strings.length){
+        character = sound.charAt(i);
+        if (!isNaN(character * 1)){
+          alert('character is numric');
+        }else{
+          if (character == character.toUpperCase()) {
+            alert ('NO, NOT SINCE 1929!');
+          }
+          if (character == character.toLowerCase()){
+            alert ("WHAT's THAT? COME AGAIN, SONNY!");
+          }
+        }
+        i++;
+    }
+
+  end
+end
