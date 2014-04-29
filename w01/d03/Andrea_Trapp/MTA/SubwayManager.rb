@@ -64,10 +64,12 @@ class SubwayManager
 
       total_length_of_trip = (index_start - index_stop).abs
     else
+      # intersection = 'us'
+      intersection = (@network[travel_plan[:start_train]] & @network[travel_plan[:stop_train]]).first
       index_start_train_start = stations_start_train.index(travel_plan[:start_station])
-      index_start_train_stop = stations_start_train.index("us")
+      index_start_train_stop = stations_start_train.index(intersection)
 
-      index_stop_train_start = stations_stop_train.index("us")
+      index_stop_train_start = stations_stop_train.index(intersection)
       index_stop_train_stop = stations_stop_train.index(travel_plan[:stop_station])
 
       start_train_length_of_trip = (index_start_train_start - index_start_train_stop).abs
