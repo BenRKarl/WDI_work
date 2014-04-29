@@ -12,9 +12,6 @@ class Building
 	def apartment_count
 		@apartments.length
 	end
-	
-	# def add_apt(apt)
-	# end
 
 	def to_s
 		"This building has #{apartment_count} apartments."
