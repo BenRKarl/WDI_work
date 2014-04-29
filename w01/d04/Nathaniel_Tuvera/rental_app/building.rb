@@ -1,13 +1,13 @@
 class Building
-  def initialize(address, style, has_doorman, is_walkup, num_floors, apartments)
+  def initialize(address, style, num_floors, is_walkup, num_floors, apartments)
     @address     = address      #string
     @style       = style        #string
-    @has_doorman = has_doorman  #boolean
-    @is_walkup   = is_walkup    #boolean
     @num_floors  = num_floors   #integer
+    # @has_doorman = has_doorman  #boolean
+    # @is_walkup   = is_walkup    #boolean
     @apartments  = []   #array of apartment objects?
   end
-  attr_accessor :address, :style, :has_doorman, :is_walkup, :num_floors, :apartments
+  attr_accessor :address, :num_floors, :style, :num_floors, :apartments
 
   def to_s
     puts "Welcome to the #{@address} address. It's a #{@style} building, with #{@numfloors} floors"
