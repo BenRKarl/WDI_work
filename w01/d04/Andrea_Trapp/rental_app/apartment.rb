@@ -14,7 +14,9 @@ class Apartment
   end
 
   def occupied?
-  	@tenants.count == 0 ? false : true
+	#@tenants.count == 0 ? false : true
+  	#@tenants.any?
+  	@tenants.length > 0
   end
 
   def to_s
