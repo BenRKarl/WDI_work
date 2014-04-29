@@ -57,3 +57,11 @@ ___
 - Style your html to look like the ***mockup.png***
 
 ---
+
+#Sinatra Names
+
+- Watch this:  [http://youtu.be/sFkCGassvoQ](http://youtu.be/sFkCGassvoQ)
+- Build the same app as seen in this video
+ 
+
+
