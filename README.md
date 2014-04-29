@@ -26,7 +26,7 @@ Congratulations on joining us at General Assembly for the Web Development Immers
 
 ---
 #Class videos
-***Coming soon.***
+- [Sinatra Intro with Faker](http://youtu.be/sFkCGassvoQ)
 
 
 
