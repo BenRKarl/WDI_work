@@ -70,7 +70,7 @@ ___
 
 - Your program should mimic the HTML of the web site, but don't worry about styling it using CSS).
 
-***Front-end challengeL:*** Style it using CSS!  You will need to Google how to include stylesheets in a Sinatra application.  Happy hunting.
+***Front-end Bonus challenge:*** Style it using CSS!  You will need to Google how to include stylesheets in a Sinatra application.  Happy hunting.
 
 #### Planning
 

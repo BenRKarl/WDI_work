@@ -15,8 +15,9 @@ class Shelter
     @clients[name] = user_name
   end
 
-  def accept_animal(name, user_name)
-    @animals[name] = user_name
+  def accept_animal(name, animal_obj)
+  #  user_name = name << "_animal"
+    @animals[name] = animal_obj
   end
 
   def display_animals
@@ -48,6 +49,10 @@ class Shelter
   end
 
   def to_s
-    "#{name} shelter at #{address} has #{animal_count} animals and #{client_count} people"
+    "#{name} shelter at #{address} has #{animal_count} animals and #{client_count} people."
+  end
+
+  def welcome
+   puts "Welcome to #{name}! We are an animal shelter and rehoming agency located at #{adress}."
   end
 end
