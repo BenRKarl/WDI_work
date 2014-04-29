@@ -1,0 +1,47 @@
+body {
+	margin: 0;
+	padding: 0;	
+	background-color: black;
+	color: white;
+	font-family: Helvetica;
+	text-align: center;	
+}
+
+h1 {
+	margin: 100px auto;
+	font-size: 48px;	
+}
+
+a {
+	display: inline-block;
+	margin: 0px 20px;
+	padding:12px 0 0 0;
+    text-decoration: none;
+    height: 40px;
+    width: 100px;    
+    color: white;
+    font-size: 24px;
+    text-align: center; 
+    /*box-shadow: 2px 3px 5px #FFF;	*/
+    border-radius: 3px;	
+    border: 1px solid #000;
+}
+
+a:hover {
+	color: black;
+}
+
+.yes {
+	background-color: green;   
+	box-shadow: 2px 3px 5px green;
+}
+
+.no {
+	background-color: red;
+	box-shadow: 2px 3px 5px red;    
+}
+
+.done {
+	background-color: purple; 
+ 	box-shadow: 2px 3px 5px purple;
+}

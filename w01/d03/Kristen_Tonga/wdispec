@@ -1,0 +1,69 @@
+def assert_equal(actual, expected, statement)
+  if actual == expected
+    puts Rainbow(statement).green
+    puts "Actual is in fact equal to expected"
+
+  else
+    puts Rainbow(statement).red
+    puts "THEY ARE NOT EQUAL. Why?"
+
+  end
+end
+
+=begin
+WHAT HAPPENS IN CONTROL LINE:
+[4] pry(main)> assert_equal(1,1)
+    Actual is in fact equal to expected
+    nil
+[5] pry(main)> assert_equal(1,2)
+    THEY ARE NOT EQUAL. Why?
+    nil
+=end
+
+
+#TEST 2, adding and subtracting
+def add(x,y)
+  x + y
+end
+puts x
+puts y
+
+def divide(x,y)
+  if y == 0
+    puts "Method returns NaN when division by zero"
+  else
+    x.to_f / y.to_f
+  end
+end
+puts x
+puts y
+
+#Here are some suspected results for the test
+actual = add(2,2)
+expected = 4
+statement = "It functions!"
+
+actual = divide(8,5)
+expected = 1.6
+statement - "We divide!"
+
+assert_equal
+
+# TEST 3.
+actual = divide (1,0)
+expected = "NaN"
+statement = "Method returns NaN when division by zero"
+assert_equal(actual,expected,statement)
+
+=begin
+OTHER OPTION, CLEANER:
+def divide(x/y)
+  if y == 0
+    return "NaN"
+  end
+  x.to_f / y.to_f
+end
+
+OTHER OPTION, EVEN CLEANER:
+return "naN" if y.zero?
+return x.to_f / y.to_f
