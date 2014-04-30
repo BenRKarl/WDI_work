@@ -10,3 +10,27 @@ Body Font Size = 12px
 Link Hover Color = #20222a
 
 */
+body {
+	background-color: white;
+}
+
+.topblock {
+	display: block;
+	margin: 0, auto;
+	width: 1100;
+	text-align: center;
+	margin-left: 90px;
+
+}
+.topblock .logo {
+	text-align: left;
+	
+}
+
+.h1 {
+
+}
+
+.content {
+
+}
