@@ -10,3 +10,65 @@ Body Font Size = 12px
 Link Hover Color = #20222a
 
 */
+body {
+    font-size: 12px;
+    font-family: "Times New Roman", serif;
+    color: #888;
+    line-height: 20px;
+    margin: 0 40px;
+}
+main {
+    width: 960px;
+    margin: 40px auto;
+}
+h1 {
+    color: #999;
+    font-size: 40px;
+}
+h3 {
+    font-size: 20px;
+}
+time {
+    position: relative;
+    top: 10px;
+}
+time, a {
+    color: #309FF0;
+    text-decoration: none;
+}
+figure {
+    margin: 20px auto 10px;
+}
+figure img {
+    border: 6px solid #ccc;
+}
+@media(max-width: 1000px) {
+    main, .hero {
+        width: 700px;
+    }
+    figure img {
+        width: 160px;
+    }
+}
+@media(max-width: 750px) {
+    main, .hero {
+        width: 500px;
+    }
+    figure img {
+        width: 110px;
+    }
+}
+@media(max-width: 520px) {
+    h1 {
+        font-size: 25px;
+    }
+    h3 {
+        font-size: 15px;
+    }
+    main, .hero {
+        width: 300px;
+    }
+    figure img {
+        width: 60px;
+    }
+}
