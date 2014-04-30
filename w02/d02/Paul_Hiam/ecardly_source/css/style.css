@@ -10,7 +10,88 @@ Developer @GA in NYC
      -moz-box-sizing: border-box; /* Firexfox */
      -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
      box-sizing: border-box; /* IE */
+    
 }
+body {
+     width: %100;
+     background-color: lightgray;
+    
+     min-width: 1000px;
+     max-width: 1300px;
+}
+.container {
+     
+    
+     width: 1120px;
+}
+.content {
+     padding: 50px;
+}
+
+.head {
+     
+     background-image:url("/Users/ph1am/code/wdi/WDI_NYC_Apr14_Proto/w02/d02/Paul_Hiam/ecardly_source/images/background.jpg");
+     background-repeat: repeat-x;
+     text-align: center;
+}
+
+.main {
+     background-color: white;
+     text-align: center;
+     padding: 10px ;
+     float: left;
+     width: 700px;
+     margin-bottom: 30px;
+      padding-bottom:60px;
+     
+}
+.main p {
+
+     padding: 0 40px;
+     text-align: left;
+}
+.main h2 {
+    padding-left: 40px;
+    text-align: left;
+    /* did the order of padding-L and text-A matter to if it alligns correctly?
+*/
+
+}
+.sidebar {
+     background-color: white;
+     float: right;
+     width: 300px;
+     height: 750px;
+
+
+}
+.sidebar p {
+     width: 300px;
+     padding-left: 20px;
+     font-size: 12;
+    
+
+}
+.sidebar img {
+     padding: 10px 0 10px 0px;
+
+}
+.allign {
+     text-align: center;
+}
+
+}
+.social {
+     width: 100%;
+     display: inline-block;
+     clear:both;
+     margin: 0 auto;
+     
+}
+.center {
+     text-align: center;
+}
+
 
 /* Clear fix hack */
 .clearfix:after {

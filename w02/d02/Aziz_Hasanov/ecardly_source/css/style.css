@@ -7,24 +7,152 @@ Developer @GA in NYC
 
 /* Box Model Hack */
 * {
-     -moz-box-sizing: border-box; /* Firexfox */
-     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
-     box-sizing: border-box; /* IE */
+    -moz-box-sizing: border-box; /* Firexfox */
+    -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+    box-sizing: border-box; /* IE */
+/*    border: 1px dashed black;*/
+    margin: 0 auto;
+    text-align: center;
+    background-color: #d6d6d6;
 }
-
 /* Clear fix hack */
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
 }
-
 .clear {
 	clear: both;
 }
+header {
+    background-image: url("/images/background.jpg");
+    background-size: contain;
+    height: 100px;
+    margin-bottom: 100px;
+}
+header img {
+    width: 150px;
+    margin: 10px auto;
+}
+main {
+/*    padding: 0 20px;*/
+/*    border: 1px solid black;*/
+    width: 940px;
+}
+a {
+    color: #cc6633;
+    text-decoration: none;
+}
+section {
+    float: left;
+    background-color: #fff;
+    width: 640px;
+    padding: 20px 0 40px;
+}
+section * {
+    width: 600px;
+    margin: 10px auto;
+    background-color: #fff;
+}
+section p {
+    text-align: justify;
+}
+h2 {
+    text-align: left;
+}
+.comments {
+    padding: 5px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 2px solid #000;
+}
+aside {
+    float: right;
+/*    border: 1px solid #999;*/
+    width: 280px;
+    background-color: #fff;
+    padding: 15px 0 25px;
+}
+aside * {
+    text-align: left;
+    margin: 10px auto;
+}
+aside p {
+    width: 220px;
+    line-height: 25px;
+    background-color: #fff;
+}
+footer {
+    clear: both;
+    padding: 40px;
+}
 
-
-
+@media(max-width: 940px) {
+    main {
+        width: 500px;
+    }
+    header img {
+        width: 130px;
+    }
+    p {
+        font-size: 15px;
+    }
+    a {
+        line-height: 30px;
+    }
+    section {
+        width: 310px;
+    }
+    section * {
+        width: 300px;
+        margin: 5px;
+    }
+    aside {
+        width: 170px;
+    }
+    aside * {
+        width: 160px;
+        margin: 5px;
+    }
+    aside p {
+        width: 160px;
+        margin-bottom: 20px;
+    }
+}
+@media(max-width: 540px) {
+    main {
+        width: 360px;
+    }
+    header {
+        margin: 0 auto 40px;
+    }
+    header img {
+        width: 100px;
+    }
+    p {
+        font-size: 14px;
+    }
+    a {
+        line-height: 25px;
+    }
+    section {
+        width: 230px;
+    }
+    section * {
+        width: 220px;
+        margin: 5px;
+    }
+    aside {
+        width: 125px;
+    }
+    aside * {
+        width: 115px;
+        margin: 5px;
+    }
+    aside p {
+        width: 115px;
+        margin-bottom: 20px;
+    }
+}

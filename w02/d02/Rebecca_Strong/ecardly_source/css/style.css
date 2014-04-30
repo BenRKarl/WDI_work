@@ -1,16 +1,84 @@
-/* 
+/*
 Project Name: Ecard.ly
-Client: General Assembly 
+Client: General Assembly
 Author: Christopher Castig | @castig
 Developer @GA in NYC
 */
 
 /* Box Model Hack */
+body {
+min-width: 900px;
+
+
+background-color: #d6d6d6;
+Text Color: #000000;
+}
+
+
 * {
      -moz-box-sizing: border-box; /* Firexfox */
      -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
      box-sizing: border-box; /* IE */
 }
+
+.container .box {
+border: 2px solid black;
+background: url("../images/background.jpg");
+Height: 600px;
+Width: 200px;
+logo: <a href url("../images/logo.png")/>
+     width: 40px; height: 40px;
+     margin: 0 auto;
+}
+
+
+
+h2. {
+     font-size: 20px;
+}
+
+.paragraph {
+font-size: 12px;
+}
+
+.column .left {
+  height: 640px;
+  width: 200px;
+  margin: 5px;
+  float: left;
+  background-color: white;
+  font-size: 12px;
+  text-align: left;
+  line-height: 4px;
+}
+
+
+
+h3. {
+     font-size: 20px;
+}
+
+.paragraph {
+font-size: 12px;
+}
+
+.column .right {
+  height: 280px;
+  width: 100px;
+  margin: 5px;
+  float: right;
+  background-color: white;
+  font-size: 12px;
+  text-align: left;
+  line-height: 4px;
+}
+
+.images {
+     <a href url("../images/ad_cut_and-paste.gif")/>
+     <a href url("../images/ad-postcard-tee.png")/>
+     <a href url("../images/ad-submit-your-own.png")/>
+}
+
 
 /* Clear fix hack */
 .clearfix:after {

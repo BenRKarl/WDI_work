@@ -12,8 +12,14 @@ attr_accessor :unit_number, :rent, :square_footage, :num_bed, :num_bath, :occupi
     @who              = who
   end
 
+  def occupied?
+    @tenents.any?
+    #@tenents.length > 0
+  end
+
   def describe (unit_number, rent, square_footage, num_bed, num_bath, occupied, who)
     puts "#{unit_number} costs #{rent} a month, has #{square_footage} sqft, has #{num_bed} and #{num_bath}."
+  end
 end
 
 
