@@ -9,4 +9,73 @@ Body Font Size = 12px
 
 Link Hover Color = #20222a
 
+
 */
+body {
+	font-size: 12px;
+	line-height: 17px
+	font-family: "Times New Roman", serif;
+	color: #656565;
+}
+
+a:hover {
+	color: #20222a;
+}
+
+.container {
+	margin: 0 auto;
+	width: 80%;
+	max-width: 960px;
+}
+
+.body_pic {
+	width: 100%;
+	margin: 3px auto 3px auto;
+}
+
+h1 {
+	font-family: 'Marcellus SC', 'serif';
+	font-size: 48px;
+	margin-bottom: 2px;
+}
+
+h2 {
+	font-family: 'Marcellus SC', 'serif';
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+p {
+	font-family: 'Times New Roman', serif;
+	font-size: 14px;
+	margin-top: -1px;
+	color: gray;
+	line-height: 17px;
+}
+
+.blue_text {
+	color: #5495D6;
+}
+
+ul {
+	padding-left: 0;
+}
+
+li {
+	list-style: none;
+	display: inline;
+}
+
+.margin_right { /*This spreads the small images on the bottom across the width of the container */
+	margin-right: 1%;
+}
+
+li img {
+	width: 24%;
+ }
+
+.copyright p {
+ 	font-size: 11px;
+ }
+
+
