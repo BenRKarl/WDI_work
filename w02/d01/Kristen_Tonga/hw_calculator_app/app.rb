@@ -1,9 +1,9 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-get '/' do
-  erb :menu
-end
+#get '/' do
+#  erb :menu
+#end
 
 get '/add/:int1/:int2' do
   @integer1 = params[:int1]

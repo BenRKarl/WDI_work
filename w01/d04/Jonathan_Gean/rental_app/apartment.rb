@@ -8,7 +8,6 @@ def initialize(unit, rent, sqft, bedrooms, bathrooms)
   @bathrooms = bathrooms
   @tenants = []
 end
-
 def occupied?
   !@tenants.empty?
 end
