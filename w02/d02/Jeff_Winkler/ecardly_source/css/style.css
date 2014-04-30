@@ -43,23 +43,85 @@ body {
      margin-top: 20px;
 }
 
-div {
-     border: 1px solid black;
+.bottom {
+     width: 100%;
+     display: block;
 }
 
-.content {
+
+.iconbox {
+     text-align: center;
      display: block;
-     padding: 100px;
-     background-color: pink;
+     margin: 0 auto;
+     padding: 20px;
+}
+
+
+.content {
+     width: 940px;
+     padding: 0px;
+     margin: 0 auto;
+     margin-top: 40px;
+}
+
+.panel {
+     padding: 10px;
 }
 
 .leftpanel {
-     display: block;
+     width: 640px;
+     display: inline-block;
      background-color: white;
 }
 
 .rightpanel {
+
+     width: 280px;
      float: right;
      background-color: white;
+     padding-top: 40px;
+     padding-bottom: 40px;
+}
+h2 {
+     font-size: 20px;
+     padding-left: 10px;
 }
 
+ul, li {
+
+     list-style: none;
+     list-style-type: none;
+     font-size: 12px;
+     margin: 5px;
+     padding-left: 0px;
+     font-weight: bold;
+ }
+
+.blurb {
+     display: block;
+     margin: 0 auto;
+     font-size: 12px;
+     padding: 10px;
+     line-height: 20px;
+}
+
+.eofday {
+     display: block;
+     margin: 0 auto;
+}
+
+.comments {
+     margin: 10px;
+     border-top: 1px dotted black;
+     border-bottom: 1px solid black;
+     margin-bottom: 40px;
+}
+
+.orange {
+     color: darkorange;
+     font-weight: bold;
+}
+
+.ad {
+     margin: 5px 10px 5px 10px;
+}
