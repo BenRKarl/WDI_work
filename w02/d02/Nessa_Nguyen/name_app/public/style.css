@@ -1,0 +1,35 @@
+body {
+  background-color: lightblue;
+
+}
+
+h1 {
+  font-family: Georgia;
+  text-align: center;
+
+}
+
+
+ul {
+  width: 300px;	
+  list-style: none;
+  line-height: 1.4em;
+  font-family: Arial;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0;
+}
+
+ul li {
+  padding: 5px;  
+  border: 1px solid lightyellow;   	
+}
+
+ul li:nth-child(odd) {
+  background: #ffffff;	
+}
+
+
+ul li:nth-child(even) {
+  background-color: ;	
+}
