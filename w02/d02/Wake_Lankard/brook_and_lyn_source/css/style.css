@@ -10,3 +10,41 @@ Body Font Size = 12px
 Link Hover Color = #20222a
 
 */
+
+
+
+#container {
+width: 960px;
+margin: 10px auto 0px 65px;
+color: gray;
+}
+.logo {
+margin: 30px 0px 10px 0px;
+}
+
+h2 {
+font-size: 1.2em;
+margin: 10px 0 0px 0;
+}
+
+p {
+  font-size: 0.8em;
+  margin-top: 3px;
+  line-height: 20px;
+}
+.date {
+  color: rgb(0,150,200);
+  font-size: 0.75em;
+
+}
+
+.press {
+  border: 5px solid lightgray;
+  padding: 1px;
+  
+}
+
+a{
+  text-decoration: none;
+  color: rgb(0, 150, 200);
+}
