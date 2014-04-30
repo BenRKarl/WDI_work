@@ -1,0 +1,67 @@
+body{
+	min-width: 800px;
+}
+
+*, body{
+	
+	margin: 0;
+	padding: 0;
+}
+
+nav {
+	background-color: pink;
+	padding: 5px;
+
+}
+
+
+nav li {
+	background-color: blue;
+	display: inline-block;
+	padding: ;
+	color: white;
+	margin: 4px;
+}
+.right {
+	float: right;
+}
+ 
+ .container {
+ 	background-color: lightgray;
+ 	margin: 5px;
+ 	padding: 5px;
+ }
+
+ .container .box{
+ 	height: 100px;
+ 	width: 100px;
+ 	border: 1px solid black;
+ 	background-color: skyblue;
+ }
+
+.box.center {
+	margin: 0 auto;
+} 
+.box.left {
+	background-color: chartreuse;
+	float: left;
+	margin: 5px;
+}
+.box.right{
+	background-color: pink;
+	margin: 5px;
+}
+.clear:after { /* expands collapsed parent to clear its height past its floating children */
+ 
+	content: " "; /* adds html text of period symbol (:after) all opther children inside the parent with is .clear:after class applied to it. */
+ 
+	display: block; /* set newly created content: to display block */
+ 
+	clear: both; /* sets the '.' content to clear past all of the floating children giving a height reference. */
+ 
+	visibility: hidden; /* make the '.' content invisible. */
+ 
+	line-height: 0; /* make sure it has no text line-height */
+ 
+	height: 0; /* make sue it has no physical height */
+}

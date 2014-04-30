@@ -1,6 +1,6 @@
-/* 
+/*
 Project Name: Ecard.ly
-Client: General Assembly 
+Client: General Assembly
 Author: Christopher Castig | @castig
 Developer @GA in NYC
 */
@@ -26,5 +26,102 @@ Developer @GA in NYC
 	clear: both;
 }
 
+body {
+     background-image:url("../images/background.jpg");
+     background-repeat: repeat-x;
+     background-color: lightgray;
+}
+
+.top {
+     width: 100%;
+     display: block;
+}
+
+.logo {
+     margin: 0 auto;
+     display: block;
+     margin-top: 20px;
+}
+
+.bottom {
+     width: 100%;
+     display: block;
+}
 
 
+.iconbox {
+     text-align: center;
+     display: block;
+     margin: 0 auto;
+     padding: 20px;
+}
+
+
+.content {
+     width: 940px;
+     padding: 0px;
+     margin: 0 auto;
+     margin-top: 40px;
+}
+
+.panel {
+     padding: 10px;
+}
+
+.leftpanel {
+     width: 640px;
+     display: inline-block;
+     background-color: white;
+}
+
+.rightpanel {
+
+     width: 280px;
+     float: right;
+     background-color: white;
+     padding-top: 40px;
+     padding-bottom: 40px;
+}
+h2 {
+     font-size: 20px;
+     padding-left: 10px;
+}
+
+ul, li {
+
+     list-style: none;
+     list-style-type: none;
+     font-size: 12px;
+     margin: 5px;
+     padding-left: 0px;
+     font-weight: bold;
+ }
+
+.blurb {
+     display: block;
+     margin: 0 auto;
+     font-size: 12px;
+     padding: 10px;
+     line-height: 20px;
+}
+
+.eofday {
+     display: block;
+     margin: 0 auto;
+}
+
+.comments {
+     margin: 10px;
+     border-top: 1px dotted black;
+     border-bottom: 1px solid black;
+     margin-bottom: 40px;
+}
+
+.orange {
+     color: darkorange;
+     font-weight: bold;
+}
+
+.ad {
+     margin: 5px 10px 5px 10px;
+}
