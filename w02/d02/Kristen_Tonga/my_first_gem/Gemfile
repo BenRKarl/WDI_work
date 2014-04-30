@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+# Specify your gem's dependencies in my_first_gem.gemspec
+gem 'gemspec'
+gem 'faker'
+gem 'sinatra'
+# When required use /, when in gemfile -
+gem 'sinatra-reloader'
+
+
+

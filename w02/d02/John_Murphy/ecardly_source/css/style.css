@@ -1,6 +1,6 @@
-/* 
+/*
 Project Name: Ecard.ly
-Client: General Assembly 
+Client: General Assembly
 Author: Christopher Castig | @castig
 Developer @GA in NYC
 */
@@ -10,6 +10,122 @@ Developer @GA in NYC
      -moz-box-sizing: border-box; /* Firexfox */
      -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
      box-sizing: border-box; /* IE */
+
+
+
+}
+nav {
+
+     height: 162px;
+     background-image:url('/Users/jdwmurph/code/wdi/WDI_NYC_Apr14_Proto/w02/d02/John_Murphy/ecardly_source/images/background.jpg');
+     background-size: repeat-x;
+     margin-bottom: 100px;
+
+}
+
+nav div{
+     width: 216px;
+     padding-top: 10px;
+     margin: 0 auto;
+}
+
+body {
+     background-color: lightgrey;
+}
+
+h1 {
+     font-size: 20px;
+}
+
+span {
+     color: #cc6633;
+}
+
+
+
+.container {
+     width: 1000px;
+     padding-left: 40px;
+
+}
+
+.container div {
+     float: left;
+}
+
+.left {
+     width: 640px;
+     background-color: white;
+     padding: 17px;
+}
+
+.left h1 {
+     margin-top: 20px;
+}
+
+.left p {
+     font-size: 12px;
+     line-height: 170%;
+     font-family: arial;
+}
+
+.left div {
+     border-top: dotted 1px black;
+     border-bottom: solid 2px gray;
+     width: 100%;
+     font-size: 12px;
+     padding: 10px 0;
+     margin-bottom: 40px;
+}
+.sidebar{
+     background-color: white;
+     width: 280px;
+     height: 720px;
+     margin-left: 30px;
+     padding-top: 20px;
+
+}
+
+.sidebar p {
+     font-size: 12px;
+     background-color: white;
+     margin: 20px 0 5px 30px;
+
+}
+
+.sidebar ul {
+     background-color: white;
+     padding: 0;
+     margin: 0 0 0 30px;
+}
+
+.sidebar li {
+     background-color: white;
+     list-style-type: none;
+     font-size: 10px;
+     margin: 3px 0;
+}
+
+.sidetext {
+     font-family: arial;
+     font-weight: bold;
+}
+
+.sidebar img {
+     display: block;
+     margin: 20px auto 25px auto;
+
+}
+
+.sidebar div {
+     width: 100%;
+     margin: 0 auto;
+}
+
+.footer {
+     margin: 40px auto;
+     clear: both;
+     width: 140px;
 }
 
 /* Clear fix hack */
@@ -25,6 +141,7 @@ Developer @GA in NYC
 .clear {
 	clear: both;
 }
+
 
 
 
