@@ -1,6 +1,6 @@
-/* 
+/*
 Project Name: Ecard.ly
-Client: General Assembly 
+Client: General Assembly
 Author: Christopher Castig | @castig
 Developer @GA in NYC
 */
@@ -27,4 +27,124 @@ Developer @GA in NYC
 }
 
 
+body {
+     background: #d6d6d6;
+     color: #000000;
+}
 
+h5 {
+     text-align: left;
+     padding: 0px 0px 0px 15px;
+}
+
+a {
+     color: #cc56633;
+}
+
+p {
+     font-size: 12px;
+}
+
+ul {
+     font-size: 12px;
+     font-weight: bold;
+     list-style-type: none;
+     text-align: left
+}
+
+.header {
+     background-image: urL("../images/background.jpg");
+     width: 100%;
+     height: 125px;
+     padding: 0 0 160px 0;
+     margin-bottom: 100px;
+}
+.container {
+     width: 940px;
+     margin: 0 auto;
+}
+.sidebar {
+     width: 280px;
+     margin: 5px 5px 5px 5px;
+     float:right;
+     background: white;
+    position: relative;
+
+     margin: 0 auto;
+
+}
+
+.main {
+     width: 640px;
+     margin: 5px 5px 5px 5px;
+     background: white;
+     padding: 20px;
+}
+.menu {
+     margin: 0 auto;
+     text-align: center;
+}
+
+.bar {
+     height: 0;
+     border: 1px dotted black;
+}
+.hbar{
+
+     border: 2px solid black;
+}
+.logo {
+     background-image: url("../images/logo.png");
+     height: 210px;
+     width: 210px;
+     margin: 10px auto;
+     position: relative;
+     float: center;
+     clear: both;
+
+}
+.cutandpaste {
+     background-image: url("../images/ad-cut-and-paste.gif");
+     background-color: #FFFFFF;
+     height: 116px;
+     width: 200px;
+     border-radius: 5px;
+     margin: 25px auto;
+     background-position: center;
+}
+
+.postcardtees {
+     background-image: url("../images/ad-postcard-tee.png");
+     background-color: #FFFFFF;
+     height: 116px;
+     width: 200px;
+     border-radius: 5px;
+     margin: 25px auto;
+     background-position: center;
+}
+
+div .submityourown {
+     background-image: url("../images/ad-submit-your-own.png");
+
+     height: 100px;
+     width: 200px;
+     margin: 25px auto;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: 100%;
+     border-radius: 5px;
+
+}
+.nycstartups {
+     background-image: url("../images/ecard-nycstartups.jpg");
+     background-size:auto;
+     width: 600px;
+     height: 400px;
+}
+
+.courage {
+     background-image: url("../images/ecard-courage.jpg");
+     background-size:auto;
+     width:  600px;
+     height: 400px;
+}
