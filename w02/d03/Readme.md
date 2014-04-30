@@ -34,7 +34,47 @@
 
 * An `HTTP GET` request to `/rectangle/:num` should render a user specified number of random rectangles on the page.    
 
-
-
 ---
+
+#Stock App
+
+- Build a Sinatra App that will take a stock symbol and display data about the stock
+- The stock symbol should be inputted via a form
+- The result should be rendered in the browswer with ERB.
+
+
+###Suggested Approach 
+
+- Build a Sinatra application 
+	- Include:
+		- app.rb		
+		- Gemfile
+		- views/layout.erb
+		- views/index.erb	
+		- public/styles.css
+- Set up a welcome page
+	- Display "Welcome to WDI Stocks" when there is `GET` request to `/`
+- Define a method that makes a request to the `YahooFinance` api via the `YahooFinance` gem.
+	- This method should take, as paramater, a stock ticker
+	- This method should return data about the stock
+	- Test this method manually in pry
+- Display, for example, google's stock price when there is `GET` request to `/stocks/goog`
+	- The file should be `show.erb`
+- Modifying what you have created already, display a form when there is `GET` request to `/`
+	- The form should allow a user to enter a stock ticker
+	- On submit, the form should `post` to `/stocks`
+	- Given an input `ticker`, Sinatra should then redirect to `/stocks/:ticker`
+- Style!
+
+example api usage:
+
+```ruby 
+
+data = YahooFinance.historical_quotes("goog", Time::now-(24*60*60*10), Time::now)
+```
+
+
+
+
+
 
