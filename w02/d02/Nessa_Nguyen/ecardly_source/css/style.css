@@ -5,6 +5,113 @@ Author: Christopher Castig | @castig
 Developer @GA in NYC
 */
 
+body {
+  background: #444444;
+
+}
+
+.container {
+  width: 980px; 
+  margin: 0 auto;  
+  background-color: #d6d6d6;
+  background-image: url('../images/background.jpg');     
+  background-size: ;
+  background-repeat: repeat-x;
+  background-position: left top;
+  background-attachment: ;
+  padding-bottom: 10px; /* Firefox doesn't stretch 
+                        according to footer margin*/
+}
+
+img.logo {
+  margin: 0px auto 15px auto;
+  display: block;
+  padding: 15px; /* create space on top. 
+                 Margin messes with bg image */
+}
+
+
+/* MAIN COLUMN */
+#main {
+  width: 620px;  
+  background-color: #ffffff;
+  padding: 20px;  
+  float: left; 
+  margin-left: 40px
+}
+
+#main img {
+  display: block; /* to center */
+  margin: 10px auto;  
+  width: 97%;
+}
+
+#main article, p {
+  width: 97%;
+  margin: 10px auto;
+}
+
+/* TEXT STYLING */
+* {
+  color: #000000;  
+  font-family: Arial, sans-serif;  
+  font-size: 12px; 
+  line-height: 22px;
+}
+
+h1 {
+  font-size: 22px;
+  width: 97%;
+  margin: 20px auto 15px auto;
+}
+
+
+a {
+  color: #cc6633;    
+  text-decoration: none;
+  font-weight: bold;
+} 
+
+#main hr {
+  width: 97%;
+  margin: 0 auto;  
+}
+
+hr.dotted {
+
+  border-style: dotted;  
+  border-width: 1px;
+}
+
+hr.heavy {
+  border-style: solid;  
+  border-width: 1px;
+}
+
+.spacer30 {
+  width: 100%;
+  height: 30px;  
+}
+
+/* SIDEBAR */
+
+#sidebar {
+  width: 260px;   
+  float: right;
+  margin: 0 40px 0 20px;
+  background-color: #ffffff;
+  padding: 30px;
+}
+
+#sidebar section {
+  font-weight: bold;
+}
+
+#sidebar img {
+  display: block;
+  margin: 20px auto;  
+}
+
 /* Box Model Hack */
 * {
      -moz-box-sizing: border-box; /* Firexfox */
@@ -13,18 +120,26 @@ Developer @GA in NYC
 }
 
 /* Clear fix hack */
-.clearfix:after {
-     content: ".";
+.clear:after {
+     content: " ";
      display: block;
      clear: both;
      visibility: hidden;
+     width: 100%;
      line-height: 0;
      height: 0;
 }
 
-.clear {
-	clear: both;
+/* FOOTER */
+
+footer {
+  margin: 25px auto;  
+  max-width: 150px;   
+
 }
 
+footer img {
+  display: inline-block;    
+}
 
 

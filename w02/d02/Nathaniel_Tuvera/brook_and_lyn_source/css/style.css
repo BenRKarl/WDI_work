@@ -1,6 +1,6 @@
-/* 
+/*
 
-## Style Hints: 
+## Style Hints:
 
 Body Font Size = 12px
 	 Line Height = 17px
@@ -10,3 +10,82 @@ Body Font Size = 12px
 Link Hover Color = #20222a
 
 */
+
+b {
+  font-family: "Times New Roman", serif;
+  font-size: 12px;
+  line-height: 17px;
+  color: #656565;
+}
+a:hover {
+  color: #20222a;
+}
+a {
+  text-decoration:none;
+  color: lightblue;
+}
+h1 {
+  font-family: "Times New Roman", serif;
+  color: #656565;
+}
+h4 {
+  font-family: "Times New Roman", serif;
+  color: #656565;
+}
+p {
+  font-family: "Times New Roman", serif;
+  font-size: 12px;
+  color: #656565;
+}
+#container { /* @media query to change for below 960px?*/
+ width: 940px;
+ margin: 50px;
+ margin: 0 auto;
+}
+.title {
+}
+
+.blog_img {
+  background-image: url("../images/home-bloghero.png");
+  height: 500px;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.shop_img {
+  background-image: url("../images/home-rings.png");
+  height: 500px;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.press {
+  margin: auto 0;
+  }
+
+.link {
+  height: 143px;
+  width: 224px;
+  border: 3px solid gray;
+  display: inline-block;
+}
+
+.press_ny {
+  background-image: url("../images/press-nbcnewyork.gif");
+}
+.huff_post {
+  background-image: url("../images/press-huffpost.gif");
+}
+.lucky {
+  background-image: url("../images/press-logo_lucky.gif");
+}
+.marieclair {
+  background-image: url("../images/press-marieclaire.gif");
+}
+
+.footer {
+  font-family: "Times New Roman", serif;
+  font-size: 12px;
+  color: #656565;}
