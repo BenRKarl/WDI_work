@@ -66,7 +66,7 @@
 	- Given an input `ticker`, Sinatra should then redirect to `/stocks/:ticker`
 - Style!
 
-example api usage:
+####***Example api usage:***
 
 ```ruby 
 
