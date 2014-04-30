@@ -12,6 +12,116 @@ Developer @GA in NYC
      box-sizing: border-box; /* IE */
 }
 
+
+body {    
+     color: #000000;
+     font-family: helvetica;
+     background-color: gray;     
+}
+
+.wrapper {
+     max-width: 980px;
+     margin: 0 auto;      
+     background-color: #d6d6d6;     
+}
+
+.container {
+     max-width: 940px;
+     margin: 0 auto;
+     background: url("../images/background.jpg") repeat-x;
+}
+
+h1.logo {
+     margin: 0 auto;    
+     width: 216px;
+     height: 213px;
+     background: url("../images/logo.png");  
+}
+
+h1.logo span{
+     display: none;          
+}
+
+.main {
+     float: left;
+     max-width: 620px; /* max-width=620px + margin-left=10px + margin-right=10px => 640px */
+     background-color: white;   
+     margin: 50px 10px 0 10px;
+}
+
+.sidebar {
+     float: left;
+     max-width: 260px; /* max-width=260px + margin-left=10px + margin-right=10px => 280px */
+     background-color: white;
+     margin: 50px 10px 0 10px;
+}
+
+article h2 {
+     font-size: 20px;
+     margin: 20px 0 0 20px;
+}
+
+article img {
+     padding: 20px;
+     max-width: 100%;    
+}
+
+article p {
+     font-size: 12px;
+     margin: 0 20px;
+     line-height: 20px;
+}
+
+article p.post {
+     margin: 20px 20px 40px 20px;    
+     border-top: 1px dotted black;
+     border-bottom: 2px solid black;
+     padding: 5px;
+}
+
+article p a {
+     text-decoration: none;
+     color: #cc6633;     
+}
+
+nav {
+      font-size: 12px;      
+      font-weight: bold;
+      line-height: 20px;
+      margin-bottom: 50px;
+}
+
+nav p {    
+     margin: 20px 0 0 20px;     
+}
+
+nav ul {
+     text-decoration: none;
+     list-style: none;
+     margin-left: 20px;
+     padding: 0;     
+}
+
+nav ul li a {
+     text-decoration: none;
+     color: #000000;
+}
+
+nav img {
+     max-width: 100%; 
+     padding: 10px 20px;       
+}
+
+footer {
+     text-align: center;  
+     padding: 50px 0;   
+}
+
+footer img {
+     padding: 0;
+     margin: 2px;
+}
+
 /* Clear fix hack */
 .clearfix:after {
      content: ".";

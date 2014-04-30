@@ -12,6 +12,91 @@ Developer @GA in NYC
      box-sizing: border-box; /* IE */
 }
 
+body {
+     background-image: url('file:///Users/carlitos/code/wdi/WDI_NYC_Apr14_Proto/w02/d02/Carlos_Pichardo/ecardly_source/images/background.jpg');
+     background-repeat:repeat-x;
+     background-color: lightgray;
+}
+
+div.container_left {
+     margin: 60px 10px 0 20px;
+     padding: 5px;
+     height: 1400px;
+     max-width: 640px;
+     background-color: white;
+     float: left;
+}
+
+div.container_right {
+     float: left;
+     width: 300px;
+     height: 700px;
+     background-color: white;
+     margin: 60px auto;
+
+}
+
+div.clear {
+     clear: both;
+}
+
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:underline;}
+
+
+h3{
+     margin-left: 20px;
+}
+
+ul {
+     list-style-type: none;
+     color: black;
+
+}
+
+
+img{
+     display: block;
+     margin: 0 auto;
+     max-width: 600px
+}
+
+img.ads {
+     margin-top: 15px;
+}
+
+img.icons{
+     float: left;
+     margin: 10px auto;
+}
+
+div.img-div {
+     width: 200px;
+     margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+     img.logo-img{
+          width: auto;
+     }
+}
+
+@media (max-width: 600px) {
+     img{
+          width: 100%;
+     }
+}
+
+p{
+     margin: 20px;
+}
+
+.link{
+     color: red;
+}
+
 /* Clear fix hack */
 .clearfix:after {
      content: ".";

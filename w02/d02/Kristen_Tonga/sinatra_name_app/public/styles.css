@@ -1,0 +1,14 @@
+body {
+  background-color: lightblue;
+  Font-family: 'Special Elite', 'cursive';
+}
+
+li {
+  background-color: none;
+  outline: 2px solid lightsteelblue;
+  padding: 5px;
+}
+
+li:nth-child(even){
+  background-color: lightsteelblue;
+}

@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+
+gem 'faker'
+gem 'sinatra'
+gem 'sinatra-reloader'
+
+# listing all the dependencies for our app.rb file
