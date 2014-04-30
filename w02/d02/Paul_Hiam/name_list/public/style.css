@@ -1,4 +1,11 @@
 body{
 	background-color: lightblue;
-	font-family: 'Gloria Hallelujah', 'cursive';
+	/*font-family: 'Gloria Hallelujah', 'cursive'; */
 }
+li{
+	border: 2px solid lightyellow;
+	width: 20em;
+}
+li:nth-child(even){
+	background-color: lightyellow;
+};
