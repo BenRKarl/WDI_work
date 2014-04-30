@@ -1,6 +1,6 @@
-/* 
+/*
 
-## Style Hints: 
+## Style Hints:
 
 Body Font Size = 12px
 	 Line Height = 17px
@@ -10,3 +10,33 @@ Body Font Size = 12px
 Link Hover Color = #20222a
 
 */
+
+h1 {
+  font-family: Times;
+  color: lightgray;
+}
+.big {
+  max-width: 50em;
+}
+
+span {
+  color: #A8B3FF;
+}
+
+.lower {
+border: .3em solid lightgray;
+}
+
+p {
+  font-family: Times;
+  color: gray;
+}
+
+.date {
+  color: #A8B3FF;
+}
+
+h3 {
+  font-family: Times;
+  color: lightgray;
+}
