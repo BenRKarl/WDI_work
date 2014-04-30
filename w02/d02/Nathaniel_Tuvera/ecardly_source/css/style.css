@@ -51,6 +51,14 @@ ul {
      list-style-type: none;
      text-align: left
 }
+li {
+     padding: 2px;
+}
+
+a {
+     color:red;
+     text-decoration: none;
+}
 
 .header {
      background-image: urL("../images/background.jpg");
@@ -82,16 +90,26 @@ ul {
 }
 .menu {
      margin: 0 auto;
+     padding-top: 10px;
      text-align: center;
 }
+#footer {
+     margin: 10px auto;
+     display: inline-block;
+}
 
+.authorinfo {
+     font-size: 12px;
+     padding-top: 5px;
+     padding-bottom: 5px;
+}
 .bar {
      height: 0;
      border: 1px dotted black;
 }
 .hbar{
 
-     border: 2px solid black;
+     border: 1px solid black;
 }
 .logo {
      background-image: url("../images/logo.png");
@@ -147,4 +165,22 @@ div .submityourown {
      background-size:auto;
      width:  600px;
      height: 400px;
+     display:inline;
+}
+
+.soc_fb {
+     background-image: url("../images/social-icon-facebook.png");
+     height: 42px;
+     width: 42px;
+
+}
+.soc_twit {
+     background-image: url("../images/social-icon-twitter.png");
+     height: 42px;
+     width: 42px;
+}
+.soc_pin {
+     background-image: url("../images/social-icon-pinterest.png");
+     height: 42px;
+     width: 42px;
 }
