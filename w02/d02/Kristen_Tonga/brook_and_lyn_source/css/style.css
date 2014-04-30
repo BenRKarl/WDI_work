@@ -1,6 +1,68 @@
-/* 
+body {
+  font-size: 12px;
+  line-height: 17px;
+  font-family: "Times New Roman", serif;
+  color: #656565;
+  background-color: gray;
+}
 
-## Style Hints: 
+div {
+  background-color:white;
+  padding: 25px 50px 25px 50px;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+.main {
+  width: 100%;
+}
+
+p {
+  margin-top: 0px;
+}
+
+date {
+color:blue;
+}
+
+.references {
+  width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.press {
+  width: 23%;
+  margin:5px;
+  outline: 4px solid lightgray;
+  float:left;
+}
+
+.copyright {
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+
+/*
+
+## Style Hints:
 
 Body Font Size = 12px
 	 Line Height = 17px
