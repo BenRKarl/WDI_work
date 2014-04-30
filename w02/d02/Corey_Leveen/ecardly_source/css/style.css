@@ -21,10 +21,6 @@ html {
      background-color: lightgray;
 }
 
-nav {
-     border: 1px solid white;
-}
-
 nav img {
  display: block;
  margin: auto;
@@ -80,7 +76,8 @@ ul {
 }
 
 footer {
-     border: 1px solid purple;
+     display: inline-block;
+     margin: 0 auto;
 }
 
 footer img {

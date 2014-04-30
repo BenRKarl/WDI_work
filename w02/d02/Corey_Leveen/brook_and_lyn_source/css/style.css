@@ -11,13 +11,16 @@ Link Hover Color = #20222a
 
 */
 
+.container {
+  width: 60em;
+  margin-left: 5em;
+}
+
 h1 {
   font-family: Times;
   color: lightgray;
 }
-.big {
-  max-width: 50em;
-}
+
 
 span {
   color: #A8B3FF;
@@ -25,6 +28,7 @@ span {
 
 .lower {
 border: .3em solid lightgray;
+width: auto;
 }
 
 p {
