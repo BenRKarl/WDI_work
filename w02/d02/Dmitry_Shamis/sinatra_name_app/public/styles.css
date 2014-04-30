@@ -1,0 +1,13 @@
+body {
+  background-color: lightblue;
+}
+
+li {
+  background-color: lightblue;
+  border: 1px solid lightyellow;
+  width: 170px;
+}
+
+li:nth-child(even) {
+  background-color: lightyellow;
+}
