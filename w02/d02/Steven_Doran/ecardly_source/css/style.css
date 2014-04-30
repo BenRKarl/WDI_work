@@ -7,23 +7,139 @@ Developer @GA in NYC
 
 /* Box Model Hack */
 * {
-     -moz-box-sizing: border-box; /* Firexfox */
-     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
-     box-sizing: border-box; /* IE */
+   -moz-box-sizing: border-box; /* Firexfox */
+   -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+   box-sizing: border-box; /* IE */
+}
+
+body {
+   background: url("../images/background.jpg");
+   background-repeat: repeat-x;
+   background-color: lightgray;
+   z-index: -1;
+}
+
+header {
+   max-height: 220px;
+}
+
+h1#logo {
+   width: 216px; 
+   height: 213px;
+   background-image: url("../images/logo.png");
+   margin: 0 auto;
+}
+
+h1#logo span {
+   display: none;
+}
+
+.content {
+   max-width: 900px;
+   margin: 0 auto;
+}
+
+article {
+   margin: 30px auto 30px auto;
+   max-width: 71%;
+   background-color: white;
+   padding: 20px;
+   float: left;
+}
+
+aside {
+   margin: 30px auto 30px auto;
+   background-color: white;
+   max-width: 27%;
+   padding: 20px;
+   float: right;
+}
+
+h2 {
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 35px;
+   margin-bottom: 10px;
+}
+
+h3 {
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 20px;
+   margin: 5px auto 0 auto;
+}
+
+ul {
+   margin: 10px auto 20px auto;
+   padding-left: 0px;
+}
+
+li {
+   list-style: none;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 500;
+   font-size: 14px;
+   line-height: 18px;
+   text-align: left;
+}
+
+img {
+   max-width: 100%
+}
+
+.aside_pic {
+   margin: 5px auto 5px auto;
+}
+
+.blog_body {
+   font-family: 'Raleway', sans-serif;
+   font-weight: 500;
+   font-size: 14px;
+   line-height: 18px;
+}
+
+.blog_notes {
+   font-family: 'Raleway', sans-serif;
+   font-weight: 500;
+   font-size: 14px;
+   line-height: 18px;
+   border-top: 1px dotted black;
+   border-bottom: 2px solid black;
+   padding: 10px 0 10px 0;
+   margin-bottom: 60px;
+}
+
+.impact {
+   color: red;
+   font-weight: 700;
+}
+
+footer {
+   max-width: 900px;
+   clear: both;
+   margin: 0 auto;
+}
+
+ul#horizontal_list {
+   list-style: none;
+   text-align: center;
+}
+
+ul#horizontal_list li {
+   display: inline-block;
+   padding: 5px;
 }
 
 /* Clear fix hack */
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+   content: ".";
+   display: block;
+   clear: both;
+   visibility: hidden;
+   line-height: 0;
+   height: 0;
 }
 
 .clear {
-	clear: both;
+   clear: both;
 }
 
 
