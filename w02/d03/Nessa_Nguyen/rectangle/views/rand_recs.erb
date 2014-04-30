@@ -1,0 +1,14 @@
+<div style="max-width: 600px; display:block; margin: 30px auto; text-align:center">
+
+
+<h1 style="font-family:Arial">These are my rectangles</h1>
+
+<% @rectangles.each do |rectangle| %>
+
+<div style="width: <%= rectangle[:width] %>; 
+height: <%= rectangle[:height] %>; background-color: <%= rectangle[:color] %>; display: inline-block; margin:40px auto">
+</div>	
+
+<% end %>
+
+</div>
