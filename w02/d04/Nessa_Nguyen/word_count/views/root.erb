@@ -2,11 +2,11 @@
 
 <h2>Sit and wait!</h2>
 
-<div class="books">
+<div class="list">
 <% Dir['books/*'].each do |book| %>
 
 	<div class="book">
-	<a href="<%= book %>"><%= book.split('/').last %></a>
+	<a href="/<%= book %>"><%= book.split('/').last.split('.').first.gsub('-',' ') %></a>
 	</div>
 
 	<% end %>
