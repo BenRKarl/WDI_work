@@ -5,4 +5,4 @@ gem 'sinatra-reloader'
 
 gem 'pry'
 
-gem 'yahoo-finance', require: '<yahoo-finance'
+gem 'yahoo-finance', require: 'yahoo_finance'
