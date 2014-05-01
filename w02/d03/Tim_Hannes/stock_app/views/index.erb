@@ -1,0 +1,10 @@
+<h3>Enter the symbol to check the current price of the stock.</h3>
+<% unless @a.nil? %>
+  <p>Stock symbol: <%= @a %> </p>
+<% end %>
+
+<form action="/stock" method="post">
+  <input type="text" name='stock_symbol'>
+  <input type="submit">
+</form>
+
