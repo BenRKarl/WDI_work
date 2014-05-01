@@ -4,7 +4,7 @@
   <input type="submit" value="Fetch me a book!"/>
 </form>
 
-<div class=''>
+<div class='books'>
 <% Dir['books/*'].each do |book| %>
 <div class='book'>
 <a href="/<%= book %>"><%= book %></a>
