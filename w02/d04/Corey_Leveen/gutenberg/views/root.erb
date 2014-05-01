@@ -1,0 +1,13 @@
+<h1>YE OLDE BOOKE PARSER</h1>
+
+<form action="/random" method="get">
+  <input type="submit" value="Fetch me a book!"/>
+</form>
+
+<div class=''>
+<% Dir['books/*'].each do |book| %>
+<div class='book'>
+<%= book %>
+</div>
+<% end %>
+</div>
