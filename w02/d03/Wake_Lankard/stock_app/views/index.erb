@@ -1,0 +1,16 @@
+<h2>Your stock quote </h2>
+<form action="/stock" method="post">
+  <input type="text" name="ticker">
+  <input type="submit">
+</form>
+The bubbles represent trading volume.  <br/>
+Boy, it sure would be nice if there were dates or something in the middle of them.<br/>
+ticker = <%= @ticker %><br/>
+price = <%= @price %>
+<% @volume_arr.each do |diam| %>
+
+  <div class="volume" style="width:<%= diam %>px;height:<%= diam %>px;border-radius:<%= diam/2 %>px;">
+  </div>
+<% end %>
+
+
