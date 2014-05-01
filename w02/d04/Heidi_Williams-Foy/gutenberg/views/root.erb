@@ -5,6 +5,7 @@
 <div class='books'>
 	<% Dir['books/*'].each do |book| %>
 	<div class='book'>
+		<a href="/%= book%>"><%= book %> </a>
 		<%= book %>
 	</div>
 	<% end %>
