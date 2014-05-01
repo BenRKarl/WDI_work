@@ -7,7 +7,7 @@
 <div class=''>
 <% Dir['books/*'].each do |book| %>
 <div class='book'>
-<%= book %>
+<a href="/<%= book %>"><%= book %></a>
 </div>
 <% end %>
 </div>
