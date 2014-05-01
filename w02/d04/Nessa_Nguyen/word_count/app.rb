@@ -21,7 +21,8 @@ def word_count(book_name)
 end
 
 def words(book_name)
-	book_text(book_name).delete(',').delete(':').split(' ')
+	book_text(book_name).delete(',').delete(':').delete('.')
+	.delete("!").delete(';').delete('?').split(' ')
 	# .downcase
 end	
 
