@@ -3,7 +3,7 @@ Bundler.require
 
 
 def rand_char 
-  char_array = ((A..F).to_s + (0..9).to_s).split(',').sample
+  char_array = (('A'..'F').to_a + (0..9).to_a).sample
 end
 
 def hex_color 
@@ -20,8 +20,8 @@ compliments = [
 
 get '/' do
   @compliment = compliments.sample
-  @bgcolor = #hex_color
-  ['#FF5B39', '#CDFF23', '#0096FF', '#FF8AF3'].sample  
+  @bgcolor = "##{hex_color}"
+  #['#FF5B39', '#CDFF23', '#0096FF', '#FF8AF3'].sample  
 
   erb :compliment
 end
@@ -33,7 +33,8 @@ end
 
 get '/names' do 
   @compliment = compliments.sample
-  @bgcolor = ['#FF5B39', '#CDFF23', '#0096FF', '#FF8AF3'].sample  
+  @bgcolor = "##{hex_color}"
+  #['#FF5B39', '#CDFF23', '#0096FF', '#FF8AF3'].sample  
   @address = params[:current]
   erb :custom
 end
