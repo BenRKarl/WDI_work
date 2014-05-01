@@ -1,0 +1,12 @@
+<h1>ye olde book parser</h1>
+<h2> welcome pull up a chair</h2>
+<no> not that one</p>
+
+
+<div class='books'
+  <% Dir['books/*'].each do |book| %>
+  <div class='book'>
+  	 <a href="/parse_book/<%= book %>"><%= book %></a>
+  	</div>
+  	<% end %>
+</div>
