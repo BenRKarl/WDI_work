@@ -2,8 +2,21 @@ require 'bundler/setup'
 Bundler.require
 
 get '/' do
+  erb :index
+end
 
-erb :index
+post '/names' do
+  person_name = params[:user_name].gsub(" ", "%20")
+
+  redirect '/names?being_name='+person_name
+  # redirect "/names?being_name=#{person_name}"
 
 end
+
+get '/names' do
+  @name = params[:being_name]
+  erb :show
+end
+
+
 
