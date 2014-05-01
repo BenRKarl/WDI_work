@@ -1,0 +1,4 @@
+- Company Name: Sears
+- Good/Service Provided: Pants
+-Cost: 70
+- Thank you for your patronage 
