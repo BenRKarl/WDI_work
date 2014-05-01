@@ -1,0 +1,120 @@
+Last login: Wed Apr 30 15:14:15 on ttys004
+GA General Assembly  Web Development Immersive 
+------------------------------------------
+git version 1.9.2
+Homebrew 0.9.5
+ruby 1.9.3p448 (2013-06-27 revision 41675) [x86_64-darwin13.1.0]
+psql (PostgreSQL) 9.3.4
+Rails 4.1.0
+heroku-toolbelt/3.6.0 (x86_64-darwin13.1.0) ruby/1.9.3
+------------------------------------------
+type unwelcome to remove this message
+Andrea ~
+$ cd code
+Andrea ~/code
+$ cd wdi/
+Andrea ~/code/wdi
+$ cd WDI_NYC_Apr14_Proto/
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto on master[!?]
+$ cd w02
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02 on master[!?]
+$ cd d03
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03 on master[!?]
+$ cd Andrea_Trapp/
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp on master[!?]
+$ ls
+README.md             postcard_mailbox/     sinatra_rectangles/
+post_101_name/        posting_with_sinatra/
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp on master[!?]
+$ mkdir color_app
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp on master[!?]
+$ cd color_app/
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/color_app on master[!]
+$ mkdir views public
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/color_app on master[!]
+$ touch app.rb Gemfile views/index.erb public/styles.css views/layout.erb
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/color_app on master[!?]
+$ subl .
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/color_app on master[!?]
+$ ls
+Gemfile  app.rb   public/  views/
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/color_app on master[!?]
+$ bunle
+-bash: bunle: command not found
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/color_app on master[!?]
+$ bundle
+Fetching gem metadata from https://rubygems.org/........
+Fetching additional metadata from https://rubygems.org/..
+Resolving dependencies...
+Using backports 3.6.0
+Using coderay 1.1.0
+Using json 1.8.1
+Using multi_xml 0.5.5
+Using httparty 0.13.1
+Using method_source 0.8.2
+Using multi_json 1.9.3
+Using slop 3.5.0
+Using pry 0.9.12.6
+Using rack 1.5.2
+Using rack-protection 1.5.3
+Using rack-test 0.6.2
+Using tilt 1.4.1
+Using sinatra 1.4.5
+Using sinatra-contrib 1.4.2
+Using sinatra-reloader 1.0
+Using bundler 1.6.2
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/color_app on master[!?]
+$ cd ..
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp on master[!?]
+$ mkdir stock_app
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp on master[!?]
+$ gem install yahoo-finances
+ERROR:  Could not find a valid gem 'yahoo-finances' (>= 0) in any repository
+^[[A^CERROR:  Interrupted
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp on master[!?]
+$ gem install yahoo-finance
+Fetching: yahoo-finance-0.0.2.gem (100%)
+Successfully installed yahoo-finance-0.0.2
+1 gem installed
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp on master[!?]
+$ pry
+[1] pry(main)> require 'yahoo_finance
+[1] pry(main)* 
+[2] pry(main)> require 'yahoo_finance'
+true
+[3] pry(main)> data = YahooFinance.historical_quotes("goog", Time::now-(24*60*60*10), Time::now)
+[
+    [0] #<OpenStruct symbol="goog", trade_date="2014-04-29", open="516.90", high="529.46", low="516.32", close="527.70", volume="2691700", adjusted_close="527.70">,
+    [1] #<OpenStruct symbol="goog", trade_date="2014-04-28", open="517.18", high="518.60", low="502.80", close="517.15", volume="3326400", adjusted_close="517.15">,
+    [2] #<OpenStruct symbol="goog", trade_date="2014-04-25", open="522.51", high="524.70", low="515.42", close="516.18", volume="2094600", adjusted_close="516.18">,
+    [3] #<OpenStruct symbol="goog", trade_date="2014-04-24", open="530.07", high="531.65", low="522.12", close="525.16", volume="1878000", adjusted_close="525.16">,
+    [4] #<OpenStruct symbol="goog", trade_date="2014-04-23", open="533.79", high="533.87", low="526.25", close="526.94", volume="2046700", adjusted_close="526.94">,
+    [5] #<OpenStruct symbol="goog", trade_date="2014-04-22", open="528.64", high="537.23", low="527.51", close="534.81", volume="2358900", adjusted_close="534.81">,
+    [6] #<OpenStruct symbol="goog", trade_date="2014-04-21", open="536.10", high="536.70", low="525.60", close="528.62", volume="2559700", adjusted_close="528.62">
+]
+[4] pry(main)> data[0].open
+"516.90"
+[5] pry(main)> data[0].symbol
+"goog"
+[6] pry(main)> data[0].high
+"529.46"
+[7] pry(main)> exit
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp on master[!?]
+$ ls
+README.md             postcard_mailbox/     stock_app/
+color_app/            posting_with_sinatra/
+post_101_name/        sinatra_rectangles/
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp on master[!?]
+$ cd stock_app/
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/stock_app on master[!]
+$ ls
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/stock_app on master[!]
+$ mkdir views public
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/stock_app on master[!]
+$ touch app.rb Gemfile views/layout.erb views/index.erb public/styles.css
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/stock_app on master[!?]
+$ subl .
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/stock_app on master[!?]
+$ 
