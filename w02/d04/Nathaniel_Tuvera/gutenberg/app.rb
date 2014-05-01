@@ -5,5 +5,11 @@ get '/' do
   erb :root
 end
 
+get 'books/:name' do
+  @name = params[:name]
+  erb :show
+end
+
+
 get '/id' do
 end
