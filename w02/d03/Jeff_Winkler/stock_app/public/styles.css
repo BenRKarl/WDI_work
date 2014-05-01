@@ -1,0 +1,102 @@
+
+body {
+  background-color: black;
+  margin: 0;
+  font-family: "PFDinTextCompProBold",Impact,Arial;
+  color: gray;
+}
+
+
+
+.top {
+  text-align: center;
+  background-color: gray;
+  padding: 0.5em;
+  color: white;
+  vertical-align: middle;
+  font-size: 1.5em;
+}
+
+.input_area {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  background-color: gray;
+  margin-top: 3em;
+  height: 10em;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  font-size: 1.25em;
+}
+
+.iform {
+  text-align: center;
+  padding-top: 1em;
+}
+
+.tbox {
+  border-radius: 5px;
+  height: 20px;
+  width: 150px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 0.65em
+}
+
+.click {
+  height: 40px;
+  width: 180px;
+  color: green;
+  background-color: black;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.65em
+}
+
+.price {
+  float: left;
+  margin: 10px;
+  background-color: darkgreen;
+  width: 50px;
+  text-align: center;
+  padding-bottom: 20px;
+
+}
+
+.bottom {
+  clear: both;
+  display: block;
+  text-align: center;
+  margin: 20px;
+}
+
+.backb {
+  display: block;
+  text-decoration: none;
+  background-color: gray;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  padding-top: 25px;
+  border-radius: 10px;
+
+}
+
+.container {
+  height: 280px;
+  width: 600px;
+  display: block;
+  margin: 0 auto;
+  background-color: lightyellow;
+  margin-top: 40px;
+  padding-left: 40px;
+  border-radius: 15px;
+}
+
+.pinfo {
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Times New Roman"
+}

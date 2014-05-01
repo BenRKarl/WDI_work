@@ -1,0 +1,32 @@
+body {
+	max-width: 600px;
+  margin: 50px auto;
+}
+
+div.bar {
+  display: block;
+  background-color: #c0392b;
+  padding: 5px;
+  margin: 5px 0;
+} 
+
+p.number {
+	margin-top: 5px;
+	color: #ffffff;
+	font-size: 14px;
+}
+
+* {
+  font-family: Helvetica, Arial, sans serif;
+}
+
+p, form input {
+  font-size: 18px;
+  margin: 10px 0 20px 0;
+  color: #444444;
+}
+
+h1 {
+	text-align: center;
+  color: #2980b9;
+}

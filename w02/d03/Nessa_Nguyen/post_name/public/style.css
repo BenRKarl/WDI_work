@@ -1,0 +1,20 @@
+body {
+	background-color: #ebebeb;
+}
+
+* {
+	font-family: Arial;
+	font-size: 18px;		
+}
+
+form input[type="text"], input[type="submit"] {
+	font-family: Arial;
+	font-size: 18px;	
+}
+
+
+input[type="submit"] {
+	background-color: blue;
+	color: #fff;
+	cursor: pointer;
+}
