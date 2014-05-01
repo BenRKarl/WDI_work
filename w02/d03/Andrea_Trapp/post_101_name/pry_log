@@ -1,0 +1,46 @@
+
+app.rb
+-------
+require 'bundler/setup'
+Bundler.require	
+
+get '/' do 
+	erb :index
+end
+
+post '/names' do 
+	puts "I am a friendly string"
+
+	binding.pry
+
+	puts "I am also a super nice string"
+end
+
+
+
+
+Terminal-Output
+--------------
+From: /Users/Andrea/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp/post_101_name/app.rb @ line 11 self.POST /names
+
+     6: end
+     7: 
+     8: post '/names' do 
+     9: 	puts "I am a friendly string"
+    10: 
+ => 11: 	binding.pry
+    12: 
+    13: 	puts "I am also a super nice string"
+    14: end
+
+[1] pry(#<Sinatra::Application>)> puts
+
+=> nil
+[1] pry(#<Sinatra::Application>)> params
+=> {"user_name"=>"lichard"}
+[1] pry(#<Sinatra::Application>)> exit
+I am also a super nice string
+::1 - - [30/Apr/2014 14:25:50] "POST /names HTTP/1.1" 200 - 269.8868
+localhost - - [30/Apr/2014:14:21:20 EDT] "POST /names HTTP/1.1" 200 0
+http://localhost:4567/ -> /names
+

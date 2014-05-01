@@ -1,0 +1,23 @@
+body {
+  background-color: yellow;
+}
+
+div {
+  height: 2em;
+  color: lime;
+  background-color: black;
+  padding: 5px;
+  float: left;
+}
+
+.chart {
+  background-color: none;
+}
+
+p {
+  float: left;
+}
+
+input[type=submit] {
+  background: red;
+}

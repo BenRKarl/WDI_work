@@ -125,6 +125,7 @@ a:active {
  */
 
 h1 {
+    color: gray;
     font-size: 2em;
     margin: 0.67em 0;
 }
@@ -132,6 +133,7 @@ h1 {
 h2 {
     font-size: 1.5em;
     margin: 0.83em 0;
+    color: gray;
 }
 
 h3 {
@@ -319,9 +321,12 @@ nav ol {
  * 2. Improves image quality when scaled in IE7
  *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
  */
-
+frame {
+    padding: 1px;
+     border: 5px solid gray;
+}
 img {
-    border: 0; /* 1 */
+     border: 0; /* 1 */
     -ms-interpolation-mode: bicubic; /* 2 */
 }
 
@@ -501,4 +506,4 @@ textarea {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-} 
+}
