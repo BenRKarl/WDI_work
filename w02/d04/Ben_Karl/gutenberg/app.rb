@@ -1,8 +1,6 @@
 require "bundler/setup"
 Bundler.require
 
-#Random book
-
 #Or select a specific book
 #Get text of book
 #Parse text
