@@ -1,0 +1,30 @@
+
+.showit {
+  color: white;
+  display: block;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+  margin-top: 0px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  text-decoration: none;
+}
+
+div.showit {
+
+  border-bottom: white solid 100px;
+}
+
+body {
+  margin: 0;
+  background-color: darkgray;
+
+}
+
+a.showit {
+  color: rgb(10,100,150);
+
+}
+
+
