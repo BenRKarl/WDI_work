@@ -5,3 +5,7 @@ get '/' do
   erb :root
 end
 
+get '/books/:name' do 
+  params[:name]
+
+end
