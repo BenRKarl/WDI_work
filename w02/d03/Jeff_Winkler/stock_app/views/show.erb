@@ -1,0 +1,14 @@
+
+<div class="top">Recent Stock Information for <%=@ticker.upcase%></div>
+<div class="container">
+
+  <% @data.each do |day| %>
+    <div class="price" style="height: <%=day[:height]%>px; position: relative; top: <%= day[:offset] %>px">
+      <p class="pinfo"><%=day[:close] %>
+      <br/><br/><%=day[:date] %></p>
+    </div>
+  <% end %>
+</div>
+<div class="bottom">
+ <a class="backb" href="/">Back</a>
+</div>
