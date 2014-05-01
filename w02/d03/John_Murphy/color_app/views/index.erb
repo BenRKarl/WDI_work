@@ -1,0 +1,9 @@
+<h3><%= @color_info[:title] %></h3>
+
+<div class = "palette">
+  <% @color_info[:colors].each do |hex_color|%>
+    <div style="width: 100px; height: 100px; background-color: #<%=hex_color%>" class = "colors">
+      <%=hex_color%>
+    </div>
+    <%end%>
+</div>
