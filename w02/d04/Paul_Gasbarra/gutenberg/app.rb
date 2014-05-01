@@ -21,4 +21,7 @@ end
 get '/random' do
   end
 
+get '/book/:name' do
+ name = params[:name]
+end
 
