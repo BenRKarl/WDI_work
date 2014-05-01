@@ -11,6 +11,7 @@ end
 
 
 get '/random' do
+  "hello"
 end
 
 

@@ -1,6 +1,14 @@
 <h1>Book Parser</h1>
 <h2>Welcome</h2>
 
+<div class = "books">
+  <% Dir['books/*'].each do |book| %>
+    <div class="book">
+      <%= book %>
+    </div>
+  <% end %>
+</div>
+
 <form action="random" method="get">
   <input type="submit" value="Get a book"/>
 </form>
