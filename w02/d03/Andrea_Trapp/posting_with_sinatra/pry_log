@@ -1,0 +1,25 @@
+[1] pry(main)> hash = { "greeting" => "Help me Obi-Wan" }
+=> {"greeting"=>"Help me Obi-Wan"}
+[2] pry(main)> hash.map { |key, value| "#{key}=#{value}" }
+=> ["greeting=Help me Obi-Wan"]
+[3] pry(main)> hash.map do |key, value|
+[3] pry(main)*   "#{key}=#{value}"
+[3] pry(main)* end
+=> ["greeting=Help me Obi-Wan"]
+[4] pry(main)> hash.map do |key, value|
+[4] pry(main)*   "#{key}=#{value}"
+[4] pry(main)* end.join("&")
+=> "greeting=Help me Obi-Wan"
+[5] pry(main)> hash["salutation"] = "Wa wa waaaaa"
+=> "Wa wa waaaaa"
+[6] pry(main)> hash
+=> {"greeting"=>"Help me Obi-Wan", "salutation"=>"Wa wa waaaaa"}
+[7] pry(main)> hash.map do |key, value|
+[7] pry(main)*   "#{key}=#{value}"
+[7] pry(main)* end.join("&")
+=> "greeting=Help me Obi-Wan&salutation=Wa wa waaaaa"
+[8] pry(main)> [1,2,3].join(", ")
+=> "1, 2, 3"
+[9] pry(main)> [1,2,3].join(" AND ALSO ")
+=> "1 AND ALSO 2 AND ALSO 3"
+[10] pry(main)>
