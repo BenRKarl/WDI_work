@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body {background-color: #<%=@color%>}
+
+  </style>
+</head>
+<body>
+  <form action="names" method="post">
+  <input type="text" name="name"></input>
+  <input type="submit"></input>
+</form>
+
+  <%= yield %>
+
+</body>
+</html>

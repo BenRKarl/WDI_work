@@ -22,6 +22,8 @@
 ### Supplemental Reading
 
 - [Sinatra Intro](http://www.sinatrarb.com/intro.html)
+- [On classes, modules, and mixins](http://matt.aimonetti.net/posts/2012/07/30/ruby-class-module-mixins/)
+- [git](http://www.ralfebert.de/tutorials/git/)
 
 ---
 ### What are we doing next week?
