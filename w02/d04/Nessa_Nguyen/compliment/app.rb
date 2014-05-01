@@ -33,8 +33,7 @@ end
 
 get '/names' do 
   @compliment = compliments.sample
-  @bgcolor = "##{hex_color}"
-  #['#FF5B39', '#CDFF23', '#0096FF', '#FF8AF3'].sample  
+  @bgcolor = "##{hex_color}" 
   @address = params[:current]
   erb :custom
 end

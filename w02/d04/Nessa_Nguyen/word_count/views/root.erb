@@ -1,0 +1,20 @@
+<h2>Book parser</h2>
+
+<h2>Sit and wait!</h2>
+
+<div class="books">
+<% Dir['books/*'].each do |book| %>
+
+	<div class="book">
+	<a href="<%= book %>"><%= book.split('/').last %></a>
+	</div>
+
+	<% end %>
+</div>
+
+
+<!--
+<form action="/random" method="post">
+	<input type="submit" value="Fetch me a book!"></input>
+</form>
+-->
