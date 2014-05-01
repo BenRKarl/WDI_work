@@ -11,12 +11,10 @@ post '/submit' do
 end
 
 get '/stock' do
-  #@ticker = params[:quote]
- def finance(quote)
-  data = YahooFinance.historical_quotes(quote, Time::now-(24*60*60*10), Time::now)
- show_it = data[0].join
- puts "#{show_it}"
- end
-
-
+   quoter = params[:quote]
+   def finance(quoter)
+    data = YahooFinance.historical_quotes(quoter, Time::now-(24*60*60*10), Time::now)
+    @string = data[0]
+   end
+   erb :show
 end
