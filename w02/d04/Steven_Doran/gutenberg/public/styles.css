@@ -1,16 +1,18 @@
 .books {
    background-color: white;
-   color: turquoise;
+   color: darkblue;
+}
+
+body {
+   color: white;
+   font-family: "Helvetica", sans-serif
 }
 
 h1 {
-   color: white;
-   font-size: bold;
-   font-family: "Helvetica", sans-serif;
+   font-style: bold;
 }
 
 h2 {
-   color: white;
-   font-size: bold;
-   font-family: "Helvetica", sans-serif;
+   font-style: bold;
 }
+
