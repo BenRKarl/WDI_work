@@ -6,3 +6,7 @@ get '/stock/:ticker' do
 	data = YahooFinance.historical_quotes(ticker, Time::now-(24*60*60*10), Time::now)
 	data[0].open
 end
+
+get '/' do
+	erb :index
+end
