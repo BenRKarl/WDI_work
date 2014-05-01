@@ -45,26 +45,6 @@ def count_words(book_name)
   word_counts
 end
 
-def store_word_counts(book_name, word_counts)
-  file_path = File.join(PARSE_DATA_DIR, book_name)
-  File.open(file_path, 'w') do |f|
-    word_counts.each do |word, count|
-      f << "#{word}: #{count}\n"
-    end
-  end
-end
-
-def parsed_file_exists?(book_name)
-
-  file_path = File.join(PARSE_DATA_DIR, book_name)
-  return File.exists?(file_path)
-end
-
-def read_parse_data(book_name)
-  file_path = File.join(PARSE_DATA_DIR, book_name)
-  File.readlines(file_path).map { |line| line.split(": ") }
-end
-
 def words(book_name)
   book_text(book_name).split(' ').map { |word| word.downcase }
 end
@@ -75,4 +55,23 @@ def book_text(book_name)
   text = f.read
   f.close
   text
+end
+
+def store_word_counts(book_name, word_counts)
+  file_path = File.join(PARSE_DATA_DIR, book_name)
+  File.open(file_path, 'w') do |f|
+    word_counts.each do |word, count|
+      f << "#{word}: #{count}\n"
+    end
+  end
+end
+
+def parsed_file_exists?(book_name)
+  file_path = File.join(PARSE_DATA_DIR, book_name)
+  return File.exists?(file_path)
+end
+
+def read_parse_data(book_name)
+  file_path = File.join(PARSE_DATA_DIR, book_name)
+  File.readlines(file_path).map { |line| line.split(": ") }
 end
