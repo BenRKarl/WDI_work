@@ -1,1 +1,9 @@
 <h2> <%= @name %> </h2>
+
+<div class='counts'>
+	<% @word_counts.each do |word, count| %>
+	<div class ='count'>
+		<%= word %> : <%= count %>
+	</div>
+	<% end %>
+	</div>
