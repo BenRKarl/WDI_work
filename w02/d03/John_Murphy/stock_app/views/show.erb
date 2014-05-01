@@ -1,0 +1,41 @@
+<nav class="clearfix">
+
+
+  <div><a href="/">Home</a></div>
+
+  <div class="bar">
+    <form action="/stocks" method="post">
+      <input type="text" name="ticker">
+      <input type="submit">
+    </form>
+  </div>
+
+  <div>Input stock symbol here:</div>
+
+</nav>
+
+<h1>Here are some recent prices of: <%=@ticker%></h1>
+<h2>(The width of the block directly corresponds to the closing price on that day)</h2>
+
+<p>Date: <%=@day0%> Closing Price: <%=@close0%></p>
+<div class="stock" style = "width: <%=@close0%>px;"></div>
+
+<p>Date: <%=@day1%> Closing Price: <%=@close1%></p>
+<div class="stock" style = "width: <%=@close1%>px;"></div>
+
+<p>Date: <%=@day2%> Closing Price: <%=@close2%></p>
+<div class="stock" style = "width: <%=@close2%>px;"></div>
+
+<p>Date: <%=@day3%> Closing Price: <%=@close3%></p>
+<div class="stock" style = "width: <%=@close3%>px;"></div>
+
+<p>Date: <%=@day4%> Closing Price: <%=@close4%></p>
+<div class="stock" style = "width: <%=@close4%>px;"></div>
+
+<p>Date: <%=@day5%> Closing Price: <%=@close5%></p>
+<div class="stock" style = "width: <%=@close5%>px;"></div>
+
+<p>Date: <%=@day6%> Closing Price: <%=@close6%></p>
+<div class="stock" style = "width: <%=@close6%>px;"></div>
+
+
