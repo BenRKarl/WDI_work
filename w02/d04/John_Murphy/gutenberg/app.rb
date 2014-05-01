@@ -10,3 +10,8 @@ get '/' do
 # [6] pry(main)> id = GutenbergBookFinder.book_text(33291)
   erb :root
 end
+
+get '/books/:name' do
+  @name = params[:name]
+  erb :show
+end
