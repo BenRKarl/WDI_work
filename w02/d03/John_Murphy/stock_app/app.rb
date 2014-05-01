@@ -20,17 +20,38 @@ post '/stocks' do
 #     [5] #<OpenStruct symbol="goog", trade_date="2014-04-22", open="528.64", high="537.23", low="527.51", close="534.81", volume="2358900", adjusted_close="534.81">,
 #     [6] #<OpenStruct symbol="goog", trade_date="2014-04-21", open="536.10", high="536.70", low="525.60", close="528.62", volume="2559700", adjusted_close="528.62">
 # ]
-  day_and_close = {}
-  day_and_close = data.each {|i| day_and_close[i.trade_date]=i.close}
-  redirect "/stocks?ticker=#{ticker}&ticker_open=#{data[0].open}"
+  days = {}
+  close = {}
+  data.each {|i| days["day#{data.index(i)}"] = i.trade_date}
+  days
+  data.each {|i| close["c#{data.index(i)}"] = i.close}
+  close
 
+  string = ""
+  days.each {|k,v| string = string + "&#{k}=#{v}"}
+  close.each {|k,v| string = string + "&#{k}=#{v}"}
+
+  redirect "/stocks?ticker=#{ticker}#{string}"
 
 end
 
 get "/stocks" do
-  @open=params[:ticker_open]
-  @ticker=params[:ticker]
 
+  @ticker = params[:ticker]
+  @day0 = params[:day0]
+  @day1 = params[:day1]
+  @day2 = params[:day2]
+  @day3 = params[:day3]
+  @day4 = params[:day4]
+  @day5 = params[:day5]
+  @day6 = params[:day6]
+  @close0 = params[:c0]
+  @close1 = params[:c1]
+  @close2 = params[:c2]
+  @close3 = params[:c3]
+  @close4 = params[:c4]
+  @close5 = params[:c5]
+  @close6 = params[:c6]
 erb :show
 end
 
