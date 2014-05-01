@@ -24,54 +24,80 @@ get '/books/:name' do
 end
 
 def sort_counts(book_name)
-  word_counts(book_name).sort_by { |word, counts| -word.length }
+  book = Book.new(book_name)
+  book.word_counts.sort_by { |word, counts| -word.length }
 end
 
-def word_counts(book_name)
-  if parsed_file_exists?(book_name)
-    word_counts = read_parse_data(book_name)
-  else
-    word_counts = count_words(book_name)
-    store_word_counts(book_name, word_counts)
+class Book
+  DIR = "books"
+  attr_reader :name
+  def initialize(name)
+    @name = name
   end
-  word_counts
-end
 
-def count_words(book_name)
-  word_counts = Hash.new { |hash, key| hash[key] = 0 }
-  words(book_name).each do |word|
-    word_counts[word] += 1
+  def word_counts
+    if parse_data_exists?
+      counts = read_parse_data
+    else
+      counts = count_words
+      write_parse_data(counts)
+    end
+    counts
   end
-  word_counts
+
+  def count_words
+    word_counts = Hash.new { |hash, key| hash[key] = 0 }
+    words(name).each do |word|
+      word_counts[word] += 1
+    end
+    word_counts
+  end
+
+  def words
+    book_text(name).split(' ').map { |word| word.downcase }
+  end
+
+  def book_text
+    book_path = File.join(BOOK_DIR, name)
+    File.read(book_path)
+  end
+
+  def parse_data_exists?
+    ParsedData.new(name).exists?
+  end
+
+  def read_parse_data
+    ParsedData.new(name).read
+  end
+
+  def write_parse_data(word_counts)
+    ParsedData.new(name).write
+  end
 end
 
-def words(book_name)
-  book_text(book_name).split(' ').map { |word| word.downcase }
-end
+class ParsedData
+  DIR = "parse_data"
+  attr_reader :book_name
+  def initialize(book_name)
+    @book_name = book_name
+  end
 
-def book_text(book_name)
-  book_path = File.join(BOOK_DIR, book_name)
-  f = File.open(book_path, 'r')
-  text = f.read
-  f.close
-  text
-end
+  def exists?
+    file_path = File.join(DIR, book_name)
+    File.exists?(file_path)
+  end
 
-def store_word_counts(book_name, word_counts)
-  file_path = File.join(PARSE_DATA_DIR, book_name)
-  File.open(file_path, 'w') do |f|
-    word_counts.each do |word, count|
-      f << "#{word}: #{count}\n"
+  def read
+    file_path = File.join(DIR, book_name)
+    File.readlines(file_path).map { |line| line.split(": ") }
+  end
+
+  def write
+    file_path = File.join(PARSE_DATA_DIR, book_name)
+    File.open(file_path, 'w') do |f|
+      word_counts.each do |word, count|
+        f << "#{word}: #{count}\n"
+      end
     end
   end
-end
-
-def parsed_file_exists?(book_name)
-  file_path = File.join(PARSE_DATA_DIR, book_name)
-  return File.exists?(file_path)
-end
-
-def read_parse_data(book_name)
-  file_path = File.join(PARSE_DATA_DIR, book_name)
-  File.readlines(file_path).map { |line| line.split(": ") }
 end
