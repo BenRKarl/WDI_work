@@ -4,11 +4,14 @@
 <div class = "books">
   <% Dir['books/*'].each do |book| %>
     <div class="book">
-      <%= book %>
+      <a href="/<%=book%>"><%= book %></a>
     </div>
   <% end %>
 </div>
 
+
+
+<br/><br/>
 <form action="random" method="get">
   <input type="submit" value="Get a book"/>
 </form>

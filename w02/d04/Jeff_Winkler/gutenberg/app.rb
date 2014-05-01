@@ -10,8 +10,9 @@ end
 
 
 
-get '/random' do
-  "hello"
+get '/books/:name' do
+  @name = params[:name]
+  erb :show
 end
 
 
