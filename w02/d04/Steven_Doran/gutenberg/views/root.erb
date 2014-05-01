@@ -3,7 +3,14 @@
 <p>No, not that one. It's rotten. Try that one.</p>
 
 
-<form action="/random" method="get">
+<!-- <form action="/random" method="get">
   <input type="submit" value="Fetch me a book!">
-</form>
+</form> -->
 
+<div class='books'>
+  <% Dir['books/*'].each do |book| %>
+  <div class='book'>
+    <%= book %>
+  </div>
+  <% end %>
+</div>
