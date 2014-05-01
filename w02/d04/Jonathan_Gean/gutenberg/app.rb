@@ -5,8 +5,7 @@ get '/' do
   erb :root
 end
 
-get '/random' do
-end
-
-get '/id' do
+get '/books/:name' do
+  @name = params[:name]
+  erb :show
 end
