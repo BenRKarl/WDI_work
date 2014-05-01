@@ -1,0 +1,177 @@
+Last login: Wed Apr 30 08:49:40 on ttys003
+GA General Assembly  Web Development Immersive 
+------------------------------------------
+git version 1.9.2
+Homebrew 0.9.5
+ruby 1.9.3p448 (2013-06-27 revision 41675) [x86_64-darwin13.1.0]
+psql (PostgreSQL) 9.3.4
+Rails 4.1.0
+heroku-toolbelt/3.6.0 (x86_64-darwin13.1.0) ruby/1.9.3
+------------------------------------------
+type unwelcome to remove this message
+Andrea ~
+$ cd code
+Andrea ~/code
+$ cd wdi/
+Andrea ~/code/wdi
+$ cd WDI_NYC_Apr14_Proto/
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto on master[!?]
+$ cd w02
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02 on master[!?]
+$ cd d03
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03 on master[!?]
+$ cd Andrea_Trapp/
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp on master[!?]
+$ gem install httparty
+When you HTTParty, you must party hard!
+Successfully installed httparty-0.13.1
+1 gem installed
+Andrea ~/code/wdi/WDI_NYC_Apr14_Proto/w02/d03/Andrea_Trapp on master[!?]
+$ pry
+[1] pry(main)> require 'httparty'
+true
+[2] pry(main)> HTTParty.get(http://www.colourlovers.com/api/palettes/random)
+SyntaxError: (eval):2: unknown regexp options - www
+[2] pry(main)> HTTParty.get("http://www.colourlovers.com/api/palettes/random")
+{
+    "palettes" => {
+             "palette" => {
+                     "id" => "2990211",
+                  "title" => "exmoor color palette",
+               "userName" => "Rinske",
+               "numViews" => "16",
+               "numVotes" => "2",
+            "numComments" => "0",
+              "numHearts" => "0",
+                   "rank" => "0",
+            "dateCreated" => "2013-08-12 15:18:49",
+                 "colors" => {
+                "hex" => [
+                    [0] "B3A044",
+                    [1] "D5D9E2",
+                    [2] "BA7379",
+                    [3] "8D5465",
+                    [4] "8D2A49"
+                ]
+            },
+            "description" => nil,
+                    "url" => "http://www.colourlovers.com/palette/2990211/exmoor_color_palette",
+               "imageUrl" => "http://www.colourlovers.com/paletteImg/B3A044/D5D9E2/BA7379/8D5465/8D2A49/exmoor_color_palette.png",
+               "badgeUrl" => "http://www.colourlovers.com/images/badges/p/2990/2990211_exmoor_color_palette.png",
+                 "apiUrl" => "http://www.colourlovers.com/api/palette/2990211"
+        },
+          "numResults" => "1",
+        "totalResults" => "3337169"
+    }
+}
+[3] pry(main)> my_colours.keys
+NameError: undefined local variable or method `my_colours' for main:Object
+from (pry):3:in `__pry__'
+[4] pry(main)> my_colors.keys
+NameError: undefined local variable or method `my_colors' for main:Object
+from (pry):4:in `__pry__'
+[5] pry(main)> my_colors = http://www.colourlovers.com/api/palettes/randomHTTParty.get("http://www.colourlovers.com/api/palettes/random")
+SyntaxError: unexpected tLABEL
+my_colors = http://www.colourlovers.com/api/pa...
+                 ^
+(eval):2: unknown regexp options - www
+[5] pry(main)> my_colors = HTTParty.get("http://www.colourlovers.com/api/palettes/random")
+{
+    "palettes" => {
+             "palette" => {
+                     "id" => "2751055",
+                  "title" => "Pass the Pixzy",
+               "userName" => "syork",
+               "numViews" => "26",
+               "numVotes" => "10",
+            "numComments" => "1",
+              "numHearts" => "0",
+                   "rank" => "0",
+            "dateCreated" => "2013-03-16 22:39:08",
+                 "colors" => {
+                "hex" => [
+                    [0] "DAE9C1",
+                    [1] "C1D2A7",
+                    [2] "B7A765",
+                    [3] "C9833E",
+                    [4] "C5713C"
+                ]
+            },
+            "description" => "<a href=\"http://www.colourlovers.com/forums/1,2,6544/PALETTE_BLEND_GAME\" target=\"_blank\"><img style=\"WIDTH:100%\" src=\"http://i1106.photobucket.com/albums/h370/luna_rose/paletteblendingame.png\" /></a>\n<a href=\"http://www.colourlovers.com/palette/2741268/Pass_The_Map?widths=1\" target=\"_blank\"><img src=\"http://www.colourlovers.com/images/badges/pw/2741/2741268_Pass_The_Map.png\" style=\"width: 240px; height: 120px; border: 0 none;\" alt=\"Pass_The_Map\" /></a>\n<a href=\"http://www.colourlovers.com/palette/2569207/FlutePixzy_CLAD?widths=1\" target=\"_blank\"><img src=\"http://www.colourlovers.com/images/badges/pw/2569/2569207_FlutePixzy_CLAD.png\" style=\"width: 240px; height: 120px; border: 0 none;\" alt=\"FlutePixzy_CLAD\" /></a>",
+                    "url" => "http://www.colourlovers.com/palette/2751055/Pass_the_Pixzy",
+               "imageUrl" => "http://www.colourlovers.com/paletteImg/DAE9C1/C1D2A7/B7A765/C9833E/C5713C/Pass_the_Pixzy.png",
+               "badgeUrl" => "http://www.colourlovers.com/images/badges/pw/2751/2751055_Pass_the_Pixzy.png",
+                 "apiUrl" => "http://www.colourlovers.com/api/palette/2751055"
+        },
+          "numResults" => "1",
+        "totalResults" => "3337172"
+    }
+}
+[6] pry(main)> my_colors.keys
+[
+    [0] "palettes"
+]
+[7] pry(main)> my_colors['palettes']
+{
+         "palette" => {
+                 "id" => "2751055",
+              "title" => "Pass the Pixzy",
+           "userName" => "syork",
+           "numViews" => "26",
+           "numVotes" => "10",
+        "numComments" => "1",
+          "numHearts" => "0",
+               "rank" => "0",
+        "dateCreated" => "2013-03-16 22:39:08",
+             "colors" => {
+            "hex" => [
+                [0] "DAE9C1",
+                [1] "C1D2A7",
+                [2] "B7A765",
+                [3] "C9833E",
+                [4] "C5713C"
+            ]
+        },
+        "description" => "<a href=\"http://www.colourlovers.com/forums/1,2,6544/PALETTE_BLEND_GAME\" target=\"_blank\"><img style=\"WIDTH:100%\" src=\"http://i1106.photobucket.com/albums/h370/luna_rose/paletteblendingame.png\" /></a>\n<a href=\"http://www.colourlovers.com/palette/2741268/Pass_The_Map?widths=1\" target=\"_blank\"><img src=\"http://www.colourlovers.com/images/badges/pw/2741/2741268_Pass_The_Map.png\" style=\"width: 240px; height: 120px; border: 0 none;\" alt=\"Pass_The_Map\" /></a>\n<a href=\"http://www.colourlovers.com/palette/2569207/FlutePixzy_CLAD?widths=1\" target=\"_blank\"><img src=\"http://www.colourlovers.com/images/badges/pw/2569/2569207_FlutePixzy_CLAD.png\" style=\"width: 240px; height: 120px; border: 0 none;\" alt=\"FlutePixzy_CLAD\" /></a>",
+                "url" => "http://www.colourlovers.com/palette/2751055/Pass_the_Pixzy",
+           "imageUrl" => "http://www.colourlovers.com/paletteImg/DAE9C1/C1D2A7/B7A765/C9833E/C5713C/Pass_the_Pixzy.png",
+           "badgeUrl" => "http://www.colourlovers.com/images/badges/pw/2751/2751055_Pass_the_Pixzy.png",
+             "apiUrl" => "http://www.colourlovers.com/api/palette/2751055"
+    },
+      "numResults" => "1",
+    "totalResults" => "3337172"
+}
+[8] pry(main)> my_colors['palettes']['palette'].keys
+[
+    [ 0] "id",
+    [ 1] "title",
+    [ 2] "userName",
+    [ 3] "numViews",
+    [ 4] "numVotes",
+    [ 5] "numComments",
+    [ 6] "numHearts",
+    [ 7] "rank",
+    [ 8] "dateCreated",
+    [ 9] "colors",
+    [10] "description",
+    [11] "url",
+    [12] "imageUrl",
+    [13] "badgeUrl",
+    [14] "apiUrl"
+]
+[9] pry(main)> my_colors['palettes']['palette']['title'].keys
+NoMethodError: undefined method `keys' for "Pass the Pixzy":String
+from (pry):9:in `__pry__'
+[10] pry(main)> my_colors['palettes']['palette']['title']
+"Pass the Pixzy"
+[11] pry(main)> my_colors['palettes']['palette']['colors']
+{
+    "hex" => [
+        [0] "DAE9C1",
+        [1] "C1D2A7",
+        [2] "B7A765",
+        [3] "C9833E",
+        [4] "C5713C"
+    ]
+}
+[12] pry(main)> 
