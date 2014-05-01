@@ -1,0 +1,13 @@
+
+<h3><%= @color_info[:title] %></h3>
+
+<div class="outline">
+<% @color_info[:colors].each do |color| %>
+  <div><%=color%></div>
+  <div class="box" style="background-color: #<%= color %>">
+
+
+  </div>
+
+<% end %>
+</div>

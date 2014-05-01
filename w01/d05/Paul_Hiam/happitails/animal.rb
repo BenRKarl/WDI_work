@@ -21,5 +21,9 @@ class Animal
   def to_s
     "#{@name} is a #{@age} year old #{@species} that loves #{@toys.join(", ")}"
 
+  def add_toy(toy)
+    @toys.push 
+  end
+
   end
 end
