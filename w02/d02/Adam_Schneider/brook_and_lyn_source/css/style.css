@@ -1,12 +1,21 @@
-/* 
+footer {
+  color: gray;
+}
+body {
+  font-family: 'futura-light';
+  line-height: 20px;
+  padding: 5px;
+  margin-right: 5px;
+  width: 1000px;
 
-## Style Hints: 
+.box {
+  margin-right: 10px;
+}
 
-Body Font Size = 12px
-	 Line Height = 17px
-	 Font Family = "Times New Roman", serif
-	 Font Color = #656565
-
-Link Hover Color = #20222a
-
-*/
+frame {
+     padding: 1px;
+     border: 5px solid gray;
+}
+container {
+  text-align: center;
+}
