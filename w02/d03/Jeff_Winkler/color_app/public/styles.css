@@ -1,0 +1,12 @@
+
+.box {
+
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.outline {
+  border: 10px solid lightgray;
+  padding: 0px;
+
+}

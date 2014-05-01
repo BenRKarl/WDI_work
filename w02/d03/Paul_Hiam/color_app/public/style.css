@@ -1,0 +1,11 @@
+body {
+	background-color: lightyellow;
+}
+.colors {
+	height: 5em;
+	margin: 1em;
+}
+.palette {
+	border: 0.5em solid black;
+	background-color: lightgrey;
+}
