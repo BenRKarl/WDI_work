@@ -1,9 +1,13 @@
 
-<h3>Your receipt has been printed</h3>
+<h3>Here are your receipts</h3>
 
 
-<!--
-<%= @text %>  
 
-<%= @receipt_array %>
--->
+<p>
+<% @file.each_line do |line| %>
+<%= line %></br></br>
+<% end %>
+</p>
+
+
+<p><a href="/">Click here</a> to add another receipt</p>

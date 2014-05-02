@@ -1,1 +1,3 @@
-company: jdg goods: hg amount: j
+company: Pret | goods: wrap | amount: $9.00
+company: Chipotle | goods: burrito | amount: $7.50
+company: DSW | goods: boots | amount: $50.99

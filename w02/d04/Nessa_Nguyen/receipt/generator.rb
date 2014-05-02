@@ -17,13 +17,14 @@ post '/receipts' do
 	@goods = params[:item]
 	@amount = params[:price]
 	new_receipt = { :company => @company, :goods => @goods, :amount => @amount }
+	
 	@receipt_array = []
 	new_receipt.each do |k,v|
 		@receipt_array << "#{k}: #{v}"
 	end			
 	
-	file = File.open('receipts.txt', 'w') do |file|
-		file.puts @receipt_array.join(" ") 
+	file = File.open('receipts.txt', 'a') do |file|
+		file.puts @receipt_array.join(" | ") 
 	end	
 
 	redirect '/receipts'
@@ -31,10 +32,11 @@ end
 
 	
 get '/receipts' do
-#	file = File.open('receipts.txt', 'r')
-#	file.read
-#	@text = file.rewind
-#	file.close 
+	@file = File.open('receipts.txt', 'r')
+  #@text = file.read
+	#@file.each_line do |line|
+	#	@text += line
+	#end
 	erb :show
 end
 
