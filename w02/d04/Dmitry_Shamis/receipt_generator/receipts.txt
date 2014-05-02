@@ -1,0 +1,18 @@
+Company Name: Dima and Co.
+Good/Service Provided: Pizza
+Cost: $10000
+Thank you for your patronage.
+Company Name: Dima and Co.
+Good/Service Provided: Pizza
+Cost: $10000
+Thank you for your patronage.
+Company Name: Summer Boog Productions
+Good/Service Provided: Love
+Cost: 1,000,000,000,000
+Thank you for your patronage.
+
+Company Name: Papa John's
+Good/Service Provided: Cheesy Bread
+Cost: $6.99
+Thank you for your patronage.
+

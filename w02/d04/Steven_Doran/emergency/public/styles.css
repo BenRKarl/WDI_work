@@ -1,0 +1,14 @@
+body {
+   background: url(bjork_and_cat_dancing.gif);
+   background-repeat: repeat;
+}
+
+.compliment {
+   text-align: center;
+}
+
+h2 {
+   font-family: "Helvetica", sans-serif;
+   color: white;
+   font-size: 40px;
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pick me up</title>
+  <style>
+  body {background-color: #<%= @color %>;
+        color: #FFFFFF;
+        font-family: "helvetica", "san-serif";}
+  div {font: bold 50px helvetica; margin-top: 50px;}
+  </style>
+</head>
+<body>
+<h1>Emergency WDI Pickmeup</h1>
+<form action="/name" method="post">
+<input type="text" name="user_name">
+<input type="submit">
+</form>
+  <%= yield %>
+</body>
+</html>
