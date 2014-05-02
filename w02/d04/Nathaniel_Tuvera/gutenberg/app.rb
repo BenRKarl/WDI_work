@@ -11,8 +11,12 @@ end
 get '/books/:name' do
   @name = params[:name]
   book_name = "books/#{@name}"
-  @word_counts = word_counts(book_name)
+  @word_counts = sort_counts(book_name)
   erb :show
+end
+
+def sort_counts(book_name)
+  word_counts(book_name).sort_by { |word, counts| -counts }
 end
 
 def word_counts(book_name)
