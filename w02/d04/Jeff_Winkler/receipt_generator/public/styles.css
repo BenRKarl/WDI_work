@@ -1,9 +1,4 @@
 
-.intext1 {
-  display: inline-block;
-  align: right;
-
-}
 
 .rform {
   display: block;
@@ -33,6 +28,7 @@
 .fdiv {
   padding-left: 80px;
 
+
 }
 
 .type {
@@ -44,14 +40,20 @@
 }
 
 .intext {
-  margin-top: 0px;
+  margin: 10px;
+  margin-top: 4px;
   display: block;
   width: 200px;
   height: 20px;
-  margin: 20px;
+
 }
 
-
+.s_button {
+  font-size: 200px;
+  padding: 40px;
+  height: 200px;
+  width: 200px;
+}
 
 
 
