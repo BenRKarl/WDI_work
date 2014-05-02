@@ -8,12 +8,44 @@ end
 
 post '/receipts' do
 
-  "#{params}"
+  info = []
+  params.each do |key, value|
+    tempstr = "#{key}:  #{value}\n"
+    info.push(tempstr)
+  end
+  info.push("Thank you\n")
+  f = File.open("receipts.txt", "a")
+  info.each do |str|
+    f.write(str)
+  end
 
-  #redirect "/receipts"
+  f.close
+
+  #{}"#{info}"
+
+  #{}"#{params}"
+
+  redirect "/receipts"
 end
 
 get '/receipts' do
-  "hello"
+
+  f=File.open("receipts.txt", "r")
+  array = f.readlines
+  f.close
+
+  array.each {|x| x.chomp!}
+
+  @receipts = []
+
+  while !array.empty?
+    @receipts << array.slice!(0,4)
+  end
+
+  erb :show
+  #"#{@receipts}"
+
+  #"Receipt has been printed"
 end
+
 

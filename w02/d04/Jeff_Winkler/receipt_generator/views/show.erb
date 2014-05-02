@@ -1,0 +1,18 @@
+
+<a href='/'>Back</a>
+<h2>Receipt has been added to the file:</h2>
+<% @receipts.each_with_index do |item, index| %>
+
+<div>
+  Receipt #<%= index+1 %>:
+</div>
+<div>
+  <%= item[0] %> <br/>
+  <%= item[1] %> <br/>
+  <%= item[2] %> <br/>
+  <%= item[3] %>
+  <br/><br/>
+</div>
+
+
+<% end %>

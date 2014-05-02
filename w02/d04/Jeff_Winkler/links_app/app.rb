@@ -7,22 +7,22 @@ get '/' do
 end
 
 get '/links' do
+
   f = File.open("links.csv", "r")
 
-array =  f.readlines
-na = []
+  array =  f.readlines
 
-array.each do |line|
-  na.push(line.split(', '))
-end
+  f.close
 
-ab = Hash[*na.flatten]
+  parsed = []
 
-@nh = {}
-ab.each do |key, value|
-  @nh[key]=value.gsub("\n","")
-end
+  array.each do |line|
+    parsed.push(line.chomp.split(', '))
+  end
+
+  @link_hash = Hash[*parsed.flatten]
 
 
-erb :show
+  erb :show
+
 end
