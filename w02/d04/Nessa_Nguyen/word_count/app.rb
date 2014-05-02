@@ -8,6 +8,18 @@ get '/' do
 end
 
 
+def book_text(book_name)
+	f = File.open(book_name, 'r')
+	text = f.read
+	f.close
+	text
+end
+
+def words(book_name)
+	book_text(book_name).delete(',.:!;?[]').split(' ')
+	# .downcase
+end	
+
 def word_count(book_name)
 	word_count = {}
 	words(book_name).each do |word|
@@ -18,19 +30,6 @@ def word_count(book_name)
 		end		
 	end
 	word_count
-end
-
-def words(book_name)
-	book_text(book_name).delete(',').delete(':').delete('.')
-	.delete("!").delete(';').delete('?').split(' ')
-	# .downcase
-end	
-
-def book_text(book_name)
-	f = File.open(book_name, 'r')
-	text = f.read
-	f.close
-	text
 end
 
 
