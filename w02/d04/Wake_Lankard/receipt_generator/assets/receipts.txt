@@ -7,3 +7,5 @@ as|dd|ff
 test
 as|dd|ff
 this|th|1
+General Assemby|webucation|$75
+Google|searching |45

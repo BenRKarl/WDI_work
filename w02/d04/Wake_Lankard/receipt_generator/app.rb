@@ -17,7 +17,7 @@ post '/receipts' do
   File.open('assets/receipts.txt', 'a') { |f|
     f.puts "#{company_name}|#{company_type}|#{amount}"
   }
-
+  @message="Receipt saved."
   erb :index
 
 end
