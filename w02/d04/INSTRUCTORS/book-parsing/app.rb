@@ -8,11 +8,9 @@ Bundler.require
 
 require_relative 'book'
 require_relative 'parse_data'
+require_relative 'book_parser'
 
-[Book::DIR, ParseData::DIR].each do |directory|
-  next if File.directory?(directory)
-  Dir.mkdir(directory)
-end
+BookParser.setup
 
 get '/' do
   erb :root
@@ -20,11 +18,11 @@ end
 
 get '/books/:name' do
   @name = params[:name]
-  @word_counts = sort_counts(@name)
+  book_parser = BookParser.new(@name)
+  @word_counts = sort_counts(book_parser)
   erb :show
 end
 
-def sort_counts(book_name)
-  book = Book.new(book_name)
-  book.word_counts.sort_by { |word, counts| -word.length }
+def sort_counts(book_parser)
+  book_parser.word_counts.sort_by { |word, counts| -word.length }
 end
