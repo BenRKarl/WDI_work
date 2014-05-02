@@ -1,26 +1,39 @@
 class SubwayManager
   def initialize()
-    n = ['ts', '34th', '28th-n', '23rd-n', 'us']
-    l = ['8th', '6th', 'us', '3rd', '1st']
-    s = ['gc', '33rd', '28th-s', '23rd-s', 'us']
     @network = {}
-    @network[:n] = n
-    @network[:l] = l
-    @network[:s] = s
+    @network[:n] = ['tsn', '34n', '28n', '23n', 'us']
+    @network[:l] = ['8l', '6l', 'us', '3l', '1l']
+    @network[:s] = ['gcs', '33s', '28s', '23s', 'us']
   end
 
   def menu
     travel_plan = {}
-
-    # prompts (puts) and allow the user to enter information (gets)
-    # consider defining values keys for :start_train, :start_station, :stop_train, :stop_station
+    puts "What train are you starting on?"
+    travel_plan[:start_train] = gets.chomp.to_sym
+    puts "What station are you starting on?"
+    travel_plan[:start_station] = gets_chomp
+    puts "What train are you ending on?"
+    travel_plan[:end_train] = gets.chomp.to_sym
+    puts "What station are you ending on?"
+    travel_plan[:end_station] = gets_chomp
 
     return travel_plan
   end
 
   def travel_distance(travel_plan)
-
-    # Calculate the total_length_of_trip here!
+    if travel_plan[:start_train]  == travel_plan[:end_train]
+      train = travel_plan[:start_train]
+      # hash[key].index(element)
+      start_pos = @network[train].index(travel_plan[:start_station])
+      end_pos = @network[train].index(travel_plan[:end_station])
+      total_length_of_trip = (end_pos - start_pos).abs
+    else
+      train_1 = travel_plan[:start_train]
+      train_2 = travel_plan[:end_train]
+      start_pos = @network[train].index(travel_plan[:start_station])
+      end_pos = @network[train].index(travel_plan[:start_station])
+      total_length_of_trip = (start_pos - travel_plan[us]).abs + (travel_plan[us] - end_pos).abs
+    end
 
     return total_length_of_trip
   end

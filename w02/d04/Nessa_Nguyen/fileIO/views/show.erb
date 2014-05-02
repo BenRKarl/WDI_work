@@ -1,0 +1,10 @@
+
+<h3>Here are your websites</h3>
+
+<ul>
+<% parse('links.csv').each do |line| %>
+	<li><a href="<%= line.split(',').last %>">
+		<%= line.split(',').first %></a></li>
+ 
+<% end %>
+<ul>
