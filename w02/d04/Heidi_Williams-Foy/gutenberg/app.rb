@@ -1,5 +1,5 @@
 require 'bundler/setup'
-Bundle.require
+Bundler.require
 
 get '/' do
 	erb :root
@@ -7,8 +7,13 @@ end
 
 get '/books/:name' do
 	@name = params[:name]
-	word_counts(book_name)
+	book_name = "books/#{@name}"
+	@word_counts = word_counts(book_name)
 	erb :show
+end
+
+def sort_counts(book_name)
+		word_counts(book_name).sort_by { |word, counts| counts }
 end
 
 def word_counts(book_name)
@@ -21,7 +26,7 @@ def word_counts(book_name)
 			word_counts[word] = 1
 		end
 	end
-	word_counts
+	word_count
 end
 
 def words(book_name)
@@ -32,5 +37,5 @@ def book_text(book_name)
 	f = File.open(book_name, 'r')
 	text = f.read
 	f.close
+	text
 	end
-end
