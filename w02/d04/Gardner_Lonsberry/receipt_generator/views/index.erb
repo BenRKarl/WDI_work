@@ -8,15 +8,18 @@
 	
 <h2>Enter your information here</h2>
 <div class="customer_transaction">
-<input type="text" name="inputBox" placeholder="Your Company"><form action="/receipts" method="post" name="company"></form></input>
+<form action="/receipts" method="POST" name="cost">
+	<input type="text" name="company" placeholder="Your Company">
 
 
-<input type="text" name="inputBox" placeholder="Service provided"><form action="/receipts" method="post" name="service"></form></input>
+	<input type="text" name="service" placeholder="Service provided">
 
 
-<input type="text" name="inputBox" placeholder="Cost"><form action="/receipts" method="post" name="cost"></form></input>
+	<input type="text" name="cost"  placeholder="Cost">
 
-<form action="/receipts" method="post" name="cost"></form><input style="text" type="submit"></input>
+	<input style="text" type="submit">
+
+</form></input>
 </div>
 
 
