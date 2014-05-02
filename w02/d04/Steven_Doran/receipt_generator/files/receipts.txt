@@ -1,4 +1,4 @@
-- Company Name: zico
-- Good/Service Provided: coconutmilk
-- Cost: 5
+- Company Name: nike
+- Good/Service Provided: hightops
+- Cost: 1000
 - Thank you for your patronage
