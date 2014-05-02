@@ -10,16 +10,15 @@ end
 
 post '/artists' do
   artist_name = params[:artist].gsub(' ','%20')
-  #url = "http://musicbrainz.org/ws/2/artist?query=prince"
-  #response = HTTParty.get(url)
-  redirect "/artists?artist=#{artist_name}"
+  redirect "/art?artist=#{artist_name}"
 
 end
 
-get '/artists' do
+get '/art' do
+    artist_name = params[:artist]
 
-  #"#{params}"
-  artists = Musicbrains.find('prince')
+    info = Musicbrains.find(artist_name)
+    info.to_s
 
 end
 
