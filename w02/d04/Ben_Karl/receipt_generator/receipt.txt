@@ -1,0 +1,3 @@
+- Comany Name: Safeway
+- Service Provided: Food
+- Total Cost: $20
