@@ -1,0 +1,12 @@
+<h2>Your receipts</h2>
+
+<% @receipts.each do |entry| %>
+<div class="reciept">
+  <div class="data company_name"><%= entry.split('|')[0] %></div>
+  <div class="data company_type"><%= entry.split('|')[1] %></div>
+  <div class="data amount"><%= entry.split('|')[2] %></div>
+</div><!--receipt -->
+<% end %>
+
+
+<%= @receipts %>
