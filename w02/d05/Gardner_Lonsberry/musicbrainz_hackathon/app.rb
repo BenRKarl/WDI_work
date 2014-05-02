@@ -3,27 +3,22 @@ Bundler.require
 
 module Musicbrainz
   def self.find(artist_name)
-
-    artist_name = artist_name.gsub(' ', '%20')
-    url = "http://musicbrainz.org/ws/2/artist?query=" + artist_name
-    response = HTTParty.get(url)
-
-    response['metadata']['artist_list']['artist']
-  end
-
+  	artist_name = artist_name.gsub(' ', '%20')
+  	suggestions = MusicBrainz::Artist.search("artist_name")    
+ response['metadata']['artist_list']['artist']
 end
-
-
-artists = Musicbrainz.find('bjork')
 
 get '/' do 
+  "hi"
   erb :index
-  end
-
-get '/band' do
-  
 end
 
+post '/artist' do
+  artist_name = params[:artist_name].gsub(' ', '%20')
+end
 
-
+get '/artist' do
+  "hi"
+  erb :dump
+end
 
