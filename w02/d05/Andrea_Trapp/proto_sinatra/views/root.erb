@@ -1,0 +1,19 @@
+<h1>Developers</h1>
+
+
+<div class='developers'>
+<% @devs.each do |initials, name| %>
+	<div class='developer'>
+		<table>
+			<tr>
+				<th>Initials</th>
+				<th>Name</th>
+			</tr>
+		<tr>
+			<td><%= initials %></td>
+			<td><%= name %></td>
+		</tr>
+	</table>	
+	</div>
+	<% end %>
+</div>
