@@ -25,9 +25,10 @@ module Superhero
   end
 
 
-Archie = Human.new("Archie", 17, "male").extend(Superhero).claws
-Betty = Human.new("Betty", 16, "female").extend(Superhero).invisible
-Jughead = Human.new("Jughead", 17, "male").extend(Superhero).bjork
-Veronica = Human.new("Jughead", 17, "female").extend(Superhero).fly
+
+Archie = Human.new("Archie", 17, "male").extend(Superhero)
+Betty = Human.new("Betty", 16, "female").extend(Superhero)
+Jughead = Human.new("Jughead", 17, "male").extend(Superhero)
+Veronica = Human.new("Jughead", 17, "female").extend(Superhero)
 
 
