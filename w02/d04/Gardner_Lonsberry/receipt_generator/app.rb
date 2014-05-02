@@ -5,8 +5,8 @@ Bundler.require
 
 def append_receipt
   open('receipts.txt', 'a') { |f|
-  f << "Company name: \n"
-  f << "Service: \n"
+  f << "Company name: <%= @company %>\n"
+  f << "Service: #{@cost}\n"
   f << "Cost:\n"
 }
 end
