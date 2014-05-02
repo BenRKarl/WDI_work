@@ -1,17 +1,23 @@
 
 <a href='/'>Back</a>
-<h2>Receipt has been added to the file:</h2>
+<% if @receipts.empty? %>
+  <h2>No receipts yet.  Please add some.</h2>
+<% else %>
+  <h2>Receipt has been added to the file:</h2>
+<% end %>
 <% @receipts.each_with_index do |item, index| %>
 
-<div>
-  Receipt #<%= index+1 %>:
-</div>
-<div>
-  <%= item[0] %> <br/>
-  <%= item[1] %> <br/>
-  <%= item[2] %> <br/>
-  <%= item[3] %>
-  <br/><br/>
+<div class="all_r">
+  <div class="r_top">
+    Receipt #<%= index+1 %>:
+  </div>
+  <div class="receipt">
+    <%= item[0].capitalize %> <br/>
+    <%= item[1].capitalize %> <br/>
+    <%= item[2].capitalize %> <br/>
+    <%= item[3].capitalize %>
+    <br/><br/>
+  </div>
 </div>
 
 

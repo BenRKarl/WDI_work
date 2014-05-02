@@ -30,7 +30,8 @@ end
 
 get '/receipts' do
 
-  f=File.open("receipts.txt", "r")
+
+  f=File.open("receipts.txt", "a+")
   array = f.readlines
   f.close
 

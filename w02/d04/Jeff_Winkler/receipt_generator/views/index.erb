@@ -1,10 +1,15 @@
 
 <div>
   <h3>Please enter receipt information.</h3>
-  <form class="rform" action="receipts" method="post">
-    <div><input class="intext" type="text" name="company">  Company</input></div>
-    <div><input class="intext" type="text" name="service">  Goods/Service</input></div>
-    <div><input class="intext" type="text" name="cost"></input>  Cost</div>
-    <div><input class="intext" type="submit"></input></div>
-  </form>
+  <div class="fdiv">
+    <form action="receipts" method="post">
+        <span class="type">Company:  </span>
+        <input class="intext" type="text" name="company"></input>
+        <span class="type">Goods/Service:  </span>
+        <input class="intext" type="text" name="service"></input>
+        <span class="type">Cost:  </span>
+        <input class="intext" type="text" name="cost"></input>
+        <input class="intext" type="submit"></input>
+    </form>
+  </div>
 </div>
