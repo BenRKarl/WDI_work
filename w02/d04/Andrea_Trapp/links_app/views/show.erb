@@ -1,0 +1,9 @@
+<h1>Welcome to the Links App</h1>
+
+<div class='links'>
+<% @links.each do |title, link| %>
+	<div class='link'>
+		<a href="<%= link %>"><%= title %></a>
+	</div>
+	<% end %>
+</div>

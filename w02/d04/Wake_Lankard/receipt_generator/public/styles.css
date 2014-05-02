@@ -1,0 +1,17 @@
+body {
+  background-color: lightblue;
+}
+
+
+
+.receipt {
+  width: 300px;
+  background-color: lightgoldenrodyellow;
+  margin: 5px;
+  padding:5px;
+  border: 1px black solid;
+}
+.data {
+  display: inline;
+  width
+}

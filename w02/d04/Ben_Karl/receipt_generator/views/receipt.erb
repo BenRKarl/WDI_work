@@ -1,0 +1,9 @@
+<h1>Here's your receipt!</h1>
+
+<div class="receipt">
+<span style="text-align: center;"><p><%= Time.new %></p></span></br>
+<% @receipt_content.each_line do |line| %>
+<%= line %></br>
+<% end %></br>
+<span style="text-align: center;"><p>Thanks for your patronage!</p></span>
+</div>
