@@ -7,6 +7,7 @@ class Book
     @name = name
   end
 
+<<<<<<< HEAD
   def word_counts
     if parse_data_exists?
       counts = read_parse_data
@@ -48,5 +49,14 @@ class Book
   def book_text
     book_path = File.join(BOOK_DIR, name)
     File.read(book_path)
+=======
+  def words
+    text.split(' ').map { |word| word.downcase }
+  end
+
+  def text
+    book_path = File.join(DIR, name)
+    File.read(book_path).delete(',.:!;?[]')
+>>>>>>> 02e0d067a506c2025abac1604af78d438950e37b
   end
 end
