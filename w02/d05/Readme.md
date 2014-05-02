@@ -38,3 +38,17 @@ proto = ['Jeff Winkler','John Murphy','Nessa Nguyen','Jeff Drakos','Rebecca Stro
 
 
 
+---
+
+###Friday Hackathon
+####MusicBrainz Hackathon!!!
+- Pair up!!!!
+- Explore the MusicBrainz api using urls
+- Explore the MusicBrainz api using the MusicBrainz gem
+- Build an interface for this api
+- Minimum functionality:
+	- A user should be able to submit an artist name
+	- Display artist information for the user
+- Continue to build more functionality and style
+
+
