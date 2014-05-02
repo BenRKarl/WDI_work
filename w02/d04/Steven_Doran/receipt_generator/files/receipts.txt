@@ -1,4 +1,4 @@
-- Company Name: nike
-- Good/Service Provided: hightops
-- Cost: 1000
+- Company Name: bjork
+- Good/Service Provided: bjork
+- Cost: bjork
 - Thank you for your patronage

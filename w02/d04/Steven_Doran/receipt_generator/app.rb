@@ -20,7 +20,6 @@ def read
   receipt_read.close
 end
 
-
 post '/receipts' do 
   write
   read
