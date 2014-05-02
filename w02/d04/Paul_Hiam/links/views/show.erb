@@ -1,1 +1,4 @@
 Show
+<% @nest.each do |site| %>
+  <%= site[0] %> <a href="<%= site[1] %>"><%= site[1] %></a>
+  <% end %>
