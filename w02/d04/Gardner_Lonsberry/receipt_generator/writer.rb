@@ -9,6 +9,7 @@ def append_receipt
 end
 
 def initialize
+@company
 
 @append_array = append_receipt
 end
