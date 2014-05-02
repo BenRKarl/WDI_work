@@ -1,4 +1,4 @@
-- Company Name: Sears
-- Good/Service Provided: Pants
--Cost: 70
-- Thank you for your patronage 
+- Company Name: zico
+- Good/Service Provided: coconutmilk
+- Cost: 5
+- Thank you for your patronage

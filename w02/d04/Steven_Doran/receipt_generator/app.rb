@@ -9,9 +9,11 @@ post '/receipts' do
   company = params[:company]
   goods = params[:goods]
   cost = params[:cost]
-  r = File.open("files/receipts.txt", "w")
-  receipt = r.write("- Company Name: #{company}\n- Good/Service Provided: #{goods}\n- Cost: #{cost}\n- Thank you for your patronage\n")
-  r.close
+  receipt_write = File.open("files/receipts.txt", "w")
+  receipt_write.write("- Company Name: #{company}\n- Good/Service Provided: #{goods}\n- Cost: #{cost}\n- Thank you for your patronage\n")
+  receipt_write.close
+  receipt_read = File.open("files/receipts.txt", "r")
+  @r = receipt_read.readlines
   
   erb :receipts
 end
