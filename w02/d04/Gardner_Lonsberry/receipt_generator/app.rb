@@ -24,6 +24,8 @@ post '/receipts' do
 @profile = params[:profile]
   redirect "/names?name=#{name}"
 
+get '/receipts'
+
 
 get '/receipts/:profile' do
   @name = params[:profile]
