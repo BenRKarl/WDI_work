@@ -2,15 +2,24 @@
 require 'bundler/setup'
 Bundler.require
 
+require './lib/music_methods'
 
-module Musicbrains
-  def self.find(artist_name)
-    artist_name = artist_name.gsub(' ','%20')
-    url = "http://musicbrainz.org/ws/2/artist?query=" + artist_name
-    response = HTTParty.get(url)
-    response["metadata"]["artist_list"]["artist"]
-  end
+get '/' do
+  erb :index
 end
 
+post '/artists' do
+  artist_name = params[:artist].gsub(' ','%20')
+  #url = "http://musicbrainz.org/ws/2/artist?query=prince"
+  #response = HTTParty.get(url)
+  redirect "/artists?artist=#{artist_name}"
 
-artists = Musicbrains.find('prince')
+end
+
+get '/artists' do
+
+  #"#{params}"
+  artists = Musicbrains.find('prince')
+
+end
+
