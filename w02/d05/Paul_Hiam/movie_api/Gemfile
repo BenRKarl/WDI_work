@@ -3,10 +3,4 @@ gem 'sinatra'
 gem 'sinatra-reloader'
 gem 'pry'
 
-get '/' do
-	"yo"
-end
-
-get 'movie' do
-	'movies'
-end
+gem 'httparty'
