@@ -5,14 +5,18 @@
 	</header>
 
 	<div class="content">
-		<h3>Please enter the following data</h3>
+		<h3>Please enter the following data to create a receipt:</h3>
 
 		<form class="receiptform" action="/receipts" method="post">
 			<input type="text" name="company" value="company">
 			<input type="text" name="service" value="good/service provided">
 			<input type="text" name="cost" value="cost">
 			<input type="submit">
-		</form>		
+		</form>
+
+		<form class="receiptform" action="/receipts" method="get">			
+			<input type="submit" value="Print all receipts">
+		</form>	
 	</div>
 
 	<footer>
