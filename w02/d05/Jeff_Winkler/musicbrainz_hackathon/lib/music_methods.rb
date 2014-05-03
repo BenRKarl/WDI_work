@@ -36,6 +36,47 @@ module Musicbrains
   end
 
 
+  def self.choose_one_release(rg_id)
+    r_url = @url + "release?release-group=#{rg_id}"
 
+    all_releases = HTTParty.get(r_url)
+
+    r_count = all_releases['metadata']['release_list']['count'].to_i
+
+    first_filter = all_releases['metadata']['release_list']['release'].select do |release|
+      release['cover_art_archive']['artwork'] == "true" && release['country'] == "US"
+    end #ends the select do
+
+    return first_filter[0]
+
+  end
+
+  def self.track_list(release_id)
+    r_url = @url + "release/#{release_id}?inc=discids"
+
+    all_discs = HTTParty.get(r_url)
+
+    first_disc = all_discs['metadata']['release']['medium_list']['medium']['disc_list']['disc'][0]['id']
+
+
+
+  end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

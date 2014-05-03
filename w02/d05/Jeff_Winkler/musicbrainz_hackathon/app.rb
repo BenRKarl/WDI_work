@@ -34,3 +34,20 @@ get '/artists' do
 
 end
 
+get '/release/:rgid' do
+  rg_id = params[:rgid]
+  @release = Musicbrains.choose_one_release(rg_id)
+
+  release_id = @release['id']
+
+  @track_list = Musicbrains.track_list(release_id)
+
+  binding.pry
+
+  #@artwork = Musicbrains.artwork(release_id)
+
+
+
+  erb :release
+
+end
