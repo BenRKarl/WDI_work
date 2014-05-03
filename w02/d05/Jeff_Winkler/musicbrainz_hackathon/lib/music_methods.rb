@@ -58,6 +58,18 @@ module Musicbrains
 
     first_disc = all_discs['metadata']['release']['medium_list']['medium']['disc_list']['disc'][0]['id']
 
+    d_url = @url + "discid/#{first_disc}?inc=recordings"
+
+    recordings = HTTParty.get(d_url)
+
+    tracks = recordings['metadata']['disc']['release_list']['release'][0]['medium_list']['medium']['track_list']['track']
+
+    track_list = tracks.map do |track|
+      track['recording']['title']
+    end # ends map do
+
+    return track_list
+
 
 
   end

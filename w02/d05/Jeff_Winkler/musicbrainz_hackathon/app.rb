@@ -42,7 +42,7 @@ get '/release/:rgid' do
 
   @track_list = Musicbrains.track_list(release_id)
 
-  binding.pry
+  #binding.pry
 
   #@artwork = Musicbrains.artwork(release_id)
 
