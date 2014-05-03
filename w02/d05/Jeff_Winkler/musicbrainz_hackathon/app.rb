@@ -5,25 +5,29 @@ Bundler.require
 require './lib/music_methods'
 
 get '/' do
-  #@test = MusicBrainz::Artist.find_by_name("Green Day")
-  #@name = @test.release_groups
-
-  #@name = "Aziz"
   erb :index
 end
 
 post '/artists' do
   artist_name = params[:artist].gsub(' ','%20')
-  redirect "/art?artist=#{artist_name}"
+  redirect "/artists?artist=#{artist_name}"
 
 end
 
-get '/art' do
-    artist_name = params[:artist]
+get '/artists' do
+  artist_name = params[:artist]
+  @artist_data = Musicbrains.find(artist_name)
 
-  @test = MusicBrainz::Artist.find_by_name(artist_name)
-  @name = @test.release_groups
+  artist_id = @artist_data['id']
 
+  @release_group_data = Musicbrains.rg_data(artist_id)
+
+
+
+
+  #@test = MusicBrainz::Artist.find_by_name(artist_name)
+  #@name = @test.release_groups
+  #binding.pry
   erb :show
     #info = Musicbrains.find(artist_name)
     #info.to_s

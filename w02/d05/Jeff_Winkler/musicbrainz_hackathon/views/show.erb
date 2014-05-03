@@ -1,6 +1,12 @@
+
+
 <div>
-  <% @name.each do |title| %>
-    <div><%=title.title%></div>
-  <%end%>
+
+  <%= @artist_data['name'] %>
+  <br/>
+  <% @release_group_data.each do |album| %>
+    <% ref = "/release/#{album['id']}" %>
+    <a href="<%=ref%>"><%=album['title']%></a><br/>
+  <% end %>
 
 </div>
