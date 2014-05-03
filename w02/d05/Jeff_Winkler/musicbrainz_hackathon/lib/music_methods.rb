@@ -47,7 +47,17 @@ module Musicbrains
       release['cover_art_archive']['artwork'] == "true" && release['country'] == "US"
     end #ends the select do
 
-    return first_filter[0]
+    if first_filter.empty?
+      second_filter = all_releases['metadata']['release_list']['release'].select do |release|
+        release['country'] == "US"
+      end #ends the select do
+
+      return second_filter[0]
+    else
+      return first_filter[0]
+    end
+
+
 
   end
 
@@ -56,20 +66,49 @@ module Musicbrains
 
     all_discs = HTTParty.get(r_url)
 
-    first_disc = all_discs['metadata']['release']['medium_list']['medium']['disc_list']['disc'][0]['id']
 
+
+    disc_count = all_discs['metadata']['release']['medium_list']['medium']['disc_list']['count'].to_i
+
+    if disc_count == 1
+      first_disc = all_discs['metadata']['release']['medium_list']['medium']['disc_list']['disc']['id']
+    elsif disc_count == 0
+      return nil
+    else
+      first_disc = all_discs['metadata']['release']['medium_list']['medium']['disc_list']['disc'][0]['id']
+    end
     d_url = @url + "discid/#{first_disc}?inc=recordings"
 
     recordings = HTTParty.get(d_url)
 
-    tracks = recordings['metadata']['disc']['release_list']['release'][0]['medium_list']['medium']['track_list']['track']
 
+    t_count = recordings['metadata']['disc']['release_list']['count'].to_i
+
+    if t_count == 1
+
+      tracks = recordings['metadata']['disc']['release_list']['release']['medium_list']['medium']['track_list']['track']
+    else
+      #  need to revisit here if multiple mediums
+      tracks = recordings['metadata']['disc']['release_list']['release'][0]['medium_list']['medium']['track_list']['track']
+    end
     track_list = tracks.map do |track|
       track['recording']['title']
     end # ends map do
 
     return track_list
 
+  end
+
+  def self.artwork(release)
+    has_art = release['cover_art_archive']['artwork']
+
+    if has_art == "true"
+      url = "http://coverartarchive.org/release/#{release['id']}"
+      info = HTTParty.get(url)
+      return info['images'][0]['thumbnails']['small']
+    else
+      return nil
+    end
 
 
   end
