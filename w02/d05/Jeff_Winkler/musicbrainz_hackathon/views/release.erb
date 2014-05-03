@@ -1,10 +1,26 @@
 
 
-<img src="<%= @artwork %>">
+<img class="coverart" src="<%= @artwork %>" alt="No Image Available">
 <br/><br/>
 
+<% if @track_list == nil %>
+  <div>No track list found</div>
+<% else %>
+  <table class="track_table">
+    <% @track_list.each_with_index do |track, index| %>
+      <tr>
+        <td><%= index+1 %>.  <%= track %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
 
-<%= @track_list %>
+
+
+
+
+
+
 
 
 

@@ -1,12 +1,30 @@
 
 
-<div>
+<div class="top">
+  Studio Album Results for <%= @artist_data['name'] %>
+</div>
 
-  <%= @artist_data['name'] %>
-  <br/>
+
+<div class="basicinfo">
+    <%= @artist_data['name'] %> started
+    <%= @artist_data['life_span']['begin'] %> from
+    <%= @artist_data['begin_area']['name'] %>
+</div>
+<br/>
+<div class="click_info">
+  Click on an album below for cover art and track list if available.
+ </div>
+<table class="album_table">
+    <tr class="toprow">
+    <td>Album</td>
+    <td>Release Date</td>
+     </tr>
   <% @release_group_data.each do |album| %>
     <% ref = "/release/#{album['id']}" %>
-    <a href="<%=ref%>"><%=album['title']%></a><br/>
+    <tr>
+      <td><a class="album" href="<%=ref%>"><%=album['title']%></a></td>
+      <td><%=album['first_release_date']%></td>
+    </tr>
   <% end %>
+</table>
 
-</div>
