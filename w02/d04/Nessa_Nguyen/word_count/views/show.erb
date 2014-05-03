@@ -1,0 +1,10 @@
+<h1><%= @display %></h1>
+
+
+<div class="counts">
+	<% @sorted.each do |word, count| %>
+	<div class="count">
+		<%= word %>: <%= count %>
+	</div>
+	<% end %>
+</div>
