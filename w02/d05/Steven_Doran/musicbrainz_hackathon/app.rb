@@ -1,11 +1,7 @@
-require 'bundler/setup'
+require 'bundler'
 Bundler.require
 
-require './lib/artist'
-require './lib/musicbrainz'
-
 MusicBrainz.configure do |c|
-  # Application identity (required)
   c.app_name = "My Music App"
   c.app_version = "1.0"
   c.contact = "support@mymusicapp.com"
@@ -16,6 +12,12 @@ get '/' do
 end
 
 get '/artist' do 
-  @artist = Musicbrainz.find(params[:artist_name])
+  artist = params[:artist_name]
+  artist_info = MusicBrainz::Artist.find_by_name(artist)
+  @name = artist_info.name
+  @country = artist_info.country
+  @albums = []
+  album_list = artist_info.release_groups  
+  album_list.each { |album| @albums << album.title }
   erb :show
 end

@@ -9,5 +9,5 @@ module Musicbrainz
     album_list.each { |album| album_names << album.title } # array of album names
     artist = Artist.new(artist_info, album_names)
   end
-
+  
 end

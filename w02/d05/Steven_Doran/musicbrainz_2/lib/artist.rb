@@ -1,7 +1,5 @@
 class Artist
 
-  include MusicBrainz
-  
   attr_reader :name, :country, :albums
   
   def initialize(artist_info, album_names)
