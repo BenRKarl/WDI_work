@@ -1,0 +1,24 @@
+.rholder {
+  width: 400px;
+
+}
+
+.receipt {
+  border: solid black 1px;
+  margin: 10px 0;
+  width: 350px;
+}
+
+.num {
+  float: right;
+  margin: 4px 4px 0 0 ;
+}
+
+div {
+  float: left;
+
+}
+
+h3 {
+  clear: left;
+}

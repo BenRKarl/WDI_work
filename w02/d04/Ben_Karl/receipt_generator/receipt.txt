@@ -1,0 +1,3 @@
+- Comany Name: John's
+- Type of Service: Dry Cleaning
+- Total Cost: $32.00
