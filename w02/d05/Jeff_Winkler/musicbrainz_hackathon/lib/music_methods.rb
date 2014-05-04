@@ -6,12 +6,20 @@ module Musicbrains
     artist_name = artist_name.gsub(' ','%20')
     artist_url = @url + "artist/?query=artist:" + artist_name
     data = HTTParty.get(artist_url)
-    artists_count = data['metadata']['artist_list']['count'].to_i
-    if artists_count == 1
-      return data['metadata']['artist_list']['artist']
+    if data.keys == "error"
+      return nil
     else
-      return data['metadata']['artist_list']['artist'][0]
-    end #if artist count check
+      artists_count = data['metadata']['artist_list']['count'].to_i
+      if artists_count == 0
+        return nil
+      else
+        if artists_count == 1
+          return data['metadata']['artist_list']['artist']
+        else
+          return data['metadata']['artist_list']['artist'][0]
+        end #if artist count check
+      end # if artist count is 0
+    end # if data.keys == 'error'
   end #end self.find
 
   def self.rg_data(artist_id)

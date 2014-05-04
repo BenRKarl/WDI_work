@@ -10,7 +10,11 @@ end
 
 post '/artists' do
   artist_name = params[:artist].gsub(' ','%20')
-  redirect "/artists?artist=#{artist_name}"
+  if artist_name == ""
+    redirect "/"
+  else
+    redirect "/artists?artist=#{artist_name}"
+  end
 end
 
 get '/artists' do
