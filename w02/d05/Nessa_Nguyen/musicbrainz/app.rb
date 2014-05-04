@@ -31,9 +31,10 @@ get '/search' do
 	@artist_info = Musicbrainz.find(search_term)
 	if @artist_info == nil
 		@name = "Artist not found"
+    @begin = "Begin date"   
 	else
 	  @artist_info = @artist_info[0]
-  	@name = @artist_info.fetch('name', "Artist not found") 
+  	@name = @artist_info.fetch('name') 
 
     	if @artist_info.fetch('type', "not found") != "not found" 
     		if @artist_info.fetch('type').downcase == "person"  
@@ -42,8 +43,6 @@ get '/search' do
     		elsif @artist_info.fetch('type').downcase == "group"
     		 	@begin = "Career start"
     		 	@type = "Group"
-    		else
-    			@begin = "Begin date" 	
     		end
     	end
   		
