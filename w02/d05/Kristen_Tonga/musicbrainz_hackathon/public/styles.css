@@ -1,0 +1,77 @@
+body {
+background-color: black;
+background-image: url('background.jpeg');
+background-size: cover;
+font-family: times;
+color: white;
+padding: 30px;
+}
+
+p {
+  color: yellow;
+  font-size: 75px;
+}
+
+h2 {
+  color: pink;
+}
+
+.center {
+  width: 700px;
+  background-color: black;
+  margin: 0 auto;
+}
+
+.bubble_back {
+  background-color: tan;
+  padding: 10px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  opacity: .95;
+  width: 400px;
+}
+
+.bubble
+{
+position: relative;
+opacity: 1;
+width: 250px;
+height: 120px;
+padding: 0px;
+background: #4C427E;
+-webkit-border-radius: 35px;
+-moz-border-radius: 35px;
+border-radius: 35px;
+}
+
+.bubble:after
+{
+content: "";
+position: absolute;
+top: 80px;
+right: -50px;
+border-style: solid;
+border-width: 25px 0 5px 70px;
+border-color: transparent #4C427E;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+form {
+padding: 30px;
+}
+
+.thinking {
+  /*position: absolute;
+  right: 20px;
+  top: 50px;
+  */min-height: 200px;
+  max-width: 300px;
+  width: 40%;
+  float: right;
+  margin-top: -120px
+}
+
+
