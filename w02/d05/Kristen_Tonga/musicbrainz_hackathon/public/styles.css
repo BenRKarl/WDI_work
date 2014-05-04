@@ -7,13 +7,18 @@ color: white;
 padding: 30px;
 }
 
-p {
+h1 {
   color: yellow;
-  font-size: 75px;
+  font-size: 4em;
 }
 
 h2 {
   color: pink;
+}
+
+p {
+  color: yellow;
+  font-size: 12px
 }
 
 .center {
