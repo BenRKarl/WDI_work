@@ -8,7 +8,7 @@ def menu
   elsif response == "advanced"
     advanced_calc
   elsif response == "factorials"
-    factor_calc
+    factorial
   elsif response == "q"
     puts "k see ya. quitter."
   else
@@ -73,15 +73,23 @@ def advanced_calc
 
 end
 
-def factor_calc
-  puts "Let's do factorials!"
-  puts "Gimme a number."
-  fget = gets.chomp.to_i
-  if fget = 0
-    1
-  else
-    fget * fget(fget-1)
-  end
+#Matt's solution
+
+def factorial(n)
+  return 1 if n == 1
+  n * factorial(n-1)
 end
+
+# My attempt
+# def factor_calc
+#   puts "Let's do factorials!"
+#   puts "Gimme a number."
+#   fget = gets.chomp.to_i
+#   if fget = 0
+#     1
+#   else
+#     fget * fget(fget-1)
+#   end
+# end
 
 response = menu

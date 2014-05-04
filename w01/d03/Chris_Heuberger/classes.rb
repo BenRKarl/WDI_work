@@ -50,4 +50,25 @@ checking_account.display_balance(1234)
 checking_account.withdraw(1234, 500)
 checking_account.display_balance(1234)
 
+ - - - - - - - - - - - - - -
+
+class Car
+
+  def initialize
+    @num_wheels = 4
+  end
+
+  def number_of_wheels
+    @num_wheels
+  end
+
+  def set_number_of_wheels(new_number_of_wheels)
+    @number=new_number_of_wheels
+  end
+
+  my_car = Car.new
+  my_car.num_wheels
+
+end
+
 =end
