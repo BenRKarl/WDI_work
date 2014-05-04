@@ -17,9 +17,14 @@ module Musicbrains
   def self.rg_data(artist_id)
     rg_url = @url + "release-group?artist=#{artist_id}&type=album&limit=100"
     all_release_groups = HTTParty.get(rg_url)
-    filtered_rg_data = all_release_groups['metadata']['release_group_list']['release_group'].select do |rg|
-      rg['type'] == 'Album' && rg['secondary_type_list'] == nil
-    end #ends the select do
+    if all_release_groups['metadata']['release_group_list']['count'].to_i == 1
+      filtered_rg_data = []
+      filtered_rg_data << all_release_groups['metadata']['release_group_list']['release_group']
+    else
+      filtered_rg_data = all_release_groups['metadata']['release_group_list']['release_group'].select do |rg|
+        rg['type'] == 'Album' && rg['secondary_type_list'] == nil
+      end #ends the select do
+    end
     return filtered_rg_data
   end #end self.rg_data
 

@@ -6,9 +6,11 @@
 
 
 <div class="basicinfo">
-    <%= @artist_data['name'] %> started
-    <%= @artist_data['life_span']['begin'] %> from
-    <%= @artist_data['begin_area']['name'] %>
+    <% if @artist_data['life_span']!=nil &&  @artist_data['begin_area'] != nil %>
+      <%= @artist_data['name'] %> started
+      <%= @artist_data['life_span']['begin'] %> from
+      <%= @artist_data['begin_area']['name'] %>
+    <% end %>
 </div>
 <br/>
 <div class="click_info">
