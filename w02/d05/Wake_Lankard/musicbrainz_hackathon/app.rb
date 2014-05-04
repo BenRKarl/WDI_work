@@ -49,6 +49,8 @@ get '/artist' do
     @country = data.country
     @wiki = data.urls[:wikipedia]
     @image = data.urls[:image]
+    @message = "That's nice, but you are better off listening to Led Zeppelin."
+    @message = "Clearly, you know how to rock.  Enjoy."  if @name == "Led Zeppelin"
   erb :show
 end
 

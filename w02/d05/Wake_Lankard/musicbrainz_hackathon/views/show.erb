@@ -1,13 +1,18 @@
 
+<div class="container">
+  <div class="band_name info">
+  Band Name: <%= @name %>
+  </div>
+  <div class="country info">
+  Country of Origin: <%= @country %>
+  </div>
+  <!--<%= @disc %>-->
+  <div class="wikipedia info">
+  <a href=<%= @wiki %>><%= @name %> Wikipedia</a>
+  </div>
 
-
-<%= @name %>
-
-<%= @country %>
-
-<%= @disc %>
-
-<a href=<%= @wiki %>><%= @name %> Wikipedia</a>
-
-<h3>You should be listening to Led Zeppelin anyway...</h3>
-<iframe width="640" height="360" src="//www.youtube.com/embed/PD-MdiUm1_Y" frameborder="0" allowfullscreen></iframe>
+</div> <!--contianer-->
+<div class="zeppelin">
+<h3><%= @message %> </h3>
+<iframe width="640" height="360" src="//www.youtube.com/embed/mmQ35xMxzd4" frameborder="0" allowfullscreen></iframe>
+</div>
