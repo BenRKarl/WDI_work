@@ -28,10 +28,12 @@ module Musicbrains
     if all_release_groups['metadata']['release_group_list']['count'].to_i == 1
       filtered_rg_data = []
       filtered_rg_data << all_release_groups['metadata']['release_group_list']['release_group']
-    else
+    elsif all_release_groups['metadata']['release_group_list']['count'].to_i > 1
       filtered_rg_data = all_release_groups['metadata']['release_group_list']['release_group'].select do |rg|
         rg['type'] == 'Album' && rg['secondary_type_list'] == nil
       end #ends the select do
+    else
+      filtered_rg_data = nil
     end
     return filtered_rg_data
   end #end self.rg_data

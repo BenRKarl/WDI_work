@@ -24,9 +24,12 @@ get '/artists' do
     erb :index
   else
     artist_id = @artist_data['id']
-    #need something if artist_id is null
     @release_group_data = Musicbrains.rg_data(artist_id)
-    erb :show
+    if @release_group_data == nil
+      erb :index
+    else
+      erb :show
+    end
   end
 end
 
@@ -36,7 +39,6 @@ get '/release/:rgid' do
   if @release == nil
     erb :show
   else
-  #need something if @release is nil
     release_id = @release['id']
     @track_list = Musicbrains.track_list(release_id)
     @artwork = Musicbrains.artwork(@release)
