@@ -9,9 +9,24 @@ get '/' do
 end
 
 get '/artists' do 
-	@artists = Musicbrainz.find(params[:artist_name])
-	@artist = @artists[0]	
-	@artist == nil ? (erb :error) : (erb :show)
+	#@artists = Musicbrainz.find_artist(params[:artist_name])
+	@artist = Musicbrainz.find_artist(params[:artist_name])	
+	@artist_wiki = @artist[:name].gsub(' ','_')
+	unless @artist == nil
+		# @release_groups = Musicbrainz.find_release_group(@artist['id'])
+		@release_groups = Musicbrainz.find_release_group(@artist[:id])
+		release_group_id = "6fa29542-6f8b-49ff-afc9-7d5b4ac4a0db"
+		@coverart_url = "http://coverartarchive.org/release-group/" + release_group_id + "/front.jpg"
+		
+		# @release_groups.each do |release_group|
+		# 	@title = release_group['title']			
+		# end
+
+		erb :show
+	else
+		erb :error
+	end
+	#@artist == nil ? (erb :error) : (erb :show)
 
 end
 
@@ -105,6 +120,14 @@ end
 #     }
 # }
 
+# Find release-groups (albums) for a given artist 
+# ---------------------------------------------
+# > search by artist id => http://musicbrainz.org/ws/2/release-group/?query=arid:c954d136-c7fd-4fd9-8bb0-fb0491fc6a02
+# > search by artist name => http://musicbrainz.org/ws/2/release-group/?query=artist:nena
+
+# > response = HTTParty.get("http://musicbrainz.org/ws/2/release-group/?query=arid:c954d136-c7fd-4fd9-8bb0-fb0491fc6a02")
+# [59] pry(main)> response['metadata']['release_group_list']['release_group'][0]['title']
+# "Die Band."
 
 
 # -----------------------
