@@ -1,0 +1,41 @@
+	<div class="content">
+		<h3>Your favorite Artist's Gigs in NYC:</h3>
+
+		<div class='release'>
+				<table>
+
+					<tr>
+						<td><%= @artist["name"] %></td>
+					</tr>
+					<tr>
+						<td>Score: <%= @artist["score"] %></td>						
+					</tr>
+					<th>-----------------------------</th>
+					<th>-----------------------------</th>
+					<tr>
+						<td>Country: </td><td><%= @artist["country"] %></td>
+					</tr>
+					<tr>
+						<td>Type: </td><td><%= @artist["type"] %></td>
+					</tr>
+					<tr>
+						<td>Gender: </td><td><%= @artist["gender"] %></td>
+					</tr>
+					<tr>
+						<td>Born/Founded: </td><td><%= @artist["life_span"]["begin"] %></td>
+					</tr>
+					<tr>
+						<td>Area: </td><td><%= @artist["area"]["name"] %></td>
+					</tr>
+					<tr>
+						<td>Disambiguation: </td><td><%= @artist["disambiguation"] %></td>
+					</tr>
+					<tr>
+						<td>more info <a href="http://musicbrainz.org/artist/<%= @artist["id"] %>">here</a></td>
+					</tr>
+
+				
+				</table>	
+		</div>
+
+	</div>

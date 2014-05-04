@@ -1,19 +1,24 @@
 <h1>Developers</h1>
 
-
 <div class='developers'>
-<% @devs.each do |initials, name| %>
+
 	<div class='developer'>
 		<table>
 			<tr>
 				<th>Initials</th>
 				<th>Name</th>
+				<th>Mood</th>
 			</tr>
-		<tr>
-			<td><%= initials %></td>
-			<td><%= name %></td>
-		</tr>
-	</table>	
+
+			<% @devs.each do |dev| %>
+			<tr>
+				<td><%= dev.initials %></td>
+				<td><%= dev.name %></td>
+				<td><%= [":)",":(",":P"].sample %></td>
+			</tr>
+			<% end %>
+
+		</table>	
 	</div>
-	<% end %>
+	
 </div>
