@@ -8,4 +8,8 @@ class Movie
     # @bad_good    = options["bad_good"]  ||= "undefined"
     # @good_good   = options.fetch("good_good", "undefined")
   end
+
+  def to_s
+    "#{@title}, #{@poster_url}, #{@plot}"
+  end
 end
