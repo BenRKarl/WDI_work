@@ -1,8 +1,9 @@
 <div class="artist">
 	<header class="page-header">
-		<h1><%= @name %></h1>
-		<h1><%= @country %></h1>
+		<h1>Artist: <%= @name %></h1>
+		<h1>Country: <%= @country %></h1>
 	</header>
+	<h1>Album List</h1>
 	<ul class="album-list">
 		<% @albums.each do |album| %>
 		<li>
