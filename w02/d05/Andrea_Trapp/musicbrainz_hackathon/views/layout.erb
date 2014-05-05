@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Which Gig NYC</title>
+  <title>Which Gig NYC</title> 
+  <!-- <link rel="stylesheet" href="/normalize.css"> -->
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-	<div class="container">
+	<div class="wrapper">
+		<div class="container">  
+  			<%= yield %>
+  		</div>
 
-	<header></header>
-  
-  	<%= yield %>
-
-  	<footer>
-		<div class="copyright">Copyright 2014, Rebecca Strong & Andrea Trapp</div>
-	</footer>
-
+	  	<footer>
+			<div class="copyright">Copyright 2014, Rebecca Strong & Andrea Trapp</div>
+		</footer>
 	</div>
 </body>
 </html>

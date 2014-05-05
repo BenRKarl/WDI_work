@@ -7,21 +7,61 @@ module Musicbrainz
  	# query releases from Nena http://musicbrainz.org/ws/2/release/?query=99+red+ballons
 	response = HTTParty.get(url)	
 	artists = response['metadata']['artist_list']['artist'] # returns a list of artists
-	artist = artists[0] # returns the first artist in the artists list, supposedly the perfect match with score=100
-	artist_info = {}
+	artists[0] # returns the first artist in the artists list, supposedly the perfect match with score==100
+  end 
 
-	artist_info[:name] = artist["name"]
-	artist_info[:score] = artist["score"]
-	artist_info[:country] = artist['country']
-	artist_info[:type] = artist["type"]
-	artist_info[:gender] = artist["gender"]
-	artist_info[:start] = artist["life_span"]["begin"]
-	artist_info[:area] = artist["area"]["name"]
-	artist_info[:disambiguation] = artist["disambiguation"]
-	artist_info[:id] = artist["id"]
 
-	artist_info	
-	#artist_id = artist['id']
+ def self.find_release_group(artist_id)  	
+ 	url = "http://musicbrainz.org/ws/2/release-group/?query=arid:" + artist_id
+ 	# works also: url = "http://musicbrainz.org/search?query=#{artist_name}&type=artist"
+ 	# works also: url = "http://musicbrainz.org/artist/c954d136-c7fd-4fd9-8bb0-fb0491fc6a02"
+ 	# query releases from Nena http://musicbrainz.org/ws/2/release/?query=99+red+ballons
+	response = HTTParty.get(url)	
+	release_groups = response['metadata']['release_group_list']['release_group'] # returns a list of all release-groups
+	# first_release_groups_title = response['metadata']['release_group_list']['release_group'][0]['title']
+  end 
+
+end
+
+
+# ---------------------
+# Navigation through Musicbrainz data structure using 'pry'
+# first require 'musicbrainz' and 'httparty' to be able to execute
+# > response = HTTParty.get("http://musicbrainz.org/ws/2/artist?query=nena")
+# Info source for creating the above url under following webpage
+# > http://musicbrainz.org/doc/Development/XML_Web_Service/Version_2/Search
+# > https://musicbrainz.org/doc/Development/JSON_Web_Service
+# then take response and subsequently execute .keys on each step - if possible - 
+# to move forward until the information is found. See below:
+# ---------------------
+# pry
+# require 'musicbrainz'
+# require 'httparty'
+# response = HTTParty.get("http://musicbrainz.org/ws/2/artist?query=nena")
+# response.keys
+
+	# [0] "metadata"
+
+# response['metadata'].keys
+
+	# [0] "artist_list",
+	# [1] "created"
+
+# response['metadata']['artist_list'].keys
+
+	# [0] "artist",
+	# [1] "count",
+	# [2] "offset"
+
+# response['metadata']['artist_list']['artist'].keys
+
+	# [8] pry(Musicbrainz)> response['metadata']['artist_list']['artist'].keys
+	# NoMethodError: undefined method `keys' for #<Array:0x007ff02aa673c8>
+	# from (pry):19:in `find'
+
+# response['metadata']['artist_list']['artist'][0]
+# response['metadata']['artist_list']['artist'][0].keys
+
     # [0] "name",
     # [1] "sort_name",
     # [2] "country",
@@ -33,36 +73,53 @@ module Musicbrainz
     # [8] "type",
     # [9] "score"
 
-	# response = MusicBrainz::Artist.find_by_name(artist_name)
-		# Exception at /artists
-		# Configuration missing
-		# file: configuration.rb location: config line: 47
+# response['metadata']['artist_list']['artist'][0]["disambiguation"]
 
-	# response = {"name" => "Rammstein", "country" => "DE"} # not in database
-  end 
-
- def self.find_release_group(artist_id)  	
- 	url = "http://musicbrainz.org/ws/2/release-group/?query=arid:" + artist_id
- 	# works also: url = "http://musicbrainz.org/search?query=#{artist_name}&type=artist"
- 	# works also: url = "http://musicbrainz.org/artist/c954d136-c7fd-4fd9-8bb0-fb0491fc6a02"
- 	# query releases from Nena http://musicbrainz.org/ws/2/release/?query=99+red+ballons
-	response = HTTParty.get(url)	
-	release_groups = response['metadata']['release_group_list']['release_group'] # returns a list of release-groups
-	# first_release_groups_title = response['metadata']['release_group_list']['release_group'][0]['title'] 
+	# "Japanese trance artist"
 
 
-	# response = MusicBrainz::Artist.find_by_name(artist_name)
-		# Exception at /artists
-		# Configuration missing
-		# file: configuration.rb location: config line: 47
+# Find artist for a given release
+# -------------------------------
+# http://musicbrainz.org/ws/2/release/?query=99+red+ballons
 
-	# response = {"name" => "Ramstein", "country" => "DE"} # not in database because misspelled
-  end 
+# # > response = HTTParty.get("http://musicbrainz.org/ws/2/release/?query=99+red+ballons")
+# [8] pry(main)> response['metadata']['release_list']['release'][0]['artist_credit']['name_credit']
+# {
+#     "artist" => {
+#                   "name" => "Nena",
+#              "sort_name" => "Nena",
+#         "disambiguation" => "the band, until 1987",
+#                     "id" => "c954d136-c7fd-4fd9-8bb0-fb0491fc6a02"
+#     }
+# }
 
-end
+
+# Find artist for a given release-group (album)
+# ---------------------------------------------
+# http://musicbrainz.org/ws/2/release-group/?query=99+luftballons
+
+# # > response = HTTParty.get("http://musicbrainz.org/ws/2/release-group/?query=99+luftballons")
+# [34] pry(main)> response['metadata']['release_group_list']['release_group'][0]['artist_credit']['name_credit']
+# {
+#     "artist" => {
+#                   "name" => "Nena",
+#              "sort_name" => "Nena",
+#         "disambiguation" => "the band, until 1987",
+#                     "id" => "c954d136-c7fd-4fd9-8bb0-fb0491fc6a02"
+#     }
+# }
+
+
+# Find release-groups (albums) for a given artist 
+# ---------------------------------------------
+# > search by artist id => http://musicbrainz.org/ws/2/release-group/?query=arid:c954d136-c7fd-4fd9-8bb0-fb0491fc6a02
+# > search by artist name => http://musicbrainz.org/ws/2/release-group/?query=artist:nena
+
 # > response = HTTParty.get("http://musicbrainz.org/ws/2/release-group/?query=arid:c954d136-c7fd-4fd9-8bb0-fb0491fc6a02")
 # [59] pry(main)> response['metadata']['release_group_list']['release_group'][0]['title']
 # "Die Band."
+
+
 
 
 # ---------------------------------
@@ -77,3 +134,4 @@ end
 #     movie = Movie.new(movie_hash)
 #   end
 # end
+

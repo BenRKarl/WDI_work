@@ -1,40 +1,121 @@
 <div class="content">
-	<h3>Who are you going to see tonight?</h3>
+
+	<h1>Who are you going to see tonight?</h1>
 
 		<div class='right'>
-				<table>
 
-					<% @artist.each do |k, v| %>					
-					<tr>
-						<td><%= k %>: </td>
-						<td><%= v %></td>						
-					</tr>					
-					<% end %>
+			<h2><%= @artist["name"] %></h2>
 
-					<tr><td>Releases:</td></tr>
-					<% @release_groups.each do |release_group| %>					
-					<tr>						
-						<td><%= release_group['title'] %></td>	
-						<td><%= release_group['id'] %></td>	
-						<!-- <td><img src=<%= @coverart_url %> alt="Release Cover Image" ></td>	 -->
-						<td><img src=<%= "http://coverartarchive.org/release-group/#{release_group['id']}/front.jpg" %> alt="Release Cover Image" ></td>	
-						<td><a href=<%= "http://coverartarchive.org/release-group/#{release_group['id']}/front.jpg" %>>cover pic</a></td>	
-						<!-- <td><img src="http://coverartarchive.org/release-group/6fa29542-6f8b-49ff-afc9-7d5b4ac4a0db/front.jpg" alt="Release Cover Image" ></td>		 -->
-						<td>-------------------------------------------</td>		
-					</tr>
-					<% end %>
-					
+			<!-- Static information starts here: -->
+			<!-- Youtube videos for featured songs appear here... -->
 
-					<tr>
-						<td>more info on Musicbrainz <a href="http://musicbrainz.org/artist/<%= @artist[:id] %>">here</a></td>
-					</tr>
-					<tr>
-						<td>more info on Wikipedia <a href="http://en.wikipedia.org/wiki/<%= @artist_wiki %>">here</a></td>
-					</tr>
+			<% case @artist["name"].downcase 
+			when "ana tijoux" %>
+				<section class="video">
+				<iframe width="560" height="315" src="//www.youtube.com/embed/BN4k3mnJteo" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+			<% when "avi avital" %>
+				<section class="video">
+				<iframe width="560" height="315" src="//www.youtube.com/embed/beq7ZqXLvUE" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+			<% when "gregory porter" %>
+				<section class="video">
+				<iframe width="560" height="315" src="//www.youtube.com/embed/v6R9H84koxs" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+			<% when "spoon" %>
+				<section class="video">
+				<iframe width="420" height="315" src="//www.youtube.com/embed/4rwdjb_zGaE" frameborder="0" allowfullscreen></iframe> 
+				</section>
+
+			<% when "fatboy slim" %>
+				<section class="video">
+				<iframe width="420" height="315" src="//www.youtube.com/embed/4Kz10DpxJFM" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+			<% when "fela kuti" %>
+				<section class="video">
+				<iframe width="420" height="315" src="//www.youtube.com/embed/Q76UngzHX5Y" frameborder="0" allowfullscreen></iframe> 
+				</section>			
+
+			<% else %>
+				<section class="video">
+					<img src="no-video-available.jpg" width="420" height="315" alt="No video available">
+				</section>			
+			<% end %>			
 
 
-					
-				</table>	
+		<% case @artist["name"].downcase 
+			when "ana tijoux" %>
+				<p>Tonight at Bowery Ballroom: 9pm. <br />6, Delancey Street</p>
+			
+			<% when "avi avital" %>
+				<p>Tonight at Avery Fisher Hall, Lincoln Center: 7.30pm.<br />Broadway & W 64th St</p>
+
+			<% when "gregory porter" %>
+				<p>Tonight at Dizzie's, Jazz At Lincoln Center: 7pm, 9pm 11pm.<br />Broadway @ W 60th St</p>
+
+			<% when "spoon" %>
+				<p>Tonight at 'Celebrate Brooklyn!': 9pm<br />Prospect Park Bandshell, Prospect Park</p>
+
+			<% when "fatboy slim" %>
+				<p>Tonight at Terminal 5: 9pm.<br />610 West 56th St.</p>
+
+			<% when "fela kuti" %>
+				<p>Tonight,'Fela!' the musical at the Eugene O'Neill Theater: 7.30pm<br />230 W 49th St.</p>		
+
+			<% else %>
+				<p>Text about Gig location in NYC.</p>		
+			<% end %>			
+			
+			<!-- Static information ends here. -->
+			
+		</div>
+
+
+		<div class='left'>
+
+			<table>
+
+				<tr>
+					<td>Country:</td><td><%= @artist["country"] %></td>
+				</tr>
+				<tr>
+					<td>Type:</td><td><%= @artist["type"] %></td>
+				</tr>
+				<tr>
+					<td>Born/Founded:</td><td><%= @artist["life_span"]["begin"] %></td>
+				</tr>
+				<tr>
+					<td>Disambiguation:</td><td><%= @artist["disambiguation"] %></td>
+				</tr>
+				<tr>
+					<td>more info <a href="http://en.wikipedia.org/wiki/<%= @artist["name"].gsub(' ','_') %>">here</a></td>
+				</tr>
+
+			</table>
+
+		</div>
+
+
+		<div class="albums clear">
+
+			<% @release_groups.each do |release_group| %>
+
+				<div class="album">
+
+					<h3><%= release_group['title'] %></h3>
+
+					<img src=<%= "http://coverartarchive.org/release-group/#{release_group['id']}/front.jpg" %> alt="Release Cover Image" >
+
+				</div>
+
+			<% end %>
+			
 		</div>
 
 </div>
+
+
