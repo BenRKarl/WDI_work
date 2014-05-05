@@ -34,7 +34,8 @@ get '/search' do
     @begin = "Begin date"   
 	else
 	  @artist_info = @artist_info[0]
-  	@name = @artist_info.fetch('name') 
+    if @artist_info != nil
+  	@name = @artist_info.fetch('name', "not found")
 
     	if @artist_info.fetch('type', "not found") != "not found" 
     		if @artist_info.fetch('type').downcase == "person"  
@@ -46,19 +47,23 @@ get '/search' do
     		end
     	end
   		
-
-
   		area = @artist_info.fetch('area', "not found")
   			if area != "not found"
-  				@country = area.fetch('name', "Country not found")
+  				@country = area.fetch('name', nil)
+        else
+          @country = "not found"  
   			end	
   	
   		span = @artist_info.fetch('life_span', "not found")
   			if span != "not found"
-  				@begin_date = span.fetch('begin', "not found")
+  				@begin_date = span.fetch('begin', nil)
+        else
+          @begin_date = "not found"  
   			end
-  end			
-  # artist_info not nil	
+    else
+    @name = "Artist not found"      
+    end			
+  end
 	erb :show
 end
 

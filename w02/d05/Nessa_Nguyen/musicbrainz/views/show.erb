@@ -20,11 +20,15 @@
 		<td class="tag">
 	<% if @artist_info != nil %>	
 		<% if @artist_info['tag_list'] != nil %>
-			<% 3.times do
-				@tag_list = @artist_info['tag_list']['tag'].sample %>
-				<%=	@tag = @tag_list['name'].capitalize %><br/>
-			<% end %>  
-		<% elsif @artist_info['tag_list'] == nil %>  	
+			<% @tag_list = @artist_info['tag_list']['tag'] %>
+			<% if @tag_list.is_a? Array %>
+  			<% 3.times do @tag_list.sample %>
+  				<%=	@tag = @tag_list['name'].capitalize %><br/>
+  			<% end %> 
+  		<% else %>	
+  			<%=	@tag = @tag_list['name'].capitalize %>
+  		<% end %>	
+		<% else %>  	
 		There's no tag associated with this artist.
 		<% end %> 
 	<% end %> 	
