@@ -1,0 +1,18 @@
+<h1> The book parser!</h1>
+<h2>welcome</h2>
+<p> funny fins</p>
+
+
+<div class='books'>
+<% Dir['books/*'].each do |book| %>
+<div class='book'>
+<a href="/<%= book %>"><%= book %></a>
+
+</div>
+<% end %>
+</div>
+<!-- <form action='/radnom' method='get'>
+	<input type='submit' value='Fetch a book'/>
+</form>
+ -->
+

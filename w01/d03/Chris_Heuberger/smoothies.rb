@@ -34,9 +34,15 @@ smoothie_ingredients = {
 # and output a mixed string of characters
 # Be sure to remove the spaces, as we don't want any air bubbles in our smoothie!
 
-def blend(smoothie_ingredients)
+def string_shuffle(yum)
+  yum.split("").shuffle.join
 end
 
+def blend(smoothie_ingredients)
+  string_shuffle(smoothie_ingredients.keys.shuffle.join("").gsub(/\s+/, ""))
+end
+
+puts blend(smoothie_ingredients)
 
 # create a class called Blender
 # It should have a method that takes an array of ingredients and returns a mixed string of characters.
@@ -44,6 +50,39 @@ end
 # FOR SAFETY'S SAKE When you create a new blender by default it should be off.
 # Blend the the smoothie array
 
-class Blender
+array = []
+
+puts "Is the blender on? (y/n)"
+switch_input = gets.chomp
+
+if switch_input == 'n'
+  puts 'Turn on the blender yo.'
+elsif switch_input == 'y'
+
+  puts "Okay, gimme some ingredients!"
+  puts "When you're finished, type 'done.' "
+  ings_input = gets.chomp
+
+  if ings_input == 'done'
+    puts "K, bye."
+  else
+    puts 'What else?'
+  end
+
+  puts "K, here\'s what you told me: #{ings_input}"
+
+
+else
+  puts "Wha?"
 end
 
+class Blender
+  attr_accessor :ings
+  def initialize(array)
+    @ings = array
+  end
+end
+
+my_smoothie = Blender.new(array)
+
+p Blender.ings

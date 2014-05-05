@@ -1,0 +1,37 @@
+.books {
+   /*background-color: white;*/
+   color: white;
+   font-style: bold;
+}
+
+body {
+   background: url(bjork_and_cat_dancing.gif);
+   background-repeat: repeat;
+   text-align: center;
+   color: white;
+   font-family: "Helvetica", sans-serif;
+}
+
+a {
+   color: white;
+   font-family: "Helvetica", sans-serif;
+}
+
+p {
+   color: white;
+   font-family: "Helvetica", sans-serif;
+   font-style: bold;
+}
+
+h1 {
+   color: white;
+   font-family: "Helvetica", sans-serif;
+   font-style: bold;
+}
+
+h2 {
+   color: white;
+   font-family: "Helvetica", sans-serif;
+   font-style: bold;
+}
+

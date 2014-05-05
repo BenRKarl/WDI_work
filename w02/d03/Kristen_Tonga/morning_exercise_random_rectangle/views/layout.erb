@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Random Rectangle</title>
+  <style>
+    div.box {
+      background-color: #<%= @color %>;
+      width: 150px;
+      height: #<%= @height%>px;
+    }
+  </style>
 </head>
 <body>
   <%= yield %>
