@@ -1,0 +1,11 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <link href="/style.css" rel="stylesheet">
+  <title>Links</title>
+</head>
+<body>
+  <%= yield %>
+</body>
+</html>
