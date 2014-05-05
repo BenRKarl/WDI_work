@@ -17,7 +17,7 @@ module Musicbrainz
 
 end
 
-artist = Musicbrainz.find('css')
+#artist = Musicbrainz.find('css')
 # return a hash of found artists 
 get '/' do
 
@@ -33,12 +33,29 @@ post  '/search' do
 end
 
 get '/search' do
+#search_term = params[:term]
+if Musicbrainz.find(params[:term]) == nil 
+@artist_info = "Artist not found"
+else 
+  @artist_info = Musicbrainz.find(params[:term])[0] 
+  
+#end
 
-  search_term = params[:term]
-  @artists = Musicbrainz.find('prince')	
-  erb :show
+  @name = @artist_info.fetch("name", "not found")  
+
+  @area = @artist_info.fetch("area", "not found")
+  if @area != "not found"
+  @country = @area.fetch("name", "not found")
+  end 
+  
+  
+    @span = @artist_info.fetch("life_span", "not found")
+  if @span != "not found"
+  @start = @span.fetch("begin", "not found")
+  end
 end
-
+  erb :show 
+  end
 
 
 
