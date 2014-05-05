@@ -1,9 +1,14 @@
 <div class="artist">
-  <h1><%= @name %></h1>
-  <h1><%= @country %></h1>
-  <ul>
-    <% @albums.each do |title| %>
-    <li><%= title %></li>
-      <% end %>
-  </ul>
+	<header class="page-header">
+		<h1><%= @name %></h1>
+		<h1><%= @country %></h1>
+	</header>
+	<ul class="album-list">
+		<% @albums.each do |album| %>
+		<li>
+			<%= album[0] %>
+			<%= album[1] %>
+		</li>
+		<% end %>
+	</ul>
 </div>

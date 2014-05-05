@@ -1,4 +1,5 @@
 require 'bundler'
+require 'open-uri'
 Bundler.require
 
 MusicBrainz.configure do |c|
@@ -18,6 +19,25 @@ get '/artist' do
   @country = artist_info.country
   @albums = []
   album_list = artist_info.release_groups  
-  album_list.each { |album| @albums << album.title }
+  album_list.each do |album|
+    mbid = album.id
+    album_data = []
+    album_data << album.title
+    begin 
+      open("http://coverartarchive.org/release-group/#{mbid}/") do |f|
+        data = f.read
+        album_data << "<img src=#{JSON.parse(data)['images'][0]['thumbnails']['small']}>"
+      end
+    rescue OpenURI::HTTPError
+      album_data << ''
+    end
+    @albums << album_data
+  end
   erb :show
 end
+
+
+
+
+
+
