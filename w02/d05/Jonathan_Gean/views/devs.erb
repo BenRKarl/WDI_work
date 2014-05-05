@@ -1,0 +1,12 @@
+<table>
+<% @developers.each do |developer| %>
+  <tr>
+    <td><%= developer.name.join(' ') %></td>
+    <td><%= developer.initials %></td>
+    <td>
+        <%= [':)', ':(', ';P', ';)', ':D', ':\'('].sample %>
+      </td>
+      <td><%= developer.tagline %></td>
+  <tr>
+<% end %>
+</table>
