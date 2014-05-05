@@ -1,7 +1,7 @@
 require 'bundler'
 Bundler.require
 
-#require './lib/class_music'
+#require 'lib/countries.erb'
 #require '.lib/module_musicbrainz'
 
 
@@ -10,7 +10,8 @@ get '/' do
 end
 
 get '/artist' do
-  @artist = params[:artist]
+  @artist = params[:artist].gsub(' ','+')
+
 
   #find artist data in Musicbrains
     url = "http://musicbrains.org/ws/2/artist?query="+(@artist).to_s
@@ -34,5 +35,18 @@ get '/artist' do
   end
   @country_count = country_count
 
+  #and show.
+  @keys = country_count.keys
+  @values = country_count.values
+
+#AND HERE'S STEP TWO!!!
+  #turn countries.erb list into array
+
+  #find the data in the array
+
+
   erb :show
 end
+
+
+
