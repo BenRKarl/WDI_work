@@ -1,0 +1,38 @@
+th {
+   border: solid black 1px;
+   text-align: left;
+}
+
+/*table {
+  padding: 10px;
+  border: solid black 1px;
+}*/
+
+/*td {
+  border: solid black 1px;
+
+}*/
+
+tr {
+  outline: thin solid black;
+  margin-top: 10px;
+}
+
+.results {
+  float: left;
+  width: 500px;
+  font-family: helvetica;
+}
+
+.right {
+  float: right;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
