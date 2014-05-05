@@ -1,0 +1,18 @@
+
+body {
+  background-color: lightblue;
+}
+
+.container {
+  width: 640px;
+  border: thin solid black;
+  
+}
+
+.info {
+  background-color: lightgoldenrodyellow;
+  border: thin black solid;
+  padding: 5px;
+  margin: 5px;
+}
+

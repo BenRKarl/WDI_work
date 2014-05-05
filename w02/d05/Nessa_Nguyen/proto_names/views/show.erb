@@ -1,0 +1,16 @@
+
+
+<table>
+
+<% @developers.each do |dev| %>
+
+<tr>
+<td> <%= dev.name.join(' ') %> </td>
+<td> <%= dev.initials %> </td>
+<td> <%= dev.tagline %> </td>
+</tr>
+
+<% end %>
+</table>
+
+
