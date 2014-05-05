@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emergency Compliment</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body style= background-color:#<%= @color %>;>
+
+  <%= yield %>
+
+  <form class = compliment action="/names" method="post">
+    <input type="text" name="name">
+    <input type="submit">
+  </form>
+
+</body>
+</html>

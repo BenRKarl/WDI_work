@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Receipt</title>
+</head>
+<body>
+	
+<h2>Enter your information here</h2>
+<div class="customer_transaction">
+<form action="receipts" method="POST" name="cost">
+	<input type="text" name="company" value="<%=@company %>" placeholder="Your Company" />
+<br>
+
+	<input type="text" name="service" value ="<%= @service %>" placeholder="Service Provided" />
+<br>
+
+	<input type="text" name="@cost" value="<%= @cost %>" placeholder="Cost" />
+<br>	
+	<input style="text" type="submit">
+
+</form></input>
+</div>
+
+
+</body>
+</html>
+
