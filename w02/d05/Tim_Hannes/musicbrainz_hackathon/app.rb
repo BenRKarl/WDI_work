@@ -18,10 +18,6 @@ module Musicbranz
     response = HTTParty.get(url)
     response['metadata']['artist_list']['artist']
     # data = response['metadata']['artist_list']['artist']
-    # artist name
-    # country result
-    # begin date = artist[0][]
-    # disambiguation = artist[1]['disambiguation']
   end
 end
 

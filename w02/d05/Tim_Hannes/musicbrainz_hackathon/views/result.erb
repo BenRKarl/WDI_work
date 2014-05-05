@@ -1,6 +1,24 @@
-<div class="name">Artist Name: <%= @artist[0]['name']  || 'undefined' %></div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/style.css">
+  <title>Musicbrainz Artist Finder</title>
+</head>
+<body>
+    <div class="container">
+      <div class="name">Artist Name: <%= @artist[0]['name']  || 'undefined' %></div>
+      <div class="country">Country: <%= @artist[0]['country']  || 'undefined' %></div>
+      <div class="begin_date">Begin Date: <%= @artist[0]['life_span']['begin']  || 'undefined' %></div>
+      <div class="disambiguation"><%= @artist[0]['disambiguation'] || 'undefined' %></div>
+    </div>
+</body>
+</html>
+
+
+<!-- <div class="name">Artist Name: <%= @artist[0]['name']  || 'undefined' %></div>
 <div class="country">Country: <%= @artist[0]['country']  || 'undefined' %></div>
 <div class="begin_date">Begin Date: <%= @artist[0]['life_span']['begin']  || 'undefined' %></div>
-<div class="disambiguation"><%= @artist[0]['disambiguation'] || 'undefined' %></div>
+<div class="disambiguation"><%= @artist[0]['disambiguation'] || 'undefined' %></div> -->
 
 <!-- <div class="tags"></div> -->
