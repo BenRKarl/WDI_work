@@ -5,6 +5,10 @@ module OMDB
     movie_json = self.get("http://www.omdbapi.com/?t="+movie_name)
     movie_hash = JSON.parse(movie_json)
     movie = Movie.new(movie_hash)
+    file  = File.open("movies.csv", "a+")
+    file.puts movie
+    file.close
+    movie
   end
 end
 
