@@ -9,25 +9,33 @@
             padding: 10px;">
     <h2>Top result given for: "<%= @artist_name %>"  </h2>
 
-<table style="margin: 0 auto;">
+<table style="margin: 0 auto;
+              background: white;
+              border-radius: 10px">
   <tr>
     <td style="
-        border: 1px solid black;
         width: 200px;
         border-collapse: collapse;">
         Name:</td><td><div class="name"> <%= @result_name %></div></td>
   </tr>
-  <tr>
-<td style="
-        border: 1px solid black">Country of Origin:</td><td><div class="country"> <%= @result_country %></div></td>
+  <tr style="background: lightgray;">
+<td>Country of Origin:</td><td><div class="country"> <%= @result_country %></div></td>
   </tr>
   <tr>
-    <td style="
-        border: 1px solid black">Begin Date:</td><td><div class="begin_date"> <%= @result_begin_date || 'undefined' %></div></td>
-  <tr>
-<td style="
-        border: 1px solid black">Associated Words:</td><td><div class="disambiguation"> <%= @result_disambiguation || 'undefined' %></div></td>
+    <td>Begin Date:</td><td><div class="begin_date"> <%= @result_begin_date || 'undefined' %></div></td>
+      </tr>
+  <tr style="background: lightgray;">
+<td>Associated Word(s):</td><td><div class="disambiguation">
+
+    <% @result_disambiguation.each do |hash| %>
+      <%= hash['name'] %>
+    <% end %>
+
+    </div></td>
 </tr>
+   <tr>
+    <td>Alias:</td><td><div class=""> <%= @result_alias || 'undefined' %></div></td>
+  </tr>
 </table>
 </div>
 <div style="padding: 20px;">
