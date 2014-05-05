@@ -1,90 +1,47 @@
-/* 
-Project Name: Musicbrainz Hackathon
-Client: General Assembly 
-Author: Rebecca Strong, Andrea Trapp
-Developer @GA in NYC
-*/
 
-/* Box Model Hack */
-* {
-     -moz-box-sizing: border-box; /* Firexfox */
-     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
-     box-sizing: border-box; /* IE */
+
+ html {
+
+background: url('http://i.imgur.com/oT6lbki.jpg?1') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;background-size: cover;
+
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  color: white;
-  background-color: gray;
-}
-
-.wrapper {
-     max-width: 700px;
-     min-height: 700px;
-     margin: 0 auto;      
-     background-color: black;  
-}
-
-.container {
-  margin: 0 auto;  
-max-width: 600px;
-min-height: 450px;
-  /*background-color: red;*/
-  background: url('http://i.imgur.com/oT6lbki.jpg?1');
-  background-size: cover;
-}
-
-.content {
-  margin: 0;
-  padding: 10px 0;
-}
-
-.nav {
-  float: left;
-  max-width: 200px;
-  background-color: black;
-  color:white;
-  text-align: center;
-  padding: 50px 20px;  
-  /*background: url('http://i.imgur.com/oT6lbki.jpg?1');*/
-  /*background-size: cover;*/
-}
-
-form input {
-  text-align: center;
-  font-size: 14px;
-  margin:10px 5px;
-}
-
-img {
-  color: white;
-}
-
-/*body {
-    background: red;
+@media (max-width: 800px) {
+  body {
+    background: black;
     display: block;
     padding: 5px;
   }
-  h1 {
-    font-size: 36px;
-  }
-*/
-
-
-/*.container {
-  display: inline;
-  height: 100%;
-  width: 25%;
-  border: 2px solid black;
-  border-radius: 5px;
-  background-color: #000000;
+.iframe {
+  width: 100%;
+  height: 320px;
 }
-*/
-/*article {
+
+h1 {
+    font-size: 36px;
+
+  }
+
+}
+
+.container {
+
+  margin-top: -5px;
+  display: inline-block;
+  height: 400px;
+  width: 320px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background: black;
+}
+
+article {
   max-width: 500px;
   margin: 0 auto;
-}*/
+}
 
 h1 {
   font-size: 28px;
@@ -92,59 +49,72 @@ h1 {
   font-style: bold;
   font-style: italic;
   text-align: center;
+  color: white;
+  text-align: left;
+  padding-top: 50px;
+  padding-left: 30px;
+
 }
 
 h2 {
-  margin-top: 50px;
   font-size: 16px;
   font-family: Arial;
   font-style: italic;
+  color: white;
+  text-align: left;
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-bottom: 80px;
+}
+
+form {
+  padding-left: 30px;
+}
+
+footer {
+  background: rgba(0,0,0,0.5);
+ 
+  width: 291px;
+  font-family: Garamond;
+  font-size: 10px;
+  color: white;
+  padding-top: 70px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  border-radius: 0 0 0 10px;
+  clear: both;
+
+
 }
 
 h3 {
   font-family: Avenir Book;
-  font-size: 18px;
-  font-style: bold;
-}
-
-p {
-  font-family: Avenir Book;
   font-size: 16px;
   font-style: bold;
+  padding-left: 30px;
+  color: white;
+
+}
+
+
+p {
+
+font-family: Arial;
+font-size: 14px;
+font-style: bold;
+color: white;
+display: inline-block;
+
 }
 
 .right {
-  float: right;  
+
+  margin-top: -5px;
+  display: inline-block;
   height: 100%;
-  width: 60%;  
-  background-color: white;
-  color: black;
-  text-align: center;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 0 20px 50px;
-}
-
-.left {
-  float: left;
-  height: 100%;
-  width: 33%;
-}
-
-.left table tr td {
-  padding: 2px 0;
-}
-
-a {
-  color: white;
-}
-
-a:hover {
-  color: #d6d6d6;
-}
-
-section {
-   margin: 50px auto;
+  width: 320px;
+  border-left: 1px solid black;
+  background-color: black;
 }
 
 section .video {
@@ -152,9 +122,33 @@ section .video {
   padding: 10px 20px;
 }
 
+.table {
+
+
+  color: white;
+}
+
+.left {
+
+  display: inline-block;
+  height: 100%;
+  width: 320px;
+  border-left: 1px solid black;
+  background-color: black;
+  color: white;
+
+}
+
 .albums {
-  margin-top: 50px;
-  padding: 10px;
+
+  margin-top: -5px;
+  display: inline-block;
+  height: 100%;
+  width: 320px;
+  border-left: 1px solid black;
+  background-color: black;
+  color: white;
+
 }
 
 .album img{
@@ -162,31 +156,6 @@ section .video {
   padding: 20px;
 }
 
-footer {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 50px;  
-  background-color: #d6d6d6;
-  color: black;
-  font-family: Garamond;
-  font-size: 14px;
-  text-align: center; 
+
+
 }
-
-/* Clear fix hack */
-.clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
-}
-
-.clear {
-  clear: both;
-}
-
-
-
-
