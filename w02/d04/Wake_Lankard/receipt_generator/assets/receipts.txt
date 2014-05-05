@@ -1,0 +1,11 @@
+GQ|stuff|200
+alloy|webs|40000
+here|wer|300
+as|dd|ff
+GQ|stuff|200
+as|dd|ff
+test
+as|dd|ff
+this|th|1
+General Assemby|webucation|$75
+Google|searching |45

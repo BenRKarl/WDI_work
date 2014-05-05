@@ -1,0 +1,66 @@
+
+
+.rform {
+  display: block;
+}
+
+.receipt {
+  margin: 20px;
+  margin-top: 4px;
+  padding: 20px;
+  padding-bottom: 0px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  width: 300px;
+  line-height: 30px;
+  background-color: lightyellow;
+}
+
+.all_r {
+  float: left;
+}
+
+.r_top {
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+.fdiv {
+  padding-left: 80px;
+
+
+}
+
+.type {
+  display: inline-block;
+  width: 150px;
+  margin-left: 20px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.intext {
+  margin: 10px;
+  margin-top: 4px;
+  display: block;
+  width: 200px;
+  height: 20px;
+
+}
+
+.s_button {
+  font-size: 200px;
+  padding: 40px;
+  height: 200px;
+  width: 200px;
+}
+
+
+
+
+
+
+
+
+
+

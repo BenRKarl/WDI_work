@@ -1,0 +1,25 @@
+body {
+   color: white;
+   font-family: "Helvetica", sans-serif;
+   font-style: bold;
+   background: url(bjork_chomp.gif);
+   background-repeat: repeat;
+   padding: 5px;
+}
+
+h1 {
+   font-size: 50px;
+   background-color: navy;
+   text-align: center;
+   width: 400px;
+   padding: 5px;
+}
+
+a {
+   font-size: 50px;
+   background-color: navy;
+   color: white;
+   font-family: "Helvetica", sans-serif;
+   font-style: bold;
+   padding: 5px;
+}
