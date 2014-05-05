@@ -1,0 +1,9 @@
+<table>
+	<% @developers.each do |person| %>
+	<tr>
+		<td><%= person.name.join(" ") %></td>
+		<td><%= person.initials %></td>
+		<td><%= person.tagline %></td>
+	</tr>
+	<% end %>
+</table>
