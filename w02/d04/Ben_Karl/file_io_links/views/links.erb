@@ -1,0 +1,11 @@
+<h1>Hyperlinked Site Names Go Here</h1>
+
+<div>
+  <% file_contents("links.csv").each do |row| %>
+  <ul>
+    <li>
+    <a href="<%= merge(row)[1] %>"><%= merge(row)[0] %></a>
+    </li>
+  </ul>
+  <% end %>
+</div>

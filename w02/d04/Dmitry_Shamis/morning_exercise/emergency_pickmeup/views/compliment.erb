@@ -1,0 +1,11 @@
+<% if @name %>
+  <h1><%= @name %>! <%= @compliment %></h1>
+<% else %>
+  <h1>Hey pretty eyes! <%= @compliment %></h1>
+  <% end %>
+
+<form action="/names" method="post">
+  <input type="text" name="user_name" placeholder="What's your name?">
+  <button type="submit">Say something sexy</button>
+</form>
+</div>
