@@ -1,0 +1,9 @@
+<h1>Here are your receipts:</h1>
+
+<div class ="rholder">
+  <%@receipt_arr.each do |i| %>
+    <div class="receipt"><div class="num">Receipt <%=(@receipt_arr.index(i)+1)%></div><%=i.gsub("\n", "</br>")%></div>
+  <%end%>
+</div>
+
+<h3>To create a new receipt, click <a href="/">here</a>.</h3>

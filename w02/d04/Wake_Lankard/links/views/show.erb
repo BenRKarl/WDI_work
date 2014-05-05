@@ -1,0 +1,7 @@
+
+
+<% @arr.each do |item| %>
+<% text = item.split(',')[0] %>
+<% url = item.split(',')[1] %>
+<a href="<%= url %>"><%= text %></a><br/>
+<% end %>
