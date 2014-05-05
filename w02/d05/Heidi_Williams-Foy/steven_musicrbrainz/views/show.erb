@@ -1,0 +1,9 @@
+<div class="artist">
+  <h1><%= @artist.name %></h1>
+  <h1><%= @artist.country %></h1>
+  <ul>
+    <% @artist.albums do |title| %>
+    <li><%= title %></li>
+      <% end %>
+  </ul>
+</div>

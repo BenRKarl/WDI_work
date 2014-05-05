@@ -5,7 +5,6 @@
 require 'bundler'
 Bundler.require
 
-require 'csv'
 
 get '/' do
 	erb :index
@@ -16,15 +15,15 @@ post '/receipts' do
 	@company = params[:company]
 	@goods = params[:item]
 	@amount = params[:price]
-	new_receipt = { :company => @company, :goods => @goods, :amount => @amount }
-	
+	new_receipt = { "Company" => @company, "Good or Service" => @goods, "Amount" => @amount }
 	@receipt_array = []
+	
 	new_receipt.each do |k,v|
 		@receipt_array << "#{k}: #{v}"
 	end			
 	
 	file = File.open('receipts.txt', 'a') do |file|
-		file.puts @receipt_array.join(" | ") 
+		file.puts @receipt_array.join(". ") 
 	end	
 
 	redirect '/receipts'

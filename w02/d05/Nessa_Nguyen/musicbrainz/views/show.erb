@@ -1,0 +1,52 @@
+<!-- httparty -->
+<%#= @artist_info %>  
+
+<h3>Search result:</h3>
+
+<table>
+	<tr class="heading">
+  	<td>Artist</td>  
+  	<td>Country</td> 
+  	<td>Type</td>  
+  	<td><%= @begin %></td>  
+  	<td>Tags </td>  
+	</tr>
+
+	<tr>
+		<td class="name"><%= @name %></td>	
+		<td class="country"><%= @country %></td>	
+		<td class="type"><%= @type %></td>	
+		<td class="begin date"><%= @begin_date %></td>	
+		<td class="tag">
+	<% if @artist_info != nil %>	
+		<% if @artist_info['tag_list'] != nil %>
+			<% @tag_list = @artist_info['tag_list']['tag'] %>
+			<% if @tag_list.is_a? Array %>
+  			<% 3.times do @tag_list.sample %>
+  				<%=	@tag = @tag_list['name'].capitalize %><br/>
+  			<% end %> 
+  		<% else %>	
+  			<%=	@tag = @tag_list['name'].capitalize %>
+  		<% end %>	
+		<% else %>  	
+		There's no tag associated with this artist.
+		<% end %> 
+	<% end %> 	
+		</td>	
+	</tr>	
+
+</table>
+
+
+
+<p class="small center"><a href="/">Return</a> to search</p>
+
+<!-- Musicbrainz Gem 
+
+<%= @name   %>
+<%= @country %> 
+<%= @start %>
+<%= @type %>
+<%= @youtube %> 
+<%= @homepage %>
+ -->

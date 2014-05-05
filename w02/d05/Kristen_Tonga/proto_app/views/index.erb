@@ -1,0 +1,30 @@
+<h3>GREAT</h3>
+
+<!-- <ul>
+  <% @devs.each do |dev| %>
+    <li>
+       <%= dev.name.join(' ') %>
+    </li>
+  <% end %>
+</ul>
+
+ -->
+
+<table>
+  <% @devs.each do |dev| %>
+    <tr>
+      <td>
+        <%= dev.initials %>
+      </td>
+      <td>
+         <%= dev.name.join(' ') %>
+      </td>
+      <td>
+        <%= dev.tagline %>
+      </td>
+      <td>
+        <%= [':)', ':(', ';P', ';)', ':D', ':\'('].sample %>
+      </td>
+    </tr>
+  <% end %>
+</table>
