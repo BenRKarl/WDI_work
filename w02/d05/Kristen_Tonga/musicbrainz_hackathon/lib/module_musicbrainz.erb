@@ -1,0 +1,11 @@
+
+module Musicbrainz
+  #looks up artist based on name
+  include HTTParty
+  def self.find(artist)
+    url = "http://musicbrainz.org/ws/2/artist?query="+ artist
+    response = HTTParty.get(url)
+    data =response['metadata']['artist_list']['artist']
+  end
+
+end

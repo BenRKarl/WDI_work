@@ -1,0 +1,10 @@
+<h1 style="width: 100px;"> </h1>
+<table>
+<% @sorted.each do |i| %>
+  <tr>
+    <td> <%=i.name[0]%> <%=i.name[1]%></td>
+    <td> <%=i.initials%> </td>
+    <td> <%=i.tagline%> </td>
+  <tr>
+  <% end %>
+</table>
