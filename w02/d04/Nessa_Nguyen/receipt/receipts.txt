@@ -1,3 +1,6 @@
 company: Pret | goods: wrap | amount: $9.00
 company: Chipotle | goods: burrito | amount: $7.50
 company: DSW | goods: boots | amount: $50.99
+company: Jasmine spa | goods: Swedish massage | amount: $65
+Company: General Assembly. Good or Service: Tuition. Amount: $2,300
+Company: Hale & Hearty. Good or Service: chicken pesto . Amount: $8.77

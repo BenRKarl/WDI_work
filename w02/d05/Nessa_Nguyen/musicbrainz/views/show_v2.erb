@@ -1,0 +1,32 @@
+<!-- httparty -->
+<%#= @artist_info %>  
+
+<h3>Search results:</h3>
+
+<table>
+	<tr class="heading">
+  	<td>Artist</td>  
+  	<td>Country</td> 
+  	<td>Type</td>  
+  	<td>Begin Date</td>  
+  	<td>Tags </td>  
+	</tr>
+
+<% if @artists != nil %>
+	<% @artists.each do |info_array| %>
+	<tr>
+		<td class="name"><%= info_array[0] %></td>	
+		<td class="country"><%= info_array[1] %></td>	
+		<td class="type"><%= info_array[2] %></td>	
+		<td class="begin date"><%= info_array[3] %></td>	
+		<td class="tag"><%= info_array[4].join('<br/>') %>
+		</td>	
+	</tr>	
+	<% end %>
+<% end %>	
+</table>
+
+
+
+<p class="small center"><a href="/">Return</a> to search</p>
+
