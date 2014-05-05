@@ -1,0 +1,17 @@
+body {      
+   background: url(bjork_coral.gif);
+   background-repeat: repeat;
+}
+
+.receipts {
+   font-size: 50px;
+   color: lime;
+   text-shadow: 5px 5px magenta;
+   font-family: "Helvetica", sans-serif;
+   font-style: bold;
+   padding: 5px;
+}  
+
+li {
+   list-style: none;
+}
