@@ -1,0 +1,18 @@
+<h1>Developers</h1>
+
+<table>
+	<tr>
+		<th>Initials</th>
+		<th>Name</th>
+		<th>Mood</th>
+	</tr>
+
+	<% @developers.each do |dev| %>
+	<tr>
+		<td><%= dev.initials %></td>
+		<td><%= dev.name %></td>
+		<td><%= [":)",":(",":P"].sample %></td>
+	</tr>
+	<% end %>
+
+</table>	
