@@ -1,0 +1,17 @@
+<h1>Emergency WDI Pickmeup</h1>
+
+<form action="/names" method="post">
+	<input type="text" name="name">
+	<input type="submit">
+</form>
+
+<div><%= @greeting %> <%= @name %><br /><%= @compliment %></div>
+
+<% if @name %>
+	<h2><%= @greeting %> <%= @name %> </h2>
+
+<% else %>
+		<h2>Hey you!</h2>
+	
+	
+<% end %>

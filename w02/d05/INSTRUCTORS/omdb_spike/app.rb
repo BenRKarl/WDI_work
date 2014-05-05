@@ -1,16 +1,29 @@
 require 'bundler'
 Bundler.require
 
+require './lib/movie'
+require './lib/omdb'
+
 get '/' do
   erb :root
 end
 
 get '/movie' do
-  movie_name = params[:movie_name].gsub(" ", "%20")
-  movie = HTTParty.get("http://www.omdbapi.com/?t="+movie_name)
-  movie_hash = JSON.parse(movie)
-  @title        = movie_hash["Title"]
-  @plot         = movie_hash["Plot"]
-  @poster_url   = movie_hash["Poster"]
+  @movie = OMDB.find(params[:movie_name])
   erb :show
+end
+
+
+get '/movies' do
+  f = File.open("movies.csv", "r")
+  arr = f.readlines
+  arr.map! do |line|
+    data = line.split(', ')
+    {"Title"  => data[0],
+     "Poster" => data[1],
+     "Plot"   => data[2]
+    }
+ end
+ @movies = arr.map{|hash| Movie.new(hash)}
+ erb :index
 end

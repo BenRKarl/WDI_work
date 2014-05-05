@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+  padding-top: 5em;
+  font-family: helvetica;
+}
+
+ul {
+  list-style: none
+}
+
+.main_form {
+  width: 50%;
+}
+
+.main_form li {
+  text-align: right;
+}
+
+.receipt {
+  background-color: lightgray;
+  font-family: courier;
+  text-align: left;
+  display: inline-block;
+  padding: 3em 1em;
+  border-style: solid 0.25px;
+  box-shadow: 10px 10px 20px #888888;
+}

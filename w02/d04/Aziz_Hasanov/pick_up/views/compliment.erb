@@ -1,0 +1,14 @@
+<h1>Emergency WDI Pickmeup</h1>
+
+<%= @compliment %>
+
+<form action="/feeling" method="post">
+	<input type="text" name="question"/>
+	<input type="submit"/>
+</form>
+
+<% if @answer %>
+	<%= puts "Hi there, #{answer}" %>
+<% else %>
+	<%= puts "Hi there" %>
+<% end %>

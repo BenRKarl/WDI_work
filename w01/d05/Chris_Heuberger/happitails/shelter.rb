@@ -4,17 +4,12 @@ class Shelter
     @name = name
     @address = address
     @animals = animals
-    @clients = clients
+    @clients = @name.length
   end
   def to_s
-    puts "#{:name} shelter at #{:address} has 0 animals and 0 people"
+    puts "#{@name} shelter at #{@address} has #{@animals} animals and #{@clients} people"
   end
 end
-
-
-
-
-
 
 
 
