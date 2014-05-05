@@ -1,0 +1,49 @@
+```
+- Company Name: GA
+- Good/Service Provided: Class time
+- Cost: 1200
+- Thank you for your patronage
+```
+
+```
+- Company Name: jfksdl
+- Good/Service Provided: fsdkl
+- Cost: fskl
+- Thank you for your patronage
+```
+
+```
+- Company Name: fdms,
+- Good/Service Provided: fmsd,.
+- Cost: fmds,.
+- Thank you for your patronage
+```
+
+```
+- Company Name: This is
+- Good/Service Provided: my 
+- Cost: new receipt
+- Thank you for your patronage
+```
+
+```
+- Company Name: One
+- Good/Service Provided: two 
+- Cost: three
+- Thank you for your patronage
+```
+
+```
+- Company Name: McDonalds
+- Good/Service Provided: Big Mac
+- Cost: $5
+- Thank you for your patronage
+```
+
+```
+- Company Name: This
+- Good/Service Provided: is
+- Cost: My receipt
+- Thank you for your patronage
+```
+
