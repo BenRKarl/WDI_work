@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{background-color: #<% @color %>;}
+	</style>
+</head>
+<body>
+	<form action="/names" method="post"></form>
+	 <input type="text" name="name">
+	 <button type="submit">Complimentify</button>
+	<%= yield %>
+	
+</body>
+</html>
