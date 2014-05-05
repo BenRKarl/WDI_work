@@ -1,0 +1,50 @@
+Company Name: abc comp
+Good/Service Provided: web dev
+Cost: $1000
+Thank you for your patronage
+
+Company Name: XY Inc,
+Good/Service Provided: ux design
+Cost: $2500
+Thank you for your patronage
+
+Company Name: Particular Assembly
+Good/Service Provided: seo services
+Cost: $1,499.99
+Thank you for your patronage
+
+Company Name: John Doe
+Good/Service Provided: Web app
+Cost: $499.99
+Thank you for your patronage
+
+Company Name: John Doe
+Good/Service Provided: Web app
+Cost: $499.99
+Thank you for your patronage
+
+Company Name: Jane Donner
+Good/Service Provided: consulting
+Cost: $3,000
+Thank you for your patronage
+
+Company Name: company
+Good/Service Provided: good/service provided
+Cost: $cost
+Thank you for your patronage
+
+Company Name: company
+Good/Service Provided: good/service provided
+Cost: $cost
+Thank you for your patronage
+
+Company Name: company
+Good/Service Provided: good/service provided
+Cost: $cost
+Thank you for your patronage
+
+Company Name: company
+Good/Service Provided: good/service provided
+Cost: $cost
+Thank you for your patronage
+

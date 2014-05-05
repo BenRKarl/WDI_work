@@ -1,0 +1,9 @@
+<h1>All receipts:</h1>
+
+<div class='receipts'>
+<% @receipts.each do |entry| %>
+	<div class='receipt'>
+		- <%= entry %>
+	</div>
+	<% end %>
+</div>
