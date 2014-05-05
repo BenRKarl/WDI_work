@@ -1,0 +1,12 @@
+<h1>WE ARE PROTO!</h1>
+
+<table>
+  <% @developers.each do |dev| %>
+  <tr>
+    <td><%= dev.name %></td>
+    <td><%= dev.initials %></td>
+    <td><%= [':)', ':(', ';P', ';)', ':D', ':\'('].sample %></td>
+  </tr>
+  <% end %>
+</table>
+
