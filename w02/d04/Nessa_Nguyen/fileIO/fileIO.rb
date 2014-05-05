@@ -23,14 +23,6 @@ def parse(file)
 	# return array of lines w/ no space or new line char
 end
 
-parse('links.csv')
-
-def separate(file) 
-	parse(file).map do |line|
-		@name = line.split(',').first
-		@link = line.split(',').last
-	end
-end	
 
 get '/links' do 
 	erb :show
