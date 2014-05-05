@@ -1,0 +1,5 @@
+gem 'httparty'
+gem 'pry'
+gem 'musicbrainz', '0.5.2'
+gem 'sinatra'
+gem 'sinatra-reloader'

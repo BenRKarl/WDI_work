@@ -1,0 +1,121 @@
+<div class="content">
+
+	<h1>Who are you going to see tonight?</h1>
+
+		<h2><%= @artist["name"] %></h2>
+
+			<!-- Static information starts here: -->
+			<!-- Youtube videos for featured songs appear here... -->
+
+			<% case @artist["name"].downcase 
+			when "ana tijoux" %>			
+				<section class="video">
+				<iframe width="560" height="315" src="//www.youtube.com/embed/BN4k3mnJteo" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+			<% when "avi avital" %>
+				<section class="video">
+				<iframe width="560" height="315" src="//www.youtube.com/embed/beq7ZqXLvUE" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+			<% when "gregory porter" %>
+				<section class="video">
+				<iframe width="560" height="315" src="//www.youtube.com/embed/v6R9H84koxs" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+			<% when "spoon" %>
+				<section class="video">
+				<iframe width="420" height="315" src="//www.youtube.com/embed/4rwdjb_zGaE" frameborder="0" allowfullscreen></iframe> 
+				</section>
+
+			<% when "fatboy slim" %>
+				<section class="video">
+				<iframe width="420" height="315" src="//www.youtube.com/embed/4Kz10DpxJFM" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+			<% when "fela kuti" %>
+				<section class="video">
+				<iframe width="420" height="315" src="//www.youtube.com/embed/Q76UngzHX5Y" frameborder="0" allowfullscreen></iframe> 
+				</section>			
+
+			<% else %>
+				<section class="video">
+					<img src="no-video-available.jpg" width="420" height="315" alt="No video available">
+				</section>			
+			<% end %>	
+
+		<div class='right'>
+
+		<% case @artist["name"].downcase 
+			when "ana tijoux" %>
+				<p>Tonight at Bowery Ballroom: 9pm. <br />6, Delancey Street</p>
+			
+			<% when "avi avital" %>
+				<p>Tonight at Avery Fisher Hall, Lincoln Center: 7.30pm.<br />Broadway & W 64th St</p>
+
+			<% when "gregory porter" %>
+				<p>Tonight at Dizzie's, Jazz At Lincoln Center: 7pm, 9pm 11pm.<br />Broadway @ W 60th St</p>
+
+			<% when "spoon" %>
+				<p>Tonight at 'Celebrate Brooklyn!': 9pm<br />Prospect Park Bandshell, Prospect Park</p>
+
+			<% when "fatboy slim" %>
+				<p>Tonight at Terminal 5: 9pm.<br />610 West 56th St.</p>
+
+			<% when "fela kuti" %>
+				<p>Tonight,'Fela!' the musical at the Eugene O'Neill Theater: 7.30pm<br />230 W 49th St.</p>		
+
+			<% else %>
+				<p>Text about Gig location in NYC.</p>		
+			<% end %>			
+			
+			<!-- Static information ends here. -->
+			
+		</div>
+
+
+		<div class='left'>
+
+			<table>
+
+				<tr>
+					<td>Country:</td><td><%= @artist["country"] %></td>
+				</tr>
+				<tr>
+					<td>Type:</td><td><%= @artist["type"] %></td>
+				</tr>
+				<tr>
+					<td>Born/Founded:</td><td><%= @artist["life_span"]["begin"] %></td>
+				</tr>
+				<tr>
+					<td>Disambiguation:</td><td><%= @artist["disambiguation"] %></td>
+				</tr>
+				<tr>
+					<td  colspan="2">more info on <a href="http://en.wikipedia.org/wiki/<%= @artist["name"].gsub(' ','_') %>">Wikipedia</a></td>
+				</tr>
+
+			</table>
+
+		</div>
+
+
+		<div class="albums clear">
+
+			<h2>List of Albums</h2>
+
+			<% @release_groups.each do |release_group| %>
+
+				<div class="album">
+
+					<h3><%= release_group['title'] %></h3>
+
+					<img src=<%= "http://coverartarchive.org/release-group/#{release_group['id']}/front.jpg" %> alt="Release Cover Image" width="220" height="175" >
+				</div>
+
+			<% end %>
+			
+		</div>
+
+</div>
+
+

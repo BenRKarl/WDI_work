@@ -1,0 +1,26 @@
+<div>
+	
+	
+<table style="border: 1px solid black;">
+<tr>
+<th>Artist Name</th>
+<th>Ocupation</th>
+<th>Country</th>
+<th>Birth Date</th>
+<th>Date of Death?</th>
+</tr>
+	<% @artists.each do |artist| %>
+
+		<tr style="border: 1px solid black;">
+		<td><%= artist['name'] %> </td>
+		<td><%= artist['disambiguation'] %></td>
+		<td><%= artist['country'] %></td>
+		<td><%= artist['life_span']['begin'] %></td>
+		<td><%= artist['life_span']['ended'] %></td>
+		</tr>
+
+	<% end %>
+</table>
+
+
+</div>
