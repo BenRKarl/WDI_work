@@ -1,0 +1,154 @@
+body {
+background-color: black;
+background-image: url('background.jpeg');
+background-size: cover;
+font-family: times;
+color: white;
+padding: 30px;
+}
+
+h1 {
+  color: yellow;
+  font-size: 4em;
+}
+
+h2 {
+  color: pink;
+}
+
+p {
+  color: yellow;
+  font-size: 12px
+}
+
+.center {
+  width: 700px;
+  background-color: black;
+  margin: 0 auto;
+}
+
+.bubble_back {
+  background-color: tan;
+  padding: 10px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  opacity: .95;
+  width: 400px;
+}
+
+.bubble
+{
+position: relative;
+opacity: 1;
+width: 250px;
+height: 120px;
+padding: 0px;
+background: #4C427E;
+-webkit-border-radius: 35px;
+-moz-border-radius: 35px;
+border-radius: 35px;
+}
+
+.bubble:after
+{
+content: "";
+position: absolute;
+top: 80px;
+right: -50px;
+border-style: solid;
+border-width: 25px 0 5px 70px;
+border-color: transparent #4C427E;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+form {
+padding: 30px;
+}
+
+.thinking {
+  /*position: absolute;
+  right: 20px;
+  top: 50px;
+  */min-height: 200px;
+  max-width: 300px;
+  width: 40%;
+  float: right;
+  margin-top: -120px
+}
+
+/*THIS IS THE SHOW PG*/
+
+.center2 {
+  width: 1020px;
+  background-color: black;
+  margin: 0 auto;
+}
+
+span {
+  color: red;
+}
+
+.left {
+float: right;
+margin: 10px;
+}
+
+.world {
+max-width: 620px;
+min-width: 200px;
+width: 80%;
+/*outline: 20px solid white;*/
+margin: 0 auto;
+border-radius: 40px;
+hover
+}
+
+/*THIS IS SOMETHING FOR ANOTHER NIGHT:
+  span.imgswap {
+  background-image:url("ideal_fractal.gif");
+  background-repeat: no-repeat;
+  display: block;
+}
+
+span.imgswap:hover img {
+  visibility:hidden;
+}*/
+
+.subtitle {
+  font-style: italic;
+  width: 50%;
+}
+
+.undef {
+  width: 80%;
+  text-align: right;
+}
+
+.right {
+  float: right;
+  position: relative;
+  opacity: 1;
+  width: 150px;
+  height: 450px;
+  padding: 10px;
+  background: #4C427E;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;}
+
+.right:after {
+  content: "";
+  position: absolute;
+  top: 80px;
+  right: 175px;
+  border-style: solid;
+  border-width: 45px 70px 45px 0;
+  border-color: transparent #4C427E;
+  display: block;
+  width: 0;
+  z-index: 1;
+  }
+

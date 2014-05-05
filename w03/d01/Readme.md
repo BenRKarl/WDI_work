@@ -13,3 +13,8 @@
 
 ___
 
+
+#Heroku Launch (reprise)
+
+* Let's take another pass on launching to Heroku.  
+* Follow [this](https://github.com/amadden80/Sinatra_Heroku_Demo) tutorial.  Created by Andrew, it takes us through the process of launching a basic Sinatra App to Heroku.  
