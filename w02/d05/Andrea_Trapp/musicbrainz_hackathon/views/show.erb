@@ -2,15 +2,13 @@
 
 	<h1>Who are you going to see tonight?</h1>
 
-		<div class='right'>
-
-			<h2><%= @artist["name"] %></h2>
+		<h2><%= @artist["name"] %></h2>
 
 			<!-- Static information starts here: -->
 			<!-- Youtube videos for featured songs appear here... -->
 
 			<% case @artist["name"].downcase 
-			when "ana tijoux" %>
+			when "ana tijoux" %>			
 				<section class="video">
 				<iframe width="560" height="315" src="//www.youtube.com/embed/BN4k3mnJteo" frameborder="0" allowfullscreen></iframe>
 				</section>
@@ -44,8 +42,9 @@
 				<section class="video">
 					<img src="no-video-available.jpg" width="420" height="315" alt="No video available">
 				</section>			
-			<% end %>			
+			<% end %>	
 
+		<div class='right'>
 
 		<% case @artist["name"].downcase 
 			when "ana tijoux" %>
@@ -92,7 +91,7 @@
 					<td>Disambiguation:</td><td><%= @artist["disambiguation"] %></td>
 				</tr>
 				<tr>
-					<td>more info <a href="http://en.wikipedia.org/wiki/<%= @artist["name"].gsub(' ','_') %>">here</a></td>
+					<td  colspan="2">more info on <a href="http://en.wikipedia.org/wiki/<%= @artist["name"].gsub(' ','_') %>">Wikipedia</a></td>
 				</tr>
 
 			</table>
@@ -101,6 +100,8 @@
 
 
 		<div class="albums clear">
+
+			<h2>List of Albums</h2>
 
 			<% @release_groups.each do |release_group| %>
 
