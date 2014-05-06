@@ -1,0 +1,13 @@
+<h3>Lunches</h3>
+
+<ul>
+  <% @lunches.each do |lunch| %>
+    <li>
+      <a href="/lunches/<%= lunch.id %>">
+        <%= lunch.to_s %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/lunches/new">New Lunch</a>
