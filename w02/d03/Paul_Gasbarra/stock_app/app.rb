@@ -5,7 +5,7 @@ get '/' do
   erb :index
 end
 
-post '/stock' do
+post '/artist' do
   ticker_stock = params[:ticker]
 
   redirect "/stock?ticker_name=#{ticker_stock}"
