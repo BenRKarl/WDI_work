@@ -1,0 +1,13 @@
+<div class="top"><h2>Lunches</h2></div>
+
+<ul>
+<% @lunches.each do |x| %>
+    <li>
+     <%= x.to_s %>
+    </li>
+<% end %>
+</ul>
+
+<a href='/lunches/new'>Add a Lunch</a>
+</br>
+<a href='/lunches/random'>Pick a random lunch</a>
