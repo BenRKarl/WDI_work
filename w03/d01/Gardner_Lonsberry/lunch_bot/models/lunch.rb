@@ -1,16 +1,17 @@
 class Lunch
 
-  attr_accessor :lunch_name, :restaurant
+  attr_accessor :lunch_name, :restaurant, :picked_count
   attr_reader :id
 
   def initialize(options)
     @id = options.fetch('id')
     @lunch_name = options.fetch('lunch_name')
     @restaurant = options.fetch('restaurant')
+    @picked_count = options.fetch('picked_count' +=1)
   end
 
   def to_s
-    "#{@lunch_name} at #{@restaurant}"
+    "#{@lunch_name} : at #{@restaurant}"
   end
 
 
@@ -26,29 +27,29 @@ class Lunch
   def self.all
     response = run_sql('SELECT * FROM lunches;')
     lunches = response.map do |lunch_row_hash|
-      Lunch.new(book_row_hash)
+      Lunch.new(lunch_row_hash)
     end
-    books
+    lunches
   end
 
-  #  Book.find(2)
+  #  Lunch.find(2)
   def self.find(id_to_find)
-    sql_statement ="SELECT * FROM books WHERE id=#{id_to_find};"
+    sql_statement ="SELECT * FROM lunches WHERE id=#{id_to_find};"
     response = run_sql(sql_statement)
-    Book.new(response.first)
+    Lunch.new(response.first)
   end
 
 
-  def self.create(book_hash)
-    title = book_hash['title']
-    author = book_hash['author']
-    sql_statement = "INSERT INTO books (title, author) VALUES ('#{title}', '#{author}') RETURNING *;"
+  def self.create(lunch_hash)
+    lunch = lunch_hash['lunch']
+    picked_count = picked_count_hash['picked_count']
+    sql_statement = "INSERT INTO lunches (lunch_name, picked_count) VALUES ('#{lunch_name}', '#{picked_count}') RETURNING *;"
     response = run_sql(sql_statement)
-    Book.new(response.first)
+    Lunch.new(response.first)
   end
 
   def self.run_sql(sql_statement)
-    connection = PG.connect(:dbname => 'book_app')
+    connection = PG.connect(:dbname => 'wdi_lunch')
     response = connection.exec(sql_statement)
     connection.close
     return response

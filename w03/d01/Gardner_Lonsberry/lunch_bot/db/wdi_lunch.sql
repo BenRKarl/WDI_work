@@ -1,10 +1,11 @@
 CREATE DATABASE  wdi_lunch;
 
-\c lunch_app
+\c wdi_lunch
 
 CREATE TABLE lunches
 (
   id serial4,
   lunch_name varchar(140),
-  picked_count integer DEFAULT 0);
+  picked_count integer DEFAULT 0)
+  restaurtant varchar(255);
 );
