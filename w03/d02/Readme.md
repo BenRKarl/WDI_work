@@ -34,6 +34,10 @@ proto = ['Jeff Winkler','John Murphy','Nessa Nguyen','Jeff Drakos','Rebecca Stro
 - Create a submarine
 - Get your sailor objects into the submarine using the `accept_sailor` method. 
 
+###Part 3: To the web 
+
+- Write a basic Sinatra app that handles an`HTTP GET` request to `/sailors`.  
+- It should render an `index.erb` that displays all of the submarines sailor objects in an unordered list.
 
 ---
 
