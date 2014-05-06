@@ -41,3 +41,40 @@ proto = ['Jeff Winkler','John Murphy','Nessa Nguyen','Jeff Drakos','Rebecca Stro
 
 ---
 
+
+###Dog C.R.U.D.
+
+* ***Overview:*** Produce a CRUD App using Sinatra, ActiveRecord, and POSTGRESQL.  
+
+####Phase 1: Prepare your database.
+
+* Create a database: `wdi_dogs`.
+* Create a `dogs` table with the following fields:
+
+	| name | age | breed |
+	|------|-----|-------|
+	|varchar(255)|smallint|varchar(255)|
+
+
+####Phase 2: Configure Sinatra and Active Record
+* Be sure to include `pg` and `sinatra-activerecord` in your Gemfile.
+* In a file, `config.rb` (this name is arbitrary) which you wil require into your main application file, often termed `app.rb`, connect to your database: 
+
+```ruby
+
+ActiveRecord::Base.establish_connection(
+  :adapter  => "postgresql",
+  :database => "wdi_dogs"
+)
+
+```
+####Phase 3: Write your Dog model 
+
+* In a models folder write a `dog.rb`
+* Your class shoud inherit from `ActiveRecord::Base`.
+
+####Phase 4: Step into CRUD.
+* Follow the movies and friendbook example in class to build out functionality for CREATE, READ, UPDATE, and DELETE actions for your `dogs` model. 
+
+--- 
+
