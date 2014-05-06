@@ -15,13 +15,8 @@ class ParseData
     File.readlines(file_path).map { |line| line.split(": ") }
   end
 
-<<<<<<< HEAD
-  def write
-    file_path = File.join(PARSE_DATA_DIR, book_name)
-=======
   def write(word_counts)
     file_path = File.join(DIR, book_name)
->>>>>>> 02e0d067a506c2025abac1604af78d438950e37b
     File.open(file_path, 'w') do |f|
       word_counts.each do |word, count|
         f << "#{word}: #{count}\n"
