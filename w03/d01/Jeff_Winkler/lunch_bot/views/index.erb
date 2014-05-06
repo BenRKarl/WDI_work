@@ -1,0 +1,23 @@
+
+<table>
+
+<% @all_lunches.each do |lunch| %>
+
+  <tr>
+    <td><%= lunch["lunch_name"]%></td>
+    <td><%= lunch["restaurant"]%></td>
+    <td><%= lunch["picked_count"]%></td>
+  </tr>
+
+<% end %>
+
+</table>
+
+<form action="/lunches/new" method="get">
+<input type="submit" value="Create">
+</form>
+
+<form action="/lunches/random" method="get">
+<input type="submit" value="Random">
+</form>
+
