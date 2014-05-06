@@ -1,0 +1,8 @@
+body {
+  background: url(http://0.tqn.com/d/atlanta/1/0/N/1/-/-/100_0608.JPG) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+}
