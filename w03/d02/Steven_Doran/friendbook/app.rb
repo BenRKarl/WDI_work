@@ -30,7 +30,7 @@ get '/friends/:id' do
 end
 
 # edit
-get'/friends/:id/edit' do 
+get '/friends/:id/edit' do 
   @friend = Friend.find(params[:id])
   erb :edit
 end
