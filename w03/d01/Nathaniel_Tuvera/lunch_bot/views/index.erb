@@ -1,0 +1,19 @@
+<h1 style="text-align:center;">WDIs Lunch Menu:</h1>
+
+
+<ul>
+  <% @lunches.each do |lunch| %>
+  <li><%= lunch.to_s %></li>
+  <% end %>
+</ul>
+
+
+
+<form style="text-align: center" action="/lunches" method="post">
+  <input type="text" name="lunch_name" placeholder="Enter item name">
+  <input type="text" name="restaurant" placeholder="Enter restaurant">
+  <input type="submit" value="Add Item">
+</form>
+<form style="text-align: center" action="/lunches/random" method="get">
+  <input type="submit" name="random" placeholder="Pick Random Lunch">
+</form>
