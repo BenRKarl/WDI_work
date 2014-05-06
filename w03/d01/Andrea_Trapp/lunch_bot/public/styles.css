@@ -1,0 +1,92 @@
+* 
+Project Name: Lunch App
+Client: General Assembly 
+Author: Andrea Trapp
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: black;
+  background-color: #EBEBE0;
+}
+
+.wrapper {
+  	margin: 0 auto;  
+  	padding: 0;
+	max-width: 960px;
+	min-height: 600px;  
+  	background: url("lunch_bot.jpg") fixed center;
+	background-size: cover;		
+}
+
+h2 {	
+	margin:0;
+	font-size: 24px;
+}
+
+nav {	
+	width: 300px;
+	min-height:300px;
+	padding: 25px;
+	background-color: rgba(235,235,224,0.9); //#EBEBE0;
+}
+
+ul {
+	padding:0;
+	list-style-type: none;
+	line-height: 22px;
+}
+
+a {
+	text-decoration: none;
+	color: #3B3B45;	
+}
+
+a:hover {
+	color: white;
+}
+
+span {
+	color: red;
+}
+
+button, form input[type="submit"] {
+	border-radius: 3px;	
+	box-shadow: 10px 10px 50px #3B3B45;	
+	background-color: rgba(235,235,224,0.9); //#EBEBE0;
+	margin-right: 10px;
+}
+
+form {
+	padding: 10px;
+}
+	
+form input {
+	margin: 10px auto;
+	padding: 5px;
+	display: block;
+	width: 250px;
+	font-size: 16px;		
+	color: #3B3B45;	
+	box-shadow: 5px 5px 25px #3B3B45;	
+}
+
+form input[type="submit"] {
+	margin-top: 20px;
+}
+
+footer {
+	width: 300px;
+	padding: 0 25px 25px 25px;
+	background-color: rgba(235,235,224,0.9); //#EBEBE0;	
+	font-size: 12px;
+}
