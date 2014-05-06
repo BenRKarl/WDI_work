@@ -1,10 +1,10 @@
-<div id='lunches'>
+<div class='lunches'>
 
   <ul>
  	<% @lunches.each do |lunch| %>
 	<li>
 		<%= lunch['lunch_name'] %> -
-		<%= lunch['picked_count'] %>
+		<%= lunch['picked_count'] %> -
 		<%= lunch['restaurant'] %>
 	</li>
 	<% end %>
@@ -13,14 +13,14 @@
 </div>
 
 
-<div id='create'>
+<div class='create'>
 <form action="/lunches/new" method="post">
 <input type="submit" value="create lunch">
 	</form>
 
 </div>
 
-<div id='random'>
+<div class='random'>
 <form action="/lunches/random" method="post">
 <input type="submit" value="random">
 	</form>
