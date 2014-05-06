@@ -16,7 +16,7 @@ get '/dogs' do
 end
 
 #new
-get 'dogs/new' do
+get '/dogs/new' do
   erb :new
 end
 
@@ -24,11 +24,13 @@ end
 post '/dogs' do
   dog = Dog.create(name: params['name'], age: params['age'], breed: params['breed'])
   dog.save
+  redirect '/dogs/#{dog.id}'
 end
 
 #show
 get '/dogs/:id' do
-  @dogs = Dog.find(params[:id])
+  binding.pry
+  @dog = Dog.find(params[:id])
   erb :show
 end
 
