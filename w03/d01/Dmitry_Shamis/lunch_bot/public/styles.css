@@ -1,0 +1,50 @@
+body {
+  background-color: lightgoldenrodyellow;
+}
+
+div {
+  width: 640px;
+  height: auto;
+  margin: 0 auto;
+  border: 5px ridge black;
+  border-radius: 25px;
+  background-color: lightblue;
+  opacity: 0.5
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 28px;
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+a:hover {
+  color: red;
+}
+
+ul {
+  text-align: center;
+}
+
+li {
+  display: inline;
+}
+
+tr:first-child {
+  text-decoration: underline;
+}
