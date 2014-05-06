@@ -1,0 +1,17 @@
+body {
+  background-color: grey;
+}
+
+h3 {
+  padding-top:300px;
+  text-align: center;
+}
+form {
+  text-align: center;
+}
+.container {
+  padding-top:300px;
+  width: 500px;
+  margin-left:40%;
+  margin-right:40%;
+}
