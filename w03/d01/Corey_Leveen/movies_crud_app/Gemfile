@@ -4,4 +4,5 @@ gem 'sinatra'
 gem 'sinatra-reloader'
 
 gem 'pry'
-#gem 'pg'
+gem 'pg'
+gem 'sinatra-activerecord'
