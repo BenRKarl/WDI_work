@@ -8,7 +8,10 @@ module Musicbrains
   home_city = response['begin_area']['name']
   home_country = response['area']['name']
   origin = home_city + ", " + home_country
-  artist = Artist.new(name, )
+
+  release_groups = HTTParty.get("http://musicbrainz.org/ws/2/release-group/?query=artist:" + artist_name)
+  discography = release_groups['metadata']['release_group_list']['release_group']
+  artist = Artist.new(name, origin, discography)
   end
 end
 
