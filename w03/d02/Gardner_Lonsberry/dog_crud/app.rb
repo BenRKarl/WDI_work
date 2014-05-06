@@ -40,6 +40,8 @@ end
 put '/dogs/:id' do
   dog = Dog.find(params[:id])
   dog.name = params[:name]
+  dog.age = params[:age]
+  dog.breed = params[:breed]
   # dog.update_image
   dog.save
   redirect "/dogs/#{ dog.id }"
