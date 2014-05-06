@@ -1,0 +1,12 @@
+<h3>The random lunch is:</h3>
+<div>
+  <% @random.each do |random| %>
+        <h3> Todays random lunch menu is <%= random['restaurant'] %>.</h3>
+  <% end %>
+</div>
+
+<ul>
+<li><a href="/lunches/new">New Lunch</a></li>
+<li><a href="/lunches/random">Random Lunch</a></li>
+<li><a href="/lunches">Lunches</a></li>
+</ul>
