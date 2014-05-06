@@ -21,7 +21,7 @@ get '/lunches/new' do
 end
 
 # create
-post '/lunches' do
+get '/lunches' do
   lunches = params['lunch_name']
   restaurants = params['restaurant']
   new_lunch = Lunch.create({'lunch_name'=> lunch_name, 'restaurant'=>restaurant})
@@ -52,3 +52,17 @@ get '/lunches/:id' do
   @lunch = Lunch.find(params[:id])
   erb :show
 end
+
+
+# makes new lunch
+post '/lunches/new?create_lunch={ new_lunch.id }' do
+  erb :index  
+end
+# /lunches/new?create_lunch=Pizza
+# redirect "/lunches/#{ new_lunch.id }"
+
+
+# lunches = params['lunch_name']
+#   restaurants = params['restaurant']
+#   new_lunch = Lunch.create({'lunch_name'=> lunch_name, 'restaurant'=>restaurant})
+#   erb :show

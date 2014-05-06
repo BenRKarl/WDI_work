@@ -7,7 +7,7 @@ class Lunch
     @id = options.fetch('id')
     @lunch_name = options.fetch('lunch_name')
     @restaurant = options.fetch('restaurant')
-    @picked_count = options.fetch('picked_count' +=1)
+    @picked_count = options.fetch('picked_count')
   end
 
   def to_s

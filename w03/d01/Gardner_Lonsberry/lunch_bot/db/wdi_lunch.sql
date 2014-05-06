@@ -9,3 +9,4 @@ CREATE TABLE lunches
   picked_count integer DEFAULT 0)
   restaurtant varchar(255);
 );
+
