@@ -18,13 +18,13 @@ get '/lunches/new' do
   erb :new
 end
 
-post '/lunches' do
+post '/lunches/create' do
   lunch_name = params['lunch_name']
   new_lunch = Lunch.create(lunch_name)
   redirect '/'
 end
 
 get '/lunches/random' do
-  @lunches.sample
-erb :result
+  @lunches
+erb :random
 end
