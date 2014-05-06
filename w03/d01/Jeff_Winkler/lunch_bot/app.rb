@@ -10,6 +10,8 @@ end
 
 get '/lunches' do
   @all_lunches = disp_all
+  @random_flag = 0
+  @message = "Full List of Lunches"
   erb :index
 end
 
@@ -27,6 +29,9 @@ get '/lunches/random' do
   lunch_hash["picked_count"] = new_count
   @all_lunches = []
   @all_lunches[0] = lunch_hash
+
+  @random_flag = 1
+  @message = "Random Pick"
 
   erb :index
 end

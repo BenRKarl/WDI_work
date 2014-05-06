@@ -1,23 +1,46 @@
 
-<table>
+<div class="top">
+  <%= @message %>
 
-<% @all_lunches.each do |lunch| %>
+</div>
 
-  <tr>
-    <td><%= lunch["lunch_name"]%></td>
-    <td><%= lunch["restaurant"]%></td>
-    <td><%= lunch["picked_count"]%></td>
-  </tr>
 
-<% end %>
 
-</table>
 
-<form action="/lunches/new" method="get">
-<input type="submit" value="Create">
-</form>
+<div>
 
-<form action="/lunches/random" method="get">
-<input type="submit" value="Random">
-</form>
+  <table>
 
+    <tr class="trow">
+      <td>Lunch</td>
+      <td>Restaurant</td>
+      <td>Picked Count</td>
+    </tr>
+
+  <% @all_lunches.each do |lunch| %>
+
+    <tr>
+      <td><%= lunch["lunch_name"]%></td>
+      <td><%= lunch["restaurant"]%></td>
+      <td class="picked"><%= lunch["picked_count"]%></td>
+    </tr>
+
+  <% end %>
+
+  </table>
+
+  <form action="/lunches/new" method="get" class="fbut">
+  <input type="submit" value="Create">
+  </form>
+
+  <form action="/lunches/random" method="get" class="fbut">
+  <input type="submit" value="Random">
+  </form>
+
+  <% if @random_flag == 1 %>
+
+  <a href="/">Back</a>
+
+  <% end %>
+
+</div>
