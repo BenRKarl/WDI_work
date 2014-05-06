@@ -1,8 +1,5 @@
-<form action="/lunches/new" method='get'>
-  <input type="text" name='create_lunch' placeholder='Create Lunch'>
-  <input type="submit">
-</form>
-<form action="/lunches/random" method='get'>
-  <input type="text" name='random_lunch' placeholder='Random Lunch'>
-  <input type="submit">
+<form action="/lunches/create" method="post">
+  <input type="text" name="lunch_name" placeholder="Lunch name">
+  <input type="text" name="restaurant_name" placeholder="Restaurant name">
+  <input type="submit" value="Create lunch">
 </form>

@@ -1,68 +1,64 @@
-require 'bundler'
+require "bundler"
 Bundler.require
 
-require_relative 'models/lunch'
-
-get '/' do
-  redirect '/lunches'
-end
-
-
-# index
-get '/lunches' do
-  @lunches = Lunch.all
-  erb :index
-end
-
-
-# new
-get '/lunches/new' do
-  erb :new
-end
-
-# create
-get '/lunches' do
-  lunches = params['lunch_name']
-  restaurants = params['restaurant']
-  new_lunch = Lunch.create({'lunch_name'=> lunch_name, 'restaurant'=>restaurant})
-  redirect "/lunches/#{ new_lunch.id }"
-end
-
-
-# edit
-get '/lunches/:id/edit' do
-  id = params[:id]
-  @lunch = Lunch.find(id)
-  erb :edit
-end
-
-
-# update
-post '/lunches/:id' do
-  id = params[:id]
-  lunch = Lunch.find(id)
-  lunch.lunch_name = params['lunch_name']
-  lunch.restaurant = params['restaurant']
-  lunch.save
-  redirect "/lunches/#{ lunch.id }"
-end
-
-# show
-get '/lunches/:id' do
-  @lunch = Lunch.find(params[:id])
-  erb :show
-end
-
-
-# makes new lunch
-post '/lunches/new?create_lunch={ new_lunch.id }' do
-  erb :index  
-end
-# /lunches/new?create_lunch=Pizza
-# redirect "/lunches/#{ new_lunch.id }"
-
-
-# lunches = params['lunch_name']
-#   restaurants = params['restaurant']
-#   new_lunch = Lunch.create({'lunch_name'=> lunch_name, 'restaurant'=>restaurant})
-#   erb :show
+# Method that increments the 'picked_count' by 1 for a given 'lunch_name'
+def add_lunch(lunch_name)
+connection = PG.connect(:dbname => 'wdi_lunches')
+connection.exec("
+UPDATE lunches
+ SET picked_count = picked_count + 1
+ WHERE lunch_name = '#{lunch_name}';
+ ")
+ connection.close
+ end
+ 
+ # Redirects the root to '/lunches'
+ get "/" do
+    redirect "/lunches"
+ end
+ 
+ # pulls info from all entries to display in index.erb
+ get "/lunches" do
+     connection = PG.connect(:dbname => 'wdi_lunches')
+     @all_lunches = connection.exec("SELECT * FROM lunches;")
+     erb :index
+ end
+ 
+# Page that accepts user input to create a new lunch entry
+ get "/lunches/new" do
+     erb :new
+ end
+ 
+ # Handles new lunch entry to table
+ post "/lunches/create" do
+     connection = PG.connect(:dbname => 'wdi_lunches')
+ 
+     lunch_name = params[:lunch_name]
+     restaurant_name = params[:restaurant_name]
+  
+# Checks whether an entry already exists
+ # If it does it increments that entry's 'picked_count' by one
+ # If it doesn't exist it creates a new entry and sets the 'picked_count' to 1
+   if connection.exec("SELECT EXISTS (SELECT true FROM lunches WHERE lunch_name='#{lunch_name}');")
+     add_lunch(lunch_name)
+   else
+     connection.exec("
+       INSERT INTO lunches (lunch_name, picked_count, restaurant_name)
+       VALUES ('#{lunch_name}', 1, '#{restaurant_name}');
+       ")
+   end
+ 
+     connection.close
+     redirect "/lunches"
+ end
+ 
+ # This selects a random lunch to display in '/random' and increments that 'lunch_name' by 1 after selected
+ get "/lunches/random" do
+     connection = PG.connect(:dbname => 'wdi_lunches')
+     @random_lunch = connection.exec(
+     "SELECT * FROM lunches ORDER BY RANDOM() LIMIT 1;"
+     )
+     add_lunch(@random_lunch.to_a.first["lunch_name"])
+     connection.close
+     erb :random
+ end
