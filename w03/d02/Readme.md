@@ -51,9 +51,9 @@ proto = ['Jeff Winkler','John Murphy','Nessa Nguyen','Jeff Drakos','Rebecca Stro
 * Create a database: `wdi_dogs`.
 * Create a `dogs` table with the following fields:
 
-	| name | age | breed |
-	|------|-----|-------|
-	|varchar(255)|smallint|varchar(255)|
+	|id    |name | age | breed |
+	|------|-----|-------|-----|
+	|serial4 PRIMARY KEY | varchar(255)|smallint|varchar(255)|
 
 
 ####Phase 2: Configure Sinatra and Active Record
