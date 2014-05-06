@@ -43,8 +43,13 @@ post '/lunches/create' do
   new_lunch(lunch, resto)
 
   redirect '/lunches'
+end
 
+get '/remove/:id' do
 
+  id = params["id"]
+  del_lunch(id)
+  redirect '/lunches'
 
 end
 

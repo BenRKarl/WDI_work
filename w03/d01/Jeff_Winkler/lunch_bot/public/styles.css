@@ -5,6 +5,11 @@ body {
   pardding: 0px;
 }
 
+.delit {
+  margin-left: 120px;
+}
+
+
 .lput {
 
   width: 450px;
@@ -22,6 +27,18 @@ body {
   height: 40px;
   margin-top: 20px;
   font-size: 24px;
+}
+
+.fbut {
+
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+  background-color: rgb(200,200,200);
+  height: 40px;
+  margin-top: 20px;
+  font-size: 24px;
+
 }
 
 
@@ -72,4 +89,16 @@ tr:nth-child(odd){
 
 .picked {
   text-align: center;
+}
+
+.back {
+
+  text-align: center;
+  margin-top: 30px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.link {
+  text-decoration: none;
 }
