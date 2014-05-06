@@ -1,7 +1,7 @@
-###Week02-Day05
+###Week03-Day02
 
 #WORK IN YOUR OWN FOLDER ONLY!
-#Your pull-request title must start with `w02_d05_submission`
+#Your pull-request title must start with `w03_d02_submission`
 
 ---
 
