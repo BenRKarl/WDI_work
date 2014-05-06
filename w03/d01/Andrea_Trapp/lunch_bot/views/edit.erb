@@ -1,0 +1,6 @@
+<form action="/lunches/<%= @lunch.id %>" method='post'>
+  <input type="text" name='lunch_name' value ='<%= @lunch.lunch_name %>'>
+  <input type="text" name='restaurant' value ='<%= @lunch.restaurant %>'>
+  <input type="text" name='picked_count' value ='<%= @lunch.picked_count %>'>
+  <input type="submit">
+</form>

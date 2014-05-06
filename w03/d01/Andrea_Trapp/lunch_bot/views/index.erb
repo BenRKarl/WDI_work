@@ -1,0 +1,16 @@
+<nav>
+	<h2>Pick your lunch!</h2>
+
+	<ul>
+	  <% @lunches.each do |lunch| %>
+	    <li>
+	      <a href="/lunches/<%= lunch.id %>">
+	        <%= lunch.to_s %>
+	      </a>
+	    </li>
+	  <% end %>
+	</ul>
+
+	<a href="/lunches/new"><button type="button">New Lunch</button></a>
+	<a href="/lunches/random"><button type="button">Random Lunch</button></a>
+</nav>
