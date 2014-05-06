@@ -1,0 +1,20 @@
+<h3>Who Wants Lunch?</h3>
+<div>
+<table>
+  <tr>
+    <td>Lunch Option</td>
+    <td>Restaurant</td>
+  </tr>
+  <tr>
+  <% @lunches.each do |lunch| %>
+    <td><%= lunch['lunch_name'] %></td>
+    <td><%= lunch['restaurant'] %></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+
+<ul>
+<li><a href="/lunches/new">New Lunch</a></li>
+<li><a href="/lunches/random">Random Lunch</a></li>
+</ul>
