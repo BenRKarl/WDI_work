@@ -10,7 +10,7 @@
   <% @dogs.each do |dog| %>
     <tr>
       <td>
-        <%= dog.username %>
+        <%= dog.name %>
       </td>
       <td>
         <form action="/dogs/<%=dog.id%>" method="get">

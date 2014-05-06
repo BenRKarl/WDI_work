@@ -27,7 +27,29 @@ post '/dogs' do
 end
 
 #show
+get '/dogs/:id' do
+  @dogs = Dog.find(params[:id])
+  erb :show
+end
 
+#edit
+get '/dogs/:id/edit' do
+  @dog = Dog.find(params[:id])
+  erb :edit
+end
 
+put '/dogs/:id' do
+  dog = Dog.find(params[:id])
+  dog.name = params[:name]
+  dog.age = params[:age]
+  dog.breed = params[:breed]
+  dog.save
+  redirect '/dogs/#{ dog.id }'
+end
 
 #delete
+
+delete 'dogs/:id' do
+  Dog.delete(params[:id])
+  redirect '/dogs'
+end
