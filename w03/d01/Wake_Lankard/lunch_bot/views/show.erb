@@ -1,0 +1,19 @@
+<h2>De La Lunches...</h3>
+  <table border=1>
+    <% @lunches.each do |lunch| %>
+    <tr>     
+      <td>
+        <%= lunch['lunch_name'] %>
+      </td>
+      <td>
+        <%= lunch['restaurant'] %>
+      </td>
+      <td>
+        <%= lunch['picked_count'] %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+  <a href="/lunches/new">Create a Lunch</a><br/>
+  <a href="/lunches/random">Do you feel lucky, punk?</a>
