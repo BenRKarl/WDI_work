@@ -24,6 +24,12 @@ class Lunch
     lunches
   end
 
+  def self.increment(lunch_object)
+    lunch_name = lunch_object.lunch_name
+    restaurant = lunch_object.restaurant
+    run_sql("UPDATE lunches SET picked_count = picked_count + 1 WHERE lunch_name = '#{lunch_name}' AND restaurant = '#{restaurant}'")
+  end
+
   def self.create(lunch_hash)
     lunch_name = lunch_hash['lunch_name']
     restaurant = lunch_hash['restaurant']

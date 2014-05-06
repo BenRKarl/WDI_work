@@ -27,6 +27,8 @@ end
 get '/lunches/random' do
   lunches = Lunch.all
   @rand_lunch = lunches.sample
+  Lunch.increment(@rand_lunch)
+  @number = @rand_lunch.picked_count.to_i + 1
   erb :random
 end
 
