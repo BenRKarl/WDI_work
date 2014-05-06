@@ -1,6 +1,8 @@
 # This exercise is about nested arrays and hashes
 # Questions are at the bottom of the code
 
+require 'pry'
+
 general_assembly = {
   moto: 'TRANSFORMING THINKERS INTO CREATORS.',
   topics: [
@@ -15,7 +17,7 @@ general_assembly = {
 }
 
 # GA has many campuses
-c1 = {name: 'GA Berlin (Betahaus)', address: '19 Prinzessinnenstraße, Berlin 10969', email: 'berlin@generalassemb.ly'}
+c1 = {name: 'GA Berlin (Betahaus)', address: '19 Prinzessinnenstrabe, Berlin 10969', email: 'berlin@generalassemb.ly'}
 c2 = {name: 'GA Berlin', address: 'Winterfeldtstrasse 21, Berlin 10781', email: 'berlin@generalassemb.ly'}
 c3 = {name: 'GA Boston', address: '101 Main Street, 14th floor, Cambridge 02142', email: 'boston@generalassemb.ly'}
 c4 = {name: 'GA Hong Kong', address: 'The Hive, 21/F, The Phoenix, Luard Road No. 23, Wan Chai', email: 'hk@generalassemb.ly'}
@@ -45,7 +47,31 @@ general_assembly[:campuses] = {
 # Example: How many topics does GA have?
 # ga[:topics].count => 7
 # What number topic is 'Web Development'?
+  general_assembly[:topics].index('Web Development')+1
 # How many cities does GA have campuses in?
+  general_assembly[:campuses].count
+#OR
+  general_assembly[:campuses].size
 # How many campuses does GA have?
+
+  number = 0
+  general_assembly[:campuses].each{|k,v| number = number+v.length}
+#OR
+  number = 0
+  general_assembly[:campuses].each do |k,v|
+    number = number = v.length
+  end
+
+ #OR... This one is my favorite...
+  general_assembly[:campuses].values.flatten.count
+
 # How many campuses does GA have in Berlin?
+  general_assembly[:campuses][:berlin].count
+
 # Print out all GA's campuses addresses
+  general_assembly[:campuses].values.flatten.each do |campus_hash|
+    puts campus_hash[:address]
+  end
+
+
+binding.pry

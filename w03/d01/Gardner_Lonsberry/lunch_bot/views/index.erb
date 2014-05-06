@@ -1,0 +1,17 @@
+<h1>Check out these lunches:</h1>
+ 
+ <ul>
+   <% @all_lunches.each do |lunch| %>
+   <li>
+     <%= lunch["lunch_name"] %> from <%= lunch["restaurant_name"] %>
+   </li>
+  <% end %>
+</ul>
+ 
+ <form action="/lunches/new" method="get">
+ <input type="submit" value="Create lunch">
+ </form>
+ 
+ <form action="/lunches/random" method="get">
+ <input type="submit" value="Random lunch">
+ </form>
