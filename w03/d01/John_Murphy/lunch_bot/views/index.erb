@@ -1,0 +1,18 @@
+<% if @lunches.any? %>
+   <h1>Herrrrreee are the lunches......LET'S GET READY TO RUUUUMMMBLLLE!!!!</h1>
+
+   <ul>
+     <% @lunches.each do |i| %>
+       <li><%= i['lunch_name']%>: <%= i['picked_count']%></li>
+     <% end %>
+
+   </ul>
+
+   <h2>Create a new lunch <a href="/lunches/new">here</a>.</h2>
+   <h2>For random lunch click <a href="/lunches/random">here</a>.</h2>
+
+<% else %>
+  <h1>You can't create a lunch place without a name! Create a new lunch place <a href="/lunches/new">here</a>.</h1>
+
+<% end%>
+

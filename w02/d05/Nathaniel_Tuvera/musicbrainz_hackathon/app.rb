@@ -9,12 +9,13 @@ get '/result' do
   @artist = Musicbrainz.find(params[:artist_name])
   @artist_name = params[:artist_name]
 
-  # binding.pry
-
-  if @artist[0].class == Hash
+# binding.pry
+  if @artist == nil
+    erb :error
+  elsif @artist[0].class == Hash
     @result_name = @artist[0]['name']
     @result_country = @artist[0]['country']
-    @result_begin_date = @artist[0]['life_span']['being']
+    @result_begin_date = @artist[0]['life_span']['begin']
 
     if @artist[0]['tag_list']
       @result_disambiguation = @artist[0]['tag_list']['tag']
@@ -23,15 +24,14 @@ get '/result' do
     end
 
     if @artist[0]['alias_list']
-       @result_alias = @artist[0]['alias_list']['alias']['__content__']
+       @result_alias = @artist[0]['alias_list']['alias'][0]['__content__']
       else
       @result_alias = "Undefined"
     end
 
-
-    erb :result
+      erb :result
     else
-    erb :error
+      erb :error
   end
 end
 
