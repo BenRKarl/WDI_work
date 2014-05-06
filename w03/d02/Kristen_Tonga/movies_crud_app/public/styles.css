@@ -1,0 +1,9 @@
+body {
+  background-color: lime;
+  padding: 50px;
+}
+
+table, th, td {
+  outline: 1px dotted black;
+  padding: 5px;
+}
