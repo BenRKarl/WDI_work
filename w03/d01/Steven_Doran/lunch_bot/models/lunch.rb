@@ -25,8 +25,8 @@ class Lunch
   end
 
   def self.create(lunch_hash)
-    lunch_name = lunch_hash('lunch_name')
-    restaurant = lunch_hash('restaurant')
+    lunch_name = lunch_hash['lunch_name']
+    restaurant = lunch_hash['restaurant']
     sql_statement = "INSERT INTO lunches (lunch_name, picked_count, restaurant) VALUES ('#{lunch_name}', 1, '#{restaurant}') RETURNING *;"
     response = run_sql(sql_statement)
     Lunch.new(response.first)

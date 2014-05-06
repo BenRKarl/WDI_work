@@ -12,22 +12,25 @@ get '/lunches' do
   erb :index
 end
 
-get 'lunches/new' do 
-
+get '/lunches/new' do 
   erb :new
 end
 
-get 'lunches/random' do
-
-  erb: random
-end
-
-post 'lunches/create' do
+post '/lunches/create' do
   lunch_name = params['lunch_name']
   restaurant = params['restaurant']
-  new_meal = Lunch.create({'lunch_name'=> lunch_name, 'restaurant'=>restaurant})
+  Lunch.create({'lunch_name' => lunch_name, 'restaurant' => restaurant})
   redirect "/lunches"
-
 end
+
+
+get '/lunches/random' do
+  lunches = Lunch.all
+  @rand_lunch = lunches.sample
+  erb :random
+end
+
+
+
 
 
