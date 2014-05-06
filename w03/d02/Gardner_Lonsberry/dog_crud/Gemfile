@@ -7,3 +7,4 @@ gem 'pry'
 
 gem 'sinatra-activerecord'
 gem 'pg'
+gem 'httparty'
