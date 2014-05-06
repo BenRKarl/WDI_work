@@ -4,7 +4,6 @@ Bundler.require
 get '/' do
   #display all lunches
   connection = PG.connect(:dbname => 'wdi_lunch')
-  binding.pry
   sql_statement = 'SELECT * FROM lunches;'
   response = connection.exec(sql_statement)
 
