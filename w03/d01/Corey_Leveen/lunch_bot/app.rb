@@ -22,7 +22,8 @@ get '/lunches/new' do
 #display a submit button: a POST request to
 #/lunches/create. This should create
 #a new lunch record in the database and redirect to /lunches
-
+new_lunch_name = params[:new_lunch_name]
+restaurant_name = params[:restaurant_name]
 
 
   erb :show
