@@ -22,10 +22,12 @@ end
 
 #create
 post '/dogs' do
-  #dog = Dog.create(name: params['name'])
+  dog = Dog.create(name: params['name'], age: params['age'], breed: params['breed'])
+  dog.save
 end
 
-#update
+#show
+
 
 
 #delete
