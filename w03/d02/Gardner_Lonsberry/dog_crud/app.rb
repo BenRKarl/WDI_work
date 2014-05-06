@@ -19,7 +19,7 @@ end
 # create
 post '/dogs' do
   dog = Dog.create(name: params['name'])
-  dog.update_image
+  # dog.update_image
   dog.save
   redirect "/dogs/#{ dog.id }"
 end
@@ -40,7 +40,7 @@ end
 put '/dogs/:id' do
   dog = Dog.find(params[:id])
   dog.name = params[:name]
-  dog.update_image
+  # dog.update_image
   dog.save
   redirect "/dogs/#{ dog.id }"
 end
