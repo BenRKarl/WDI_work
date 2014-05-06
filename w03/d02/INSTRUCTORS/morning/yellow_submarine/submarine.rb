@@ -1,4 +1,5 @@
 class Submarine
+  attr_reader :sailors
   def initialize(color="yellow")
     @color    = color
     @sailors  = [] # Array.new is same.
