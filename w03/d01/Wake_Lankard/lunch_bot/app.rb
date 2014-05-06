@@ -29,11 +29,9 @@ post '/lunches/create' do
 #create a lunch in the DB 
 #redirect to /lunches
   lunch_name = params[:lunch_name]
-  
   restaurant = params[:restaurant]
   statement = "INSERT INTO lunches (lunch_name, restaurants) VALUES ('#{lunch_name}', '#{restaurant}');"
   do_sql(statement)
-  binding.pry
   redirect "/lunches"    
 end
 
@@ -55,9 +53,7 @@ get '/lunches/random' do
       { 'lunch_name'=>lunch['lunch_name'], 
         'picked_count'=>lunch['picked_count'], 
         'restaurant'=>lunch['restaurants']}
-end
-
-
+  end
 
   erb :show
 
@@ -70,10 +66,4 @@ def do_sql(statement)
   connection.exec(sql_statement)
 end
 
-  # def self.create(book_hash)
-  #   title = book_hash['title']
-  #   author = book_hash['author']
-  #   sql_statement = "INSERT INTO books (title, author) VALUES ('#{title}', '#{author}') RETURNING *;"
-  #   response = run_sql(sql_statement)
-  #   Book.new(response.first)
-  # end
+

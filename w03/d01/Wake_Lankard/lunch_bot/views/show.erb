@@ -1,5 +1,19 @@
 <h2>De La Lunches...</h3>
-  <table border=1>
+  <table>
+    <tr>
+      <th>
+        Food name
+      </th>
+      <th>
+        Restaurant Name
+      </th>
+      <th>
+        Times Picked
+      </th>
+      <th>
+        Picked-o-graph
+      </th>
+    </tr>
     <% @lunches.each do |lunch| %>
     <tr>     
       <td>
@@ -11,9 +25,12 @@
       <td>
         <%= lunch['picked_count'] %>
       </td>
+      <td class="graph">
+        <div class="pic_bar" style='width:<%=lunch['picked_count'].to_i * 10 %>px;'>
+      </td>
     </tr>
     <% end %>
   </table>
 
-  <a href="/lunches/new">Create a Lunch</a><br/>
-  <a href="/lunches/random">Do you feel lucky, punk?</a>
+  <a href="/lunches/new" class="button create_button">Create a Lunch</a>
+  <a href="/lunches/random" class="button lucky_button">Do you feel lucky, punk?</a>
