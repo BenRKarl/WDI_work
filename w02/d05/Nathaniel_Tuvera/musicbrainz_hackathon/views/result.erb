@@ -19,7 +19,7 @@
         Name:</td><td><div class="name"> <%= @result_name %></div></td>
   </tr>
   <tr style="background: lightgray;">
-<td>Country of Origin:</td><td><div class="country"> <%= @result_country %></div></td>
+<td>Country of Origin:</td><td><div class="country"> <%= @result_country || 'undefined' %></div></td>
   </tr>
   <tr>
     <td>Begin Date:</td><td><div class="begin_date"> <%= @result_begin_date || 'undefined' %></div></td>

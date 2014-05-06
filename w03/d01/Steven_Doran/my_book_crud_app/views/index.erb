@@ -1,0 +1,10 @@
+<h3>BOOK!</h3>
+
+<ul>
+  <% @books.each do |book| %>
+  <li>
+    <%= book['title'] %> -
+    <%= book['author'] %>
+  </li>
+  <% end%>
+</ul>
