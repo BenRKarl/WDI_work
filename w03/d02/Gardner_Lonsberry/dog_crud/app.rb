@@ -2,6 +2,7 @@ require 'bundler'
 Bundler.require
 
 require_relative 'models/dog'
+require_relative './config'
 
 # index
 get '/dogs' do 
@@ -16,8 +17,8 @@ end
 
 
 # create
-post '/dogs'
-  dog = Dog.create(name: params ['name'])
+post '/dogs' do
+  dog = Dog.create(name: params['name'])
   dog.update_image
   dog.save
   redirect "/dogs/#{ dog.id }"
@@ -26,21 +27,22 @@ end
 # show
 get '/dogs/:id' do
   @dog = Dog.find(params[:id])
-  erb: show
-
+  erb :show
+end
 
 #  edit
 
-get 'dogs/:id/edit' do
+get '/dogs/:id/edit' do
   @dog = Dog.find(params[:id])
-  erb: edit
+  erb :edit
+end
 
 put '/dogs/:id' do
   dog = Dog.find(params[:id])
   dog.name = params[:name]
   dog.update_image
   dog.save
-  redirect "dogs/#{ dog.id }"
+  redirect "/dogs/#{ dog.id }"
 end
 
 delete '/dogs/:id' do

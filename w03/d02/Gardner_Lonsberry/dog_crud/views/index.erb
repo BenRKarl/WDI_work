@@ -1,5 +1,5 @@
 <h1>DOGS</h1>
-<form action="/dogss/new" method="get">
+<form action="/dogs/new" method="get">
   <button class="add-dog">
   Add Dog
 </button>
@@ -34,4 +34,45 @@
       </td>
     </tr>
   <% end %>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>Here are your movies</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dog Name</th>
+      <th>Dog Age</th>
+      <th>Dog Breed</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dogs.each do |dog| %>
+      <tr>
+        <td>
+          <a href="/dogs/<%= dog.id %>">
+            <%= dog.name %>
+          </a>
+        </td>
+        <td><%= dog.age %></td>
+        <td><%= dog.breed %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
