@@ -1,0 +1,102 @@
+
+
+body {
+  background-color: gray;
+  padding: 0px;
+  margin: 0px;
+  padding-bottom: 100px;
+}
+
+.top {
+  height: 60px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.basicinfo {
+  font-style: italic;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-left: 80px;
+}
+
+.nameform {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  height: 400px;
+  padding: 20px;
+
+}
+
+.formdiv {
+  height: 500px;
+  padding: 20px;
+}
+
+.nametextbox {
+  display: block;
+  margin: 0 auto;
+  height: 40px;
+  width: 400px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 15px;
+  padding: 5px;
+  margin-bottom: 50px;
+}
+
+.namebutton {
+  -webkit-appearance: none;
+  font-size: 24px;
+  height: 60px;
+  background-color: black;
+  color: green;
+  width: 400px;
+  border-radius: 15px;
+}
+
+.album {
+  text-decoration: none;
+
+}
+
+.tabletop {
+  text-align: left;
+}
+
+.album_table {
+  border: 1px solid black;
+  margin-left: 80px;
+  background-color: lightyellow;
+  border-radius: 15px;
+  width: 600px;
+}
+
+.click_info {
+  margin-left: 90px;
+  font-size: 14px;
+}
+
+.toprow {
+  text-decoration: underline;
+}
+
+.coverart {
+  margin: 40px;
+  float: left;
+}
+
+.track_table {
+  border: 1px solid black;
+  margin-left: 200px;
+  background-color: lightyellow;
+  border-radius: 15px;
+  width: 300px;
+  padding: 20px;
+  padding-bottom: 60px;
+}
