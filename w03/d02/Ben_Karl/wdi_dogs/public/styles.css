@@ -3,3 +3,11 @@ body {
   padding-top: 3em;
 }
 
+.main_table {
+  display: inline-block;
+  margin-bottom: 2em;
+}
+
+.main_table td {
+  padding: 10px;
+}

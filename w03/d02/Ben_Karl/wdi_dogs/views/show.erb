@@ -1,16 +1,23 @@
 <h1>Here's more information on that dog.</h1>
 
-<ul>
-  <li>
-    <strong>Name:</strong>  <%= @dog.name %>
-  </li>
-  <li>
-    <strong>Age:</strong>  <%= @dog.age %>
-  </li>
-  <li>
-    <strong>Breed:</strong>  <%= @dog.breed %>
-  </li>
-</ul>
+<div class="main_table">
+<table>
+  <tr>
+    <td>
+      <strong>Name:</strong>  <%= @dog.name %>
+    </td>
+    <td>
+      <strong>Age:</strong>  <%= @dog.age %>
+    </td>
+    <td>
+      <strong>Breed:</strong>  <%= @dog.breed %>
+    </td>
+    <td>
+      <a href="<%= breed_standard_url(@dog.breed) %>">AKC Breed Standards</a>
+    </td>
+  </tr>
+</table>
+</div>
 
 <form action="/dogs" method="get">
   <input type="submit" value="Back to Home">

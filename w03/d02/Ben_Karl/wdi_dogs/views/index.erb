@@ -1,16 +1,21 @@
 <h1>Here Are The Dogs, Yo!</h1>
 
-<ul>
+<div class="main_table">
+<table>
   <% @dogs.each do |dog| %>
-  <li>
-    <strong>Name:</strong>
-    <a href="/dogs/<%= dog.id %>">
-    <%= dog.name %>
-    </a><form action="/dogs/<%= dog.id %>/edit"><input type="submit" value="Edit">
-    </form></br>
-  </li>
+  <tr>
+    <td>
+      <a href="/dogs/<%= dog.id %>"><%= dog.name %></a>
+    </td>
+    <td>
+      <form action="/dogs/<%= dog.id %>/edit">
+        <input type="submit" value="Edit">
+      </form>
+    </td>
+  </tr>
   <% end %>
-</ul>
+</table>
+</div>
 
 <form action="/dogs/new" method="get">
   <input type="submit" value="Create a New Dog!">
