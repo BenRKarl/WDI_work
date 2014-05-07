@@ -1,0 +1,13 @@
+
+<div>
+  <%= @user.username %>
+</div>
+<div>
+  <%= @user.id %>
+</div>
+
+<% @user.caws.each do |caw| %>
+  <div>
+    <%= caw.message %>
+  </div>
+<% end %>
