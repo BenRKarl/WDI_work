@@ -26,7 +26,7 @@ Given that this markup will produce an image of a kitten:
 
 ```html	
 
-<img src="http://placekitten.com/<a random width>/<a random height>" alt="">
+<img src="http://placekitten.com/<a random width>/<a random height>">
 
 ```
 
