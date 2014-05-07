@@ -1,0 +1,8 @@
+<h2><%= @user.username %></h2>
+
+<% @user.caws.each do |caw| %>
+  <p>
+    <%= caw.message %>
+  </p>
+<% end %>
+
