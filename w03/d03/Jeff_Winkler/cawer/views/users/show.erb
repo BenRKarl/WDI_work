@@ -1,13 +1,15 @@
 
-<div>
+<h1>
   <%= @user.username %>
-</div>
-<div>
-  <%= @user.id %>
-</div>
+</h1>
+<br/>
 
 <% @user.caws.each do |caw| %>
-  <div>
+  <div class="list">
     <%= caw.message %>
+    <form action="/users/<%=caw.user_id%>/caws/<%=caw.id%>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit">Delete</button>
+    </form>
   </div>
 <% end %>

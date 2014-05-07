@@ -1,2 +1,14 @@
 
-<h3>This is index text</h3>
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <a href="/users/<%=user.id%>">
+        <%= user.username %>
+      </a>
+      <% user.caws.each do |caw| %>
+        <p><%=caw.message%></p>
+      <% end %>
+    </li>
+  <% end %>
+
+</ul>

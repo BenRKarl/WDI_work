@@ -2,3 +2,28 @@
 body {
   background-color: lightblue;
 }
+
+h1 {
+    font-family: 'Coustard', serif;
+    font-weight: 900;
+    line-height: 46px;
+    font-size: 41px;
+    margin: 0 0 23px 0;
+    }
+
+li, .list {
+    font-family: 'Leckerli One', cursive;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+    }
+
+ul {
+  list-style: none;
+}
+
+li {
+  width: 250px;
+  float: left;
+}
