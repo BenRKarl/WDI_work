@@ -1,0 +1,39 @@
+
+<div class="container">
+<table class="dogtable">
+  <thead>
+    <th>Name</th>
+    <th>Breed</th>
+    <th>Age</th>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <%= @dog.name %>
+    </td>
+        <td>
+      <%= @dog.breed %>
+    </td>
+        <td>
+      <%= @dog.age %>
+    </td>
+
+  </tr>
+
+</tbody>
+</table>
+
+</div>
+
+<div class="abc">
+<form class="combo" action="/dogs/<%=@dog.id%>/edit" method="get">
+  <button class="adb">Edit</button>
+</form>
+<form class="combo" action="/dogs/<%=@dog.id%>" method="post">
+  <input class="ibox" type="hidden" name="_method" value="delete">
+  <button class="adb">Delete</button>
+</form>
+<form class="combo" action="/dogs" method="get">
+  <button class="adb">Back</button>
+</form>
+</div>
