@@ -1,0 +1,10 @@
+CREATE DATABASE psql_practice;
+\c psql_practice;
+ CREATE TABLE schools (name varchar(200), location varchar(1000));
+ ALTER TABLE schools ADD number INT NOT NULL DEFAULT 0;
+ ALTER TABLE schools RENAME location TO city;
+ INSERT INTO schools (name, city, number) VALUES ('NYU', 'NYC', 1000);
+ UPDATE schools SET number='2000' WHERE name='NYU';
+ DELETE FROM schools WHERE name='NYU';
+ SELECT name FROM schools WHERE city='NYC';
+ SELECT name FROM schools;
