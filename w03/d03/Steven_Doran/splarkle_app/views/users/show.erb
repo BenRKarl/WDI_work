@@ -1,0 +1,11 @@
+<h1>THIS IS USERS/SHOW</h1>
+
+<h2><%= @user.username %></h2>
+
+<% @user.splarkles.each do |splarkle| %>
+    <ul>
+        <li>
+            <%= splarkle.message %>
+        </li>
+    </ul>
+<% end %>
