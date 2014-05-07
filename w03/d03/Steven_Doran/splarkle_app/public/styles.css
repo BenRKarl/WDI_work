@@ -1,5 +1,37 @@
+h2 {
+   font-family: 'Alegreya SC', serif;
+   font-weight: 400;
+   font-style: italic;
+   font-size: 2em;
+}
+
 body {
    background-color: #021657;
    color: white;
    font-family: 'Raleway', sans-serif;
+}
+
+a {
+   margin: .25em;
+   padding: .25em;
+   font-size: 1.25em;
+}
+
+a:link {
+   text-decoration: none;
+   color: white;
+   /*padding: .25em;*/
+}
+
+a:visited {
+   text-decoration: none;
+   color: white;
+   /*padding: .25em;*/
+}
+
+a:hover {
+   text-decoration: none;
+   color: #021657;
+   background-color: white;
+   /*padding: .25em;*/
 }
