@@ -1,0 +1,6 @@
+<% @num_kittens.times do |x| %>
+<% @height = rand(100..500)
+   @width = rand(100..500)
+   @br = rand(0..50) %>
+<img src="http://placekitten.com/<%=@width%>/<%=@height%>"<%x%> style="border-radius:<%=@br%>px;">
+<% end %>

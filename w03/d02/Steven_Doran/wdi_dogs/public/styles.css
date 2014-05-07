@@ -1,0 +1,36 @@
+body {
+   background-color: teal;
+   color: white;
+}
+
+tr {
+   text-align: left;
+}
+
+td {
+   padding: 0 20px 0 0;
+}
+
+th {
+   background-color: magenta;
+   font-family: 'Helvetica', sans-serif;
+   font-size: 18px;
+}
+
+a:link {
+   text-decoration: none;
+   color: white;
+   background-color: magenta;
+}
+
+a:visited {
+   text-decoration: none;
+   color: white;
+   background-color: magenta;   
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+}

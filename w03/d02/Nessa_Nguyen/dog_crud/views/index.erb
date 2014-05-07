@@ -1,0 +1,43 @@
+
+
+<h2><a href="/dogs" class="header">Dogs in the Pack</a></h2>
+
+<form action="/dogs/new" method="get">
+		<button class="add">Click to add dog</button>
+</form>
+
+<div class="content">
+<table>
+	<tr>
+		<td>Name</td>
+		<td>Age</td>
+		<td>Breed</td>
+		<td>Edit</td>
+		<td>Delete</td>
+	</tr>
+	
+	<% @dogs.each do |dog| %>
+	<tr>
+		<td><%= dog.name %></td>
+		<td class="age"><%= dog.age %></td>
+		<td><%= dog.breed %></td>
+		<td class="edit">
+		 	<form action="/dogs/<%= dog.id %>/edit" method="get">
+		 		<button type="submit">Edit</button>
+		  </form>
+		</td>
+
+		<td class="delete">
+		 	<form action="/dogs/<%= dog.id %>" method="post">
+		 		<input type="hidden" name="_method" value="delete">
+		 		<button type="submit">Delete</button>
+			</form>
+		</td>
+	</tr>	
+	<% end %>
+</table>
+
+
+	<img src="/dog2.jpg" class="footer" /> 	
+	<div class="cleaner"></div>	
+</div>
