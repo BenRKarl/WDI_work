@@ -1,0 +1,38 @@
+
+
+<div class="container">
+<table class="dogtable">
+  <thead>
+    <th>Name</th>
+    <th>Breed</th>
+    <th>Age</th>
+  </thead>
+  <tbody>
+  <% @dogs.each do |dog| %>
+  <tr>
+    <td>
+      <a href="/dogs/<%=dog.id%>"><%= dog.name %></a>
+    </td>
+        <td>
+      <%= dog.breed %>
+    </td>
+        <td>
+      <%= dog.age %>
+    </td>
+
+  </tr>
+ <% end %>
+
+</tbody>
+</table>
+
+</div>
+<div class="inst">
+  Click on dog name to edit or delete
+</div>
+
+<div class="abc">
+<form action="/dogs/new" method="get">
+  <button class="adb">Add New Dog</button>
+</form>
+</div>

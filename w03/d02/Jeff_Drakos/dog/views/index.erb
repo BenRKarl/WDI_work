@@ -1,0 +1,28 @@
+<h1>Here are your dogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Breed</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dogs.each do |dog| %>
+      <tr>
+        <td>
+          <a href="/dogs/<%= dog.id %>">
+            <%= dog.name %>
+          </a>
+        </td>
+        <td><%= dog.age %></td>
+        <td><%= dog.breed %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<h3> <a href='/dogs/new'> Add a New Dog</a></h3>

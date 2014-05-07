@@ -1,0 +1,7 @@
+<form action="/movies/<%= @dog.id %>" method='post'>
+  <input type="hidden" name='_method' value='put'>
+  <input type="text" value='<%= @dog.name %>' name='dog_name'>
+  <input type="text" value='<%= @movie.age %>' name='dog_age'>
+  <input type="text" value='<%= @dog.breed %>' name='dog_breed'>
+  <input type="submit">
+</form>
