@@ -1,0 +1,9 @@
+<h1><%= @user.username %></h1>
+<ul>
+  <% @user.croaks.each do |croak| %>
+  <li>
+    <%= croak.message %>
+  </li>
+
+  <% end %>
+</ul>
