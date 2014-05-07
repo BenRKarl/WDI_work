@@ -1,9 +1,18 @@
-<h1>AVAILABLE LUNCHES</h1>
+<div class = main>
+    <div class = textbox>
+        <h1>AVAILABLE LUNCHES</h1>
 
-<ul>
-    <% @lunches.each do |lunch| %>
-    <li>Meal : <%= lunch.lunch_name %><br/>Restaurant: <%= lunch.restaurant %><br/>Number of times picked: <%= lunch.picked_count %></li>
-    <% end %>
-</ul>
-<h2><a href="/lunches/new">CREATE LUNCH!</a></h2>
-<h2><a href="lunches/random">RANDOM LUNCH!</a></h2>
+        <ul>
+            <% @lunches.each do |lunch| %>
+            <li>
+                Meal : <%= lunch.lunch_name %><br/>
+                Restaurant: <%= lunch.restaurant %><br/>
+                Number of times picked: <%= lunch.picked_count %>
+            </li><br/>
+            <% end %>
+        </ul>
+
+        <h2><a href="/lunches/new">CREATE LUNCH!</a></h2>
+        <h2><a href="lunches/random">RANDOM LUNCH!</a></h2>
+    </div>
+</div>
