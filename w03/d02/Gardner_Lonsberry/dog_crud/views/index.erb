@@ -2,31 +2,58 @@
 <form action="/dogs/new" method="get">
   <button class="add-dog">
   Add Dog
-</button> 
+</button>
 </form>
+<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
 
-<h3>Here are your dogs</h3>
 
 <table>
-  <thead>
-    <tr>
-      <th>Dog Name</th>
-      <th>Dog Age</th>
-      <th>Dog Breed</th>
-    </tr>
-  </thead>
+     <tr>
+         <th>Name</th>
+         <th>Age</th>
+         <th>Breed</th>
+         
+     </tr>
+     <% @dogs.each do |dog|%>
+     <tr>
+         <td>
+             <%= dog.name %>
+         </td>
+         <td>
+             <%= dog.age %>
+         </td>
+         <td>
+             <%= dog.breed %>
+         </td>
+<% end %>
 
-  <tbody>
-    <% @dogs.each do |dog| %>
-      <tr>
-        <td>
-          <a href="/dogs/<%= dog.id %>">
-            <%= dog.name %>
-          </a>
-        </td>
-        <td><%= dog.age %></td>
-        <td><%= dog.breed %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>  
+<table>
+  <% @dogs.each do |dog| %>
+    <tr>
+      <td>
+        
+      </td>
+      <td>
+        <%= dog.name %>
+      </td>
+      <td>
+        <form action="/dogs/<%=dog.id%>" method="get">
+          <button type="submit">SHOW</button>
+        </form>
+      </td>
+      <td>
+        <form action="/dogs/<%=dog.id%>/edit" method="get">
+          <button type="submit">EDIT</button>
+        </form>
+
+      </td>
+      <td>
+        <form action="/dogs/<%=dog.id%>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">DELETE</button>
+        </form>
+      </td>
+    </tr>
+  <% end %>
+</table>
+

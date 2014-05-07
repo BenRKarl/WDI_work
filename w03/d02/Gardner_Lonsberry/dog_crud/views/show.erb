@@ -1,13 +1,8 @@
-<h3><%= @dog.name %></h3>
-<h3><%= @dog.age %></h3>
-<h3><%= @dog.breed %></h3>
+<h1><%= @dog.name %></h1>
+<h1><%= @dog.age %>years old</h1>
+<h1><%= @dog.breed %></h1>
 
-<form action="/dogs/<%= @dog.id %>" method='post'>
-  <input type="hidden" name='_method' value='delete'>
-  <button type='submit'>Delete</button>
-  
-<form action="/dogs/" method="get">
-<button class="dogs-home">
- Back to Dogs
- </button>
+<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+<form action="/" method="get">
+<button type="submit">Return to Dog List</button>
 </form>
