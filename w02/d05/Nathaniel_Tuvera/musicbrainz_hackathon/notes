@@ -1,0 +1,31 @@
+notes
+
+dp = Musicbrainz.find('daft punk')
+
+dp=[0]      # first index corresponds to search results (varying artists)
+  artist=dp[0]
+
+error on app.rb:14 checking for a hash and then continue below code ELSE erb :errpr
+
+works for "asf" not "asdf" because asf actually has musicbrains return a hash.  asdf returns nil <BREAK>
+
+asdf at app.rb:14 returns nilClass
+tried changing line 14 to
+if @artist[0].class == Hash || Array
+>>> both asf and asfd result error (recheck)
+changed line 14 to
+if @artist.class == Hash
+>>> fixed asfd, breaks asf
+
+try != nil (nil class?)
+
+blanket statement that sets nil objects to undefined and to not try to compile
+
+
+current problem>>> breaks when trying to find
+  @results_alias = artist[0]['alias_list']['alias]['__content__'
+
+  at @artist[0]['alias_list']['alias'] BREAK some places have an array others hash
+vvvvvvvvv
+hootie and the blow fish ['alias'] = hash
+prince @artist[0]>>> no ['alias_list']

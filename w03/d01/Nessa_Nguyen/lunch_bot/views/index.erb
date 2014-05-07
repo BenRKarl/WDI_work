@@ -1,0 +1,16 @@
+<div class="container">
+
+<h2>Options</h2>
+
+<ul class="option">
+	<li><a href="/lunches/new">Create new lunch</a></li> | 
+	<li><a href="/lunches/random">Pick random lunch</a></li>
+</ul>
+
+<h3>Current Lunches</h3>
+<ul>
+  <% @lunches.each do |lunch| %>
+    <li><%= lunch.name %> | <%= lunch.restaurant %></li>
+  <% end %>
+</ul>
+</div>

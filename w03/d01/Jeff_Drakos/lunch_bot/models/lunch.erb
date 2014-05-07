@@ -1,0 +1,21 @@
+class Lunch
+attr_accessor :lunch_name, :picked_count
+
+def initialize(options)
+  @lunch_name = options.fetch('lunch_name')
+  @picked_count = options.fetch[]
+end
+
+
+ def run_sql(sql_statement)
+    Lunch.run_sql(sql_statement)
+  end
+
+  def self.create(lunch_hash)
+    lunch_name = lunch_hash['lunch_name']
+    picked_count = lunch_hash['picked_count']
+    sql_statement = "INSERT INTO wdi_lunch (lunch_name, picked_count) VALUES ('#{lunch_name}', '#{picked_count}') RETURNING *;"
+    response = run_sql(sql_statement)
+    Lunch.new(response.first)
+  end
+end

@@ -1,0 +1,47 @@
+<div class='clearfix'><h1 class='results'>Search Results for <%= @search.capitalize %> </h1><p class="right">To search for another artist, click <a  href="/">here</a>.</p></div>
+
+<table>
+<tr>
+<th>Artist Name</th>
+<th>Field</th>
+<th>Country</th>
+<th>Birth Date/Band Initiated Date</th>
+<th>Defunct/Dead?</th>
+<th>Aliases</th>
+</tr>
+<% @artists.each do |artist| %>
+
+<tr>
+<td><%= artist['name'] %></td>
+<td><%= artist['disambiguation'] %></td>
+<td><%= artist['country'] %></td>
+<td><%= artist['life_span']['begin'] %></td>
+<td><%= artist['life_span']['ended'] %></td>
+
+  <td>
+      <% this = ''%>
+
+      <% if artist['alias_list']                       %>
+      <%   artist['alias_list']['alias'].each do |k,v| %>
+      <%       if k == '__content__'                   %>
+      <%       this.concat(v )                          %>
+      <%       end                                     %>
+      <%   end                                         %>
+      <% else %>
+      <% end %>
+
+      <% if artist['alias_list']  && artist['alias_list']['alias'][0]  %>
+      <%    artist['alias_list']['alias'].each do |i| %>
+      <%    this.concat(i['__content__']+ '</br>')  %>
+      <%    end %>
+      <% end %>
+
+
+      <%= this %>
+
+  </td>
+</tr>
+
+<% end %>
+</table>
+

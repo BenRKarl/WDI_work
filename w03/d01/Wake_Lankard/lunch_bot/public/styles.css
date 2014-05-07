@@ -1,0 +1,32 @@
+body {
+  background-color: #F2E0CB;
+  font-family: sans-serif;
+  color: #1F2D54;
+}
+
+tr:nth-child(even) {
+  background-color: #EFAD9E;
+  }
+
+  .graph {
+    background-color: #F2E0CB;
+  }
+  .pic_bar {
+    background-color: #1F2D54;
+    height: 18px;
+  }
+
+  .button {
+    display: inline;
+    color: #1F2D54;
+    border: thin #1f2d54 solid;
+    border-radius: 5px;
+    background-color: #9ADACA;
+    font-size: .8em;
+    padding: 7px;
+    margin: 15px 10px 0 5px;
+    text-decoration: none;
+  }
+  table{
+    margin-bottom: 20px;
+  }

@@ -1,0 +1,88 @@
+#makes list of where the top 25 returns are from, in ordered array
+  def self.find_loc(artist_name)
+    country_array = Musicbrainz.find(:artist_name).map {|artist| artist['country']}
+    # @country_nil_count = country_array.count(nil)
+    country_array.delete(nil)
+    countries = {}
+    country_array.each do |country|
+      if countries.has_key?(country)
+        countries[country] += 1
+      else
+        countries[country] = 1
+      end
+    end
+    countries
+  end
+
+
+
+
+#when: artists = Musicbranz.find('prince') :returns hashhttp://musicbrainz.org/ws/2/artist?query=prince
+
+
+
+=begin
+get '/' do
+end
+
+
+require 'bundler'
+Bundler.require
+
+module Musicbranz
+  def self.find(artist_name)
+
+    url = "http://musicbrainz.org/ws/2/artist?query=" + artist_name
+    response = HTTParty.get(url)
+    data = response['metadata']['artist_list']['artist']
+  end
+end
+
+
+require 'bundler'
+Bundler.require
+
+module Musicbrainz
+  def self.find(artist_name)
+
+    artist_name = artist_name.gsub(' ', '%20')
+    url = "http://musicbrainz.org/ws/2/artist?query=" + artist_name
+    response = HTTParty.get(url)
+
+    response['metadata']['artist_list']['artist']
+  end
+
+end
+def country(artist_name)
+
+  country_array = Musicbrainz.find(:artist_name).map {|artist| artist['country']}
+  # @country_nil_count = country_array.count(nil)
+  country_array.delete(nil)
+countries = {}
+  country_array.each do |country|
+    if countries.has_key?(country)
+    countries[country] += 1
+    else
+    countries[country] = 1
+    end
+  end
+  countries
+end
+
+end
+end
+
+def country_count(country_array)
+countries = {}
+  country_array.each do |country|
+    if countries.has_key?(country)
+    countries[country] += 1
+    else
+    countries[country] = 1
+    end
+  end
+  countries
+end
+
+=end
+

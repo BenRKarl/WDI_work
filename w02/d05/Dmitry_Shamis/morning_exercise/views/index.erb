@@ -1,0 +1,18 @@
+<h1>WE ARE PROTO!</h1>
+
+<table>
+  <tr>
+    <td>Initials</td>
+    <td>Mental State</td>
+    <td>Name</td>
+    <td>Tagline</td>
+  </tr>
+  <% @developers.each do |element| %>
+  <tr>
+    <td><%= element.initials.upcase %></td>
+    <td><%= [':)', ':(', ';P', ';)', ':D', ':\'('].sample %></td>
+    <td><%= element.name.join(' ') %></td>
+    <td><%= element.tagline %></td>
+  </tr>
+  <% end %>
+</table>

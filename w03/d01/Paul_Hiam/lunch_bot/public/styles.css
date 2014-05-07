@@ -1,0 +1,21 @@
+
+body {
+	background: url(http://cdn.morguefile.com/imageData/public/files/a/alvimann/preview/fldr_2011_01_11/file8721294762236.jpg);
+	background-image: cover;
+}
+h2 {
+	color: purple;
+}
+.lunches {
+	border: 2px solid grey;
+	color: blue;
+	background: orange;
+}
+.rand {
+	border: 2px solid grey;
+	color: blue;
+	background: orange;
+}
+
+
+
