@@ -1,0 +1,13 @@
+<div class="content">
+
+    <h1>Edit this dog</h1>
+
+    <form action="/dogs/<%= @dog.id %>" method="post">
+        <input type="hidden" name="_method" value="put">
+        <input type="text" name="name" value=<%= @dog.name %> size=40>
+        <input type="text" name="age" value=<%= @dog.age %> size=40>
+        <input type="text" name="breed" value=<%= @dog.breed %> size=40>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
