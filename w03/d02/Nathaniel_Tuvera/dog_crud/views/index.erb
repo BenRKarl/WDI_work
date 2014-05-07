@@ -1,0 +1,41 @@
+<div class="container"><h1>DOGS</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Breed</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dogs.each do |dog| %>
+      <tr>
+        <td>
+          <a href="/dogs/<%= dog.id %>">
+            <%= dog.name %>
+          </a>
+        </td>
+
+        <td><%= dog.age %></td>
+        <td><%= dog.breed %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<form action="/dogs/new" method="get">
+  <input type="submit" value="Add">
+</form>
+<form action="/dogs/<%= @dog.id%>" method="get">
+  <input type="submit" value="Show">
+</form>
+<form action="/dogs/<%= @dog.id %>/edit" method="get">
+  <input type="submit" value="Edit">
+</form>
+<form action="/dogs/<%= @dog.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>
+</div>

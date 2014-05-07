@@ -1,0 +1,12 @@
+.box {
+   height: 50px;
+   width: 50px;
+   background-color: cyan;
+   float: left;
+   margin: 10px;
+}
+
+.box:nth-child(3n) {
+   border-radius: 50px;
+   background-color: magenta;
+}

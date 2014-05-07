@@ -1,0 +1,24 @@
+
+<h2><a href="/dogs" class="header">Dogs in the Pack</a></h2>
+
+
+<form action="/dogs/new" method="get">
+		<button class="add">Click to add dog</button>
+</form>
+
+<div class="content">
+
+<form action="/dogs/<%= @dog.id %>" method="post" class="fill">
+		<input type="hidden" name="_method" value="put">
+		<input type="text" name="name" value="<%= @dog.name %>" ></input>
+		<input type="text" name="age" value="<%= @dog.age %>" ></input>
+		<input type="text" name="breed" value="<%= @dog.breed %>" ></input>  
+		<input type="submit" value="SUBMIT"></input>  
+</form>
+
+
+	<img src="/dog2.jpg" class="footer" />
+	<div class="cleaner"></div>
+	<footer>Thank you for visiting the dog pack!</footer>
+
+</div>
