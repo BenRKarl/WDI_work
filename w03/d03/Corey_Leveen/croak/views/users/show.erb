@@ -2,12 +2,14 @@
 
   <% @user.croaks.each do |croak| %>
   <p>
+
     <%= croak.message %>
-  </p>
       <form action="/users/<%= @user.id %>/croaks/<%= croak.id %>" method="post">
       <input type="hidden" name="_method" value="delete">
       <button type="submit">Delete</button>
       </form>
+
+  </p>
 
 
   <% end %>

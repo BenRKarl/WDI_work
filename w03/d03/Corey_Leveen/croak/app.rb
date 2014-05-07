@@ -31,8 +31,7 @@ end
 
 #display create croak page
 get '/users/:id/croaks/new' do
-  #obtain user
-  @user_id = params[:id]
+  @user = User.find(params[:id])
   erb :'croaks/new'
 end
 
@@ -41,7 +40,7 @@ post '/users/:id/croaks' do
 
   user = User.find(params[:id])
   croak = params[:croak]
-  new_croak = Croak.create({message: new_croak})
+  new_croak = Croak.create({message: croak})
   user.croaks << new_croak
   redirect "/users/#{params[:id]}"
 end
