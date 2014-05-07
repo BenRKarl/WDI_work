@@ -1,0 +1,26 @@
+body {
+  background-color: lightgrey;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top:100px;
+  color: grey;
+}
+
+table {
+  margin: 0 auto;
+  margin-bottom:100px;
+  background-color: grey;
+  box-shadow: 0 0 20px #888888;
+  padding: 25px 25px 25px 25px;
+}
+
+td {
+  padding: 0 35px 0 35px;
+}
+
+form {
+  margin-left: 25%;
+}

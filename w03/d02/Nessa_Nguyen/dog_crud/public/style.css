@@ -1,0 +1,154 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url('/dog1.jpg');
+	background-size: 750px auto;
+	background-attachment: ;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-color: #000000;
+}
+
+.container {
+	max-width: 750px;
+	margin: 50px auto 0 auto;
+}
+
+
+h2, a.header {
+	font-family: 'Pacifico';	
+	color: #ffffff;
+	font-size: 50px;
+	margin: 0 0 0 15px;
+	text-decoration: none;
+}
+
+a.header:hover {
+	color: #c2e0e0;
+}
+
+/* buttons */
+input[type="submit"], button {
+	background-color: #8c0010; 
+	padding: 6px 9px;
+	border-radius: 8px;
+	border: solid 1px #a00012;
+	color: white;
+	font-size: 17px;
+	text-shadow: 1px 1px #666666;
+}
+
+input[type="submit"]:hover, button:hover {
+	background-color: #b40014;
+	font-style: italic;
+	cursor: pointer;
+}
+
+button.add {
+	font-weight: bold;
+	font-size: 18px;
+	margin: 20px 0 0 110px;
+}
+
+button.add:hover {
+	font-style: italic;
+	cursor: pointer;
+}
+
+
+td.edit {
+	min-width: 60px;
+}
+
+td.delete {
+	min-width: 75px;
+}
+
+/* TEXT FORMATTING */
+
+td {
+	font-family: Arial;
+	font-size: 17px;
+	padding: 0 15px 0 0;
+}
+
+/* CONTENT & TABLE */
+
+.content {
+	min-height: 400px;	
+	margin-top: 35px;
+	padding: 40px 30px; 
+	background-color: #ffffff;	
+	
+}
+
+table {
+	border-spacing: 5px;
+	margin: 0 auto;
+}
+
+tr:first-child {
+	font-weight: bold;
+	text-align: center;
+}
+
+tr:first-child td {
+	padding-bottom: 15px;
+}
+
+td.age, td.edit, td.edit {
+	text-align: center;
+}
+
+.edit button, .delete button {
+	background-color: transparent;
+	text-shadow: none;
+	border: none;
+	color: #8c0010;
+}
+
+.edit button:hover, .delete button:hover {
+	font-weight: bold;
+}
+
+
+/* FOOTER */
+img.footer {
+	width: 200px;
+	float: left;
+	display: block;
+	margin: 0 0 0 50px;
+}
+
+.cleaner {
+	width: 100%;
+	clear: both;
+	display: block;
+}
+
+footer {
+	font-family: 'Pacifico', cursive;
+	font-size: 25px;
+	width: 400px;
+	margin: 50px auto 0 auto;
+}
+
+
+/* FOMRS POSITIONING */
+
+form.fill {
+	max-width: 630px;
+	margin: 20px auto;
+}
+
+form input {
+	max-width: 160px;
+}
+
+form input[type="text"] {
+	font-family: Arial;
+	font-size: 17px;
+	padding: 5px 0 3px 8px;
+}
+
+
