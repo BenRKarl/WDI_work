@@ -1,0 +1,14 @@
+<p> <%= @dog.name %> </p>
+<p> <%= @dog.age %> </p>
+<p> <%= @dog.breed %> </p>
+<br>
+
+<form action="/dogs/<%= @dog.id %>" method='post'>
+  <input type="hidden" name='_method' value='delete'>
+  <button type='submit'>Delete Entry</button>
+</form>
+<br>
+<br>
+<br>
+<h3> <a href="/dogs">Return to Previous Page</a> </h3>
+
