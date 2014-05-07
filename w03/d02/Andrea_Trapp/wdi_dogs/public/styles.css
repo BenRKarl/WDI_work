@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-size: 1em;
+  font-family: Avenir Book, serif;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;   
+}
+
+.header_pic img {
+  float: left;
+  max-width: 25%;
+  margin-right: 50px;
+  margin-bottom: 20px;
+}
+
+.footer_pic img {
+  max-width: 100%;  
+}
+
+.content {  
+  padding: 20px;  
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(black), to(white));
+  background: -webkit-linear-gradient(black, white);
+  background: -moz-linear-gradient(black, white);
+  background: -o-linear-gradient(black, white);
+  background: linear-gradient(black, white); 
+}
+
+h1 {  
+  margin: 0;
+  padding: 20px;
+  color: white;
+  font-size: 2.5em;
+}
+
+table {
+  margin-top: 20px;
+  max-width: 100%;  
+  font-size: 1.2em;
+}
+
+td {
+  border-bottom: 1px solid gray;
+}
+
+th {
+  background-color: black;
+  color:white;
+}
+
+form input[type="text"] {  
+  margin: 5px;
+  display: block;
+  font-size: 1em;
+}
+
+button, form input[type="submit"] {
+  border-radius: 3px; 
+  box-shadow: 10px 10px 50px #3B3B45; 
+  background-color: rgba(235,235,224,0.9); //#EBEBE0;
+  margin-right: 10px;
+  font-size: 0.8em;
+}
+
+.button_new {
+  margin-top: 20px; 
+  font-size: 1.2em;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+
+

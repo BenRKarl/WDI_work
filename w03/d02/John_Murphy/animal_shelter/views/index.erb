@@ -1,0 +1,34 @@
+<h1>ADMIN Dashboard</h1>
+<h3 class="table_header">Dog Roster</h3>
+<table class="dog_roster">
+  <thead>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Breed</td>
+    <td>Actions</td>
+  </thead>
+  <tbody>
+<% @dogs.each do |dog| %>
+    <tr>
+      <td> <%= dog.name %></td>
+      <td> <%= dog.age %></td>
+      <td> <%= dog.breed %></td>
+      <td>
+        <form action="/dogs/<%=dog.id%>" method="get">
+          <input type="submit" value="SHOW">
+        </form>
+        <form action="/dogs/<%=dog.id%>/edit" method="get">
+          <input type="submit" value="EDIT">
+        </form>
+        <form action="/dogs/<%=dog.id%>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="DELETE">
+        </form>
+
+      </td>
+    </tr>
+
+<% end %>
+  </tbody>
+</table>
+<h3 class="create_new">Create a new dog <a href="/dogs/new">here</a>.</h3>

@@ -1,0 +1,29 @@
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Breed</th>
+		</tr>
+	</thead>
+
+	<tbody>
+	<% @dogs.each do |dog| %>
+		<tr>
+			<!-- we don't have to declare attr_accessor because we get .name, .age, .breed methods from ActiveRecords -->
+			<td><a href="/dogs/show/<%= dog.id %>"><%= dog.name %></a></td>
+			<td><%= dog.age %></td>
+			<td><%= dog.breed %></td>
+			<td><a href="/dogs/<%= dog.id %>/update"><button>edit</button></a></td>
+			<td>
+				<form action="/dogs/<%= dog.id %>" method='post'>
+ 					<input type="hidden" name='_method' value='delete'>
+  				<button type='submit'>Delete</button>
+				</form>
+			</td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<a href="/dogs/new"><button>create new dog</button></a>
