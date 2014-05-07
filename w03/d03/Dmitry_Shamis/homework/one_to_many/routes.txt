@@ -1,0 +1,45 @@
+# shows index of all users
+get '/users' do
+  @users = User.all
+  erb :index
+end
+
+# shows individual user details
+get '/users/:id' do
+  id = params[:id]
+  @user = User.find(id)
+  erb :show
+end
+
+# give user a form to fill out
+get '/users/new' do
+  erb :new
+end
+
+# accept params and add to users
+post '/users' do
+  username = params['username']
+  new_user = User.create({username: username})
+  redirect "/users/#{new_user.id}
+end
+
+# allows creation by user of 'many' infomation
+get '/users/:id/drinks/new' do
+  @user = User.find(params[:id])
+  erb :'drinks/new'
+end
+
+# appends data to user
+put '/users/:id/drinks'
+  drink = params['drinks']
+  user = User.find(params[:id])
+  new_drink = Drink.create({drink: drink})
+  user.drink << new_drink
+  redirect '/users/:id'
+end
+
+# allows for deletion of drink(s)
+delete '/users/:user_id/drinks/:drink_id' do
+  Drink.delete(params[:drink_id])
+  redirect "/users/:user_id"
+end
