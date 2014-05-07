@@ -12,12 +12,6 @@ get '/receipts' do
   erb :receipts
 end
 
-@new_receipt = []
-  name :company,
-  provided :provided,
-  cost :cost
-]
-
 def append_receipt
   File.puts('receipts.txt', 'a+') do
     puts @new_receipt

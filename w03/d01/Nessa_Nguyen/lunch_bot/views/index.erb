@@ -8,9 +8,15 @@
 </ul>
 
 <h3>Current Lunches</h3>
-<ul>
+<table>
   <% @lunches.each do |lunch| %>
-    <li><%= lunch.name %> | <%= lunch.restaurant %></li>
+  <tr>
+    <td><%= lunch.name %></td> 
+    <td><%= lunch.restaurant %> </td> 
+    <td><%= lunch.count %></td>
+  </tr>
   <% end %>
+</table>
+
 </ul>
 </div>
