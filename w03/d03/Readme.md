@@ -11,11 +11,13 @@
 
 Build a sinatra app. It should have the following specifications:
 
-	- A GET request to '/' should show one blue square.
-	- A GET request to '/:num_squares' should show `:num` many squares.
-	- You must use a layout.
-	- You must use a stylesheet in a public folder.
-- ***challenge***: Make every third square a circle.
+* A GET request to '/' should show one blue square.
+* A GET request to '/:num_squares' should show `:num` many squares.
+* You must use a layout.
+* You must use a stylesheet in a public folder.
+* ***challenge***: Make every third square a circle.
+
+
 
 ###Kittens
 ####***Key Skills:*** HTTP GET requests, Placekitten API.
@@ -30,8 +32,9 @@ Given that this markup will produce an image of a kitten:
 
 
 Create a Sinatra app with the following specifications:
-	- A GET request to '/:num_kittens' should show that number of kitten images.
-	- Their height and width attributes should be random.
+
+- A GET request to '/:num_kittens' should show that number of kitten images.
+- Their height and width attributes should be random.
 
 ---
 
