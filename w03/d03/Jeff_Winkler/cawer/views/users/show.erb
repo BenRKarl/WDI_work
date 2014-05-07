@@ -6,10 +6,15 @@
 
 <% @user.caws.each do |caw| %>
   <div class="list">
-    <%= caw.message %>
-    <form action="/users/<%=caw.user_id%>/caws/<%=caw.id%>" method="post">
+    <div class="one_m">
+      <%= caw.message %>
+    </div>
+    <form class="del" action="/users/<%=caw.user_id%>/caws/<%=caw.id%>" method="post">
       <input type="hidden" name="_method" value="delete">
-      <button type="submit">Delete</button>
+      <button class="new_d" type="submit">Delete</button>
     </form>
   </div>
 <% end %>
+
+    <a href="/users/<%=@user.id%>/caws/new"><h1>Caw</h1></a>
+
