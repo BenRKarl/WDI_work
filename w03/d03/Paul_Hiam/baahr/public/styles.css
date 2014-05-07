@@ -1,0 +1,10 @@
+body {
+  background-color: lightyellow;
+  color: purple; 
+}
+.sheep1 {
+  width: 200px;
+  height: 200px;
+  background: url("http://rlv.zcache.es/poster_de_baaaah-r121613bfd4a249b6a695dd09101949e1_vwi59_8byvr_324.jpg");
+  border-radius: 50%;
+}
