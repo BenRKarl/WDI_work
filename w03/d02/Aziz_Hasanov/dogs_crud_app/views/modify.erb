@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="/styles.css">
+
+<form action="/dogs/<%= @edit_dog.id %>" method="post">
+	<input type="hidden" name='_method' value='put'>
+	<input type="text" name="name" placeholder="<%= @edit_dog.name %>">
+	<input type="text" name="age" placeholder="<%= @edit_dog.age %>">
+	<input type="text" name="breed" placeholder="<%= @edit_dog.breed %>">
+	<input type="submit">
+</form>

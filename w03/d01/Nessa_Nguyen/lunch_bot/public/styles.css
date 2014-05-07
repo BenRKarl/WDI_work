@@ -14,6 +14,42 @@ body {
 	margin: 200px 0 0 320px;
 }
 
+form {
+	margin: 200px 0 0 120px;	
+}
+
+input[type="text"] {
+	display: block;
+	margin: 10px auto;
+}
+
+input[type="submit"] {
+	margin: 0 auto;
+	display: block;
+	background-color: #e17525;
+	color: #ffffff;
+	font-size: 18px;
+	text-shadow: 1px 1px #666666;
+	padding: 7px;
+	border-radius: 5px;
+	border-style: none;
+}
+
+input[type="submit"]:hover {
+	background-color: #7ebfbf;
+	cursor: pointer;
+}
+
+table {
+	border: 0;
+	border-spacing: 5px;
+	margin-top: 15px;
+}
+
+td {
+	padding-right: 15px;
+}
+
 h2, h3 {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
@@ -26,7 +62,9 @@ h3 {
 	font-size: 22px;
 }
 
-p, ul {
+/* REGULAR TEXT */
+
+p, ul, td, input {
 	font-family: Arial;
 	font-size: 17px;
 	color: #111111;

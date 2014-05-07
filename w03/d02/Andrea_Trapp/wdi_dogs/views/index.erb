@@ -1,0 +1,47 @@
+<div class="content">
+
+    <h1>WDI Dogs</h1>
+
+    <form class="button_new" action="/dogs/new" method="get">
+        <button type="submit">Create new dog</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Breed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @dogs.each do |dog| %>
+            <tr>
+                <td><%= dog.name %></td>
+                <td><%= dog.age %></td>
+                <td><%= dog.breed %></td>
+                <td>
+                    <form action="/dogs/<%= dog.id %>" method="get">      
+                        <button type="submit">Show</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/dogs/<%= dog.id %>/edit" method="get">      
+                        <button type="submit">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/dogs/<%= dog.id %>" method="post">
+                        <input type="hidden" name="_method" value="delete">   
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+
+    </table>
+    
+</div>
+
+
