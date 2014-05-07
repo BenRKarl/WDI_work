@@ -1,0 +1,22 @@
+<h1>Here's more information on that dog.</h1>
+
+<ul>
+  <li>
+    <strong>Name:</strong>  <%= @dog.name %>
+  </li>
+  <li>
+    <strong>Age:</strong>  <%= @dog.age %>
+  </li>
+  <li>
+    <strong>Breed:</strong>  <%= @dog.breed %>
+  </li>
+</ul>
+
+<form action="/dogs" method="get">
+  <input type="submit" value="Back to Home">
+</form>
+
+<form action="/dogs/<%= @dog.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Let the Dog Out...">
+</form>

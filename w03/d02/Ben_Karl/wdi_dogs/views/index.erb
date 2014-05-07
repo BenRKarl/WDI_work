@@ -1,0 +1,17 @@
+<h1>Here Are The Dogs, Yo!</h1>
+
+<ul>
+  <% @dogs.each do |dog| %>
+  <li>
+    <strong>Name:</strong>
+    <a href="/dogs/<%= dog.id %>">
+    <%= dog.name %>
+    </a><form action="/dogs/<%= dog.id %>/edit"><input type="submit" value="Edit">
+    </form></br>
+  </li>
+  <% end %>
+</ul>
+
+<form action="/dogs/new" method="get">
+  <input type="submit" value="Create a New Dog!">
+</form>
