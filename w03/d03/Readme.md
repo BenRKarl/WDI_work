@@ -10,6 +10,7 @@
 ####***Key Skills:*** HTTP GET requests, CSS
 
 Build a sinatra app. It should have the following specifications:
+
 	- A GET request to '/' should show one blue square.
 	- A GET request to '/:num_squares' should show `:num` many squares.
 	- You must use a layout.
