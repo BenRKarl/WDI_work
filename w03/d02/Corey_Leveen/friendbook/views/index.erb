@@ -1,0 +1,18 @@
+<h1>FRIENDS</h1>
+
+<table>
+  <% @friends.each do |friend| %>
+    <tr>
+      <td>
+       <img src="<%= friend.image_url%>" alt="">
+      </td>
+      <td>
+        <%= friend.username %>
+      </td>
+      <td>
+        <form action="/friends/<%=friend.id%>" method="get">
+        <button type="submit">SHOW</button>
+      </td>
+    </tr>
+  <% end %>
+</table>
