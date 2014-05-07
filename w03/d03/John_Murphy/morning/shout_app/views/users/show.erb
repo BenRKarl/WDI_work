@@ -1,0 +1,11 @@
+<h1>This is <%= @user.username %></h1>
+<h3>He shouts:</h3>
+<ul>
+<% @shouts.each do |shout| %>
+  <li><%=shout.message%></li>
+  <form action="/users/<%= @user.id%>/shouts/<%=shout.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">DELETE</button>
+  </form>
+<%end%>
+</ul>
