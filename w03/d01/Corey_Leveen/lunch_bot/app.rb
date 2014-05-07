@@ -2,6 +2,10 @@ require 'bundler'
 Bundler.require
 
 get '/' do
+redirect '/lunches'
+end
+
+get '/lunches' do
   #display all lunches
   connection = PG.connect(:dbname => 'wdi_lunch')
   sql_statement = 'SELECT * FROM lunches;'
@@ -21,11 +25,18 @@ get '/lunches/new' do
 #display a submit button: a POST request to
 #/lunches/create. This should create
 #a new lunch record in the database and redirect to /lunches
+erb :show
+end
+
+post '/lunches/create' do
 new_lunch_name = params[:new_lunch_name]
 restaurant_name = params[:restaurant_name]
-
-
-  erb :show
+connection = PG.connect(:dbname => 'wdi_lunch')
+sql_statement = "INSERT INTO lunches (lunch_name) VALUES ('#{new_lunch_name}');"
+response = connection.exec(sql_statement)
+connection.close
+redirect '/lunches'
+erb :index
 end
 
 get '/lunches/random' do

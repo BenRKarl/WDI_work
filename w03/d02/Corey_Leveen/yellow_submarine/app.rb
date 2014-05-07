@@ -1,4 +1,9 @@
-class Sailor
+require 'bundler'
+Bundler.require
+
+get '/' do
+
+  class Sailor
   attr_accessor :name
 
   def initialize(name)
@@ -25,8 +30,10 @@ end
 
 
 proto = ['Jeff Winkler','John Murphy','Nessa Nguyen','Jeff Drakos','Rebecca Strong','Gardner Lonsberry' ,'Jonathan Gean','Nathaniel Tuvera','Tim Hannes','Aziz Hasanov','Chris Heuberger','Dmitry Shamis' ,'Corey Leveen','Paul Hiam','Steven Doran','Ben Karl','Kristen Tonga','Wake Lankard','Carlos Pichardo' ,'Paul Gasberra','Andrea Trapp','Heidi Williams-Foy' ]
-the_sub = Submarine.new
+@the_sub = Submarine.new
 proto.each do |x|
-  the_sub.accept_sailor(Sailor.new(x))
+  @the_sub.accept_sailor(Sailor.new(x))
 end
 
+  erb :index
+end
