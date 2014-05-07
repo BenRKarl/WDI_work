@@ -1,0 +1,43 @@
+body {
+  font-family: sans-serif;
+  background-color: #EAE0A3;
+  color: #834107;
+}
+
+table {
+  border: 1px #834107 solid;
+  border-radius: 10px;
+  margin: 100px auto 10px auto;
+  padding: 10px;
+}
+.container {
+  width: 25%;
+  margin:0 auto;
+}
+
+.page_message {
+  margin: 0 auto;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+th {
+  font-size: 1.5em;
+  padding: 10px;
+  text-align: center;
+
+}
+td {
+  padding: 10px;
+}
+tr:nth-child(even){
+  background-color: #E0BD03;
+  }
+
+a {
+  text-decoration: none;
+  color: #834107;
+}
+a:visited {
+  text-decoration: none;
+  color: #834107;

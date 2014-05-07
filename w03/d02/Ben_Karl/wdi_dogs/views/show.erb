@@ -1,0 +1,29 @@
+<h1>Here's more information on that dog.</h1>
+
+<div class="main_table">
+<table>
+  <tr>
+    <td>
+      <strong>Name:</strong>  <%= @dog.name %>
+    </td>
+    <td>
+      <strong>Age:</strong>  <%= @dog.age %>
+    </td>
+    <td>
+      <strong>Breed:</strong>  <%= @dog.breed %>
+    </td>
+    <td>
+      <a href="<%= breed_standard_url(@dog.breed) %>">AKC Breed Standards</a>
+    </td>
+  </tr>
+</table>
+</div>
+
+<form action="/dogs" method="get">
+  <input type="submit" value="Back to Home">
+</form>
+
+<form action="/dogs/<%= @dog.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Let the Dog Out...">
+</form>
