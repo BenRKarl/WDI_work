@@ -1,0 +1,7 @@
+<h2>Welcome aboard the Proto Submarine</h2>
+
+<ul>
+	<% @sailors.shuffle!.each do |sailor| %>
+		<li><%= sailor.to_s %></li>
+	<% end %>
+</ul>		

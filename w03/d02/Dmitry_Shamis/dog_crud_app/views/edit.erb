@@ -1,0 +1,16 @@
+<h1>Anything wrong?</h1>
+<div class="create">
+<form action="/dogs/<%= @dog.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="name" value="<%= @dog.name %>">
+  <input type="text" name="age" value="<%= @dog.age %>">
+  <input type="text" name="breed" value="<%= @dog.breed %>">
+  <input type="submit">
+</form>
+</div>
+
+<div class="bottom_button">
+<form action="/dogs" method="get">
+  <button type="submit">BACK TO ALL DOGS</button>
+</form>
+</div>

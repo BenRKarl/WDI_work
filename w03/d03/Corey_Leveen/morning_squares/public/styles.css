@@ -1,0 +1,14 @@
+div {
+  width: 100px;
+  height: 100px;
+}
+
+.blue {
+  background-color: lightblue;
+  display: block;
+  margin: 10px;
+}
+
+div:nth-child(3n) {
+  border-radius: 100%;
+}

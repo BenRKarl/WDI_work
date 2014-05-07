@@ -1,0 +1,14 @@
+
+
+<div class="container">
+<form class="newform" action="/dogs/<%=@dog.id%>" method="post">
+  <input class="ibox" type="hidden" name="_method" value="put">
+  <input class="ibox" type="text" name="name" value="<%= @dog.name %>">
+  <input class="ibox" type="text" name="age" value="<%= @dog.age %>">
+  <input class="ibox" type="text" name="breed" value="<%= @dog.breed %>">
+  <input class="adb" type="submit">
+
+
+</form>
+
+</div>

@@ -1,0 +1,27 @@
+<h1>FRIENDS</h1>
+
+<form action="/friends/new" method="get">
+<button class="add_friend">Add Friend</button>
+</form>
+<br/>
+<table>
+	<% @friends.each do |friend| %>
+	<tr>
+     <td>
+      <img src="<% friend.image_url %>" alt="">
+     </td>
+     <td>
+     	<%= friend.username %>
+     </td>
+     <td>
+<form action="/friends/<%=friend.id%>" 
+	method="get">
+	<button type="submit">SHOW</button>
+</form>
+     </td>
+     <td>
+     	<form action="/friends/<%friend.id%>"
+	</tr>
+<% end %>
+</table>
+

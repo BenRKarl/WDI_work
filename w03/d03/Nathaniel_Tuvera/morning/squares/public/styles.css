@@ -1,0 +1,19 @@
+form {
+  text-align: center;
+}
+div {
+
+}
+div.shape {
+  height: 150px;
+  width: 150px;
+  background-color: blue;
+  margin: 20px;
+  float: left;
+}
+
+.shape:nth-child(3n) {
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
+}

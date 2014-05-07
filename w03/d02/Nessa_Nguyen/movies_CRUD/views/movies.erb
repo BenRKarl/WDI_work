@@ -1,0 +1,21 @@
+
+
+<h2>Here are your movies</h2>
+
+<table>
+	<tr>
+		<td>Title</td>			
+		<td>Director</td>
+		<td>Screenwriter</td>
+	</tr>
+
+	<tr>
+	<% @movies.each do |movie| %>	
+		<td><%= movie.title %></td>			
+		<td><%= movie.director %></td>
+		<td><%= movie.screenwriter %></td>	
+	</tr>
+	<% end %>	
+
+	
+</table>
