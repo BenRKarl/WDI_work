@@ -1,0 +1,31 @@
+# class Postcard
+
+# def initialize (ship_to, message)
+#   @ship_to_address = ship_to_address
+#   @message = message
+# end
+
+# def ship_to_address
+#   ship_to_address = {41, Union Square W, New York, NY 10003}
+# end
+
+# def message
+#   message = "Hello world!"
+# end
+
+# if user_input = ship_to_address
+# puts message
+# else = "Return To Sender"
+
+# end
+
+
+# Matt's Solution
+class Postcard
+  def initialize (ship_to_address, message)
+    @ship_to_address = ship_to_address
+    @message = message
+  end
+
+  def to_s
+    "The message: '#{@message}' is being sent to #{@ship_to_address}"
