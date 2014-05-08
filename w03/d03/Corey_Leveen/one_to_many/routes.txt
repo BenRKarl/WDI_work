@@ -1,0 +1,27 @@
+get '/' do
+  #show al
+end
+
+get '/farmers/new' do
+  #display farmer create page
+end
+
+post '/farmers' do
+  #create new farmer
+end
+
+get 'farmers/:id' do
+  #show a single farmer
+end
+
+get 'farmers/:id/farms/new' do
+  #create a new farm page
+end
+
+post '/farmers/:id/farms' do
+  #create new farm
+end
+
+delete 'farmers/:farmer_id/farms/:id' do
+  #delete farm
+end

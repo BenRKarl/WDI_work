@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cawr.</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="header"></div>
+    <div class="main">
+    <%= erb :nav %>
+    <%= yield %>
+  </div>
+  <div class="footer"></div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<h2><%= @user.username %></h2>
+
+<% @user.meows.each do |meow| %>
+  <p>
+    <%= meow.message %>
+  </p>
+<% end %>
