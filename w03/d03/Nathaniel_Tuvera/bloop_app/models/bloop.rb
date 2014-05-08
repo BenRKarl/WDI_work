@@ -1,0 +1,3 @@
+class Bloop < ActiveRecord::Base
+  belongs_to :user
+end

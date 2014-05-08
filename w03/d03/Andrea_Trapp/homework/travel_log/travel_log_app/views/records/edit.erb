@@ -1,0 +1,13 @@
+<div class="sidebar">
+
+    <h2>Edit record:</h2>
+
+    <form action="/records/<%= @record.id %>" method='post'>
+      <input type="hidden" name="_method" value="put">    
+      <input type="text" name='title' value='<%= @record.title %>'>
+      <input type="text" name='description' value='<%= @record.description %>'>
+      <input type="text" name='entry_date' value='<%= @record.entry_date %>'>     
+      <input type="submit">      
+    </form>
+</div>
+

@@ -1,0 +1,10 @@
+body {
+  text-align: center;
+  font-family: courier;
+  color: dimgray;
+}
+
+.kitten {
+  margin: 2px;
+  text-align: center;
+}

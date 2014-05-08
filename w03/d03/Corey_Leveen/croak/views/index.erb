@@ -1,0 +1,15 @@
+<h2>Here is index.erb</h2>
+<form action="/users/new" method="get">
+    <button type="submit">Create a frog
+    </button>
+</form>
+
+<ul>
+  <% @users.each do |user| %>
+  <li>
+    <a href="/users/<%= user.id %>">
+      <%= user.username %>
+    </a>
+  </li>
+  <% end %>
+</ul>
