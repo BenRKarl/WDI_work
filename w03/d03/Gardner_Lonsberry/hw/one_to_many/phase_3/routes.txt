@@ -6,3 +6,4 @@ GET	/products/1/edit	Product	edit	return an HTML form for editing a product
 PUT	/products/1	Product	update	update a specific product
 DELETE	/products/1/	Product	destroy	delete a specific product
 
+ 
