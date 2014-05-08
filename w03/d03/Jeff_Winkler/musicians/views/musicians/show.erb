@@ -1,0 +1,39 @@
+
+
+<h1>
+  <%= @musician.name %>
+</h1>
+<br/>
+
+<% @musician.songs.each do |song| %>
+  <div class="list">
+    <div class="one_m">
+      <%= song.name %>
+    </div>
+    <form class="del" action="/musicians/<%=song.musician_id%>/songs/<%=song.id%>/edit" method="get">
+      <button class="new_d" type="submit">Edit</button>
+    </form>
+
+
+
+    <form class="del" action="/musicians/<%=song.musician_id%>/songs/<%=song.id%>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button class="new_d" type="submit">Delete</button>
+    </form>
+
+  </div>
+<% end %>
+
+    <a href="/musicians/<%=@musician.id%>/songs/new"><h3>New Song</h3></a>
+
+    <form class="del" action="/musicians/<%=@musician.id%>/edit" method="get">
+      <button class="new_c" type="submit">Edit Musician</button>
+    </form>
+
+    <br/>
+
+
+    <form class="del" action="/musicians/<%=@musician.id%>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button class="new_c" type="submit">Delete Musician</button>
+    </form>
