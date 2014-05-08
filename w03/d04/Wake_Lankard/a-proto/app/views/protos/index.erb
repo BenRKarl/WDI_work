@@ -1,6 +1,6 @@
 <h3> go protos</h3>
 <ul>
   <% @protos.each do |proto| %>
-  <li class="proto"><%= proto.name %></li>
+  <li class="proto"><a href="/protos/<%= proto.id %>"><%= proto.name %></a></li>
     <% end %>
 </ul>
