@@ -39,6 +39,8 @@ In this exercise, you will be creating a Rails application that handles the foll
 ###Phase 1
 ***Configure your database!*** 
 
+**NOTE: THIS IS ONLY NECESSARY IF YOU ARE ON A VERSION OF RAILS < 4.1 **
+
 * You will need to edit your `config/database.yml`.  The following code is actually all that is required to connect to the database.
 ```yml
 development:
