@@ -116,7 +116,7 @@ Using the above example is a frame of reference.  Create a Rails application tha
 |`GET` to `/`| kittens#index | Displays all kittens |
 |`GET` to `kittens`| kittens#index | Displays all kittens |
 
-Your eyes to not deceive you! A get request to `/` and `/kittens` map to the same controller actions!
+Your eyes do not deceive you! A get request to `/` and `/kittens` map to the same controller actions!
 
 
 
