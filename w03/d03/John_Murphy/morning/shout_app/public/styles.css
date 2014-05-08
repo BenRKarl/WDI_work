@@ -8,6 +8,21 @@ nav {
 
 }
 
+li {
+  font-family: lobster;
+}
+
+h1 {
+  font-family: 'Luckiest Guy', cursive;
+}
+
 .nav:visited {
   color: white;
 }
+
+.shouts {
+  margin: 0 auto;
+  width: 300px;
+}
+
+

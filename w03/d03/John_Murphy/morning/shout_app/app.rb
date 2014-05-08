@@ -31,6 +31,7 @@ end
 
 get '/users/:id/shouts/new' do
   @id = params[:id]
+  @user = User.find(@id)
   erb :'shouts/new'
 end
 

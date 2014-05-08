@@ -1,0 +1,11 @@
+GET '/users'
+GET '/users/new'
+POST '/users'
+GET '/users/:id'
+GET '/users/:id/edit'
+PUT '/users/:id'
+DELETE '/users/:id'
+
+GET '/users/:id/recommendations/new'
+POST '/users/:id/recommendations'
+DELETE '/users/:user_id/recommendations/:recommendation_id'
