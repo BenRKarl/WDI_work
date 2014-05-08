@@ -1,0 +1,20 @@
+Notes for how i set up my database and tables
+
+CREATE DATABASE wdi_caws_app;
+
+\c wdi_caws_app;
+
+CREATE TABLE users
+(
+  id serial4 PRIMARY KEY,
+  username varchar(255)
+)
+
+CREATE TABLE caws #caws needs to be the plural ofmodel file.
+(
+ id serial4 PRIMARY KEY,
+ message varchar(255),
+ user_id integer     #one to many association: thing that is
+ );               owned maintains which user owns it by
+               storing the user_id inside itself. EX.)dog has owner on it's collar tag.
+
