@@ -1,10 +1,36 @@
 body {
-  background-color: lightyellow;
+  background: url("http://upload.wikimedia.org/wikipedia/commons/7/72/James_Ward_-_Ryelands_Sheep,_the_King's_Ram,_the_King's_Ewe_and_Lord_Somerville's_Wether_-_Google_Art_Project.jpg");
+  background-size: cover;
   color: purple; 
+}
+.nav {
+  text-align: center;
 }
 .sheep1 {
   width: 200px;
   height: 200px;
-  background: url("http://rlv.zcache.es/poster_de_baaaah-r121613bfd4a249b6a695dd09101949e1_vwi59_8byvr_324.jpg");
+  background: url("http://www.marvistavet.com/assets/images/sheep_face.gif");
+  background-size: cover;
   border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+h2 {
+  font-family: 'Oleo Script', cursive;
+}
+li {
+  font-family: 'Annie Use Your Telescope', cursive;
+  font-size: 2.5em;
+  display: inline-block;
+  margin: 18px;
+  
+
+}
+li a {
+  color: limegreen;
+}
+p {
+    font-family: 'Oleo Script', bold;
+    color: gray;
+
 }
