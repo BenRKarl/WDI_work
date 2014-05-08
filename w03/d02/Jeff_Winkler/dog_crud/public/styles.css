@@ -1,0 +1,86 @@
+
+body {
+  background-color: rgb(200,200,200);
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.top {
+  background-color: white;
+  height: 140px;
+  text-align: center;
+}
+
+.heading {
+  padding-top: 50px;
+  font-size: 36px;
+  font-style: italic;
+}
+
+
+.topdog {
+  margin-left: 30px;
+  margin-top: 20px;
+  float: left;
+}
+
+td {
+  width: 200px;
+
+}
+
+.container {
+  text-align: center;
+}
+
+.dogtable {
+  margin: 0 auto;
+  margin-top: 40px;
+
+}
+
+tr {
+  background-color: white;
+}
+
+.abc {
+  text-align: center;
+}
+
+.combo {
+  display: inline-block;
+}
+
+
+.adb {
+
+
+  background-color: white;
+  margin: 20px;
+  height: 30px;
+  width: 150px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-style: italic;
+}
+
+.ibox {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 40px;
+  width: 300px;
+  font-size: 20px;
+}
+
+.inst {
+  margin-left: 220px;
+  font-size: 16px;
+}
