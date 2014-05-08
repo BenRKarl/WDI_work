@@ -3,5 +3,5 @@ class CreateProtos < ActiveRecord::Migration
     create_table :protos do |t|
       t.string :name
     end
-  end
+  end 
 end
