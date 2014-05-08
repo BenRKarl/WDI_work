@@ -1,0 +1,117 @@
+require "bundler"
+Bundler.require
+
+
+# root redirect to index
+get "/" do
+  redirect "/buses"
+end
+
+
+# index
+get "/buses" do
+  @buses = Buses.all
+  erb :index
+end
+
+
+# form page to accept user input for new bus
+get "/buses/new" do
+  erb :"buses/new"
+end
+
+
+# show bus
+get "/buses/:id" do
+  @bus = Bus.find(params[:id])
+  erb :"buses/show"
+end
+
+
+# create new bus
+post "/buses" do
+  new_bus = Bus.create({
+    route: params[:route],
+    seats: params[:seats]
+  })
+  new_bus.save
+  redirect "/buses/#{ new_bus.id }"
+end
+
+
+# form page displaying bus attributes
+# accepts user input to update existing bus
+get "/buses/:id/edit" do
+  erb :"/buses/edit"
+end
+
+
+# update/edit bus
+put "/buses/:id"
+  bus = Bus.find(params[:id])
+  bus.route = params[:route]
+  bus.seats = params[:seats]
+  bus.save
+  redirect "/buses/#{ bus.id }"
+end
+
+
+# delete bus
+delete "/buses/:id" do
+  Bus.delete(params[:id])
+  redirect "/buses"
+end
+
+
+# show passengers of a given bus
+get "/buses/:id/passengers" do
+  bus = Bus.find(params[:id])
+  @passengers = bus.passengers
+  erb :"passengers/show"
+end
+
+
+# get user input for new passenger
+get "/buses/:id/passengers/new" do
+  erb :"passengers/new"
+end
+
+
+# create passenger
+post "/buses/:id/passengers" do
+  bus = Bus.find(params[:id])
+  bus.passengers << Passenger.create
+  ({
+  start: params[:start],
+  destination: params[:destination]
+  })
+  bus.close
+  redirect "/buses/#{ bus.id }/passengers"
+end
+
+
+# form page displaying passenger attributes
+# accepts user input to update passenger
+get "/buses/:b_id/passengers/:p_id/edit" do
+  @bus = Bus.find(params[:b_id])
+  @passenger = Passengers.find([:p_id])
+  erb :"/passengers/edit"
+end
+
+
+# edit passenger
+put "/buses/:b_id/passengers/:p_id" do
+  passenger = Passenger.find(params[:p_id])
+  passenger.start = params[:start]
+  passenger.destination = params[:destination]
+  passenger.save
+  redirect "/buses/#{ params[:b_id] }"
+end
+
+
+# deletes passenger
+delete "/buses/:b_id/passengers/:p_id" do
+  Passenger.delete(params[:p_id])
+  redirect "/buses/#{ params[:b_id] }"
+end
+

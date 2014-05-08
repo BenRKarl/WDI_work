@@ -1,0 +1,93 @@
+############### Routes for cuisinetypes ###############
+
+# index
+get '/cuisinetypes' do
+  @cuisinetypes = Cuisinetype.all
+  erb :'cuisinetypes/index'
+end
+
+# new
+get '/cuisinetypes/new' do
+  erb :'cuisinetypes/new'
+end
+
+# create
+post '/cuisinetypes' do
+  cuisine = params[:cuisine]  
+  new_cuisinetype = Cuisinetype.create({cuisine: cuisine})
+  redirect "/cuisinetypes/#{new_cuisinetype.id}"
+end
+
+# show
+get '/cuisinetypes/:id' do
+  @cuisinetype = Cuisinetype.find(params[:id])
+  erb :'cuisinetypes/show'
+end
+
+# edit
+get '/cuisinetypes/:id/edit' do
+  @cuisinetype = Cuisinetype.find(params[:id])
+  erb :'cuisinetypes/edit'
+end
+
+put '/cuisinetypes/:id' do
+  cuisinetype = Cuisinetype.find(params[:id])
+  cuisinetype.cuisine = params[:cuisine]   
+  cuisinetype.save
+  redirect "/cuisinetypes/#{cuisinetype.id}"
+end
+
+delete '/cuisinetypes/:id' do
+  cuisinetype.delete(params[:id])
+  redirect '/cuisinetypes'
+end
+
+############### Routes for fooditems ###############
+
+# index
+get '/fooditems' do
+  @fooditems = Fooditem.all
+  erb :'fooditems/index'
+end
+
+# new
+get '/cuisinetypes/:id/fooditems/new' do
+  @cuisinetype = Cuisinetype.find(params[:id])
+  erb :'fooditems/new'
+end
+
+# create
+post '/cuisinetypes/:id/fooditems' do
+  cuisinetype = Cuisinetype.find(params[:id])
+  name = params[:name] 
+  new_fooditem = Fooditem.create({name: name})
+  cuisinetype.fooditems << new_fooditem  
+  redirect "/cuisinetypes/#{params[:id]}"
+end
+
+# show
+get '/fooditems/:id' do
+  @fooditem = Fooditem.find(params[:id])
+  erb :'fooditems/show'
+end
+
+# edit
+get '/cuisinetypes/:cuisinetype_id/fooditems/:fooditem_id/edit' do
+  @cuisinetype = Cuisinetype.find(params[:cuisinetype_id])
+  @fooditem = Fooditem.find(params[:fooditem_id])
+  erb :'fooditems/edit'
+end
+
+put '/cuisinetypes/:cuisinetype_id/fooditems/:fooditem_id' do
+  fooditem = Fooditem.find(params[:Fooditem_id])
+  fooditem.name = params[:name] 
+  fooditem.cuisinetype_id = params[:cuisinetype_id]    
+  fooditem.save
+  redirect "/fooditems/#{fooditem.id}"
+end
+
+delete '/cuisinetypes/:cuisinetype_id/fooditems/:fooditem_id' do
+  fooditem.delete(params[:fooditem_id])
+  redirect '/cuisinetypes/#{params[:cuisinetype_id]}'
+end
+

@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, Sans-serif;
+  background-color: lightblue;
+}
+
+form {
+  display: inline;
+}
+
+h1 {
+  font-family: 'Exo', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}

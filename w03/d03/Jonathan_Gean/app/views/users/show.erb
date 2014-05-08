@@ -1,0 +1,14 @@
+<%= @user.username %>
+
+  <% @user.gawps.each do |gawp| %>
+  <p><%= gawp.message %>
+    </p>
+    <p><form action="/users/<%= @user.id %>/gawps/<%= gawp.id %>" method='post'>
+      <input type="hidden" name='_method' value='delete'>
+      <button type='submit'>Delete</button></form>
+      </form>
+
+      </p>
+  <% end %>
+  <a href="/users/<%= @user.id %>/gawps/new">
+      New Gawp</a>

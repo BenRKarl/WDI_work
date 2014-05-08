@@ -1,0 +1,15 @@
+get     '/doctors'                      - INDEX ALL DOCTORS
+get     '/doctors/:id'                  - SHOW DOCTOR
+get     '/doctors/new'                  - NEW DOCTOR
+post    '/doctors'                      - CREATE DOCTOR
+get     '/doctors/:id/edit'             - EDIT DOCTOR
+put     '/doctors/:id'                  - UPDATE DOCTOR
+delete  '/doctors/:id'                  - DELETE DOCTOR
+
+get     'doctors/:id/patients'          - INDEX ALL patients
+get     'doctors/:id/patients/:id'      - SHOW PATIENT
+get     'doctors/:id/patients/new'      - NEW PATIENT
+post    'doctors/:id/patients'          - CREATE PATIENT
+get     'doctors/:id/patients/:id/edit' - EDIT PATIENT
+put     'doctors/:id/patients/:id'      - UPDATE PATIENT
+delete  'doctors/:id/patients/:id'      - DELETE PATIENT

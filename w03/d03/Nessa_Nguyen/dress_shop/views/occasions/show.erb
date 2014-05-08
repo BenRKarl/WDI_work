@@ -1,0 +1,44 @@
+<div class="wrapper">
+
+<h1><a href="/">Peaches &amp; Cream</a></h1>
+
+<h3>Dresses for <%= @occasion.occasion %></h3>
+
+<div class="multiple">
+<form action="/" method="get">
+	<input type="submit" value="View all occasions"></input>
+</form>	
+
+<form action="/occasions/<%= @occasion.id %>/dresses/new" method="get">
+	<input type="submit" value="Add to inventory"></input>
+</form>	
+</div>
+
+<div class="clear"></div>
+
+
+<% @occasion.dresses.each do |dress| %>
+<table>
+	<tr>
+		<td colspan="2">
+			<img src="<%= dress.img_url %>" />
+		</td> 
+	</tr>
+	
+	<tr>	
+		<td>
+			<%= dress.description %>
+
+			<form action="/occasions/<%= @occasion.id %>/dresses/<%= dress.id %>" method="post" class="delete">
+				<input type="hidden" name="_method" value="delete"></input>
+				<input type="submit" value="delete"></input>
+			</form>
+		</td>
+	</tr>	
+</table>
+<% end %>
+
+
+<div class="clear"></div>
+
+</div>

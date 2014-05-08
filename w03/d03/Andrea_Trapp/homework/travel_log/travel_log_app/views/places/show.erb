@@ -1,0 +1,34 @@
+<div class="sidebar">    
+
+    <a href="/places"><button type="button">All places</button></a>
+    <a href="/places/<%= @place.id %>/trips/new"><button type="submit">New trip</button></a>
+    <a href="/places/<%= @place.id %>/edit"><button type="submit">Edit place</button></a>
+ 
+       <form action="/places/<%= @place.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">             
+            <button type="submit">Delete place</button>
+      </form>  
+    <h2>I was here...</h2>
+
+    <h3>Place <span><%= @place.name %></span></h3>
+
+    <h3>Country <span><%= @place.countrycode %><span></h3>
+
+    <hr>
+
+    <% @place.trips.each do |trip| %>
+
+        <p>
+            <a href="/trips/<%= trip.id %>"><%= trip.title %></a>
+        </p>    
+        
+        <form class="button" action="/trips/<%= @place.id %>/records/<%= trip.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">             
+            <button type="submit">Delete</button>
+        </form>   
+
+    <% end %>    
+    
+</div>
+
+
