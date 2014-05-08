@@ -1,0 +1,14 @@
+<div class="sidebar">
+    <h2>All trips</h2>
+    <ul>
+        <% @trips.each do |trip| %>
+            <li>
+                <a href="/trips/<%= trip.id %>">
+                    <%= trip.title %>
+                </a>
+                <hr>
+            </li>
+        <% end %>
+    </ul>
+
+</div>

@@ -1,0 +1,48 @@
+body {
+  background-color: lightgreen;
+}
+
+nav {
+  font-size: 40px;
+  font-family: 'Oswald', sans-serif;
+  margin-top: -30px;
+  height: 50px;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  margin-top: 50px;
+}
+
+ul {
+list-style-type: none;
+}
+
+a, li, td {
+  font-family: 'Droid Serif', serif;
+}
+
+button {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  width: 140px;
+}
+
+.profile {
+  width: 600px;
+  background-color: green;
+  margin: 0 auto;
+}
+
+.profile h1 {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.start {
+  width: 500px;
+}
+
+.grumble {
+  width: 400px;
+}

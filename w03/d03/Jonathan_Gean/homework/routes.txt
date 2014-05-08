@@ -1,0 +1,39 @@
+GET '/zoos'
+  -shows list of zoos
+
+GET '/zoos/new'
+  -shows form through which new zoo can be added
+
+POST '/zoos'
+  -posts new entry to zoos database table after receiving input
+  from 'zoos/new'
+
+GET '/zoos/1'
+  -shows details of each zoo entry,including list of animals..1 as example of zoo id number
+
+GET '/zoos/1/animals/1'
+  -shows details of first animal in first zoo
+
+GET '/zoos/1/animals/new'
+  -shows page through which a new animal can be added to first zoo
+
+POST '/zoos/1/animals'
+  -posts new animal entry to zoo1's list
+
+GET '/zoos/1/edit'
+  -show page through which first zoo can be edited
+
+PUT '/zoos/1'
+  -put updated zoo information from zoo edit page to instance of zoo page
+
+GET '/zoos/1/animals/1/edit'
+  -show page through which first animal at first zoo can be edited
+
+PUT '/zoos/1/animals/1'
+  -put updated animal information for first animal from animal edit page to the list of animals shown on zoo page
+
+DELETE '/zoos/1'
+  -deletes zoo entry from database
+
+DELETE '/zoos/1/animals/1'
+  -deletes animal entry from particular zoo database
