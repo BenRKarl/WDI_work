@@ -65,7 +65,8 @@ while response != "q"
       persons.each { |p| print p.name + " "}
       print ")"
       new_tenant = gets.chomp
-      new_tenant = persons[persons.index(new_tenant)] if persons.include? new_tenant
+      
+
       
     end
 
@@ -78,3 +79,7 @@ while response != "q"
 
     
 end
+
+print persons
+print apartments
+print buildings
