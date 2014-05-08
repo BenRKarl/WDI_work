@@ -1,0 +1,23 @@
+<div class="wrapper">
+
+<h1><a href="/">Peaches &amp; Cream</a></h1>	
+
+
+<p class="intro">Find a dress for any occasion:</p>
+
+<ul class="nav">	
+	<% @occasions.each do |occasion| %>
+		<li>
+			<a href="/occasions/<%= occasion.id %>">
+				<%= occasion.occasion %>
+			</a>
+		</li>
+
+	<% end %>
+</ul>
+
+<form action="/occasions/new" method="get" class="single">
+	<input type="submit" value="Add new category"></input>
+</form>	
+
+</div>
