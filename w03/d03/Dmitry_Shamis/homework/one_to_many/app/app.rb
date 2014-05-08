@@ -1,3 +1,11 @@
+require 'bundler'
+Bundler.require
+
+require_relative 'models/user'
+require_relative 'models/drink'
+
+require_relative 'config.rb'
+
 # shows index of all users
 get '/users' do
   @users = User.all
