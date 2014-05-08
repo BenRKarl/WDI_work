@@ -1,0 +1,32 @@
+<div class="sidebar">
+
+    <a href="/trips"><button type="button">All trips</button></a>
+    <a href="/trips/<%= @trip.id %>/records/new"><button type="submit">New record</button></a>
+    <a href="/trips/<%= @trip.id %>/edit"><button type="submit">Edit trip</button></a>
+
+
+    <h2>What a trip!</h2>
+    <hr>
+
+    <h3>Title <span><%= @trip.title %></span></h3>
+
+    <h3>Year <span><%= @trip.year %><span></h3>
+
+    <hr>
+
+    <% @trip.records.each do |record| %>
+
+        <p>
+            <a href="/records/<%= record.id %>"><%= record.title %></a>
+        </p>    
+        
+        <form action="/trips/<%= @trip.id %>/records/<%= record.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">             
+            <button type="submit">Delete</button>
+        </form>   
+
+    <% end %>
+    
+</div>
+
+

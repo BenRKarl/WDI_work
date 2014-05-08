@@ -1,0 +1,11 @@
+div {
+  background-color: lightblue;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  float: left;
+}
+
+div:nth-child(3n) {
+  border-radius: 50px;
+}

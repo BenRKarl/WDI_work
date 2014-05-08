@@ -1,0 +1,7 @@
+
+
+<% @num.times do %>
+	<% @width  = rand(100..300) %>
+	<% @height = rand(100..300) %>
+	<img src="http://placekitten.com/<%= @width %>/<%= @height %>" />
+<% end %>

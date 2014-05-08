@@ -1,0 +1,19 @@
+<h1><%= @user.username %>'s Profile</h1>
+
+<table>
+  <% @user.drinks.each do |drink| %>
+  <tr>
+    <td><%= drink.drink %></td>
+    <td>
+      <form action="/users/<%= @user.id %>/drinks/<%= drink.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit">Delete Drink</button>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+
+<a href='/users/<%= @user.id %>/drinks/new'>New Drink?</a>
+
+<a href='/users'>Go Home</a>

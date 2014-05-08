@@ -1,0 +1,6 @@
+<h1>What can I get you, <%= @user.username %>?</h1>
+<form action="/users/<%= @user.id %>/drinks" method="post">
+  <input type="text" name="drink" placeholder="Drink">
+  <button type="submit">Order...</button>
+</form>
+
