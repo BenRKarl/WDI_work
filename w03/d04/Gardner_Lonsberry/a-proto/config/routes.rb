@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  get '/protos', :action => "index", :controller => "protos"
 
-get '/protos' => 'protos#index'
+# get '/' => 'protos#welcome'
+# end
+
+root :to => 'protos#welcome'
+
+
+get '/protos/', to: 'protos#index'
 end
+
+
+
