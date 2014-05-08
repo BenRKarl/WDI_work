@@ -25,7 +25,7 @@
 ---
 
 
-###Proto, meet Rails.  
+#Proto, meet Rails.  
 
 In this exercise, you will be creating a Rails application that handles the following routes and behaviors.  
 
@@ -36,7 +36,7 @@ In this exercise, you will be creating a Rails application that handles the foll
 |`GET` to `/protos`|protos#index | Retrieves all developers from databse.  Displays a list of all developers in class proto |
 |`GET` to `/protos/:id`|protos#show| Retrieves a single developer from database.  Displays that developers name. |
 
-##Phase 1
+###Phase 1
 ***Configure your database!*** 
 
 * You will need to edit your `config/database.yml`.  The following code is actually all that is required to connect to the database.
@@ -58,7 +58,7 @@ development:
 
 ```bash
 
-`rails generate migration create_protos_table `
+rails generate migration create_protos_table 
 
 ```
 
@@ -82,13 +82,11 @@ end
 
 
 
-##Phase 2
+###Phase 2
 
 ***Create your model***	
 * `rails g model Proto`
 
-
-* Define your routes in `config/routes.rb`.  The above table should help you out here.
 
 ***Seed your database***
 ```ruby
@@ -98,11 +96,25 @@ proto = ['Nessa Nguyen','Jeff Winkler','John Murphy','Jeff Drakos','Rebecca Stro
 * In `db/seeds.rb`, create Proto instances for each member of the class.  
 * You can run this code with the following command: `rake db:seed`
 
-##Phase 3
+###Phase 3
+
+* Define your routes in `config/routes.rb`.  The above table should help you out here.
+
 * For each route, handle the logic that corresponds to the behaviors outlined in the table.  
 
 
 ___
+
+
+# Rails Kittens
+Using the above example is a frame of reference.  Create a Rails application that handles the following routes and behaviors.  
+
+|HTTP Request | Controller#Action | Behavior |
+|-----|-----|-----|
+|`GET` to `/`| kittens#index | Displays all kittens |
+|`GET` to `kittens`| kittens#index | Displays all kittens |
+
+Your eyes to not deceive you! A get request to `/` and `/kittens` map to the same controller actions!
 
 
 
