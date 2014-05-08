@@ -1,0 +1,42 @@
+#index---------------------------------------
+get '/' do
+end
+
+#new meal type---------------------------------
+get '/meal/new' do
+#erb files POSTS to post '/meal'
+end
+
+#create new meal type-----------------------
+post '/meal' do
+#add meal to db
+#redirects to the meal index
+end
+
+#show meal--------------------------------
+get '/meal/:id'
+#lists recipes
+end
+
+#add new recipe-----------------------------
+get '/meal/:id/recipe/new
+#erb file POSTS to post '/meal/:meal_id/recipe'
+end
+
+#create recipe--------------------------
+put '/meal/:meal_id/recipe'
+
+#updates recipe in the DB
+#redirects to get '/meal/:meal_id/'
+
+end
+
+#delete recipe----------------------
+delete '/meal/:id/recipe/:id'
+
+#deletes recipe from DB based on recipe_id
+end
+
+
+
+
