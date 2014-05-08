@@ -44,6 +44,7 @@ In this exercise, you will be creating a Rails application that handles the foll
 development:
   adapter: postgresql
   database: <YOUR APP NAME>_development
+```
 
 ***Create your database!*** 
 
