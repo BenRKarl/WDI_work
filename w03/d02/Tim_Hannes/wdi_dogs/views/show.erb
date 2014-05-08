@@ -1,0 +1,6 @@
+<h3><%= @dog.name %></h3>
+
+<form action="/dogs/<%= @dog.id %>" method='post'>
+  <input type="hidden" name='_method' value='delete'>
+  <button type='submit'>Delete Dog</button>
+</form>

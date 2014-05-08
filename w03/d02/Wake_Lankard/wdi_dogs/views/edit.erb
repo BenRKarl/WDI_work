@@ -1,0 +1,42 @@
+<form action="/dogs/<%=@dog.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+<table>
+  <thead>
+    <tr>
+      <th colspan=2>
+        Dog Edit
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Name:
+      </td>
+      <td>
+        <input type="text" name="dog_name" value="<%= @dog.name %>">        
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Age:
+      </td>
+      <td>
+        <input type="number" name="dog_age" value="<%= @dog.age %>">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Breed
+      </td>
+      <td>
+       <input type="text" name="dog_breed" value="<%= @dog.breed %>">
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2 align=left>
+        <input type="submit"/>
+      </td>
+    </tr>
+  </tbody>
+</table>

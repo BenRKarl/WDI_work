@@ -1,0 +1,63 @@
+
+
+
+td {
+  border: solid black 1px;
+}
+
+thead {
+  text-align: center;
+}
+
+table {
+  border: solid black 1px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.show {
+  width: 300px;
+  margin: 0 auto;
+  border: solid black 1px;
+}
+
+.show_center {
+  text-align: center;
+}
+
+.dog_roster {
+  margin: 0 auto;
+}
+
+.table_header {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 8px;
+}
+
+.create_new {
+  text-align: center;
+}
+
+.input {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 250px;
+  border: solid black 1px;
+  padding: 10px;
+}
+
+.input h1 {
+  margin-top: 0;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+}
