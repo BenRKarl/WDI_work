@@ -1,0 +1,32 @@
+body {
+  font-family: Verdana;
+}
+
+table{
+  border-spacing: .5rem
+}
+
+th{
+ text-align: left
+ border: solid 1px;
+}
+tr {
+  text-align: left
+}
+td {
+  padding: 3px;
+}
+.name{
+  font-weight: bold;
+  color: white;
+  background-color: blue;
+}
+.age{
+  color: white;
+  background-color: lightblue;
+  text-align: right;
+}
+.breed{
+  color: white;
+  color: gray;
+}

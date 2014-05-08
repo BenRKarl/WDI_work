@@ -1,0 +1,16 @@
+<ul>
+<% @dogs.each do |dog| %>
+	<li>
+		<a href="/dogs/<%= dog.id %>"><%= dog.name %></a>,
+		<%= dog.age %> years old,
+		<%= dog.breed %>
+		<form style="display: inline-block;" method="post" action="/dogs/<%= dog.id %>">
+			<input type="hidden" name="_method" value="delete">
+			<input type="submit" value="Delete">
+		</form>
+	</li>
+<% end %>
+</ul>
+<p>
+	<a href="/dogs/new">Create a Dog</a>
+</p>

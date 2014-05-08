@@ -1,0 +1,11 @@
+<h1><%= @car.make %></h1>
+
+<h2>is a good car...</h2>
+
+<h1><%= @car.speed %> mph</h1>
+
+
+<form action="/cars/<%= @car.id %>" method='post'>
+  <input type="hidden" name='_method' value='delete'>
+  <button type='submit'>Delete</button>
+</form>
