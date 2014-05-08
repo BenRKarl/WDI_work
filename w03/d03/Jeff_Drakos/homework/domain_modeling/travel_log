@@ -1,0 +1,13 @@
+CREATE TABLE locations
+(
+id serial4 PRIMARY KEY,
+location varchar(255)
+);
+
+CREATE TABLE records
+(
+id serial4 PRIMARY KEY,
+journal_entry varchar(1000),
+day integer,
+location_id integer
+);

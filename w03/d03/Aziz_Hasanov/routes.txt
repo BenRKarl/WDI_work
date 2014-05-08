@@ -1,0 +1,51 @@
+In a file routes.txt write the full set of RESTFUL routes for your resources. You should assume that the "many" resource in your one-to-many relationship (i.e. photos in a relationship between albums and photos) can not exist outside the context of a mother resource(i.e. albums in the aforementioned example).
+
+# ActiveRecord establishes connection between Ruby and database
+
+ActiveRecord::Base.establish_connection(
+:adapter => ‘postgresql’,
+:database => ‘swimming_pool’
+)
+
+# TAKES USER TO MAIN PAGE
+1.	get ‘/‘ do
+	  erb :index	
+	end
+
+# WHERE USER INSTANCIATES NEW SWIMMER
+2.	get ‘/new’ do
+	  erb :new
+	end
+
+# WHERE INPUT FROM ‘FORM’ ON ‘NEW.ERB’ PAGE IS ASSIGNED TO A VARIABLE ‘NAME’. BASED ON THAT INPUT NEW DATA IS CREATED IN ‘SWIMMERS’ TABLE
+# WHICH TRAVELS THROUGH ’SWIMMER’ CLASS WITH HELP FROM ‘ACTIVERECORD’. THEN USER IS REDIRECTED BACK TO ‘SWIMMER’ PAGE
+3.	post ‘/swimmer'
+	  name = params[:person_name]
+	  new_swimmer = Swimmer.create({swimmer_name: name)
+	  redirect ‘/’
+	end
+
+# WHERE NEWLY CREATED SWIMMER WITH ITS OWN ID IS SHOWN
+4.	get ‘/:id’ do
+	  @new_swimmer = Swimmer.find(params[:id])
+	  erb: show
+	end
+
+# WHERE ID’ED SWIMMER IS EDITED IN DATABASE
+5.	get ‘/:id/edit’ do
+	  @edit_swimmer = Swimmer.find(params[:id])
+	  erb :edit
+	end
+
+# WHERE EDITED SWIMMER’S (PERSON’S) INFO IS UPDATED AND SAVED. USER IS THEN REDIRECTED TO THAT SWIMMERS UPDATED PAGE
+6.	put '/:id' do
+	  person = Swimmer.find(params[:id])
+	  person.save
+	  redirect “/#{person.id}"
+	end
+
+# WHERE ID’ED SWIMMER IS DELETED FROM DATABASE
+7.	delete ‘/:id’ do
+	  Swimmer.delete(params[:id])
+	  redirect ‘/’
+	end
