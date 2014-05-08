@@ -1,0 +1,12 @@
+body {
+  background: black;
+}
+div.images {
+  float: left;
+  padding: 20px;
+}
+
+img {
+  float: left;
+  border-radius: (rand(100..250))px;
+}
