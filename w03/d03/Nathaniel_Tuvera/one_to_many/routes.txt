@@ -22,5 +22,5 @@ end
 post '/spider/:id/items' do
 end
 
-
+delete '/spider/:id/items/:id'
 
