@@ -54,7 +54,7 @@ development:
 
 ***Define your schema***
 
-* Rails has built in generators that allow us to generate code very quickly.  Of use to use for the purpose of defining our schema is Rails' ability to generate migrations. 
+* Rails has built in generators that allow us to generate code very quickly.  Of use for the purpose of defining our schema is Rails' ability to generate migrations. 
 
 * We can set up our protos table with the following command run from the terminal: 
 
