@@ -1,0 +1,110 @@
+
+
+
+# example is many songs mapping to a musician
+
+#------------------------------------------------------------
+# Create:
+
+get '/musicians/new' do
+  # show form for new musician input
+  # and submit a post request
+  erb :'musicians/new'
+end
+
+post '/musicians' do
+  # add musician to database
+  # redirect to /musicians/:id
+end
+
+get '/musicians/:id/songs/new' do
+  # show form for new song input for a given musician
+  # submit post request
+  erb :'songs/new'
+end
+
+post '/musicians/:id/songs' do
+  # add song to database
+  # redirect to /musicians/:id or /musicians/:id/songs/:id if needed
+end
+
+#---------------------------------------------------------------
+# Read:
+
+get '/musicians' do
+  # list all musicians
+  erb :'musicians/index'
+end
+
+get '/musicians/:id' do
+  # show one musician
+  erb :'musicians/show'
+end
+
+# probably not needed since a bit redundant:
+get '/musicians/:id/songs' do
+  # show songs for a given musician
+  erb :'songs/index'
+end
+
+# probably not needed since a bit redundant:
+get '/musicians/:id/songs/:id' do
+  # show songs for a given musician
+  erb :'songs/show'
+end
+
+#-----------------------------------------------------------------------
+# Update:
+
+get '/musicians/:id/edit' do
+  # show form to update musician
+  # submit put request to update database
+  erb :'musicians/edit'
+end
+
+put '/musicians/:id' do
+  # update database
+  # redirect to '/musicians/:id'
+end
+
+get '/musicians/:m_id/songs/:s_id/edit' do
+  # show form to update song
+  # submit a put request to update database
+  erb :'songs/edit'
+end
+
+put '/musicians/:m_id/songs/:s_id' do
+  # update database
+  # redirect to /musicians/:id or /musicians/:id/songs/:id if needed
+end
+
+#----------------------------------------------------------------------------------
+# Delete:
+
+delete '/musicians/:id' do
+  # delete from database
+  # redirect to '/musicians'
+end
+
+delete '/musicians/:m_id/songs/:s_id' do
+  # delete from database
+  # redirect to '/musicians' or '/musicians/:id/songs'
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
