@@ -4,4 +4,12 @@ class ProtosController < ApplicationController
     @protos = Proto.all
   end
 
+  def welcome
+
+  end
+
+  def show
+    @proto = Proto.find(params[:id])
+  end
+
 end
