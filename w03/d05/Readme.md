@@ -12,9 +12,10 @@ Write a program that prints the numbers from 1 to 100. But for multiples of 3 pr
 
 # Schema Scheming.
 
-In a Rails app titled `schema_scheming_app`, set up the schema and models for the following entities and relationships. 
+In a Rails app titled `schema_scheming`, set up the schema and models for the following entities and relationships. 
 
 ## Celebrity has many Selfies has many Comments
+
 ###Celebrity 
 | column | datatype |
 |-----|-----|
@@ -36,6 +37,12 @@ In a Rails app titled `schema_scheming_app`, set up the schema and models for th
 |-----|-----|
 |content | string |
 |selfie_id | integer |
+
+###***Basic Workflow***
+* Create your database
+* Generate your models and migrations
+* Run your migrations
+
 
 
 #Squares on Rails
