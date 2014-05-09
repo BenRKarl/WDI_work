@@ -1,0 +1,10 @@
+<img src="http://placekitten.com/<%= @width %>/<%= @height %>">
+
+<form action="/kittens" method="post">
+  <input type="hidden" name="width" value="<%= @width %>">
+  <input type="hidden" name="height" value="<%= @height %>">
+  <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token">
+  <button type="submit">Save me from the web</button>
+</form>
+
+<a href="/kittens"><button>Home</button></a>
