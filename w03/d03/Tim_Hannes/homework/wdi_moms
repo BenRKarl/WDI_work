@@ -1,0 +1,16 @@
+CREATE DATABASE wdi_moms;
+
+\c wdi_moms;
+
+CREATE TABLE moms(
+wdi_moms(# id serial4 PRIMARY KEY,
+wdi_moms(# momname varchar(255)
+wdi_moms(# );
+
+CREATE TABLE children(
+id serial4 PRIMARY KEY,
+child_id varchar(255)
+);
+
+SELECT * FROM moms;
+SELECT * FROM children;

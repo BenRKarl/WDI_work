@@ -1,0 +1,17 @@
+body{
+  background-color: lightblue;
+
+}
+
+.square{
+  background: blue;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  float: right;
+}
+
+.square:nth-child(3n){
+  border-radius: 5px;
+  background: -webkit-linear-gradient(left, blue, lightblue);
+  }
