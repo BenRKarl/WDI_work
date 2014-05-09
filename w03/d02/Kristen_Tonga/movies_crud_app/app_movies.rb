@@ -29,3 +29,12 @@ post'/movies' do
   Movie.create({:title => title, :director => director, :screenwriter => screenwriter})
   redirect '/movies'
 end
+
+#show
+get '/movies/:id' do
+  @movie = Movie.find(params[:id])
+  erb :edit
+end
+
+#update
+put 'movies/:id'

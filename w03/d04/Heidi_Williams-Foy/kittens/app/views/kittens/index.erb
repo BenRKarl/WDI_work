@@ -1,0 +1,7 @@
+<h3>Hi Kitties!</h3>
+
+<ul>
+  <% @kittens.each do |kitten| %>
+	<li class= 'kitten'><%= "#{kitten.name}, #{kitten.age} months, #{kitten.gender}" %></li>
+	<% end %>
+</ul>
