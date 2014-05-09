@@ -1,0 +1,6 @@
+<h1>kittenz!</h1>
+<%= @first %>
+<% @kittens.each do |kitten| %>
+<img src="http://placekitten.com/<%= kitten.width.to_i %>/<%= kitten.height.to_i %>" alt="">
+<% end %>
+<img src="http://placekitten.com/<%= @width %>/<%= @height %>" alt="">

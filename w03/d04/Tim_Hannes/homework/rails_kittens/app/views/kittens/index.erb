@@ -1,0 +1,7 @@
+<h2>Kittens</h2>
+
+<ul>
+  <% @kittens.each do |kitten| %>
+  <li><div class='kitten'><%= kitten.name %></li> <!-- told the db to add a column for name -->
+  <% end %>
+</ul>

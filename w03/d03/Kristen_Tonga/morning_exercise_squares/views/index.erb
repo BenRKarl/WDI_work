@@ -1,0 +1,12 @@
+<h1>A Blue Square!!</h1>
+
+<% @num_squares.times do %>
+  <div class ='box'></div>
+<% end %>
+
+<div class ='index'>
+  <form action="/<%= @num_squares %>" method="get">
+    <input type="text" name="num_squares">
+    <input type="submit">
+  </form>
+</div>

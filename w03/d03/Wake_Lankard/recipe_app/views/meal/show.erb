@@ -1,0 +1,7 @@
+<%= @meal_type.meal_name %>
+<ul>
+  <% @meal_type.recipes.each do |recipe| %>
+  <li><%= recipe.recipe_name %></li>
+  <% end %>
+</ul>
+<a href="/meal/<%= @meal_type.id %>/recipe/new">Add a recipe for <%= @meal_type.meal_name %>.</a>

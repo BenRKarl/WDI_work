@@ -1,0 +1,16 @@
+
+
+for (1..1_000)
+  x = params[:num]
+  i += 1
+  print "x, "
+  if i % x:num = 0
+end
+
+if i % x = 0
+
+
+arr = (1..1000).to_a
+arr.map{|num| num if num %200 == 0}
+or
+arr.select{|num| num %200 == 0}
