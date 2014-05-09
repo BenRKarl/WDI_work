@@ -45,7 +45,7 @@ put '/friends/:id' do
   friend.save
   redirect "/friends/#{ friend.id }"
 end
-
+#delete
 delete '/friends/:id' do
   Friend.delete(params[:id])
   redirect '/friends'

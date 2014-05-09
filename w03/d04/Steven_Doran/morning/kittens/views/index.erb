@@ -1,0 +1,9 @@
+<h1>KITTENS</h1>
+
+<% @kittens.each do |kitten| %>
+    <img src="<%= kitten.url %>">
+<% end %>
+
+<form action="/kittens/random" method="link">
+    <input type="submit" value="NEW KITTEN">
+</form>
