@@ -1,0 +1,10 @@
+
+<div>
+  Hey <%= @user.username%>
+</div>
+
+
+<form action="/users/<%=@user_id%>/caws" method="post">
+  <input type="text" name="message" placeholder="Caw">
+  <button type="submit">Caw It!</button>
+</form>

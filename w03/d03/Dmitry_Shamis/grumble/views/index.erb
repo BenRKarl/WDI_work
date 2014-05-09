@@ -1,0 +1,13 @@
+
+<h1>Current Members:</h1>
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <a href="/users/<%= user.id %>">
+        <%= user.username %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+<hr>
+<a href="/users/new"><button class="start">What are you waiting for? Start Grumbling already...</button></a>

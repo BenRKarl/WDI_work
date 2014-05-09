@@ -1,0 +1,19 @@
+<h1>Here is that user: <%= @user.username %></h1>
+<form action="/users/<%= @user.id %>/meows/new" method="get">
+      <input type="submit" value="New Meow">
+    </form>
+
+<table>
+<% @user.meows.each do |meow| %>
+<tr>
+  <td><strong>Meow:</strong></td>
+  <td><%= meow.message %></td>
+  <td><form action="/users/<%= @user.id %>/meows/<%= meow.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete meow">
+  </form></td>
+</tr>
+</p>
+<% end %>
+</table>
+

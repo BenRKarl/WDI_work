@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: black;
+  background-color: #EBEBE0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.wrapper {
+    margin: 0 auto;  
+    padding: 0;
+    max-width: 960px;
+    min-height: 600px;  
+    background: url("travel.jpg") ;
+    background-size: cover;   
+}
+
+nav {
+  margin: 0;
+}
+
+.sidebar {
+  width: 300px;
+  min-height: 600px;
+  padding: 25px;
+  background-color: rgba(235,235,224,0.5); //#EBEBE0;
+}
+h1 {
+  margin: 0;
+  padding: 20px 10px; 
+  font-size: 46px;
+  color: black;
+}
+
+ul {
+  padding:0;
+  list-style-type: none;
+  line-height: 22px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #3B3B45;   
+}
+
+span {
+  color: red;
+}
+
+form.button {
+  display: inline;
+}
+
+
+
+
+
+
+
+
+
