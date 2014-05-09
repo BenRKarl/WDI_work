@@ -1,0 +1,20 @@
+<div class="signup">
+  <form action="/users/new" method='get'>
+  <button type='submit'>
+    Sign up for Cawr.
+  </button>
+</form>
+</div>
+<div class="list">
+<ul>
+  <% @users.each do |user| %>
+    <li>
+        <a href="/users/<%= user.id %>">
+          <%= user.username %>
+        </a>
+    </li>
+  <% end %>
+</ul>
+</div>
+
+

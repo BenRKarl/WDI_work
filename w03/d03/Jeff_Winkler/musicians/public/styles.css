@@ -1,0 +1,85 @@
+
+
+body {
+  background-color: lightblue;
+}
+
+h1 {
+    font-family: 'Coustard', serif;
+    font-weight: 900;
+    line-height: 46px;
+    font-size: 41px;
+    margin: 0 0 23px 0;
+    }
+
+li, .list {
+    font-family: 'Leckerli One', cursive;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+    }
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #566870;
+  font-size: 24px;
+}
+
+.x {
+
+
+  height: 200px;
+  width: 220px;
+  float: left;
+  margin: 10px;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 1px dotted black;
+  border-radius: 20px;
+  overflow: scroll;
+}
+
+.new_c {
+  background-color: lightblue;
+  height: 30px;
+  width: 100px;
+  border: 1px dotted black;
+  border-radius: 10px;
+  background-color: #566870;
+  color: white;
+  font-family: 'Leckerli One', cursive;
+}
+
+.one_m {
+  float:left;
+  width: 250px;
+  border: 1px dotted black;
+  background-color: white;
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+
+.new_d {
+  background-color: lightblue;
+  height: 20px;
+  width: 80px;
+  border: 1px dotted black;
+  border-radius: 10px;
+  background-color: #566870;
+  color: white;
+  margin-left: 20px;
+  font-family: 'Leckerli One', cursive;
+}
+
+.nameit {
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+}
