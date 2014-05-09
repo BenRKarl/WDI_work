@@ -1,0 +1,16 @@
+<h1>Kittens!!!</h1>
+
+
+
+<img src="http://www.placekitten.com/<%= @kitten.width %>/<%= @kitten.height %>">
+
+<form action="/kittens" method="post">
+  <input type="hidden" name="kitten" value"<%= @kitten %>">
+
+  <img src="http://placekitten.com/<%= @kitten.width %>/<%= @kitten.height %>" >
+<form action="/kittens" method="post">
+  <input type="hidden" name="width" value="<%=@kitten.width %>">
+  <input type="hidden" name="height" value="<%=@kitten.height %>">
+  <input type="submit" value="save kitten">
+</form>
+
