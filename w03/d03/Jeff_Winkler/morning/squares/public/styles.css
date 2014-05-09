@@ -1,0 +1,32 @@
+
+.box {
+  height: 36px;
+  width: 50px;
+  background-color: lightblue;
+}
+
+.container {
+  text-align: center;
+
+}
+
+tr {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.box {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  padding-top: 14px;
+}
+
+.box:nth-child(3n) {
+
+  border-radius: 50px;
+}

@@ -1,0 +1,14 @@
+<h2><%= @user.username %></h2>
+
+<% @user.caws.each do |caw| %>
+  <p>
+    <%= caw.message %>
+    <form action="/users/<%= @user.id %>/caws/<%= caw.id %>" method='post'>
+      <input type="hidden" name='_method' value='delete'>
+      <button type='submit'>Delete</button>
+    </form>
+  </p>
+<% end %>
+
+
+<a href="/users/<%=@user.id%>/caws/new"><h1>Add a Caw</h1></a>

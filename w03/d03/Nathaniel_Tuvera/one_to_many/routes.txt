@@ -1,0 +1,26 @@
+routes.txt
+
+get '/' do
+redirect '/spiders'
+end
+
+get '/spiders' do
+end
+
+get '/spiders/new' do
+end
+
+post '/spiders' do
+end
+
+get '/spider/:id' do
+end
+
+get '/spider/:id/items'do
+end
+
+post '/spider/:id/items' do
+end
+
+delete '/spider/:id/items/:id'
+
