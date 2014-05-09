@@ -1,0 +1,6 @@
+
+<h2>My lovely Kittens on Rails</h2>
+
+<% @kittens.each do |kitten| %>
+	<img src="http://placekitten.com/<%= kitten.width %>/<%= kitten.height %>" />
+<% end %>	
