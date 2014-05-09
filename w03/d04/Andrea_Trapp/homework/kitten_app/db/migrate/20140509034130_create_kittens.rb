@@ -1,8 +1,9 @@
 class CreateKittens < ActiveRecord::Migration
   def change
     create_table :kittens do |t|
-      t.string :width
-      t.string :height
+      t.integer :width
+      t.integer :height
+      t.string  :url
     end
   end
 end

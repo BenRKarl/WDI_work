@@ -17,8 +17,9 @@ ActiveRecord::Schema.define(version: 20140509034130) do
   enable_extension "plpgsql"
 
   create_table "kittens", force: true do |t|
-    t.string "width"
-    t.string "height"
+    t.integer "width"
+    t.integer "height"
+    t.string  "url"
   end
 
 end
