@@ -1,0 +1,20 @@
+<h2>Meow!</h2>
+
+<table>
+  <% @users.each do |user| %>
+  <tr>
+    <td>
+    <a href="/users/<%= user.id %>"><%= user.username %></a>
+    </td>
+    <td>
+    <form action="/users/<%= user.id %>/meows/new" method="get">
+      <input type="submit" value="New Meow">
+    </form>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<form action="/users/new" method="get">
+  <input type="submit" value="New Meower" class="new">
+</form>

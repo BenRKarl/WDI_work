@@ -1,0 +1,29 @@
+body {
+  text-align: center;
+  padding-top: 2em;
+  background-color: lightgray;
+  font-family: 'Roboto', sans-serif;
+}
+
+table {
+  margin: 0 auto;
+}
+
+ul {
+  text-align: left;
+  margin-left: 45%;
+}
+
+.main_image {
+  border-radius: 50%;
+  background-image: url(http://drsophiayin.com/images/uploads/phoenix%20meow.jpg);
+  width: 10em;
+  height: 10em;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  border: white solid 2px;
+}
+
+.new {
+  margin-top: 3em;
+}

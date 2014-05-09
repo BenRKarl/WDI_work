@@ -1,0 +1,1 @@
+ActiveRecord::Base.establish_connection('postgres://localhost/caws_app')
