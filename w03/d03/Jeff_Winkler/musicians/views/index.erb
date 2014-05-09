@@ -1,0 +1,20 @@
+<form action="/musicians/new" method="get">
+  <button class="new_c" type="submit">New Musician/Band</button>
+</form>
+
+
+<ul>
+  <% @musicians.each do |musician| %>
+    <li>
+      <div class="x">
+      <a class="nameit" href="/musicians/<%=musician.id%>">
+        <%= musician.name %>
+      </a>
+      <% musician.songs.each do |song| %>
+        <p><%=song.name%></p>
+      <% end %>
+    </div>
+    </li>
+  <% end %>
+
+</ul>

@@ -1,0 +1,11 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  font-family: "lobster";
+}
+
+a:link {
+  font-family: "lobster";
+}
