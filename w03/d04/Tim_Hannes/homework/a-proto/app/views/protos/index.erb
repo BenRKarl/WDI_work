@@ -1,0 +1,7 @@
+<h3>Proto Students</h3>
+
+<ul>
+  <% @protos.each do |proto| %>
+  <li><div class='proto'><%= proto.name %></li> <!-- told the db to add a column for name -->
+  <% end %>
+</ul>

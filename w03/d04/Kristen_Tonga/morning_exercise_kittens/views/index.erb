@@ -1,0 +1,7 @@
+<img src= "<%= @kitten.url %>" alt="Broken?! Where?!">
+
+<form action="/kittens" method="post">
+  <input type="hidden" name='width' value='<%= @kitten.width %>' >
+  <input type="hidden" name='height' value='<%= @kitten.height %>' >
+  <button type="submit">ADD!</button>
+</form>

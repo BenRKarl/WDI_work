@@ -1,0 +1,15 @@
+div {
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+  margin: 10px;
+  float: left;
+}
+
+.index {
+  background-color: yellow;
+}
+
+.box:nth-child(3n){
+  border-radius: 75px;
+}
