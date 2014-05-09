@@ -1,0 +1,19 @@
+<div class="profile">
+<h1><%= @user.username %>'s Profile</h1>
+
+<table>
+  <% @user.grumbles.each do |grumble| %>
+  <tr>
+    <td class="grumble"><%= grumble.message %></td>
+    <td>
+      <form action="/users/<%= @user.id %>/grumble/<%= grumble.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit">Delete Grumble</button>
+      </form>
+    </td>
+  </tr>
+  <% end %>
+</table><br>
+</div>
+<hr>
+<a href='/users/<%= @user.id %>/grumbles/new'><button type='submit'>New Grumble?</button></a>

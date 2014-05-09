@@ -1,0 +1,16 @@
+NOTES FOR HOWI SET UP MY DATABASE AND TABLES
+
+
+CREATE DATABASE one_to_many;
+
+\c one_to_many
+
+
+
+CREATE TABLE parent_offspring
+(
+id serial4 PRIMARY KEY,
+message varchar(255),
+user_id integer
+
+);
