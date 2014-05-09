@@ -1,0 +1,10 @@
+<h1>Bronymances</h1>
+
+<table>
+<%  @bronies.each do |brony| %>
+  <tr>
+    <td><%= brony.id %></td>
+    <td><%= brony.brony_name %></td>
+  </tr>
+<% end %>
+</table>

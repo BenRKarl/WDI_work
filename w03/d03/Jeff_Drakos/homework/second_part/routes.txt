@@ -1,0 +1,11 @@
+GET '/users'
+GET '/users/new'
+POST '/users'
+GET '/users/:id'
+GET '/users/:id/edit'
+PUT '/users/:id'
+DELETE '/users/:id'
+
+GET '/users/:id/restaurants/new'
+POST '/users/:id/restaurants'
+DELETE '/users/:user_id/restaurants/:restaurant_id'

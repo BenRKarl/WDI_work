@@ -1,0 +1,8 @@
+<h1>Here are all the users:</h1>
+<% @users.each do |user|%>
+ <a href="/users/<%=user.id%>"><p><%=user.name%></p></a>
+  <p><%=user.email%></p>
+
+<% end %>
+
+<h3>Create a new user <a href="/users/new">here</a>.</h3>

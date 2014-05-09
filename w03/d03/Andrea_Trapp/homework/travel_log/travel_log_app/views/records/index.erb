@@ -1,0 +1,13 @@
+<div class="sidebar">
+    <h2>All records</h2>
+    <ul>
+        <% @records.each do |record| %>
+            <li>
+                <a href="/records/<%= record.id %>">
+                    <%= record.title %>
+                </a>
+                <hr>
+            </li>
+        <% end %>
+    </ul>
+</div>

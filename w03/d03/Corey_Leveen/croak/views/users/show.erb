@@ -1,0 +1,21 @@
+<h1><%= @user.username %></h1>
+
+  <% @user.croaks.each do |croak| %>
+  <p>
+
+    <%= croak.message %>
+      <form action="/users/<%= @user.id %>/croaks/<%= croak.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit">Delete</button>
+      </form>
+
+  </p>
+
+
+  <% end %>
+
+<a href="/users/<%= @user.id %>/croaks/new">
+  <h2>
+    Croak time
+  </h2>
+</a>
