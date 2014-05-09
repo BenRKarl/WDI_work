@@ -1,0 +1,9 @@
+GET	/products	Product	index	display all products in an overview
+GET	/products/new	Product	new	return an HTML form for creating a new product
+POST	/products	Product	create	create a new product
+GET	/products/1	Product	show	display a specific product
+GET	/products/1/edit	Product	edit	return an HTML form for editing a product
+PUT	/products/1	Product	update	update a specific product
+DELETE	/products/1/	Product	destroy	delete a specific product
+
+ 
