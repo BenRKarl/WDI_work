@@ -1,0 +1,19 @@
+CREATE DATABASE journal_with_places_db;
+
+\c journals_with_places_db
+
+
+
+CREATE TABLE journal
+(
+  id serial4 PRIMARY KEY,
+  places varchar(255)
+);
+
+
+CREATE TABLE places
+(
+  id serial4 PRIMARY KEY,
+  place_id integer,
+  journalentry varchar(40000)
+);

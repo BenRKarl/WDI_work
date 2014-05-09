@@ -1,0 +1,16 @@
+<h1><%= @user.username %></h1>
+
+<% @user.bloops.each do |bloop| %>
+  <p>
+    <%= bloop.message %>
+    <form action="/users/<%= @user.id %>/bloops/<%= bloop.id %>" method='post'>
+      <input type="hidden" name='_method' value='delete'>
+      <button type='submit'>Delete</button>
+    </form>
+  </p>
+<% end %>
+
+<form action="/users/<%= @user.id %>/bloops/new" method='get'>
+  <button type='submit'>Bloop?</button>
+</form>
+
