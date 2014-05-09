@@ -1,0 +1,9 @@
+body {
+  background-color: #D4CEC1;
+  color: #836041;
+  font-family: sans-serif;
+}
+.container{
+  width: 50%;
+  margin: 50px auto;
+}
