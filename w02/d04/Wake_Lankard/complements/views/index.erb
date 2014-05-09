@@ -1,0 +1,14 @@
+<h3> You are Great.</h3>
+<head>
+  <style>
+
+  body{ background-color: #<%= @color %>; } 
+   </style>
+</head>
+
+<form action="/great" method="post">
+  <input type="text" name="user_name">
+  <input type="submit">
+</form>
+
+<h1><%= @compliment %></h1>

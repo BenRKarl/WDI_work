@@ -1,0 +1,16 @@
+body {
+  background-color: lightblue;
+}
+
+div.center {
+  width: 80%;
+  margin: 0 auto;
+  background-color: gray;
+
+}
+
+img {
+  max-height: 340px;
+  border-radius: 30px;
+  border: 1px solid white;
+}
