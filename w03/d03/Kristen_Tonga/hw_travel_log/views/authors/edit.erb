@@ -1,0 +1,10 @@
+<h1>What do you wish to edit?</h1>
+
+
+<form action="/authors/<%= author.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="name" placeholder="What is your name?">
+  <input type="text" name="age" placeholder="How old are you?">
+  <input type="text" name="name" placeholder="Where are you from?">
+  <input type="submit">
+</form>

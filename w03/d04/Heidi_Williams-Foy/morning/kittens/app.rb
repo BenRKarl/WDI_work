@@ -1,26 +1,22 @@
-require 'pg'
-require 'active_record'
+require 'bundler'
+Bundler.require
 
-# Connect to database
-database_name = "kittens_db"
-ActiveRecord::Base.establish_connection("postgres://localhost/#{database_name}")
+require './config.rb' 
+require './models/kitten'
 
-
-# Define your models
-class kittens < ActiveRecord::Base
-  belongs_to :user
+get '/kittens/random' do
+	@width = rand(250..500)
+	@height = rand(250..500)
+   	erb :random
 end
 
-class User < ActiveRecord::Base
-  has_many :kittens
+get '/kittens' do
+	@kittens = Kitten.all
+	erb :index
 end
 
+post '/kittens' do
+	Kitten.create(width: params[:width].to_i, height: params[:height].to_i)
+	redirect '/kittens'
+end
 
-# Test out the association methods!!
-my_user = User.create({username: 'Lichard'})
-my_caw = kittens.create({message: 'Working on The Great WDisby'})
-my_user.caws << my_caw
-
-# Did it work?
-puts "User:   " + my_user.username
-puts "Caw:    " + my_user.k.first.message
