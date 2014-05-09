@@ -1,4 +1,6 @@
+
 require_relative '../wdispec.rb'
+
 require_relative 'calculator.rb'
 
 calc = Calculator.new

@@ -1,0 +1,10 @@
+<h1>index.erb</h1>
+<form action="/num" method='get'>
+  <input type="text" name="num" placeholder="Enter a number">
+  <input type="submit">
+</form>
+
+<% @arr.each do |num| %>
+  <h2><%= num %></h2>
+  <% end %>
+

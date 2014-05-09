@@ -1,0 +1,13 @@
+body {
+  background-color: yellow;
+font-family: 'Titillium Web', Arial, serif;
+}
+
+h2 {
+font-family: 'Oswald';
+}
+
+hr {
+  background-color: black;
+  border: 2px solid black;
+}
