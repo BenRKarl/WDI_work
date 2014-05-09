@@ -1,0 +1,8 @@
+<h1>The kittens will go here...</h1>
+
+<% @kittens.each do |kitten| %>
+  <img src="http://placekitten.com/<%= kitten.width %>/<%= kitten.height %>">
+<% end %>
+
+
+<h3>See a random kitten <a href="/kittens/random">here</a>.</h3>

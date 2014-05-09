@@ -1,0 +1,16 @@
+<h2><%= @user.username %></h2>
+
+<% @user.baahs.each do |baah| %>
+  <p>
+    <%= baah.message %>
+  </p>
+  <form action="/users/<%= @user.id %>/baahs/<%= baah.id %>" method="post">
+
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">DELETE</button>
+  </form>
+  
+<% end %>
+<form action="/users/<%= @user.id %>/baahs/new" method="get">
+    <button type="submit">Baaaah Time</button>
+  </form>
