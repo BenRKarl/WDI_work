@@ -1,0 +1,9 @@
+<h1>You found a kitten? Save it or it will be gone forever!</h1>
+
+<img src="http://placekitten.com/g/<%= @kitten.width %>/<%= @kitten.height %>">
+</br>
+<form action="/kittens" method="post">
+  <input type="hidden" name="width" value="<%= @kitten.width %>">
+  <input type="hidden" name="height" value="<%= @kitten.height %>">
+  <input type="submit" value="Save this kitten!">
+</form>

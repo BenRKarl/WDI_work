@@ -1,0 +1,10 @@
+<h1>Here's your chance to do some editing and revising, reformulating and even rewriting!!</h1>
+
+<form action="/authors/<%= author.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="author_id" placeholder="What's your id/Who wrote this?">
+  <input type="text" name="message" placeholder="What did you want to say then?">
+  <input type="text" name="place" placeholder="Where was it?">
+  <input type="text" name="tags" placeholder="Please sepearte each tag with a comma">
+  <input type="submit">
+</form>

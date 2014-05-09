@@ -1,0 +1,27 @@
+<h1>AUTHORS of our POSTS!</h1>
+
+<form action="/authors/new" method=get>
+  <button class = "add_author">
+    Become an Author!
+  </button>
+</form>
+
+<table>
+  <% @authors.each do |author| %>
+    <tr>
+      <td>
+        <%= author.name %>
+        <form action="/authors/<%= author.id %>" method= "get">
+          <button type="submit">SHOW</button>
+        </form>
+        <form action="/authors/<%= author.id %>/edit" method="get">
+          <button type="submit">EDIT</button>
+        </form>
+        <form action="/authors/<%= author.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">DELETE</button>
+        </form>
+      </td>
+    </tr>
+  <% end %>
+</table>

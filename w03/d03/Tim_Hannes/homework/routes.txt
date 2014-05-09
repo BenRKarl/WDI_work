@@ -1,0 +1,46 @@
+#write the 7 routes for your wdi_twitter database.
+
+#index
+get '/' do
+  @users = User.all
+  erb :index
+end
+
+#new
+get '/users/new' do
+  erb :'users/new'
+end
+
+#create
+post '/users' do
+  username = params[:username]
+  new_user = User.create({username: username})
+  redirect "/users/#{ new_user.id }"
+end
+
+#show
+get '/users/:id' do
+  @user = User.find(params[:id])
+  erb :'users/show'
+end
+
+get '/users/:id/tweets/new' do
+ @user = User.find(params[:id])
+ erb :'tweets/new'
+end
+
+post '/users/:id/tweets'
+  user = User.find(params[:id])
+  message = params[:message]
+  new_tweet = Tweet.create({tweet: tweet})
+  user.tweets << new_tweet
+  redirect "/users/#{params[:id]}"
+end
+
+delete '/users/:user_id/tweet/:tweet_id' do
+  user_id = params[:user_id]
+  User.delete(tweet_new)
+  redirect "/users/#{params[:user_id]}"
+end
+
+
