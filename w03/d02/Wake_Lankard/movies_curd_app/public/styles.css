@@ -1,3 +1,9 @@
 body {
-  background-color: lightblue;
+  background-color: #E1D9C7;
+  color: #31AF81;
+  font-family: sans-serif;
+}
+
+tr {
+  margin: 10px;
 }
