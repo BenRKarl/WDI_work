@@ -1,0 +1,11 @@
+<div class="sidebar">
+
+    <h2>Edit place:</h2>
+
+    <form action="/places/<%= @place.id %>" method='post'>
+      <input type="hidden" name="_method" value="put">    
+      <input type="text" name='name' value='<%= @place.name %>'>
+      <input type="text" name='countrycode' value='<%= @place.countrycode %>'>     
+      <input type="submit">
+    </form>
+</div>

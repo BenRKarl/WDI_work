@@ -14,6 +14,6 @@ proto_sub = Submarine.New
 proto_sailors.each{ |sailor| proto_sub.accept_sailor(sailor) }
 
 get '/sailors' do
-  @submarin
+  @submarine
   erb :index
 end

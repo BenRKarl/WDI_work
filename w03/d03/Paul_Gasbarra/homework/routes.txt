@@ -1,0 +1,31 @@
+RESTful Routes for My Little Brony
+My little Brony is a database where adult collectors of My Little Pony Dolls can post details about themselves, their collection and the ponies.
+
+Homepage
+  Brony(collector)-Details
+  Brony(collector)
+  Brony(collector)
+  New Brony
+
+Brony Collector Page
+  Owned Pony
+  Owned Pony
+  Owned Pony
+  Owned Pony
+  Add Pony
+  Mark Pony as Favorite
+  Edit
+  Return to Homepage
+
+New Brony
+  Slot for name
+  Submit goes to Brony Collector Page
+
+Add Pony Page
+  Form for Name
+  Form for Ability
+  Submit goes to Brony Collector Page
+
+
+
+

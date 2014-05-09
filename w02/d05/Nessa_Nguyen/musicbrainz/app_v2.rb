@@ -33,13 +33,13 @@ get '/search' do
 	else
 	  @artists = []
     artist_array.each do |artist_info|
-  	  name = artist_info.fetch('name') 
-
+  	  name = artist_info.fetch('name', "Artist not found") 
+      if name != "Artist not found"
     	if artist_info.fetch('type', "not found") != "not found" 
     		if artist_info.fetch('type').downcase == "person"  
     			type = "Solo artist"
     		elsif artist_info.fetch('type').downcase == "group"
-    		 	type = "Group"
+    		 	type = "Group"  
     		end
     	end
   		
@@ -69,7 +69,7 @@ get '/search' do
       else   
           tag_list << "no tag associated"
       end 
-
+      end # != artist not found
       @artists << [name, country, type, begin_date, tag_list]  
     end 
   end			
