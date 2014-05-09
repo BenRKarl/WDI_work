@@ -1,0 +1,4 @@
+<h2>HERE ARE ALL YOUR KITTENS!!</h2>
+<% @kittens.each do |kitten| %>
+  <img src="http://placekitten.com/<%= kitten.width %>/<%= kitten.height %>" alt="">
+<% end %>

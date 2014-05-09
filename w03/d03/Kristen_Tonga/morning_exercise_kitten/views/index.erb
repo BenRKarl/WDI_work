@@ -1,0 +1,6 @@
+
+<!-- <img class="kitten" src="http://placekitten.com/<%=@width%>/<%=@height%>"> -->
+
+<% @kittens.each do |kitten| %>
+  <img src="<%= kitten.url%>" alt="">
+<% end %>
