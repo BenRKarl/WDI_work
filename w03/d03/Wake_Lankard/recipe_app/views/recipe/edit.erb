@@ -1,0 +1,4 @@
+<form action='/meal/<%= @meal_type.id %>/recipe/<%= recipe.id %>' method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="new_recipe_name" value=" <%= recipe.recipe_name %>">
+  <input type="submit" value="submit">

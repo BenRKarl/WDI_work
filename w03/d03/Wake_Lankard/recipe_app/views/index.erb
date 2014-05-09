@@ -1,0 +1,7 @@
+<h1>List of Meal Types</h1>
+<ul>
+<% @meal_types.each do |meal| %>
+  <li> <a href="/meal/<%= meal.id %>"><%= meal.meal_name %></a> </li>
+  <% end %>
+</ul>
+<a href="/meal/new">Add a Meal Type</a>
