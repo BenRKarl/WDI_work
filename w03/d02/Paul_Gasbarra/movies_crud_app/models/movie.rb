@@ -1,7 +1,3 @@
-class Movie
-
-  def initialize
-
-  end
+class Movie < ActiveRecord::Base
 
 end

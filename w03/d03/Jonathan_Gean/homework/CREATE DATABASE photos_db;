@@ -1,0 +1,32 @@
+CREATE DATABASE photos_db;
+
+\c photos_db
+
+
+
+CREATE TABLE wedding
+(
+  id serial4 PRIMARY KEY,
+  events varchar(255)
+);
+
+
+CREATE TABLE couples_and_family
+(
+  id serial4 PRIMARY KEY,
+  shoots varchar(40000)
+);
+
+CREATE TABLE wedding_albums
+(
+  wedding_id integer,
+  photos varchar(255)
+
+)
+
+CREATE TABLE couples_and_family_albums
+(
+  shoot_id integer,
+  photos varchar(255)
+
+)

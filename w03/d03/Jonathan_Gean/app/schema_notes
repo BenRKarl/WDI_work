@@ -1,0 +1,24 @@
+schema_notes
+
+CREATE DATABASE wdi_gawp_app
+\c wdi_gawp_app
+
+CREATE TABLE users
+(
+  id serial4 PRIMARY KEY,
+  username varchar(255)
+);
+
+CREATE TABLE gawps
+(
+id serial4 PRIMARY KEY,
+message varchar(255),
+user_id integer
+
+)
+
+ User.create({username: 'Lichard'})
+ Caw.create({message: 'Wow'})
+ dump.gawps << jump
+
+ INSERT INTO gawps (message, user_id) VALUES ('ded', '7');
