@@ -1,0 +1,15 @@
+body {
+  text-align: center;
+  padding-top: 2em;
+}
+
+div {
+  height: 5em;
+  width: 5em;
+  background-color: blue;
+}
+
+div:nth-child(3n) {
+background-color: blue;
+border-radius: 50%
+}

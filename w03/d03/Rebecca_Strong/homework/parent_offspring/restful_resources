@@ -1,0 +1,19 @@
+
+#READ
+Get/offsprings (erb shd be :index)
+
+Get/offsprings/:id (ie. a specific offspring; erb shd be  :offspring/show )
+
+
+#CREATE
+Get offsprings/new (erb shd be :offsprings/new)
+
+Post/offsprings (REDIRECTS TO 'Get/offsprings/:id')
+
+
+#UPDATE
+Get/offsprings/:id/parent/new (aka. /'edit'; use .find on specific instance; erb should be :parents/new)
+
+Put/offsprings/:id (makes possible mutational change - here possibly # and gender of a specific offspring; REDIRECTS TO offsprings/:id ie. the specific instance of a single offspring)
+
+Delete/offsprings/:id (REDIRECTS TO offsprings/:id --or no /id ???? my notes from Aldric's lecture indicate :id, but the dogs exercise yesterday indicates not. )

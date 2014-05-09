@@ -1,0 +1,11 @@
+<div class="sidebar">
+
+    <h2>Edit trip:</h2>
+
+    <form action="/trips/<%= @trip.id %>" method='post'>
+      <input type="hidden" name="_method" value="put">    
+      <input type="text" name='title' value='<%= @trip.title %>'>    
+      <input type="text" name='year' value='<%= @trip.year %>'>     
+      <input type="submit">
+    </form>
+</div>
