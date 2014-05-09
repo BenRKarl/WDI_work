@@ -114,7 +114,7 @@ Using the above example is a frame of reference.  Create a Rails application tha
 |HTTP Request | Controller#Action | Behavior |
 |-----|-----|-----|
 |`GET` to `/`| kittens#index | Displays all kittens |
-|`GET` to `kittens`| kittens#index | Displays all kittens |
+|`GET` to `/kittens`| kittens#index | Displays all kittens |
 
 Your eyes do not deceive you! A get request to `/` and `/kittens` map to the same controller actions!
 
