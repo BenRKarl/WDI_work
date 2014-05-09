@@ -1,15 +1,15 @@
 
 class ProtosController < ApplicationController
   def index
-
     @protos = Proto.all
+  end
 
-    @proto = ['Jeff Winkler','John Murphy','Nessa Nguyen','Jeff Drakos','Rebecca Strong',
-             'Gardner Lonsberry' ,'Jonathan Gean','Nathaniel Tuvera','Tim Hannes',
-              'Aziz Hasanov','Chris Heuberger','Dmitry Shamis' ,'Corey Leveen','Paul Hiam',
-              'Steven Doran','Ben Karl','Kristen Tonga','Wake Lankard','Carlos Pichardo' ,
-              'Paul Gasberra','Andrea Trapp','Heidi Williams-Foy'
-            ]
+  def welcome
+  end
+
+  def show
+    id = params[:id]
+    @curr_proto = Proto.find(id)
   end
 end
 
