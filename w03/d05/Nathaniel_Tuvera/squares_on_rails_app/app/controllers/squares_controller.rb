@@ -28,5 +28,7 @@ class SquaresController < ApplicationController
   end
 
   def destroy
+    Square.delete(params[:id])
+    redirect_to '/squares'
   end
 end

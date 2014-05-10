@@ -10,7 +10,8 @@
 </div>
 
 
-<form action="/squares/<%= @square.id %>" method="post">
+<div>
+  <form action="/squares/<%= @square.id %>" method="post">
   <%= token_tag %>
   <input type="hidden" name="_method" value="put">
   <input type="text" name="side" placeholder="Enter new length">
@@ -18,3 +19,10 @@
   <input type="text" name="color" placeholder="Enter new color">
   <input type="submit" value="Edit square">
 </form>
+
+<form action="/squares/<%= @square.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete square">
+</form>
+</div>

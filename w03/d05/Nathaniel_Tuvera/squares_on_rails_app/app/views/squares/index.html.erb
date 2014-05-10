@@ -1,7 +1,10 @@
-<p>display all varying squares here</p>
+<div><p>display all varying squares here</p>
 
-
-
+<a href="/squares/new">
+  <button>Add New Square</button>
+</a>
+</div>
+<div>
 <% @squares.each do |square| %>
 
 <a href="/squares/<%= square.id %>/edit">
@@ -14,3 +17,4 @@
           </div>
         </a>
 <% end %>
+</div>
