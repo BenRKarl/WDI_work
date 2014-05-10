@@ -1,0 +1,16 @@
+<h1>Here are all our squares!</h1>
+
+<form action="/squares/new" method="get">
+  <input type="submit" value="Create new square">
+</form>
+
+<% @squares.each do |square| %>
+  <div style="
+    height: <%= square.side_length %>em;
+    width: <%= square.side_length %>em;
+    border-radius: <%= square.border_radius %>%;
+    background-color: <%= square.color %>
+    ">
+    <p></p>
+  </div>
+<% end %>
