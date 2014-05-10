@@ -1,0 +1,154 @@
+
+
+ html {
+
+background: url('http://i.imgur.com/oT6lbki.jpg?1') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;background-size: cover;
+
+}
+
+@media (max-width: 800px) {
+  body {
+    background: black;
+    display: block;
+    padding: 5px;
+  }
+.iframe {
+  width: 100%;
+  height: 320px;
+}
+
+h1 {
+    font-size: 36px;
+
+  }
+
+}
+
+.container {
+
+  margin-top: -5px;
+  display: inline-block;
+  height: 400px;
+  width: 320px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background: black;
+}
+
+article {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 28px;
+  font-family: Arial;
+  font-style: bold;
+  font-style: italic;
+  text-align: center;
+  color: white;
+  text-align: left;
+  padding-top: 50px;
+  padding-left: 30px;
+
+}
+
+h2 {
+  font-size: 16px;
+  font-family: Arial;
+  font-style: italic;
+  color: white;
+  text-align: left;
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-bottom: 80px;
+}
+
+form {
+  padding-left: 30px;
+}
+
+footer {
+  background: rgba(0,0,0,0.5);
+  display: inline-block;
+  width: 291px;
+  font-family: Garamond;
+  font-size: 10px;
+  color: white;
+  padding-top: 70px;
+  padding-left: 30px;
+  border-radius: 0 0 0 10px;
+
+
+}
+
+h3 {
+  font-family: Avenir Book;
+  font-size: 16px;
+  font-style: bold;
+  padding-left: 30px;
+  color: white;
+
+}
+
+
+p {
+
+font-family: Arial;
+font-size: 14px;
+font-style: bold;
+color: white;
+display: inline-block;
+
+}
+
+.right {
+
+
+  display: inline-block;
+  height: 100%;
+  width: 320px;
+  border-left: 1px solid black;
+  background-color: black;
+
+
+
+}
+
+.video
+
+}
+
+.table {
+
+
+  color: white;
+}
+
+.left {
+
+  display: inline-block;
+  height: 100%;
+  width: 320px;
+  border-left: 1px solid black;
+  background-color: black;
+  color: white;
+
+}
+
+.albums {
+
+  margin-top: -5px;
+  display: inline-block;
+  height: 100%;
+  width: 320px;
+  border-left: 1px solid black;
+  background-color: black;
+  color: white;
+
+}
+
+}

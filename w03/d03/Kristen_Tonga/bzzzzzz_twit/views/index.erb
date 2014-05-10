@@ -1,0 +1,15 @@
+
+<hr>
+<h2>These are the bees in your hive!</h2>
+<hr>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <a href="/users/<%= user.id %>">
+        <%= user.username %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+

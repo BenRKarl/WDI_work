@@ -1,0 +1,11 @@
+<h1>These numbers are divisible by <%= @num %>:</h1>
+
+<ul>
+  <% for n in 1..1000 %>
+  <% if n % @num == 0 %>
+    <li>
+      <%= n %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>

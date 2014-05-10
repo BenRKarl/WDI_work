@@ -1,0 +1,50 @@
+
+get '/dogs' do
+@dogs = Dogs.all
+end
+
+#new
+get 'dogs/new' do
+erb :'dogs/new'
+end
+#create
+post '/dogs' do
+.etc params etc
+new_dog = Dog.create({name: name})
+end
+#read
+get '/dogs/:id' do
+@dog = Dog.find(params[:id])
+erb :'dogs/show'
+end
+
+#new sheep
+get '/dogs/:id/sheep/new' do
+.etc
+.etc
+erb :'sheep/new'
+end
+
+#create sheep
+post '/dogs/:id/sheep' do
+
+dog = Dog.find(params[:id])
+color = params[:color]
+new_sheep = Sheep.create(color: color)
+dog.sheep << new_sheep
+redirect ..etc
+end
+
+
+#delete sheep
+delete '/dogs/:dog_id/sheep/sheep_id' do
+dog_id = params
+sheep_id = params
+
+Sheep.delete(sheep_id)
+redirect ..etc
+end
+
+
+
+

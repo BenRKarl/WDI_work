@@ -1,0 +1,17 @@
+<h2>Here is <%= @user.username %>. </h2>
+
+<form action="/users/<%= @user.id%>/bzzzs/new" method='get'>
+  <input type="submit">
+  What's Buzzin??
+  </button>
+</form>
+
+<% @user.bzzzs.each do |bzzz| %>
+  <p>
+    <%= bzzz.message %>
+    <form action="/users/<%= @user.id %>/bzzzs/<%= bzzz.id %>" method='post'>
+      <input type="hidden" name='_method' value='delete'>
+      <button type="submit">Delete</button>
+      </form>
+  </p>
+<% end %>
