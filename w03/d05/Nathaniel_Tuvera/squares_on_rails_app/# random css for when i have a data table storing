@@ -1,8 +1,0 @@
-# random css for when i have a data table storing values  -- does this need an <% end %>?
-
-.square {
-  height: <%= @squares.side_length %>px;
-  width: <%= @squares.side_length %>px;
-  border-radius: <%= @squares.border_radius %>px;
-  background-color: '<%= @squares.color %>';
-}
