@@ -1,19 +1,4 @@
 <h1>Here is an index of Squares!</h1>
 
-<ul>
-  <% @squares.each do |square| %>
-    <li>
-      <a href="/squares/<%= square.id %>">
-        <%= user.username %>
-      </a>
-    </li>
-  <% end %>
-</ul>
 
-
-<form action="/squares/<%= @square.id %>" method='post'>
-  <input type="hidden" name="_method" value="put">
-  <%= token_tag %>
-  <input type="text" name='square[square_edited]' value='<%= @user.username %>'>
-  <input type="submit">
-</form>
+<a href="/squares/new">Make a new square</a>
