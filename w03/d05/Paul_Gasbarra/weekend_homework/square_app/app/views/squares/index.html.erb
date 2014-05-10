@@ -1,0 +1,14 @@
+<h1>Squares</h1>
+
+<ul>
+<% @squares.each do |square|%>
+<li><div style=
+  "width:<%= square.side_length %>;
+  height:<%=square.side_length %>;
+  border-radius:<%= square.border_radius %>;
+  color:<%= square.color %>; margin: 10px">
+</div></li>
+<% end %>
+</ul>
+
+<a href='/squares/new'><button>Add square</button></a>

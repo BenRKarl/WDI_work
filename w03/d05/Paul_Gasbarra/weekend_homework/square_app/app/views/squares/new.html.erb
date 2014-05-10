@@ -1,0 +1,16 @@
+<h2>Add a Square</h2>
+
+
+<form action="/squares" method='post'>
+Enter side length.
+  <input type="integer" name='side_length'/><%= token_tag %>
+
+
+Enter border radius.
+  <input type="integer" name='border_radius'/><%= token_tag %>
+
+
+Enter color radius.
+  <input type="text" name='color'/><%= token_tag %>
+  <input type="submit">
+</form>
