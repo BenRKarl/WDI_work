@@ -1,0 +1,20 @@
+<p>edit.erb.html -- returns an html form for editing params[:id] element</p>
+
+
+<h2>Square id: <%= @square.id %> </h2>
+<div style="width: <%= @square.side_length %>px;
+  height: <%= @square.side_length %>px;
+  border-radius: <%= @square.border_radius %>px;
+  background-color: <%= @square.color %>;
+  margin: 10px;">
+</div>
+
+
+<form action="/squares/<%= @square.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="side" placeholder="Enter new length">
+  <input type="text" name="radius" placeholder="Enter new radius">
+  <input type="text" name="color" placeholder="Enter new color">
+  <input type="submit" value="Edit square">
+</form>

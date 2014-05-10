@@ -4,11 +4,13 @@
 
 <% @squares.each do |square| %>
 
-<div style="width: <%= square.side_length %>px;
+<a href="/squares/<%= square.id %>/edit">
+  <div class ="square" style="width: <%= square.side_length %>px;
             height: <%= square.side_length %>px;
             border-radius: <%= square.border_radius %>px;
             background-color: <%= square.color %>;
             float: left;
             margin: 10px;">
           </div>
+        </a>
 <% end %>
