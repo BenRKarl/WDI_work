@@ -1,0 +1,16 @@
+<table border = 1>
+  <% @developers.each do |dev| %>
+  <% initials, name, tagline = dev.to_s.split(':') %>
+  <tr>
+    <td>
+       <%= dev.initials %>
+     </td>
+     <td>
+      <%= name %>
+    </td>
+    <td>
+      <%= tagline %>
+    </td>
+  </tr>
+ <% end %>
+</table>

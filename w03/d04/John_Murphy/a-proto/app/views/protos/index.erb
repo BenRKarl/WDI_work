@@ -1,0 +1,8 @@
+<h1>Hello world!</h1>
+
+
+<ul>
+  <% @protos.each do |proto| %>
+  <li class = 'proto'> <a href="/protos/<%= proto.id %>"><%= proto.name %></a></li>
+  <% end %>
+</ul>

@@ -1,0 +1,22 @@
+wdi_twitter
+
+CREATE DATABASE wdi_twitter;
+
+ \c wdi_twitter;
+
+ CREATE TABLE users(
+(# id serial4 PRIMARY KEY,
+(# username varchar(255));
+
+CREATE TABLE tweets(
+(# id serial4 PRIMARY KEY,
+(# tweet varchar(140),
+(# user_id integer);
+
+ALTER TABLE tweets
+RENAME COLUMN user_id to username;
+#reverse that action
+ALTER TABLE tweets
+RENAME COLUMN username to user-id;
+
+

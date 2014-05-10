@@ -1,0 +1,41 @@
+body{
+  background-color: lightblue;
+  font-family: sans-serif;
+  color: #3F507E;
+}
+
+a{
+  text-decoration: none;
+  color: #3F507E;
+}
+a:visited{
+  text-decoration: none;
+  color: #3F507E;
+
+}
+
+.container {
+  width: 75%;
+  margin: 100px auto;
+}
+
+td{
+  font-family: 'Ubuntu';
+}
+ul{
+  list-style-type: none;
+}
+li:nth-child(even){
+  background: white;
+}
+
+h1 {
+    font-family: 'Dosis', sans-serif;
+    }
+h2 {
+    font-family: 'Dosis', sans-serif;
+    }
+p {
+    font-family: 'Open Sans', sans-serif;
+    margin: 5px;
+    }
