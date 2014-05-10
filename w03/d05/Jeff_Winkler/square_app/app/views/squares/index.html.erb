@@ -1,0 +1,23 @@
+<div class="container">
+
+<form action="/squares/new" method="get">
+  <button type="submit">New square</button>
+</form>
+
+
+
+
+<% @squares.each do |square| %>
+
+<form action="/squares/<%=square.id%>" method="get">
+  <button class="sq_but" type="submit">
+  <div class="squares" style="width: <%= square.side_length %>px; height: <%= square.side_length %>px;
+      background-color:  <%= square.color %>; border-radius: <%= square.border_radius %>px">
+
+  </div>
+  </button>
+</form>
+<% end %>
+
+
+</div>

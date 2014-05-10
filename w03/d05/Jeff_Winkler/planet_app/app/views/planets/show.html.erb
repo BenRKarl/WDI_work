@@ -1,0 +1,36 @@
+
+
+<div class="all_cols">
+    <div class="left_col">
+        <form action="/planets/<%= @planet.id %>/edit" method="get">
+          <button class="show_but" type="submit">Edit</button>
+        </form>
+        <form action="/planets/<%= @planet.id %>" method="post">
+          <%= token_tag %>
+          <input type="hidden" name="_method" value="delete">
+          <button class="show_but" type="submit">Delete</button>
+        </form>
+        <form action="/planets" method="get">
+          <button class="show_but" type="submit">Back</button>
+        </form>
+    </div>
+    <div class="midCol">
+    </div>
+    <div class="right_col">
+        <div class="name_div">
+            <%= @planet.name.upcase %>
+        </div>
+        <br/>
+        <img class="planet_img" src="<%=@planet.image_url%>">
+        <div class="facts">
+            <ul>
+              <li>
+                <%= @message %>
+              </li>
+               <li>
+                <%= @diam %>
+              </li>
+            </ul>
+        </div>
+    </div>
+</div>

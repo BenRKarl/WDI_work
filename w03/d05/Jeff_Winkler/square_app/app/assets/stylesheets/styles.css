@@ -1,0 +1,14 @@
+
+.container {
+  text-align: center;
+}
+
+.squares {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.sq_but {
+  background-color: white;
+  border: none;
+}
