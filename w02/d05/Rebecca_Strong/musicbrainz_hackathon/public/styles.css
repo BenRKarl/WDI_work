@@ -1,0 +1,48 @@
+body {
+
+img {
+
+background: url('http://i.imgur.com/oT6lbki.jpg?1');
+background-size: cover;
+color: white;
+}
+
+@media (max-width: 500px) {
+  body {
+    background: red;
+  h1 {
+    font-size: 36px;
+  }
+  li {
+    display: block;
+    padding: 5px;
+  }
+}
+
+div {
+  display: inline;
+  height: 100%;
+  width: 25%;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #000000;
+}
+
+article {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h1 {
+font-size: 35px;
+font-family: Arial;
+}
+
+footer {
+(c) 2014 Rebecca Strong, Andrea Trapp
+background: rgba(0,0,0,0.5);
+}
+
+
+
+}
