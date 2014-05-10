@@ -8,7 +8,8 @@ class SquaresController < ApplicationController
   end
 
   def create
-
+    new_square = Square.create({:side_length => params[:side], :border_radius => params[:border], :color => params[:color]})
+    redirect_to "/squares"
   end
 
   def show
