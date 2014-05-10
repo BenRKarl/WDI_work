@@ -5,12 +5,12 @@
 </form>
 
 <% @squares.each do |square| %>
-  <div style="
+  <div class="feature" style="
     height: <%= square.side_length %>em;
     width: <%= square.side_length %>em;
     border-radius: <%= square.border_radius %>%;
     background-color: <%= square.color %>
     ">
-    <p></p>
+    <a href="squares/<%= square.id %>"></a>
   </div>
 <% end %>
