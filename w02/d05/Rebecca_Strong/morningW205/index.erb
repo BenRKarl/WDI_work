@@ -1,0 +1,13 @@
+<h1>WE ARE PROTO!</h1>
+
+<table>
+
+<% @developers.each do |developer| %>
+  <tr>
+    <td><%= developer.name.join(' ') %></td>
+    <td><%= developer.initials.join(' ') %></td>
+    <td>"<%= developer.tagline.join(' ') %>"</td>
+  </tr>
+  <% end %>
+
+  </table>
