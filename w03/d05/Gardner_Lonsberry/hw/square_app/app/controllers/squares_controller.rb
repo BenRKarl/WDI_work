@@ -2,7 +2,7 @@ class SquaresController < ApplicationController
 
 #           GET    /squares(.:format)          squares#index
   def index
-    @squares = Square.all
+     @squares = Square.all
   end
 
 #           GET    /squares/new(.:format)      squares#new
@@ -33,7 +33,7 @@ class SquaresController < ApplicationController
 #           PUT    /squares/:id(.:format)      squares#update
   def update
      edited_square = Square.find(params[:id])
-     edited_square.update( params.require(:user).permit(:username) )
+     edited_square.update( params.require(:squares).permit(:border_radius, :side_length, :color) )
      redirect_to "/squares/#{edited_square.id}"
   end
 
