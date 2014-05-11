@@ -1,8 +1,8 @@
 
 <form action="/squares" method='post'>
-Enter Width:  <input type="text" name="width" /><br>
-Enter Height: <input type="text" name="height" /><br>
-Enter Color:  <input type="text" name="color" /><br>
-<% @token_tag %>
+Enter Length:  <input type="text" name="squares[side_length]" /><br>
+Enter Border Radius: <input type="text" name="squares[border_radius]" /><br>
+Enter Color:  <input type="text" name="squares[color]" /><br>
+<%= token_tag %>
 <input type="submit"></form>
 

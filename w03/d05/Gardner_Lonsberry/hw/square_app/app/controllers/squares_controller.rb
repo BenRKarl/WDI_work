@@ -2,20 +2,26 @@ class SquaresController < ApplicationController
 
 #           GET    /squares(.:format)          squares#index
   def index
-    @squares = Square.all
+    # @squares = Square.all
   end
 
 #           GET    /squares/new(.:format)      squares#new
   def new
-    @squares = Square.create
+    @square = Square.create
+    # @squares = Square.create
 # Show me a form!!!
   end
 
 #           POST   /squares(.:format)          squares#create
 # Need to input into form: Width, Height, Color
   def create
-    new_square = Square.create( params.require(:square) permit.(:width, :height, :color) )
+    new_square = Square.create(params.require(:squares).permit(:border_radius, :side_length, :color) ) 
+    @new_square = new_square
+    @border = params[:border_radius]
+    @length = params[:side_length]
+    @color = params[:color]
     redirect_to "/squares/#{new_square.id}"
+
   end
 
 #           GET    /squares/:id/edit(.:format) squares#edit
