@@ -1,11 +1,15 @@
 
 
+<div class="container">
 
 
-<form action="/squares" method="post">
+
+<form class="new_form" action="/squares" method="post">
   <%= token_tag %>
-  <input type="text" name="square[side_length]" placeholder="Side Length">
-  <input type="text" name="square[border_radius]" placeholder="Border Radius">
-  <input type="text" name="square[color]" placeholder="Color">
-  <input type="submit">
+  <input class="input_text" type="text" name="square[side_length]" placeholder="Side Length">
+  <input class="input_text" type="text" name="square[border_radius]" placeholder="Border Radius">
+  <input class="input_text" type="text" name="square[color]" placeholder="Color">
+  <button class="button" type="submit">Create Square</button>
 </form>
+
+</div>
