@@ -4,10 +4,17 @@
 <a href="/squares/new">Make a new square</a>
 
 
-<div class ="square" style="width: <%= square.side_length %>px;
+<div>
+<% @squares.each do |square| %>
+
+<a href="/squares/<%= square.id %>/edit">
+  <div class ="square" style="width: <%= square.side_length %>px;
             height: <%= square.side_length %>px;
             border-radius: <%= square.border_radius %>px;
             background-color: <%= square.color %>;
             float: left;
             margin: 10px;">
-            
+          </div>
+        </a>
+<% end %>
+</div>

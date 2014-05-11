@@ -1,21 +1,25 @@
-<span style="display:inline-block;border:<%= @border %>px; width:<%= @length %>;solid <%= @color %>;"></span>
+<%= @square %>
+<% @square %>
 
 <%= @new_square %>
+<% @new_square %>
 
-<span> <div="height:<%= @length %>px;width:<%= @length %>px;color:<%= @color %>display:inline-block;"></span>
+<div style="width:square.side_length; height:square.side_length; color:square.color">
 
-<div class="square">
-  Square
+<div span="width:square.side_length; height:square.side_length; color:square.color">
+
+
+<div>
+<% @squares.each do |square| %>
+
+<a href="/squares/<%= square.id %>/edit">
+  <div class ="square" style="width: <%= square.side_length %>px;
+            height: <%= square.side_length %>px;
+            border-radius: <%= square.border_radius %>px;
+            background-color: <%= square.color %>;
+            float: left;
+            margin: 10px;">
+          </div>
+        </a>
+<% end %>
 </div>
-
-<div class="square1">
-<div class="square1" style="width:<%= @width %>"></div>
-</div>
-
-
-
-<div id="squaree"><%= @new_square %></div>
-
-<div id="square1" style="background-color:<%=@color%>;height:<%=@length%>px;width:<%=@length%>px;float:left;"></div>
-
-<div id="square1" style="background-color:<% @color %>;height:<% @length %>px;width:<%= @length %>px;float:left;"></div>

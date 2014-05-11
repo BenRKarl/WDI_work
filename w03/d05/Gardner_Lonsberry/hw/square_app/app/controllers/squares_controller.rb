@@ -2,7 +2,7 @@ class SquaresController < ApplicationController
 
 #           GET    /squares(.:format)          squares#index
   def index
-    # @squares = Square.all
+    @squares = Square.all
   end
 
 #           GET    /squares/new(.:format)      squares#new
