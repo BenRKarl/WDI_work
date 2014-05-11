@@ -1,0 +1,21 @@
+<h1><%= @planet.name %></h1>
+
+<table>
+    <tr>
+        <th>Image</th>
+        <th>Diameter</th>
+        <th>Mass</th>
+        <th>Life</th>
+    </tr>
+    <tr>
+        <td><%= @planet.diameter%> km</td>
+        <td><%= @planet.mass%> x 10<sup>24</sup> kg</td>
+        <td>
+            <% if @planet.life == true %>
+                Life
+            <% else %>
+                No Life
+            <% end %>
+        </td>
+    </tr>
+</table>

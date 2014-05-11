@@ -1,0 +1,28 @@
+<h1>Planets</h1>
+
+<% @planets.each do |planet| %>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Diameter</th>
+        <th>Mass</th>
+        <th>Life</th>
+    </tr>
+    <tr>
+        <td><%= planet.name %></td>
+        <td><img src="<%= planet.image_url%>" height="100" width="100"></td>
+        <td><%= planet.diameter%> km</td>
+        <td><%= planet.mass%> x 10<sup>24</sup> kg</td>
+        <td>
+            <% if planet.life == true %>
+                Life
+            <% else %>
+                No Life
+            <% end %>
+        </td>
+    </tr>
+</table>
+
+<% end %>
