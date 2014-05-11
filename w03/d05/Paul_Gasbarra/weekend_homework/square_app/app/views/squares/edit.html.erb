@@ -1,0 +1,17 @@
+Edit Square #<%= @square.id %>
+
+
+<form action="/squares" method='post'>
+Enter side length.
+  <input type="integer" name='side_length' placeholder="side length"/><%= token_tag %>
+
+
+Enter border radius.
+  <input type="integer" name='border_radius' placeholder="border radius"/><%= token_tag %>
+
+
+Enter color.
+  <input type="text" name='color' placeholder="color"/><%= token_tag %>
+  <input type="submit">
+</form>
+

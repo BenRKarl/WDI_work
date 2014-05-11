@@ -2,12 +2,12 @@
 
 <ul>
 <% @squares.each do |square|%>
-<li><div style=
-  "width:<%= square.side_length %>;
-  height:<%=square.side_length %>;
-  border-radius:<%= square.border_radius %>;
-  color:<%= square.color %>; margin: 10px">
-</div></li>
+<a href="squares/<%= square.id %>"><li style="list-style-type: none"><div style=
+  "float:left; width:<%= square.side_length %>px;
+  height:<%=square.side_length %>px;
+  border-radius:<%= square.border_radius %>px;
+  background-color:<%= square.color %>; margin: 10px">
+</div></li></a>
 <% end %>
 </ul>
 
