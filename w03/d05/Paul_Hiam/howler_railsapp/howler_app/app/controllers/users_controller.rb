@@ -8,9 +8,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    new_user = User.create( params.permit(:username)
+    new_user = User.create( params.require(:user).permit(:username))
     #(params.require(:user).permit(:username))
-    redirect_to"/users/#{new_user.id}"
+    redirect_to "/users/#{new_user.id}"
   end
   
   def edit
@@ -21,9 +21,9 @@ class UsersController < ApplicationController
 
   def update
     edited_user = User.find(params[:id])
-    edited_user.update( params.permit(:username))
+    edited_user.update( params.require(:user).permit(:username))
     #update user
-    redirect_to"/users/#{edited_user.id}"
+    redirect_to "/users/#{edited_user.id}"
   end
   
   def show
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   
   def destroy
     User.delete(params[:id])
-    redirect_to 'users'
+    redirect_to '/users'
   end
 
 

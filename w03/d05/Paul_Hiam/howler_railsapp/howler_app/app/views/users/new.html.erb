@@ -1,6 +1,7 @@
 <form action="/users" method="post">
- <% token_tag %> <!-- security helper for input -->
+ <%= token_tag %> <!-- security helper for input -->
  <input type="text" name="user[username]">
+
  <!-- in name="" put model name then value in brackets -->
  <!-- will show in rack as {:user=> {:username => 'Lichard'}} -->
  <input type="submit">  
