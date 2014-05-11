@@ -1,0 +1,13 @@
+<h1>Check out all the cool Protos!</h1>
+
+<table>
+  <% @protos.each do |proto| %>
+  <tr>
+    <td>
+    <a href="/protos/<%= proto.id %>">
+      <%= proto.name %>
+    </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

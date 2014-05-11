@@ -1,0 +1,18 @@
+<h2><%= @user.username %></h2>
+<table>
+
+<% @user.hoots.each do |hoot| %>
+<tr>
+  <td>
+   <p> <%= hoot.message %></p>
+  </td>
+  <td>
+    <form action='/users/<%= @user.id %>/hoots/<%= hoot.id %>' method='post'>
+      <input type='hidden' name='_method' value='delete'>
+      <button type="submit">Delete</button>
+    </form>
+  </td>
+</tr>
+<% end %>
+</table>
+<a href="/users/<%= @user.id %>/hoots/new">Hoot!>></a>
