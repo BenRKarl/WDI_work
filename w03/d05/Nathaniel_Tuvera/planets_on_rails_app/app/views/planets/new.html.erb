@@ -1,3 +1,13 @@
 <p>new.html.erb</p>
 
 <p>generate html forms to take input params that will be used to fill in the sql data base and referenced for images displaying all planet objects</p>
+
+<form action="/planets" method="post">
+  <%= token_tag %>
+  <input type="text" name="name" placeholder="Enter Planet name">
+  <input type="url" name="image_url" placeholder="Enter image URL">
+  <input type="text" name="diameter" placeholder="Enter value in miles">
+  <input type="text" name="mass" placeholder="Enter value * E24">
+  <input type="text" name="life" placeholder="Signs of life: True/False">
+  <input type="submit" value="Add Planet">
+</form>

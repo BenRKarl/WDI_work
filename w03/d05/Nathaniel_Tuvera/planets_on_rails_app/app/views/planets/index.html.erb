@@ -2,4 +2,11 @@
 
 <p>display all planet objects maybe in block form, with black background or image to mimic a solar system?<p>
 
-  <p>will use a &lt;ul> to put planet objects in an <em>inline</em> display</p>
+  <p>will use a &lt;ul> to put planet objects in an <strong>inline</strong> display</p>
+
+<ul>
+<% @planets.each do |planet| %>
+  <li><a href="/planets/<%= planet.id %>/edit"><img class="index_img" src="<%= planet.image_url %>" alt="<%= planet.name %>"></a>
+  </li>
+  <% end %>
+</ul>

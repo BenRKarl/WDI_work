@@ -1,3 +1,19 @@
 <p>edit.html.erb</p>
 
 <p>this page will be isolate an onject and offer two options, either to edit the planet object or destroy/delete planet object</p>
+<h2><%= @planet.name %></h2>
+<form action="/planets" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="name" placeholder="Enter Planet name">
+  <input type="url" name="image_url" placeholder="Enter image URL">
+  <input type="text" name="diameter" placeholder="Enter value in miles">
+  <input type="text" name="mass" placeholder="Enter value * E24">
+  <input type="text" name="life" placeholder="Signs of life: True/False">
+  <input type="submit" value="Add Planet">
+</form>
+<form action="/planets/<%= @planet.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Planet">
+</form>

@@ -1,0 +1,7 @@
+.index_img {
+  width: auto;
+  max-height:150px;
+  height: auto;
+  max-width:150px;
+  overflow: hidden;
+}
