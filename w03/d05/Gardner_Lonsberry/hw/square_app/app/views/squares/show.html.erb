@@ -4,22 +4,22 @@
 <%= @new_square %>
 <% @new_square %>
 
-<div style="width:square.side_length; height:square.side_length; color:square.color">
+  <div style="width:square.side_length; height:square.side_length; color:square.color">
 
-<div span="width:square.side_length; height:square.side_length; color:square.color">
+  <div span="width:square.side_length; height:square.side_length; color:square.color">
 
 
-<div>
-<% @squares.each do |square| %>
+  <div>
+  <% @squares.each do |square| %>
 
-<a href="/squares/<%= square.id %>/edit">
-  <div class ="square" style="width: <%= square.side_length %>px;
-            height: <%= square.side_length %>px;
-            border-radius: <%= square.border_radius %>px;
-            background-color: <%= square.color %>;
-            float: left;
-            margin: 10px;">
-          </div>
-        </a>
-<% end %>
-</div>
+  <a href="/squares/<%= square.id %>/edit">
+    <div class ="square" style="width: <%= square.side_length %>px;
+              height: <%= square.side_length %>px;
+              border-radius: <%= square.border_radius %>px;
+              background-color: <%= square.color %>;
+              float: left;
+              margin: 10px;">
+            </div>
+          </a>
+  <% end %>
+  </div>
