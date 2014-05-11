@@ -3,13 +3,27 @@
 
 
 
-<form action="/planets/<%=@planet.id%>" method="post">
-  <%= token_tag %>
-  <input type="hidden" name="_method" value="put">
-  <input type="text" name="planet[name]" value="<%=@planet.name%>" placeholder="Name">
-  <input type="text" name="planet[image_url]" value="<%=@planet.image_url%>" placeholder="Image URL">
-  <input type="text" name="planet[diameter]" value="<%=@planet.diameter%>" placeholder="Diameter">
-  <input type="text" name="planet[mass]" value="<%=@planet.mass%>" placeholder="Mass">
-  <input type="text" name="planet[life]" value="<%=@planet.life%>" placeholder="Life?">
-  <input type="submit">
+
+
+
+<div class="all_cols">
+    <div class="left_col">
+    </div>
+    <div class="midCol">
+    </div>
+    <div class="right_col inputs">
+        <form action="/planets/<%=@planet.id%>" method="post">
+            <%= token_tag %>
+            <input type="hidden" name="_method" value="put">
+            <button class="show_but save_but" type="submit">Save Edits</button>
+            <input class="new_input" type="text" name="planet[name]" value="<%=@planet.name%>" placeholder="Name">
+            <input class="new_input" type="text" name="planet[image_url]" value="<%=@planet.image_url%>" placeholder="Image URL">
+            <input class="new_input" type="text" name="planet[diameter]" value="<%=@planet.diameter%>" placeholder="Diameter">
+            <input class="new_input" type="text" name="planet[mass]" value="<%=@planet.mass%>" placeholder="Mass">
+            <input class="new_input" type="text" name="planet[life]" value="<%=@planet.life%>" placeholder="Life?">
+        </form>
+     </div>
+</div>
+<form action="/planets" method="get">
+    <button class="show_but back" type="submit">Back</button>
 </form>

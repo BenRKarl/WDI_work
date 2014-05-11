@@ -16,7 +16,7 @@ class PlanetsController < ApplicationController
   # post 'planets' => 'planets#create'
   def create
 
-    new_hash = params.require(:planet).permit(:name, :image_url, :diamter, :mass, :life)
+    new_hash = params.require(:planet).permit(:name, :image_url, :diameter, :mass, :life)
     new_planet = Planet.create(new_hash)
     redirect_to "/planets/#{new_planet.id}"
   end
