@@ -1,21 +1,23 @@
-<p>edit.html.erb</p>
+<div>Edit Planet -- <%= @planet.name %> ||
+<a href="/planets">return to planets index</a>
+</div>
 
-<p>this page will be isolate an onject and offer two options, either to edit the planet object or destroy/delete planet object</p>
-<h2><%= @planet.name %></h2>
-<br>
-<img src="<%= @url %>"/>
-<form action="/planets" method="post">
+
+<img class="show_img" src="<%= @url %>"/>
+<div>
+  <form action="/planets" method="post">
   <%= token_tag %>
   <input type="hidden" name="_method" value="put">
-  <input type="text" name="name" placeholder="Enter Planet name">
-  <input type="url" name="image_url" placeholder="Enter image URL">
-  <input type="text" name="diameter" placeholder="Enter value in miles">
-  <input type="text" name="mass" placeholder="Enter value * E24">
-  <input type="text" name="life" placeholder="Signs of life: True/False">
-  <input type="submit" value="Add Planet">
+  <input type="text" name="name" placeholder="<%= @planet.name %>">
+  <input type="url" name="image_url" placeholder="<%= @planet.image_url %>">
+  <input type="text" name="diameter" placeholder="<%= @planet.diameter %>km diameter">
+  <input type="text" name="mass" placeholder="<%= @planet.mass %> * E20kg">
+  <input type="text" name="life" placeholder="Signs of life: <%= @planet.life %>">
+  <input type="submit" value="Edit Planet">
 </form>
 <form action="/planets/<%= @planet.id %>" method="post">
   <%= token_tag %>
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Planet">
 </form>
+</div>
