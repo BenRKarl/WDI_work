@@ -1,3 +1,5 @@
+
+
 class CreateSquares < ActiveRecord::Migration
   def change
     create_table :squares do |t|
