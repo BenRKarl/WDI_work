@@ -4,9 +4,28 @@
 
   <p>will use a &lt;ul> to put planet objects in an <strong>inline</strong> display</p>
 
-<ul>
 <% @planets.each do |planet| %>
-  <li><a href="/planets/<%= planet.id %>/edit"><img class="index_img" src="<%= planet.image_url %>" alt="<%= planet.name %>"></a>
-  </li>
+<table class="planet_table">
+<tr>
+  <td>
+    <a href="/planets/<%= planet.id %>/edit"><img class="index_img" src="<%= planet.image_url %>" alt="<%= planet.name %>"></a>
+  </td>
+</tr>
+
+</table>
+<table>
+  <tr>
+    <td>Name</td><td><%= planet.name %></td>
+  </tr>
+  <tr>
+    <td>Mass</td><td><%= planet.mass %></td>
+  </tr>
+    <tr>
+    <td>Diameter</td><td><%= planet.diameter %></td>
+  </tr>
+    <tr>
+    <td>Life-signs</td><td><%= planet.life %></td>
+  </tr>
+
   <% end %>
-</ul>
+</table>

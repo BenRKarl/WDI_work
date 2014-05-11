@@ -5,3 +5,9 @@
   max-width:150px;
   overflow: hidden;
 }
+
+.planet_table {
+  border: 1px solid black;
+  float:left;
+
+}

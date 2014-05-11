@@ -2,6 +2,8 @@
 
 <p>this page will be isolate an onject and offer two options, either to edit the planet object or destroy/delete planet object</p>
 <h2><%= @planet.name %></h2>
+<br>
+<img src="<%= @url %>"/>
 <form action="/planets" method="post">
   <%= token_tag %>
   <input type="hidden" name="_method" value="put">

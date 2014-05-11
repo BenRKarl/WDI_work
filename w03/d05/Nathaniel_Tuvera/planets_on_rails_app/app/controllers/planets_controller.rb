@@ -18,6 +18,7 @@ class PlanetsController < ApplicationController
 
   def edit
     @planet = Planet.find(params[:id])
+    @url    = Planet.find(params[:id]).image_url
   end
 
   def update
