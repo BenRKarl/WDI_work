@@ -1,0 +1,9 @@
+<h1>Students, everywhere!</h1>
+
+<div class="students">
+  <% @students.each do |student| %>
+    <div class="student">
+      <%= student.name %>
+    </div>
+  <% end %>
+</div>
