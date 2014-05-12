@@ -1,0 +1,15 @@
+<div class="index new">
+<h1>Let's create a planet!</h1>
+
+<form action="/planets" method="post">
+  <%= token_tag %>
+  <input type="text" name="planet[name]" placeholder="Name">
+  <input type="text" name="planet[image_url]" placeholder="Image URL">
+  <input type="text" name="planet[diameter]" placeholder="Diameter (km)">
+  <input type="text" name="planet[mass]" placeholder="Mass (kg)">
+  <input type="text" name="planet[life]" placeholder="Life (true/false)">
+</br>
+  <button type="submit" class="create">Create</button>
+
+</form>
+</div>

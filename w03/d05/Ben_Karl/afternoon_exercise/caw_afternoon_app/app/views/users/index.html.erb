@@ -1,0 +1,17 @@
+<h1>Here are the users of this website.</h1>
+
+<table>
+  <% @users.each do |user| %>
+  <tr>
+    <td>
+      <a href="/users/<%= user.id %>">
+      <%= user.username %>
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<form action="/users/new" method="new">
+  <input type="submit" value="Create new user">
+</form>

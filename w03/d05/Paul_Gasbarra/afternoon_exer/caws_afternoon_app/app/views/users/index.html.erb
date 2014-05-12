@@ -1,0 +1,10 @@
+<h1>These be the users.</h1>
+
+<ul>
+<% @users.each do |user| %>
+<a href="users/<%= user.id %>"><li> <%= user.user_name %> </li></a>
+<% end %>
+</ul>
+
+<h2>Add a user</h2>
+<a href="/users/new">New User</a>
