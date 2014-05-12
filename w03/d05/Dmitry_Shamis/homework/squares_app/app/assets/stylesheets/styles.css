@@ -1,0 +1,8 @@
+div {
+  margin: 10px;
+  float: left;
+}
+
+.squares {
+  position: relative;
+}

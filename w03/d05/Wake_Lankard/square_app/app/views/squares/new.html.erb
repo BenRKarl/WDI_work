@@ -1,0 +1,7 @@
+<h1> You may add a square </h1>
+<form action='/squares' method='post'>
+  <%= token_tag %>
+  Side Length:<input type='text' name='[square]length'>
+  Border Radius:<input type='text' name='[square]radius'>
+  <button type='submit'>Submit</button>
+</form>

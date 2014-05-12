@@ -1,0 +1,3 @@
+<h2>Edit User</h2>
+
+<form action="/user/<%= @user.id %>" method = "get"><input type="text" name='<%=@user.id%>' placeholder="<%= @user.user_name %>"<%= token_tag %><input type="submit"></form>

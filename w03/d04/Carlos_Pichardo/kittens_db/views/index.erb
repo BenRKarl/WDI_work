@@ -1,0 +1,9 @@
+<% @kittens.each do |kitten| %>
+	<img src="<%= kitten.urb %>">
+
+	<% end %>
+
+<form action="/kittens" method='post'>
+	<button type='submit'>Save</button>
+
+</form>

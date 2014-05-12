@@ -1,0 +1,11 @@
+<h1>Planets</h1>
+
+<ul>
+  <% @planets.each do |planet| %>
+  <a href="planets/<%= planet.id %>">
+    <li><%= planet.name %><img src="<%= planet.image_url %>" alt="<%= planet.name %>" width = 50px margin = 15px></li>
+  </a>
+  <% end %>
+</ul>
+
+<a href="/planets/new"><button>Add a planet</button></a>
