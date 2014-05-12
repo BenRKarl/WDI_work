@@ -1,0 +1,44 @@
+<h1>Planets</h1>
+
+<form method='link' action="/planets/new">
+    <input type="submit" value="Add Planet">
+</form>
+<br/>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Diameter</th>
+        <th>Mass</th>
+        <th>Life</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <% @planets.each do |planet| %>
+    <tr>
+        <td><%= planet.name %></td>
+        <td><img src="<%= planet.image_url%>" height="100" width="100"></td>
+        <td><%= planet.diameter%> km</td>
+        <td><%= planet.mass%> x 10<sup>24</sup> kg</td>
+        <td>
+            <% if planet.life == true %>
+                Life
+            <% else %>
+                No Life
+            <% end %>
+        </td>
+        <td>
+            <form method='link' action="/planets/<%= planet.id %>/edit">
+                <input type="submit" value="Update">
+            </form>
+        </td>
+        <td>
+            <form action="/planets/<%= planet.id %>" method='post'>
+            <%= token_tag %>
+                <input type="hidden" name='_method' value='delete'>
+                <button type='submit'>Delete</button>
+            </form>            
+        </td>
+    </tr>
+    <% end %>
+</table>

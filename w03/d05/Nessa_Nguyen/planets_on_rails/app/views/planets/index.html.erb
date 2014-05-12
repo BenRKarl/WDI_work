@@ -1,0 +1,24 @@
+<body class='home'>
+
+<nav>
+  <h1>Planet Encyclopedia</h1>
+  <h3><a href="/planets/new">Add new planet</a></h3>
+</nav>
+
+<section class="index">
+  <p>Click on each planet to learn more</p>  
+
+  <% @planets.each do |planet| %>
+    <div class='list'>
+    <img src="/assets/planet.png" />  
+    <a href="/planets/<%= planet.id %>" >
+      <%= planet.name %>
+    </a>
+    </div>
+  <% end %>
+
+<div class="clear"></div>
+
+</section>
+
+</body>

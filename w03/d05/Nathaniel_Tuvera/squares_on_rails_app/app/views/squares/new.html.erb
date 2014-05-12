@@ -1,0 +1,9 @@
+<p>new.html.erb -- requires form to pass in params to create elements in squares table (side_length, border_radius, color)</p>
+
+<form action="/squares" method="post">
+  <%= token_tag %>
+  <input type="text" name="side" placeholder="Enter side length">
+  <input type="text" name="border" placeholder="Enter border radius">
+  <input type="text" name="color" placeholder="Enter color">
+  <input type="submit" value="Add square">
+</form>
