@@ -16,3 +16,4 @@ INSERT INTO songs (artist, title, year) VALUES ('Spoon', 'Good Old Time', 2010);
 SELECT * FROM songs;
 SELECT * FROM songs WHERE artist='Spoon' AND title='Keep Runnin';
 SELECT artist FROM songs;
+DROP DATABASE test_app;

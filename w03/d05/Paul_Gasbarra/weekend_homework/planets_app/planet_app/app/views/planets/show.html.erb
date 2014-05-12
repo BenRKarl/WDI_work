@@ -1,0 +1,19 @@
+<h1><%= @planet.name %></h1>
+
+<div class="planet_image">
+<img src="<%= @planet.image_url %>" alt="<%= @planet.name %>" width = 200px>
+</div>
+
+<div class="details">
+<p>Diameter (miles): <%= @planet.diameter %></p>
+<p>Mass (relative to Earths): <%= @planet.mass %></p>
+<p>Life: <%= @planet.life %></p>
+</div>
+
+<br/>
+<br/>
+
+<a href="<%= @planet.id %>/edit"><button>Edit</button></a>
+<form action="/planets/<%= @planet.id %>" method='post'><%=token_tag%><input type="hidden" name='_method' value='delete'><button>Delete</button></form>
+
+<p><a href="/"><button>Back to Index</button></a></p>

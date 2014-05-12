@@ -1,0 +1,16 @@
+<h1>Add A New Planet</h1>
+
+<form action="/planets" method="post">
+    <%= token_tag%>
+    <input type="text" name='planet[name]' placeholder='Planet Name...'><br/>
+    <input type="text" name='planet[image_url]' placeholder='Image URL...'><br/>
+    <input type="number" name='planet[diameter]' placeholder='Diameter in km...'><br/>
+    <input type="number" name='planet[mass]' placeholder="Mass x 10^24 kg..."><br/>
+    <input type="radio" name="planet[life]" value=true>Life<br/>
+    <input type="radio" name="planet[life]" value=false>No Life<br/>
+    <input type="submit">
+</form>
+
+<form method='link' action="/planets/">
+    <input type="submit" value="Home">
+</form>

@@ -1,0 +1,30 @@
+<h1>Here's that square</h1>
+
+  <div style="
+    height: <%= @square.side_length %>em;
+    width: <%= @square.side_length %>em;
+    border-radius: <%= @square.border_radius %>%;
+    background-color: <%= @square.color %>
+    ">
+    <p></p>
+  </div></br>
+
+  <p>
+    Side-length: <%= @square.side_length %>em</br>
+    Border-radius: <%= @square.border_radius %>%</br>
+    Color: <%= @square.color %>
+  </p>
+
+<form action="/squares/<%= @square.id %>/edit" method="get">
+  <input type="submit" value="Edit this square">
+</form>
+
+<form action="/squares/<%= @square.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete this square">
+</form>
+
+<form action="/squares" method="get">
+  <input type="submit" value="See all squares">
+</form>
