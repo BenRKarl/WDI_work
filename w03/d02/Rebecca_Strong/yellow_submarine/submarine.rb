@@ -8,9 +8,9 @@ def initialize(color = "yellow")
   @sailors = []
 end
 
-def accept_sailor(sailor)
-  @sailors << sailor
+# def accept_sailor(sailor)
+#   @sailors << sailor
 
-end
+# end
 
-def torpedo_sailor
+# def torpedo_sailor
