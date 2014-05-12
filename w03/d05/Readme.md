@@ -38,11 +38,11 @@ In a Rails app titled `schema_scheming`, set up the schema and models for the fo
 |content | string |
 |selfie_id | integer |
 
+
 ###***Basic Workflow***
 * Create your database
 * Generate your models and migrations
 * Run your migrations
-
 
 
 #Squares on Rails
@@ -100,6 +100,19 @@ Create a Rails app that implements full CRUD functionality for a single model:
 |GET |/planets/:id/edit| planets#edit | return an HTML form for editing a planet|
 |PUT |/planets/:id | planets#update | updates a specific planet |
 |DELETE|/planets/:id| planets#destroy | delete a specific planet |
+
+
+
+###HOLD THE PHONE
+Rails assumes the singular of "selfies" is "selfy"!  This will not do.  Put the following line of code in `config/initializers/inflections.rb`
+
+```ruby 
+
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.irregular 'selfie', 'selfies'
+end
+
+```
 
 
 ###STYLING YOUR APP IS NON-OPTIONAL.
