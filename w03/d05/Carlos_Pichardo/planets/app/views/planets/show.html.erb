@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @planet.name %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @planet.image_url %>
+</p>
+
+<p>
+  <strong>Diameter:</strong>
+  <%= @planet.diameter %>
+</p>
+
+<p>
+  <strong>Mass:</strong>
+  <%= @planet.mass %>
+</p>
+
+<p>
+  <strong>Life:</strong>
+  <%= @planet.life %>
+</p>
+
+<%= link_to 'Edit', edit_planet_path(@planet) %> |
+<%= link_to 'Back', planets_path %>
