@@ -29,11 +29,15 @@ end
 
 # to test in pry type developers.select{|dev| dev.initials == :pg}
 
+get '/' do
+redirect '/developers'
+#will make /developers the default so the browser automatically brings you to the '/developers' below
+end
 
 get '/developers' do
 @developers = developers.sort{|x,y|} x.initials.to_s[-1] <=> y.initials.to_s[-1]  }
 puts Developer.new [table]
 # above should render an index of all developers
 
-root :table
+
 end
