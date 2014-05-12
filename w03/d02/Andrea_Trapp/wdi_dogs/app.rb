@@ -25,7 +25,7 @@ end
 # create
 post '/dogs' do
   dog = Dog.create(name: params['name'], age: params['age'], breed: params['breed'])
-  dog.save
+  # dog.save -> its not needed since create is doing the saving
   redirect "/dogs/#{dog.id}"
 end
 
