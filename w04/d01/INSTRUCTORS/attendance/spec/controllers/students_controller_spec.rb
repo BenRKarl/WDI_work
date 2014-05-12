@@ -17,4 +17,5 @@ describe StudentsController do
     end
     #TODO write a test to verify we have check_ins
   end
+
 end

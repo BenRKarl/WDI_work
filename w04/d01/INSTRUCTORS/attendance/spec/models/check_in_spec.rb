@@ -7,4 +7,5 @@ describe CheckIn do
     expect(ci.time).to eq time
   end
 
+
 end
