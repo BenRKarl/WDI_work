@@ -1,5 +1,5 @@
 html { 
-  background: url() no-repeat center center fixed; 
+  background: url(http://imgstocks.com/wp-content/uploads/2014/01/Planet-earth-in-space-psdgraphics.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,14 +8,15 @@ html {
 
 a {
 color: #000000;
+text-decoration:none;
 }
 
 h1 {
-  color: #000000;
+  color: #FFFFFF;
 }
 
 p {
-  color: #000000;
+  color: #FFFFFF;
 }
 
 img { 
@@ -23,3 +24,25 @@ img {
     width: 100%;
     height: auto;
 }
+
+
+div.transbox
+  {
+  width:600px;
+  height:auto;
+  margin:auto;
+  background-color:#ffffff;
+  border:1px solid black;
+  opacity:0.5;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+  }
+div.transbox p
+  {
+  margin:30px 40px;
+  font-weight:bold;
+  color:#000000;
+  }
+
+  form {
+    text-align: center;
+  }

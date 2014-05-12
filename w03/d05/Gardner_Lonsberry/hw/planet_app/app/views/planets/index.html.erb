@@ -1,14 +1,11 @@
-<h1>This is the index of planets.  It will show all the planets In a table.  Each row should have planet_name, a picture of a planet, mass, diameter, life columns.  The last column should have an Edit button, a Delete button, and a Show button.  Have a Button to add a planet.  Have a link to delete a planet next to planet.  Have a link to edit a planet.  Planets should be displayed in a table.  Give a background.  Use css-tricks for background image.</h1>
-
-
-
 <form action="/planets/new" method="get">
   <input type="submit" value="Create new planet">
 </form></br>
 
+
+<div class="transbox">
 <% if @planets.count == 0 %>
 <div class="no_planets">
-<p>There aren't any planets!</p>
 <p>Click the button to create a new planet!</p>
 </div>
 <% else %>
@@ -48,14 +45,14 @@
     </td>
     <td>
       <%= if planet.life
-          "Major Tom! There's life!"
+          "Let's move there!"
           else
-          "No life... "
+          "No life "
           end
       %>
     </td>
     <td>
-      <img src="<%= planet.planet_url %>">
+      <a href="/planets/<%= planet.id %>"><img src="<%= planet.planet_url %>"></a>
     </td>
     <td>
       <form action="/planets/<%= planet.id %>/edit" method="get">
@@ -69,6 +66,8 @@
     </td>
   </tr>
   <% end %>
+  </div>
+ </div>
 </table>
 <% end %>
 
