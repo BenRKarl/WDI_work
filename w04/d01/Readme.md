@@ -110,7 +110,6 @@ We are going to build a CRUD app with more than one model.  In this case, we wil
 |DELETE|/planets/:id| planets#destroy | delete a specific planet |
 |GET|/planets/:planet_id/moons/new|moons#new|Renders a form for the creation of a new moon resource|
 |POST|/planets/:planet_id/moons|moons#create|Creates a new moon, associated with a planet.|
-|GET  |/planets/:planet_id/moons/:id|moons#show|Renders a show page for a specific moon.|
 |GET|/planets/:planet_id/moons/:id/edit|moons#edit|Renders a form to edit an existing moon resrouce|
 |PATCH/PUT|/planets/:planet_id/moons/:id|moons#update|Update a specific moon that belongs to a specific planet|
 |DELETE|/planets/:planet_id/moons/:id|moons#destroy|Delete a specific moon that belongs to a specific planet|
