@@ -1,0 +1,1 @@
+Square.create(side_length: '200', border_radius: '50', color: 'green')
