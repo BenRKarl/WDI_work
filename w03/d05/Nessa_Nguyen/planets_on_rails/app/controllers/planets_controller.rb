@@ -29,7 +29,7 @@ class PlanetsController < ActionController::Base
   end
 
   def destroy
-    Planet.delete(params[:id])
+    Planet.destroy(params[:id])
     redirect_to "/planets"
   end
 end

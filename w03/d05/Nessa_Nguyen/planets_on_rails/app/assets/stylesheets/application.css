@@ -8,11 +8,28 @@ body {
 }
 
 
+/* NAV & CONTENT */
+nav {
+  padding: 0 0 0 50px;
+}
+
+section {
+  width: 500px;
+  margin: 60px auto 0 auto;
+}
+
+
 /* INDEX PAGE */
 .home {
   background-image: url('/assets/galaxy2.jpg');
   background-size: cover;
   background-attachment: fixed;
+}
+
+.index {
+  background-color: rgba(0,0,0,0.4);
+  padding: 10px 20px;
+  width: 450px;
 }
 
 h1, h2, h3 {
@@ -31,7 +48,7 @@ h3 { margin: 25px 0 0 0; }
 .list {
   font-family: 'Francois One';
   font-size: 22px;
-  width: 100px;
+  width: 130px;
   margin: 10px 20px 10px 0;
   float: left;
 }
@@ -39,6 +56,10 @@ h3 { margin: 25px 0 0 0; }
 .list a:hover {
   font-size: 20px;
   color: #B0E2FF;
+}
+
+.list img {
+  width: 20px;
 }
 
 .clear {
@@ -60,16 +81,6 @@ p {
   background-color: b;
 }
 
-
-/* NAV & CONTENT */
-nav {
-  padding: 0 0 0 50px;
-}
-
-section {
-  width: 500px;
-  margin: 60px auto 0 auto;
-}
 
 
 /* SHOW PAGE */

@@ -17,6 +17,20 @@ venus = Planet.create({name: 'Venus', image_url: 'http://i.space.com/images/i/00
 jupiter = Planet.create({name: 'Jupiter', image_url: 'http://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jupiter_by_Cassini-Huygens.jpg/622px-Jupiter_by_Cassini-Huygens.jpg',
   diameter: 140000, mass: 1898600, life: false})
 
-sun = Planet.create({name: 'Sun', image_url: 'http://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg/628px-The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg',
-  diameter: 1_392_684, mass: 1898600, life: false})
+moon = Planet.create({name: 'Moon', image_url: 'http://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg',
+  diameter: 3400, mass: 73, life: false})
 
+sun = Planet.create({name: 'Sun', image_url: 'http://thenypost.files.wordpress.com/2013/12/sun.jpg',
+  diameter: 1_392_684, mass: 1988 * 10**6, life: false})
+
+Planet.create({name: 'Saturn', image_url: 'http://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Saturn_PIA06077.jpg/800px-Saturn_PIA06077.jpg',
+  diameter: 106000, mass: 568460, life: false})
+
+Planet.create({name: 'Uranus', image_url: 'http://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Uranus2.jpg/600px-Uranus2.jpg',
+  diameter: 50000, mass: 86810, life: false})
+
+Planet.create({name: 'Neptune', image_url: 'http://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Neptune.jpg/609px-Neptune.jpg',
+  diameter: 49000, mass: 102430, life: false})
+
+Planet.create({name: 'Pluto', image_url: 'http://upload.wikimedia.org/wikipedia/commons/9/91/Pluto_animiert_200px.gif',
+  diameter: 2360, mass: 13, life: false})
