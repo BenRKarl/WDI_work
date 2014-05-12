@@ -9,12 +9,14 @@
 <input type="text" name="planets[planet_url]" placeholder="...Planet pic URL" />
 <br>
 
-<input type="text" name="planets[diameter]" placeholder="...Planet Diameter" />
+<input type="text" name="planets[diameter]" placeholder="Diameter (numbers only)" />
 <br>
 
-<input type="text" name="planets[mass]" placeholder="...Planet Mass" /><br>
+<input type="text" name="planets[mass]" placeholder="Planet Mass" />
+<input type="text" name="power" placeholder="to what power ( ^X )" /><br>
 
-<input type="text" name="planets[life]" placeholder="...Life?" />
+
+<input type="checkbox" name="planets[life]"> Is there life? If 'yes' check the box
 <br>
 
 <%= token_tag %>

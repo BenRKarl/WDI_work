@@ -1,5 +1,35 @@
 <h1>This is the show page.  Show the individual planet.  Have link back to index.  Have link to edit the current planet.</h1>
 
+<div class="planet_info">
+ <img src="<%= @planet.planet_url %>">
+ </br></br>
+ <ul>
+   <li>
+     Name: <%= @planet.planet_name %>
+   </li>
+   <li>
+     Diameter:  <%= @planet.diameter %> km
+   </li>
+   <li>
+     Mass:  <%= @planet.mass %> kg
+   </li>
+   <li>
+     Currently life?:
+           <%= if @planet.life
+           "Ground Controll to Major Tom! Let's move there!  There's life!"
+           else
+           "No life there. What a drag"
+            end %>
+ </li>
+ </ul>
+ </div></br></br>
+ 
+ <form action="/planets" method="get">
+  <input type="submit" value="Back to Index">
+ </form>
+<br>
+ <form action="/planets/<%= @planet.id %>/edit" method="get">
+   <input type="submit" value="Edit this Planet">
+</form>
 
-<a href="/planets">Back to index</a>
 

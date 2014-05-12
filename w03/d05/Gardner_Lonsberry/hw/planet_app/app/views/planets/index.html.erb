@@ -3,18 +3,76 @@
 <a href="planets/new">Make a new planet!  This should be a button GET planets/new  planets#new</a>
 
 
-<% @planets.each do |planet| %>
 
+<form action="/planets/new" method="get">
+  <input type="submit" value="Create new planet">
+</form></br>
 
-<a href="/planets/<%= planet.id %>/edit">
-  
-    <p> <%= planet.planet_name %></p>
-  <img src="<%= planet.planet_url %>" >
-    <p><%= planet.diameter %></p>
-    <p><%= planet.mass %></p>
-    <p><%= planet.life %></p>
-    
-<% end %>
+<% if @planets.count == 0 %>
+<div class="no_planets">
+<p>There aren't any planets!</p>
+<p>Click the button to create a new planet!</p>
 </div>
+<% else %>
+<table>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Diameter
+    </th>
+    <th>
+      Mass
+    </th>
+    <th>
+      Life?
+    </th>
+    <th>
+      Image
+    </th>
+    <th>
+      Options
+    </th>
+  </tr>
+  <% @planets.each do |planet| %>
+  <tr>
+    <td>
+      <a href="/planets/<%= planet.id %>">
+      <%= planet.planet_name %>
+      </a>
+    </td>
+    <td>
+      <%= planet.diameter %> km
+    </td>
+    <td>
+       <%= planet.mass %> kg
+    </td>
+    <td>
+      <%= if planet.life
+          "Ground Control to Major Tom. Let's move there. There's life!"
+          else
+          "No life there. What a drag"
+          end
+      %>
+    </td>
+    <td>
+      <img src="<%= planet.planet_url %>">
+    </td>
+    <td>
+      <form action="/planets/<%= planet.id %>/edit" method="get">
+        <input type="submit" value="Edit this planet">
+      </form>
+      <form action="/planets/<%= planet.id %>" method="post">
+        <%= token_tag %>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete planet">
+      </form>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% end %>
+
 
 

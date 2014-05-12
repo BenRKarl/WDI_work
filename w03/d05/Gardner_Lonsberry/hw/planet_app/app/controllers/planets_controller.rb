@@ -16,26 +16,33 @@ class PlanetsController < ApplicationController
 
 #   POST        /planets          planet#create       create a new planet
   def create
-    @planet       = Planet.create
-    @planets      = Planet.all
-    new_planet    = Planet.create(params.require(:planets).permit(:planet_name, :planet_url, :diameter, :mass, :life) ) 
-    @new_planet   = new_planet
-    @planet_name  = params[:planet_name]
-    @planet_url   = params[:planet_url]
-    @diameter     = params[:diameter] 
-    @mass         = params[:mass]
-    @life         = params[:life]
-    redirect_to "/planets/#{new_planet.id}"
+    planet = Planet.create(params.require(:planets).permit(:planet_name, :planet_url, :diameter, :mass, :life))
+
+    # @planet       = Planet.create
+    # @planets      = Planet.all
+    # new_planet    = Planet.create(params.require(:planets).permit(:planet_name, :planet_url, :diameter, :mass, :life) ) 
+    # @new_planet   = new_planet
+    # @planet_name  = params[:planet_name]
+    # @planet_url   = params[:planet_url]
+    # @diameter     = params[:diameter] 
+    # @mass         = params[:mass]
+    # @life         = params[:life]
+    redirect_to "/planets/#{ planet.id} "
   end
   
   def show
-    # redirect_to "/planets" 
+  @planet = Planet.find(params[:id])
   end
 
   def edit
+  @planet = Planet.find(params[:id])
+  
   end
 
-  def delete
+  def destroy
+  planet = Planet.find(params[:id])
+  planet.delete
+  redirect_to '/planets'
   end
 
 
