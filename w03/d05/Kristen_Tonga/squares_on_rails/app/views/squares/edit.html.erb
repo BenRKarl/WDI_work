@@ -4,9 +4,9 @@
 <form action="/squares/<%= @square.id %>" method="post">
   <input type="hidden" name="_method" value="put">
   <%= token_tag %>
-  <input type="text" name="square[color]" placeholder="Old color: <%= @square.color %>">
-  <input type="text" name="square[side_length]" placeholder="Old length: <%= @square.side_length %>">
-  <input type="text" name="square[border_radius]" placeholder="Old radius: <%= @square.border_radius %>">
+  <input type="text" name="square[color]" placeholder="Old color: <%= @square.color %>" value=<%= @square.color %>>
+  <input type="text" name="square[side_length]" placeholder="Old length: <%= @square.side_length %>" value=<%= @square.side_length %> >
+  <input type="text" name="square[border_radius]" placeholder="Old radius: <%= @square.border_radius %>" value= <%= @square.border_radius %>>
   <input type="submit">
 </form>
 

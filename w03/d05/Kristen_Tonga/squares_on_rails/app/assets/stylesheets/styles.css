@@ -5,4 +5,12 @@ body {
 
 div {
   float: left;
+  border: 3px solid black;
+}
+
+.centering {
+  width: 80%;
+  margin: 0 auto;
+  float: none;
+  background-color: black;
 }
