@@ -1,0 +1,9 @@
+<h1>MOVIES</h1>
+
+<div class="movies">
+    <%= @movies.each do |movie| %>
+        <div class="movie">
+            <%= movie.name %>
+        </div>
+    <% end %>
+</div>
