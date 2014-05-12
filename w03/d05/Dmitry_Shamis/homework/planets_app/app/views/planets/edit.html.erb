@@ -1,0 +1,38 @@
+<h1>What's wrong with <%= @planet.name %>?</h1>
+
+<form action='/planets/<%= @planet.id %>' method='post'>
+  <input type='hidden' name='_method' value='put'>
+  <%= token_tag %>
+  <table>
+    <tr>
+      <td><h4>Planet Name</h4></td>
+      <td><input type='text' name='planet[name]' value='<%= @planet.name %>'></td>
+    </tr>
+    <tr>
+      <td><h4>Is there an image URL?</h4></td>
+      <td><input type='text' name='planet[image_url]' value='<%= @planet.image_url %>'></td>
+    </tr>
+    <tr>
+      <td><h4>Planet Diameter</h4></td>
+      <td><input type='text' name='planet[diameter]' value='<%= @planet.diameter %>'></td>
+    </tr>
+    <tr>
+      <td><h4>Planet Mass</h4></td>
+      <td><input type='text' name='planet[mass]' value='<%= @planet.mass %>'></td>
+    </tr>
+    <tr>
+      <td><h4>Does Life exist there?</h4></td>
+      <td>
+        <div class="life">
+        <input type="radio" name="planet[life]" value="true">
+        <label for="true">Yes</label>
+        <input type="radio" name="planet[life]" value="false">
+        <label for="false">No</label>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div class="button_edit">
+  <button type="submit">Correct <%= @planet.name %></button>
+</div>
+</form>

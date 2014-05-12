@@ -1,0 +1,11 @@
+<h1>Create ye a new planet!</h1>
+
+<form action="/planets" method='post'>
+  <%= token_tag %>
+  <input type="text" placeholder="Name" name='name'>
+  <input type="text" placeholder="image_url" name='image_url'>
+  <input type="text" placeholder="diameter" name='diameter'>
+  <input type="text" placeholder="mass" name='mass'>
+  <input type="checkbox" placeholder="life" name='life'>
+  <input type="submit">
+</form>

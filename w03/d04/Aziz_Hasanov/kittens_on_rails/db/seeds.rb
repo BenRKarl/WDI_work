@@ -1,12 +1,14 @@
 
-# # def get_kitten
+#  def get_kitten
 # width = rand(100..500).to_s
 # height = rand(100..500).to_s
 # url = "http://placekitten.com/#{width}/#{height}"
-# # end
+#  end
 
 # url.each { |image| Kitten.create(name: image)}
 
+
+Kitten.delete_all # every time deletes previous kittens from DB
 10.times do
 	width = rand(100..500).to_s
 	height = rand(100..500).to_s

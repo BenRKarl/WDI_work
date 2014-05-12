@@ -1,0 +1,10 @@
+<form class="edit" action="/squares/<%= @edit_square.id %>" method="post">
+<%= token_tag %>
+  
+  <input type="hidden" name="_method" value="put" />
+  <input type="text" placeholder="<%= @edit_square.side_length %>" name="square[side_length]">
+  <input type="text" placeholder="<%= @edit_square.border_radius %>" name="square[border_radius]">
+  <input type="text" placeholder="<%= @edit_square.color %>" name="square[color]">
+  <input type="submit">
+  
+</form>

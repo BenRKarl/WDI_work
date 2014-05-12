@@ -1,0 +1,11 @@
+<h1>What's wrong with this one?</h1>
+
+<form action="/squares/<%= @square.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <%= token_tag %>
+
+  <input type="text" name="square[side_length]" value="<%= @square.side_length %>">
+  <input type="text" name="square[border_radius]" value="<%= @square.border_radius %>">
+  <input type="text" name="square[color]" value="<%= @square.color %>">
+  <button type="submit">See your new square</button>
+</form>
