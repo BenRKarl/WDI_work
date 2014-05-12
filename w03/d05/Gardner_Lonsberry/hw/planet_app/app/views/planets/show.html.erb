@@ -1,6 +1,8 @@
 
-<div class="planet_info">
+
+<div class="transbox_show">
 <h1><%= @planet.planet_name %></h1>
+<div class="planet_info">
  <img src="<%= @planet.planet_url %>">
  </br></br>
  <ul>
@@ -14,9 +16,9 @@
      Mass:  <%= @planet.mass %> kg
    </li>
    <li>
-     Currently life?:
+     Is there life?
            <%= if @planet.life
-           "Let's move there..."
+           "Yes, Let's move there..."
            else
            "No life"
             end %>
@@ -24,12 +26,12 @@
  </ul>
  </div></br></br>
  
- <form action="/planets" method="get">
-  <input type="submit" value="Back to Index">
- </form>
-<br>
  <form action="/planets/<%= @planet.id %>/edit" method="get">
    <input type="submit" value="Edit this Planet">
 </form>
+<br>
+ <form action="/planets" method="get">
+  <input type="submit" value="See All Planets">
+ </form>
 
 

@@ -1,6 +1,5 @@
-<h1>This is the edit page.  This will have the current planet to be edited showing.  Have all the fields to be edited.  Have a PUT submit form.  It will redirect to the newly edited planet page.  (new.html.erb #new)</h1>
 
-
+<div class="transbox">
 <h1>Edit <%= @planet.planet_name %></h1>
 
 <img src="<%= @planet.planet_url %>">
@@ -22,13 +21,14 @@
 
 Is there life? If 'yes' check the box <input type="checkbox" name="planets[life]"> 
 <br>
+<br>
    <input type="submit" value="Submit Changes">
 </form>
 
 <br>
 
 <form action="/planets" method="get">
-  <input type="submit" value="Back to Index">
+  <input type="submit" value="See All Planets">
  </form>
 <br>
- 
+</div>
