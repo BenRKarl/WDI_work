@@ -2,6 +2,7 @@
 
 <div class='movies'>
   <% @movies.each do |movie| %>
-    <%= movie.name %> <br/>
+    <a href="/movies/<%= movie.year %>/<%= movie.title %>"><%= movie.title %></a> 
+    => <%= movie.year %> <br/>
   <% end %>  
 </div> 

@@ -3,16 +3,11 @@ class MoviesController < ApplicationController
   end
 
   def search
-    movie_name = params.fetch :name
-
-    @movies = Movie.search(movie_name)
-            
+    @movies = Movie.search(params.fetch(:title))
+    @movies.sort_by! { |movie| movie.title }        
   end
 
-  class Movie
-    attr_reader :name
-    def initialize(name)
-      @name = name
-    end  
+  def show
+    @movie = Movie.find(params.fetch(:title), params.fetch(:year))
   end
 end
