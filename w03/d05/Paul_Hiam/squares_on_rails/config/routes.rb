@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
+root 'squares#index'
+
 get 'squares' => 'squares#index'
 
 get 'squares/new' => 'squares#new'
-post 'squares' => 'square#create'
+post 'squares' => 'squares#create'
 
 get 'squares/:id' => 'squares#show'
 

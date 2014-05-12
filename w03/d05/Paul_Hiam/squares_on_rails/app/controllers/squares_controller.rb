@@ -9,20 +9,19 @@ def new
 end
 
 def create
-  @side_length = ( params.permit(:side_length))
-  @border_radius = ( params.permit(:border_radius))
-  @color = ( params.permit(:color))
-  new_square = Square.create({side_length: @side_length, border_radius: @border_radius, color: @color})
+ 
+  new_square = Square.create(side_length:params[:side_length], border_radius:params[:border_radius], color:params[:color])
+  redirect_to "/squares/#{new_square.id}"
 end
 
 def edit
   @square = Square.find(params[:id])   
-  #show a form
+  #show a formula
 end
 
 def update
   edit_square = Square.find(params[:id])
-  edit_square.update( )
+  edit_square.update(side_length:params[:side_length], border_radius:params[:border_radius], color:params[:color])
 
   redirect_to "/squares/#{edit_square.id}"
 end
