@@ -30,53 +30,6 @@ ___
 
 ---
 
-#WDInstagram
-This is just going to be a little bit of practice making a single model Rails CRUD app.  
-
-###Entry Model
-
-|column|type|
-|-----|-----|
-|author|string|
-|photo_url|string|
-|date_taken|date|
-
-You will need to look up how to work with the ActiveRecord `date` datatype.
-
-###Routes & Behaviors
-
-|HTTP Verb|URL| Controller#Action | Behavior |
-|-----|-----|-----|-----|
-|GET|/entries|entries#index|Shows all entries|
-|GET|/entries/new|entries#new|Displays a form for the creation of a new Entry resource|
-|POST|/entries|entries#create|Creates a new entry and saves it to the database.|
-|GET|/entries/:id|entries#show|Displays a particularly entry.
-
-
-
-### Instructions
-
-1. Create a new rails app called wdinstagram_app `rails new wdinstagram_app -d postgresql`
-* Create a migration file that will help you create your entries table
-* Run `rake db:migrate` to actually create that table
-* Create your entry model 
-* Create routes for your app using resources (make sure there are only routes for the actions that we need!  You may need to look this one up.)
-* Create a controller with the required controller actions (listed above)
-* Define the method for a controller action, then create any corresponding views for that action.
-* Move on to the next controller action until you are done.
-
-
-
-
-### Bonus
-
-
-1. Add validation: name and photo_url need to be present.  Google 'ActiveRecord validations' for a hint on how to make this happen.
-
-2. Add a column for `caption` to your Entry, which is a text description of the shot. You'll need to generate a database migration for this and then update the rest of your app to be able to display these captions.
-
----
-
 #Planets have many moons.
 We are going to build a CRUD app with more than one model.  In this case, we will have two models: planets and moons existing in a one to many relationship(a planet has many moons, a moon belongs to a planet). 
 
@@ -125,14 +78,21 @@ end
 ```
 
 ###Instructions
-1. Create a new project planets_moons
+1. Create a new project planets_moons with `rails new planets_moons -d postgresql -T`
+* Add 'rspec-rails' to your Gemfile.  BUNDLE!
+* rails g rspec:install 
 * Write the migrations to set up your schema
 * Run `bin/rake db:migrate` to actually create that schema
-* Create your Moon model 
+* Create your Moon model.  If RSPEC is correctly installed, you will see that it creates your test file for you.
 * Create routes for your app using resources. 
 * Create the necessary controllers for the defined actions. 
 * Define the method for a controller action, then create any corresponding views for that action.
 * Move on to the next controller action until you are done.
+
+##Testing
+* Write a test for a `to_s` method on your planet model.  
+* For example, in the context of a planet object representation of Earth, it should say something to the effect of: "Earth is a planet with 1 moon(s), capable of sustaining life."
+
 ___
 
 
