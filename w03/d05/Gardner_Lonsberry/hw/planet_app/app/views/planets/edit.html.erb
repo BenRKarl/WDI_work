@@ -1,30 +1,28 @@
 <h1>This is the edit page.  This will have the current planet to be edited showing.  Have all the fields to be edited.  Have a PUT submit form.  It will redirect to the newly edited planet page.  (new.html.erb #new)</h1>
 
 
-<h1>This is where you add a new planet.</h1>
+<h1>Edit <%= @planet.planet_name %></h1>
 
+<img src="<%= @planet.planet_url %>">
 
-<form action="/planets" method='put'>
-
-<input type="text" name="planets[planet_name]" placeholder="...Planet Name" value="<%= @planet.planet_name %>" />Planet Name 
+<form action="/planets/<%= @planet.id %>/" method="post">
+  <input type="hidden" name="_method" value="put">
+  <%= token_tag %>
+<input type="text" name="planets[planet_name]" placeholder="Planet Name" value="<%= @planet.planet_name %>" />
 <br>
 
-<input type="text" name="planets[planet_url]" placeholder="...Planet pic URL" value="<%= @planet.planet_url %>" />Planet Image URL
+<input type="text" name="planets[planet_url]" placeholder="Planet pic URL" value="<%= @planet.planet_url %>" />
 <br>
 
-<input type="text" name="planets[diameter]" placeholder="Diameter (#'s only)" value="<%= @planet.diameter %>" />Planet Diameter
+<input type="text" name="planets[diameter]" placeholder="Diameter (km)" value="<%= @planet.diameter %>" />
 <br>
 
-<input type="text" name="planets[mass]" placeholder="Planet Mass" value="<%= @planet.mass %>" />
-<input type="text" name="power" placeholder="to what power ( ^X )" /> Planet Mass
+<input type="text" name="planets[mass]" placeholder="Planet Mass (kg)" value="<%= @planet.mass %>" />
 <br>
 
-<input type="checkbox" name="planets[life]"> Is there life? If 'yes' check the box
-
+Is there life? If 'yes' check the box <input type="checkbox" name="planets[life]"> 
 <br>
-
-<%= token_tag %>
-<input type="submit">
+   <input type="submit" value="Submit Changes">
 </form>
 
 <br>
@@ -33,6 +31,4 @@
   <input type="submit" value="Back to Index">
  </form>
 <br>
- <form action="/planets/<%= @planet.id %>/edit" method="get">
-   <input type="submit" value="Edit this Planet">
-</form>
+ 

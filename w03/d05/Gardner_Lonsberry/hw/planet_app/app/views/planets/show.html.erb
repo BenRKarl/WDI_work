@@ -1,6 +1,6 @@
-<h1>This is the show page.  Show the individual planet.  Have link back to index.  Have link to edit the current planet.</h1>
 
 <div class="planet_info">
+<h1><%= @planet.planet_name %></h1>
  <img src="<%= @planet.planet_url %>">
  </br></br>
  <ul>
@@ -16,9 +16,9 @@
    <li>
      Currently life?:
            <%= if @planet.life
-           "Ground Controll to Major Tom! Let's move there!  There's life!"
+           "Major Tom! There's life!"
            else
-           "No life there. What a drag"
+           "No life..."
             end %>
  </li>
  </ul>
