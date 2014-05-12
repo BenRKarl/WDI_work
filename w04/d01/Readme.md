@@ -127,7 +127,7 @@ end
 ###Instructions
 1. Create a new project planets_moons
 * Write the migrations to set up your schema
-* Run `rake db:migrate` to actually create that schema
+* Run `bin/rake db:migrate` to actually create that schema
 * Create your Moon model 
 * Create routes for your app using resources. 
 * Create the necessary controllers for the defined actions. 
