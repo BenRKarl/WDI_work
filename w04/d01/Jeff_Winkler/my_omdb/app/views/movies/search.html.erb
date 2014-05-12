@@ -3,7 +3,7 @@
 
   <% @movies.each do |movie| %>
     <div>
-    <%= movie.name %>
+    <a href="/movies/<%=movie.year%>/<%= movie.title%>"><%= movie.title %></a>:  <%=movie.year %>
   </div>
   <% end %>
 

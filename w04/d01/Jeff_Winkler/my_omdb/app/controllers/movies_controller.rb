@@ -4,13 +4,15 @@ class MoviesController < ApplicationController
 
   def search
 
-    @movies = [Movie.new("The Matrix"), Movie.new("The Other Matrix")]
+    @movies = Movie.search params.fetch(:name)
+    @movies = @movies.sort_by {|movie| movie.title}
   end
 
-  class Movie
-    attr_reader :name
-    def initialize name
-      @name=name
-    end
+  def show
+    @movie = Movie.find params.fetch(:title), params.fetch(:year)
+
+
+
   end
+
 end
