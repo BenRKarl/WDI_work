@@ -3,3 +3,18 @@
 <a href="planets/new">Make a new planet!  This should be a button GET planets/new  planets#new</a>
 
 
+<% @planets.each do |planet| %>
+
+
+<a href="/planets/<%= planet.id %>/edit">
+  
+    <p> <%= planet.planet_name %></p>
+  <img src="<%= planet.planet_url %>" >
+    <p><%= planet.diameter %></p>
+    <p><%= planet.mass %></p>
+    <p><%= planet.life %></p>
+    
+<% end %>
+</div>
+
+

@@ -1,3 +1,27 @@
-<h1>This is where you add a new planet.  Put forms here</h1>
+<h1>This is where you add a new planet.</h1>
+
+
+<form action="/planets" method='post'>
+
+<input type="text" name="planets[planet_name]" placeholder="...Planet Name" />
+<br>
+
+<input type="text" name="planets[planet_url]" placeholder="...Planet pic URL" />
+<br>
+
+<input type="text" name="planets[diameter]" placeholder="...Planet Diameter" />
+<br>
+
+<input type="text" name="planets[mass]" placeholder="...Planet Mass" /><br>
+
+<input type="text" name="planets[life]" placeholder="...Life?" />
+<br>
+
+<%= token_tag %>
+<input type="submit">
+</form>
+
+
+
 
 <a href="/planets">Back to index</a>
