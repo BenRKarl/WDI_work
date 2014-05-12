@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  image_url: 
+  diameter: 
+  mass: 
+  life: false
+
+two:
+  name: 
+  image_url: 
+  diameter: 
+  mass: 
+  life: false

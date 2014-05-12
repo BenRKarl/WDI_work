@@ -1,0 +1,17 @@
+<h1>Get a load of that user...</h1>
+
+<h2><%= @user.username %></h2>
+
+<form action="/users/<%= @user.id %>/edit" method="get">
+  <input type="submit" value="Edit user">
+</form>
+
+<form action="/users/<%= @user.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete user">
+</form>
+
+<form action="/users" method="get">
+  <input type="submit" value="Back to home">
+</form>
