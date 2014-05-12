@@ -1,25 +1,27 @@
-<h2>Edit a planet</h2>
+<div class="content">
+    <h2>Edit a planet</h2>
 
-<div>
-    <form action="/planets/<%= @planet.id %>" method='post'>
-    <input type="hidden" name="_method" value="put">
-    <%= token_tag %>
-    <tr>
-        <td>Name:</td>
-        <td><input type="text" name='planet[name]' value="<%= @planet.name %>"></td>
-        <td>Image URL:</td>
-        <td><input type="text" name='planet[image_url]' value="<%= @planet.image_url %>"></td>
-        <td>Diameter (in miles):</td>
-        <td><input type="text" name='planet[diameter]' value="<%= @planet.diameter %>"></td>
-        <td>Mass (in E24kg):</td>
-        <td><input type="text" name='planet[mass]' value="<%= @planet.mass %>"></td>
-        <td>Life?</td>
-        <td>
-        <input type="checkbox" name='planet[life]' value="true" <% if @planet.life %> checked <% end %>> yes<br>
-        <input type="checkbox" name='planet[life]' value="false" <% if !@planet.life %> checked <% end %>> no<br>
-        </td>
-    </tr>
-    <input type="submit">
-    </form>
+    <div>
+        <form action="/planets/<%= @planet.id %>" method='post'>
+        <input type="hidden" name="_method" value="put">
+        <%= token_tag %>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name='planet[name]' value="<%= @planet.name %>"></td>
+            <td>Image URL:</td>
+            <td><input type="text" name='planet[image_url]' value="<%= @planet.image_url %>"></td>
+            <td>Diameter (in miles):</td>
+            <td><input type="text" name='planet[diameter]' value="<%= @planet.diameter %>"></td>
+            <td>Mass (in E24kg):</td>
+            <td><input type="text" name='planet[mass]' value="<%= @planet.mass %>"></td>
+            <td>Life?</td>
+            <td>
+            <input type="radio" name='planet[life]' value="true" <% if @planet.life %> checked <% end %>> yes
+            <input type="radio" name='planet[life]' value="false" <% if !@planet.life %> checked <% end %>> no
+            </td>
+        </tr>
+        <input type="submit">
+        </form>
+    </div>
 </div>
 
