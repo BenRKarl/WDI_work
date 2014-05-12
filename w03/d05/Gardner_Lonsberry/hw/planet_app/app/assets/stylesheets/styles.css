@@ -23,7 +23,7 @@ h1 {
 }
 
 p {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 img { 
@@ -94,11 +94,6 @@ h1 {
 }
 
 form {
-  text-align: center;
-  color:white;  
-}
-
-div.transbox_new form {
   text-align: center;
   color:white;  
 }

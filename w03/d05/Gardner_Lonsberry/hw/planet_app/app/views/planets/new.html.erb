@@ -1,9 +1,10 @@
 
 <div class="transbox_new">
-<h1>Add a new planet</h1>
+<h1>Add a new planet <br>
+Is there life? If 'yes' check the box <input type="checkbox" name="planets[life]"></h1>
 <form action="/planets" method='post'>
 
-<input type="text" name="planets[planet_name]" placeholder="...Planet Name" />
+<input type="text" name="planets[planet_name]" placeholder="Planet Name" />
 <br>
 
 <input type="text" name="planets[planet_url]" placeholder="Planet pic URL" />
@@ -15,8 +16,7 @@
 <input type="text" name="planets[mass]" placeholder="Planet Mass" />
 <br>
 
-
-Is there life? If 'yes' check the box<input type="checkbox" name="planets[life]">
+  
 <br>
 
 <%= token_tag %>

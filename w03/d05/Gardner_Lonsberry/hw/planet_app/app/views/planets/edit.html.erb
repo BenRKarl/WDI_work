@@ -1,6 +1,8 @@
 
 <div class="transbox">
-<h1>Edit <%= @planet.planet_name %></h1>
+<h1>Edit <%= @planet.planet_name %><br>
+Is there life? If 'yes' check the box <input type="checkbox" name="planets[life]"> 
+</h1>
 
 <img src="<%= @planet.planet_url %>">
 
@@ -19,7 +21,6 @@
 <input type="text" name="planets[mass]" placeholder="Planet Mass (kg)" value="<%= @planet.mass %>" />
 <br>
 
-Is there life? If 'yes' check the box <input type="checkbox" name="planets[life]"> 
 <br>
 <br>
    <input type="submit" value="Submit Changes">
