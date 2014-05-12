@@ -1,0 +1,36 @@
+
+
+<div class="container">
+
+<% square = @square %>
+
+
+  <div class="squares" style="width: <%= square.side_length %>px; height: <%= square.side_length %>px;
+      background-color:  <%= square.color %>; border-radius: <%= square.border_radius %>px">
+
+  </div>
+
+
+
+
+
+<form action="/squares/<%= square.id %>/edit" method="get">
+  <button class="button" type="submit">Edit</button>
+</form>
+
+
+<form action="/squares/<%= square.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <button class="button" type="submit">Delete</button>
+</form>
+
+
+<form action="/squares" method="get">
+  <button class="button" type="submit">Back</button>
+</form>
+
+</div>
+
+
+

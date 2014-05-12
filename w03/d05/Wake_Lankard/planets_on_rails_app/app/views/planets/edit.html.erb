@@ -1,0 +1,58 @@
+<h1>Planet Data Reconfiguration Interface</h1>
+
+<form action="/planets/<%= @planet.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <%= token_tag %>
+<table>
+  <tr>
+    <td>
+      Planet Name:
+    </td>
+    <td>
+      <input type="text" name="[planet]name" value="<%= @planet.name %>">
+    </td>
+  </tr>
+  <tr>
+    <td colspan=2>
+       <img class="planet_image" src="<%= @planet.image_url %>">
+     </td>
+  </tr>
+  <td>
+    Image URL:
+  </td>
+  <td>
+    <input type="url" name="[planet]image_url" value="<%= @planet.image_url %>"
+  </td>
+  <tr>
+    <td>
+       Diameter:
+    </td>
+    <td>
+      <input type="text" name="[planet]diameter" value="<%= @planet.diameter %>">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Mass: 
+    </td>
+    <td>
+      <input type="text" name="[planet]mass" value="<%= @planet.mass %>">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Life:
+    </td>
+    <td>
+      Life: <input type="radio" name="[planet]life" value="true" <%= @life_checked %> >
+      No Life:<input type="radio" name="[planet]life" value="false" <%=@nolife_checked%> >
+    </td>
+  </tr>
+  <tr>
+    <td colspan=2>
+      <button type="submit">Submit changes</button>
+    </td>
+  </tr>
+</table>
+
+<a href="/planets"><< Back to main interface</a>
