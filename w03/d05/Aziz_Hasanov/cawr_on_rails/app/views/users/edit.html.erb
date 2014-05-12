@@ -1,0 +1,6 @@
+<form action="/users/<%= @edit_user.id %>" method="post">
+  <%= token_tag %>
+	<input type="hidden" name="_method" value="put" />
+	<input type="text" placeholder="<%= @edit_user.username %>" name="user[username]" />
+	<input type="submit">
+</form>

@@ -1,0 +1,51 @@
+<nav>
+  <h3>
+    <a href="/planets">Back to home page</a>
+  </h3>
+</nav>
+
+
+<section>
+  <h1 class="show">About <%= @planet.name %></h1>  
+
+  <img src="<%= @planet.image_url %>" alt="<%= @planet.name %>"
+  class='planet' />  
+
+  <table>
+    <tr>
+      <td>Diameter:</td>
+      <td><%= @planet.diameter %> km</td>
+    </tr>   
+
+    <tr>
+      <td>Mass:</td>
+      <td><%= @planet.mass %> x 10<sup>21</sup> kg</td>
+    </tr>  
+
+    <tr>
+      <td>Life:</td>
+        <% if @planet.life == true %>
+          <% life = 'Yes' %>
+        <% else %>  
+          <% life = 'No' %>
+        <% end %>  
+      <td><%= life %></td>
+    </tr>  
+
+    <tr>
+      <td>  
+      <a href="/planets/<%= @planet.id %>/edit">
+        <button class="edit">Edit</button>
+      </a>
+      </td>  
+
+      <td>
+      <form action="/planets/<%= @planet.id %>/destroy" method="post" class="delete">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete">
+      </form>
+      </td>
+    </tr>  
+  </table>
+
+</section>

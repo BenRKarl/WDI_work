@@ -1,0 +1,7 @@
+<h1>ALL THE KITTENS</h1>
+
+<h2>mike is rad</h2>
+
+<a href="http://www.cbc.ca"><% @kittens.each do |kitten| %>
+    <img src="<%= kitten.url%>">
+<% end %></a>

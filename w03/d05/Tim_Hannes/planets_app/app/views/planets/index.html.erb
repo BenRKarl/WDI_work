@@ -1,0 +1,26 @@
+<h1>All The Planets!</h1>
+
+<div class="links">
+<%= link_to 'Show Planets', controller: 'planets' %>
+<%= link_to 'New Planet', new_planet_path %>
+</div>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>URL</th>
+    <th>Diameter</th>
+    <th>Mass</th>
+    <th>Life?</th>
+  </tr>
+
+  <% @planets.each do |planet| %>
+    <tr>
+      <td><%= planet.name %></td>
+      <td><%= planet.image_url %></td>
+      <td><%= planet.diameter %></td>
+      <td><%= planet.mass %></td>
+      <td><%= planet.life %></td>
+    </tr>
+  <% end %>
+</table>

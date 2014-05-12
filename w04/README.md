@@ -15,7 +15,7 @@
 
 |Monday |Tuesday|Wednesday  |Thursday |Friday
 |:----- |:----- |:-----   |:-----   |:-----
-||||||
+|Rails w/ tests|Asset Pipeline|Associations|Project Management|Projects|
 
 
 ---

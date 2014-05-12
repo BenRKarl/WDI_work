@@ -1,0 +1,9 @@
+<h2>Be a square</h2>
+
+<form action="/squares" method='post'>
+  <%= token_tag %>
+  <input type="text" placeholder="Side Lenth" name='square[side_length]'>
+  <input type="text" placeholder="Border Radius" name='square[border_radius]'>
+  <input type="text" placeholder="Color" name='square[color]'>
+  <input type="submit">
+</form>

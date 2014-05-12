@@ -1,0 +1,9 @@
+<h1>La Terre Est Bleu Comme Une Orange</h1>
+
+<% @squares.each do |square| %>
+  <img src="<%= square.url %>" >
+<% end %>
+
+<a href="/squares/new">
+  New Square
+</a>

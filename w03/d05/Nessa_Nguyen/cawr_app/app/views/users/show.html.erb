@@ -1,0 +1,11 @@
+<h2>
+  <%= @user.username %>
+</h2>
+
+<a href="/users/<%= @user.id %>/edit">Edit</a>
+
+<form action="/users/<%= @user.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Del">
+</form>

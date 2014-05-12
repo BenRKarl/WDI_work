@@ -1,0 +1,10 @@
+CREATE DATABASE wdi_kittens;
+
+\c wdi_kittens
+
+CREATE TABLE kittens
+(
+  id serial4 PRIMARY KEY,
+  width integer,
+  height integer
+);
