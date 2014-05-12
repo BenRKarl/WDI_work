@@ -1,0 +1,23 @@
+<h2>List a new planet</h2>
+
+<div>
+    <form action="/planets" method='post'>
+    <%= token_tag %>
+    <tr>
+        <td>Name:</td>
+        <td><input type="text" name='planet[name]'></td>
+        <td>Image URL:</td>
+        <td><input type="text" name='planet[image_url]'></td>
+        <td>Diameter (in miles):</td>
+        <td><input type="text" name='planet[diameter]'></td>
+        <td>Mass (in E24kg):</td>
+        <td><input type="text" name='planet[mass]'></td>
+        <td>Life?</td>
+        <td>
+        <input type="checkbox" name='planet[life]' value="1"> yes<br>
+        <input type="checkbox" name='planet[life]' value="0" checked> no<br>
+        </td>
+    </tr>
+    <input type="submit">
+    </form>
+</div>
