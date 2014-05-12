@@ -1,0 +1,9 @@
+<h1>So you want to create a new square</h1>
+
+<form action="/squares" method="post">
+  <%= token_tag %>
+  <input type="text" name="square[side_length]" placeholder="Side length?">
+  <input type="text" name="square[border_radius]" placeholder="Border radius?">
+  <input type="text" name="square[color]" placeholder="Color?">
+  <input type="submit" value="Create square">
+</form>

@@ -1,0 +1,58 @@
+after making new rails app
+go in it and 
+-- make the database
+
+$ rake db:create
+
+then
+--migrate database (Set up schema)
+-- write migrations with:
+
+$ rails g migration create_kittens_table
+  * if migration file has name '_table' then remove that
+OR
+EVEN BETTER! DO
+$ rails g model Kitten width:integer height:integer url:string
+## this will make the migration file and generate the model
+
+then run migrations with:
+rake db:migrate
+
+** you can type rails console inside your project to get irb session in your project with database linked
+  Kitten.all should work (empty array)
+
+then seed your database in seeds.rb
+ex:
+#for just 100 after each run of seed file (rake db:seed) put deleteall
+
+Kitten.delete_all
+-100.times do
+  width = rand(100..600)
+  height = rand(100..600)
+  url = "http://placekitten.com/#{width}/#{height}"
+  Kitten.create(width: width, height: height, url: url)
+end
+
+then
+
+handle requests:
+routes.rb
+go into app ex: KittensIntroApp::Application.routes.draw do
+  
+  get '/' => 'kittens#index'  #map req' to 'controller#action'
+  get '/' => 'kittens#index'
+
+then make controller in controller folder ex: 'kittens_controller.rb'
+  in that make the class:
+  class KittensController < ApplicationController
+#add the index action
+  def index
+    @kittens = Kitten.all
+  end
+  end
+
+then make the view index in folder kittens in views
+filename = index.html.erb
+
+then fire up rails server and go to the index page. WOW
+

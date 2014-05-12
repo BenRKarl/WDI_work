@@ -1,0 +1,8 @@
+<h1>Behold, ye, all the squares in the land.</h1>
+
+  <% @squares.each do |square| %>
+      <div style="height: <%= square.side_length %>px; width: <%= square.side_length %>px; border-radius: <%= square.border_radius %>px; background-color: <%= square.color %>;">
+
+      </div>
+
+  <% end %>
