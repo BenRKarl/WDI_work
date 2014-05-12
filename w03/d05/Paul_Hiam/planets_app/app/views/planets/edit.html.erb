@@ -1,0 +1,15 @@
+<form action="/planets/<%= @planet.id %>" method='post'>
+  <input type="hidden" name="_method" value="put">
+  <%= token_tag %>
+ <input type="text" name="name"placeholder="<%= @planet.name %>">
+ <input type="text" name="image_url" placeholder="<%= @planet.image_url %>">
+ <input type="text" name="diameter" placeholder="<%= @planet.diameter %>">
+  <input type="text" name="mass" placeholder="<%= @planet.mass %>">
+  
+   <br/>
+   <input type="radio" name="life" value="life"> Has Life <br/>
+ <input type="submit"> 
+
+
+
+</form>

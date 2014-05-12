@@ -1,0 +1,8 @@
+<h2>edit user</h2>
+
+<form action='/users/<%= user.id %>' method='post'>
+    <input type='hidden' name='_method' value='put'>
+    <%= token_tag %>
+    <input type='text' name='user[username]' value="...username">
+    <button type='submit'>Submit</button>
+</form>

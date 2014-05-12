@@ -1,0 +1,19 @@
+<h1>Welcome, Brave Cawer</h1>
+
+<ul>
+	<% @users.each do |i| %>
+	<li>
+		<a href="/users/<%= i.id %>"><%= i.username %></a>
+		<button><a href="/users/<%= i.id %>/edit">edit</a></button>
+
+		<form action="/users/<%= i.id %>" method='post'>
+  		<%= token_tag %>
+  		<input type="hidden" name='_method' value='delete'>
+  		<button type='submit'>Delete</button>
+		</form>
+
+	</li>
+	<% end %>
+</ul>
+
+<button><a href="/users/new">sign up</a></button>

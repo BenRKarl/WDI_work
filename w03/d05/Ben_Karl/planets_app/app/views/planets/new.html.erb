@@ -1,0 +1,11 @@
+<h1>Make a new planet!</h1>
+
+<form action="/planets" method="post">
+  <%= token_tag %>
+  <input type="text" name="planets[name]" placeholder="Planet name"></br>
+  <input type="text" name="planets[diameter]" placeholder="Planet diameter"></br>
+  <input type="text" name="planets[mass]" placeholder="Planet mass"></br>
+  <input type="text" name="planets[image_url]" placeholder="Image url"></br>
+  <p>Does it have life? <input type="checkbox" name="planets[life]"></p>
+  <input type="submit" value="Add planet">
+</form>

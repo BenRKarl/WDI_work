@@ -1,0 +1,13 @@
+
+
+<p>Register a new planet</p>
+
+<form action="/planets" method="post">
+  <%= token_tag %>
+  <input type="text" name="name" placeholder="Enter Planet name"><br>
+  <input type="url" name="image_url" placeholder="Enter image URL"><br>
+  <input type="text" name="diameter" placeholder="Enter diameter in km"><br>
+  <input type="text" name="mass" placeholder="Enter mass ( * E20)kg"><br>
+  <input type="text" name="life" placeholder="Signs of life: True/False"><br>
+  <input type="submit" value="Add Planet">
+</form>

@@ -1,0 +1,17 @@
+<h1>Square #<%= @square.id %></h1>
+
+<div style=
+  "width:<%= @square.side_length %>px;
+  height:<%= @square.side_length %>px;
+  border-radius:<%= @square.border_radius %>px;
+  background-color:<%= @square.color %>; margin: 10px">
+</div>
+
+<p>Side length = <%= @square.side_length %></p>
+<p>Border radius = <%= @square.border_radius %></p>
+<p>Color = <%= @square.color %></p>
+
+<a href="<%= @square.id %>/edit"><button>Edit</button></a>
+<form action="/squares/<%= @square.id %>" method='post'><%=token_tag%><input type="hidden" name='_method' value='delete'><button>Delete Square</button></form>
+<br/>
+<a href="/"><button>Back to Index</button></a>

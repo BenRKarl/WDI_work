@@ -1,0 +1,126 @@
+body {
+  background-image:url('http://wallpapersus.com/wp-content/uploads/2012/07/stars-5.jpg');
+}
+
+.table_img {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+.profile_img {
+  height: 400px;
+  width: 400px;
+}
+
+.alderan {
+  width: 200px;
+  height: auto;
+}
+
+
+.container {
+  background-color: lightgrey;
+  width: 900px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.show_img {
+  width: 450px;
+  height: 450px;
+  float: left;
+  margin-left: 30px;
+}
+
+.info {
+  height: 400px;
+  width: 400px;
+  text-align: left;
+  float: left;
+  margin: 10px;
+}
+
+.footer {
+  clear: both;
+  text-align: center;
+}
+
+table {
+  background-color: lightgrey;
+  border: 1px dashed black;
+  text-align: center;
+  width: 1005;
+  margin: 0 auto;
+  font-family: arial;
+}
+
+th {
+  text-decoration: underline;
+  padding: 5px 10px 5px 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: lightblue;
+}
+
+td {
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+h1 {
+  font-family: 'Geostar', cursive;
+  text-align: center;
+  color: white;
+}
+
+button {
+  text-align: center;
+  margin: 0 auto;
+  font-family: arial;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border-color: black;
+}
+
+.button {
+  width: 375px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.button_new {
+  width: 175px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.button_show1 {
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.button_show2 {
+  width: 190px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.button_edit {
+  width: 120px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
