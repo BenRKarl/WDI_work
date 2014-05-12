@@ -1,0 +1,24 @@
+<h1><%= @planet.name %></h1>
+
+<div class="container">
+
+  <div class="show_img">
+    <img class="profile_img" src='<%= @planet.image_url %>'>
+  </div>
+
+  <div class="info">
+    <h3>Diameter:</h3><p><%= @planet.diameter %> km</p>
+    <h3>Mass:</h3><p><%= @planet.mass %>000000000000000000 kg</p>
+    <h3>Life Present?:</h3><p><%= (@planet.life).to_s.capitalize %></p>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="button_show1">
+    <a href="/planets/<%= @planet.id %>/edit"><button>Edit <%= @planet.name %></button></a><br>
+  </div>
+  <div class="button_show2">
+    <a href="/planets"><button>Back to the Mother Ship</button></a>
+  </div>
+</div>
+

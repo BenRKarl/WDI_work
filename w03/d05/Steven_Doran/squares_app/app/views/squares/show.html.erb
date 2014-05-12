@@ -1,0 +1,11 @@
+<h1>Square <%= @square.id %></h1>
+
+<div class="square" style="height:<%= @square.side_length %>px; width:<%= @square.side_length %>px; border-radius: <%= @square.border_radius%>px; background-color: <%= @square.color%>">
+</div>
+<br/>
+<form method='link' action="/squares/<%= @square.id %>/edit">
+    <input type="submit" value="Edit Square">
+</form>
+<form method='link' action="/squares">
+    <input type="submit" value="Home">
+</form>

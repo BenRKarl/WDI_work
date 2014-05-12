@@ -1,0 +1,17 @@
+<div class="new">
+  <a href="/planets">
+  HOME
+</a>
+
+<h2>Be a user</h2>
+
+<form action="/planets" method='post'>
+  <%= token_tag %>
+  <input type="text" placeholder="Planet Name" name='planet[name]'>
+  <input type="text" placeholder="Image Url" name='planet[image_url]'>
+  <input type="text" placeholder="Diameter" name='planet[diameter]'>
+  <input type="text" placeholder="Mass" name='planet[mass]'>
+  <input type="text" placeholder="Planet Life" name='planet[life]'>
+  <input type="submit">
+</form>
+</div>

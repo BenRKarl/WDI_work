@@ -1,0 +1,10 @@
+<h1> You may add a square </h1>
+<form action='/squares' method='post'>
+  <%= token_tag %>
+  Side Length:<input type='number' name='[square]side_length' value="100">
+  Border Radius:<input type='number' name='[square]border_radius' value="10">
+  Color:<input type="color" name="[square]color">
+  
+  <button type='submit'>Submit</button>
+</form>
+<a href="/squares"><< Check out the squares.</a>

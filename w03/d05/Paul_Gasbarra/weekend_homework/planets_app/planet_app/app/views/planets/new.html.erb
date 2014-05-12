@@ -1,0 +1,22 @@
+<h1>Create a planet</h1>
+
+<form action="/planets" method='post'>
+Enter planet name.
+  <input type="text" name='name'/><%= token_tag %>
+<br/>
+
+Enter link to planet image.
+  <input type="text" name='image_url'/><%= token_tag %>
+<br/>
+
+Enter planet diameter.
+  <input type="integer" name="diameter"/><%= token_tag %>
+<br/>
+
+ Enter planet mass.
+  <input type="integer" name="mass"/><%= token_tag %>
+<br/>
+Life present? T/F
+<input type="boolean" name="life"/><%= token_tag %>
+  <input type="submit">
+</form>
