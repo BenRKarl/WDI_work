@@ -61,6 +61,9 @@ GEM
     mime-types (1.25.1)
     minitest (5.3.3)
     multi_json (1.10.0)
+    omdb (1.0.3)
+      json
+      rest-client
     pg (0.17.1)
     polyglot (0.3.4)
     pry (0.9.12.6)
@@ -91,6 +94,8 @@ GEM
     rake (10.3.1)
     rdoc (4.1.1)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec-core (2.14.8)
     rspec-expectations (2.14.5)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -144,6 +149,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  omdb
   pg
   pry-byebug
   rails (= 4.1.1)
