@@ -1,0 +1,8 @@
+<h1>Kittens Selection</h1>
+<p>
+    <a href="/kittens/random"><button type="submit">Get a random kitten</button></a>
+</p>
+<% @kittens.each do |kitten| %>
+    <img src="<%= kitten.url %>">
+<% end %>
+

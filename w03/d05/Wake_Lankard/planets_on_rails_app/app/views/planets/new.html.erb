@@ -1,0 +1,52 @@
+<h1>New Planet Input Interface</h1>
+
+<form action="/planets" method="post">
+  <%= token_tag %>
+<table>
+  <tr>
+    <td>
+      Planet Designation:
+    </td>
+    <td>
+      <input type="text" name="[planet]name">
+    </td>
+  </tr>
+  <tr>
+
+  <td>
+    Image URL:
+  </td>
+  <td>
+    <input type="url" name="[planet]image_url">
+  </td>
+  <tr>
+    <td>
+       Diameter:
+    </td>
+    <td>
+      <input type="text" name="[planet]diameter">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Mass: 
+    </td>
+    <td>
+      <input type="text" name="[planet]mass">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Life:
+    </td>
+    <td>
+      Life: <input type="radio" name="[planet]life" value="true">
+      No Life:<input type="radio" name="[planet]life" value="false">
+    </td>
+  </tr>
+  <tr>
+    <td colspan=2>
+      <button type="submit">Submit</button>
+    </td>
+  </tr>
+</table>

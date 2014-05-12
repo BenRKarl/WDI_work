@@ -1,0 +1,21 @@
+<div class="content">
+    <h2>All the planets</h2>
+
+    <% @planets.each do |planet| %>
+       <!--  <div>
+          <a href="/planets/<%= planet.id %>"><img src="<%= planet.image_url %>" width="200" height="200" alt="<%= planet.name %>" /></a>
+        </div> -->
+        <a href="/planets/<%= planet.id %>">
+        <figure>
+      <img src="<%= planet.image_url %>" width="200" height="200" alt="<%= planet.name %>" />
+      <figcaption>Planet <%= planet.name %></figcaption>
+    </figure>
+    </a>
+    <% end %>
+
+    <div class="button">
+        <a href="/planets/new">
+            New Planet
+        </a>
+    </div>
+</div>

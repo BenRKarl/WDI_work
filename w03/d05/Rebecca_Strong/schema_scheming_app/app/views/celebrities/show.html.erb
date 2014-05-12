@@ -1,0 +1,15 @@
+<a href="/celebrities">
+  Home
+</a>
+
+<h3><%= @celebrity.celebrityname %></h3>
+
+<a href="/celebrities/<%= @celebrity.id %>/edit">
+  Edit
+</a>
+
+<form action="/celebrity/<%= @celebrity.id %>" method='post'>
+  <%= token_tag %>
+  <input type="hidden" name='_method' value='delete'>
+  <button type='submit'>Delete</button>
+</form>
