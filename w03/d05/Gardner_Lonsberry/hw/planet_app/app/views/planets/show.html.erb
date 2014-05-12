@@ -1,0 +1,37 @@
+
+
+<div class="transbox_show">
+<h1><%= @planet.planet_name %></h1>
+<div class="planet_info">
+ <img src="<%= @planet.planet_url %>">
+ </br></br>
+ <ul>
+   <li>
+     Name: <%= @planet.planet_name %>
+   </li>
+   <li>
+     Diameter:  <%= @planet.diameter %> km
+   </li>
+   <li>
+     Mass:  <%= @planet.mass %> kg
+   </li>
+   <li>
+     Is there life?
+           <%= if @planet.life
+           "Yes, Let's move there..."
+           else
+           "No life"
+            end %>
+ </li>
+ </ul>
+ </div></br></br>
+ 
+ <form action="/planets/<%= @planet.id %>/edit" method="get">
+   <input type="submit" value="Edit this Planet">
+</form>
+<br>
+ <form action="/planets" method="get">
+  <input type="submit" value="See All Planets">
+ </form>
+
+

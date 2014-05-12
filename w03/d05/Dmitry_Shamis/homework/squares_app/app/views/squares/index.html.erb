@@ -1,0 +1,12 @@
+<h1>You want SQUARES? You got 'em!</h1>
+<a href="/squares/new"><button>Create a new square</button></a>
+<br>
+<div class="squares">
+<% @squares.each do |square| %>
+<a href="squares/<%= square.id %>">
+<div style="width:<%= square.side_length %>px; height:<%= square.side_length %>px; border-radius:<%= square.border_radius %>px;background-color:<%= square.color %>"></div>
+</a>
+<% end %>
+</div>
+
+

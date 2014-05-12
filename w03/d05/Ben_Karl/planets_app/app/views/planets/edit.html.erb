@@ -1,0 +1,12 @@
+<h1>Edit that there planet!</h1>
+
+<form action="/planets/<%= @planet.id %>/" method="post">
+  <input type="hidden" name="_method" value="put">
+  <%= token_tag %>
+  <input type="text" name="planets[name]" value="<%= @planet.name %>"></br>
+  <input type="text" name="planets[diameter]" value="<%= @planet.diameter %>"></br>
+  <input type="text" name="planets[mass]" value="<%= @planet.mass %>"></br>
+  <input type="text" name="planets[image_url]" value="<%= @planet.image_url %>"></br>
+  <p>Does it have life? <input type="checkbox" name="planets[life]"></p>
+  <input type="submit" value="Submit changes">
+</form>

@@ -1,0 +1,8 @@
+<h1>Here is the user with username <%= @user.username%></h1>
+To edit, click <a href="/users/<%= @user.id %>/edit">here</a>.
+<form action="/users/<%=@user.id%>" method="post">
+  <%=token_tag%>
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete</button>
+</form>
+

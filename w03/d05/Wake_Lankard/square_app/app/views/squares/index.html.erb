@@ -1,0 +1,7 @@
+<h1>Squares a go-go</h1>
+<% @squares.each do |square| %>
+  <% len = square.side_length %>
+  <% rad = square.border_radius %>
+  <div class="square" style="width: <%= len %>; hieght: <%= len %>; border-radius: <%= rad %>">
+  </div>
+<% end %> 
