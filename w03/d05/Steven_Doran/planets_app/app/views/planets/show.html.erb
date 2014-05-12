@@ -8,6 +8,7 @@
         <th>Life</th>
     </tr>
     <tr>
+        <td><img src="<%= @planet.image_url%>" height="100" width="100"></td>
         <td><%= @planet.diameter%> km</td>
         <td><%= @planet.mass%> x 10<sup>24</sup> kg</td>
         <td>
@@ -19,3 +20,10 @@
         </td>
     </tr>
 </table>
+
+<form method='link' action="/planets/">
+    <input type="submit" value="Home">
+</form>
+<form method='link' action="/planets/<%= @planet.id %>/edit">
+    <input type="submit" value="Update">
+</form>
