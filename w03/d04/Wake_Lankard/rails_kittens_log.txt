@@ -1,0 +1,25 @@
+1)create rails app
+
+2)create db
+rake db:create
+
+3)set up schema
+  3a) write migrations
+  3b)run migrations
+rails g model Kitten width:integer height:integer url:string
+#this makes a migration file AND model
+#width and height are attributes of the kitten model
+
+rake db:migrate
+
+4)seed db
+add data to seeds.rb
+rake db:seed
+
+5)route
+
+6)controller
+#filename appname_controller.rb
+#classname AppnameController < ApplicationController
+
+7) make a view in view/appname/index.html.erb

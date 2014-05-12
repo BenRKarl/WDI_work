@@ -1,0 +1,19 @@
+h1 {
+  font-family: arial;
+
+}
+ul {
+  font-family: arial;
+}
+
+link {
+  font-family: arial;
+}
+body {
+  background-image:url('http://www.colourbox.com/preview/4293522-567779-space-background-star-heart-in-night-sky.jpg');
+  background-repeat:repeat-y;
+  color: white;
+}
+a {
+  color: white;
+}

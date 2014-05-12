@@ -1,0 +1,10 @@
+<form action="/squares" method='post'>
+  <%= token_tag %>
+ <input type="integer" name="side_length"placeholder="side length (int.)">
+ <input type="integer" name="border_radius" placeholder="border_radius (int)">
+ <input type="text" name="color" placeholder="color (css colors)">
+ <input type="submit">  
+</form>
+<%  params[:side_length] = params[:side_length].to_i
+  params[:border_radius] = params[:border_radius].to_i
+  %>

@@ -1,0 +1,44 @@
+<div class="content">
+    <a href="/planets">
+      HOME
+    </a>
+
+    <figure>
+        <a href="<%= @planet.image_url %>">
+      <img src="<%= @planet.image_url %>" width="200" height="200" alt="<%= @planet.name %>" /></a>
+      <figcaption>Planet <%= @planet.name %></figcaption>
+    </figure>
+    
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><%= @planet.name %></td>
+        </tr>
+        <tr>
+            <td>Diameter (in miles):</td>
+            <td><%= @planet.diameter %></td>            
+        </tr>
+        <tr>
+            <td>Mass (in E24kg):</td>
+            <td><%= @planet.mass %></td>
+        </tr>
+        <tr>
+            <td>Life?</td>
+            <td><%= @planet.life %></td>
+        </tr>
+    </table>   
+
+    <div class="button">
+        <a href="/planets/<%= @planet.id %>/edit">
+            Edit
+        </a>
+    </div>
+
+    <form action="/planets/<%= @planet.id %>" method='post'>
+      <%= token_tag %>
+      <input type="hidden" name='_method' value='delete'>
+      <button type='submit'>Delete Planet</button>     
+    </form>
+
+</div>
+
