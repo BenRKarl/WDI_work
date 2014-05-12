@@ -1,0 +1,25 @@
+<body class='home'>
+
+<nav>
+  <h1>Planet Encyclopedia</h1>
+  <h3><a href="/planets/new">Add new planet</a></h3>
+</nav>
+
+<section>
+  <p>Click on each planet to learn more</p>  
+
+  <% @planets.each do |planet| %>
+    <% if planet.name != nil %>
+    <div class='list'>
+    <a href="/planets/<%= planet.id %>" >
+      <%= planet.name %>
+    </a>
+    </div>
+    <% end %>
+  <% end %>
+  
+<div class="clear"></div>
+
+</section>
+
+</body>

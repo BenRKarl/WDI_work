@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+}
+
+
+/* INDEX PAGE */
+.home {
+  background-image: url('/assets/galaxy2.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 40px 0 10px 0;
+}
+
+h2 { font-size: 34px; margin: 30px 0 0 0; }
+h3 { margin: 25px 0 0 0; }
+
+.list {
+  font-family: 'Francois One';
+  font-size: 22px;
+  width: 100px;
+  margin: 10px 20px 10px 0;
+  float: left;
+}
+
+.list a:hover {
+  font-size: 20px;
+  color: #B0E2FF;
+}
+
+.clear {
+  width: 100%;
+  height: 1px;
+  clear: both;
+  background-color: transparent;
+}
+
+
+a {
+  text-decoration: none;
+  color: #B0E2FF;
+}
+
+a:hover { color: #87CEFA; }
+
+p {
+  background-color: b;
+}
+
+
+/* NAV & CONTENT */
+nav {
+  padding: 0 0 0 50px;
+}
+
+section {
+  width: 500px;
+  margin: 60px auto 0 auto;
+}
+
+
+/* SHOW PAGE */
+.planet {
+  width: 250px;
+  float: right;
+  margin: 0 0 0 25px;
+}
+
+table { margin-top: 40px; }
+tr td {
+  padding: 0 12px 8px 0;
+}
+
+.edit, .delete input {
+  margin: 12px 0 0 0;  /* Keep buttons aligned left */
+}
+
+
+/* BUTTONS */
+.edit, .delete input, .create input[type='submit'], .update input[type='submit'] {
+  display: block;
+  padding: 5px 8px 4px 7px;
+  background-color: #f5f5f5;
+  border: 0;
+  border-radius: 2px;  
+  font-size: 17px;  
+  font-family: 'Francois One';
+  color: #3D59AB;
+}
+
+.edit:hover, .delete input:hover, .create input[type='submit']:hover, .update input[type='submit']:hover {
+  cursor: pointer;
+  color: #5882d1;
+}
+
+
+/* EDIT & CREATE */
+.update, .create {
+  width: 200px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.update input[type='text'], .create input[type='text'] {
+  font-size: 16px;
+  margin: 10px 0 18px 0;
+}
+
+.create input[type='submit'], .update input[type='submit'] {
+  margin: 24px auto 0 auto; /* Buttons aligned center */
+}
+  
