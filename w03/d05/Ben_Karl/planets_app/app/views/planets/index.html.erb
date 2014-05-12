@@ -1,0 +1,71 @@
+<h1>Milky Way Galactic Planet Registry.</h1>
+
+<form action="/planets/new" method="get">
+  <input type="submit" value="Create new planet">
+</form></br>
+
+<% if @planets.count == 0 %>
+<div class="no_planets">
+<p>There aren't any planets!</p>
+<p>Click the button to create a new one!</p>
+</div>
+<% else %>
+<table>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Diameter (in Earths)
+    </th>
+    <th>
+      Mass (in Earths)
+    </th>
+    <th>
+      Life?
+    </th>
+    <th>
+      Image
+    </th>
+    <th>
+      Options
+    </th>
+  </tr>
+  <% @planets.each do |planet| %>
+  <tr>
+    <td>
+      <a href="/planets/<%= planet.id %>">
+      <%= planet.name %>
+      </a>
+    </td>
+    <td>
+      ~ <%= planet.diameter %> Earths
+    </td>
+    <td>
+      ~ <%= planet.mass %> Earths
+    </td>
+    <td>
+      <%= if planet.life
+          "There's life!"
+          else
+          "There's no life..."
+          end
+      %>
+    </td>
+    <td>
+      <img src="<%= planet.image_url %>">
+    </td>
+    <td>
+      <form action="/planets/<%= planet.id %>/edit" method="get">
+        <input type="submit" value="Edit this planet">
+      </form>
+      <form action="/planets/<%= planet.id %>" method="post">
+        <%= token_tag %>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete planet">
+      </form>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% end %>

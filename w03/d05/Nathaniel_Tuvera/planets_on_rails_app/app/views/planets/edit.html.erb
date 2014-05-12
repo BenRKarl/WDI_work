@@ -1,0 +1,25 @@
+
+<p><a href="/planets">Return to planets index</a></p>
+
+<p>Edit Planet -- <%= @planet.name %></p>
+
+
+
+<img class="show_img" src="<%= @url %>"/>
+<div>
+  <form action="/planets" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="name" placeholder="<%= @planet.name %>">
+  <input type="url" name="image_url" placeholder="<%= @planet.image_url %>">
+  <input type="text" name="diameter" placeholder="<%= @planet.diameter %>km diameter">
+  <input type="text" name="mass" placeholder="<%= @planet.mass %> * E20kg">
+  <input type="text" name="life" placeholder="Signs of life: <%= @planet.life %>">
+  <input type="submit" value="Edit Planet">
+</form>
+<form action="/planets/<%= @planet.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Planet">
+</form>
+</div>

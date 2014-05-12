@@ -1,0 +1,29 @@
+<h1>Welcome to WDI Squares</h1>
+<% @squares.each do |i| %>
+<section>
+  <a href="/squares/<%= i.id %>">
+    <div style="
+      width: <%= i.side_length %>px;
+      height: <%= i.side_length %>px;
+      border-radius: <%= i.border_radius %>px;
+      background-color: <%= i.color %>;
+      background-color: #<%= i.color %>;
+      display: inline-block">
+    </div>
+  </a>
+  <nav>
+    <button class="click">
+      <a href="/squares/<%= i.id %>/edit">edit</a>
+    </button>
+    <form action="/squares/<%= i.id %>" method="post">
+      <%= token_tag %>
+      <input type="hidden" name="_method" value="delete">
+      <button class="click" type="submit">delete</button>
+    </form>
+  </nav>
+</section>
+<% end %>
+
+<button class="new">
+  <a href="/squares/new">make new square</a>
+</button>

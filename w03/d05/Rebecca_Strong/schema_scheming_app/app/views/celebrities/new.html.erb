@@ -1,0 +1,7 @@
+<h2>Add a celebrity</h2>
+
+<form action="/celebrities" method='post'>
+  <%= token_tag %>
+  <input type="text" name='celebrity[celebrityname]'>
+  <input type="submit">
+</form>
