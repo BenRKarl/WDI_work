@@ -1,0 +1,43 @@
+<h1>Planet Data Display</h1>
+<h2>This information requires level 4 security clearance.</h2>
+
+<table>
+  <tr>
+    <td colspan=2>
+      <%= @planet.name %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan=2>
+       <img class="planet_image" src="<%= @planet.image_url %>">
+     </td>
+  </tr>
+  <tr>
+    <td>
+       Diameter:
+    </td>
+    <td class="data">
+      <%= @planet.diameter %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Mass: 
+    </td>
+    <td class="data">
+      <%= @planet.mass %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Life:
+    </td>
+    <td class="data">
+      <%= @planet.life %>
+    </td>
+  </tr>
+</table>
+<a href="/planets"><< Back to main interface</a>
+
+
+

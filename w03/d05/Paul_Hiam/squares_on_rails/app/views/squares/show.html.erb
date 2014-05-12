@@ -1,0 +1,9 @@
+<div class="square" style="width:<%= @square.side_length %>px; height:<%= @square.side_length %>px; border-radius:<%= @square.border_radius %>px; background-color:<%= @square.color %>; display:block; margin: 5px" >
+
+  </div> 
+  <form action="/squares/<%= @square.id %>" method='post'>
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <button type='submit'>Del</button>
+</form>
+<a href="/squares">home</a>

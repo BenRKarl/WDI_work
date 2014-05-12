@@ -1,0 +1,42 @@
+<h1>How about them planets, huh?</h1>
+
+
+<% @planets.each do |i| %>
+<section>
+  <div class="planet">
+  <img src="<%= i.image_url %>" alt="">
+    <nav>
+      <button class="info"><a href="/planets/<%= i.id %>">more info</a></button>
+      <button id="edit"><a href="/planets/<%= i.id %>/edit">edit</a></button>
+
+      <form action="/planets/<%= i.id %>" method="post">
+        <%= token_tag %>
+        <input type="hidden" name="_method" value="delete">
+        <button class="delete" type="submit">delete</button>
+      </form>
+    </nav>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Planet</th>
+        <th>Diameter (km)</th>
+        <th>Mass (x 10&#94;23 kg)</th>
+        <th>Life</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= i.name %></td>
+        <td><%= i.diameter %></td>
+        <td><%= i.mass %></td>
+        <td><%= i.life %></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<% end %>
+
+
+<button class="add"><a href="/planets/new">new planet</a></button>
