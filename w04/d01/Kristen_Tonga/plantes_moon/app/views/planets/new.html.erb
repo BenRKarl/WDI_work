@@ -1,0 +1,25 @@
+<h1>CREATE!!</h1>
+
+<form action="/planets" method="post">
+  <%= token_tag %>
+<p>
+  <input type="text" name="planet[name]" placeholder="Name Your Planet!">
+</p>
+<p>
+  <input type="text" name="planet[image_url]" placeholder="Pick an Image and paste the URL here!">
+  </p>
+<p>
+  <input type="text" name="planet[diameter]" placeholder="Pick a diameter in miles and write the integer.">
+  </p>
+<p>
+  <input type="text" name="planet[mass]" placeholder="Decide upon a mass.">
+  </p>
+<p>
+  <input type="text" name="planet[life]" placeholder="IS THERE LIFE? It's a bolean, so answer 'true' or 'false'z.">
+  </p>
+<p>
+  <input type="submit">
+</p>
+</form>
+
+<a href= "/planets">GALEXY GALLERY</a>

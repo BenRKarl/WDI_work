@@ -72,7 +72,7 @@ This code will write the necessary routes for you.
 ```ruby 
 
 resources :planets do 
-    resources :moon, except: [:show, :index]
+    resources :moons, except: [:show, :index]
 end
 
 ```
