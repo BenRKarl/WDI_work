@@ -1,0 +1,9 @@
+<h2>Moons</h2>
+
+<ul>
+<% @moons.each do |moon| %>
+  <li><%= moon.name %></li>
+<% end %>
+  </ul>
+
+  <a href="/moons/new">Add Moon</a>
