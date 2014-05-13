@@ -1,25 +1,33 @@
 
 class MoonsController < ApplicationController
 
-
-
-# edit_planet_moon GET    /planets/:planet_id/moons/:id/edit(.:format) moons#edit
-#      planet_moon PATCH  /planets/:planet_id/moons/:id(.:format)      moons#update
-#                  PUT    /planets/:planet_id/moons/:id(.:format)      moons#update
-#                  DELETE /planets/:planet_id/moons/:id(.:format)      moons#destroy
-
-
-#  new_planet_moon GET    /planets/:planet_id/moons/new(.:format)      moons#new
   def new
     @planet_id = params.fetch(:planet_id)
+    @planet = Planet.find(@planet_id)
+
   end
 
-#     planet_moons POST   /planets/:planet_id/moons(.:format)          moons#create
   def create
     moon = Moon.create(moon_params)
     planet = Planet.find(params[:planet_id])
     planet.moons << moon
     redirect_to "/planets/#{params[:planet_id]}"
+  end
+
+  def edit
+    @planet = Planet.find(params.fetch(:planet_id))
+    @moon = Moon.find(params.fetch(:id))
+  end
+
+  def update
+    moon = Moon.find(params.fetch(:id))
+    moon.update(moon_params)
+    redirect_to "/planets/#{params.fetch(:planet_id)}"
+  end
+
+  def destroy
+    Moon.delete(params.fetch(:id))
+    redirect_to "/planets/#{params.fetch(:planet_id)}"
   end
 
   private

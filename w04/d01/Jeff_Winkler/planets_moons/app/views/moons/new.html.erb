@@ -6,6 +6,9 @@
     <div class="midCol">
     </div>
     <div class="right_col inputs">
+        <div class="planet_title">
+            Create a moon for <%=@planet.name%>:
+        </div>
         <form action="/planets/<%= @planet_id %>/moons" method="post">
             <%= token_tag %>
             <button class="show_but save_but" type="submit">Save Moon</button>
