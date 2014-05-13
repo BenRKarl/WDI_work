@@ -13,6 +13,8 @@ end
 
 #new_planet GET    /planets/new(.:format)  planets#new
 def new
+	@planet = Planet.new(planet_params)
+	redirect_to "/planets/#{planet.id}"
 end
 
 #edit_planet GET    /planets/:id/edit(.:format)  planets#edit

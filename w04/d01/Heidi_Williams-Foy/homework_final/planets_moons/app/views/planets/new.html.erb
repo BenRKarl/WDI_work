@@ -1,5 +1,9 @@
-<form action="/planets" method='post'>
-<%= token_tag %>
-<input type ="text" name='farmer[name]'>
-<input type="submit">
-</form>
+<h1>Add Planets and Moons</h1>
+<%= form_for @planet, url: {action: "create"} do |f| %>
+  <%= f.text_field :planet_name %>
+  <%= f.number_field :planet_mass %>
+  <%= f.number_field :planet_diameter %>
+  <%= f.input :life %>
+  <%= f.text_field :moon_name %>
+  <%= f.submit "Create" %>
+<% end %>
