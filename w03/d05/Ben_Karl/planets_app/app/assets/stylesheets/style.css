@@ -1,0 +1,63 @@
+html {
+  background: url(http://www.hiveworkshop.com/forums/resource_images/1/sc2res_79/tn_files/Space.tga.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  font-family: 'Play', sans-serif;
+  text-align: center;
+  color: white;
+
+}
+
+table {
+  margin: 0 auto;
+  border: 1px solid white;
+}
+
+tr {
+  border: 1px solid white;
+}
+
+td {
+  border: 1px solid white;
+  width: 10em;
+}
+
+img {
+  width: 6em;
+  margin: 1em;
+}
+
+ul {
+  margin: 0 auto;
+  text-align: left;
+}
+
+li {
+  margin: 0 auto;
+}
+
+.planet_info {
+  display: inline-block;
+  border: 1px solid white;
+  padding: 2em;
+}
+
+.no_planets {
+  display: inline-block;
+  border: 1px solid white;
+  padding: 1em;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: yellow;
+}
+

@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140508224417) do
+ActiveRecord::Schema.define(version: 0) do
 
-  create_table "kittens", force: true do |t|
-    t.string "width"
-    t.string "height"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "kittens", id: false, force: true do |t|
+    t.integer "id",                 default: "nextval('kittens_id_seq'::regclass)", null: false
+    t.integer "width",  limit: 100
+    t.integer "height", limit: 100
+    t.string  "url",    limit: 255
   end
 
 end

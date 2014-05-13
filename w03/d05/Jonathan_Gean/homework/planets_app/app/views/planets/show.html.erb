@@ -1,0 +1,15 @@
+<h1><%= @planet.name %></h1>
+<img src="<%= @planet.image_url %>"></img>
+<h2>Diameter: <%= @planet.diameter %></h2>
+<h2>Mass: <%= @planet.mass %></h2>
+<h2>Life? <%= @planet.life %></h2>
+
+<a href="/planets/<%= @planet.id %>/edit">Edit planet</a>
+</br>
+<a href="/planets">Home</a>
+
+<form action="/planets/<%= @planet.id %>" method='post'>
+  <%= token_tag %>
+  <input type="hidden" name='_method' value='delete'>
+  <button type='submit'>Delete</button>
+</form>

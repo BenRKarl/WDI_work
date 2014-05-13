@@ -1,0 +1,11 @@
+<h1>Now you have a power to create a whole planet. How awesome is that?!</h1>
+
+<form class="edit editnew" action="/planets" method="post">
+<%= token_tag %>
+  <input type="text" name="id[name]" placeholder="planet's name">
+  <input type="text" name="id[image_url]" placeholder="planet's image url">
+  <input type="text" name="id[diameter]" placeholder="planet's diameter">
+  <input type="text" name="id[mass]" placeholder="planet's mass">
+  <input class="boolean" type="text" name="id[life]" placeholder="life on planet? true/false">
+  <input type="submit">
+</form>
