@@ -1,0 +1,13 @@
+<h1>Add A Square</h1>
+
+<form action="/squares" method='post'>
+    <%= token_tag %>
+    <input type="number" name="square[side_length]" placeholder="Side Length..."><br/>
+    <input type="number" name="square[border_radius]" placeholder="Border Radius..."><br/>
+    <input type="text" name="square[color]" placeholder="Color in Hex or CSS..."><br/>
+    <input type="submit">
+</form>
+
+<form method='link' action="/squares">
+    <input type="submit" value="Home">
+</form>
