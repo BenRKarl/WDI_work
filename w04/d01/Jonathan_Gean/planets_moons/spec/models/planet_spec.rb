@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Planet do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "outputs string when to_s method is called" do
+    @planet.to_s.should eql "Earth is a planet with 1 moon(s), capable of sustaining life."
+  end
 end
