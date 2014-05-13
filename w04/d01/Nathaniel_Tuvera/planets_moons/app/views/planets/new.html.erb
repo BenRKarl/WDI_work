@@ -1,0 +1,11 @@
+<h2>Add a planet to index</h2>
+
+<form action="/planets"  method="post">
+  <%= token_tag %>
+  <input type="text" name="planet[name]" placeholder="Enter Planet Name">
+  <input type="text" name="planet[image_url]" placeholder="Enter Image URL">
+  <input type="integer" name="planet[diameter]" placeholder="Enter diameter in km">
+  <input type="integer" name="planet[mass]" placeholder="Enter mass in *E20 kg">
+  <input type="boolean" name="planet[life]" placeholder="Signs of life? true/false">
+  <input type="submit" value="Add Planet">
+</form>

@@ -30,4 +30,9 @@ class SquaresController < ApplicationController
     Square.delete(params[:id])
     redirect_to '/squares'
   end
+
+  #matt's solution to DRY code
+  # def square_params
+  #   params.require(:square).permit(:side_length, :border_radius, :color)
+  # end
 end

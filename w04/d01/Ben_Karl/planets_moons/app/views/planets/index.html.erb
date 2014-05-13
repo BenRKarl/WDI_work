@@ -1,0 +1,52 @@
+<h1>Planets 'N Moons</h1>
+
+
+<table>
+  <tr>
+    <th>Planet Image</th>
+    <th>Planet Name</th>
+    <th>Planet Mass</th>
+    <th>Planet Diameter</th>
+    <th>Does it have life?</th>
+    <th>List of Moons</th>
+    <th>Options</th>
+  </tr>
+<% @planets.each do |planet| %>
+  <tr>
+    <td><img src="<%= planet.image_url %>"></td>
+    <td><a href="/planets/<%= planet.id %>"><%= planet.name %></a></td>
+    <td>~ <%= planet.mass %> Earths</td>
+    <td>~ <%= planet.diameter %> Earths</td>
+    <td>
+        <% if planet.life %>
+        There's life!
+        <% else %>
+        No life...
+        <% end %>
+    </td>
+    <td>
+        <% planet.moons.each do |moon| %>
+          <p>
+          <%= moon.name %>
+          </p>
+        <% end %>
+    </td>
+    <td>
+      <form action="/planets/<%= planet.id %>/edit" method="get">
+        <input type="submit" value="Edit Planet">
+      </form>
+      <form action="/planets/<%= planet.id %>" method="post">
+        <%= token_tag %>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete Planet">
+      </form>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+</br>
+
+<form action="/planets/new" method="get">
+  <input type="submit" value="Add Planet">
+</form>

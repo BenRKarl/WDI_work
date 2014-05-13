@@ -1,0 +1,23 @@
+td {
+  padding-right: 15px;
+  line-height: 2em;
+  vertical-align: top;
+}
+
+form, button {
+  display: inline;
+  margin-right: 10px;
+}
+
+.moon_edit, .moon_del {
+  margin-right: 8px;
+  float: right;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 350px;
+}
