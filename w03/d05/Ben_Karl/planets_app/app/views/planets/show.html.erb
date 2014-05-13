@@ -1,0 +1,32 @@
+<h1>Check out <%= @planet.name %></h1>
+
+
+
+<div class="planet_info">
+<img src="<%= @planet.image_url %>">
+</br></br>
+<ul>
+  <li>
+    Name: <%= @planet.name %>
+  </li>
+  <li>
+    Diameter: ~ <%= @planet.diameter %> Earths
+  </li>
+  <li>
+    Mass: ~ <%= @planet.mass %> Earths
+  </li>
+  <li>
+    Life?:
+          <%= if @planet.life
+          "There's life!"
+          else
+          "There's no life..."
+          end
+      %>
+  </li>
+</ul>
+</div></br></br>
+
+<form action="/planets" method="get">
+  <input type="submit" value="Back to home">
+</form>

@@ -1,0 +1,10 @@
+<h1>...but this square is perfect the way it is!</h1>
+
+<form action="/squares/<%= @square.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="square[side_length]" placeholder="Side length?">
+  <input type="text" name="square[border_radius]" placeholder="Border radius?">
+  <input type="text" name="square[color]" placeholder="Color?">
+  <input type="submit" value="Change square forever...">
+</form>

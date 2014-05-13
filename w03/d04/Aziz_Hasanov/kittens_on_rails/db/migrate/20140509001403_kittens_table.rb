@@ -1,7 +1,7 @@
 class KittensTable < ActiveRecord::Migration
   def change
   	create_table :kittens do |t|
-      t.string :name
+      t.string :url
       t.timestamps
     end
   end

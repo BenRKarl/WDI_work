@@ -1,0 +1,24 @@
+
+<p>Now displaying all known planet objects in the database...</p>
+
+<% @planets.each do |planet| %>
+<table class="planet_table">
+<tr>
+  <td class="planet_img">
+    <a href="/planets/<%= planet.id %>/edit"><img class="index_img" src="<%= planet.image_url %>" alt="<%= planet.name %>"></a>
+  </td>
+  <tr>
+    <td>Name</td><td><%= planet.name %></td>
+  </tr>
+  <tr>
+    <td>Mass (E20 kg)</td><td><%= planet.mass %></td>
+  </tr>
+    <tr>
+    <td>Diameter (km)</td><td><%= planet.diameter %></td>
+  </tr>
+    <tr>
+    <td>Signs of Life</td><td><%= planet.life %></td>
+  </tr>
+  </tr>
+  <% end %>
+</table>
