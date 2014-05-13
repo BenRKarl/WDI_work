@@ -41,5 +41,4 @@ proto = [
 
 proto.each do |x|
   Proto.create({ name: x[:name], birthday: x[:birthday] })
-
 end
