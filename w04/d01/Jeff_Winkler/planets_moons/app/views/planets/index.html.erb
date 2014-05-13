@@ -1,0 +1,26 @@
+
+
+
+<div class="all_cols">
+    <div class="left_col">
+        <form action="/planets/new" method="get">
+          <button class="new_but" type="submit">Create New Planet</button>
+        </form>
+    </div>
+    <div class="midCol">
+    </div>
+    <div class="right_col">
+        <div class="instructions">
+            Click on planet name for more details
+        </div>
+        <% @planets.each do |planet| %>
+            <div class="planet_list">
+                <a class="planet_link" href="/planets/<%=planet.id%>"><%= planet.name.upcase %></a>
+                <img class="pi_small" src="<%=planet.image_url%>">
+            </div>
+        <% end %>
+    </div>
+</div>
+
+
+

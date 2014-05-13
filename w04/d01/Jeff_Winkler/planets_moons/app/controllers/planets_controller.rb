@@ -15,21 +15,15 @@ class PlanetsController < ApplicationController
 
   # post 'planets' => 'planets#create'
   def create
-
-    new_hash = params.require(:planet).permit(:name, :image_url, :diameter, :mass, :life)
-    new_planet = Planet.create(new_hash)
+    new_planet = Planet.create(planet_params)
     redirect_to "/planets/#{new_planet.id}"
   end
 
   # get 'planets/:id' => 'planets#show'
   def show
     @planet = Planet.find(params[:id])
-    if @planet.life == true
-      @message = "Life exists on #{@planet.name}"
-    else
-      @message = "No life exists on #{@planet.name}"
-    end
-    @diam = "#{@planet.name} has a diameter of #{@planet.diameter} and a mass of #{@planet.mass}"
+    @message = @planet.life_message
+    @diam = @planet.diam
   end
 
   # get 'planets/:id/edit' => 'planets#edit'
@@ -40,7 +34,7 @@ class PlanetsController < ApplicationController
   # put 'planets/:id' => 'planets#update'
   def update
     curr_planet = Planet.find(params[:id])
-    curr_planet.update(params.require(:planet).permit(:name, :image_url, :diameter, :mass, :life))
+    curr_planet.update(planet_params)
     redirect_to "/planets/#{curr_planet.id}"
   end
 
@@ -53,5 +47,15 @@ class PlanetsController < ApplicationController
     redirect_to "/planets"
   end
 
+  private
+
+  def planet_params
+    params.require(:planet).permit(:name, :image_url, :diameter, :mass, :life)
+  end
+
+
+
+
 end
+
 

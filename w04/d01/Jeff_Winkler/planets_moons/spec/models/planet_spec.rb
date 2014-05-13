@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Planet do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it 'has a name' do
+    planet = Planet.create(name: "Random")
+    actual = planet.name
+    expected = 'Random'
+    expect(actual).to eq(expected)
+  end
+
 end
