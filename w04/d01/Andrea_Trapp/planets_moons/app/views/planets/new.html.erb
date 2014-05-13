@@ -1,0 +1,12 @@
+<h2>Create a new planet</h2>
+
+<form action="/planets" method="post">
+    <%= token_tag %>
+    <input type="text" name="planet[name]" placeholder="...name">
+    <input type="text" name="planet[image_url]" placeholder="...image_url">
+    <input type="text" name="planet[diameter]" placeholder="...diameter (in miles)">
+    <input type="text" name="planet[mass]" placeholder="...mass (in E24kg)">
+    <input type="radio" name="planet[life]" value="1"> yes
+    <input type="radio" name="planet[life]" value="0" checked> no
+    <input type="submit">
+</form>
