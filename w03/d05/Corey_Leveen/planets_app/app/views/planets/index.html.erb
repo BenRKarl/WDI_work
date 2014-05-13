@@ -1,0 +1,9 @@
+<h1>Behold, ye, the solar system.</h1>
+
+  <% @planets.each do |planet| %>
+      <img src="<%= planet.image_url %>">
+      <p>Name: <%= planet.name %></p>
+      <p>Diameter: <%= planet.diameter %> km</p>
+      <p>Mass: <%= planet.mass %> metric tons</p>
+      <p>Life?: <%= planet.life %></p>
+  <% end %>

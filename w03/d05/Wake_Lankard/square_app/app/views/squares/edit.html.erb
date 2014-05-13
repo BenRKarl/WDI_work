@@ -1,0 +1,8 @@
+<h1> You may now edit your square </h1>
+<form action="/squares/<% @square.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="put">
+  Side Length: <input type="number" name="[square]length" value=" <%= @square.side_length %>">
+  Border Radius: <input type="number" name="[square]radius" value=" <%= @square.border_radius %>">
+  <button type="submit">Submit change</button>
+</form>

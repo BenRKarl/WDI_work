@@ -1,0 +1,15 @@
+<a href="/squares">
+  HOME
+</a>
+
+<h3><%= @square.squarename %></h3>
+
+<a href="/square/<%= @square.id %>/edit">
+  Edit
+</a>
+
+<form action="/squares/<%= @square.id %>" method='post'>
+  <%= token_tag %>
+  <input type="hidden" name='_method' value='delete'>
+  <button type='submit'>Delete</button>
+</form>

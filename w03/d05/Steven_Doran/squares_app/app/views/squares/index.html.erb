@@ -1,0 +1,19 @@
+<h1>Squares</h1>
+
+<form method='link' action="/squares/new">
+    <input type="submit" value="Add A Square">
+</form>
+<br/>
+<% @squares.each do |square| %>
+    <div class="square" style="height:<%= square.side_length %>px; width:<%= square.side_length %>px; border-radius: <%= square.border_radius%>px; background-color: <%= square.color%>">
+    </div><br/>
+    <form method='link' action="/squares/<%= square.id %>/edit">
+        <input type="submit" value="Edit Square">
+    </form>
+    <form action="/squares/<%= square.id %>" method='post'>
+    <%= token_tag %>
+        <input type="hidden" name='_method' value='delete'>
+        <button type='submit'>Delete</button>
+    </form>
+    <br/>
+<% end %>

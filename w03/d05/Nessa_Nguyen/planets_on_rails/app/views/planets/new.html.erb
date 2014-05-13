@@ -1,0 +1,29 @@
+<nav>
+<h2>Create a new planet</h2>
+
+<h3><a href="/planets">Back to home page</a></h3>
+</nav>
+
+
+<section>
+  <form action="/planets" method="post" class="create">
+    <%= token_tag %>
+    Name:
+    <input type="text" name="planet[name]" placeholder="Jupiter">  
+
+    Image URL:
+    <input type="text" name="planet[image_url]" placeholder="http://planet.com/image.jpg">  
+
+    Diameter (km):
+    <input type="text" name="planet[diameter]" placeholder="5678">  
+
+    Mass (x 10<sup>21</sup> kg):
+    <input type="text" name="planet[mass]" placeholder="1234">
+    
+    Life:
+    <input type="radio" name="planet[life]" value="true">Yes</input>
+    <input type="radio" name="planet[life]" value="false">No</input>  
+    <input type="submit" value="Create">
+  </form>
+
+</section>

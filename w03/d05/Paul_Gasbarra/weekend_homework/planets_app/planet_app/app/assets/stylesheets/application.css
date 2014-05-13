@@ -1,0 +1,24 @@
+body{
+  font-family: 'Cinzel';
+  color: white;
+  background-image: url(http://oscar.ofm.co.za/img/uploads/stars.jpg);
+  background-size: 100%;
+
+}
+
+.planet_image{
+  float: left;
+  margin: 10px;
+}
+
+.details{
+  padding:30px;
+}
+
+button {
+  font-family: 'Cinzel';
+  background-color: Linen;
+  text-decoration: none;
+  width: 100px;
+}
+
