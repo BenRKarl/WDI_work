@@ -1,0 +1,14 @@
+body {
+
+}
+table {
+  border: 1px solid grey;
+}
+
+td {
+  background-color: lightblue;
+}
+
+.color {
+  color: purple;
+}
