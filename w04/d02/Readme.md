@@ -32,3 +32,4 @@ Based on what we learned today about form helpers, specifically the Rails `form_
 
 # Planets and Moons (SKELETON EDITION)
 * Leverage the power of Skeleton to make your applications layout both aesthetic and fluid.
+* Leverage the power of Font-Awesome to include icons.
