@@ -1,0 +1,8 @@
+<p>edit.html.erb</p>
+
+<form action="/planets/<%= @planet.id %>/moons/<%= @moon.id %>" value="post">
+  <input type="hidden" name="_method" value="put">
+  <%= token_tag %>
+  <input type="text" value="<%= @moon %>" name="moon[name]">
+  <input type="submit" value="Add a moon">
+</form>>

@@ -1,0 +1,18 @@
+<h1>Planets</h1>
+<ul>
+  <% @planets.each do |planet| %>
+    <li>
+      <%= planet.name %>
+      <ul>
+        <li><%= planet.image_url %></li>
+        <li><%= planet.diameter %></li>
+        <li><%= planet.mass %></li>
+        <li><%= planet.life %></li>
+        <h4>Moons</h4>
+        <ul>
+          <li></li>
+        </ul>
+      </ul>
+    </li>
+  <% end %>
+</ul>
