@@ -1,0 +1,45 @@
+<h1>Here is <%= @planet.name%></h1>
+
+<table class="planets">
+  <thead>
+    <th>Name</th>
+    <th>Image</th>
+    <th>Diameter</th>
+    <th>Mass</th>
+    <th>Life</th>
+    <th>Moons</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <td><%=@planet.name%></td>
+    <td><img src="<%=@planet.image_url%>"></td>
+    <td><%=@planet.diameter%></td>
+    <td><%=@planet.mass%></td>
+    <td><%=@planet.life%></td>
+    <td><%@planet.moons.each do |moon|%>
+      <%=moon.name%>
+      <form action="/planets/<%=@planet.id%>/moons/<%=moon.id%>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <%= token_tag %>
+        <button type="submit">Delete</button>
+        </form>
+      <form action="/planets/<%=@planet.id%>/moons/<%=moon.id%>/edit" method="get">
+        <button type="submit">Edit</button>
+      </form>
+      <%end%>
+    </td>
+    <td>
+      <form action="/planets/<%= @planet.id%>/edit" method="get">
+        <button type="submit">Edit</button></form>
+      <form action="/planets/<%= @planet.id%>" method="post">
+        <%= token_tag %>
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit">Delete</button>
+      </form>
+      <form action="/planets/<%= @planet.id%>/moons/new" method="get">
+        <button type="submit">Add Moon</button>
+      </form>
+    </td>
+
+  </tbody>
+</table>
