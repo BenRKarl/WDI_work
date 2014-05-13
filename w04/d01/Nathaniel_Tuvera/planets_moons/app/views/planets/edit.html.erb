@@ -1,0 +1,12 @@
+edit.html.erb
+
+<form action="/planets/<%= @planet.id %>"  method="post">
+  <input type="hidden"  name="_method" value="put">
+  <%= token_tag %>
+  <input type="text" name="planet[name]" value="<%= @planet.name %>">
+  <input type="text" name="planet[image_url]" value="<%= @planet.image_url%>">
+  <input type="integer" name="planet[diameter]" value="<%= @planet.diameter %>km">
+  <input type="integer" name="planet[mass]" value="<%= @planet.mass %> *E20kg">
+  <input type="boolean" name="planet[life]" value="Signs of life? <%= @planet.life %>">
+  <input type="submit" value="Add Planet">
+</form>

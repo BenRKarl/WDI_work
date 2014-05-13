@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :planets do
-    resources :moon, except: [:show, :index]
+    resources :moons, except: [:show, :index]
 end
 end
