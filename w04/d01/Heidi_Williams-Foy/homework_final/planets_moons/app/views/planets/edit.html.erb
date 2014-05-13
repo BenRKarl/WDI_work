@@ -1,0 +1,6 @@
+<form action="/planets/<% @farmer.id %>" method='post'>
+	<input type ="hidden" name='_method' value='put'>
+<%= token_tag %>
+<input type ="text" name='farmer[name]' value='<% @planet.name %>' >
+<input type="submit">
+</form>
