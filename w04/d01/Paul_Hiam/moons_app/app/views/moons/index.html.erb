@@ -1,0 +1,18 @@
+<h2>Moons!</h2>
+
+<ul>
+  <% @moons.each do |moon| %>
+    <li>
+      <a href="/planets/<%= planet.id %>">
+        <%= moon.name %>
+     
+    <br/>
+     <img src="<%= moon.image_url %>" width="250px" height="250px" alt="">
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/moons/new">
+  New Moon
+</a>
