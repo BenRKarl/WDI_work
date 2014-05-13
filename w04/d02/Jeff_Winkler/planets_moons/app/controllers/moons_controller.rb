@@ -4,7 +4,7 @@ class MoonsController < ApplicationController
   def new
     @planet_id = params.fetch(:planet_id)
     @planet = Planet.find(@planet_id)
-
+    @moon = Moon.new
   end
 
   def create
