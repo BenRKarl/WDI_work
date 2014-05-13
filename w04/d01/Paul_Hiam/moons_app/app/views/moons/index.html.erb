@@ -3,16 +3,12 @@
 <ul>
   <% @moons.each do |moon| %>
     <li>
-      <a href="/planets/<%= planet.id %>">
+      <a href="/planets/<%= @planet.id %>/moons/<%= moon.id %>">
         <%= moon.name %>
      
-    <br/>
-     <img src="<%= moon.image_url %>" width="250px" height="250px" alt="">
-      </a>
-    </li>
   <% end %>
 </ul>
 
-<a href="/moons/new">
+<a href="/planets/<%= @planet.id %>/moons/new">
   New Moon
 </a>

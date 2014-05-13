@@ -1,1 +1,6 @@
-new.html.erb
+<form action="/planets/<%= @planet.id %>/moons" method='post'>
+  <%= token_tag %>
+ <input type="text" name="name"placeholder="name">
+
+  <input type="submit">
+</form>
