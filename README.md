@@ -28,8 +28,8 @@ Congratulations on joining us at General Assembly for the Web Development Immers
 #Class videos
 - [Sinatra Intro with Faker](http://youtu.be/sFkCGassvoQ)
 - [Jumping on Rails with names](http://youtu.be/2JJvp-OI39w)
-- [Two Model Rails 4 Crud](http://youtu.be/u4V4uPb9K2A)
-
+- [Two Model Rails 4 CRUD](http://youtu.be/u4V4uPb9K2A)
+- [One Model Rails 4 CRUD with _form partia](http://youtu.be/m8ssT1G2Gtg)
 
 
 
