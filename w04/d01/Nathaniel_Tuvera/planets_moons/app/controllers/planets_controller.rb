@@ -1,8 +1,6 @@
 class PlanetsController < ApplicationController
 
-  def to_s
 
-  end
 #           planets GET    /planets(.:format)                          planets#index
   def index
     @planets = Planet.all

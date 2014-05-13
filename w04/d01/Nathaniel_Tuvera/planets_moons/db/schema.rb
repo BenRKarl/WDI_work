@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20140513015356) do
   create_table "planets", force: true do |t|
     t.string   "name"
     t.string   "image_url"
-    t.integer  "diamter"
+    t.integer  "diameter"
     t.integer  "mass"
-    t.boolean  "ife"
+    t.boolean  "life"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
