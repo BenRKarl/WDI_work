@@ -1,0 +1,62 @@
+
+
+<div class="all_cols">
+    <div class="left_col">
+        <form action="/planets/<%= @planet.id %>/edit" method="get">
+          <button class="show_but" type="submit">Edit</button>
+        </form>
+        <form action="/planets/<%= @planet.id %>" method="post">
+          <%= token_tag %>
+          <input type="hidden" name="_method" value="delete">
+          <button class="show_but" type="submit">Delete</button>
+        </form>
+        <form action="/planets/<%=@planet.id%>/moons/new" method="get">
+          <button class="show_but" type="submit">Create Moon</button>
+        </form>
+        <form action="/planets/new" method="get">
+          <button class="show_but" type="submit">Create New Planet</button>
+        </form>
+        <form action="/planets" method="get">
+          <button class="show_but" type="submit">Back</button>
+        </form>
+    </div>
+    <div class="midCol">
+    </div>
+    <div class="right_col">
+        <div class="instructions">
+            Click on a moon name to edit or delete
+        </div>
+        <div class="name_div">
+            <%= @planet.name.upcase %>
+        </div>
+        <br/>
+        <img class="planet_img" src="<%=@planet.image_url%>">
+        <div class="facts">
+            <ul>
+              <li>
+                <%= @message %>
+              </li>
+              <li>
+                <%= @diam %>
+              </li>
+              <li>
+                <%= @planet.to_s %>
+              </li>
+            </ul>
+        </div>
+        <div class="moons">
+            <div class="moon_title">
+              Moons: <i class="fa fa-coffee"></i>
+            </div>
+            <div class="facts">
+                <ul>
+                    <% @planet.moons.each do |moon| %>
+                        <li>
+                            <a href="/planets/<%=@planet.id%>/moons/<%=moon.id%>/edit"><%=moon.name%></a>
+                        </li>
+                    <% end %>
+                </ul>
+          </div>
+        </div>
+    </div>
+</div>
