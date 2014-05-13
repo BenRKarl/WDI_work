@@ -1,0 +1,11 @@
+#num 1..100. arr = [1..100]
+1.upto(100) do |i|
+  #if div by 3 => 3 == 0 && i % 5 == 0
+  if i % 15 == 0
+    puts "fizzbuzz"
+  elsif i % 3 == 0
+    puts "fizz"
+  elsif i % 5 == 0
+    puts i
+  end
+end
