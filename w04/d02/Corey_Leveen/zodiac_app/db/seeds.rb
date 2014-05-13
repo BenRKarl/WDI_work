@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 proto = [
 {name:'Jeff Winkler', birthday: Date.new(1974, 2, 26)},
 {name:'Nessa Nguyen', birthday: Date.new(1990, 4, 6)},
@@ -19,7 +11,6 @@ proto = [
 {name:'Corey Leveen', birthday: Date.new(1990, 6, 16)},
 {name:'Dmitry Shamis' , birthday: Date.new(1987, 3, 17)},
 {name:'Paul Hiam', birthday: Date.new(1987, 7, 13)},
-{name:'Steven Doran', birthday: Date.new(1980, 6, 16) },
 {name:'Nathaniel Tuvera', birthday: Date.new(1984, 12, 15)},
 {name:'Aziz Hasanov', birthday: Date.new(1989, 4, 9)},
 {name:'Tim Hannes', birthday: Date.new(1989, 3, 10)},
