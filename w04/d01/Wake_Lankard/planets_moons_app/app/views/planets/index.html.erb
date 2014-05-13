@@ -1,0 +1,19 @@
+<h1>Space Command Intergalactic Planetary Database</h1>
+<div class="clearfix">
+  <% @planets.each do |planet| %>
+  <a href="/planets/<%= planet.id %>"><div class="planet_wrapper">
+    <div class="planet_name"><%= planet.name %></div>
+    <img class="planet_image" src="<%= planet.image_url %>"><br/>
+    <div class="index_buttons">
+      <a href="/planets/<%= planet.id %>/edit"><button class="edit">Edit</button></a>
+      <form action="/planets/<%= planet.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <%= token_tag %>
+        <button class="destroy" type="submit">Destroy Planet</button>
+      </form>
+    </div><!--index button -->
+  </div><!--planet wrapper -->
+</a>
+<% end %>
+</div><!--planet_list_wrapper-->
+<a href="/planets/new">Enter a new planet >></a>
