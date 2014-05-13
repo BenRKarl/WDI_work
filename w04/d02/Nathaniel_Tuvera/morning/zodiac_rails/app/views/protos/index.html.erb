@@ -1,0 +1,9 @@
+index.html.erb
+
+<table class="zodiac_list">
+  <% @protos.each do |proto| %>
+    <tr class="<%= proto.zodiac_sign %>_row">
+  <td><%= proto.name %></td><td>born <%= proto.birthday %></td><td> (<%=proto.zodiac_sign %>)</td>
+    </tr>
+  <% end %>
+</table>

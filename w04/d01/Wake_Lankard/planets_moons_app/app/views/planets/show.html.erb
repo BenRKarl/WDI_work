@@ -1,0 +1,30 @@
+<h1>Planet Data Display</h1>
+
+<p>
+  <%= @planet.name %>
+</p>
+<p>
+  <img class="planet_image" src="<%= @planet.image_url %>">
+</p>
+<p>
+  Mass: <span class="data"><%= @planet.mass %></span>
+</p>
+<p>
+  Diameter: <span class="data"><%= @planet.diameter %></span>
+</p>
+<p>
+  Life: <span class="data"><%= @planet.life %></span>
+</p>
+Moons:
+<ul>
+<% @planet.moons.each do |moon| %>
+<li><span class="data"> <%= moon.name %></span>: <form action='/planets/<%= @planet.id %>/moons/<%= moon.id %>' method='post'>
+  <%= token_tag %>
+<input type="hidden" name="_method" value="delete">
+<input type="submit" value="goodnight, moon"></li>
+<%end%>
+<p>
+  <a href="/planets/<%= @planet.id %>/moons/new">Add Moon</a>
+</p>
+</ul>
+<a href="/planets"><< Back to Planets List</a>

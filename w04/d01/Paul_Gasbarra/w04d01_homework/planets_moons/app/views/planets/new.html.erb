@@ -1,0 +1,22 @@
+<h2>Add a Planet</h2>
+
+<form action="/planets" method='post'>
+  <%= token_tag %>
+
+  Name: <input type="text" name='planet[name]'>
+  <br/>
+
+Image URL: <input type="text" name='planet[image_url]'>
+<br/>
+
+Diameter: <input type="integer" name='planet[diameter]'>
+<br/>
+
+Mass: <input type="integer" name='planet[mass]'>
+<br/>
+
+Life: <input type="boolean" name='planet[life]'>
+<br/>
+
+  <input type="submit">
+</form>

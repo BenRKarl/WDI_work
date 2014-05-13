@@ -1,0 +1,18 @@
+<a href='/squares'>HOME</a>
+<h1>CHANGE IT THEN!</h1>
+
+<form action="/squares/<%= @square.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <%= token_tag %>
+  <input type="text" name="square[color]" placeholder="Old color: <%= @square.color %>" value=<%= @square.color %>>
+  <input type="text" name="square[side_length]" placeholder="Old length: <%= @square.side_length %>" value=<%= @square.side_length %> >
+  <input type="text" name="square[border_radius]" placeholder="Old radius: <%= @square.border_radius %>" value= <%= @square.border_radius %>>
+  <input type="submit">
+</form>
+
+
+
+<p> Please enter all fields. <hr>
+  And refresh page when <em>"No Data"</em> repears... Your changes ARE saved!</p>
+
+<div style="background-color:<%= @square.color %>; height: <%= @square.side_length %>px; width: <%= @square.side_length %>px; border-radius:<%= @square.border_radius %>px; float:'left'" ></div>
