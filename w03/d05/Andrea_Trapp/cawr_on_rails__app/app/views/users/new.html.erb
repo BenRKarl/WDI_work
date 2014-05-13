@@ -1,0 +1,7 @@
+<h2>new user</h2>
+
+<form action='/users' method='post'>
+    <%= token_tag %>
+    <input type='text' name='user[username]' placeholder="...username">
+    <button type='submit'>Submit</button>
+</form>

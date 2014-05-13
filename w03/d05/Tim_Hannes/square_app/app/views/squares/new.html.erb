@@ -1,0 +1,26 @@
+<h2>Make A New Square</h2>
+
+<%= form_for :square, url: squares_path do |f| %>
+<% end %>
+<%= link_to 'Back', squares_path %>
+
+<%= form_for :square, url: squares_path do |f| %>
+  <p>
+    <%= f.label :side_length %><br>
+    <%= f.text_field :side_length %>
+  </p>
+
+  <p>
+    <%= f.label :border_radius %><br>
+    <%= f.text_field :border_radius %>
+  </p>
+
+  <p>
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,14 @@
+<div class="index">
+
+  <h1>Planet Directory</h1>
+
+<p>There are many planets, and here we are keeping a record of some of them. Why don't you contribute to our database if you know of one that isn't already listed? To create a planet, click <a href="/planets/new">here</a>. Or, click on a record.</p>
+
+<div class = "planets">
+  <p>Records:</p>
+<% @planets.each do |planet| %>
+<p><a href="/planets/<%= planet.id %>"><%= planet.name %></a></p>
+
+<% end %>
+</div>
+</div>
