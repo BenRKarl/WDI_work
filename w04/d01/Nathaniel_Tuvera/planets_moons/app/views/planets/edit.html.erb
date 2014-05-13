@@ -1,4 +1,4 @@
-edit.html.erb
+<h2>Edit <%= @planet.name %>
 
 <form action="/planets/<%= @planet.id %>"  method="post">
   <input type="hidden"  name="_method" value="put">
@@ -8,5 +8,13 @@ edit.html.erb
   <input type="integer" name="planet[diameter]" value="<%= @planet.diameter %>km">
   <input type="integer" name="planet[mass]" value="<%= @planet.mass %> *E20kg">
   <input type="boolean" name="planet[life]" value="Signs of life? <%= @planet.life %>">
-  <input type="submit" value="Add Planet">
+  <input type="submit" value="Edit Planet">
+</form>
+<br/>
+<br/>
+<br/>
+<form action="/planets/<%= @planet.id %>/moons" method="post">
+  <%= token_tag %>
+  <input type="text" name="moon[name]">
+  <input type="submit" value="Add a moon">
 </form>
