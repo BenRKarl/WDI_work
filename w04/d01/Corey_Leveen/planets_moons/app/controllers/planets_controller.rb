@@ -9,7 +9,7 @@ class PlanetsController < ApplicationController
 
   def create
       @planet = Planet.create(planet_params )
-      redirect_to "/planets/#{planet.id}"
+      redirect_to "/planets/#{@planet.id}"
   end
 
   def show
@@ -34,6 +34,6 @@ class PlanetsController < ApplicationController
   private
 
   def planet_params 
-    params.require(:planets).permit(:name, :image_url, :diameter, :mass, :life)
+    params.require(:planet).permit(:name, :image_url, :diameter, :mass, :life)
   end
 end

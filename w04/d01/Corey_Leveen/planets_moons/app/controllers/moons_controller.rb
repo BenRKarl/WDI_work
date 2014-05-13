@@ -1,12 +1,12 @@
 class MoonsController < ApplicationController
 
   def new
-
+    @planet = Planet.find(params[:id])
   end
 
   def create
       @moon = Moon.create(moon_params )
-      redirect_to "/moons/#{moon.id}"
+      redirect_to "/planets/#{planet_id}moons/#{moon.id}"
   end
 
   def edit
