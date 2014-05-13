@@ -4,9 +4,14 @@ class SquaresController < ApplicationController
     @squares = Square.all
   end
 
+  def new
+    @square = Square.new
+  end
+
 def create
-    new_square = Square.create(params.require(:square).permit(:squarename) )
-    redirect_to "/squares/#{new_square.id}"
+    square = Square.create(square_params)
+    binding.pry
+    redirect_to square_path(square)
   end
 
   def edit
@@ -15,8 +20,8 @@ def create
 
   def update
     edited_square = Square.find(params[:id])
-    square.update( params.require(:square).permit(:squarename) )
-    redirect_to "/squares/#{edited_square.id}"
+    square.update(square_params)
+    redirect_to square_path(square)
   end
 
   def show
@@ -25,7 +30,7 @@ def create
 
   def destroy
     Square.delete(params[:id])
-    redirect_to '/squares'
+    redirect_to squares_path(square)
   end
 
 

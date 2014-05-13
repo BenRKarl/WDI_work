@@ -1,9 +1,8 @@
-<h1>La Terre Est Bleu Comme Une Orange</h1>
+
 
 <% @squares.each do |square| %>
-  <img src="<%= square.url %>" >
+  <div class="square style="background-color:<%= square.color %>; border-radius:<%= square.border_radius %>px;
+    height:<%= square.side_length %>px; width:<%= square.side_length %>px"</div class>
 <% end %>
 
-<a href="/squares/new">
-  New Square
-</a>
+<%= link_to "Create square", new_square_path %>

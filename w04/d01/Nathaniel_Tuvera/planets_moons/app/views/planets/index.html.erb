@@ -1,0 +1,16 @@
+<h2>index of planets</h2>
+
+<ul>
+  <% @planets.each do |planet| %>
+  <li>
+    <a href="/planets/<%= planet.id %>/edit"><%= planet.name %></a>
+    <ul>
+      <% @moons.each do |moon| %>
+      <li>
+        <%= moon.name %>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+  <% end %>
+</ul>

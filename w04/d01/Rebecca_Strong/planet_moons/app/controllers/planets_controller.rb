@@ -16,13 +16,13 @@ class PlanetsController < ApplicationController
 
      # edit_planet GET    /planets/:id/edit(.:format)                  planets#edit
      def edit
-      @planets = Planet.find(params[:id])
+      @planet = Planet.find(params[:id])
       end
 
      #      planet GET    /planets/:id(.:format)                       planets#show
 
      def show
-      @planets = Planet.find(params[:id])
+      @planet = Planet.find(params[:id])
       end
      #             PATCH  /planets/:id(.:format)                       planets#update
      #             PUT    /planets/:id(.:format)                       planets#update
@@ -36,6 +36,7 @@ class PlanetsController < ApplicationController
       Planet.delete(params[:id])
       redirect_to "/planets"
      end
+
   private
     def planet_params
       params.require(:planet).permit(:name, :image_url, :diameter, :mass, :life)

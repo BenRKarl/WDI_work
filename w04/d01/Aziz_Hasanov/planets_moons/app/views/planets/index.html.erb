@@ -1,0 +1,9 @@
+<h1>Welcome. Rock your universe by creating planets with moons!</h1>
+
+<%@planets.each do |i|%>
+<section>
+  <a href="/planets/<%=i.id%>"><img src="<%=i.image_url%>" alt=""></a>
+</section>
+<%end%>
+
+<button><a href="/planets/new">new planet</a></button>

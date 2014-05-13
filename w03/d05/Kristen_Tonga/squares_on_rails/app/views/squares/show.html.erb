@@ -1,0 +1,11 @@
+here!
+
+    <%= @square.side_length %>
+    <%= @square.color %>
+    <%= @square.border_radius %>
+
+<div style="background-color:<%= @square.color %>; height: <%= @square.side_length %>px; width: <%= @square.side_length %>px; border-radius:<%= @square.border_radius %>px" ></div>
+
+<hr>
+<h1><a href='/squares/<%= @square.id %>/edit'>EDIT!</a></h1>
+<a href='/squares'>HOME</a>
