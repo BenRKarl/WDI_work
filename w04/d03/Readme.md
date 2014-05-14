@@ -38,6 +38,7 @@ In pry, write active record commands to do the following.  Save each command in 
 ```ruby
 vince = Artist.create(name: "Vincent Van Gogh", nationality: "Dutch")
 ```
+
 2. Create a new Painting (Starry Night) and save it to your database
 ```ruby
 starry_night = Painting.create(title: "Starry Night")
@@ -63,11 +64,31 @@ Artist.find_by(name: "Vincent Van Gogh")
 Artist.where(nationality: "Spanish")
 ```
 8. Return the painting with an id of 1
+```ruby
+Painting.find(1)
+```
+
 9. Return the painting with a name of "Guernica"
+```ruby
+Painting.find_by(name: "Guernica")
+```
 
 10. Return all the paintings that "Pablo Picasso" painted
+```ruby
+Artist.find_by(name: "Pablo Picasso").paintings
+```
 11. Return the artist of "Guernica"
-
+```ruby
+Painting.find_by(title: Guernica).artist
+```
 12. Change Vincent Van Gogh's nationality to "American"
+```ruby
+Artist.find_by(name: "Vincent Van Gogh").update(nationality: "American")
+```
 13. Change "Starry Night" to be one of Pablo Picasso's paintings
+```ruby
+starry = Painting.find_by(title: "Starry Night")
+artist = Artist.find_by(name: "Pablo Picasso")
+artist.paintings << starry 
+```
 
