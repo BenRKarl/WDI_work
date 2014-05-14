@@ -1,0 +1,14 @@
+<h1>Planet <%= @planet.id %></h1>
+
+<div style="
+	height: <%= @planet.side_length %>px;
+	width: <%= @planet.side_length %>px;
+	border-radius: <%= @planet.border_radius %>px;
+	background-color: <%= @planet.color %>;
+">
+</div>
+
+<form action="<%= planet_path(@planet) %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete">
+</form>

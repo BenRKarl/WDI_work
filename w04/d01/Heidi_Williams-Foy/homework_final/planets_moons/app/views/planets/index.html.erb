@@ -1,0 +1,9 @@
+<h1>Planets and Moons</h1>
+<ul>
+	<% @planets.each do |planet| %>
+	<% @moons.each do |moon| %>
+	<li>
+		<%= planet.name %><%= moon.integer %>
+	</li>
+	<% end %>
+</ul>

@@ -1,0 +1,29 @@
+<h1>Here are all the planets</h1>
+<h3>Create a new planet <a href="/planets/new">here</a>.</h3>
+
+<table class="planets">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Diameter</th>
+      <th>Mass</th>
+      <th>Life</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @planets.each do |planet| %>
+      <tr>
+      <td><%=planet.name%></td>
+      <td><img src="<%=planet.image_url%>">  </td>
+      <td><%=planet.diameter%></td>
+      <td><%=planet.mass%></td>
+      <td><%=planet.life%></td>
+      <td><form action="/planets/<%=planet.id%>">
+      <button>Show</button>
+    </form></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
