@@ -1,0 +1,41 @@
+<div class="container">
+  <h2><%= @planet.name %></h2>
+
+
+  <div class =  'eight columns'>
+    <img  class="show_page_planet_image" src ="<%= @planet.image_url %>" alt="<%= @planet.name %>" >
+      <ul>
+        <li><i class="fa fa-dot-circle-o"></i> Diameter (in kM): <%= @planet.diameter %></li>
+        <li><i class="fa fa-arrow-circle-o-down"></i> Mass (in metric tons): <%= @planet.mass %></li>
+        <li><i class="fa fa-male"></i><i class="fa fa-female"></i> Life: <%= @planet.life %></li>
+      </ul>
+  </div>
+
+  <div class = 'eight columns'>
+
+    <h4>Moons  <i class="fa fa-moon-o"></i></h4>
+      <ul>
+        <% @planet.moons.each do |moon| %>
+          <a href="/planets/<%= @planet.id %>/moons/<%= moon.id %>">
+            <li><%= moon.name %></li>
+          </a>
+      <% end %>
+      <li><a href="<%= @planet.id %>/moons/new" class = "button">Add Moon</a></li>
+      </ul>
+  </div>
+
+
+
+
+  <div class = "sixteen columns">
+      <div class = "two columns">
+      <a href="<%= @planet.id %>/edit" class = "button">Edit</a>
+    </div>
+
+    <div class = "four columns">
+      <form action="/planets/<%= @planet.id %>" method='post'><%= token_tag %><input type="hidden" name='_method' value = 'delete'><button>Delete Planet</button></form>
+    </div>
+    <div class = "ten columns">
+  <a href="/planets" class="button">Back to Index</a>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+body {
+  background: url('http://imgsrc.hubblesite.org/hu/db/images/hs-2006-10-a-hires_jpg.jpg') no-repeat center center fixed;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: sans-serif;
+  color: white;
+  font-weight: 100;
+}
+
+h1{
+  font-weight:100;
+  color:grey;
+  margin-top:25px;
+  margin-left:45px;
+}
+
+ul {
+  padding-bottom:25px;
+  margin-left:25px;
+  color:grey;
+}
+
+li {
+  color: lightgrey;
+}
+
+a{
+  color: lightgrey;
+  font-weight:100;
+}

@@ -1,0 +1,11 @@
+<h2>Edit <%= @planet.name %></h2>
+
+<%= render 'planet_form' %>
+<br/>
+<br/>
+<br/>
+<form action="/planets/<%= @planet.id %>/moons" method="post">
+  <%= token_tag %>
+  <input type="text" name="moon[name]">
+  <input type="submit" value="Add a moon">
+</form>

@@ -1,0 +1,32 @@
+<h2>Create a new square (old form input version</h2>
+
+<form action="/squares" method='post'>
+  <%= token_tag %>
+  <input type="text" name='square[side_length]' placeholder="... width">
+  <input type="text" name='square[border_radius]' placeholder="... border-radius">
+  <input type="text" name='square[color]' placeholder="... color">
+  <input type="submit">
+</form>
+
+<!-- What will Rack see? -->
+<!-- params will be { :square => {:side_length => 200, :border_radius => 10, :color => 'red'} } -->
+
+
+<h1>FORM HELPERS (BORING)</h1>
+
+<%= form_tag("/squares", method: "post") do %>
+    <%= label_tag("square[color]", "Color:") %>
+   <!--  <%= color_field_tag("square[color]") %> -->
+    <%= color_field(:square, :color) %>
+    <%= label_tag("square[border_radius]", "Border-radius:") %>
+    <%= text_field_tag("square[border_radius]") %>
+    <%= label_tag("square[side_length]", "Side length:") %>
+    <%= text_field_tag("square[side_length]") %>
+    <%= submit_tag("Create Square") %>
+<% end %>
+
+
+<h1>FORM HELPERS (Utterly riveting)</h1>
+<%= render 'form' %>
+
+

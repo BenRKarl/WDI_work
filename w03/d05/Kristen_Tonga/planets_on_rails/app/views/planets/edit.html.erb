@@ -1,4 +1,4 @@
-<h1>Here's what you got:</h1>
+git<h1>Here's what you got:</h1>
 
 <img src ='<%= @planet.image_url %>'>
  <%= @planet.name %>
@@ -19,3 +19,23 @@
     <input type="text" name="life" placeholder="Life? Y or N?">
   <input type="submit">
 </form>
+
+
+
+# Students can add a shortcut to quickly access their GA folder
+# example: alias wdi="cd ~/Documents/GA/WDI4"
+# TODO: Set these
+export class_repo="Student_Work"
+alias wdi="cd ~/code/Proto/"
+
+cdhwfunc() {
+  # takes three args: the week, the day
+  # and an optional third for the user
+  if [ $1 -lt 10 ]
+  then
+    cd ~/code/Proto/WDI_NYC_Apr14_Proto/w0$1/d0$2/${3:-Kristen_Tonga}
+  else
+    cd ~/code/Proto/WDI_NYC_Apr14_Proto/w$1/d0$2/${3:-Kristen_Tonga}
+  fi
+}
+alias cdhw=cdhwfunc

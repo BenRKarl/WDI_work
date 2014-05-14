@@ -1,0 +1,14 @@
+<h1>Create ye a new square!</h1>
+<% if false %>
+<%= form_tag("/squares", method: "post") do %>
+  <%= label_tag("square[color]", "Color:") %>
+  <%= text_field_tag("square[color]") %>
+  <%= label_tag("square[border_radius]", "Border-radius:") %>
+  <%= text_field_tag("square[border_radius]") %>
+  <%= label_tag("square[side_length]", "Side length:") %>
+  <%= text_field_tag("square[side_length]") %>
+  <%= submit_tag("Create da square") %>
+<% end %>
+<% end %>
+
+<% render "form" %>
