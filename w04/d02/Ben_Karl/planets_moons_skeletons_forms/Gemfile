@@ -40,3 +40,5 @@ gem 'spring',        group: :development
 
 gem 'pry'
 gem 'rspec-rails'
+gem 'skeleton-rails', '~> 0.1.0'
+gem 'sprockets-rails', :require => 'sprockets/railtie'

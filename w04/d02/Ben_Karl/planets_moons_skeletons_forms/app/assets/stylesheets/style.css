@@ -1,28 +1,26 @@
+img {
+  width: 15em;
+  border-radius: 20%;
+}
+
 body {
   text-align: center;
 }
 
-table {
-  margin: 0 auto;
-  border: 1px solid black;
+.demo-red {
+  background-color: pink;
 }
 
-td {
-  border: 1px solid black;
-  padding: 1em;
+.demo-blue {
+  background-color: lightblue;
 }
 
-img {
-  width: 5em;
+.demo-green {
+  background-color: lightgreen;
 }
 
-li {
-  text-align: left;
-  list-style-type: none;
-}
-
-.moon_rows p,
-.moon_rows form {
-  display: inline;
-  vertical-align: top;
+.planet_info {
+  padding-left: 4em;
+  border: 2px solid black;
+  border-radius: 20px;
 }
