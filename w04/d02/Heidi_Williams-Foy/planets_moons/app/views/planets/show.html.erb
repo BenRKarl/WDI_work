@@ -1,0 +1,29 @@
+<h2><%= @planet.name %></h2>
+<%= image_tag @planet.image_url %>
+<dl>
+	<dt>Diameter:</dt>
+	<dd><%= @planet.diameter %></dd>
+	<dt>Mass:</dt>
+	<dd><%= @planet.mass %></dd>
+</dl>
+
+<h3>Moons</h3>
+<% if @planet.moons.empty? %>
+	<p>None</p>
+<% else %>
+	<ul>
+		<% @planet.moons.each do |moon| %>
+			<li><%= moon.name %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<p>
+	<% if @planet.life %>
+		There is life here!
+	<% else %>
+		There's nobody to hang out with here!!
+	<% end %>
+</p>
+
+<%= link_to "Add New Planet", new_planet_path %> | <%= link_to "Back to Index", planets_path %>
