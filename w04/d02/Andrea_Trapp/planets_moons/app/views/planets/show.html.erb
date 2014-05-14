@@ -1,0 +1,17 @@
+<h2>Planet Information</h2>
+
+<div class="row"></div>
+
+<div class="six columns sidebar">
+
+    <p><%= @planet.name %></p>
+    <p><img src="<%= @planet.image_url %>" width="200" height="200" alt="<%= @planet.name %>" /></p>
+    <p>Diameter (in miles): <%= @planet.diameter %></p>
+    <p>Mass (in E24kg): <%= @planet.mass %></p>
+    <p>Life? <%= @planet.life %></p>    
+   
+    <a href="/planets/<%= @planet.id %>/edit">
+        <button>Edit Planet</button>
+    </a>
+
+</div>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  planet_name: MyString
+  planet_url: MyString
+  diameter: 1
+  mass: 1
+  life: false
+
+two:
+  planet_name: MyString
+  planet_url: MyString
+  diameter: 1
+  mass: 1
+  life: false

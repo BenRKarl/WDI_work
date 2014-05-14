@@ -31,9 +31,5 @@ Based on what we learned today about form helpers, specifically the Rails `form_
 * This common form should be written inside of a partial.
 
 # Planets and Moons (SKELETON EDITION)
-<<<<<<< HEAD
-* Leverage the power of Skeleton to make your applications layout both aesthetic and fluid.
-=======
 * Leverage the power of Skeleton to make your applications layout both aesthetic and fluid.
 * Leverage the power of Font-Awesome to include icons.
->>>>>>> 0139e78cf2133a13e8c64cfa3fb6fa0dc6969108
