@@ -1,0 +1,16 @@
+
+
+<% @protos.each do |p|%>
+  <div>
+    <table>
+      <tr style="background-color: <%=p.color%>">
+        <td>
+    <%= p.name %>
+       </td>
+       <td>
+        <%= p.zs %>
+       </td>
+      </tr>
+  </table>
+  </div>
+<% end %>

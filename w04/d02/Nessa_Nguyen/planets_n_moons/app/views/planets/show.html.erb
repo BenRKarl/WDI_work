@@ -1,0 +1,94 @@
+<div class="row"></div>
+
+<nav class="sixteen columns offset-by-one">
+  <h4>
+    <i class="fa fa-chevron-circle-right"></i>
+    <a href="/planets">Back to main</a>
+  </h4>
+
+  <h1>About <%= @planet.name %></h1>  
+</nav>
+
+<div class="row"></div>
+<div class="row"></div>
+
+<div class="one column">&nbsp;</div>
+
+
+
+<div class="fourteen columns alpha omega">
+
+<div class="eight columns alpha">
+  <img src='<%= @planet.image_url %>' />
+
+<div class="row"></div>
+
+  <div class="six columns offset-by-one">  
+    <a href="/planets/<%= @planet.id %>/moons/new">
+      <button class="inline">Add moon</button>
+    </a>  
+
+    <a href="/planets/<%= @planet.id %>/edit">
+      <button class="inline">Edit</button>
+    </a>  
+
+    <form action='/planets/<%= @planet.id %>' method='post' class="inline">
+      <input type='hidden' name='_method' value='delete'>
+      <input type='submit' value='Destroy'>
+    </form>
+  </div>
+</div>
+
+
+
+<div class="six columns omega">
+<table>
+  <tr>
+    <td>Diameter</td>
+    <td>Mass</td>
+    <td>Life</td>
+
+  <tr>
+    <td><%= @planet.diameter %> km</td>
+    <td><%= @planet.mass %> x 10**21 kg</td>
+    <td>
+      <% if @planet.life %> Yes
+      <% else %> No  
+      <% end %>  
+    </td>
+  </tr>
+</table>
+
+<div class="row"></div>
+<hr />
+
+<!-- Moon table -->
+<table>
+  <tr>
+  <td colspan="2">Moons</td>
+  </tr> 
+
+  <% @planet.moons.each do |moon| %>
+  <tr>
+    <td>
+      <%= moon.name %> &nbsp;  
+    </td>
+
+    <td>
+      <a href="/planets/<%= @planet.id %>/moons/<%= moon.id %>/edit">
+        Edit</a> &nbsp;
+
+      <form action='/planets/<%= @planet.id %>/moons/<%= moon.id %>' method='post' class="inline">
+          <input type='hidden' name='_method' value='delete'>
+          <input type='submit' value='Del'>
+      </form> <br/>
+    </td>
+  </tr>
+  <% end %>    
+</table>
+</div>
+
+</div> <!-- main div -->
+
+
+<div class="two columns">&nbsp;</div>

@@ -1,0 +1,55 @@
+<div class="row"></div>
+<h1><%= @planet.name %></h1>
+<div class="row"></div>
+
+<div class="container">
+<div class="sixteen columns planet_info">
+
+<div class="five columns">
+<h3><a href="/planets/<%= @planet.id %>"><%= @planet.name %></a></h3>
+
+<div class="row"></div>
+
+<img src="<%= @planet.image_url %>">
+<div class="row"></div>
+<ul>
+  <li><span style="font-weight:bold;">Mass:</span> ~ <%= @planet.mass %> Earths</li>
+  <li><span style="font-weight:bold;">Diameter:</span> ~ <%= @planet.diameter %> Earths</li>
+  <li><span style="font-weight:bold;">Does it support life?:</span>
+    <% if @planet.life %>
+      Yessir!
+    <% else %>
+      No...
+    <% end %>
+  </li>
+</ul>
+</div>
+
+<div class="five columns">
+<h3>List of Moons:</h3>
+<div class="row"></div>
+<% @planet.moons.each do |moon| %>
+<%= moon.name %></br>
+<% end %>
+</div>
+
+<div class="five columns">
+<h3>Options:</h3>
+<div class="row"></div>
+  <%= form_tag(new_planet_moon_path(@planet), method: "get") do %>
+    <%= submit_tag "Add Moon" %>
+  <% end %>
+
+  <%= form_tag(edit_planet_path(@planet), method: "get") do %>
+    <%= submit_tag "Edit Planet" %>
+  <% end %>
+
+  <%= form_tag(planet_path(@planet), method: "delete") do %>
+    <%= submit_tag "Delete Planet" %>
+  <% end %>
+</div>
+</div>
+<div class="row"></div>
+</div>
+
+<a href="/planets"><button>Back to Home</button></a>
