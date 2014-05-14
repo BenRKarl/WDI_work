@@ -1,0 +1,44 @@
+.Sagittarius_row {
+  background-color: lightblue;
+}
+
+.Aries_row {
+  background-color: firebrick;
+}
+
+.Taurus_row {
+  background-color: SpringGreen;
+}
+
+.Gemini_row {
+  background-color: mediumorchid;
+}
+
+.Cancer_row {
+  background-color: aliceblue;
+}
+
+.Virgo_row {
+  background-color:mediumslateblue;
+}
+.Libra_row {
+  background-color:violet;
+}
+.Scorpio_row {
+  background-color:firebrick;
+}
+.Capricorn_row {
+  background-color:slategray;
+  color:white;
+}
+.Aquarius_row {
+  background-color:slategray;
+  color:white;
+}
+.Pisces_row {
+  background-color:dodgerblue;
+}
+
+table {
+  border-collapse: collapse;
+}

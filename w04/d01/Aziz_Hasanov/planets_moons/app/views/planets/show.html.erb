@@ -1,0 +1,39 @@
+<h1>Here is your mighty planet</h1>
+
+<img src="<%=@show_planet.image_url%>" alt="">
+
+<table>
+  <thead>
+    <tr>
+      <th>Planet</th>
+      <th>Diameter (km)</th>
+      <th>Mass (x 10&#94;23 kg)</th>
+      <th>Life</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @show_planet.name %></td>
+      <td><%= @show_planet.diameter %></td>
+      <td><%= @show_planet.mass %></td>
+      <td><%= @show_planet.life %></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Moon(s):</h3>
+<% @show_planet.moons.each do |i| %>
+<ul>
+  <li><%= i.name %></li>
+</ul>
+<% end %>
+
+<button><a href="/planets/<%=@show_planet.id%>/edit">Edit</a></button>
+
+<form action="/planets/<%=@show_planet.id%>" method="post">
+  <%=token_tag%>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>
+
+<button><a href="/planets/<%=@show_planet.id%>/moons/new">New moon</a></button>

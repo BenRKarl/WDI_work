@@ -1,0 +1,22 @@
+<h1>HI!</h1>
+<h2>Would you like to <a href="/squares/new">create</a> a square?</h2>
+<h3>You have all of these squares already!!</h3>
+
+<!-- <ul> -->
+<% @squares.each do |square| %>
+<!--   <li> -->
+    <%= square.side_length %>
+    <%= square.color %>
+
+    <a href="/squares/<%= square.id %>"><div style="background-color:<%= square.color %>; height: <%= square.side_length %>px; width: <%= square.side_length %>px; border-radius:<%= square.border_radius %>px"></div></a>
+
+    <form action="/squares/<%= square.id %>" method="post">
+      <%= token_tag %>
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit">DELETE</button>
+    </form>
+<!--   </li> -->
+<% end %>
+<!-- </ul> -->
+
+

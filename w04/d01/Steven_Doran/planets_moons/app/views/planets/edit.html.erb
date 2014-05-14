@@ -1,0 +1,20 @@
+<h1>Edit A Planet</h1>
+
+<form action="/planets/<%= @planet.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <%= token_tag%>
+    <input type="text" name='planet[name]' value='<%= @planet.name %>'><br/>
+    <input type="text" name='planet[image_url]' value='<%= @planet.image_url %>'><br/>
+    <input type="number" name='planet[diameter]' value='<%= @planet.diameter %>'> km<br/>
+    <input type="number" name='planet[mass]' value="<%= @planet.mass %>"> x 10^24 kg<br/>
+    <% if @planet.life == true %>
+            <input type="radio" name="planet[life]" value=true checked>Life<br/>
+            <input type="radio" name="planet[life]" value=false>No Life<br/>
+    <% else %>
+            <input type="radio" name="planet[life]" value=true>Life<br/>
+            <input type="radio" name="planet[life]" value=false checked>No Life<br/>
+    <% end %>
+    <input type="submit">
+</form>
+
+<a href="/planets">Home</a>
