@@ -7,7 +7,7 @@ Artist.find_by name: 'Vincent van Gogh'
 Artist.where(nationality: 'Spanish')
 Painting.find(1)
 Painting.find_by(title: 'Guernica')
-picasso.paintings
-
+Artists.find_by(name: 'Pablo Picasso').paintings
+Painting.find_by(title: 'Guernica').artist
 Artist.find_by(name: 'Vincent van Gogh').update(nationality: American)
 Artist.find_by(name: 'Pablo Picasso') << Painting.find_by(title: 'Starry Night')
