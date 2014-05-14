@@ -1,13 +1,2 @@
-<% if false %>
-<form action="/planets" method='post'>
-  <%= token_tag %>
-  <input type="text" name='planet[name]' placeholder="Planet name">
-  <input type="text" name='planet[image_url]' placeholder="Image URL">
-  <input type="text" name='planet[diameter]' placeholder="Diameter (kilometers)">
-  <input type="text" name='planet[mass]' placeholder="Mass (megatons)">
-  <p> Life?
-  <input type="checkbox" name='planet[life]' placeholder="Life?">
-  </p>
-  <input type="submit">
-</form>
-<% end> %>
+<h1>The next best thing to creating a real planet..</h1>
+<%= render 'form' %>
