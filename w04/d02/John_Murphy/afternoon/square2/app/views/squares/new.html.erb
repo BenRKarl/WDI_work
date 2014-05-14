@@ -1,0 +1,24 @@
+<!-- <h1>Create a square</h1>
+
+<form action="/squares" method ="post">
+  <%= token_tag %>
+  <input type="text" name="square[side_length]" placeholder="Side Length">
+  <input type="text" name="square[border_radius]" placeholder="Border Radius">
+  <input type="text" name="square[color]" placeholder="Color">
+  <input type="submit">
+
+</form> -->
+
+<!-- <h1>Form helpers (BORING)</h1> -->
+<!--
+<%= form_tag("/squares", method: "post") do %>
+  <%= label_tag("square[color]", "Color:") %>
+  <%= text_field_tag("square[color]") %>
+  <%= label_tag("square[border_radius]", "Border Radius:") %>
+  <%= text_field_tag("square[border_radius]") %>
+  <%= label_tag("square[side_length]", "Side Length:") %>
+  <%= text_field_tag("square[side_length]") %>
+  <%= submit_tag("Create") %>
+<% end %>
+ -->
+<%= render 'form' %>
