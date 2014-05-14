@@ -1,6 +1,6 @@
-#WEEK 04 DAY 02
+#WEEK 04 DAY 03
 #WORK IN YOUR OWN FOLDER ONLY!
-#Your pull-request title must start with `w04_d02_submission`
+#Your pull-request title must start with `w04_d03_submission`
 
 ___
 
@@ -47,48 +47,48 @@ starry_night = Painting.create(title: "Starry Night")
 ```ruby
 Artist.all
 ```
-* Return all Paintings
-```ruby
+4. Return all Paintings
+```ruby 
 Painting.all
 ```
-* Return the artist with an id of 2
+5. Return the artist with an id of 2
 ```ruby
 Artist.find(2)
 ```
-* Return the artist with a name of "Vincent Van Gogh"
+6. Return the artist with a name of "Vincent Van Gogh"
 ```ruby
 Artist.find_by(name: "Vincent Van Gogh")
 ```
-* Return all the artists who are "Spanish"
+7. Return all the artists who are "Spanish"
 ```ruby
 Artist.where(nationality: "Spanish")
 ```
-* Return the painting with an id of 1
+8. Return the painting with an id of 1
 ```ruby
 Painting.find(1)
 ```
 
-* Return the painting with a name of "Guernica"
+9. Return the painting with a name of "Guernica"
 ```ruby
 Painting.find_by(name: "Guernica")
 ```
 
-* Return all the paintings that "Pablo Picasso" painted
+10. Return all the paintings that "Pablo Picasso" painted
 ```ruby
 Artist.find_by(name: "Pablo Picasso").paintings
 ```
-* Return the artist of "Guernica"
+11. Return the artist of "Guernica"
 ```ruby
 Painting.find_by(title: Guernica).artist
 ```
-* Change Vincent Van Gogh's nationality to "American"
+12. Change Vincent Van Gogh's nationality to "American"
 ```ruby
 Artist.find_by(name: "Vincent Van Gogh").update(nationality: "American")
 ```
-* Change "Starry Night" to be one of Pablo Picasso's paintings
+13. Change "Starry Night" to be one of Pablo Picasso's paintings
 ```ruby
 starry = Painting.find_by(title: "Starry Night")
 artist = Artist.find_by(name: "Pablo Picasso")
-artist.paintings << starry
+artist.paintings << starry 
 ```
 
