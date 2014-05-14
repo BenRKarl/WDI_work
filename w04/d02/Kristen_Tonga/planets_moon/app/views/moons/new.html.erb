@@ -1,0 +1,13 @@
+<h1>CREATE!!</h1>
+
+<form action="/planets/<%=@planet_id%>/moons" method="post">
+  <%= token_tag %>
+<p>
+  <input type="text" name="moon[name]" placeholder="Name Your Moon!">
+</p>
+<p>
+  <input type="submit">
+</p>
+</form>
+
+<a href= "/planets">GALEXY GALLERY</a>
