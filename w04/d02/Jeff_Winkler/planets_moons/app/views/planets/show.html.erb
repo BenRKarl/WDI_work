@@ -1,7 +1,8 @@
 
+<div class="container">
+    <div class="four columns offset-by-one">
 
-
-        <form action="/planets/<%= @planet.id %>/edit" method="get">
+        <form action="<%= edit_planet_path(@planet.id)%>" method="get">
           <button class="show_but" type="submit">Edit</button>
         </form>
         <form action="/planets/<%= @planet.id %>" method="post">
@@ -12,13 +13,14 @@
         <form action="/planets/<%=@planet.id%>/moons/new" method="get">
           <button class="show_but" type="submit">Create Moon</button>
         </form>
-        <form action="/planets/new" method="get">
+        <form action="<%= new_planet_path%>" method="get">
           <button class="show_but" type="submit">Create New Planet</button>
         </form>
-        <form action="/planets" method="get">
+        <form action="<%= planets_path %>" method="get">
           <button class="show_but" type="submit">Back</button>
         </form>
-
+    </div>
+    <div class="eight columns omega">
             <%= @planet.name.upcase %>
         <img class="planet_img" src="<%=@planet.image_url%>">
             <ul>
@@ -40,3 +42,5 @@
                         </li>
                     <% end %>
                 </ul>
+      </div>
+</div>

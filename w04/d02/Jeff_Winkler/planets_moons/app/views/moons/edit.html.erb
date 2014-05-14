@@ -1,2 +1,12 @@
 
-<%= render 'form' %>
+<div class="container">
+    <div class="ten columns offset-by-one">
+        <%= render 'form' %>
+        <form action="/planets/<%=@planet.id%>/moons/<%=@moon.id%>" method="post">
+            <%= token_tag %>
+            <input type="hidden" name="_method" value="delete">
+            <button class="show_but delit" type="submit">Delete Moon</button>
+        </form>
+    </div>
+
+</div>

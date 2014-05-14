@@ -1,13 +1,15 @@
 
 
+<div class="container">
+    <div class="sixteen columns">
+        <div class="four columns alpha">
+            <form action="<%= new_planet_path %>" method="get">
+              <button class="new_but" type="submit">Create New Planet</button>
+            </form>
 
+        </div>
 
-        <form action="<%= new_planet_path %>" method="get">
-          <button class="new_but" type="submit">Create New Planet</button>
-        </form>
-
-
-
+        <div class="twelve columns omega">
         <% @planets.each do |planet| %>
 
                 <a class="planet_link" href="<%=planet_path(planet.id)%>"><%= planet.name.upcase %></a>
@@ -15,6 +17,8 @@
                 <p class="to_s"><%=planet.to_s%></p>
 
         <% end %>
-
+      </div>
+    </div>
+</div>
 
 

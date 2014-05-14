@@ -11,6 +11,10 @@
  * file per style scope.
  *
  *
+ *
+ *= require layout
+ *= require base
+ *= require skeleton
  *= require 'font-awesome'
  *= require_tree .
  *= require_self
