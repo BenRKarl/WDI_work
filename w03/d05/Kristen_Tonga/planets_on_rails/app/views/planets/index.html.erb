@@ -1,0 +1,31 @@
+<h1>Planets</h1>
+
+Who doesn't want to create a planet? Create one now!! <a href="/planets/new"> <button>CREATE</button> </a>
+
+<table>
+  <% @planets.each do |planet| %>
+  <tr>
+    <td>
+      <img src='<%= planet.image_url %>'>
+    </td>
+    <td>
+      <%= planet.name %>
+      <a href="/planets/<%= planet.id %>/edit">EDIT</a>
+      <form action="/planets/<%= planet.id %>" method="post">
+        <%= token_tag %>
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit">BOOM!</button>
+      </form>
+    </td>
+    <td>
+      <%= planet.diameter %>miles
+    </td>
+    <td>
+      <%= planet.mass %>* 10**24 kilograms
+    </td>
+    <td>
+      <%= planet.life %>
+    </td>
+  </tr>
+  <% end %>
+</table>
