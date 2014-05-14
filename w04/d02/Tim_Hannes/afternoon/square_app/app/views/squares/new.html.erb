@@ -1,0 +1,59 @@
+<h2>Make A New Square</h2>
+<%= link_to 'Back', squares_path %>
+<%= render 'form' %>
+
+
+
+
+
+
+
+<% if false %>
+<%= form_for :square, url: squares_path do |f| %>
+<% end %>
+<%= link_to 'Back', squares_path %>
+
+<%= form_for :square, url: squares_path do |f| %>
+  <p>
+    <%= f.label :side_length %><br>
+    <%= f.text_field :side_length %>
+  </p>
+
+  <p>
+    <%= f.label :border_radius %><br>
+    <%= f.text_field :border_radius %>
+  </p>
+
+  <p>
+    <%= f.label :color %><br>
+    <%= f.color_field :color %>
+  </p>
+
+  <p>
+    <%= f.submit("Create A Square")%>
+  </p>
+<% end %>
+
+
+
+
+
+
+<h1>Form Helpers BORING</h1>
+<%= form_tag("/squares", method: "post") do %>
+  <%= label_tag("square[side_length]", "Side Length:") %>
+  <%= text_field_tag ("square[side_length]") %>
+<% end %>
+
+<%= form_tag("/squares", method: "post") do %>
+  <%= label_tag("square[border_radius]", "Border Radius:") %>
+  <%= text_field_tag ("square[border_radius]") %>
+<% end %>
+
+
+<%= form_tag("/squares", method: "post") do %>
+  <%= label_tag("square[color]", "Color:") %>
+  <%= text_field_tag ("square[color]") %>
+<% end %>
+<%= submit_tag("Create Square") %>
+<%end%>

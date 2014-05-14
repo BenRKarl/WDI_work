@@ -1,0 +1,5 @@
+<%= form_for :moons, url: moons_path do |f| %>
+  <%= f.label :name %>:<br>
+  <%= f.text_field :name %><br>
+  <%= f.submit("Add a Moon") %>
+<% end %>
