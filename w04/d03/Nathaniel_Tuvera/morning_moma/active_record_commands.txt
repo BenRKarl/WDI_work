@@ -10,4 +10,4 @@ Painting.find_by(title: 'Guernica')
 Artists.find_by(name: 'Pablo Picasso').paintings
 Painting.find_by(title: 'Guernica').artist
 Artist.find_by(name: 'Vincent van Gogh').update(nationality: American)
-Artist.find_by(name: 'Pablo Picasso') << Painting.find_by(title: 'Starry Night')
+Artist.find_by(name: 'Pablo Picasso').paintings << Painting.find_by(title: 'Starry Night')
