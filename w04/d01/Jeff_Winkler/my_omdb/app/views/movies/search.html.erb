@@ -1,0 +1,11 @@
+
+<div class="movies">
+
+  <% @movies.each do |movie| %>
+    <div>
+    <a href="/movies/<%=movie.year%>/<%= movie.title%>"><%= movie.title %></a>:  <%=movie.year %>
+  </div>
+  <% end %>
+
+
+</div>

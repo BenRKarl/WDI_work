@@ -2,7 +2,7 @@ class KittensController < ApplicationController
 
   def index
   #   @kittens = Kitten.all
-    Kittens.url
+   # Kittens.url
   end
 
   def url

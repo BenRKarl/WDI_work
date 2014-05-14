@@ -10,7 +10,7 @@ end
 
 def create
  
-  new_square = Square.create(side_length:params[:side_length], border_radius:params[:border_radius], color:params[:color])
+  new_square = Square.create(params.require(:square).permit(:side_length, :border_radius, :color))
   redirect_to "/squares/#{new_square.id}"
 end
 
