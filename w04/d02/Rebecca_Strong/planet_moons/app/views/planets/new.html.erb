@@ -1,0 +1,18 @@
+
+
+<form action="/planets" method='post'>
+<%= token_tag %>
+<img src="" width="200" height="200" alt="http://i.imgur.com/o5XfEWTb.jpg"><br>
+<input type="text" name="planet[name]" placeholder="planet name" ><br>
+<input type="text" name="planet[diameter]" ><br>
+<input type="text" name="planet[mass]"><br>
+
+
+Life?<br>
+
+<img src="http://i.imgur.com/8KJK0FE.jpg" width="200" height="200"/><br>
+<input type="radio" name="planet[life]" value="1">yes
+<input type="radio" name="planet[life]" value="0">no
+<input type="submit">
+</form>
+
