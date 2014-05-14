@@ -1,0 +1,11 @@
+<div class="container index">
+  <h1>Welcome. Rock your universe by creating planets with moons!</h1>
+
+  <%@planets.each do |i|%>
+  <section class="container column" >
+    <a href="/planets/<%=i.id%>"><img class="container twelve columns container offset-by-two" src="<%=i.image_url%>" alt=""></a>
+  </section>
+  <%end%>
+
+  <button class="create"><a href="/planets/new">new planet</a></button>
+</div>

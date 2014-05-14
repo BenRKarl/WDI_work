@@ -1,0 +1,9 @@
+<h1> Now showing</h1>
+<p> <%= @planet.name %></p>
+<%= render 'planet_form' %>
+<% @moons.each do |moon| %>
+<ul>
+  <li><%= moon.name %></li>
+<% end %>
+</ul>
+<button><a href="/planets/<%= @planet.id %>/moons/new">Add moon</a></button>
