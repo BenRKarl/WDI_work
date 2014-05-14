@@ -1,0 +1,53 @@
+<div class="container">
+  <h1>Here is your mighty planet</h1>
+
+  <img class="container ten columns" src="<%=@planet.image_url%>" alt="">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Planet</th>
+        <th>Diameter (km)</th>
+        <th>Mass (x 10&#94;23 kg)</th>
+        <th>Life</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @planet.name %></td>
+        <td><%= @planet.diameter %></td>
+        <td><%= @planet.mass %></td>
+        <td><%= @planet.life %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Moon(s):</h3>
+  <% @planet.moons.each do |i| %>
+  <ul>
+    <li>
+      <%= i.name %>
+      <div class="buttons">
+        <button class="click">
+          <a href="/planets/<%=@planet.id%>/moons/<%= i.id %>/edit">Edit</a>
+        </button>
+        <form class="click" action="/planets/<%=@planet.id%>/moons/<%= i.id %>" method="post">
+          <%=token_tag%>
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
+      </div>
+    </li>
+  </ul>
+  <% end %>
+
+  <button class="click planet"><a href="/planets/<%=@planet.id%>/edit">Edit planet</a></button>
+
+  <form class="click planet" action="/planets/<%=@planet.id%>" method="post">
+    <%=token_tag%>
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete planet">
+  </form>
+
+  <button class="click planet"><a href="/planets/<%=@planet.id%>/moons/new">New moon</a></button>
+</div>

@@ -1,0 +1,19 @@
+
+
+<h3><a href="/squares/new">Add new square</a></h3>
+<a href="<%= new_square_path%>">New square</a>
+
+<h2>All squares</h2>
+
+<p>Click on the square to edit</p>
+
+<% @squares.each do |square| %>
+  <a href="/squares/<%= square.id %>" >
+  <div class="square"
+    style="width: <%= square.side_length %>px; 
+          height: <%= square.side_length %>px; 
+          border-radius: <%= square.border_radius %>px; 
+          background-color: <%= square.color %>;">
+  </div>
+  </a>
+<% end %>

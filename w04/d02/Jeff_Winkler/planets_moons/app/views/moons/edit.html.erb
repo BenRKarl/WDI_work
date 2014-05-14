@@ -1,0 +1,10 @@
+
+<div class="container">
+    <div class="ten columns offset-by-one">
+        <%= render 'form' %>
+        <%= form_tag(planet_moon_path(@planet.id, @moon.id), method: "delete") do %>
+        <%= submit_tag("Delete Moon") %>
+        <% end %>
+    </div>
+
+</div>

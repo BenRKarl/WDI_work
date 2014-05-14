@@ -1,0 +1,44 @@
+<h2>All planets</h2>
+
+<a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>    
+<a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+
+<div><a href="/planets/new"><button>Create a new planet</button></a><div>
+
+<% @planets.each do |planet| %>
+  <div class="twelve columns sidebar">
+
+    <div class="four columns alpha">
+      <a href="<%= planet.image_url %>">
+        <img src="<%= planet.image_url %>" width="200" height="200" alt="<%= planet.name %>" />
+      </a>
+    </div>
+
+    <div class="eight columns omega">
+
+        <div class="four columns omega">
+          <h4>Planet Information</h4>
+          <p>Name: <a href="/planets/<%= planet.id %>"><%= planet.name %></a></p>
+          <p>Diameter (in miles): <%= planet.diameter %></p>
+          <p>Mass (in E24kg): <%= planet.mass %></p>
+          <p>Life? <%= planet.life %></p>
+        </div> 
+
+        <div class="four columns omega">
+          <h4>Moons</h4>
+          <% planet.moons.each do |moon| %>
+            <li>           
+              <%= moon.name %>
+            </li>  
+          <% end %>
+          <a class="fa fa-hand-o-right" href="/planets/<%= planet.id %>/moons/new"> Create a new moon</a>
+        </div> 
+
+    </div>
+
+  </div>
+
+  <div class="row"></div>
+<% end %>
+
+
