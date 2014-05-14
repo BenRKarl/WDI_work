@@ -1,17 +1,13 @@
 class MoonsController < ApplicationController
 
-  # def index
-  #   @moons = Moon.all
-  # end
-
   def create
-    moon = Moon.create(moon_params)
+    @moon = Moon.create(moon_params)
     planet = Planet.find(params[:planet_id])
     redirect_to "/planets/#{planet.id}"
   end
 
   def new
-    @planet = Planet.find(params[:planet_id])
+    @moon = Moon.new
 
   end
 
@@ -21,12 +17,13 @@ class MoonsController < ApplicationController
   end
 
   def show
-    @moon = Moon.find(params[:id])
+    @planet = Planet.find params[:post_id]
+    @moon = Moon.new(:planet=>@planet)
   end
 
   def update
-    moon = Moon.find(params[:planet_id])
-    planet = Planet.find(params[:id])
+    @moon = Moon.find(params[:planet_id])
+    planet = Planet.find(params[:planet_id])
     moon.update(moon_params)
     redirect_to "/planets/#{planet.id}"
   end

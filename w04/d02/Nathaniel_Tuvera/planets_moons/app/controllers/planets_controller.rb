@@ -1,7 +1,5 @@
 class PlanetsController < ApplicationController
 
-
-
   def index
     @planets = Planet.all
     @moons = Moon.all
@@ -22,8 +20,8 @@ class PlanetsController < ApplicationController
 
 #            planet GET    /planets/:id(.:format)                      planets#show
   def show
-    @planet = Planet.find(params[:id])
-    @moons = Moon.all
+    @planet = Planet.find(params[:planet_id])
+    @moon = @planet.new(:planet=>@planet)
   end
 #                   PATCH  /planets/:id(.:format)                      planets#update
 #                   PUT    /planets/:id(.:format)                      planets#update
