@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+  padding: 1em;
+}
+
+img {
+  width: 5em;
+}
+
+li {
+  text-align: left;
+  list-style-type: none;
+}
+
+.moon_rows p,
+.moon_rows form {
+  display: inline;
+  vertical-align: top;
+}
