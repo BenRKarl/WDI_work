@@ -8,12 +8,16 @@
 }
 
 
-
 .pi_small {
   width: 50px;
   height: auto;
+  position: relative;
+  top: 5px;
+  left: 60px;
   border-radius: 10px;
+
 }
+
 
 .demopink {
   background-color: pink;
@@ -33,4 +37,40 @@
   display: inline;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.gen_button {
+  width: 150px;
+}
+
+
+.planet_list {
+
+  font-size: 30px;
+  margin-top: 20px;
+  width: 400px;
+
+}
+
+.planet_link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(96, 130, 182);
+  left: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 160px;
+}
+
+.planet_link:hover {
+  background-color: rgb(200, 200, 200);
+}
+
+
+
+.to_s {
+  font-size: 12px;
+  position: relative;
+  left: 20px;
 }

@@ -3,19 +3,18 @@
 <div class="container">
     <div class="sixteen columns">
         <div class="four columns alpha">
-            <form action="<%= new_planet_path %>" method="get">
-              <button class="new_but" type="submit">Create New Planet</button>
-            </form>
-
+            <%= form_tag(new_planet_path, method: "get") do %>
+            <%= submit_tag("Create New Planet") %>
+            <% end %>
         </div>
 
         <div class="twelve columns omega">
         <% @planets.each do |planet| %>
-
+            <div class="planet_list">
                 <a class="planet_link" href="<%=planet_path(planet.id)%>"><%= planet.name.upcase %></a>
                 <img class="pi_small" src="<%=planet.image_url%>">
                 <p class="to_s"><%=planet.to_s%></p>
-
+             </div>
         <% end %>
       </div>
     </div>

@@ -1,24 +1,21 @@
 
 <div class="container">
     <div class="four columns offset-by-one">
-
-        <form action="<%= edit_planet_path(@planet.id)%>" method="get">
-          <button class="show_but" type="submit">Edit</button>
-        </form>
-        <form action="/planets/<%= @planet.id %>" method="post">
-          <%= token_tag %>
-          <input type="hidden" name="_method" value="delete">
-          <button class="show_but" type="submit">Delete</button>
-        </form>
-        <form action="/planets/<%=@planet.id%>/moons/new" method="get">
-          <button class="show_but" type="submit">Create Moon</button>
-        </form>
-        <form action="<%= new_planet_path%>" method="get">
-          <button class="show_but" type="submit">Create New Planet</button>
-        </form>
-        <form action="<%= planets_path %>" method="get">
-          <button class="show_but" type="submit">Back</button>
-        </form>
+        <%= form_tag(edit_planet_path(@planet.id), method: "get") do %>
+        <%= submit_tag("Edit", class: "gen_button") %>
+        <% end %>
+        <%= form_tag(planet_path(@planet.id), method: "delete") do %>
+        <%= submit_tag("Delete", class: "gen_button") %>
+        <% end %>
+        <%= form_tag(new_planet_moon_path(@planet.id), method: "get") do %>
+        <%= submit_tag("Create Moon", class: "gen_button") %>
+        <% end %>
+        <%= form_tag(new_planet_path, method: "get") do %>
+        <%= submit_tag("Create New Planet", class: "gen_button") %>
+        <% end %>
+        <%= form_tag(planets_path, method: "get") do %>
+        <%= submit_tag("Back", class: "gen_button") %>
+        <% end %>
     </div>
     <div class="eight columns omega">
             <%= @planet.name.upcase %>
