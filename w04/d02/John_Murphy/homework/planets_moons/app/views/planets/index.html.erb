@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="sixteen columns present"><h1>Planets</h1>
+    <div class="row"></div>
+    <div class="sixteen columns"><h4>Create a new planet <a   href="/planets/new">here</a>.</h4></div>
+    <div class="row"></div>
+    <div class="row"></div>
+  </div>
+
+  <div class="sixteen columns outline">
+    <div class="four columns announce">
+    </br>
+    </br>
+    </br>
+      <h3>Here are the created planets:</h3>
+    </div>
+
+    <div class="eight columns planets">
+      <% @planets.each do |planet| %>
+        <div class="three columns center_div">
+
+          <p><img src="<%=planet.image_url%>"></p>
+          <p>Name: <%=planet.name%></p>
+          <p>Diameter: <%=planet.diameter%></p>
+          <p>Mass: <%=planet.mass%></p>
+          <p>Life: <%=planet.life%></p>
+          <p>
+            <form action="/planets/<%=planet.id%>">
+              <button>Show</button>
+            </form>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

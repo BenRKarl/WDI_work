@@ -1,0 +1,36 @@
+<h1>Planets!!</h1>
+
+<a href= '/planets/new'>CREATE!</a>
+
+<table>
+  <% @planets.each do |planet| %>
+    <tr>
+      <td>
+        <a href="/planets/<%= planet.id %>"><%= image_tag planet.image_url %></a>
+      </td>
+      <td>
+        NAME: <%= planet.name %> <br>
+        Diameter: <%= planet.diameter %> miles <br>
+        Mass: <%= planet.mass %> kilos <br>
+      </td>
+      <td>
+        <% planet.moons.each do |moon| %>
+          <li>
+            <%= moon.name %>
+          </li>
+        <% end %>
+      </td>
+      <td>
+        <a href="/planets/<%= planet.id %>/edit"><button>EDIT</button></a>
+        <form action="/planets/<%= planet.id %>" method="post">
+          <%= token_tag %>
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">BOOM!</button>
+        </form>
+      </td>
+      <td>
+        <a href="/planets/<%= planet.id %>/moons/new">Create a Moon</a>
+      </td>
+    </tr>
+  <% end %>
+</table>

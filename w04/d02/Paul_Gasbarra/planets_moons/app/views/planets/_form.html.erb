@@ -1,0 +1,14 @@
+
+<%= form_for @planet do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :image_url %>
+  <%= f.url_field :image_url %>
+  <%= f.label :diameter %>
+  <%= f.number_field :diameter %>
+  <%= f.label :mass %>
+  <%= f.number_field :mass %>
+  <%= f.label :life %>
+  <%= f.text_field :life %>
+  <%= f.submit %>
+<% end %>
