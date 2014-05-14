@@ -1,0 +1,9 @@
+<form action="/planets" method="post">
+  <%= token_tag %>
+  <input type="text" name="planet[name]" placeholder="Planet name"></br>
+  <input type="text" name="planet[diameter]" placeholder="Planet diameter"></br>
+  <input type="text" name="planet[mass]" placeholder="Planet mass"></br>
+  <input type="text" name="planet[image_url]" placeholder="Image URL"></br>
+  Does it have life? <input type="checkbox" name="planet[life]"></br>
+  <input type="submit" value="Create Planet">
+</form>
