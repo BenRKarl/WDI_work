@@ -28,9 +28,9 @@ end
 
 #PUT    /planets/:id(.:format)  planets#update
 def update
-  @planet = Planet.find(planet_params[:id])
-  planet.update(planet_params)
-  redirect_to "/planets/#{planet.id}"
+  @planet = Planet.find(params[:id])
+  @planet.update(planet_params)
+  redirect_to "/planets/#{@planet.id}"
 end
 
 #DELETE /planets/:id(.:format)  planets#destroy

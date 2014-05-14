@@ -1,9 +1,14 @@
 <h1>Planets and Moons</h1>
 <ul>
 	<% @planet.each do |planet| %>
-	<% @moon.each do |moon| %>
-	<li>
-		<%= planet.name %><%= moon.integer %>
-	</li>
+		<li><%= link_to planet.name, planet %>
+			<ul>
+				<% planet.moons.each do |moon| %>
+					<li>
+						<%= moon.name %>
+					</li>
+				<% end %>
+			</ul>
+		</li>
 	<% end %>
 </ul>
