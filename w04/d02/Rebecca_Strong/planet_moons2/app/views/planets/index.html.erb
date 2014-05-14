@@ -1,4 +1,6 @@
-<h1>Planets!</h1>
+<div class="container">
+
+  <div class="six columns offset-by-five"><h1>Planets</h1>
 
 <ul>
   <% @planets.each do |planet| %>
@@ -11,6 +13,10 @@
 
 </ul>
 
-<a href="/planets/new">
+<%= link_to "New Planet", new_planet_path %>
+
+</div>
+<!-- <a href="/planets/new">
   New Planet
 </a>
+ -->
