@@ -15,12 +15,12 @@
         <% @planet.moons.each do |moon| %>
         <li>
             <%= moon.name %>
-            <form action="/planets/<%= @planet.id %>/moon/<%= moon.id %>" method='post'>
+            <form action="/planets/<%= @planet.id %>/moons/<%= moon.id %>" method='post'>
                 <%= token_tag %>
                 <input type="hidden" name="_method" value="delete">
                 <button type="submit">Delete Moon</button>
             </form>
-            <a href="/planets/<%= @planet.id %>/moon/<%= moon.id %>/edit">Edit Moon</a>
+            <a href="/planets/<%= @planet.id %>/moons/<%= moon.id %>/edit">Edit Moon</a>
         </li>
         <% end %>
     </ul>
