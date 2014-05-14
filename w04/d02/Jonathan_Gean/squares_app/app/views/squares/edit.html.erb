@@ -1,0 +1,24 @@
+<h2>Edit a square</h2>
+
+
+<form action="/squares/<%= @square.id %>" method='post'>
+  <input type="hidden" name="_method" value="put">
+  <%= token_tag %>
+  <input type="text" name='square[side_length]' value='<%= @square.side_length %>'>
+  <input type="text" name='square[border_radius]' value='<%= @square.border_radius %>'>
+  <input type="text" name='square[color]' value='<%= @square.color %>'>
+  <input type="submit">
+</form>
+
+<h1>Form helper</h1>
+<%= form_for @square do |f| %>
+  <%= f.label :color %>
+  <%= f.color_field :color %>
+  <%= f.label :side_length %>
+  <%= f.text_field :side_length %>
+  <%= f.label :border_radius %>
+  <%= f.text_field :border_radius %>
+  <%= f.submit %>
+<% end %>
+
+<%= render 'form' %>

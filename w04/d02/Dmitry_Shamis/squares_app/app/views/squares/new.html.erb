@@ -1,0 +1,15 @@
+<h1>Let's make you the perfect square...</h1>
+
+<h3>Form Helpers (Boring)</h3>
+<%= form_tag("/squares", method: "post") do %>
+  <%= label_tag("square[color]", "Color:") %>
+  <%= color_field_tag("square[color]") %>
+  <%= label_tag("square[border_radius]", "Border Radius:") %>
+  <%= text_field_tag("square[border_radius]") %>
+  <%= label_tag("square[side_length]", "Side Length:") %>
+  <%= text_field_tag("square[side_length]") %>
+  <%= submit_tag("Create Square") %>
+  <% end %>
+
+<h3>Form Helpers (Utterly Riveting)</h3>
+<%= render 'form' %>

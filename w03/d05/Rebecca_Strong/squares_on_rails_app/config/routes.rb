@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
 
+# get '/' => 'squares#index'
+#   get 'squares' => 'squares#index'
+#   get 'squares/new' => 'squares#new'
+#   post 'squares' => 'squares#create'
+#   get 'squares/:id/edit' => 'squares#edit'
+#   put 'squares/:id' => 'squares#update'
+#   patch '/square/:id' => ''
+#   get 'squares/:id' => 'squares#show', as: 'square'
+#   delete 'squares/:id' => 'squares#destroy'
 
-  get 'squares' => 'squares#index'
-  get 'squares/new' => 'squares#new'
-  post 'squares' => 'squares#create'
-  get 'squares/:id/edit' => 'squares#edit'
-  put 'squares/:id' => 'squares#update'
-  get 'squares/:id' => 'sauares#show'
-  delete 'squares/:id' => 'squares#destroy'
 
-
-
+resources :squares
 
 
 

@@ -34,40 +34,61 @@ Populate your database (using ActiveRecord) with at least 3 Artists and 3 Painti
 
 In pry, write active record commands to do the following.  Save each command in a file `active_record_commands.txt`.
 
-1. Create a new Artist (Vincent Van Gogh) and save him to your database
+* Create a new Artist (Vincent Van Gogh) and save him to your database
 ```ruby
 vince = Artist.create(name: "Vincent Van Gogh", nationality: "Dutch")
 ```
-2. Create a new Painting (Starry Night) and save it to your database
+
+* Create a new Painting (Starry Night) and save it to your database
 ```ruby
 starry_night = Painting.create(title: "Starry Night")
 ```
-3. Return all Artists
+* Return all Artists
 ```ruby
 Artist.all
 ```
-4. Return all Paintings
-```ruby 
+* Return all Paintings
+```ruby
 Painting.all
 ```
-5. Return the artist with an id of 2
+* Return the artist with an id of 2
 ```ruby
 Artist.find(2)
 ```
-6. Return the artist with a name of "Vincent Van Gogh"
+* Return the artist with a name of "Vincent Van Gogh"
 ```ruby
 Artist.find_by(name: "Vincent Van Gogh")
 ```
-7. Return all the artists who are "Spanish"
+* Return all the artists who are "Spanish"
 ```ruby
 Artist.where(nationality: "Spanish")
 ```
-8. Return the painting with an id of 1
-9. Return the painting with a name of "Guernica"
+* Return the painting with an id of 1
+```ruby
+Painting.find(1)
+```
 
-10. Return all the paintings that "Pablo Picasso" painted
-11. Return the artist of "Guernica"
+* Return the painting with a name of "Guernica"
+```ruby
+Painting.find_by(name: "Guernica")
+```
 
-12. Change Vincent Van Gogh's nationality to "American"
-13. Change "Starry Night" to be one of Pablo Picasso's paintings
+* Return all the paintings that "Pablo Picasso" painted
+```ruby
+Artist.find_by(name: "Pablo Picasso").paintings
+```
+* Return the artist of "Guernica"
+```ruby
+Painting.find_by(title: Guernica).artist
+```
+* Change Vincent Van Gogh's nationality to "American"
+```ruby
+Artist.find_by(name: "Vincent Van Gogh").update(nationality: "American")
+```
+* Change "Starry Night" to be one of Pablo Picasso's paintings
+```ruby
+starry = Painting.find_by(title: "Starry Night")
+artist = Artist.find_by(name: "Pablo Picasso")
+artist.paintings << starry
+```
 
