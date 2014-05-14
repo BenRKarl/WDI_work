@@ -8,7 +8,7 @@ class MoonsController < ApplicationController
     planet = Planet.find(params[:planet_id])
     new_moon = Moon.create(moon_params)
     planet.moons << new_moon
-    redirect_to planet_path(planet)
+    redirect_to planet_path(moon)
   end
 
   def new
