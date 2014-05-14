@@ -13,7 +13,7 @@ end
 # create
 def create
   planet = Planet.create(planet_params)
-  redirect_to "/planets/#{ planet. id}"
+  redirect_to planet_path(planet)
 end
 
 # show
@@ -31,14 +31,14 @@ end
 def update
   planet = Planet.find(params[:id])
   planet.update(planet_params)
-  redirect_to "/planets/#{planet.id}"
+  redirect_to planet_path(planet)
 end
 
 # delete
 def destroy
   planet = Planet.find(params[:id])
   planet.delete
-  redirect_to "/planets"
+  redirect_to planets_path
 end
 
 private

@@ -32,14 +32,12 @@
         <% end %>
     </td>
     <td>
-      <form action="/planets/<%= planet.id %>/edit" method="get">
-        <input type="submit" value="Edit Planet">
-      </form>
-      <form action="/planets/<%= planet.id %>" method="post">
-        <%= token_tag %>
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Delete Planet">
-      </form>
+      <%= form_tag(edit_planet_path(planet), method: "get") do %>
+        <%= submit_tag "Edit Planet" %>
+      <% end %>
+      <%= form_tag(planet_path(planet), method: "delete") do %>
+        <%= submit_tag "Delete Planet" %>
+      <% end %>
     </td>
   </tr>
 <% end %>
@@ -47,6 +45,6 @@
 
 </br>
 
-<form action="/planets/new" method="get">
-  <input type="submit" value="Add Planet">
-</form>
+<%= form_tag(new_planet_path, method: "get") do %>
+<%= submit_tag "Create new Planet" %>
+<% end %>

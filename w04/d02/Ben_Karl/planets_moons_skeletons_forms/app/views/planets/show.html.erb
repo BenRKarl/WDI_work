@@ -26,29 +26,30 @@
         <% @planet.moons.each do |moon| %>
           <div class="moon_rows">
           <p><%= moon.name %></p>
-          <form action="/planets/<%= @planet.id %>/moons/<%= moon.id %>/edit" method="get">
-            <input type="submit" value="Edit">
-          </form>
-          <form action="/planets/<%= @planet.id %>/moons/<%= moon.id %>" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <%= token_tag %>
-            <input type="submit" value="Delete">
-          </form>
+
+            <%= form_tag(edit_planet_moon_path(@planet, moon), method: "get") do %>
+              <%= submit_tag "Edit Moon" %>
+            <% end %>
+
+            <%= form_tag(planet_moon_path(@planet, moon), method: "delete") do %>
+              <%= submit_tag "Delete Moon" %>
+            <% end %>
           </div>
         <% end %>
     </td>
     <td>
-      <form action="/planets/<%= @planet.id %>/moons/new" method="get">
-        <input type="submit" value="Add Moon">
-      </form>
-      <form action="/planets/<%= @planet.id %>/edit" method="get">
-        <input type="submit" value="Edit Planet">
-      </form>
-      <form action="/planets/<%= @planet.id %>" method="post">
-        <%= token_tag %>
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Delete Planet">
-      </form>
+      <%= form_tag(new_planet_moon_path(@planet), method: "get") do %>
+        <%= submit_tag "Add Moon" %>
+      <% end %>
+
+      <%= form_tag(edit_planet_path(@planet), method: "get") do %>
+        <%= submit_tag "Edit Planet" %>
+      <% end %>
+
+      <%= form_tag(planet_path(@planet), method: "delete") do %>
+        <%= submit_tag "Delete Planet" %>
+      <% end %>
+
     </td>
   </tr>
 </table></br>
