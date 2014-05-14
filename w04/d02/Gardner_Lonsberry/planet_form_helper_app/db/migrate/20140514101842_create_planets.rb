@@ -7,6 +7,7 @@ class CreatePlanets < ActiveRecord::Migration
       t.integer :mass
       t.boolean :life
 
+
       t.timestamps
     end
   end
