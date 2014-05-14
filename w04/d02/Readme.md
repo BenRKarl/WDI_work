@@ -23,3 +23,13 @@ ___
 
 ---
 
+
+# Planets and Moons (RIVETING FORMS EDITION)
+Based on what we learned today about form helpers, specifically the Rails `form_for` method, use form helpers to replace each of your existing forms in your `planets_moons` app.  
+
+* You should use a common form for the creating a new resource and updating an existing resource 
+* This common form should be written inside of a partial.
+
+# Planets and Moons (SKELETON EDITION)
+* Leverage the power of Skeleton to make your applications layout both aesthetic and fluid.
+* Leverage the power of Font-Awesome to include icons.

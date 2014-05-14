@@ -1,0 +1,22 @@
+<a href="/planets">Back to main</a>
+
+<h2>Edit <%= @planet.name %>'s info:</h2>
+
+
+<form action='/planets/<%= @planet.id %>' method='post'>
+  <%= token_tag %>
+  <input type='hidden' name='_method' value='put'>
+
+  Name:
+  <input type='text' name='planet[name]' value='<%= @planet.name %>'>
+  Image URL:
+  <input type='text' name='planet[image_url]' value='<%= @planet.image_url %>'>
+  Diameter (km):
+  <input type='text' name='planet[diameter]' value='<%= @planet.diameter %>'>
+  Mass (x 10**21 kg)
+  <input type='text' name='planet[mass]' value='<%= @planet.mass %>'>
+  Life:
+  Yes: <input type='radio' name='planet[life]' value='true'> &nbsp;
+  No: <input type='radio' name='planet[life]' value='false'>
+  <input type='submit' value='Update'>
+</form>

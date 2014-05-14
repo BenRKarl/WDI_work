@@ -1,0 +1,34 @@
+
+<div class="all_cols">
+    <div class="left_col">
+    </div>
+    <div class="midCol">
+    </div>
+    <div class="right_col inputs">
+        <div class="planet_title">
+            Edit <%= @moon.name %>, a moon on <%=@planet.name%>:
+        </div>
+        <form action="/planets/<%= @planet.id %>/moons/<%=@moon.id%>" method="post">
+            <%= token_tag %>
+            <input type="hidden" name="_method" value="put">
+            <button class="show_but save_but" type="submit">Save Moon Edit</button>
+            <input class="new_input" type="text" name="moon[name]" value="<%=@moon.name%>">
+        </form>
+     </div>
+</div>
+
+<form action="/planets/<%=@planet.id%>/moons/<%=@moon.id%>" method="post">
+    <%= token_tag %>
+    <input type="hidden" name="_method" value="delete">
+    <button class="show_but delit" type="submit">Delete Moon</button>
+</form>
+
+
+
+
+
+<form action="/planets" method="get">
+    <button class="show_but back" type="submit">Back to Planets</button>
+</form>
+
+
