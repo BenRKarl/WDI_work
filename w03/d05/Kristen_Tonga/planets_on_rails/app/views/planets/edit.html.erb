@@ -1,0 +1,21 @@
+<h1>Here's what you got:</h1>
+
+<img src ='<%= @planet.image_url %>'>
+ <%= @planet.name %>
+   <%= @planet. diameter %>
+    <%= @planet.mass %>
+     <%= @planet.life %>
+
+<h1>What do you want to change it to?</h1>
+<p>Please fill out all fields.</p>
+
+<form action="/planets/<%= @planet.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <%= token_tag %>
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="image_url" placeholder="Paste Image URL here!">
+    <input type="text" name="diameter" placeholder="Diameter">
+    <input type="text" name="mass" placeholder="Mass">
+    <input type="text" name="life" placeholder="Life? Y or N?">
+  <input type="submit">
+</form>

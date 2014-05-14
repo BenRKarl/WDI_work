@@ -1,0 +1,12 @@
+input {
+  width: 300px;
+}
+
+table, tr, td {
+  border: 2px dotted yellow;
+}
+
+img {
+  width: 150px;
+  border-radius: 50px;
+}

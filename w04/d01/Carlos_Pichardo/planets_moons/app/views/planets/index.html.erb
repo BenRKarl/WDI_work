@@ -1,0 +1,28 @@
+
+
+<h1>Planets</h1>
+
+<ul>
+  
+  <% @planets.each do |planet| %>
+    <li>
+        <%= planet.name %>
+
+        <ul>
+          
+          <% planet.moons.each do |moon| %>
+          <li>
+            <%= moon.name %>
+          </li>
+
+          <% end %>
+
+
+        </ul>
+
+    </li>
+    <% end %>
+
+</ul>
+
+

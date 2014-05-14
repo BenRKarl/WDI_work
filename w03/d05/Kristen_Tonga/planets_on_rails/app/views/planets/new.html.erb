@@ -1,0 +1,11 @@
+<h1>PLANET!!</h1>
+
+<form action="/planets" method="post">
+  <%= token_tag %>
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="image_url" placeholder="Paste Image URL here!">
+    <input type="text" name="diameter" placeholder="Diameter">
+    <input type="text" name="mass" placeholder="Mass">
+    <input type="text" name="life" placeholder="Life? Y or N?">
+  <input type="submit">
+</form>
