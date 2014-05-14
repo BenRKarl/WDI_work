@@ -1,4 +1,5 @@
-<!-- <h1>FORM HELPERS (BORING)</h1>
+<% if false %>
+<h1>FORM HELPERS (BORING)</h1>
 <%= form_tag("/squares", method: "post") do %>
 <%= label_tag("square[color]", "Color:") %>
 <% color_field(:square, :color) %>
@@ -18,8 +19,9 @@
 <%= f.label :side_length%>
 <%= f.text_field :side_length %>
 <%= f.submit %>
-<% end %> -->
+<% end %>
+<% end%>
 
 <h1>FORM HELPERS (UTTERLY RIVETING) </h1>
-<%= link_to 'Back', square_path%>
+<%= link_to 'Back', square_path %>
 <%= render 'form' %>
