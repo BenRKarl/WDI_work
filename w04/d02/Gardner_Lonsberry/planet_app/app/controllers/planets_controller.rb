@@ -10,23 +10,13 @@ class PlanetsController < ApplicationController
 #   GET         /planets/new      planets#new         return an HTML form for creating a new planet 
   def new
     @planet = Planet.create
-    @planets = Planet.all
+   
 #show a form
   end
 
 #   POST        /planets          planet#create       create a new planet
   def create
-    planet = Planet.create(params.require(:planets).permit(:planet_name, :planet_url, :diameter, :mass, :life) )
-
-    # @planet       = Planet.create
-    # @planets      = Planet.all
-    # new_planet    = Planet.create(params.require(:planets).permit(:planet_name, :planet_url, :diameter, :mass, :life) ) 
-    # @new_planet   = new_planet
-    # @planet_name  = params[:planet_name]
-    # @planet_url   = params[:planet_url]
-    # @diameter     = params[:diameter] 
-    # @mass         = params[:mass]
-    # @life         = params[:life]
+    planet = Planet.create(planet_params)
     redirect_to "/planets/#{ planet.id} "
   end
   
@@ -59,4 +49,13 @@ class PlanetsController < ApplicationController
   end
 
 end
+
+
+
+ private
+ 
+  def planet_params
+    params.require(:planets).permit(:planet_name, :planet_url, :diameter, :mass, :life)
+  end
+ 
 
