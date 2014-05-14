@@ -1,0 +1,12 @@
+<%= form_for @planet do |f| %>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %> <br>
+  <%= f.label :Image_url %> <br>
+  <%= f.text_field :image_url %> <br>
+  <%= f.label :Diameter %> <br>
+  <%= f.text_field :diameter %> <br>
+  <%= f.label :Mass %> <br>
+  <%= f.text_field :mass %> <br>
+  Life? Check if Y!  : <%= f.check_box :life %> <br>
+  <%= f.submit %> <br>
+<% end %>
