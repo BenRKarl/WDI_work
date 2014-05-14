@@ -1,0 +1,13 @@
+
+<%= form_tag("/squares", method: "post") do %>
+  <%= label_tag("sqaure[color]", "Color:") %>
+  <%= text_field_tag("sqaure[color]") %>
+  <%= label_tag("sqaure[border_radius]", "Border radius:") %>
+  <%= text_field_tag("sqaure[border_radius]") %>
+  <%= label_tag("sqaure[side_length]", "Side Length:") %>
+  <%= text_field_tag("sqaure[side_length]") %>
+  <%= submit_tag("Create Square") %>
+<% end %>
+
+<h1>from_for is better when dealing with model!</h1>
+<%= render 'form' %>

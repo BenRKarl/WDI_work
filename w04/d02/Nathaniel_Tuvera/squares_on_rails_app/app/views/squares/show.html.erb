@@ -1,0 +1,15 @@
+<p> show.html.erb -- using params[:id] to display individual element? </p>
+
+<h2>Square id: <%= @square.id %> </h2>
+<div style="width: <%= @square.side_length %>px;
+  height: <%= @square.side_length %>px;
+  border-radius: <%= @square.border_radius %>px;
+  background-color: <%= @square.color %>;
+  float: left;
+  margin: 10px;">
+</div>
+
+<form action="/squares/<%= @square.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete square">
+</form>

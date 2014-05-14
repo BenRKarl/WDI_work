@@ -1,0 +1,12 @@
+<div class = 'container'>
+
+<h2>Moons <i class="fa fa-moon-o fa-2x"></i></h2>
+
+<ul>
+<% @moons.each do |moon| %>
+  <li><%= moon.name %></li>
+<% end %>
+  </ul>
+
+<a href="/moons/new">Add Moon</a>
+</div>

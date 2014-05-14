@@ -1,0 +1,11 @@
+<h1> <%= @planet.name %></h1>
+<img src="<%= @planet.image_url%>">
+<h1><%= @planet.mass %> megatons</h1>
+<h1><%= @planet.diameter %> kilometers</h1>
+<h1><%= @planet.life %></h1>
+
+<form action="/planets/<%= @planet.id %>" method='post'>
+  <%= token_tag %>
+  <input type="hidden" name='_method' value='delete'>
+  <button type='submit'>Delete Planet</button>
+</form>

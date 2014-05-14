@@ -1,0 +1,59 @@
+
+
+<% if false %>
+<form action="/squares" method='post'>
+  <%= token_tag %>
+  <input type="text" name="square[color]" placeholder="Color?">
+  <input type="text" name="square[side_length]" placeholder="Side-Length?">
+  <input type="text" name="square[border_radius]" placeholder="Border-Radius?">
+  <input type="submit">
+</form>
+<% end %>
+
+<h1>FORM HELPERS (boring)</h1>
+<%= form_tag("/squares", method: "post") do %>
+
+  <%= label_tag("square[color]", "Color:") %>
+  <%= text_field_tag("square[color]") %>
+
+  <%= label_tag("square[side_length]", "Side-Length:") %>
+  <%= text_field_tag("square[side_length]") %>
+
+  <%= label_tag("square[border_radius]", "Border-Radius:") %>
+  <%= text_field_tag("square[border_radius]") %>
+
+  <%= submit_tag("Create Square") %>
+
+<% end %>
+
+<h1>FROM HELPERS (UTTERLY RIVETTING)</h1>
+<%= form_for @square do |f| %>
+  <%= f.label :color %>
+  <%= f.color_field :color %>
+  <%= f.label :side_length%>
+  <%= f.text_field :side_length%>
+  <%= f.label :border_radius%>
+  <%= f.text_field :border_radius%>
+  <%= f.submit %>
+<% end %>
+
+<form action="/squares/<%= @square.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <%= token_tag %>
+  <input type="text" name="square[color]" placeholder="Old color: <%= @square.color %>" value=<%= @square.color %>>
+  <input type="text" name="square[side_length]" placeholder="Old length: <%= @square.side_length %>" value=<%= @square.side_length %> >
+  <input type="text" name="square[border_radius]" placeholder="Old radius: <%= @square.border_radius %>" value= <%= @square.border_radius %>>
+  <input type="submit">
+</form>
+
+
+<h1>FROM HELPERS (UTTERLY RIVETTING)</h1>
+<%= form_for @square do |f| %>
+  <%= f.label :color %>
+  <%= f.color_field :color %>
+  <%= f.label :side_length%>
+  <%= f.text_field :side_length%>
+  <%= f.label :border_radius%>
+  <%= f.text_field :border_radius%>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>Add Planets and Moons</h1>
+<%= form_for @planet, url: {action: "create"} do |f| %>
+	<%= f.text_field :name, :placeholder => "Planet name" %>
+	<%= f.number_field :mass, :placeholder => "Mass of planet" %>
+	<%= f.label :mass, 'Kg' %>
+	<%= f.number_field :diameter, :placeholder => "Diameter of planet" %>
+	<%= f.label :diameter, 'Km' %>
+	<%= f.text_field :life, :placeholder => "true/false" %>
+	<%= f.label :life, 'Life?' %>
+	<%= f.text_field :image_url, :placeholder => "e.g. http://somesite.com/mercury.jpg" %>
+	<%= f.label :image_url, 'Image URL' %>
+  <%= f.submit "Create" %>
+<% end %>

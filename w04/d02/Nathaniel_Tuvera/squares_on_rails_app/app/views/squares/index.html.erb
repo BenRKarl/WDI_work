@@ -1,0 +1,26 @@
+<div><p>display all varying squares here</p>
+
+<a href="/squares/new">
+  <button>Add New Square</button>
+</a>
+</div>
+<div>
+<% @squares.each do |square| %>
+
+<a href="/squares/<%= square.id %>/edit">
+  <div class ="square" style="width: <%= square.side_length %>px;
+            height: <%= square.side_length %>px;
+            border-radius: <%= square.border_radius %>px;
+            background-color: <%= square.color %>;
+            float: left;
+            margin: 10px;">
+          </div>
+        </a>
+<% end %>
+
+  <a href="<%= new_square_path %>">
+    <button>Create Square</button>
+  </a>
+</div>
+
+<%= link_to("Create Square")  %>

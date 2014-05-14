@@ -1,0 +1,52 @@
+html {
+  background: url(http://i.imgur.com/6Rqezep.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@media (max-width: 500px) {
+  body {
+    background-color: black;
+  }
+  h1 {
+    font-size: 36px;
+    color: white;
+  }
+}
+
+.container {
+
+background: rgba(0,0,0,0.5);
+font-family: Arial;
+text-align: left;
+color: black;
+}
+
+h1 {
+font-family: Helvetica;
+font-size: 36px;
+text-align: center;
+color: black;
+
+
+}
+
+li {
+
+font-family: Arial;
+font-size: 18px;
+text-align: center;
+color: black;
+
+}
+
+p {
+
+font-family: Helvetica;
+font-size: 36px;
+text-align: center;
+color: black;
+
+}
