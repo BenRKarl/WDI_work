@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="sixteen columns">
+    <h1 id="title"><%= @planet.name %></h1>
+  </div>
+
+  <div class="row"></div>
+
+  <div class="five columns omega offset-by-two">
+    <img id="show_img" src='<%= @planet.image_url %>'>
+  </div>
+
+  <div class="nine columns alpha">
+    <h3>Diameter: <%= @planet.diameter %> km</h3>
+    <h3>Mass: <%= @planet.mass %>000000000000000000 kg</h3>
+    <h3>Life: <%= @planet.life.to_s.capitalize %></h3>
+    <h3>Moons:</h3>
+    <table>
+      <% @planet.moons.each do |moon| %>
+      <tr>
+        <td><%= moon.name %></td>
+        <td><a href="<%= edit_planet_moon_path(@planet, moon) %>"><button>Edit</button></a></td>
+        <td><form action="/planets/<%= @planet.id %>/moons/<%= moon.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <%= token_tag %>
+          <button type="submit">Delete</button>
+        </form></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="sixteen columns" id="show">
+    <table>
+      <tr>
+        <td><a href="/planets/<%= @planet.id %>/moons/new"><button>Add a new moon to <%= @planet.name %></button></a></td>
+        <td><a href="/planets/<%= @planet.id %>/edit"><button>Edit <%= @planet.name %></button></a></td>
+        <td><form action="/planets/<%= @planet.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <%= token_tag %>
+          <button type="submit">Delete</button>
+        </form></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row"></div>
+
+  <div class="sixteen columns" id="show_button">
+    <a href="/planets/"><button>Go Home</button></a>
+  </div>
+
+</div>
