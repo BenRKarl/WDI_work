@@ -1,0 +1,26 @@
+img {
+  width: 15em;
+  border-radius: 20%;
+}
+
+body {
+  text-align: center;
+}
+
+.demo-red {
+  background-color: pink;
+}
+
+.demo-blue {
+  background-color: lightblue;
+}
+
+.demo-green {
+  background-color: lightgreen;
+}
+
+.planet_info {
+  padding-left: 4em;
+  border: 2px solid black;
+  border-radius: 20px;
+}
