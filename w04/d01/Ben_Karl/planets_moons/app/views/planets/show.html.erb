@@ -1,0 +1,58 @@
+<h1><%= @planet.name %></h1>
+
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Mass (in Earths)</th>
+    <th>Diameter (in Earths)</th>
+    <th>Does it have life?</th>
+    <th>List of Moons</th>
+    <th>Options</th>
+  </tr>
+  <tr>
+    <td><img src="<%= @planet.image_url %>"></td>
+    <td><%= @planet.name %></td>
+    <td>~ <%= @planet.mass %> Earths</td>
+    <td>~ <%= @planet.diameter %> Earths</td>
+    <td>
+        <% if @planet.life %>
+        There's life!
+        <% else %>
+        No life...
+        <% end %>
+    </td>
+    <td>
+        <% @planet.moons.each do |moon| %>
+          <div class="moon_rows">
+          <p><%= moon.name %></p>
+          <form action="/planets/<%= @planet.id %>/moons/<%= moon.id %>/edit" method="get">
+            <input type="submit" value="Edit">
+          </form>
+          <form action="/planets/<%= @planet.id %>/moons/<%= moon.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <%= token_tag %>
+            <input type="submit" value="Delete">
+          </form>
+          </div>
+        <% end %>
+    </td>
+    <td>
+      <form action="/planets/<%= @planet.id %>/moons/new" method="get">
+        <input type="submit" value="Add Moon">
+      </form>
+      <form action="/planets/<%= @planet.id %>/edit" method="get">
+        <input type="submit" value="Edit Planet">
+      </form>
+      <form action="/planets/<%= @planet.id %>" method="post">
+        <%= token_tag %>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete Planet">
+      </form>
+    </td>
+  </tr>
+</table></br>
+
+
+
+<a href="/planets"><button>Back to Home</button></a>

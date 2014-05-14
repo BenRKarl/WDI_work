@@ -1,0 +1,8 @@
+<h1>All the Movies!</h1>
+
+<div class='movies'>
+  <% @movies.each do |movie| %>
+    <a href="/movies/<%= movie.year %>/<%= movie.title %>"><%= movie.title %></a> 
+    => <%= movie.year %> <br/>
+  <% end %>  
+</div> 
