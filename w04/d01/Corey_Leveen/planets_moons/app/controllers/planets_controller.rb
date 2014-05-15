@@ -17,7 +17,7 @@ class PlanetsController < ApplicationController
   end
 
   def edit
-    @planet = Planet.find(params[:planet_id])
+    @planet = Planet.find(params[:id])
   end
 
   def update

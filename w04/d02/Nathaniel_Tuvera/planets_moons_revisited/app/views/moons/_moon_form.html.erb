@@ -1,0 +1,7 @@
+<%= form_for [@planet, @moon] do |m| %>
+  <%= m.label :name %>
+  <%= m.text_field :name %>
+  <%= m.label :planet_id %>
+  <%= m.text_field :planet_id %>
+  <%= m.submit %>
+<% end %>

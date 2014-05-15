@@ -1,0 +1,14 @@
+<%= form_for :planet, url: planets_path do |f| %>
+  <%= f.label :name %>:<br>
+  <%= f.text_field :name %><br>
+  <%= f.label :image_url %>:<br>
+  <%= f.text_field :image_url %><br>
+  <%= f.label :diameter %>:<br>
+  <%= f.text_field :diameter %><br>
+  <%= f.label :mass %>:<br>
+  <%= f.text_field :mass %><br>
+  Life?<br>
+  <%= f.radio_button :life, 'Yes' %> Yes
+  <%= f.radio_button :life, 'No', :checked => true %> No<br>
+  <%= f.submit("Add a Planet") %>
+<% end %>

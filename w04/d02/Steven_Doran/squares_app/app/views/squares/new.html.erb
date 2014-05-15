@@ -1,0 +1,23 @@
+<h1>Form Helpers (Boring) </h1>
+
+
+
+<%= form_tag("/squares", method: "post") do %>
+    <%= label_tag("square[color]", "Color:") %>
+    <%= color_field(:square, :color) %><br/>
+    
+    <%= label_tag("square[side_length]", "Side Length:") %>
+    <%= text_field_tag("square[side_length]") %><br/>   
+    
+    <%= label_tag("square[border_radius]", "Border Radius:") %>
+    <%= text_field_tag("square[border_radius]") %><br/>
+        
+    <%= submit_tag("Save Changes") %>
+<% end %>
+
+<br/>
+<h1>Form Helpers (Utterly Riveting) </h1>
+
+<%= form_for @square do %>
+
+<% end %>

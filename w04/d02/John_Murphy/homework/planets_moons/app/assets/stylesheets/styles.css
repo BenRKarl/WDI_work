@@ -1,0 +1,73 @@
+nav {
+  background-color: black;
+  padding: 10px;
+}
+
+nav h1 {
+    color: white;
+    margin-bottom: 0;
+}
+
+nav a {
+    color: white;
+        text-decoration: none;
+}
+
+.present {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.announce {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.planets img {
+  height: 100px;
+}
+
+.planet_show img {
+  height: 300px;
+}
+
+.center_form {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.center_div {
+  text-align: center;
+  width: 120px;
+}
+
+.moons {
+  clear: both;
+}
+
+.center {
+  text-align: center;
+}
+
+.moons h3 {
+  text-align: center;
+}
+
+.outline {
+  border: solid black 1px;
+  padding-top: 50px;
+}
+
+.footer{
+  text-align: center;
+  margin: 40px;
+}
+
+td {
+  border: solid black 1px;
+  padding: 10px;
+}
+
+
+
+

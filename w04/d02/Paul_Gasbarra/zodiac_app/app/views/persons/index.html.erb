@@ -1,0 +1,11 @@
+<h1>Proto Signs</h1>
+
+<table>
+  <% @persons.each do |person| %>
+  <tr class = <%= person.zodiac_sign.downcase %>>
+  <td><%= person.name %></td>
+  <td><%= person.birthday %></td>
+  <td><%= person.zodiac_sign %></td>
+  </tr>
+  <% end %>
+</ul>
