@@ -1,0 +1,52 @@
+<div class="sixteen columns container center">
+  <div class="announce">
+    <h1>Here is <%= @planet.name%></h1>
+  </div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <div class="six columns planet_show">
+      <p><img src="<%=@planet.image_url%>"></p>
+  </div>
+  <div class="four columns inform">
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row"></div>
+      <p>Name: <%=@planet.name%></p>
+      <p>Diameter: <%=@planet.diameter%></p>
+      <p>Mass: <%=@planet.mass%></p>
+      <p>Life: <%=@planet.life%></p>
+  </div>
+  <div class="five columns actions">
+        <h5>Actions</h5>
+      </br>
+        <form action="/planets/<%= @planet.id%>/edit" method="get">
+          <button type="submit">Edit</button></form>
+        <form action="/planets/<%= @planet.id%>" method="post">
+          <%= token_tag %>
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">Delete</button>
+        </form>
+        <form action="/planets/<%= @planet.id%>/moons/new" method="get">
+          <button type="submit">Add Moon</button>
+        </form>
+  </div>
+  <div class="fifteen columns moons">
+    <h3><%= @planet.name%>'s Moons:</h3>
+      <%@planet.moons.each do |moon|%>
+        <div class="three columns">
+        <h4>Name: <%=moon.name%></h4>
+        <form action="/planets/<%=@planet.id%>/moons/<%=moon.id%>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <%= token_tag %>
+          <button type="submit">Delete</button>
+          </form>
+        <form action="/planets/<%=@planet.id%>/moons/<%=moon.id%>/edit" method="get">
+          <button type="submit">Edit</button>
+        </form>
+        </div>
+        <%end%>
+
+  </div>
+
+  </div>
+</div>

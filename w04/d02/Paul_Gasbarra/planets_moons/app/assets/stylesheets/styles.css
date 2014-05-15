@@ -1,0 +1,29 @@
+
+
+.menu_image{
+  width: 100px;
+  height: 100px;
+}
+
+.planet_list{
+  float:left;
+  margin: 20px;
+  text-align: center;
+}
+
+.index {
+  color: white;
+  background-color: black;
+}
+
+h1{
+  color:white;
+  padding: 0px 20px 0px 20px;
+}
+
+.show_page_planet_image {
+  width: 200px;
+  height: 200px;
+}
+
+

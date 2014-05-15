@@ -1,0 +1,24 @@
+<h1>Create Change among MILLIONS!!</h1>
+
+<form action="/planets/<%= @planet.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <%= token_tag %>
+<p>
+  <input type="text" name="planet[name]" value="<%= @planet.name %>">
+</p>
+<p>
+  <input type="text" name="planet[image_url]" value="<%= @planet.image_url %>">
+  </p>
+<p>
+  <input type="text" name="planet[diameter]" value="<%= @planet.diameter %>">
+  </p>
+<p>
+  <input type="text" name="planet[mass]" value="<%= @planet.mass %>">
+  </p>
+<p>
+  <input type="text" name="planet[life]" value="<%= @planet.life %>">
+  </p>
+<p>
+  <input type="submit">
+</p>
+</form>

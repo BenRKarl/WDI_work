@@ -1,0 +1,10 @@
+<h1>Now Editing</h1>
+<h2><%= @planet.name %></h2><img src="<%= @planet.image_url %>" >
+<form action="/planets/<%= @planet.id%>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Planet">
+</form>
+
+<%= render 'planet_form' %>
+

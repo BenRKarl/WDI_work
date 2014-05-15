@@ -1,5 +1,4 @@
-<form action="/planets/<%= @planet.id%>/moons/<%= @moon.id %>" method="post">
-  <input type="hidden" name='_method' value='put'>
+<form action="/planets/<%=@planet.id%>/moons" method="post">
   <%= token_tag %>
   <input type="text" name='moon[name]' value='<%= @moon.name %>'>
   <input type="submit">
