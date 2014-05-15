@@ -1,0 +1,15 @@
+
+<%= form_for @planet do |f| %>
+  <%= f.label :name, "Name:" %>
+  <%= f.text_field :name %>
+  <%= f.label :image_url, "Image URL:" %>
+  <%= f.text_field :image_url %>
+  <%= f.label :diameter, "Diameter (km):" %>
+  <%= f.text_field :diameter %>
+  <%= f.label :mass, "Mass (x 10^21 kg):" %> 
+  <%= f.text_field :mass %>
+  <%= f.label :life, "Life:" %>
+  <%= f.select :life, ['true', 'false' ], :prompt => 'Select one' %>
+  <%= f.submit %>
+<% end %>
+
