@@ -4,7 +4,11 @@ body {
   color: dimgray;
 }
 
-.kitten {
-  margin: 2px;
+.nics {
+  margin: 5px;
   text-align: center;
+}
+
+footer {
+  margin-top: 20px;
 }

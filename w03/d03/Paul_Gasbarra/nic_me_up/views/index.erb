@@ -1,0 +1,13 @@
+<h1>Nic Me Up</h1>
+<h2>Enter the amount of Cage you need.</h2>
+
+<form action="/nics" method "get"><input type="text" placeholder = 'cage me' name = "nics"></form>
+
+
+
+  <% @num_nics.times do %>
+  <% width = rand(100..400) %>
+  <% height = rand(100..400) %>
+  <div class = "nics"><img src="http://www.placecage.com/c/<%= width %>/<%= height%>"></div>
+
+<% end %>
