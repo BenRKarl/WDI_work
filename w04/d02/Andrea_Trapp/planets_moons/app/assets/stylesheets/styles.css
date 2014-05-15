@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #EBEBE0;
+  color: white;
+}
+
+.wrapper {
+    margin: 0 auto;  
+    padding: 10px;
+    max-width: 960px;
+    min-height: 800px;  
+    /*background-color: rgba(0,0,0,0.5); */
+    background: url("/assets/universe.jpg");     
+}
+
+h2 {
+  margin: 0;
+  padding: 10px 0 20px 10px;
+  background-color: rgba(0,0,0,0.7); //#EBEBE0;
+  color: white;
+}
+
+h3, h4 {
+  color: white;
+}
+
+.sidebar {
+  background-color: rgba(0,0,0,0.7); //#EBEBE0;
+  color: white;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px; 
+  color: white;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  font-weight: bold;
+  color: red;
+}
+
+
+
+
+
+
+
+
+
+

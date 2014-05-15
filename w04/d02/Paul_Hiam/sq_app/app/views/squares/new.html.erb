@@ -1,0 +1,27 @@
+<!-- <form action="/squares" method='post'>
+  <%= token_tag %>
+ <input type="integer" name="side_length"placeholder="side length (int.)">
+ <input type="integer" name="border_radius" placeholder="border_radius (int)">
+ <input type="text" name="color" placeholder="color (css colors)">
+ <input type="submit">  
+</form>
+<%  params[:side_length] = params[:side_length].to_i
+  params[:border_radius] = params[:border_radius].to_i
+  %>
+ -->
+ <!--  <%= form_tag("/squares", method:"post") 
+   do %>
+
+  <% end %> -->
+
+  <h1>FORM HELPERS WOW</h1>
+<%= form_for @square do |f| %>
+  <%= f.label :color %>
+  <%= f.color_field :color %>
+  <%= f.label :side_length %>
+  <%= f.text_field :side_length %>
+  <%= f.label :border_radius %>
+  <%= f.text_field :border_radius %>
+  <%= f.submit %>
+<% end %>
+<!-- #or <%= render 'form' %> -->

@@ -1,0 +1,10 @@
+<div class = 'container'>
+<h2><%= @moon.name %> <i class="fa fa-moon-o"></i></h2>
+
+
+<a href="/planets/<%= @planet.id %>/moons/<%= @moon.id %>/edit" class="button">Edit</a>
+<br/>
+
+<form action="/planets/<%= @planet.id %>/moons/<%= @moon.id %>" method='post'><%= token_tag %><input type="hidden" name='_method' value = 'delete'><button>Delete Moon</button></form>
+
+</div>

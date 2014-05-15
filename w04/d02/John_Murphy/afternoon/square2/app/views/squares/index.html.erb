@@ -1,0 +1,34 @@
+<h1>It's Square time</h1>
+<h3>Click <a href="/squares/new">here</a> to create a square.</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Side Length</th>
+      <th>Border Radius</th>
+      <th>Color</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @squares.each do |square| %>
+    <tr>
+      <td><%=square.side_length%></td>
+      <td><%=square.border_radius%></td>
+      <td><%=square.color%></td>
+      <td>
+        <form action="/squares/<%= square.id %>" method="get">
+          <button type="submit">Show</button>
+        </form>
+        <form action="/squares/<%= square.id %>/edit" method="get">
+          <button type="submit">Edit</button>
+        </form>
+        <form action="/squares/<%= square.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <%= token_tag %>
+          <button type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

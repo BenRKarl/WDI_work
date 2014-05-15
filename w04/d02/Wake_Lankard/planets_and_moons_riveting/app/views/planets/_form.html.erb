@@ -1,0 +1,18 @@
+  <div class="container">
+   <%= form_for @planet do |f| %>
+   <%= f.label :name %>
+   <%= f.text_field :name %>
+   <%= f.label :image_url %>
+   <%= f.text_field :image_url %>
+   <%= f.label :mass %>
+   <%= f.number_field :mass %>
+   <%= f.label :diameter %>
+   <%= f.number_field :diameter %><br/>
+   
+   <%= f.radio_button(:life, "true")  %>
+   <%= f.label("true") %>
+   <%= f.radio_button(:life, "false")  %>
+   <%= f.label("false") %>
+   <%= f.submit %>
+   <% end %>
+</div>
