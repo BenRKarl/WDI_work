@@ -1,0 +1,28 @@
+<div class="row"></div>
+
+<div class="six columns sidebar">
+
+    <%= form_for @planet do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :image_url %>
+        <%= f.text_field :image_url %>
+        <%= f.label :diameter %>
+        <%= f.text_field :diameter %>
+        <%= f.label :mass %>
+        <%= f.text_field :mass %>   
+
+        Life?   
+       
+        <%= f.label "yes" %>
+        <%= f.radio_button :life, true %>
+        
+        <%= f.label "no" %>
+        <%= f.radio_button :life, false %>
+
+        <div class="row"></div>
+        <%= f.submit %>
+    <% end %>
+    
+</div>
+

@@ -1,0 +1,57 @@
+tr.aries {
+  background-color: #f5f5f5;
+}
+
+.taurus {
+  background-color: #50C878;
+}
+
+.gemini {
+  background-color: #E5DBCF;
+}
+
+
+.cancer {
+  background-color: #9b111e; 
+}
+
+.leo {
+  background-color: #CCEE19;
+}
+
+.virgo {
+  background-color: #333399;
+}
+
+.libra {
+  background-color: #AAC4C4;
+}
+
+.scorpio {
+  background-color: #ffc87c;
+}
+
+.sagittarius {
+  background-color: #00FFEF;
+}
+
+.capricorn {
+  background-color: #990012;
+}
+
+.aquarius {
+  background-color: #9C8AA5;
+}
+
+.pisces {
+  background-color: #7FFFD4;
+}
+
+
+table {
+  border-spacing: 0;
+}
+
+td {
+  padding: 5px;
+}

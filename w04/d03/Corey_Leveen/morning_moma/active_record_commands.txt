@@ -1,0 +1,13 @@
+1. Artist.create(name: 'Vincent Van Gogh')
+2. Painting.create(title: 'Starry Night')
+3. Artist.all
+4. Painting.all
+5. Artist.find(2)
+6. Artist.find_by name: 'Vincent Van Gogh'
+7. Artist.where nationality: 'Spanish'
+8. Painting.find(1)
+9. Painting.find_by title: 'Guernica'
+10.
+11. Painting.find_by(title: 'Guernica').artist
+12. Artist.find_by(name: 'Van Gogh').update(nationality: "American")
+13. Painting.find_by(title: "Starry Night").update(artist: Artist.find_by(name: 'Picasso')

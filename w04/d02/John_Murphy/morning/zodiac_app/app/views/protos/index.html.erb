@@ -1,0 +1,23 @@
+<h1>Here are the protos:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Birthday</th>
+      <th>Zodiac Sign</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @protos.each do |proto| %>
+    <tr class = "<%= proto.birthday.zodiac_sign.downcase%>">
+      <td><%= proto.name%></td>
+      <td><%= proto.birthday%></td>
+      <td><%= proto.birthday.zodiac_sign%></td>
+    </tr>
+
+    <% end %>
+
+  </tbody>
+
+</table>

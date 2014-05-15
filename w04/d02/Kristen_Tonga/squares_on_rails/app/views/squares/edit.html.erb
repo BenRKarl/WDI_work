@@ -1,0 +1,10 @@
+<a href='/squares'>HOME</a>
+<h1>CHANGE IT THEN!</h1>
+
+<h1>FORM HELPERS</h1>
+<%= render 'form' %>
+
+<p> Please enter all fields. <hr>
+  And refresh page when <em>"No Data"</em> repears... Your changes ARE saved!</p>
+
+<div style="background-color:<%= @square.color %>; height: <%= @square.side_length %>px; width: <%= @square.side_length %>px; border-radius:<%= @square.border_radius %>px; float:'left'" ></div>
