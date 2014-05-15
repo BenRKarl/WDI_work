@@ -1,0 +1,43 @@
+
+<div class="container">
+    <div class="four columns offset-by-one">
+        <%= form_tag(edit_planet_path(@planet.id), method: "get") do %>
+        <%= submit_tag("Edit", class: "gen_button") %>
+        <% end %>
+        <%= form_tag(planet_path(@planet.id), method: "delete") do %>
+        <%= submit_tag("Delete", class: "gen_button") %>
+        <% end %>
+        <%= form_tag(new_planet_moon_path(@planet.id), method: "get") do %>
+        <%= submit_tag("Create Moon", class: "gen_button") %>
+        <% end %>
+        <%= form_tag(new_planet_path, method: "get") do %>
+        <%= submit_tag("Create New Planet", class: "gen_button") %>
+        <% end %>
+        <%= form_tag(planets_path, method: "get") do %>
+        <%= submit_tag("Back", class: "gen_button") %>
+        <% end %>
+    </div>
+    <div class="eight columns omega">
+            <%= @planet.name.upcase %>
+        <img class="planet_img" src="<%=@planet.image_url%>">
+            <ul>
+              <li>
+                <%= @message %>
+              </li>
+              <li>
+                <%= @diam %>
+              </li>
+              <li>
+                <%= @planet.to_s %>
+              </li>
+            </ul>
+              Moons: <i class="fa fa-coffee"></i>
+                <ul>
+                    <% @planet.moons.each do |moon| %>
+                        <li>
+                            <a href="/planets/<%=@planet.id%>/moons/<%=moon.id%>/edit"><%=moon.name%></a>
+                        </li>
+                    <% end %>
+                </ul>
+      </div>
+</div>

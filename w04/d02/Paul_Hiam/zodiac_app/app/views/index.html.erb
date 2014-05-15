@@ -1,0 +1,18 @@
+
+<table>
+  <%= @protos.each do |proto| %>
+  <tr>
+    <td>
+      <%= proto.name %>
+    </td>
+    <td>
+      <%= proto.birthday %>
+    </td>
+    <td>
+      <%= proto.birthday.zodiac_sign %>
+    </td>
+  </tr>
+
+  <% end %> 
+
+</table>

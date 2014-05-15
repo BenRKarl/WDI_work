@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PlanetsMoons</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400,700,300,600" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+  <div class="sixteen columns top">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-o"></i>
+      <div class="title">P L A N E T S</div>
+    <i class="fa fa-star-o"></i>
+    <i class="fa fa-star"></i>
+  </div>
+</div>
+<div class="row"></div>
+
+<%= yield %>
+
+</body>
+</html>

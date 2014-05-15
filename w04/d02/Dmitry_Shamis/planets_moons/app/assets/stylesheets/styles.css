@@ -1,0 +1,35 @@
+body {
+  background-color: #7A583B;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+#show_img {
+  width: 250px;
+  height: 250px;
+}
+
+.sixteen.columns {
+  background-color: #93744A;
+  margin-top: 10px;
+}
+
+#title {
+  text-align: center;
+  text-decoration: underline;
+}
+
+#show table {
+  margin: 0 auto;
+}
+
+#show_button {
+  text-align: center;
+}
+
+.five.columns {
+  background-color: #7A583B;
+}

@@ -1,0 +1,26 @@
+<h1>Hall of Planets</h1>
+<div class="container">
+<% @planets.each do |planet| %>
+<div class="three columns">
+  <p>
+    Name: <%= planet.name %>
+  </p>
+  <p>
+    <img src="<%= planet.image_url %>">
+  </p>
+  <p>
+    Mass: <%= planet.mass %>
+  </p>
+  <p>
+    Diameter: <%= planet.diameter %>
+  </p>
+  <p>
+    Life: <%= planet.life %>
+  </p>
+  <p>
+    <%= link_to "See Planets", planet_path(planet) %>
+  </p>
+</div>
+  <% end %>
+</div><!--container-->
+<%= link_to "Create planet", new_planet_path %>

@@ -1,0 +1,16 @@
+<h1>Planets!</h1>
+
+<ul>
+  <% @planets.each do |planet| %>
+    <li>
+      <%= planet.name %>
+    </li>
+
+
+  <% end %>
+
+</ul>
+
+<a href="/planets/new">
+  New Planet
+</a>
