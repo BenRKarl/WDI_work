@@ -1,8 +1,4 @@
-<h2>Edit a square</h2>
+<h1> FORM HELPERS (UTTERLY RIVETING)</h1>
+<%= render 'form' %>
 
-<form action="/squares/<%= @square.id %>" method='post'>
-  <input type="hidden" name="_method" value="put">
-  <%= token_tag %>
-  <input type="text" name='square[squarename]' value='<%= @square.squarename %>'>
-  <input type="submit">
-</form>
+<% end %>

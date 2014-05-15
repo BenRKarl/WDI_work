@@ -1,0 +1,44 @@
+th, td {
+  border: solid black 1px;
+  padding: 10px;
+}
+
+.gemini {
+  background-color: orange;
+}
+
+.pisces {
+  background-color: lightblue;
+}
+
+.libra {
+  background-color: pink;
+}
+
+.taurus {
+  background-color: red;
+}
+
+.virgo {
+  background-color: green;
+}
+
+.aries {
+  background-color: yellow;
+}
+
+.leo {
+  background-color: chartreuse;
+}
+
+.cancer {
+  background-color: indigo;
+}
+
+.aquarius {
+  background-color: teal;
+}
+
+.sagittarius {
+  background-color: turquoise;
+}

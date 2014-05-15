@@ -1,0 +1,10 @@
+
+<h1> Now showing </h1>
+<h2><%= @planet.name %></h2>
+<ul>
+<% @moon.each do |moon| %>
+  <li>
+    <%= moon.name %>
+  </li>
+<% end %>
+</ul>
