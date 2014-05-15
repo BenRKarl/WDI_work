@@ -1,0 +1,23 @@
+<%= form_for @planet do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br/>
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url %>
+    <br/>
+    <%= f.label :diameter %>
+    <%= f.text_field :diameter %>
+    <br/>
+    <%= f.label :mass %>
+    <%= f.text_field :mass %>
+    <br/>
+    <% if @planet.life == true %>
+        <%= render :partial => "life_true", :locals=>{:f=>f} %>
+    <% elsif @planet.life == false %> 
+        <%= render :partial => "life_false", :locals=>{:f=>f} %>
+    <% else %>
+        <%= render :partial => "life", :locals=>{:f=>f} %>
+    <% end %>
+    <br/>
+    <%= f.submit %>
+<% end %>
