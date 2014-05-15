@@ -14,19 +14,3 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 ---
 
-## Deck of Cards
-
-Create a rails application `wdi_cards`.   
-
-It should have a single model, `Card`:
-
-|column|type|
-|-----|-----|
-|suit  | string |
-|value |integer |
-||integer|
-
-
-
-
----
