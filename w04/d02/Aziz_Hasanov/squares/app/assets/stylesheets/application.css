@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Verdana;
+  background-color: #ffe;
+  /*position: relative;*/
+}
+h1 {
+  text-align: center;
+  background-color: #07d7f1;
+  height: 60px;
+  padding-top: 15px;
+  color: #fff;
+  font-size: 40px;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+button {
+  cursor: pointer;
+}
+section, nav, form {
+  display: inline;
+}
+div {
+  margin: 20px;
+}
+section {
+  position: relative;
+  /*border: 1px solid black;*/
+}
+nav, .show, .showbutton, .edit {
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  margin: auto;
+}
+section div {
+  margin: 50px 50px 30px;
+}
+nav {
+  width: 100px;
+}
+.click {
+  width: 45px;
+  height: 20px;
+  background-color: #0facf9;
+  border: none;
+  border-radius: 5px;
+}
+.click:hover {
+  background-color: #078cce;
+}
+.click, .click a {
+  color: #fff;
+  font-size: 13px;
+}
+.new {
+  display: block;
+  margin-top: 60px;
+  width: 100%;
+  height: 70px;
+  border: none;
+  background-color: #07d7f1;
+  font-size: 35px;
+  letter-spacing: 10px;
+}
+.new:hover {
+  background-color: #0facf9;
+}
+.new a {
+  color: #eff;
+}
+.show {
+  z-index: 2;
+}
+.show:hover {
+  z-index: 0;
+}
+.showbutton {
+  z-index: 1;
+  border: none;
+  font-size: 25px;
+}
+.showbutton:hover {
+  z-index: 3;
+}
+.showbutton a {
+  color: #fff;
+}
+.edit {
+  height: 30px;
+  text-align: center;
+}
+.edit input {
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+  background-color: #ddd;
+  padding-left: 10px;
+}
+.edit input[type="submit"] {
+  color: #fff;
+  background-color: #0facf9;
+  padding: 0 5px;
+  cursor: pointer;
+}
+.edit input[type="submit"]:hover {
+  background-color: #078cce;  
+}
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

@@ -1,0 +1,26 @@
+<h1>Planets</h1>
+
+<a href="/planets/new">Add A New Planet</a>
+<br/>
+<br/>
+
+<% @planets.each do |planet| %>
+    <a href="/planets/<%= planet.id %>"><%= planet.name %></a>
+    <form action="/planets/<%= planet.id %>" method='post'>
+        <%= token_tag %>
+        <input type="hidden" name='_method' value='delete'>
+        <button type='submit'>Delete</button>
+    </form><br/>
+    <a href="/planets/<%= planet.id %>/edit">Edit Planet</a><br/>
+    <a href="/planets/<%= planet.id %>/moons/new">Add A Moon</a><br/>
+    <ul>
+        <% planet.moons.each do |moon| %>
+            <li>
+                <%= moon.name %>
+            </li>
+        <% end %>
+    </ul>
+<% end %>
+
+
+

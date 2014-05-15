@@ -1,0 +1,22 @@
+
+
+<div class="container">
+
+
+
+<form class="new_form" action="/squares" method="post">
+  <%= token_tag %>
+  <input class="input_text" type="text" name="square[side_length]" placeholder="Side Length">
+  <input class="input_text" type="text" name="square[border_radius]" placeholder="Border Radius">
+  <input class="input_text" type="text" name="square[color]" placeholder="Color">
+  <button class="button" type="submit">Create Square</button>
+</form>
+
+</div>
+
+<%= form_tag("/squares", method: "post") do %>
+  <%= text_field_tag("square[color]", nil, placeholder: "hello") %>
+  <%= text_field_tag("square[side_length]") %>
+  <% end %>
+
+<%= render 'form' %>

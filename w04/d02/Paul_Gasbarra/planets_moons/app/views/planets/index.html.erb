@@ -1,0 +1,20 @@
+
+<body style="background-color:black">
+<div class="container index">
+    <h1>Planets</h1>
+
+
+        <% @planets.each do |planet| %>
+          <div class="planet_list">
+          <a href="/planets/<%= planet.id %>" class = "button">
+            <%= planet.name %></a>
+            <br/>
+            <img class="menu_image" src="<%= planet.image_url %>" alt="<%= planet.name %>">
+          </div>
+        <% end %>
+
+  <div class = "sixteen columns">
+     <a href="/planets/new" class = "button">Add Planet</a>
+  </div>
+</div>
+</body>
