@@ -1,0 +1,36 @@
+<h1>Planet: <%= @planet.name %></h1>
+<div class="container">
+  <p>
+    <img src="<%= @planet.image_url %>">
+  </p>
+  <p>
+    Mass: <%= @planet.mass %>
+  </p>
+  <p>
+    Diameter: <%= @planet.diameter %>
+  </p>
+  <p>
+    Life?: <%= @planet.life %>
+  </p>
+  <p><h2>Moons:</h2>
+    <ul>
+      <% @planet.moons.each do |moon| %>
+      <li>
+        <h3><%= moon.name %></h3><br/>
+        <%= link_to "edit moon", edit_planet_moon_path(moon.planet_id,moon) %>
+        <form action="/planets/<%= @planet.id %>/moons/<%= moon.id %>" method="post">
+          <%= token_tag %>
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">destroy moon</button>
+        </form>
+      </li>
+      <% end %>
+    </ul>
+
+<p>
+<%= link_to "Edit Me", edit_planet_path %>
+</p>
+<p>
+  <%= link_to "Add Moon", new_planet_moon_path(@planet) %>
+</p>
+</div>
