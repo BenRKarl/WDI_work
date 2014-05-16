@@ -26,6 +26,7 @@ end
 class Tweet # < ActiveRecord::Base
 
   def self.search(query)
+    # should config be used everytime I do a search?
     config = {
       :consumer_key    => ENV['TWITTER_KEY'],
       :consumer_secret => ENV['TWITTER_SECRET']
@@ -38,7 +39,9 @@ class Tweet # < ActiveRecord::Base
 
 end
 
+######
 
+Tweet.search('Monkeys')
 
 # Make sure you understand what these commands do:
 # Read about heroku config
