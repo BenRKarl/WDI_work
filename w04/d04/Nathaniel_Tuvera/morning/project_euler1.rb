@@ -2,7 +2,6 @@ sum = Array.new
 
 0.upto(999) do |x|
   if x % 3 == 0 || x % 5 == 0
-    sum = Array.new
     sum.push(x)
   end
 end
