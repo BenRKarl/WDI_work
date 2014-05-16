@@ -5,7 +5,7 @@
     * Gardner Lonsberry
     * Dmitry Shamis
     * Jonathan Gean
-     * Rebecca Strong
+    * Rebecca Strong
     * Jeff Drakos
     * Aziz Hasanov
     * Jeff Winkler
