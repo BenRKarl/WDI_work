@@ -7,8 +7,8 @@ require 'twitter'
 
 
 config = {
-  :consumer_key    => "YOUR_CONSUMER_KEY",
-  :consumer_secret => "YOUR_CONSUMER_SECRET",
+  :consumer_key    => ENV['TWITTER_KEY'],
+  :consumer_secret => ENV['TWITTER_SECRET']
 }
 
 client = Twitter::REST::Client.new(config)
@@ -19,3 +19,28 @@ client.search("to:justinbieber marry me", :result_type => "recent").take(3).each
 end
 
 
+# For heroku
+#  Spike on heroku config
+
+
+class Tweet # < ActiveRecord::Base
+
+  def self.search(query)
+    config = {
+      :consumer_key    => ENV['TWITTER_KEY'],
+      :consumer_secret => ENV['TWITTER_SECRET']
+    }
+    client = Twitter::REST::Client.new(config)
+
+    client.search(query, :result_type => "recent")
+
+  end
+
+end
+
+
+
+# Make sure you understand what these commands do:
+# Read about heroku config
+# heroku config
+# heroku config BANANA='joy'

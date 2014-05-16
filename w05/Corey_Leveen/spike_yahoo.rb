@@ -1,0 +1,1 @@
+spike_yahoo.rb
