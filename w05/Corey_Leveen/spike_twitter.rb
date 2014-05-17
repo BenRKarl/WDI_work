@@ -67,6 +67,7 @@ class Tweet # < ActiveRecord::Base
 
 end
 
+client.search("#bloomberg", :date => "2014,4,15").take(5)
 # Prints dates
 Tweet.search('Goldman').each do |x|
  y = x.created_at
