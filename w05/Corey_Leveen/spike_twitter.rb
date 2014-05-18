@@ -67,9 +67,18 @@ class Tweet # < ActiveRecord::Base
 
 end
 
-client.search("#bloomberg", :date => "2014,4,15").take(5)
-# Prints dates
-Tweet.search('Goldman').each do |x|
- y = x.created_at
- puts y
-end
+
+#######################Newstuff###########
+
+
+config = {
+  :consumer_key    => ENV['TWITTER_KEY'],
+  :consumer_secret => ENV['TWITTER_SECRET']
+}
+
+client = Twitter::REST::Client.new(config)
+
+
+# Returns the number of tweets containing 'bloomberg' on 05-12
+client.search("bloomberg since:2014-05-12 until:2014-05-13").count
+

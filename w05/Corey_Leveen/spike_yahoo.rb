@@ -9,7 +9,7 @@ loop do
   i -= 1
   break if i < 1
 end
-arr
+last_weeks_dates
 
 
 # gem install 'yahoo-finance'
@@ -21,14 +21,11 @@ YahooFinance.historical_quotes("GOOG", Time::now-(24*60*60*10), Time::now, { raw
 # Returns an array of average share price for a company for the week
 def price_history(ticker)
 
-# Assigns an array of price objects for the last seven days to obj_arr
- obj_arr = YahooFinance.historical_quotes("#{ticker}", Time::now-(24*60*60*10), Time::now, { raw: false, period: :daily }).take(7)
+  obj_arr = YahooFinance.historical_quotes("#{ticker}", Time::now-(24*60*60*10), Time::now, { raw: false, period: :daily }).take(7)
 
   avg_arr = []
-
   obj_arr.each do |x|
     avg_arr << (x.high + x.low)/2.to_i
   end
-
-  avr_arr
+  avg_arr.reverse!
 end
