@@ -79,12 +79,7 @@ class Tweet_array # < ActiveRecord::Base
       :consumer_key    => ENV['TWITTER_KEY'],
       :consumer_secret => ENV['TWITTER_SECRET']
     }
-
     client = Twitter::REST::Client.new(config)
-
-
-    # Returns the number of tweets containing 'bloomberg' on 05-12
-    #client.search("bloomberg since:2014-05-12 until:2014-05-13").count
 
     # Returns an array in chronological order of the dates of the past 7 days
     i = 7
@@ -92,17 +87,18 @@ class Tweet_array # < ActiveRecord::Base
     loop do
       dates_arr << Date.today.prev_day(n=i).to_s
       i -= 1
-      break if i < 1
+      break if i < 0
     end
+
     # Stores the number of tweets from each day last week into tweet_count_arr
-    count = 0
-    tweet_count_arr = []
-    while count < 7
-    client.search(query + " since:#{dates_arr[count]} until: ")
-
-
-
-
+    n = 0
+    @tweet_count_arr = []
+    loop do
+      @tweet_count_arr << client.search(query + " since:#{dates_arr[n]} until:#{dates_arr[n+1]}").count
+      n += 1
+    break if n > 6
+    end
+     @tweet_count_arr
   end
 
 end
