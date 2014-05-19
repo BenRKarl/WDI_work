@@ -1,0 +1,10 @@
+
+<%= form_for @school do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.fields_for :courses do |c_f| %>
+    <%= c_f.label :title %>
+    <%= c_f.text_field :title %>
+  <% end%>
+  <%= f.submit %>
+<% end %>
