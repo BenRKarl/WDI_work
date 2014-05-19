@@ -1,0 +1,14 @@
+<ul>
+  <% @schools.each do |school| %>
+    <li>
+      <%= school.name %>
+      <ul>
+        <% school.courses.each do |course| %>
+          <li>
+            <%= course.title %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
