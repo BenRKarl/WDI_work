@@ -24,8 +24,10 @@ def price_history(ticker)
   obj_arr = YahooFinance.historical_quotes("#{ticker}", Time::now-(24*60*60*10), Time::now, { raw: false, period: :daily }).take(7)
 
   avg_arr = []
+  num = 0
   obj_arr.each do |x|
-    avg_arr << (x.high + x.low)/2.to_i
+    num = (x.high + x.low)/2.to_i
+    avg_arr << num.truncate
   end
   avg_arr.reverse!
 end
