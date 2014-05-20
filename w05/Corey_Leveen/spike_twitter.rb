@@ -3,12 +3,12 @@
 
 require 'twitter'
 
+# Get those Keys!!!!
 # https://dev.twitter.com/
 
-
 config = {
-  :consumer_key    => ENV['TWITTER_KEY'],
-  :consumer_secret => ENV['TWITTER_SECRET']
+  :consumer_key    => ENV.fetch('TWITTER_KEY'),
+  :consumer_secret => ENV.fetch('TWITTER_SECRETE'),
 }
 
 client = Twitter::REST::Client.new(config)
