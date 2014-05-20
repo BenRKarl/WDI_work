@@ -87,11 +87,24 @@ end
 The convention is to place custom validators under `app/validators`
 
 ```ruby
-# app/validators
+# app/validators/simple_email_validator.rb
 class SimpleEmailValidator < ActiveModel::EachValidator
   def validate_each (record, attribute, value)
     unless value.include?("@")
       record.errors[attribute] << (options[:message] || "Doesn't pass even the most simple validation")
+    end
+  end
+end
+
+```
+
+
+```ruby
+# apps/validators/email_validator.rb
+class EmailValidator < ActiveModel::EachValidator
+  def validate_each(record, attribute, value)
+    unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+      record.errors[attribute] << (options[:message] || "not an email")
     end
   end
 end
@@ -103,7 +116,7 @@ We then call our validator in the model:
 ```ruby
 class User < ActiveRecord::Base
   has_secure_password
-  validates :email , simple_email: true
+  validates :email , simple_email: true, email: true
 end
 
 ```
