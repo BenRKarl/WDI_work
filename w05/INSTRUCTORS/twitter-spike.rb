@@ -1,5 +1,10 @@
 require 'twitter'
 
+# In ~/.bash_profile
+# export TWITTER_KEY=mzSK123432s2ncfsrqCaeL
+# export TWITTER_SECRET=IHAVEASECRTANDTHISISNOTIT
+
+
 config = {
   :consumer_key    => ENV.fetch('TWITTER_KEY'),
   :consumer_secret => ENV.fetch('TWITTER_SECRET'),
