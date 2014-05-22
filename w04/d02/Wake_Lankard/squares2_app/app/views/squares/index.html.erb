@@ -1,0 +1,18 @@
+<h1>Squares a go-go</h1>
+<div class="panel clear">
+<% @squares.each do |square| %>
+  <% len = square.side_length %>
+  <% rad = square.border_radius %>
+  <% color = square.color %>
+  <div class="square" style="background-color: <%= color %>; width: <%= len %>px; height: <%= len %>px; border-radius: <%= rad %>px">
+  </div>
+
+<a href="/squares/<%= square.id %>/edit"><button>Edit me</button></a>
+<form action="/squares/<%= square.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete me</button>
+</form>
+<% end %> 
+</div><!--panel-->
+<a href="/squares/new">Make a new Square! >> </a>
