@@ -13,6 +13,7 @@
 - ~3:30pm:
     - Class-Wide Retrospectives
     - Personal Retrospectives
+    - ReadMe.md work
 
 ##Friday (5/23)
 - 9:00am: Morning Chat on the class's next-steps
@@ -79,9 +80,9 @@
 
 
 
+---
 
-
-
+---
 
 ---
 
