@@ -40,7 +40,6 @@
 - Carlos Pichardo
 - Gardner Lonsberry
 - Tim Hannes
-- Paul Gasbarra
 
 ##10:30am
 - Dmitry Shamis
@@ -61,6 +60,7 @@
 
 ##1:30pm
 - Rebecca Strong
+- Paul Gasbarra
 - Paul Hiam
 - Andrea Trapp
 - John Murphy
