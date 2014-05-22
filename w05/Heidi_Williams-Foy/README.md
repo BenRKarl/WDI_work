@@ -11,4 +11,4 @@ Github:
 https://github.com/HeidiW/decider
 
 Heroku:
-http://aqueous-sea-7808.herokuapp.com/search
+http://aqueous-sea-7808.herokuapp.com/
