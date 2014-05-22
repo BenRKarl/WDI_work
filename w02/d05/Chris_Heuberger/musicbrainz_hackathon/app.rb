@@ -12,7 +12,6 @@ end
 get '/artist' do
   # we will have  a params hash that looks like this:
   # {artist_name: "prince"}
-  binding.pry
   erb :show
 end
 
