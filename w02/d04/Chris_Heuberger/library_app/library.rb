@@ -12,7 +12,6 @@ module PrintPublication
   end
 end
 
-
 module Fiction
   def plot_twist
     'And now all you knew is suddenly wrong'
@@ -25,15 +24,11 @@ module NonFiction
   end
 end
 
-
-
 module Art
   def affect_people
     'I can affect people'
   end
 end
-
-
 
 class Manuscript
   include Art

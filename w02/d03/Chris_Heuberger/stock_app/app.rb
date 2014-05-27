@@ -22,26 +22,3 @@ get '/stock' do
   @tick = params[:tick]
   erb :show
 end
-
-# query = params.map do |key, value|
-#    "#{key}=#{value}"
-#   end.join("&")
-#   redirect "/show?#{query}"
-
-# post '/names' do
-#   person_name = params[:user_name]
-#   redirect "/names?being_name=#{person_name}"
-# end
-
-# get '/names' do
-#   @name = params[:being_name]
-#   erb :show
-# end
-
-# def stock_info
-#   my_colors = HTTParty.get('http://www.colourlovers.com/api/palettes/random')
-#   title = my_colors['palettes']['palette']['title']
-#   colors = my_colors['palettes']['palette']['colors']['hex']
-#   {:title => title, :colors => colors}
-# end
-

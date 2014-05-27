@@ -1,0 +1,116 @@
+require "bundler"
+Bundler.require
+
+
+
+get "/" do
+  redirect "/trains"
+end
+
+
+
+get "/trains" do
+  @trains = Trains.all
+  erb :index
+end
+
+
+
+get "/trains/new" do
+  erb :"trains/new"
+end
+
+
+
+get "/trains/:id" do
+  @train = Train.find(params[:id])
+  erb :"trains/show"
+end
+
+
+
+post "/trains" do
+  new_train = Train.create({
+    route: params[:route],
+    seats: params[:seats]
+  })
+  new_train.save
+  redirect "/trains/#{ new_train.id }"
+end
+
+
+
+
+get "/trains/:id/edit" do
+  erb :"/trains/edit"
+end
+
+
+
+put "/trains/:id"
+  train = Train.find(params[:id])
+  train.route = params[:route]
+  train.seats = params[:seats]
+  train.save
+  redirect "/trains/#{ train.id }"
+end
+
+
+
+delete "/trains/:id" do
+  Train.delete(params[:id])
+  redirect "/trains"
+end
+
+
+
+get "/trains/:id/passengers" do
+  train = Train.find(params[:id])
+  @passengers = bus.passengers
+  erb :"passengers/show"
+end
+
+
+
+get "/trains/:id/passengers/new" do
+  erb :"trains/new"
+end
+
+
+
+post "/trains/:id/passengers" do
+  train = Train.find(params[:id])
+  train.passengers << Passenger.create
+  ({
+  start: params[:start],
+  destination: params[:destination]
+  })
+  train.close
+  redirect "/trains/#{ train.id }/passengers"
+end
+
+
+
+
+get "/trains/:train_id/passengers/:passenger_id/edit" do
+  @train = Train.find(params[:train_id])
+  @passenger = Passengers.find([:p_id])
+  erb :"/passengers/edit"
+end
+
+
+
+put "/trains/:train_id/passengers/:passenger_id" do
+  passenger = Passenger.find(params[:passenger_id])
+  passenger.start = params[:start]
+  passenger.destination = params[:destination]
+  passenger.save
+  redirect "/trains/#{ params[:train_id] }"
+end
+
+
+
+delete "/trains/:train_id/passengers/:passgnger_id" do
+  Passenger.delete(params[:p_id])
+  redirect "/trains/#{ params[:train_id] }"
+end
