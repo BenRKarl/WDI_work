@@ -85,5 +85,5 @@ function whatDoesYourStartupDo(){
 - [Explaining Javascript scope and closures](http://robertnyman.com/2008/10/09/explaining-javascript-scope-and-closures/)
 
 ###Javascript The Good Parts
-- Watch this 1hr video: (http://youtu.be/hQVTIJBZook)[http://youtu.be/hQVTIJBZook]
-
+- Watch this 1hr video: [Javascript: The Good Parts](http://youtu.be/hQVTIJBZook)
+- If this inspired you to edit / fix any of the code you wrote earlier today, fix it and push!
