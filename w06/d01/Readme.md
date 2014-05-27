@@ -46,17 +46,12 @@ var triangle = {
 
 
 ##Part 5
-###Guess the number
-- Write a javascript version of the guess-the-number game
-
-
-##Part 6
 ###JavaScript Calculator
 - Create a calculator in JavaScript.
 - Support the following operations: addition, subtraction, multiplication, and division.
 
 
-##Part 7
+##Part 6
 ###This for That Startup Idea Generator
 - Write a function that answers the question "What does your startup do?"
 - Credit: http://itsthisforthat.com/
