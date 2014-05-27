@@ -85,6 +85,6 @@ function whatDoesYourStartupDo(){
 
 ---
 
-##Extra Reading (strongly suggested):
+##Reading (**strongly** suggested):
 - [MDN on Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
 
