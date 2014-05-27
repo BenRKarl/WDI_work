@@ -16,20 +16,19 @@ class MoonsController < ApplicationController
     redirect_to "/planets/#{@planet.id}/moons/#{@moon.id}"
   end
 
-  def edit
-    @planet = Planet.find(params[:planet_id])
-    @moon = Moon.find(params[:id])
-  end
-
   def show
     @moon = Moon.find(params[:id])
         @planet = Planet.find(params[:planet_id])
   end
+ def edit
+    @planet = Planet.find(params[:planet_id])
+    @moon = Moon.find(params[:id])
+  end
 
   def update
-    planet = Planet.find(params[:planet_id])
-    moon = Moon.find(params[:id])
-    moon.update(moon_params)
+    @planet = Planet.find(params[:planet_id])
+    @moon = Moon.find(params[:id])
+    @moon.update(moon_params)
     redirect_to "/planets/#{planet.id}/moons/#{moon.id}"
   end
 
