@@ -2,21 +2,26 @@ require_relative = "Person"
 
 arr = 1000.times.map{Person.new}
 
-#one way to do it
-
-# crowd = Array.new(1000, Person.new)
-
-# another way to do it
-
-# array =[]
-# 1000.time do
+# # A way
+# array = []
+# 1_000.times do
 #   person = Person.new
 #   array.push(person)
 # end
 
-# another way to do it
+# # Matt's fave
+# arr = 1000.times.map{Person.new}
 
+# #Another way
 # person_array = []
 # 1_000.times { person_array << Person.new }
 
-# person_array.each { |person| puts person}
+# person_array.map{|person| person.name}
+
+# # person_array.each do |person|
+# #   puts "Hi my name is #{person.name}"
+# # end
+
+# person_array.each do |person|
+#   puts person
+# end
