@@ -1,0 +1,15 @@
+artist = Artist.create(name: "Vincent Van Gogh", nationality: "Spanish")
+painting = Painting.create(title: "Starry Night")
+artist.paintings << painting
+Artists.all
+Painting.all
+Artist.find(2)
+Artist.find_by name: "Vincent Van Gogh"
+Artist.where nationality: "Spanish
+Painting.find(1)
+Painting.find_by title:"Guernica"
+Artist.find_by(name: "Pablo Picasso").paintings
+
+Artist.find(Painting.find_by(title: "Guernica").artist_id)
+vince.update(nationality: "American")
+

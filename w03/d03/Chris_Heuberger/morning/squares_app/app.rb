@@ -2,8 +2,8 @@ require 'bundler'
 Bundler.require
 
 get '/' do
+  @num_squares = 1
   erb :index
-  redirect '/1'
 end
 
 get '/:num_squares' do
