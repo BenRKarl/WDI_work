@@ -8,7 +8,7 @@ ___
 #Welcome To Javascript
 
 ##Part 1
-###Triangle Area function
+###Triangle Perimeter function
 - Given the following object, write a `perimeter` function in JavaScript that calculates the perimeter of triangle:
 
 ```javascript
