@@ -86,4 +86,4 @@ function whatDoesYourStartupDo(){
 
 ###Javascript The Good Parts
 - Watch this 1hr video: [Javascript: The Good Parts](http://youtu.be/hQVTIJBZook)
-
+- If this inspired you to edit / fix any of the code you wrote earlier today, fix it and push!
