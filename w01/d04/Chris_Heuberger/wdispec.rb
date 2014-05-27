@@ -13,7 +13,7 @@ def assert_equal(actual, expected, statement=nil)
   end
 end
 
-def display_message(actua;, expected, color)
+def display_message(actual;, expected, color)
   puts Rainbow("Actual: #{actual}").send (color)
   puts Rainbow("Expected: #{expected}").send (color)
 end

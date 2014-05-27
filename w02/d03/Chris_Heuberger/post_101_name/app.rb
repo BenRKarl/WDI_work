@@ -6,7 +6,7 @@ get '/' do
 end
 
 post '/names' do
-  person_name = params[:user_name]
+  person_name = params[:user_name].gsub(' ', '%20')
   redirect "/names?being_name=#{person_name}"
 end
 
