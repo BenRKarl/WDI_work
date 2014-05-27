@@ -42,31 +42,41 @@ general_assembly[:campuses] = {
   :washington_dc => [c12]
 }
 
-# Questions: Write a line of code for each
+## Questions: Write a line of code for each
 # Example: How many topics does GA have?
-general_assembly[:topics].count
 # ga[:topics].count => 7
-
 # What number topic is 'Web Development'?
-general_assembly[:topics].index('Web Development')
-
+general_assembly[:topics].index("Web Development")
 # How many cities does GA have campuses in?
 general_assembly[:campuses].count
-
 # How many campuses does GA have?
-number = 0
-general_assembly[:campuses].each do |k,v| number = number+v.length}
 
-general_assembly[:campuses].each do |city, campuses| campuses.each do |location|
-  puts location[:address]
-  end
+number = 0
+general_assembly[:campuses].each{|k,v| number = number+v.length }
+
+
+number = 0
+general_assembly[:campuses].each do |city, buildings|
+  number = number + buildings.length
 end
+
+general_assembly[:campuses].values.flatten.count
+
+# Nessa's Solution
+total = general_assembly[:campuses].map { |city, buildings| buildings.length }
+puts total.inject { |sum, n| sum + n }
 
 # How many campuses does GA have in Berlin?
 general_assembly[:campuses][:berlin].count
 
-# Print out all GA's campuses addresses
+# Print out all of the addresses
 
+general_assembly[:campuses].values.flatten.each do |campus_hash|
+  puts campus_hash[:address]
+end
 
 
 binding.pry
+
+
+# Print out all
