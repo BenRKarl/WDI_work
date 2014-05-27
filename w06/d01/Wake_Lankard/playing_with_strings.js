@@ -1,53 +1,42 @@
 myString = "Now is the time for all good men to come to the aid of their party.";
 
 function rev(str){
-  var output;
+  var arr;
 
-  output = str.split("");
-  output = output.reverse();
-  output = output.join("");
+  arr = str.split("");
+  arr = arr.reverse();
+  str = arr.join("");
 
-  return output;
+  return str;
 }
 
 function disemvowel(str){
   var vowels = ['a', 'e', 'i', 'o', 'u'];
-  var output;
 
-  output = str;
   vowels.forEach(function(vowel){
     re = new RegExp(vowel, "g");
-    output = output.replace(re, "");
+    str = str.replace(re, "");
   })
 
-  return output;
+  return str;
 }
 
 function greatness(str){
-  var output;
+  str = str.replace(/ the /g, " the great ");
 
-
-  output = str.replace(/ the /g, " the great ");
-
-  return output;
+  return str;
 }
 
 function cap(str) {
-  var output;
   var arr;
   
   arr = str.split(" ");
   arr.forEach(function(word, index){
     arr[index] = word.replace(word.trim().charAt(0), word.trim().charAt(0).toUpperCase());
   })
-  output = arr.join(" ");
-  return output;
+  str = arr.join(" ");
+  return str;
 }
-
-
-
-
-
 
 
 console.log("reverse: " + rev(myString));
