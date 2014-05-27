@@ -1,3 +1,8 @@
-<div>
-  <h1>Hi, <%= @compliment %></h1>
+<div class="compliment">
+  <% if @name %>
+    <h1>Hey <%= @name %></h1>
+  <% else %>
+    <h1>Hey you!</h1>
+  <% end %>
+  <h1><%= @compliment %></h1>
 </div>

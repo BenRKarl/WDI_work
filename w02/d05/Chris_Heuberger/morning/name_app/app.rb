@@ -41,14 +41,12 @@ proto_first_last.each do |dev|
   proto_hash[initials] = [first, last]
 end
 
-binding.pry
-
 class Developer
   attr_reader :initials :name :tagline
   def initialize(initials, name, tagline)
     @initials = initials
-    @name = name
-    @tagline = tagline
+    @name     = name
+    @tagline  = tagline
   end
 
   def to_s
@@ -56,14 +54,18 @@ class Developer
   end
 end
 
-dev_array = []
+developers = []
 
 proto_hash.each do |initials, name|
   tagline = Faker::Company.catch_phrase
   developers << Developer.new (initials, name, tagline)
 end
 
+get '/' do
+  redirect '/developers'
+end
+
 get '/developers' do
-  @developers = developers
+  @developers = developers.sort{|x,y| x.initials.to_s <=> y.initials.to_s }
   erb :index
 end

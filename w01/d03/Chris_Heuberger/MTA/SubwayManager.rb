@@ -23,7 +23,6 @@ class SubwayManager
   def travel_distance(travel_plan)
     if travel_plan[:start_train]  == travel_plan[:end_train]
       train = travel_plan[:start_train]
-      # hash[key].index(element)
       start_pos = @network[train].index(travel_plan[:start_station])
       end_pos = @network[train].index(travel_plan[:end_station])
       total_length_of_trip = (end_pos - start_pos).abs
