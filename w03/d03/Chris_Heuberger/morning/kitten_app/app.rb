@@ -1,15 +1,14 @@
 require 'bundler'
 Bundler.require
 
-require './models/kitten.rb'
+require './models/kitten'
 
 get '/' do
-  erb :index
   redirect '/1'
 end
 
 get '/:num_kittens' do
   @num_kittens = params[:num_kittens].to_i
-  @kitten = Kitten.new
+  @kittens = num_kittens.times.map{ Kitten.new }
   erb :index
 end

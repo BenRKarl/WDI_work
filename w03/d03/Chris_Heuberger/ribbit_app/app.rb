@@ -6,21 +6,25 @@ require_relative 'models/ribbit'
 
 require_relative 'config.rb'
 
+# index
 get '/' do
   @users = User.all
   erb :index
 end
 
+# new
 get '/users/new' do
   erb :'users/new'
 end
 
+# create
 post '/users' do
   username = params[:username]
   new_user = User.create({username: username})
   redirect "/users/#{ new_user.id }"
 end
 
+# show
 get '/users/:id' do
   @user = User.find(params[:id])
   erb :'users/show'

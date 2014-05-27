@@ -5,23 +5,16 @@ require './config.rb'
 require './models/kitten'
 
 get '/kittens/random' do
+  @kitten = Kitten.new({:width => rand(100..400), :height => rand(100..400)})
+  erb :random
+end
+
+get '/kittens' do
+  @kittens = Kitten.all
   erb :index
 end
 
 post '/kittens' do
-
-end
-
-post '/users' do
-  username = params[:username]
-  new_user = User.create({username: username})
-  redirect "/users/#{ new_user.id }"
-end
-
-post '/users/:id/caws' do
-  user = User.find(params[:id])
-  message = params[:message]
-  new_caw = Caw.create({message: message})
-  user.caws << new_caw
-  redirect "/users/#{params[:id]}"
+  Kitten.create(width: params[:width].to_i, height: params[:height].to_i)
+  redirect '/kittens'
 end

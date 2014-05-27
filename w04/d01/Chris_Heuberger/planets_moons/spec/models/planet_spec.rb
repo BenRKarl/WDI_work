@@ -1,6 +1,13 @@
 require 'spec_helper'
 
-describe to_s do
-  pending "#{planet.name} is a planet with #{}{Planets.length} moon(s), capable of sustaining life."
+def planet_life
+  if @planets.life == 'false'
+    'not'
+  else
+    ''
+  end
 end
 
+describe to_s do
+  puts "#{planet.name} is a planet with #{Planets.length} moon(s),#{ planet_life} capable of sustaining life."
+end
