@@ -1,25 +1,37 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-get '/' do
+def random_smoothie_a
 
-  def random_smoothie
-    smoothie_ingredients = {
-      'flax seeds' => '2 tbsp',
-      'chia seeds' => '1 tbsp',
-      'kale' => '4 tbsp',
-      'cbroc' = '5 tbsp',
-      'mango' => '3 tbsp',
-      'milk' => '2 tbsp',
-    }
+  smoothie_ingredients = {
+    'flax seeds' => '1 tbsp',
+    'chia seeds' => '1 tbsp',
+    'coconut flakes' => '1 tbsp'
+  }
+
+  ingredient_keys = smoothie_ingredients.keys.sample(3)
+  ingredient_keys.map {|ingredient| "#{ingredient}: #{smoothie_ingredients[ingredient]}"}
+
+end
+
+# alternate smoothie generator
+def random_smoothie_b(num_of_ingredients)
+  smoothie_ingredients = {
+    'flax seeds' => '1 tbsp',
+    'chia seeds' => '1 tbsp',
+    'coconut flakes' => '1 tbsp'
+  }
 
   ingredient_array = smoothie_ingredients.map {|ingredient, measure| "#{ingredient}: #{measure}"}
   ingredient_array.sample(num_of_ingredients)
-  end
+end
 
-  get '/' do
-    num_of_ingredients = 3
-    "<h2>Today's Smoothie: <h2>" + random_smoothie(num_of_ingredients).join('<br>')
-  end
+get '/' do
+  num_of_ingredients = 3
+  "<h2>Today's Smoothie: </h2>" + random_smoothie_b(num_of_ingredients).join('<br>')
+end
 
+get '/smoothie/:num_of_ingredients' do
+  num_of_ingredients = params[:num_of_ingredients].to_i
+  "<h2>Today's Smoothie: </h2>" + random_smoothie_b(num_of_ingredients).join('<br>')
 end
