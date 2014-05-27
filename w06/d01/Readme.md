@@ -83,3 +83,7 @@ function whatDoesYourStartupDo(){
 ##Reading (strongly suggested):
 - [MDN on Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
 - [Explaining Javascript scope and closures](http://robertnyman.com/2008/10/09/explaining-javascript-scope-and-closures/)
+
+###Javascript The Good Parts
+- Watch this 1hr video: (http://youtu.be/hQVTIJBZook)[http://youtu.be/hQVTIJBZook]
+
