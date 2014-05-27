@@ -28,7 +28,7 @@ var triangle = {
   - My #1 favorite baseball team is the New York Mets.
   - My #2 favorite baseball team is the San Francisco
 
-##Part3
+##Part 3
 ###Playing with Strings
 - Write a function to:
   - reverse a string
@@ -36,7 +36,7 @@ var triangle = {
   - replace all instances of 'the' with 'the great'
   - capitalize each word in a string
 
-##Part4
+##Part  4
 ###Guess the number
 - Write a javascript version of the guess-the-number game
 
