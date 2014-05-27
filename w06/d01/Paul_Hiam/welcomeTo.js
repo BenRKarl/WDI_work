@@ -49,6 +49,7 @@ function great(s) {
 function cap(s){
 return s.toUpperCase();
 }
+//fix this to go through and cap after spaces. Check out loops **
 
 //Javascript calculator
 function plus(a, b){
