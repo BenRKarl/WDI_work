@@ -3,8 +3,8 @@
 // My #1 favorite baseball team is the New York Mets.
 // My #2 favorite baseball team is the San Francisco
 
-var myFavsArray = ["pizza", "bagels", "ice cream", "chicken parm", "Israeli salad"]
+var myFavsArray = ["pizza", "bagels", "ice cream", "chicken parm", "Israeli salad"];
 
-for (var index = 0; index < myFavsArray.length; index++){
+for (var index = 0; index < myFavsArray.length; index++) {
   console.log( "My #" + (+index+1) + " favorite food is " + myFavsArray[index]);
 }

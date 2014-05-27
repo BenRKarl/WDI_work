@@ -4,9 +4,9 @@ var triangle = {
   sideC: 5
 };
 
-function perimeter(triangle){
-  trianglePerimeter = triangle['sideA'] + triangle['sideB'] + triangle['sideC'];
-  return trianglePerimeter
-};
+function perimeter(triangle) {
+  var trianglePerimeter = triangle.sideA + triangle.sideB + triangle.sideC;
+  return trianglePerimeter;
+}
 
 console.log(perimeter(triangle));
