@@ -30,10 +30,11 @@ var triangle = {
 
 ##Part3
 ###Playing with Strings
-- reverse a string
-- remove all vowels
-- replace all 'the' with 'the great'
-- capitalize
+- Write a function to:
+  - reverse a string
+  - remove all vowels from a string
+  - replace all instances of 'the' with 'the great'
+  - capitalize each word in a string
 
 ##Part4
 ###Guess the number
