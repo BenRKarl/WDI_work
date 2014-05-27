@@ -76,8 +76,9 @@ function randomThat(){
 }
 
 function whatDoesYourStartupDo(){
-  console.log("So....your startup is basically like " + randomThis() + " for " + randomThat() + "?");
-  return false;
+  var message = "So....your startup is basically like " + randomThis() + " for " + randomThat() + "?";
+  console.log(message);
+  return message
 }
 
 ```
