@@ -21,3 +21,6 @@ var susan = new Person('susan', 35, 1);
 var harriet = new Person('harriet', 52, 9);
 var gary = new Person('gary', 14, 6);
 var ginger = new Person('ginger', 76, 15);
+
+bill.introduction()
+
