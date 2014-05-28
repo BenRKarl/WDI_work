@@ -39,8 +39,25 @@ var WDility = {
       result = result + array[i];
     }
     return result;
-  }
+  },
 
+  unique: function(array) {
+    var newArray = []; 
+
+    for (i in array){  
+      var counter = 0;
+
+      for (j in newArray){
+        if (array[i] === array[j]) {
+          counter += 1;
+        }
+      }
+      if (counter === 0) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  }
 
 };
 
