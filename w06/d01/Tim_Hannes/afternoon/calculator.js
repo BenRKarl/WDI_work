@@ -15,8 +15,8 @@ function divide(x,y){
 }
 
 
-console.log(add(5,5))
-console.log(subtract(5,2))
-console.log(multiply(10, 5))
-console.log(divide(15,5))
+console.log(add(5,7));
+console.log(subtract(13,6));
+console.log(multiply(10, 4));
+console.log(divide(35,5));
 
