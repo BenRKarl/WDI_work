@@ -8,8 +8,15 @@ var WDility = {
     first: function(array) {
         return array[0];
     },
-    last :function(array) {
+    last: function(array) {
         return array[array.length-1];
+    },
+    map: function(array, func) {
+        var newArray = [];
+        for (var i in array){
+            newArray[i] = func(array[i]);
+        }
+        return newArray;
     },
     
 };
