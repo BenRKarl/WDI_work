@@ -39,6 +39,8 @@ function manString(myString) {
 }
 
 
+/*Put each word into an array and capitize first letter of each word.*/
+
 String.prototype.capitalize = function(){
     return this.replace( /(^|\s)(["the", "lessons", "on", "the", "js", "today", "were", "great"])/g , function(m,p1,p2){ return p1+p2.toUpperCase();
     } );
@@ -47,5 +49,3 @@ String.prototype.capitalize = function(){
 capitalizedString = myString.capitalize();
 
 
-
-/*Put each word into an array and capitize each letter.
