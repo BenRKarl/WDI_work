@@ -1,0 +1,44 @@
+1. Artist.create(name: "Vincent Van Gogh", nationality: "Dutch")
+
+2. Painting.create(title: "Starry Night")
+
+3. Artist.all
+
+4. Painting.all
+
+5. Artist.find_by(id: 2)
+
+6. Artist.find_by(name: "Vincent Van Gogh")
+
+7. Artist.find_by(nationality: "Spanish")
+
+8. Painting.find_by(id: 1)
+
+9. Painting.find_by(title: "Guernica")
+
+10. artist = Artist.find_by(name: "Pablo Picasso")
+    id = artist.id
+    paintings = Painting.where(artist_id: id)
+    paintsings.each { |p| puts p.title }
+
+11. painting = Painting.find_by(title: "Guernica")
+    id = painting.artist_id
+    (Artist.find_by(id: id)).name
+
+    OR
+
+    (Artist.find_by(id: (Painting.find_by(title: "Guernica")).artist_id)).name
+
+12. artist = Artist.find_by(name: "Pablo Picasso")
+    artist.update(nationality: "American")
+    artist.save
+
+13. painting = Painting.find_by(title: "Starry Night")
+    pablo = Artist.find_by(name: "Pablo Picasso")
+    painting.artist = pablo
+
+
+
+
+
+
