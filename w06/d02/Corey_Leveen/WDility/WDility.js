@@ -26,7 +26,16 @@ map: function(array, func) {
     arr[i] = func(array[i]);
   }
   return arr;
-}
+},
 
+select: function(array, func) {
+  arr = new Array;
+  for (i in array){
+    if (func(array[i]) == true) {
+      arr.push(array[i]);
+    }
+  }
+  return arr;
+}
 
 };
