@@ -8,7 +8,11 @@ ___
 #Welcome To Javascript
 
 ##Part 1
+<<<<<<< HEAD
 ###Triangle Area
+=======
+###Triangle Perimeter function
+>>>>>>> 8d069e3a7f66dae0cad7f59f9a43a5eafb36f973
 - Given the following object, write a `perimeter` function in JavaScript that calculates the perimeter of triangle:
 
 ```javascript
@@ -22,13 +26,28 @@ var triangle = {
 ```
 
 ##Part 2
+<<<<<<< HEAD
+=======
+###Air Conditioning Conditionals
+- Write a `conditionAir` function takes a desired temperature as a parameter
+  - If the current temperture is above the the desired temperature... display "Turn on the A/C please"
+  - If the current temperture is below the the desired temperature... display "Turn off the A/C please"
+
+
+##Part 3
+>>>>>>> 8d069e3a7f66dae0cad7f59f9a43a5eafb36f973
 ###Favorite Things
 - Create an array that contains a few of your favorite things (fruits, vegetables, colors, sports teams, whatever).
 - Write some code in JavaScript that outputs strings like (for an array of arbitrary length):
   - My #1 favorite baseball team is the New York Mets.
   - My #2 favorite baseball team is the San Francisco
 
+<<<<<<< HEAD
 ##Part 3
+=======
+
+##Part 4
+>>>>>>> 8d069e3a7f66dae0cad7f59f9a43a5eafb36f973
 ###Playing with Strings
 - Write a function to:
   - reverse a string
@@ -36,17 +55,60 @@ var triangle = {
   - replace all instances of 'the' with 'the great'
   - capitalize each word in a string
 
+<<<<<<< HEAD
 ##Part  4
 ###Guess the number
 - Write a javascript version of the guess-the-number game
+=======
+>>>>>>> 8d069e3a7f66dae0cad7f59f9a43a5eafb36f973
 
 ##Part 5
 ###JavaScript Calculator
 - Create a calculator in JavaScript.
 - Support the following operations: addition, subtraction, multiplication, and division.
 
+<<<<<<< HEAD
 ---
 
 ##Extra Reading (suggested):
 - [MDN on Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
 
+=======
+
+##Part 6
+###This for That Startup Idea Generator
+- Write a function that answers the question "What does your startup do?"
+- Credit: http://itsthisforthat.com/
+- Here is some starter code:
+
+```javascript
+
+var thisArray = ["Skynet","Digital Music Distribution","FitBit","Realtime Data","ManPacks","Landing Page","Conversion Funnel","Social Network","Airbnb","SnapChat","Bang With Friends","HTML5 App","Google Analytics","Mapreduce Query","Node.js Server","KickStarter","Match.com","Adultfriendfinder","Pinterest","Amber Alert System","Groupon","Appstore","Digital Magazine","Distributed Social Network","Quadcopter","Daring Fireball","Content Distribution Network","Analytics Platform","OpenTable","LinkedIn","Brick and Mortar Solution","Aggregator","Social Game","jQuery Plugin","Game-based Incentive","Foursquare","YouTube","WeedMaps","Texts From Last Night","Ponzi Scheme","1-800-Flowers","Cash4Gold","Online Marketplace","Viral Marketer","Wearable Computer","Google Glass App","Facebook Marketplace","Zivity","Playboy","Cloud Storage Provider","Kindle Fire App","Pandora","Green Tech Program","Eco-Friendly Marketplace","Netflix","Amazon","Zappos","Reddit","Enron","Wordpress","iPhone App","Android App","Meme Generator","Crowdsourcing App","Mac App","SEO Optimizer","Apartment Guide","Social CRM","Database Abstraction Layer","Microblogging Service","Product Curation Service","API","New Social Platform","Tumblr","Deal Finder","CPA Ad Network","Collaborative Filter","Shopping Site","Digg 2.0","Recommendation Engine","News Recommender","Neural Network","Tesseract OCR engine","Unreadable CAPTCHA","Mobile Ecosystem","Flickr","Salesforce.com","Twitter Filter","Wikipedia","Yelp"];
+var thatArray = ["Facebook Platform","Erlang Enthusiasts","Ex-Girlfriends","Mitt Romney's Hair","Laundromats","Celebrity Gossip","Endangered Species","Pandas","Middle Schoolers","Alpha Phi Girls","Funeral Homes","Chinese Take-out","Ex-Convicts","Fast Casual Restaurants","Marketers","Qualifying Leads","Funeral Homes","Farmers","Cougars","Pilots","Gynecologists","Cracked iPhone Apps","Stolen Goods","Adult Dancers","People Who Hate Groupon","Hunters","Sysadmins","Bath Salts","Nootropics","California","Government Corruption","Political Attack Ads","Whiskey Lovers","Parking Tickets","Highway Accidents","Traveling","Airlines","Presentation Tools","Your Boss","Ponzi Schemes","Your Finances","Restroom Attendants","Your Aquarium","Your Cat's Litter Box","Pets","Alcoholics","Camp Counselors","Nature Blogs","World of Warcraft","Models","Family Guy Enthusiasts","The Army","Cheap Vodka","Tech Incubators","Star Trek Conventions","Presentation Tools","Small Businesses","Beer","Nightclub Lines","Semi-Active Volcanoes", "Sanctimonial Artifacts","Traveling Abroad","Your Mom","Billionaires","Happy Hours","Ugg Boots","The Homeless","Blacking Out","Red Wine","Happy Families","Social Outcasts","Surgeons","Pounding Jagger Bombs","Textbooks","Coffee Shops","Baristas"];
+
+function randomThis(){
+  <!-- Choose a random entry from the thisArray -->
+}
+
+function randomThat(){
+  <!-- Choose a random entry from the thatArray -->
+}
+
+function whatDoesYourStartupDo(){
+  var message = "So....your startup is basically like " + randomThis() + " for " + randomThat() + "?";
+  console.log(message);
+  return message
+}
+
+```
+
+---
+
+##Reading (strongly suggested):
+- [MDN on Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+- [Explaining Javascript scope and closures](http://robertnyman.com/2008/10/09/explaining-javascript-scope-and-closures/)
+
+###Javascript The Good Parts
+- Watch this 1hr video: [Javascript: The Good Parts](http://youtu.be/hQVTIJBZook)
+- If this inspired you to edit / fix any of the code you wrote earlier today, fix it and push!
+>>>>>>> 8d069e3a7f66dae0cad7f59f9a43a5eafb36f973
