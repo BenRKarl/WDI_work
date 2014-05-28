@@ -75,18 +75,18 @@ Source : http://www.reddit.com/r/dailyprogrammer/comments/149kec/1242012_challen
 
 ```javascript
 
-var my_array = [1, 2, 3, 4];
+var myArray = [1, 2, 3, 4];
 
-WDility.first(my_array);       // Should return the value 1
+WDility.first(myArray);       // Should return the value 1
 
 ```
 
 
 ```javascript
 
-var my_array = [1,2,3,4];
+var myArray = [1,2,3,4];
 
-Wdility.map(my_array, function(elem){ return elem * 2}); // Should return this array: [2,4,6,8,10]
+Wdility.map(myArray, function(elem){ return elem * 2}); // Should return this array: [2,4,6,8,10]
 
 
 ```
