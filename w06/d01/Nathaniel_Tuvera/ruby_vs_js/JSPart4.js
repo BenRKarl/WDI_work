@@ -25,4 +25,4 @@ function capitalize(text){
   return text.toUpperCase();
 }
 
-capitalize(input)
+capitalize(input);

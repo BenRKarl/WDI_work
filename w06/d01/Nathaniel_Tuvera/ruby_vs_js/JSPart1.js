@@ -9,7 +9,7 @@ var b = triangle.sideB;
 var c = triangle.sideC;
 
 
-function perimeter (a, b, c) {
+function perimeter(a, b, c) {
   var p = a + b + c;
   console.log("The perimeter of the triangle is " + p);
 }
