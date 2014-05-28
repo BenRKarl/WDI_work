@@ -1,0 +1,52 @@
+var x = 'string1;
+
+function foo(y) {
+  var x = y;
+  return function (x) {};
+}
+
+#### Ben's solution
+
+var num
+num = 1
+function () {
+  num = num + 1;
+  }
+
+num
+>> 1
+something();
+>> 2
+
+#### Corey's solution
+x = 1
+>>1
+function test() {
+  x =2;
+  }
+x
+>>1
+test()
+>>undefined
+x
+>>2
+
+#### Aldric experiment
+
+function showMeTheMoney() {
+  var x = 5;
+  function increment () {
+    x = x + 1;
+    }
+  increment();
+  console.log(x);
+  }
+
+  function increment() {
+  console.log(x);
+  x = x + 1;
+  }
+test()
+>>3
+test()
+>>4
