@@ -4,9 +4,8 @@ function BankAccount (balance){
 
 BankAccount.prototype = {
   makeDeposit: function(deposit){
-    balance = this.balance + deposit
-    return balance
-    balance = this.balance
+    this.balance += deposit;
+    return this.balance;
   }
 }
 
