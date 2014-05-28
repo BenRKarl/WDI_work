@@ -23,7 +23,16 @@ var WDility = {
     return newArray;
   },
 
-  
+  select: function(array, func) {
+    var newArray = [];
+    for (i in array){
+      if (func(array[i])) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  }
+
 
 };
 
