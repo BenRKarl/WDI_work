@@ -5,4 +5,8 @@ var WDility = {
         }
         return array
     },
+    first: function(array) {
+        return array[0];
+    },
+    
 };
