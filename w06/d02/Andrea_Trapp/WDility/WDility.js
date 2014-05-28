@@ -31,8 +31,18 @@ var WDility = {
       }
     }
     return newArray;
+  },
+
+  reduce: function(array, func) {
+    var result = 0;
+    for (i in array){
+      result = result + array[i];
+    }
+    return result;
   }
 
 
 };
 
+
+      
