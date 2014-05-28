@@ -4,7 +4,7 @@ var WDility = {
     for (i in array) {
       func(array[i]);
     }
-    return array
+    return array;
   },
   first: function(array) {
     return array[0];
@@ -18,7 +18,7 @@ var WDility = {
     for (i in array) {
       newArray.push(func(array[i]));
     }
-    return newArray
+    return newArray;
   },
   select: function(array, func) {
     newArray = [];
@@ -28,18 +28,39 @@ var WDility = {
       }
     }
     return newArray;
+  },
+  unique: function(array) {
+    newArray = [];
+    for (i in array) {
+      var count = 0;
+      for (j in newArray) {
+        if (newArray[j] == array[i]) {
+          count = count +1;
+        }
+      }
+      if (count==0) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  },
+  reduce: function(array,func) {
+    value = 0;
+    for (i in array) {
+      value = func(value, array[i]);
+    }
+    return value;
   }
-
 };
 
 testArray = [2,3,4,5];
 testFunc = function(x) {console.log(x*2);}
 
+// ourFunc = function(a,b) {return (a*b);}
+
+
 // WDility.each(testArray, testFunc)
 console.log(WDility.first(testArray));
 console.log(WDility.last(testArray));
-console.log(WDility.select(testArray));
-
-
-
-
+// console.log(WDility.select(testArray));
+// console.log(WDility.reduce(testArray, ourFunc));
