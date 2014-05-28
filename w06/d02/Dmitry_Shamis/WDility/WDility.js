@@ -22,9 +22,30 @@ var WDility = {
     var new_array = []
     for (i in array) {
       if (func(array[i]) == true)
-      new_array.push(array[i]);
+        new_array.push(array[i]);
     }
     return new_array
   },
+  unique: function (array) {
+    var new_array = []
+    for (i in array) {
+      if (new_array.indexOf(array[i]) === -1) {
+        new_array.push(array[i]);
+      }
+    }
+    return new_array;
+  },
+  reduce: function (array, func) {
+    var new_array = []
+    for (i in array) {
+      new_array.push(array[i]);
+    }
+      new_array.reduce(function(previousValue, currentValue, index, array) {
+        return previousValue + currentValue;
+      })
+    }
+  };
 
-};
+
+
+
