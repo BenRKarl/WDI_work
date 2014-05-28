@@ -1,0 +1,13 @@
+van_gogh = Artist.create({:name => 'Vincent Van Gogh', :nationality => 'Dutch'})
+starry_night = Painting.create({:title => 'Starry Night'})
+Artist.all
+Painting.all
+Artist.find(2)
+Artist.find_by name: 'Vincent van Gogh'
+Artist.where(nationality: 'Spanish')
+Painting.find(1)
+Painting.find_by(title: 'Guernica')
+Artists.find_by(name: 'Pablo Picasso').paintings
+Painting.find_by(title: 'Guernica').artist
+Artist.find_by(name: 'Vincent van Gogh').update(nationality: American)
+Artist.find_by(name: 'Pablo Picasso').paintings << Painting.find_by(title: 'Starry Night')

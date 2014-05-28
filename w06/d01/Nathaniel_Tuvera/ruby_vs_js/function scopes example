@@ -1,0 +1,29 @@
+function send(name) {
+  return function(){
+    sendHi(name);
+  }
+}
+
+function sendHi(msg) {
+  console.log('Hello ' + msg);
+}
+
+var func = send('Bill');
+>>undefined
+func()
+>>Hello Bill
+sendHi('Pete')
+>>Hello Pete
+func2 = send ('Jeremiah')
+>>[Function]
+func2()
+>> Hello Jerimiah
+
+send
+>>[Function:send]
+sendHi
+>>[Function: sendHi]
+sendHi()
+>>Hello undefined
+sendHi('Uh-oh, what?')
+>>Hello Uh-oh, what?
