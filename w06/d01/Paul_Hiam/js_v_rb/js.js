@@ -59,4 +59,33 @@ var myObj = {name: 'Lich', age: 3, hobby: 'Fly Fishing'};
 myObj['name'];
 myObj.name;
 
+// day 2 of week 6
+  //calculator in/as an object literal (library..?)
+
+var calculator = {
+  add: function(a, b){
+    return(a + b);
+  },
+  subtract: function(a, b){
+    return(a - b);
+  },
+  multiply: function(a, b){
+    return(a * b);
+  },
+  divide: function(a, b){
+    return(a / b);
+  },
+  calc: function(a, b, operation){
+    switch(operation){
+      case 'add':
+        return this.add(a, b);
+        break;
+        case 'subtract':
+        return this.subtract(a, b);
+        break;
+    }
+  }
+}
+
+
 
