@@ -5,10 +5,11 @@ function Person(name, age, mood) {
 }
 
 Person.prototype = {
-  introduce: function () {
-    switch (mood){
+  introduce: function (mood) {
+
+    switch (this.mood){
       case 5:
-        console.log('Wow-ey! So glad you asked! Im ' + this.name + '... Whats youre name wonderful?');
+        console.log('Wow-ey! So glad you asked! Im ' + this.name + '... Whats your name wonderful?');
         break;
       case 4:
         console.log("My name is " + this.name + ". Thanks for asking.");
