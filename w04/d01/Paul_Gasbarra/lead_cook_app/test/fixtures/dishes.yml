@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cuisine: MyString
+  prep_time: 2014-05-12 09:11:13
+  cost: 9.99
+  celebrity_chef_id: 
+  PRIMARY: MyString
+  KEY: MyString
+
+two:
+  cuisine: MyString
+  prep_time: 2014-05-12 09:11:13
+  cost: 9.99
+  celebrity_chef_id: 
+  PRIMARY: MyString
+  KEY: MyString

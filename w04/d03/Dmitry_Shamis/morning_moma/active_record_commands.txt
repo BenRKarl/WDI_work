@@ -1,0 +1,31 @@
+vvg = Artist.create(name: 'Vincent Van Gogh', nationality: 'Dutch')
+pp = Artist.create(name: 'Pablo Picasso', nationality: 'Spanish')
+mc = Artist.create(name: 'Michelangelo', nationality: 'Italian')
+
+starry_night =  Painting.create(title: 'Starry Night')
+vvg.paintings << starry_night
+
+guernica =  Painting.create(title: 'Guernica')
+pp.paintings << guernica
+
+sistine =  Painting.create(title: 'The Sistine Chapel')
+mc.paintings << sistine
+
+Part 3
+1. Artist.create(name: 'Vincent Van Gogh', nationality: 'Dutch')
+2. Painting.create(title: 'Starry Night')
+3. Artist.all
+4. Painting.all
+5. Artist.find(2)
+6. Artist.find_by(name: 'Vincent Van Gogh')
+7. Artist.find_by(nationality: 'Spanish') # LIMIT 1 RESULT
+   Artist.where(nationality: 'Spanish') # SHOWS ALL RESULTS
+8. Painting.find_by id: 1
+9. Painting.find_by(title: 'Guernica')
+10. Artist.find_by(name: 'Pablo Picasso').paintings
+11. Painting.find_by title: 'Guernica'.artist_id
+12. vvg = Artist.find_by(name: 'Vincent Van Gogh')
+    vvg.update(nationality: 'American')
+13. pp = Artist.find_by(name: 'Pablo Picasso')
+    starry = Painting.find_by(title: 'Starry Night')
+    pp.paintings << starry
