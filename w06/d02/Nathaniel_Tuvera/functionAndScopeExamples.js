@@ -32,7 +32,7 @@ function addFunctionBuilder(numToAdd)
          };
 }
 
-var addTwo    = addFunctionBuilder(2);
+var addTwo = addFunctionBuilder(2);
 
 
 /// After the above makes sense then see below
@@ -61,7 +61,7 @@ function cheer() {
 
 }
 
-function doWorkNow(doAfter(;
+function doWorkNow(doAfter){
 
   // Do a bunch of stuff(like fold a paper airplance)
               // Demoonstratd here via a loop thing
@@ -74,3 +74,5 @@ function doWorkNow(doAfter(;
 ////////////////////
 //Time Out Example//
 ////////////////////
+
+setTimeout(function(){console.log('You are great')}, 1000000)
