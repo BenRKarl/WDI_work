@@ -20,8 +20,14 @@ var WDility = {
     return newArray;
   },
 
-  select: function(){
-
+  select: function(array, func){
+    var newArray = [];
+    for (var i in array){
+      if (func(array[i]) == true){
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
   }
 
 };

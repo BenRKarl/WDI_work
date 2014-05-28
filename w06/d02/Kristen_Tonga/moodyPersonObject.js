@@ -5,25 +5,31 @@ function Person(name, age, mood) {
 }
 
 Person.prototype = {
-  introduce: function (mood) {
-
+  introduce: function () {
     switch (mood){
       case 5:
         console.log('Wow-ey! So glad you asked! Im ' + this.name + '... Whats youre name wonderful?');
         break;
       case 4:
-        console.log('');
+        console.log("My name is " + this.name + ". Thanks for asking.");
         break;
       case 3:
-        console.log('');
+        console.log('My name is ' + this.name);
         break;
       case 2:
-        console.log('');
+        console.log(this.name);
         break;
       case 1:
-        console.log('');
+        console.log("I don't want to talk to you.");
         break;
 
     }
   }
 }
+
+
+var gerard = new Person('Gerard', 20, 5)
+var bill = new Person('Billy', 55, 4)
+var megan = new Person('MeggyAnn', 35, 3)
+var duey = new Person('Micheal', 62, 2)
+var sue = new Person('Sue', 40, 1)
