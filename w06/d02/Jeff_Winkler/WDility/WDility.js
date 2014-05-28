@@ -44,23 +44,55 @@ var WDility = {
     }
     return newArray;
   },
-  reduce: function(array,func) {
-    value = 0;
+  reduce: function(array, func) {
+    if (array.length > 1) {
+      value = func(array[0], array[1]);
+    } else {
+      value = array[0];
+    }
     for (i in array) {
-      value = func(value, array[i]);
+      if (i > 1) {
+        value = func(value, array[i]);
+      }
     }
     return value;
   }
+
 };
 
-testArray = [2,3,4,5];
+testArray = [2];
 testFunc = function(x) {console.log(x*2);}
 
-// ourFunc = function(a,b) {return (a*b);}
+ourFunc = function(a,b) {return (a*b);}
+ourSub = function(a,b) {return (a-b);}
 
 
 // WDility.each(testArray, testFunc)
 console.log(WDility.first(testArray));
 console.log(WDility.last(testArray));
 // console.log(WDility.select(testArray));
-// console.log(WDility.reduce(testArray, ourFunc));
+console.log(WDility.reduce(testArray, ourFunc));
+console.log(WDility.reduce(testArray, ourSub));
+/*
+reduce: function(array,func) {
+    value = 0;
+    for (i in array) {
+      value = func(value, array[i]);
+    }
+    return value;
+  }
+
+/*
+    if (array.length > 1) {
+      value = func(array[0], array[1]);
+    } else {
+      value = array[0];
+    }
+    for (i in array) {
+      if (i > 1) {
+        value = func(value, array[i]);
+      }
+    }
+    return value;
+    */
+
