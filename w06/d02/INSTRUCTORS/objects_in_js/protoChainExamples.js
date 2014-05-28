@@ -7,7 +7,6 @@
   //  2.  Sets the objects __proto__ to the functions prototype
   //  3.  Evalutes the contructor function with the objects as this
 
-
 // Constructor Function
 function Person (name){
   this.name = name;
