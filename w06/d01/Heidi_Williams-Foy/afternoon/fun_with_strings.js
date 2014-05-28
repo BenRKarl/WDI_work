@@ -5,30 +5,7 @@
   - remove all vowels from a string
   - replace all instances of 'the' with 'the great'
   - capitalize each word in a string 
-
-  The charAt() method returns the specified character from a string.*/
-
-// var reverse = function(str) {
-//     var arr = [];
-
-//     for (var i = 0, len = str.length; i <= len; i++) {
-//         arr.push(str.charAt(len - i))
-//     }
-
-//     return arr.join('');
-// }
-
-// function removeVowels(str) {
-//   return str.replace(/[aeiou]/,''),
-// }
-
-// reverse('the string is backwards');
-
-
-
-// function replace(str) {
-//   return str.replace(/[aeiou]/,''),
-// }
+*/
 
 var myString = 'the lessons on the js today were great';
 
