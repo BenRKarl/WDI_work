@@ -5,14 +5,18 @@ function Person(name, age, mood){
 }
 
 Person.prototype = {
-  
+
   introduce: function(){
-    switch(this.mood) {
-      case 0:
-        output = this.name + ", " + this.age + ". Shut up.";
-        break;
-    }
+    console.log("I'm in.");
   }
+
+  // introduce: function(){
+  //   switch(this.mood) {
+  //     case 0:
+  //       output = this.name + ", " + this.age + ". Shut up.";
+  //       break;
+  //   }
+  // }
 }
 
 myPerson = new Person("John", 23, 0);
