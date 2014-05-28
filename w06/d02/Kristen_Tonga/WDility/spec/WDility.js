@@ -3,6 +3,7 @@ var WDility = {
   },
 
   last: function(){
+
   },
 
   each: function(array, func){
@@ -13,9 +14,10 @@ var WDility = {
     },
 
   map: function(){
-  },
 
+  },
   select: function(){
+
   }
 
 };

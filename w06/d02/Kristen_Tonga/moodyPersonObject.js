@@ -6,6 +6,24 @@ function Person(name, age, mood) {
 
 Person.prototype = {
   introduce: function (mood) {
-    switch
+
+    switch (mood){
+      case 5:
+        console.log('Wow-ey! So glad you asked! Im ' + this.name + '... Whats youre name wonderful?');
+        break;
+      case 4:
+        console.log('');
+        break;
+      case 3:
+        console.log('');
+        break;
+      case 2:
+        console.log('');
+        break;
+      case 1:
+        console.log('');
+        break;
+
+    }
   }
 }
