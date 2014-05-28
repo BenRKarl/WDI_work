@@ -1,0 +1,14 @@
+body {
+  text-align: center;
+  font-family: courier;
+  color: dimgray;
+}
+
+.nics {
+  margin: 5px;
+  text-align: center;
+}
+
+footer {
+  margin-top: 20px;
+}
