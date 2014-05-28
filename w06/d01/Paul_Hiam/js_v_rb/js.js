@@ -87,5 +87,23 @@ var calculator = {
   }
 }
 
+// constructor function
+function Person (name){
+  this.name = name;
+}
 
+Person.prototype = {
+  warmBlooded: true,
+  jump: function(){
+    console.log('I am jumping man');
+  }
+}
 
+var bob = new Person('Robert');
+// new keyword --> make empty obj. set obj proto to const function's prototype, evaluate the function where 'this' is the new obj.
+
+//give prototype a new behavior/abil.
+Person.prototype.sing = 'tralalalala'
+// bob.sing  will work
+bob.__proto__.sing = 'tralalalala' //will do same thing
+// * Person.prototype is the obj literal (hash)
