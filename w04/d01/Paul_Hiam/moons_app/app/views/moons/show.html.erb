@@ -3,6 +3,9 @@
   <li>
     <%= @moon.name %> orbits <%= @moon.planet.name %>
   </li>
+<a href="/planets/<%= @planet.id %>/moons/<%=@moon.id %>/edit">Edit</a><br/>
+
+
 <form action="/planets/<%= @planet.id %>/moons/<%= @moon.id %>" method='post'>
   <%= token_tag %>
   <input type="hidden" name="_method" value="delete">

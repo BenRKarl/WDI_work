@@ -1,0 +1,60 @@
+# in console
+# to associate
+# pablo.paintings << painting
+
+
+artist = Artist.new
+artist.name = "Timmy Paints"
+artist.nationality = "German/Irish/Italian"
+artist.save
+
+
+Create a new Artist (Vincent Van Gogh) and save him to your database
+artist = Artist.new
+artist.name = "Vincent VanGogh"
+artist.nationality = "Italian"
+artist.save
+Create a new Painting (Starry Night) and save it to your database
+painting = Painting.new
+painting.title = "Starry Night"
+
+Return all Artists
+Artist.all
+
+Return all Paintings
+Paintings.all
+
+Return the artist with an id of 2
+Artist.find(2)
+
+Return the artist with a name of "Vincent Van Gogh"
+Artist.find_by(name: "Vincent Van Gogh")
+
+Return all the artists who are "Spanish"
+Artist.find_by(nationality: "Spanish")
+
+Return the painting with an id of 1
+Painting.find(1)
+
+Return the painting with a name of "Guernica"
+Painting.find_by(title: "Guernica")
+
+Return all the paintings that "Pablo Picasso" painted
+Painting.find_by(artist: "Pablo Picasso")
+
+Return the artist of "Guernica"
+Painting.find_by(title: "Guernica").artist
+
+Change Vincent Van Gogh's nationality to "American"
+Artist.find_by(name:"Vincent Van Gogh").update(nationality:"American")
+vince = Artist.find_by(name: "Vincent Van Gogh")
+vince.nationality = "Dutch"
+
+Change "Starry Night" to be one of Pablo Picasso's paintings
+starry = Painting.find_by(title: "Starry Night")
+pablo = Artist.find_by(name:"Pablo Picasso")
+pablo.paintings << starry
+
+
+.reload forces all changes to go through. important when debugging.
+associations don't need .save

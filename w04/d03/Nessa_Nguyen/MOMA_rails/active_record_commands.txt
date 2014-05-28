@@ -1,0 +1,27 @@
+1. Artist.create({name: 'Claude Monet', nationality: 'French'})
+
+2. Painting.create({title: 'Impression, Sunrise'})
+
+3. Artist.all
+
+4. Painting.all
+
+5. picasso = Artist.find(2)
+
+6. Artist.find_by(name: 'Vincent van Gogh') #id 1
+
+7. Artist.where(nationality: 'Spanish')
+
+8. Painting.find(1)
+
+9. Painting.find_by(title: 'Guernica') #id 2
+
+10. Painting.where(artist_id: 2)
+
+11. Painting.find(2)
+Artist.find(2)
+
+12. Artist.find(1).update(nationality: 'American')
+
+13. starry = Painting.find_by(title: 'Starry Night')
+picasso.paintings << starry
