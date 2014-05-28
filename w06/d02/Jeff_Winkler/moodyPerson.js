@@ -22,3 +22,13 @@ bod.introduce();
 kath.introduce();
 gim.introduce();
 gem.introduce();
+
+var people = [];
+people.push(lich);
+people.push(bod);
+people.push(kath);
+people.push(gim);
+people.push(gem);
+
+console.log(people);
+
