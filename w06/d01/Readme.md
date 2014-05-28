@@ -8,7 +8,7 @@ ___
 #Welcome To Javascript
 
 ##Part 1
-###Triangle Area function
+###Triangle Perimeter function
 - Given the following object, write a `perimeter` function in JavaScript that calculates the perimeter of triangle:
 
 ```javascript
@@ -46,17 +46,12 @@ var triangle = {
 
 
 ##Part 5
-###Guess the number
-- Write a javascript version of the guess-the-number game
-
-
-##Part 6
 ###JavaScript Calculator
 - Create a calculator in JavaScript.
 - Support the following operations: addition, subtraction, multiplication, and division.
 
 
-##Part 7
+##Part 6
 ###This for That Startup Idea Generator
 - Write a function that answers the question "What does your startup do?"
 - Credit: http://itsthisforthat.com/
@@ -85,6 +80,10 @@ function whatDoesYourStartupDo(){
 
 ---
 
-##Extra Reading (strongly suggested):
+##Reading (strongly suggested):
 - [MDN on Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+- [Explaining Javascript scope and closures](http://robertnyman.com/2008/10/09/explaining-javascript-scope-and-closures/)
 
+###Javascript The Good Parts
+- Watch this 1hr video: [Javascript: The Good Parts](http://youtu.be/hQVTIJBZook)
+- If this inspired you to edit / fix any of the code you wrote earlier today, fix it and push!
