@@ -32,7 +32,7 @@ function addFunctionBuilder(numToAdd){
 
 var addTwo = addFunctionBuilder(2);
 
-
+addFunctionBuilder();
 
 
 // What is going on here????
@@ -49,7 +49,8 @@ function bankTransaction() {
     }
   }
 }
-
+var bankfunction = bankTransaction();
+bankfunction(cashvalue)
 ////////////////
 // Callback Example
 
