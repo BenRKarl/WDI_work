@@ -62,3 +62,10 @@ li {
   height: 30px;
   font-size: 20px;
 }
+.container.offset-by-six {
+  margin: 100px auto;
+}
+.container.offset-by-six * {
+  margin-left: 0;
+  font-size: 18px;
+}
