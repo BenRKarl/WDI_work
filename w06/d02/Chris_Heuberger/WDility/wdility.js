@@ -31,16 +31,6 @@ var WDility = {
   }
 };
 
-
-// #####Commit 2-5
-// - Implement:
-//   - .first(array)
-//   - .last(array)
-//   - .map(array, function)
-//   - .select(array, function)
-
-// ---
-
 // #####Commit 6-7 (Bonus)
 // - Implement:
 //   - .reject(array, function)
