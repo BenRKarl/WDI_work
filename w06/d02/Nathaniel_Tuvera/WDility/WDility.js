@@ -18,11 +18,20 @@ var WDility = {
   },
 
   map: function(array, func) {
-
+    for (var i = 0; i < array.length; i++){
+      array
+    };
+      return
   },
 
   select: function(array,func) {
+    array.prototype.select = function() {
+      for (i = 0; i < array.length; i++) {
+        this[i] >= 2;
+      }
 
+    return array.select
+    }
   },
 
   unique: function() {
