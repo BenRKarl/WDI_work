@@ -57,3 +57,19 @@ describe("WDility", function() {
   });
 
 });
+
+describe ("#delete", function(){
+  it("should return an array with a specified value removed", fucntion(){
+  var actual = WDility.delete([1, 2, 3, 4, 3], 3);
+  var expected = [1, 2, 4];
+  expect(actual).toEqual(expected);
+  });
+});
+
+describe ("#deleteAt", function(){
+  it("should return an array with a specified index's value removed", fucntion(){
+  var actual = WDility.delete([1, 2, 3, 4], 2);
+  var expected = [1, 2, 4];
+  expect(actual).toEqual(expected);
+  });
+});
