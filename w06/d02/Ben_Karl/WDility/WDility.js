@@ -1,6 +1,6 @@
 var WDility = {
   each: function(array, func) {
-    for (i in array){
+    for (var i in array){
       func(array[i]);
     }
     return array
@@ -17,7 +17,7 @@ var WDility = {
 
   map: function(array, func) {
     var newArray = [];
-    for (i in array) {
+    for (var i in array) {
       newArray.push(func(array[i]));
     }
     return newArray;
@@ -25,7 +25,7 @@ var WDility = {
 
   select: function(array, func) {
     var newArray = [];
-    for (i in array) {
+    for (var i in array) {
       if (func(array[i])) {
         newArray.push(array[i]);
       }
@@ -39,5 +39,17 @@ var WDility = {
       array.pop();
     }
     return array[0];
+  },
+
+  unique: function(array) {
+    var uniqueDictionary = {};
+    var newArray = [];
+    for (var i in array) {
+      uniqueDictionary[array[i]] = array[i];
+    }
+    for (var i in uniqueDictionary) {
+      newArray.push(uniqueDictionary[i]);
+    }
+    return newArray;
   }
 };
