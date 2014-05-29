@@ -53,16 +53,17 @@ var WDility = {
   unique: function(array) {
     new_array = [];
     for (var i = 0; i < array.length; i++) {
-      for (var j = i + 1; j < array.length; j++) 
-        count = 0;    
+      var j = i + 1;  
+      for (; j < array.length; j++) {    
         if (array[i] == array[j]) {
-          count = count + 1;
+          break;
         }  
-        if (count == 0) {
-          new_array.push(array[i]); 
-        } // compare
-
-    } // for i loop
+      }  
+      if (j == array.length) {
+        new_array.push(array[i]); 
+      } 
+    } 
+    new_array = new_array.sort();
     return new_array;
   }          
 };
