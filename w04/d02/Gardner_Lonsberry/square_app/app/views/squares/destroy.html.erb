@@ -1,0 +1,10 @@
+<% @squares.each do |square| %>
+<h2>Delete a Square</h2>
+
+<form action="/squares/<%= @square.id %>" method='post'>
+  <input type="hidden" name="_method" value="put">
+  <%= token_tag %>
+  <input type="text" name='square[id]' value='<%= @square.id %>'>
+  <input type="submit">
+<% end %>
+</form>

@@ -1,0 +1,18 @@
+
+<form action="/squares" method='post'>
+<input type="text" name="squares[side_length] placeholder="Length" /><br>
+<input type="text" name="squares[border_radius] placeholder="Border Radius"/><br>
+Enter Color:  <input type="text" name="squares[color]" placeholder="Color"/><br>
+<%= token_tag %>
+<input type="submit"></form>
+
+
+<%= form_tag("/squares/", method: "post" ) do %>
+  <%= label_tag(:color, "Color:") %>
+  <%= text_field_tag(:color) %>
+<%= label_tag("square[border_radius]", "Border Radius:") %>
+<%= text_field_tag("square[border_radius]
+
+<% end %>
+
+<%= form_for @square do |f| %>
