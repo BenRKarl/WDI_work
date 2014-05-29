@@ -1,4 +1,4 @@
-//var myPersonArray = ['John', 'Mary', 'Ava', 'Maeve', 'Aidan'];
+var myPersonArray = ['John', 'Mary', 'Ava', 'Maeve', 'Aidan'];
 
 function People(name, age, mood){
   this.name = name,
