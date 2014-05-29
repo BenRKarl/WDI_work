@@ -18,4 +18,26 @@ var WDility = {
     }
     return new_array
   },
+select: function(array, func) {
+      var new_array = []
+    for (i in array){
+     if ((func(array[i])) == true) {
+      new_array.push(array[i]);
+    }
+    }
+    return new_array
+  },
+unique: function(array) {
+  new_array = []
+    for (i in array){
+        if (new_array.indexOf(array[i]) == -1){
+          new_array.push(array[i]);
+        }
+      }
+    return new_array
+  },
+  reduce: function(array, func) {
+    array.reduce(function(previousValue, currentValue, index, array){
+  return previousValue + currentValue;});
+  }
 };
