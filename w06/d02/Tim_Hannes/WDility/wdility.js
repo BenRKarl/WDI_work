@@ -12,6 +12,7 @@ var WDility = {
 
   last: function(array){
     return array.reverse()[0];
+    //OR return array[array.length -1]; .length is NOT THE SAME AS RUBY
   },
 
   map: function(array, func){
@@ -44,5 +45,30 @@ var WDility = {
     }
     return sum
   },
+
+  delete: function(array, value){
+    var newArray = [];
+    for (var i in array){
+      if (array[i] != value){
+        newArray.push(array[i]);
+      }
+    }
+    return newArray
+  },
+
+  // deleteAt: function(array, index){
+  //   var newArray = [];
+  //   for (var i in array){
+  //     if (i != index){
+  //       newArray.push(array[i]);
+  //     }
+  //   }
+  //   return newArray
+  // },
+
+  deleteAt: function(array, index){
+    array.splice(index, 1);
+    return array;
+  }
 
 };
