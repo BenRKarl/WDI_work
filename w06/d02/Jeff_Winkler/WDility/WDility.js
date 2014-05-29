@@ -56,11 +56,29 @@ var WDility = {
       }
     }
     return value;
+  },
+  delete: function(array, value) {
+    var newArray = [];
+    for (var i in array) {
+      if (value != array[i]) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  },
+  deleteAt: function(array, index) {
+    var newArray = [];
+    for (var i in array) {
+      console.log(i);
+      if (i != index) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
   }
-
 };
 
-testArray = [2];
+testArray = [1,2,3,4];
 testFunc = function(x) {console.log(x*2);}
 
 ourFunc = function(a,b) {return (a*b);}
@@ -68,11 +86,11 @@ ourSub = function(a,b) {return (a-b);}
 
 
 // WDility.each(testArray, testFunc)
-console.log(WDility.first(testArray));
-console.log(WDility.last(testArray));
+//console.log(WDility.first(testArray));
+//console.log(WDility.last(testArray));
 // console.log(WDility.select(testArray));
-console.log(WDility.reduce(testArray, ourFunc));
-console.log(WDility.reduce(testArray, ourSub));
+//console.log(WDility.reduce(testArray, ourFunc));
+console.log(WDility.deleteAt(testArray, 2));
 /*
 reduce: function(array,func) {
     value = 0;
@@ -95,4 +113,14 @@ reduce: function(array,func) {
     }
     return value;
     */
-
+/*
+delete: function(array,value) {
+    var newArray = []
+    for (var i in array) {
+      if (array[i]) != value) {
+        newArray.push(array[i])
+      }
+    }
+    return newArray;
+  }
+  */
