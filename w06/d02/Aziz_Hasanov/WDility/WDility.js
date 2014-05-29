@@ -28,5 +28,49 @@ var WDility = {
       }
     }
     return newArray;
+  },
+
+  // did in class
+  unique: function(array) {
+    var uniqueDictionary = {};
+    var newArray = [];
+    for (var i in array) {
+      uniqueDictionary[array[i]] = array[i];
+    }
+    for (var i in uniqueDictionary) {
+      newArray.push(uniqueDictionary[i]);
+    }
+    return newArray;
+  },
+  reduce: function(array, func) {
+    var memo = array.shift();
+    for (var i in array) {
+      memo = func(memo, array[i]);
+    }
+    return memo;
+  },
+  delete: function(array, index) {
+    var newArray = [];
+    for (var i in array) {
+      if (array[i] != index) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  },
+  // deleteAt: function(array, index) {
+  //   var newArray = [];
+  //   for (var i in array) {
+  //     if (i != index) {
+  //       newArray.push(array[i]);
+  //     }
+  //   }
+  //   return newArray;
+  // },
+  // another cleaner way
+  deleteAt: function (array, index) {
+    array.splice(index, 1);
+    return array;
   }
 }
+
