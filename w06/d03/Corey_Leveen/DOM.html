@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>WDI, meet DOM</title>
+  </head>
+  <body>
+    <ul>
+      <li> Aldric </li>
+      <li> Andrew </li>
+      <li> Matt </li>
+    </ul>
+
+    <script type="text/javascript">
+      function filterByNodeType(num){
+        var childNodes = document.body.childNodes;
+        for (var i = 0; i < childNodes.length; i++){
+          if (childNodes[i].nodeType == num){
+            console.log(childNodes[i]);
+          }
+        }
+      }
+      function allTheChildren(){
+        var children = document.body.childNodes;
+        for (var i = 0; i < children.length; i++){
+          console.log(children[i]);
+        }
+      }
+
+      function logChildren(){
+        var children = document.body.children;
+        for (var i = 0; i < children.length; i++){
+          console.log(children[i]);
+        }
+      }
+
+      function lastElementOfUl(){
+        var children = document.body.children;
+        for (var i = 0; i < children.length; i++){
+          if (children[i].previousSibling.tagName == 'UL'){
+            console.log(children[i].previousSibling);
+          }
+        }
+      }
+
+      function appendTheGreat(ul){
+        var childElementNodes = ul.children;
+        for (var i = 0; i < childElementNodes.length; i++){
+          childElementNodes[i].innerHTML += "...the great";
+          console.log(childElementNodes[i]);
+        }
+      }
+
+      function blueCircles(ul){
+        var childElementNodes = ul.children;
+        for (var i = 0; i < childElementNodes.length; i++){
+          childElementNodes[i].innerHTML = '<div style="background-color: blue; border-radius: 50px; height: 50px; width: 50px;"> </div>';
+          console.log(childElementNodes[i]);
+        }
+      }
+    </script>
+  </body>
+</html>
