@@ -3,6 +3,7 @@
     <title>WDI, meet DOM</title>
   </head>
   <body>
+    <input type="text" value="input a name">
     <ul>
       <li> Aldric </li>
       <li> Andrew </li>
@@ -55,6 +56,37 @@
           childElementNodes[i].innerHTML = '<div style="background-color: blue; border-radius: 50px; height: 50px; width: 50px;"> </div>';
           console.log(childElementNodes[i]);
         }
+      }
+
+      function groovyTrue(ul){
+        var childElementNodes = ul.children;
+        for (var i = 0; i < childElementNodes.length; i++){
+          childElementNodes[i].setAttribute('groovy', true);
+          console.log(childElementNodes[i]);
+        }
+      }
+
+      function classTeacher(ul){
+        var childElementNodes = ul.children;
+        for (var i = 0; i < childElementNodes.length; i++){
+          childElementNodes[i].className = 'teacher';
+          console.log(childElementNodes[i]);
+        }
+      }
+
+      function valueOfTextField(){
+        var tf = document.body.firstElementChild;
+        return tf.value;
+      }
+
+      function changeTagFont(tagName, fFamily){
+        //get all instances of a tag
+        var tags = document.getElementsByTagName(tagName);
+        // iterate on array of nodes
+        for (var i = 0; i < tags.length; i++){
+          tags[i].style.fontFamily = fFamily;
+        }
+        //set the font family to be the specified font
       }
     </script>
   </body>
