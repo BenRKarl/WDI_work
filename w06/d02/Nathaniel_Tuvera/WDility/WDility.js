@@ -17,21 +17,16 @@ var WDility = {
     return drop
   },
 
-  map: function(array, func) {
-    for (var i = 0; i < array.length; i++){
-      array
-    };
-      return
+  map: function(array,func) {
+    var map = array.map(function(x) { return x + 1 });
+    return map
   },
 
   select: function(array,func) {
-    array.prototype.select = function() {
-      for (i = 0; i < array.length; i++) {
-        this[i] >= 2;
-      }
+    var filtered = array.filter(function(x) {return x > 2; });
 
-    return array.select
-    }
+  return filtered
+
   },
 
   unique: function() {
@@ -39,12 +34,10 @@ var WDility = {
 
   },
 
-  reduce: function() {
-
-
+  reduce: function(array, func) {
   }
-
 };
+
 
 
 
