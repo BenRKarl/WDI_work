@@ -33,17 +33,11 @@ var WDility = {
     return newArray;
   },
 
-  // reduce: function(array, func) {
-  //   while (array.length > 1) {
-  //     if (func === "+") {
-  //     array[1] = (array[0] + array[1]);
-  //     array.shift();
-  //     } else if (func === "*") {
-  //       array[1] = (array[0] + array[1]);
-  //       array.shift();
-  //     }
-  //   }
-  //   return array[0];
-  // }
-
+  reduce: function(array) {
+    while (array.length > 1) {
+      array[array.length - 2] = array[array.length - 1] + array[array.length - 2];
+      array.pop();
+    }
+    return array[0];
+  }
 };
