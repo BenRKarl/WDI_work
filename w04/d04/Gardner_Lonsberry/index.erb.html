@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product</title>
+</head>
+<body>
+  
+  <div id="price">
+
+    $32.11
+
+  </div>
+
+  <div id="time">
+    in 6 hours
+
+  </div>
+
+  <div id="stock">
+    in stock
+  </div>
+
+</body>
+</html>
