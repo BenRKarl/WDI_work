@@ -59,4 +59,51 @@ var myObj = {name: 'Lich', age: 3, hobby: 'Fly Fishing'};
 myObj['name'];
 myObj.name;
 
+// day 2 of week 6
+  //calculator in/as an object literal (library..?)
 
+var calculator = {
+  add: function(a, b){
+    return(a + b);
+  },
+  subtract: function(a, b){
+    return(a - b);
+  },
+  multiply: function(a, b){
+    return(a * b);
+  },
+  divide: function(a, b){
+    return(a / b);
+  },
+  calc: function(a, b, operation){
+    switch(operation){
+      case 'add':
+        return this.add(a, b);
+        break;
+        case 'subtract':
+        return this.subtract(a, b);
+        break;
+    }
+  }
+}
+
+// constructor function
+function Person (name){
+  this.name = name;
+}
+
+Person.prototype = {
+  warmBlooded: true,
+  jump: function(){
+    console.log('I am jumping man');
+  }
+}
+
+var bob = new Person('Robert');
+// new keyword --> make empty obj. set obj proto to const function's prototype, evaluate the function where 'this' is the new obj.
+
+//give prototype a new behavior/abil.
+Person.prototype.sing = 'tralalalala'
+// bob.sing  will work
+bob.__proto__.sing = 'tralalalala' //will do same thing
+// * Person.prototype is the obj literal (hash)
