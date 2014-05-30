@@ -1,3 +1,15 @@
 require_relative '../lib/word_ladder'
 
+describe '#is_neighbor?' do
+  it 'returns true if the words are neighbors' do
+    expect(is_neighbor?("live", "love")).to be true
+  end
+end
+
+describe '#word_ladder_neighbors(word)' do
+  it 'returns the correct array of neighbors when given a '
+  expect (word_ladder_neighbors('aloe'))
+end
+
+can x out of tests
 
