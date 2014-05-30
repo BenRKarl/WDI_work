@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WDI Yo</title>
+</head>
+<body>
+  <ul>
+    <li>
+      Aldric
+    </li>
+    <li>
+      Matt
+    </li>
+    <li>
+      Kathew
+    </li>
+    <li>
+      Andrew
+    </li>
+  </ul>
+
+  <script>
+  function filterByNodeType(num){
+    var childNodes = document.body.childNodes;
+    for (var i = 0; i < childNodes.length; i++){
+      if(childNodes[i].nodeType == num){
+        console.log(childNodes[i])
+      }
+    }
+  }
+  </script>
+
+</body>
+</html>
