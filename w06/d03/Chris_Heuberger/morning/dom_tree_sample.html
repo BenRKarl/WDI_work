@@ -1,16 +1,24 @@
-<head>
-  <title>titley the title</title>
-</head>
-<body>
-  <ul>
-    <li class="colorizable">heyooo</li>
-    <li class="colorizable">whaaaa</li>
-    <li class="colorizable">okayyyy</li>
+<html>
+ <head>
+    <title>WDI, meet DOM</title>
+  </head>
+  <body>
+    <input type="text" id="input">
+    <ul id="students"></ul>
+    <ul id="smileys"></ul>
 
-  </ul>
-  <input type="text" id="input">
-  <div>whhhaaaa</div>
-  <div>pool party at the pool</div>
+    <ul id="teachers">
+      <li class="teacher colorizable" id="aldric"> Aldric </li>
+      <li class="teacher" id="andrew"> Andrew </li>
+      <li class="teacher" id="matt"> Matt </li>
+    </ul>
+    <div>
+      The Rails 4 Way
+      <span>Everything you ever wanted to know</span>
+      <span>About building an Enterprise Class Rails app</span>
+    </div>
+    <div class="colorizable">Secrets of the JavaScript Ninja</div>
+    <div>Programming and Object Oriented Design in Ruby</div>
     <script>
       function filterByNodeType(num){
         var childNodes = document.body.childNodes;
@@ -20,119 +28,143 @@
           }
         }
       }
+      // command allowed for in browser console: filterByNodeType(1)
+      // command allowed for in browser console: filterByNodeType(3)
       function logChildNodes(){
         var childNodes = document.body.childNodes;
         for (var i = 0; i < childNodes.length; i++){
           console.log(childNodes[i]);
         }
       }
+      // command allowed for in browser console: logChildNodes()
       function logChildren(){
         var children = document.body.children;
         for (var i = 0; i < children.length; i++){
-          console.log(children);
+          console.log(children[i]);
         }
       }
-      function appendNode(ul){
+      // command allowed for in browser console: logChildren()
+      function appendTheGreat(ul){
         var childElementNodes = ul.children;
         for (var i = 0; i < childElementNodes.length; i++){
           childElementNodes[i].innerHTML += '...the great';
         }
       }
-      function blueCircles(ul){
+      // command allowed for in browser console: appendNode(document.body.firstElementChild)
+      function blueCircleBomb(ul){
         var childElementNodes = ul.children;
         for (var i = 0; i < childElementNodes.length; i++){
-          childElementNodes[i].style.innerHTML = "<div
-            style='height: 20px; width: 20px;
-            background-color: blue; border_radius: 20px'></div>";
+          childElementNodes[i].innerHTML = "<div style='height: 20px; width: 20px; background-color: cyan; border-radius: 20px'></div>"
         }
       }
-      function makeChildGroovy(ul){
+      // command allowed for in browser console: ul = document.body.firstElementChild
+      // command allowed for in browser console: blueCircles(ul)
+      function makeChildrenGroovy(ul){
         var childElementNodes = ul.children;
         for (var i = 0; i < childElementNodes.length; i++){
           childElementNodes[i].setAttribute('groovy', 'true');
         }
       }
-      function setClassTeacher(ul){
+      // command allowed for in browser console: ul = document.body.firstElementChild
+      // command allowed for in browser console: makeChildGroovy(ul)
+      function setClassToTeacher(ul){
         var childElementNodes = ul.children;
         for (var i = 0; i < childElementNodes.length; i++){
-          childElementNodes[i].className = 'teacher';
+          // childElementNodes[i].className = 'teacher'
+          childElementNodes[i].setAttribute('class', 'teacher');
         }
       }
+      // command allowed for in browser console: ul = document.body.firstElementChild
+      // command allowed for in browser console: setClassTeacher(ul)
       function getInput(){
-        var input = document.getElementById("input");
+        var input = document.getElementById('input');
         return input.value;
       }
+      // command allowed for in browser console: getInput()
       function changeTagFont(tagName, fontFamily){
+        // get all instances of a tag
         var elems = document.getElementsByTagName(tagName);
+        // iterate on array of nodes
         for (var i = 0; i < elems.length; i++){
+          //set the font family to be the specified font
           elems[i].style.fontFamily = fontFamily;
         }
       }
+      // command allowed for in browser console: changeTagFont('li', 'helvetica')
       function colorize(color){
+        // get all elements with colorizable class
         var elems = document.getElementsByClassName('colorizable');
+        // iterates on elements
         for (var i = 0; i < elems.length; i++){
+          //change backgroundColor property to specified color
           elems[i].style.backgroundColor = color;
         }
       }
+      // command allowed for in browser console: colorize(blue)
       function buildSquares(num, size){
         var elems = []
         for (var i = 0; i < num; i++){
           var square = document.createElement('div');
-          square.style.width = size+'px';
+          square.style.width  = size+'px';
           square.style.height = size+'px';
           elems.push(square);
         }
         return elems;
       }
-      function buildSmileyFace(num, size){
-        var elems = [];
+      // command allowed for in browser console: buildSquares(10, 100)
+      function buildSmileyFaces(num, size){
+        var elems= [];
         for (var i = 0; i < num; i++){
           var circle = document.createElement('div');
-          circle.style.width = size+'px';
+          circle.style.width  = size+'px';
           circle.style.height = size+'px';
           circle.style.borderRadius = size/2;
-          circle.style.backgroundColor = 'yellow';
-          var textNode = document.createTextNode('¯^_^');
+          circle.style.backgroundColor = randomColor();
+          circle.style.textAlign = "center";
+          circle.style.fontSize = size/2
+          var textNode = document.createTextNode('^_^');
           circle.appendChild(textNode);
           elems.push(circle);
         }
         return elems;
       }
-      function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      // command allowed for in browser console: buildSmileyFaces(10, 20)
+      function appendSmileysToDom(num, size){
+        var smileys = buildSmileyFaces(num, size);
+        var ul      = document.getElementById('smileys');
+        for (var i = 0; i < smileys.length; i++){
+          ul.appendChild(smileys[i]);
+        }
       }
+      // command allowed for in browser console: appendSmileysToDom(10, 20)
+      function randomColor(){
+        //return a random color from an array of colors
+        var colors = ['green', 'chartreuse', 'cyan', 'lightgreen', 'red', 'purple'];
+        var randomIndex = parseInt(Math.random()*colors.length)
+        return colors[randomIndex];
+      }
+      // command allowed for in browser console: randomColor()
       function createLiNodes(arr){
         elems = []
+        //iterates on array
         for (var i = 0; i < arr.length; i++){
-          var textNode = document.createTextNode(arr[i]);
-          var li       = document.createElement('li');
-          li.appendChild
-          arr.push(li);
+          var textNode  = document.createTextNode(arr[i]);
+          var li        = document.createElement('li');
+          li.appendChild(textNode);
+          elems.push(li);
         }
-        return arr
+        //build lis and push into array
+        return elems;
       }
+      // command allowed for in browser console: createLiNodes()
       function prependLiNodes(arr){
         var elems = createLiNodes(arr);
-        var ul    = document.getElementsById('students');
+        var ul    = document.getElementById('students');
         for (var i = 0; i < elems.length; i++){
           ul.insertBefore(elems[i], elems[i-1]);
         }
       }
-      function findTeacher(teacherName){
-        var teachersUl = document.getElementById('teachers');
-        var teacherLis = teachersUl.getElementsByTagName('li');
-        for (var i = 0; i < teacherLis.length; i++){
-          if (teacherLis[i].innerHTML === teacherName){
-            return teacherLis[i];
-          }
-        }
-      }
-      function replaceTeacher(newTeacherName, oldteacherName){
-        var newTeacherLi = document.createElement('li');
-        newteacherLi.innerHTML = newteacherName;
-        var oldTeacherLi = findTeacher(oldTeacherName);
-        teachersUl.replaceChild(newTeacherLi, oldTeacherLi);
-      }
+      // command allowed for in browser console: prependLiNodes()
       var protos = [
         'Nessa Nguyen',
         'Jeff Winkler',
@@ -156,6 +188,35 @@
         'Paul Gasberra',
         'Andrea Trapp',
         'Heidi Williams-Foy'
-      ]
+        ]
+        function findTeacher(teacherName){
+          var teachersUl = document.getElementById('teachers');
+          var teacherLis = teachersUl.getElementsByTagName('li');
+          for (var i = 0; i < teacherLis.length; i++){
+            if (teacherLis[i].innerHTML.replace(/ /g, '') == teacherName){
+              return teacherLis[i];
+            }
+          }
+        }
+        // command allowed for in browser console: findTeacher(Sally)
+        function teachersUl(){
+          return document.getElementById('teachers');
+        }
+        // command allowed for in browser console: teachersUl()
+        function removeTeacher(teacherName){
+          var teacher = findTeacher(teacherName);
+          var teachersUlEl = teachersUl();
+          teachersUlEl.removeChild(teacher);
+        }
+        // command allowed for in browser console: removeTeacher(Andrew)
+        function replaceTeacher(newTeacherName, oldTeacherName){
+        // parentElem.replaceChild(elem, currentElem)
+          var newTeacherLi = document.createElement('li');
+          newTeacherLi.innerHTML = newTeacherName;
+          var oldTeacherLi = findTeacher(oldTeacherName);
+          teachersUl().replaceChild(newTeacherLi, oldTeacherLi);
+        }
+        // command allowed for in browser console: replaceTeacher(Sam, Aldric)
     </script>
-</body>
+  </body>
+</html>

@@ -1,15 +1,15 @@
 
 var WDility = {
-  each: function(array, func) {
+  each: function(array, func){
     for (i in array){
       func(array[i]);
     }
     return array
   },
-  first: function(array) {
+  first: function(array){
     return array[0];
   },
-  last: function(array) {
+  last: function(array){
     var i = (array.length - 1);
     return array[i];
   },
@@ -22,7 +22,7 @@ var WDility = {
   },
   select: function(array, func) {
     var newArray = [];
-    for (var i in array) {
+    for (var i in array){
       if (func(array[i])) {
         newArray.push(array[i]);
       }
@@ -46,13 +46,34 @@ var WDility = {
       memo = func(memo, array[i]);
     }
     return memo
+  },
+  delete: function(array, value){
+    var newArray = [];
+    for (var i in array){
+      if (array[i] != value){
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  },
+  deleteAt: function(array, index){
+    var newArray = [];
+    for (var i in array){
+      if (i != index){
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  },
+  include: function(array, value){
+    for (var i in array){
+      if (array[i] === value){
+        return true;
+      }
+    }
+    return false
+  },
+  include2: function(array, value){
+    return (value in array);
   }
 };
-
-
-
-// #####Commit 6-7 (Bonus)
-// - Implement:
-//   - .reject(array, function)
-//   - .unique(array)
-
