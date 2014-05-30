@@ -46,6 +46,51 @@ var WDility = {
       memo = func(memo, array[i]);
     }
     return memo;
+  },
+
+  delete: function(array, value){
+    var newArray = [];
+    for (var i in array){
+      if ( array[i] != value ){
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  },
+
+  deleteAt: function(array, index){
+    var newArray = [];
+    for (var i in array){
+      if ( i != index){
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  },
+
+  include: function(array, value){
+    for (var i in array){
+      if (array[i] === value){
+        return true;
+      }
+    }
+    return false;
+  },
+
+  includeB: function(array, value){
+    return (array.indexOf(value) != -1)
+  },
+
+  includeC: function(array, value){
+    if (value in array){
+      return true;
+    }
+    return false;
+  },
+
+  includeD: function(array, value){
+    return (value in array);
   }
+
 };
 
