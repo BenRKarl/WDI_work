@@ -14,25 +14,34 @@ $(function(){
 */
 
 
-function Item(taskText){
-  this.taskText = taskText;
-  this.el = undefined;
+
+
+
+
+
+
+var toDoApp {
+
+  Item: function Item(taskText){
+    this.taskText = taskText;
+    this.el = undefined;
+  },
+
+  createTask: function createTask(){
+    var userField = $('#item-field');
+    var newItem = new Item(userField.val())
+    var newNode = newItem.render().el;
+    $('#todo-list').append(newNode);
+    return false;
+  }
 }
 
-Item.prototype.render = function(){
+toDoApp.Item.prototype.render = function(){
   var listItem = $('<li>').html(this.taskText);
   this.el = listItem;
   return this;
 };
 
-function createTask(){
-  var userField = $('#item-field');
-  var newItem = new Item(userField.val())
-  var newNode = newItem.render().el;
-  $('#todo-list').append(newNode);
-  return false;
-}
-
 $(function(){
-  $('todo-form').on('submit', createTask);
+  $('#todo-form').on('submit', toDoApp.createTask);
 })
