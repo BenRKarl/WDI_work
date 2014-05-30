@@ -17,14 +17,12 @@ function theGreat(str) {
 }
 
 
-// doesn't work yet
+// doesn't work ...yet
 function capitals(str) {
   var obj = new String(str);
   arr = obj.split(" ");
   arr.forEach(function (str, indx){
     arr[indx].replace(arr[indx][0], str[0].toUpperCase());
-    console.log("str[0] = "+ str[0].toUpperCase());
-    console.log(arr[indx]);
     return arr.join(" ");
   })
   console.log(arr);
