@@ -11,7 +11,7 @@ class SquaresController < ApplicationController
   # post '/squares' => 'squares#create'
   def create
     square = Square.create(square_params)
-    binding.pry
+    # binding.pry
     redirect_to square_path(square)
   end
 
@@ -43,15 +43,5 @@ class SquaresController < ApplicationController
   def square_params
     params.require(:square).permit(:side_length, :border_radius, :color)
   end
-
-
-
-
-
-
-
-
-
-
 
 end
