@@ -56,4 +56,35 @@ describe("WDility", function() {
     });
   });
 
+
+  describe("#delete", function(){
+    it("should return an array with a specified value removed", function(){
+      var actual = WDility.delete([1,2,3,4,3], 3);
+      var expected = [1,2,4];
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe("#deleteAt", function(){
+    it("should return an array with a specified index's value removed", function(){
+      var actual = WDility.deleteAt([1,2,3,4], 2);
+      var expected = [1,2,4];
+      expect(actual).toEqual(expected);
+    });
+  });
+
+
+  describe("#include", function(){
+    it('should return true/false if a specified value is presence', function(){
+      var actual = WDility.include([1,2,3,4],2);
+      var expected = true;
+      expect(actual).toEqual(expected);
+      var actual = WDility.include([1,2,3,4],5);
+      var expected = false;
+      expect(actual).toEqual(expected);
+    });
+  });
+
+
+
 });
