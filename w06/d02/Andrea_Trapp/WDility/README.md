@@ -79,6 +79,6 @@ var WDility = {
 
 #####Commit 6-7 (Bonus)
 - Implement:
-  - .reject(array, function)
+  - .reduce(array, function)
   - .unique(array)
 
