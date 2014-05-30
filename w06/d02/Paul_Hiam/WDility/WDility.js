@@ -70,6 +70,15 @@ var WDility = {
       }
     }
     return newArray;
+  },
+
+  include: function(array, val){
+    for (var i in array){
+      if (array[i] === val){
+        return true;
+      }
+    }
+    return false;
   }
 
 };
