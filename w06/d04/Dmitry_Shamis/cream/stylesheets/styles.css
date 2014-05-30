@@ -1,0 +1,7 @@
+.dollars {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  color: green;
+  font-size: 10em;
+}

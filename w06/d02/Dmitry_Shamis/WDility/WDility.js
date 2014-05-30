@@ -62,6 +62,14 @@ var WDility = {
   deleteAt: function (array, index) {
     array.splice(index, 1);
     return array;
+  },
+
+  include: function (array, value) {
+    if (value in array) {
+      return true
+    } else {
+      return false
+    }
   }
 };
 
