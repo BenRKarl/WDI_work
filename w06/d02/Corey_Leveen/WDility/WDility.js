@@ -65,6 +65,15 @@ var WDility = {
       }
     }
     return array;
+  },
+
+  include: function(array, value){
+    for (var i in array){
+      if (array[i] === value){
+        return true;
+      }
+    }
+    return false;
   }
 
 };
