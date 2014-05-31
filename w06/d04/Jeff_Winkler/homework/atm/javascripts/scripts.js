@@ -133,7 +133,7 @@ window.onload = function () {
     } else {
       this.style.backgroundColor = 'green';
       currType = 'balance';
-      message(currAccount, currType);
+      message();
       resetColors('all');
     }
   })
