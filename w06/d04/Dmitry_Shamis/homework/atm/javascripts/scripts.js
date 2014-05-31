@@ -17,6 +17,7 @@ var checking = {
     if (pEl) {
       var checkingEl = document.querySelector('.checking');
       checkingEl.removeChild(pEl);
+      checkingEl.style.backgroundColor = "lightgrey";
     }
   },
 
@@ -24,9 +25,13 @@ var checking = {
     if (this.cash() > this.balance()) {
       var checkingEl = document.querySelector('.checking');
       var pEl = document.createElement('p');
-      pEl.className = "checking-p";
-      pEl.innerHTML = "Your checking account does not have the required funds."
-      checkingEl.appendChild(pEl)
+      if (document.querySelector('.checking-p')) {
+      } else {
+        pEl.className = "checking-p";
+        pEl.innerHTML = "Your checking account does not have the required funds."
+        checkingEl.appendChild(pEl)
+        checkingEl.style.backgroundColor = "red";
+      }
     } else {
       var newBalance = this.balance() - this.cash();
       document.querySelector('.checking-balance').innerHTML = newBalance
@@ -53,6 +58,7 @@ var savings = {
     if (pEl) {
       var savingsEl = document.querySelector('.savings');
       savingsEl.removeChild(pEl);
+      savingsEl.style.backgroundColor = "lightgrey";
     }
   },
 
@@ -60,9 +66,13 @@ var savings = {
     if (this.cash() > this.balance()) {
       var savingsEl = document.querySelector('.savings');
       var pEl = document.createElement('p');
-      pEl.className = "savings-p";
-      pEl.innerHTML = "Your savings account does not have the required funds.";
-      savingsEl.appendChild(pEl);
+      if (document.querySelector('.savings-p')) {
+      } else {
+        pEl.className = "savings-p";
+        pEl.innerHTML = "Your savings account does not have the required funds.";
+        savingsEl.appendChild(pEl);
+        savingsEl.style.backgroundColor = "red";
+      }
     } else {
       var newBalance = this.balance() - this.cash();
       document.querySelector('.savings-balance').innerHTML = newBalance
@@ -85,7 +95,6 @@ window.onload = function () {
   function updateCheckingBalanceAfterWithdrawal(e) {
     e.preventDefault();
     checking.makeWithdrawal();
-    checking.updateDisplay();
   };
 
   function updateSavingsBalanceAfterDeposit(e) {
@@ -97,7 +106,6 @@ window.onload = function () {
   function updateSavingsBalanceAfterWithdrawal(e) {
     e.preventDefault();
     savings.makeWithdrawal();
-    savings.updateDisplay();
   };
 
   checkingDeposit.addEventListener('click', updateCheckingBalanceAfterDeposit);
