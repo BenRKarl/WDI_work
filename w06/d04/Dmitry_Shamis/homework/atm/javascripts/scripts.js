@@ -1,58 +1,107 @@
-var atmApp = {
-  BankAccount: function (name) {
-    this.name = name;
-    this.balance = 0;
-    this.el = undefined
+var checking = {
+  balance: function (){
+    return parseInt(document.querySelector('.checking-balance').innerHTML)
   },
 
-  accountsList: function () {
-    return document.getElementById('accounts-list');
+  cash: function () {
+    return parseInt(document.querySelector('.checking-cash').value)
   },
 
-  createBankAccount: function (name) {
-    var name = new this.BankAccount(name);
-    name.render();
-    this.accountsList().appendChild(name.el);
+  makeDeposit: function() {
+    var newBalance = this.balance() + this.cash();
+    document.querySelector('.checking-balance').innerHTML = newBalance
+  },
+
+  updateDisplay: function () {
+    var pEl = document.querySelector('.checking-p');
+    if (pEl) {
+      var checkingEl = document.querySelector('.checking');
+      checkingEl.removeChild(pEl);
+    }
+  },
+
+  makeWithdrawal: function() {
+    if (this.cash() > this.balance()) {
+      var checkingEl = document.querySelector('.checking');
+      var pEl = document.createElement('p');
+      pEl.className = "checking-p";
+      pEl.innerHTML = "Your checking account does not have the required funds."
+      checkingEl.appendChild(pEl)
+    } else {
+      var newBalance = this.balance() - this.cash();
+      document.querySelector('.checking-balance').innerHTML = newBalance
+    }
   }
-};
+}
 
-atmApp.BankAccount.prototype.render = function () {
-  var liEl = document.createElement('li');
-  liEl.setAttribute('id', this.name);
-  liEl.innerHTML = 'Account: ' + this.name + ', Balance: $' + this.balance + " ";
-  var bankActionEl = document.createElement('div');
-  var formEl = document.createElement('form');
-  formEl.setAttribute('id', 'bank-action');
-  var cashEl = document.createElement('input');
-  cashEl.setAttribute('id', 'cash-amount');
-  var depositEl = document.createElement('button');
-  depositEl.innerHTML = "Make Deposit";
-  depositEl.setAttribute('id', 'deposit');
-  var withdrawalEl = document.createElement('button');
-  withdrawalEl.innerHTML = "Make Withdrawal";
-  withdrawalEl.setAttribute('id', 'withdrawal');
-  formEl.appendChild(cashEl);
-  formEl.appendChild(depositEl);
-  formEl.appendChild(withdrawalEl);
-  bankActionEl.appendChild(formEl);
-  liEl.appendChild(bankActionEl);
-  this.el = liEl;
-  return this;
-};
+var savings = {
+  balance: function (){
+    return parseInt(document.querySelector('.savings-balance').innerHTML)
+  },
 
+  cash: function () {
+    return parseInt(document.querySelector('.savings-cash').value)
+  },
 
-  // makeDeposit: function(cash) {
-  //   var newBalance = this.balance + cash;
-  //   this.balance = newBalance;
-  //   console.log("Your balance is now $" + newBalance);
-  // },
+  makeDeposit: function() {
+    var newBalance = this.balance() + this.cash();
+    document.querySelector('.savings-balance').innerHTML = newBalance
+  },
 
-  // makeWithdrawal: function(cash) {
-  //   if (cash > this.balance) {
-  //     console.log("Sorry you're short on money...");
-  //   } else {
-  //     var newBalance = this.balance - cash;
-  //     this.balance = newBalance;
-  //     console.log("Your balance is now $" + newBalance);
-  //   }
-  // }
+  updateDisplay: function () {
+    var pEl = document.querySelector('.savings-p');
+    if (pEl) {
+      var savingsEl = document.querySelector('.savings');
+      savingsEl.removeChild(pEl);
+    }
+  },
+
+  makeWithdrawal: function() {
+    if (this.cash() > this.balance()) {
+      var savingsEl = document.querySelector('.savings');
+      var pEl = document.createElement('p');
+      pEl.className = "savings-p";
+      pEl.innerHTML = "Your savings account does not have the required funds.";
+      savingsEl.appendChild(pEl);
+    } else {
+      var newBalance = this.balance() - this.cash();
+      document.querySelector('.savings-balance').innerHTML = newBalance
+    }
+  }
+}
+
+window.onload = function () {
+  var checkingDeposit = document.querySelector('.checking-deposit-button');
+  var checkingWithdrawal = document.querySelector('.checking-withdrawal-button');
+  var savingsDeposit = document.querySelector('.savings-deposit-button');
+  var savingsWithdrawal = document.querySelector('.savings-withdrawal-button');
+
+  function updateCheckingBalanceAfterDeposit(e) {
+    e.preventDefault();
+    checking.makeDeposit();
+    checking.updateDisplay();
+  };
+
+  function updateCheckingBalanceAfterWithdrawal(e) {
+    e.preventDefault();
+    checking.makeWithdrawal();
+    checking.updateDisplay();
+  };
+
+  function updateSavingsBalanceAfterDeposit(e) {
+    e.preventDefault();
+    savings.makeDeposit();
+    savings.updateDisplay();
+  };
+
+  function updateSavingsBalanceAfterWithdrawal(e) {
+    e.preventDefault();
+    savings.makeWithdrawal();
+    savings.updateDisplay();
+  };
+
+  checkingDeposit.addEventListener('click', updateCheckingBalanceAfterDeposit);
+  checkingWithdrawal.addEventListener('click', updateCheckingBalanceAfterWithdrawal);
+  savingsDeposit.addEventListener('click', updateSavingsBalanceAfterDeposit);
+  savingsWithdrawal.addEventListener('click', updateSavingsBalanceAfterWithdrawal);
+}
