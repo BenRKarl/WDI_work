@@ -1,16 +1,24 @@
-var BankAccount = function BankAccount (balance){
+var BankAccount = function BankAccount (name, balance){
+  this.name = name
   this.balance = balance;
-  this.balanceEl = document.getElementById('account-balance');
+  this.balanceEl = function(){
+    if (this.name === 'checking'){
+      return document.getElementById('checking-account-balance');
+    } else {
+      return document.getElementById('savings-account-balance');
+    }
+  }
 };
 
 BankAccount.prototype = {
   render: function(balance){
-    this.balanceEl.innerHTML = "Account Balance: $" + balance;
+    this.balanceEl().innerHTML = "Account Balance: $" + balance;
+    if (balance < 0){
+      this.balanceEl().parentElement.style.backgroundColor = 'pink';
+    } else if (balance > 0){
+      this.balanceEl().parentElement.style.backgroundColor = 'lightgrey'
+    }
   },
-
-  // currentBalance: function(){
-  //   return this.balance;
-  // },
 
   accountBalance: function(){
     return document.getElementById('account-balance');
@@ -19,10 +27,6 @@ BankAccount.prototype = {
   startBalance: function(balance){
     this.accountBalance().appendChild(render(this.balance).el);
   },
-
-  // hasExistingBalance: function(){
-  //   return this.accountBalance().children.length != 0;
-  // },
 
   accountDeposit: function(balance){
     var newBalance = this.balance + balance;
@@ -38,16 +42,32 @@ BankAccount.prototype = {
 };
 
 window.onload = function(){
-  var account = new BankAccount(0);
-  var depositButton = document.getElementById('deposit-button');
-  var withdrawalButton = document.getElementById('withdrawal-button');
-  var userInput = document.getElementById('account-input-field');
+  //checking account
+  var checkingAccount = new BankAccount('checking', 0);
+  checkingAccount.render(0)
+  var checkingDepositButton = document.getElementById('checking-deposit-button');
+  var checkingWithdrawalButton = document.getElementById('checking-withdrawal-button');
+  var checkingUserInput = document.getElementById('checking-account-input-field');
 
-  depositButton.addEventListener('click', function(){
-    account.accountDeposit(parseInt(userInput.value));
+  checkingDepositButton.addEventListener('click', function(){
+    checkingAccount.accountDeposit(parseInt(checkingUserInput.value));
   });
 
-  withdrawalButton.addEventListener('click', function(){
-    account.accountWithdrawal(parseInt(userInput.value));
+  checkingWithdrawalButton.addEventListener('click', function(){
+    checkingAccount.accountWithdrawal(parseInt(checkingUserInput.value));
+  });
+  //savings account
+  var savingsAccount = new BankAccount('savings', 0);
+  savingsAccount.render(0)
+  var savingsDepositButton = document.getElementById('savings-deposit-button');
+  var savingsWithdrawalButton = document.getElementById('savings-withdrawal-button');
+  var savingsUserInput = document.getElementById('savings-account-input-field');
+
+  savingsDepositButton.addEventListener('click', function(){
+    savingsAccount.accountDeposit(parseInt(savingsUserInput.value));
+  });
+
+  savingsWithdrawalButton.addEventListener('click', function(){
+    savingsAccount.accountWithdrawal(parseInt(savingsUserInput.value));
   });
 };
