@@ -24,7 +24,7 @@ var atmApp = {
   updateBal: function(account, newBal) {    
     var account_id =  account + '_bal' 
     var balance = document.getElementById(account_id);  
-    balance.innerHTML = (newBal).toString();
+    balance.innerHTML = newBal.toString();
   },
 
   withdraw: function(account, amount) {
@@ -49,22 +49,23 @@ var atmApp = {
 window.onload = function() {
   var amount = atmApp.getAmount();
   var account = atmApp.getAccount();
+  var newBal = 0;
 
   var buttonWithdraw = document.getElementById('withdraw');
-  buttonWithdraw.addEventListener('click', function() {
-    var newBal = atmApp.withdraw(account, amount);
-    atmApp.updateBal(account, newBal); 
-    return false;   
-  //  if (account === 'checking' && )
+  buttonWithdraw.addEventListener('click', function(e) {
+    e.preventDefault();
+    newBal = atmApp.withdraw(account, amount);
+
   });
 
   var buttonDeposit = document.getElementById('deposit');
-  buttonDeposit.addEventListener('click', function() {
-    var newBal = atmApp.deposit(account, amount);
-    atmApp.updateBal(account, newBal); 
-    return false;    
+  buttonDeposit.addEventListener('click', function(e) {
+    e.preventDefault();
+    newBal = atmApp.deposit(account, amount);
   });    
-
+  
+  atmApp.updateBal(account, newBal); 
+  
   if (atmApp.checkingBal === 0) {
     document.getElementById('checking_bal').style.backgroundColor = 'red';
   } else if (atmApp.savingBal === 0) {
