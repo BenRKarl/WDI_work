@@ -30,7 +30,7 @@ $(function(){
 
   setInterval(function(){
     letThereBeLove(10);
-  }, 125)
+  }, 500)
 
 
 })
