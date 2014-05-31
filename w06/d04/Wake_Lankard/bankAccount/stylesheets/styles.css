@@ -1,0 +1,14 @@
+.account {
+  border: thin black solid;
+  background-color: gray;
+}
+.balance {
+  width:20px;
+  position: absolute;
+  left: 0;
+}
+.relative-balance-div{
+  position: relative;
+}
+
+#checking-delta
