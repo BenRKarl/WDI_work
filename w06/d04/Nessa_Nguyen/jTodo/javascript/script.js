@@ -31,5 +31,5 @@ todoApp.Item.prototype.render = function() {
 
 
 $(function() {
-  $('#todo-form').on('submit', todoApp.createTask);
+  $('#todo-form').on('submit', function(){ return todoApp.createTask();});
 })
