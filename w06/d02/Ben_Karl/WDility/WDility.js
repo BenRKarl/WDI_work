@@ -51,5 +51,34 @@ var WDility = {
       newArray.push(uniqueDictionary[i]);
     }
     return newArray;
+  },
+
+  delete: function(array, value) {
+    var newArray = [];
+    for (var i in array) {
+      if (array[i] != value)
+        newArray.push(array[i]);
+    }
+    return newArray;
+  },
+
+  deleteAt: function(array, index) {
+    var newArray = [];
+    for (var i in array) {
+      if (i != index) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  },
+
+  include: function(array, value) {
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] === value) {
+        return true;
+      }
+    }
+    return false;
   }
+
 };
