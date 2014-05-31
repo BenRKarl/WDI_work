@@ -114,19 +114,19 @@ var todoApp = {
 };
 
 
-  ////         <li>
-  ////           <div class="items">
-  ////             Thing I need to do
-  ////           </div>
-  ////             <div class="actions">
-  ////               <span class="meta-data">
-  ////                 Created on: 5/29/2014
-  ////               </span>
-  ////             </div>
-  ////               <button class="complete">
-  ////                 completed
-  ////               </button>
-  ////         </li>
+// <li>
+//  <div>
+//    Happy Thing I love to do
+//  </div>
+//  <span class="meta-data">
+//    Created On: 5/30/2014
+//  </span>
+//  <div class="items">
+//  </div>
+//  <button class="complete">
+//    completed
+//  </button>
+// </li>
 
 todoApp.ToDoItem.prototype.dateSpan = function(text){
   var metaDataEL = document.createElement('span');
