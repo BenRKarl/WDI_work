@@ -14,7 +14,7 @@
     <div class="left">
       <h3>Checking account</h3> 
 
-      <p id="checking_bal">800.09</p>
+      <p id="checking_bal">800</p>
 
     </div>
 
@@ -32,17 +32,16 @@
   
     <div class="actions">
       <p class='center'>Check the account would you like to perform action on:</p>
-      <form id='account' class='center'>
+      <form id='account_form' class='center'>
         <input type='radio' name='account' value='checking'></input> Checking
         <input type='radio' name='account' value='saving'></input> Saving
-      </form> 
+      </form>
 
       <form>
-        <input id='amount'></input>
-        <button id='withdraw'>Withdraw</button>
-        <button id='deposit'>Deposit</button>
-      </form>
-      
+        <input id='deposit' placeholder='Deposit amount'></input>
+        <input id='withdrawal' placeholder='Withdrawal amount'></input>
+        <button id='update_bal'>Update Balance</button>
+      </form>  
 
       <p id='error'></p>
       <p>*Note: You can only withdraw an amount that is a multiple of $10.00.</p>
