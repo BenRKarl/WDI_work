@@ -19,7 +19,8 @@ var savings = new bankAccount(100000);
 bankAccount.prototype.render = function(){
   var bal = document.createElement('h3');
   bal.innerHTML = this.balance;
-}
+  return this;
+};
 
 
   // var checking = {
@@ -55,7 +56,6 @@ bankAccount.prototype.render = function(){
 
 
 window.onload = function(){
-
   var checkingInput = document.getElementById('checking-field');
   var checkingWithdrawButton = document.getElementById('checking-withdraw-button');
   var checkingDepositButton = document.getElementById('checking-deposit-button');
