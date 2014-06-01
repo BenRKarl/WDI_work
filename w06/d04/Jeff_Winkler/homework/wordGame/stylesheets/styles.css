@@ -12,3 +12,19 @@
 .guess-div {
   text-decoration: underline;
 }
+
+#letter-form {
+  display: inline;
+}
+
+#letter-input {
+  display: inline;
+}
+
+.subtitle {
+  display: inline;
+}
+
+.guess-p {
+  font-size: 30px;
+}

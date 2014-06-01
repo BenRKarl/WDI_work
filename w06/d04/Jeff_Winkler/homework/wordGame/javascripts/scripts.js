@@ -25,6 +25,7 @@ function reset() {
   updateWord();
   renderString(alphaArray, '#alphabet-div');
   renderString(game.currGuess, '#word-div');
+  $('#count').html("");
 }
 
 function updateWord() {
@@ -50,13 +51,14 @@ function receiveGuess(letter) {
     game.usedLetters.push(letter);
     if ($.inArray(letter, game.currWord) != -1) {
       game.correctLetters.push(letter);
-      updateWord();
-      testFullWord();
+      //updateWord();
+      //testFullWord();
     } else {
       game.numGuesses += 1;
+      $('#count').html(game.numGuesses);
       if (game.numGuesses > 7) {
         game.gameStatus = 0;
-        window.alert("Game Over");
+        window.alert("Game Over.  The word was "+game.currWord.join("")+".");
       }
     }
   } else {
@@ -70,6 +72,7 @@ function coolStrikethrough() {
     currValue = value.innerHTML;
     if ($.inArray(currValue, game.usedLetters) != -1) {
       $(value).css('text-decoration', 'line-through');
+      $(value).css('background-color', 'black');
     }
   });
 
@@ -91,4 +94,30 @@ function renderString(array, container) {
 
 $(function() {
   reset();
+  $('#letter-form').on('submit', function(e){
+    e.preventDefault();
+    var currStr = $('#letter-input').val().toUpperCase();
+    if ($.inArray(currStr, alphaArray) == -1) {
+      window.alert("Invalid input.  Please enter a single letter.");
+    } else {
+
+      if (game.gameStatus == 1) {
+        receiveGuess(currStr);
+        updateWord();
+        renderString(game.currGuess, '#word-div');
+        coolStrikethrough();
+        testFullWord();
+      } else {
+        window.alert("Game already over.  Hit Reset to play again.")
+      }
+    }
+    $('#letter-input').val("");
+  });
+  $('#reset-button').on('click', function() {
+    reset();
+    return false;
+  });
+  $('#give-button').on('click', function() {
+    window.alert("The word is "+game.currWord.join("")+'.');
+  });
 })
