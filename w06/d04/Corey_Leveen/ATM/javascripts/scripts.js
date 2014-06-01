@@ -36,26 +36,64 @@ window.onload = function() {
   checkingBalance.innerHTML = "$"+checking.balance;
   savingsBalance.innerHTML = "$"+savings.balance;
 
+    if (checking.balance == 0) {
+      checkingBalance.style.color = "red";
+    }
+    else {
+      checkingBalance.style.color = "gray";
+    }
+
+    if (savings.balance == 0) {
+      savingsBalance.style.color = "red";
+    }
+    else {
+      savingsBalance.style.color = "gray";
+    }
+
   checkingWithdrawButton.addEventListener('click', function() {
     checking.withdraw(parseInt(checkingInput.value, 10));
     checkingBalance.innerHTML = "$"+checking.balance;
     checkingInput.value = "";
+    if (checking.balance == 0) {
+      checkingBalance.style.color = "red";
+    }
+    else {
+      checkingBalance.style.color = "gray";
+    }
   });
   checkingDepositButton.addEventListener('click', function() {
     checking.deposit(parseInt(checkingInput.value, 10));
     checkingBalance.innerHTML = "$"+checking.balance;
     checkingInput.value = "";
+    if (checking.balance == 0) {
+      checkingBalance.style.color = "red";
+    }
+    else {
+      checkingBalance.style.color = "gray";
+    }
   });
 
   savingsWithdrawButton.addEventListener('click', function() {
     savings.withdraw(parseInt(savingsInput.value, 10));
     savingsBalance.innerHTML = "$"+savings.balance;
     savingsInput.value = "";
+    if (savings.balance == 0) {
+      savingsBalance.style.color = "red";
+    }
+    else {
+      savingsBalance.style.color = "gray";
+    }
   });
   savingsDepositButton.addEventListener('click', function() {
     savings.deposit(parseInt(savingsInput.value, 10));
     savingsBalance.innerHTML = "$"+savings.balance;
     savingsInput.value = "";
+    if (savings.balance == 0) {
+      savingsBalance.style.color = "red";
+    }
+    else {
+      savingsBalance.style.color = "gray";
+    }
   });
 
 
