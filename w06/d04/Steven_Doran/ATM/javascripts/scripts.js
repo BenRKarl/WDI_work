@@ -2,17 +2,27 @@ console.log('Hi user!')
 
 BankAccount = function (name) {
    this.name = name;
-   this.balance = Math.floor(Math.random() * 10000 ).toFixed(2);
+   this.balance = 100;
+   // Math.floor(Math.random() * 10000 ).toFixed(2);
    this.el = document.querySelector('.account.' + name);
 };
 
 BankAccount.prototype = {
    displayBalance: function(){
-      this.balanceEl().innerHTML = 'Current Balance: $' + this.balance;
+      this.balanceEl().innerHTML = this.balance;
    },
    balanceEl: function(){
-      return document.querySelector('.balance.' + this.name);
+      return document.querySelector('.amount.' + this.name);
    },
+   // amountEl: function(){
+   //    return parseFloat(balanceEl().childNodes[0].nodeValue);
+   // },
+   // savingsBalanceEl: function(){
+   //    return document.querySelector('.amount.savings');
+   // },
+   // checkingBalanceEl: function(){
+   //    return document.querySelector('.amount.checking');
+   // },
    inputEl: function(){
       return document.querySelector('.input.' + this.name);
    },
@@ -34,11 +44,12 @@ BankAccount.prototype = {
       this.accountColor();
    },
    displayNewBalanceDeposit: function(){
-      this.balanceEl().innerHTML = 'Current Balance: $' + this.newBalanceDeposit();
+      this.balanceEl().innerHTML = this.newBalanceDeposit();
+      // this.balance = this.amountEl;
    },   
    newBalanceDeposit: function(){
-      this.balance = (parseFloat(this.balance) + parseFloat(this.inputValue())).toFixed(2);
-      return this.balance;
+      var newBalance = (parseFloat(this.balance) + parseFloat(this.inputValue())).toFixed(2);
+      return newBalance;
    },
    withdrawalButton: function(){
       return document.querySelector('.button.withdrawal.' + this.name);
@@ -55,11 +66,31 @@ BankAccount.prototype = {
       this.accountColor();
    },
    displayNewBalanceWithdrawal: function(){
-      this.balanceEl().innerHTML = 'Current Balance: $' + this.newBalanceWithdrawal();
+      this.balanceEl().innerHTML = this.newBalanceWithdrawal();
+      // this.balance = this.amountEl;
    },   
    newBalanceWithdrawal: function(){
-      this.balance = (parseFloat(this.balance) - parseFloat(this.inputValue())).toFixed(2);
-      return this.balance;
+      // if (parseFloat(this.balance) >= parseFloat(this.inputValue())){
+
+         this.balance = (parseFloat(this.balance) - parseFloat(this.inputValue())).toFixed(2);
+         return this.balance;
+         
+      // } else if (parseFloat(this.balance) < parseFloat(this.inputValue())){
+
+      //    if (this.balanceEl().className === 'amount checking'){
+         
+      //       var totalBalance = parseFloat(this.balance) + parseFloat(this.savingsBalanceEl().childNodes[0].nodeValue);
+
+      //       if (parseFloat(totalBalance) > parseFloat(this.inputValue())){
+      //          var newSavings = parseFloat(totalBalance) - parseFloat(this.inputValue());
+
+      //          this.savingsBalanceEl().innerHTML = newSavings;
+      //          this.balance = 0;
+      //          console.log(this.balance);
+      //          this.displayBalance();
+      //       };
+      //    };
+      // };
    },
    accountColor: function(){
       if (this.balance > 0){
