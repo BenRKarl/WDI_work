@@ -1,0 +1,14 @@
+
+
+.gen-div {
+  text-align: center;
+}
+
+.letter-div {
+  display: inline;
+  margin: 5px;
+}
+
+.guess-div {
+  text-decoration: underline;
+}
