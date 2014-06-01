@@ -1,11 +1,8 @@
-// Needs major refactoring: make a bank account prototype
 function bankAccount(balance) {
   this.balance = balance;
 }
 
 bankAccount.prototype = {
-  var bal = document.createElement('h3');
-  bal.innerHTML = this.balance;
 
   deposit: function(depositAmount) {
     this.balance += depositAmount;
@@ -18,6 +15,11 @@ bankAccount.prototype = {
 
 var checking = new bankAccount(100000);
 var savings = new bankAccount(100000);
+
+bankAccount.prototype.render = function(){
+  var bal = document.createElement('h3');
+  bal.innerHTML = this.balance;
+}
 
 
   // var checking = {
