@@ -1,0 +1,62 @@
+body {
+  background-color: #f2e2dc;
+  font-family: 'Helvetica';
+  font-size: 16px;
+}
+
+header {
+  text-align: center;
+}
+
+.left {
+  width: 50%;
+  float: left;
+  margin-right: 5%;
+}
+
+.right {
+  width: 45%;
+  float: right;
+}
+
+input#task-input {
+  font-size: 16px;  
+  padding: 5px;
+  width: 50%;
+  border: 0;
+}
+
+input#task-submit {
+  font-size: 16px;
+  padding: 5px 7px; 
+  border-radius: 3px;  
+  border: 1px solid #ccc;  
+}
+
+input#task-submit:hover,
+button:hover {
+  background-color: #e2a88f;
+  border: 1px solid #e2a88f; 
+}
+
+button {
+  font-size: 14px;
+  padding: 4px 6px; 
+  margin: 5px 10px;
+  border-radius: 3px;  
+  border: 1px solid #ccc;   
+}
+
+h1, h3 {
+  font-family: 'EB Garamond';
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.timestamp {
+  font-size: 15px;
+  font-style: italic;
+}
