@@ -49,8 +49,42 @@ var WDility = {
       value = func(value, array[i]);
     }
     return value;
+  },
+
+
+  delete: function(array, value) {
+    var newArray = []
+    for (i in array) {
+      if (array[i] != value) {
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  },
+
+  deleteAt: function(array, index){
+    var newArray = [];
+    for (var i in array){
+      if ( i != index){
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  },
+
+  include: function(array, val){
+    for (var i in array){
+      if (array[i] === val){
+        return true;
+      }
+    }
+    return false;
   }
+
 };
+
+
+
 
 testArray = [2,3,4,5];
 testFunc = function(x) {console.log(x*2);}

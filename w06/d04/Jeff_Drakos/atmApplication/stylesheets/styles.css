@@ -1,0 +1,48 @@
+.account {
+  border: thin black solid;
+  background-color: lightgray;
+  margin: 20px;
+  padding: 3px;
+}
+.balance {
+  width:180px;
+
+  left: 0;
+  float: left;
+}
+.relative-balance-div{
+  position: relative;
+}
+
+.change{
+  width: 180px;
+  float: left;
+}
+.withdrawal-btn{
+
+  float: left;
+}
+.dep-btn{
+
+  float: left;
+}
+.transfer-btn{
+
+  float: left;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+
+.cf {
+    *zoom: 1;
+}
+
