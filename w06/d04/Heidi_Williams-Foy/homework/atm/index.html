@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ATM</title>
+	<link rel="stylesheet" href="stylesheets/styles.css">
+	<script src='javascripts/scripts.js'></script>
+	<style>
+
+	#checkingBal, #savingsBal {
+		background-color: red;
+	}
+	
+	</style>
+</head>
+<body>
+	<section id="balances">
+		<p>Checking: <span id="checkingBal">0</span></p>
+		<p>Savings: <span id="savingsBal">0</span></p>
+	</section>
+	<form>
+		<input type="text" id="dollarAmt" placeholder="Number of dollars to withdraw/deposit, e.g. 100">
+		<button type="button" onClick="deposit(checking, 'checkingBal');">Deposit to Checking</button>
+		<button type="button" onClick="withdraw(checking, 'checkingBal');">Withdraw from Checking</button>
+		<button type="button" onClick="deposit(savings, 'savingsBal');">Deposit to Savings</button>
+		<button type="button" onClick="withdraw(savings, 'savingsBal');">Withdraw from Savings</button>
+	</form>
+</body>
+</html>
