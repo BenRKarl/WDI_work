@@ -58,9 +58,10 @@ parseFloat
   - Change the input format so that there is no text field. You can get input by "listening" to the keyup event and figuring out which key was pressed.
 - **Bonus**
   - Draw the hangperson stick figure using CSS
+- **Bonus**
   - Implement a "hint" button that will reveal one of the letters in the word
 
 ---
 
 ###Javascript The Good Parts
-- Watch this 1hr video: (http://youtu.be/hQVTIJBZook)[http://youtu.be/hQVTIJBZook]
+- Watch this 1hr video (if you didn't): (https://www.youtube.com/watch?v=hQVTIJBZook)[https://www.youtube.com/watch?v=hQVTIJBZook]
