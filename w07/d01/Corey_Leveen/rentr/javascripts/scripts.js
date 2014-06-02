@@ -22,7 +22,7 @@ var omdbApi = {
 $(function(){
   $('#form').submit(function(e){
     e.preventDefault();
-
+    // *** How does function(data) work?
     omdbApi.search($('#input').val(), function(data){
       var movieArray = data.Search;
       for (var i = 0; i < movieArray.length; i++) {
