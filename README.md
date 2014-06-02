@@ -30,7 +30,7 @@ Congratulations on joining us at General Assembly for the Web Development Immers
 - [Jumping on Rails with names](http://youtu.be/2JJvp-OI39w)
 - [Two Model Rails 4 CRUD](http://youtu.be/u4V4uPb9K2A)
 - [One Model Rails 4 CRUD with_form partial](http://youtu.be/m8ssT1G2Gtg)
-- [TDD Hangman in Javascript](http://www.youtube.com/playlist?list=PLb_aHcWo1ZgL7d57z7jsshrYQlmZZJ10C)
+- [TDD Hangman in Javascript](http://www.youtube.com/playlist?list=PLb_aHcWo1ZgL7d57z7jsshrYQlmZZJ10C) and [git repository](https://github.com/Trevoke/tdd-js-hangman)
 
 
 
