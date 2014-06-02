@@ -2,9 +2,6 @@ var my_array = [1, 2, 3, 4];
 
 var WDility = {
 
-  // WDility.first(my_array);
-
-
   first: function(array){
     return array[0];
   },
@@ -36,6 +33,47 @@ var WDility = {
       }
     }
     return arr;
+  },
+
+  unique: function(array){
+    var uniqueDictionary = {};
+    var newArray = [];
+    for (var i in array){
+      uniqueDictionary[array[i]] = array[i];
+    }
+    for (var i in uniqueDictionary){
+      newArray.push(uniqueDictionary[i]);
+    }
+    return newArray;
+  },
+
+  reduce: function(array, func){
+    var memo = array.shift();
+    for (var i in array){
+      memo = func(memo, array[i]);
+    }
+    return memo;
+  },
+
+
+// does not work yet
+
+  delete: function(array, val){
+    for (var i in array){
+      if (val === array[i]){
+        delete array[i];
+      }
+    }
+    return array;
+  },
+
+  include: function(array, value){
+    for (var i in array){
+      if (array[i] === value){
+        return true;
+      }
+    }
+    return false;
   }
 
 };
