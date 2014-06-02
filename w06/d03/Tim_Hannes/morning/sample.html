@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>WDI, meet DOM</title>
+  </head>
+  <body>
+    <input type="text" id="input">
+    <ul>
+      <li> Aldric </li>
+      <li> Andrew </li>
+      <li> Matt </li>
+    </ul>
+
+  <script>
+    function filterByNodeType(num){
+      var childNodes = document.body.childNodes;
+      for (var i = 0; i < childNodes.length; i++){
+        if (childNodes[i].nodeType == num){
+          console.log(childNodes[i])
+        }
+      }
+    }
+
+    function logChildNodes(){
+      var childNodes = document.body.childNodes;
+      for (var i = 0; i < childNodes.length; i++){
+          console.log(childNodes[i]);
+        }
+    }
+
+    function logChildren(){
+      var children = document.body.childNodes;
+      for (var i = 0; i < children.length; i++){
+        console.log(children[i]);
+      }
+    }
+
+    function theGreat(ul){
+      var childElementNodes = ul.children;
+      for (var i = 0; i < childElementNodes.length; i++){
+        childElementNodes[i].innerHTML += '...the great!'
+      }
+    }
+
+    function addBlue(ul){
+      var childElementNodes = ul.children;
+      for (var i = 0; i < childElementNodes.length; i++){
+        childElementNodes[i].innerHTML = "<style> <div style='height:20px; width:20px; border-radius: 20px</style>"
+      }
+    }
+
+    function groovy(ul){
+      var childElementNodes = ul.children;
+      for (var i = 0; i < childElementNodes.length; i++){
+        childElementNodes[i].setAttribute('groovy', 'true');
+      }
+    }
+
+    function teachers(ul){
+      var childElementNodes = ul.children;
+      for (var i = 0; i < childElementNodes.length; i++){
+        childElementNodes[i].setAttribute('class', 'teacher');
+      }
+    }
+
+    function returnTextField(value){
+      var input = document.getElementById('input')
+        return input.value
+    }
+
+  </script>
+
+  </body>
+</html>
+
+<!-- before running these functions, you must define whatever the function takes in, in the console. -->
