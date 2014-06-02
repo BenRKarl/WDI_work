@@ -24,7 +24,7 @@ function makeBlack(elem){
   elem.css('color', 'black');
 }
 
-function guessIncrementer(GuessCounter){
+function guessIncrementer(){
   var guess = $('.guess-field').val();
   var guessField = $('.field-and-tries');
   var wordDiv = $('.word-div');
@@ -39,12 +39,11 @@ function guessIncrementer(GuessCounter){
 }
 
 function updateWordColor(div, guess){
-  for (var i = 0; i > div.children().length; i++){
+  for (var i = 0; i < div.children().length; i++){
     if (div.children().eq(i).text() === guess) {
       div.children().eq(i).css('color', 'black');
     }
   }
-  $('.hang-word-container').html(hangWord.render().el);
 }
 
 HangWord.prototype.render = function(){
