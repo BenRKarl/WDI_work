@@ -37,12 +37,22 @@ var randomWord = words[randomNum];
 console.log(randomWord.split(''));
 
 var guess = "";
-
-console.log("Welcome to hangman. The word is " + randomWord.length + " letters long. Enter your first guess.")
-//var guess = readline();
-
 var guesses = 0;
+var man = []
 
-// while (guesses < bodyArr.length or playerWord != randomWord){
-//   if (guess in randomWord.split(''))
-// }
+console.log("Welcome to hangman. The word is " + randomWord.length + " letters long.");
+
+while (guesses < bodyArr.length || playerWord != randomWord){
+   var guess = prompt("Guess a letter.");
+   console.log(guess);
+   var word = randomWord.split('');
+   if (guess in word) {
+    console.log(guess + " is in the word at " + word.indexOf(guess) + ".")
+   } else {
+    console.log("Sorry, bad guess");
+    guesses = guesses + 1;
+    man.push(bodyArr[guesses-1]);
+    console.log(man);
+   }
+
+ }
