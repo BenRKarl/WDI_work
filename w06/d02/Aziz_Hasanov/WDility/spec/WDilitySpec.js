@@ -72,4 +72,15 @@ describe("WDility", function() {
     });
   });
 
+  describe("#include", function(){
+    it("should return true/false if a specified value is presence", function() {
+      var actual = WDility.include([1, 2, 3, 4], 2);
+      var expected = true;
+      expect(actual).toEqual(expected);
+      var actual = WDility.include([1, 2, 3, 4], 5);
+      var expected = false;
+      expect(actual).toEqual(expected);
+    });
+  });
+
 });
