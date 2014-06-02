@@ -1,0 +1,15 @@
+body {
+  text-align: center;
+}
+
+.left {
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+
+.right {
+  width: 50%;
+  float: left;
+}
+
