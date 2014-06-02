@@ -7,7 +7,7 @@ function randomColor() {
 function letThereBeLove(numHearts) {
 
   for (var i = 0; i < numHearts; i++) {
-    var newHeart = $("<h1 class='hearts'>I &hearts; Venera</h1>");
+    var newHeart = $("<h1 class='hearts'>I &hearts; NYC</h1>");
     $("body").append(newHeart);
   };
 

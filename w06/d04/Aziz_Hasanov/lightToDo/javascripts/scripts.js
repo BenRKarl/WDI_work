@@ -1,10 +1,3 @@
-console.log("hello, world");
-
-function ToDoItem(taskText) {
-  this.taskText = taskText;
-  this.el = undefined;
-}
-
 var todoApp = {
   ToDoItem: function(taskText){
     this.taskText = taskText;
@@ -14,7 +7,7 @@ var todoApp = {
     return document.getElementById('todo-items');
   },
   createTask: function(taskText) {
-    var task = new ToDoItem(taskText);
+    var task = new this.ToDoItem(taskText);
     task.render();
     this.taskList().appendChild(task.el);
   }
@@ -38,11 +31,6 @@ todoApp.ToDoItem.prototype.render = function() {
   this.el = liEl;
   return this;
 }
-
-// ToDoItem.prototype.logTaskText = function() {
-//   console.log(this.taskText);
-//   return this;
-// }
 
 window.onload = function(){
   var taskButton = document.getElementById('add-item');
