@@ -2,8 +2,7 @@ console.log('Hi user!')
 
 BankAccount = function (name) {
    this.name = name;
-   this.balance = 100;
-   // Math.floor(Math.random() * 10000 ).toFixed(2);
+   this.balance = Math.floor(Math.random() * 10000 ).toFixed(2);
    this.el = document.querySelector('.account.' + name);
 };
 
@@ -74,7 +73,7 @@ BankAccount.prototype = {
 
          this.balance = (parseFloat(this.balance) - parseFloat(this.inputValue())).toFixed(2);
          return this.balance;
-         
+
       // } else if (parseFloat(this.balance) < parseFloat(this.inputValue())){
 
       //    if (this.balanceEl().className === 'amount checking'){
