@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <title>To-do List</title>
+  <link rel='stylesheet' href='stylesheets/styles.css'>
+  <script type="text/javascript" src='javascript/script.js'></script>
+</head>
+
+
+<body>
+  <div class="left">
+    <h1>Nessa's most important to-do list</h1>  
+
+    <input type='text' id='new-task' onkeydown="if (event.keyCode == 13) document.getElementById('add-task').click()"></input>
+    <button id='add-task'>Add task</button>
+  </div>
+
+
+  <div class="right">
+    <ol id='todo-list'>
+      <li>
+        Make the most beatiful website anyone has ever seen
+      </li>
+
+    </ol>
+  </div>
+
+</body>
+</html>

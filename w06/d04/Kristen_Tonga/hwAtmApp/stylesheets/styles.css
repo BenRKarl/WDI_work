@@ -1,0 +1,39 @@
+
+
+h1 {
+  color: blue;
+}
+
+.atm {
+  background-color: yellow;
+}
+
+.to-do {
+  background-color: pink;
+}
+
+.completed {
+    padding-top: 0.25rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.75rem;
+    font-size: 0.5rem;
+    margin-left: 0.75rem;
+    border-radius: 0.5rem;
+}
+.jsToDo {
+  background-color: yellow;
+  border-radius: 2rem;
+}
+
+.js {
+  border-radius: 1rem;
+  background-color: lime;
+  border: 1px solid black;
+  margin-left: 10px;
+}
+
+
+cite {
+  color: gray;
+}
