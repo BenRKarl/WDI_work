@@ -1,0 +1,18 @@
+* {
+  font-family: 'Helvetica';
+}
+
+#placeholder li {
+  display: inline;
+  margin-right: 8px;
+  width: 20px;
+  padding: 3px 8px;    
+  background-color: #ebebeb;
+  border: 1px solid #ccc;
+}
+
+body {
+  max-width: 650px;
+  margin:40px auto 0 auto;
+  text-align: center;
+}

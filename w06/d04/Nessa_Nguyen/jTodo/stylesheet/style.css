@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4em;
+  width: 5em;
+  margin: 20px auto;
+  display: block;
+}
+
+ul {
+  font-family: 'EB Garamond', serif;
+}
