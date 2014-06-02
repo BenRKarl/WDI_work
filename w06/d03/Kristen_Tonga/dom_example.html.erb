@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Here's a title</title>
+  </head>
+  <body>
+    <ul>
+      <li>List 1</li>
+      <li>List 2</li>
+      <li>List 3</li>
+    </ul>
+
+    <script>
+      function filterByNodeType(num){
+        var childNodes = document.body.childNodes;
+        for (var i = 0; i < childNodes.length; i++){
+          if (childNodes[i].nodeType === num){
+            console.log(childNodes[i])
+          }
+        }
+      }
+    </script>
+
+
+  </body>
+
+</html>

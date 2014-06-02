@@ -37,7 +37,35 @@ unique: function(array) {
     return new_array
   },
   reduce: function(array, func) {
-    array.reduce(function(previousValue, currentValue, index, array){
-  return previousValue + currentValue;});
+    var memo = array.shift();
+    for (var i in array){
+      memo = func(memo,array[i])
+    }
+    return memo
+  },
+  delete: function(array, value) {
+    var newArray = [];
+    for (var i in array){
+      if ( array[i] != value){
+        newArray.push(array[i]);
+      }
+      }
+      return newArray
+
+  },
+
+  deleteAt: function(array, index){
+    array.splice(index, 1);
+    return array;
+  },
+
+  include: function(array, value){
+    for (var i in array){
+      if ( array[i] === value){
+        return true;
+      }
+    }
+    return false;
   }
+
 };
