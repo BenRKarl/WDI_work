@@ -1,0 +1,8 @@
+.hearts {
+   position: absolute;
+   left: 50%;
+   top: 25%;
+   color: white;
+   font-size: .75em;
+   font-family: 'Helvetica';
+}
