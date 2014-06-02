@@ -1,7 +1,7 @@
 function letThereBeLove(numHearts){
 
   for (var i = 0; i < numHearts; i++) {
-    var newHeart = $("<p class='hearts'>.</p>");
+    var newHeart = $("<p class='hearts'>&hearts;</p>");
     $('body').append(newHeart);
   };
 

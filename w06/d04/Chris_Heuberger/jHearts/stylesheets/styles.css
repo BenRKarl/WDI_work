@@ -2,9 +2,10 @@
   position: absolute;
   left: 50%;
   top: 25%;
-  color: white;
+  color: red;
+  font-size: 5em;
 }
 
 body {
-  background-color: black;
+  background-color: white;
 }

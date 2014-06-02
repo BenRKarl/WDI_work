@@ -50,7 +50,7 @@
           childElementNodes[i].innerHTML += '...the great';
         }
       }
-      // command allowed for in browser console: appendNode(document.body.firstElementChild)
+      // command allowed for in browser console (if ul is first element): appendTheGreat(document.body.firstElementChild)
       function blueCircleBomb(ul){
         var childElementNodes = ul.children;
         for (var i = 0; i < childElementNodes.length; i++){
@@ -58,7 +58,7 @@
         }
       }
       // command allowed for in browser console: ul = document.body.firstElementChild
-      // command allowed for in browser console: blueCircles(ul)
+      // command allowed for in browser console: blueCircleBomb(ul)
       function makeChildrenGroovy(ul){
         var childElementNodes = ul.children;
         for (var i = 0; i < childElementNodes.length; i++){
@@ -66,7 +66,7 @@
         }
       }
       // command allowed for in browser console: ul = document.body.firstElementChild
-      // command allowed for in browser console: makeChildGroovy(ul)
+      // command allowed for in browser console: makeChildrenGroovy(ul)
       function setClassToTeacher(ul){
         var childElementNodes = ul.children;
         for (var i = 0; i < childElementNodes.length; i++){
@@ -75,7 +75,7 @@
         }
       }
       // command allowed for in browser console: ul = document.body.firstElementChild
-      // command allowed for in browser console: setClassTeacher(ul)
+      // command allowed for in browser console: setClassToTeacher(ul)
       function getInput(){
         var input = document.getElementById('input');
         return input.value;
@@ -100,7 +100,7 @@
           elems[i].style.backgroundColor = color;
         }
       }
-      // command allowed for in browser console: colorize(blue)
+      // command allowed for in browser console: colorize('blue')
       function buildSquares(num, size){
         var elems = []
         for (var i = 0; i < num; i++){
@@ -156,7 +156,7 @@
         //build lis and push into array
         return elems;
       }
-      // command allowed for in browser console: createLiNodes()
+      // command allowed for in browser console: createLiNodes([1,2,3])
       function prependLiNodes(arr){
         var elems = createLiNodes(arr);
         var ul    = document.getElementById('students');
@@ -164,7 +164,7 @@
           ul.insertBefore(elems[i], elems[i-1]);
         }
       }
-      // command allowed for in browser console: prependLiNodes()
+      // command allowed for in browser console: prependLiNodes([1,2,3])
       var protos = [
         'Nessa Nguyen',
         'Jeff Winkler',
@@ -198,7 +198,7 @@
             }
           }
         }
-        // command allowed for in browser console: findTeacher(Sally)
+        // command allowed for in browser console: findTeacher('Matt')
         function teachersUl(){
           return document.getElementById('teachers');
         }
@@ -208,7 +208,7 @@
           var teachersUlEl = teachersUl();
           teachersUlEl.removeChild(teacher);
         }
-        // command allowed for in browser console: removeTeacher(Andrew)
+        // command allowed for in browser console: removeTeacher('Andrew')
         function replaceTeacher(newTeacherName, oldTeacherName){
         // parentElem.replaceChild(elem, currentElem)
           var newTeacherLi = document.createElement('li');
@@ -216,7 +216,7 @@
           var oldTeacherLi = findTeacher(oldTeacherName);
           teachersUl().replaceChild(newTeacherLi, oldTeacherLi);
         }
-        // command allowed for in browser console: replaceTeacher(Sam, Aldric)
+        // command allowed for in browser console: replaceTeacher('Sam', 'Aldric')
     </script>
   </body>
 </html>
