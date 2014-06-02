@@ -13,20 +13,47 @@ var omdbApi = {
     var callback = callback || function(data){console.log(data)};
     $.ajax({
       url: 'http://www.omdbapi.com/?' + parameter + '=' + query,
+      dataType: 'json',
       success: callback
     })
     return this;
   }
 }
 
-$(function () {
-  $('.search-submit').on('click', function(e) {
-    var searchTerm = $('.search-term');
-    e.preventDefault();
-    omdbApi.search(searchTerm.val());
-  })
-})
+var inputManager = {
+  takeTextInput: function(cssSelector) {
+    var userInput = $(cssSelector);
+    var text = userInput.val();
+    userInput.val("");
+    return text;
+  }
+}
 
-$(function() {
-  console.log('Ready to go')
+function updatePoster(movieData) {
+  $('.poster-image').attr('src', movieData.Poster);
+}
+
+function displaySearchResults(data) {
+  var movieArray = data.Search;
+  $('.search-results').html('');
+  for (var i = 0; i < movieArray.length; i++) {
+    var movieLi = $('<li>').html(movieArray[i].Title).addClass('film').data('imdbID', movieArray[i].imdbID);
+
+    movieLi.on('click', function(e) {
+      var imdbID = $(e.target).data('imdbID');
+      omdbApi.lookup(imdbID, updatePoster)
+    })
+
+    $('.search-results').append(movieLi);
+  };
+}
+
+$(function () {
+
+  $('.movie-search').on('submit', function(e) {
+    e.preventDefault();
+    var query = inputManager.takeTextInput('.search-term');
+    omdbApi.search(query, displaySearchResults);
+  })
+
 })
