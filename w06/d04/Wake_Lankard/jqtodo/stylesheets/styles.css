@@ -1,0 +1,17 @@
+body {
+  font-family: sans-serif;
+  background-color: lightgoldenrodyellow;
+}
+
+.things {
+  position: absolute;
+  /*left: 50%;
+  top: 25%;*/
+  color: black;
+  font-size: .5em;
+}
+.container {
+  width: 800px;
+  margin: 0 auto;
+
+}
