@@ -37,3 +37,22 @@ Extend the `String` object's prototype to include an `isPalindrome` method.  We 
 	"maddam".isPalindrome() //should return true
 
 ```
+
+---
+
+# Color Picker
+
+Let's recreate an application, something like [this](https://kuler.adobe.com/explore/random/?time=month) one.  You will find starter files included in your directory.
+
+Leveraging the power of jQuery's `.ajax` function, you will make a request to this url when a button is clicked:
+
+`http://www.colourlovers.com/api/palettes/new?format=json`
+
+This response will be an array of JSON objects, each corresponding to a color palette.  
+
+You will need to define a `success` callback that parses the JSON response and produces / appends the necessary markup to display the color palettes.
+
+---
+
+# If you have not finished Hangman, please continue to work on it.  
+***You can find Aldric's videos [here](https://www.youtube.com/playlist?list=PLb_aHcWo1ZgL7d57z7jsshrYQlmZZJ10C).***

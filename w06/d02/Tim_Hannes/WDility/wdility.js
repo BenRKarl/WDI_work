@@ -69,6 +69,19 @@ var WDility = {
   deleteAt: function(array, index){
     array.splice(index, 1);
     return array;
-  }
+  },
+
+  // include: function(array, value){
+  //   for (var i in array){
+  //     if (array[i] === value){
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // },
+
+  include: function(array, value){
+    return (value in array);
+  },
 
 };

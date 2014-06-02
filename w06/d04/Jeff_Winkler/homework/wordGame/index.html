@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Word</title>
+  <link href="http://fonts.googleapis.com/css?family=Dancing+Script:700|EB+Garamond" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/WDility.js"></script>
+  <script src="javascripts/scripts.js"></script>
+</head>
+<body>
+    <div class="gen-div">
+        <h2>Word Game</h2>
+        <button id="reset-button">Reset</button>
+        <button id="give-button">Give Up</button>
+        <hr>
+    </div>
+    <div>
+        <h4 class="gen-div">Available Letters</h4>
+        <div id="alphabet-div" class="gen-div">
+        </div><hr>
+    </div>
+    <div>
+        </br>
+        <div class="gen-div">
+            <h4 class="subtitle">Current Guess</h4>
+            <form id="letter-form">
+                <input id="letter-input" type="text">
+                <button type="submit">Enter</button>
+            </form>
+        </div></br>
+        <div id="word-div" class="gen-div">
+        </div><hr>
+    </div>
+    <div id="count-div" class="gen-div">
+        <p class="guess-p">Guess Count</p>
+        <p id="count" class="guess-p"></p>
+    </div>
+
+</body>
+</html>
+
+

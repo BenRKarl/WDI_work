@@ -41,4 +41,12 @@ Person.prototype = {
   }
 }
 
+var hank = Person new('Hank', 45, 9);
+var saul = Person new('Saul', 41, 2);
+var jessie = Person new('Jessie', 23, 6);
+var walt = Person new('Walt', 53, 10);
+var skyler = Person new('Skyler', 46, 4);
 
+
+people = [];
+people = [hank, saul, jessie, walt, skyler];

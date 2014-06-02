@@ -1,0 +1,18 @@
+body{
+  background: url(http://images.forwallpaper.com/files/images/1/1f52/1f5268c4/174701/viking-warrior.jpg);
+  background-size: cover;
+}
+.hits{
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  color: #FF00CC;
+  font-size: 5em;
+}
+.shits{
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  color: yellow;
+  font-size: 5em;
+}
