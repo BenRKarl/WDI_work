@@ -1,0 +1,16 @@
+.hearts{
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  color: red;
+  font-size: 5em;
+}
+
+.name{
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  color: blue;
+  font-family: impact;
+  font-size: 5em;
+}

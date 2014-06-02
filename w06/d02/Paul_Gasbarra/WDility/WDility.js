@@ -44,12 +44,32 @@ var WDility = {
     return arr2;
   },
 
-  reduce: function(array){
+  reduce: function(array, func){
     var sum = 0;
     for (i in array){
       sum = sum + array[i];
     }
     return sum;
+  },
+
+  delete: function(array, value){
+    var newArray = [];
+    for (var i in array){
+      if (array[i] != value){
+        newArray.push(array[i]);
+      }
+    }
+    return newArray;
+  },
+
+  deleteAt: function(array, index){
+    array.splice(index, 1);
+    return array;
+  },
+
+  include: function(array, value){
+    return (array.indexOf(value) != -1);
   }
+
 };
 
