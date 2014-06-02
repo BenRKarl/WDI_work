@@ -1,0 +1,32 @@
+body {
+  background-color: #f2e2dc;
+  font-family: 'Helvetica';
+  font-size: 16px;
+}
+
+.left {
+  width: 35%;
+  float: left;
+}
+
+.right {
+  width: 62%;
+  float: right;
+}
+
+button#add-task {
+  font-size: 16px;
+  padding: 5px 7px; 
+  border-radius: 3px;  
+  border: 1px solid #ccc;  
+}
+
+button#add-task:hover {
+  background-color: #e2a88f;
+  border: 1px solid #e2a88f; 
+}
+
+input#new-task {
+  font-size: 16px;  
+  padding: 5px;
+}

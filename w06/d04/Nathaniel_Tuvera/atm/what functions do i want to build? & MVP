@@ -1,0 +1,9 @@
+what functions do i want to build? & MVP
+
+- create a new account with attributes
+- add account:deposit
+      account withdraw
+        conditionalprevent account from going negative
+
+DOM:
+  create

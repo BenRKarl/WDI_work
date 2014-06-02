@@ -32,7 +32,7 @@ describe("WDility", function() {
     });
   });
 
-  describe("#select", function(){
+  describe("#select", function() {
     it("should return an array of values which allow the function to evaluate to true", function() {
       var actual = WDility.select([1, 2, 3, 4, 1], function(element){ return element >2 });
       var expected = [3, 4];
@@ -40,7 +40,7 @@ describe("WDility", function() {
     });
   });
 
-  describe("#unique", function(){
+  describe("#unique", function() {
     it("should return an array of the unique values", function() {
       var actual = WDility.unique([1, 2, 3, 4, 1, 2]);
       var expected = [1, 2, 3, 4];
@@ -48,10 +48,37 @@ describe("WDility", function() {
     });
   });
 
-  describe("#reduce", function(){
+  describe("#reduce", function() {
     it("should return the accumulated value", function() {
       var actual = WDility.reduce([1, 2, 3], function(memo, element){ return memo + element });
       var expected = 6;
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe("#delete", function() {
+    it("should return an array with a specified value removed", function() {
+      var actual = WDility.delete([1, 2, 3, 4, 3], 3);
+      var expected = [1, 2, 4];
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe("#deleteAt", function() {
+    it("should return an array with a specified index's value removed", function() {
+      var actual = WDility.deleteAt([1, 2, 3, 4], 2);
+      var expected = [1, 2, 4];
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe("#include", function() {
+    it('should return true/false if a specified value is present', function() {
+      var actual = WDility.include([1, 2, 3, 4], 2);
+      var expected = true;
+      expect(actual).toEqual(expected);
+      var actual = WDility.include([1, 2, 3, 4], 5);
+      var expected = false;
       expect(actual).toEqual(expected);
     });
   });

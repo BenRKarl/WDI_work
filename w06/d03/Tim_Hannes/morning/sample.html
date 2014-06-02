@@ -3,14 +3,26 @@
     <title>WDI, meet DOM</title>
   </head>
   <body>
-    <input type="text" id="input">
-    <ul>
-      <li> Aldric </li>
-      <li> Andrew </li>
-      <li> Matt </li>
+     <input type="text" id="input">
+     <ul id="students"></ul>
+     <ul id="smileys"></ul>
+    <ul id="teachers">
+      <li class="teacher colorizable" id="aldric"> Aldric </li>
+      <li class="teacher" id="andrew"> Andrew </li>
+      <li class="teacher" id="matt"> Matt </li>
     </ul>
+    <div>
+      The Rails 4 Way
+      <span>Everything you ever wanted to know</span>
+      <span>About building an Enterprise Class Rails app</span>
+    </div>
+    <div class="colorizable">Secrets of the JavaScript Ninja</div>
+    <div>Programming and Object Oriented Design in Ruby</div>
 
   <script>
+
+
+
     function filterByNodeType(num){
       var childNodes = document.body.childNodes;
       for (var i = 0; i < childNodes.length; i++){
@@ -44,7 +56,7 @@
     function addBlue(ul){
       var childElementNodes = ul.children;
       for (var i = 0; i < childElementNodes.length; i++){
-        childElementNodes[i].innerHTML = "<style> <div style='height:20px; width:20px; border-radius: 20px</style>"
+        childElementNodes[i].innerHTML = "<style> <div style='height:20px; width:20px; border-radius: 20px'</div></style>"
       }
     }
 
@@ -66,6 +78,142 @@
       var input = document.getElementById('input')
         return input.value
     }
+
+    function changeTagFont(tagName, fontFamily){
+      var elems = document.getElementsByTagName(tagName)
+      for (var i = 0; i < elems.length; i++){
+        elems[i].style.fontFamily = fontFamily;
+      }
+    }
+
+    function colorize(color){
+      //get all elements with colorizable class
+      var elems = document.getElementsByClassName('colorizable');
+      // iterates on element
+      for (var i = 0; i < elems.length; i++){
+        //change background color property to specified color
+        elems[i].style.backgroundColor = color;
+      }
+    }
+
+    function buildSquares(num, size){
+      var elems = []
+      for (var i = 0; i < num; i++){
+        var square = document.createElement('div');
+        square.style.width = size+'px';
+        square.style.height = size+'px';
+        elems.push(square);
+      }
+    return elems;
+  }
+
+  function buildSmileyFaces(num, size){
+    var elems = [];
+    for (var i = 0; i < num; i++){
+      var circle = document.createElement('div');
+      circle.style.width = size+'px';
+      circle.style.height = size+'px';
+      circle.style.borderRadius = size/2;
+      circle.style.backgroundColor = randomColor();
+      circle.style.textAlign = "center";
+      circle.style.fontSize = size/2
+      var textNode = document.createTextNode('^_^');
+      circle.appendChild(textNode);
+      elems.push(circle);
+    }
+    return elems;
+  }
+
+  function appendSmileysToDom(num, size){
+    var smileys = buildSmileyFaces(num, size);
+    var ul      = document.getElementById('smileys');
+    for (var i = 0; i < smileys.length; i++){
+      ul.appendChild(smileys[i]);
+    }
+  }
+
+  function randomColor(){
+    var colors = ['green', 'blue', 'yellow', 'orange', 'grey', 'cyan'];
+    var randomIndex = parseInt(Math.random()*colors.length);
+    return colors[randomIndex];
+  }
+
+  function createLiNodes(arr){
+    elems = []
+    //iterate on array
+    for (var i = 0; i < arr.length; i++){
+      var textNode = document.createTextNode(arr[i]);
+      var li       = document.createElement('li');
+      li.appendChild(textNode);
+      elems.push(li);
+    }
+      //build lis and push into array
+    return elems
+  }
+
+  function prependLiNodes(arr){
+    //call helper function
+    var elems = createLiNodes(arr);
+    //get the ul by ID
+    var ul = document.getElementById('students');
+    //iterate over elements in array
+    for (var i = 0; i < elems.length; i++){
+    //prepend elements to ul
+      ul.insertBefore(elems[i], elems[i-1]);
+    }
+  }
+
+  var protos = [
+'Nessa Nguyen',
+'Jeff Winkler',
+'John Murphy',
+'Jeff Drakos',
+'Rebecca Strong',
+'Gardner Lonsberry' ,
+'Jonathan Gean',
+'Nathaniel Tuvera',
+'Tim Hannes',
+'Aziz Hasanov',
+'Chris Heuberger',
+'Dmitry Shamis' ,
+'Corey Leveen',
+'Paul Hiam',
+'Steven Doran',
+'Ben Karl',
+'Kristen Tonga',
+'Wake Lankard',
+'Carlos Pichardo' ,
+'Paul Gasberra',
+'Andrea Trapp',
+'Heidi Williams-Foy'
+]
+
+  function findTeacher(teacherName){
+    var teachersUl = document.getElementById('teachers');
+    var teacherLis = teachersUl.getElementsByTagName('li');
+    for (var i = 0; i < teacherLis.length; i++){
+      if (teacherLis[i].innerHTML.replace(/ /g, '') == teacherName){
+        return teacherLis[i];
+      }
+    }
+  }
+
+  function teachersUl(){
+    return document.getElementById('teachers');
+  }
+
+  function removeTeacher(teacherName){
+    var teacher = findTeacher(teacherName);
+    var teachersUl = teachersUl();
+    teachersUlEl.removeChild(teacher);
+  }
+
+  function replaceTeacher(newTeacherName, oldTeacherName){
+    var newTeacherLi = document.createElement('li');
+    newTeacherLi.innerHTML = newTeacherName;
+    var oldTeacherLi = findTeacher(oldTeacherName);
+    teachersUl().replaceChild(newTeacherLi, oldTeacherLi);
+  }
 
   </script>
 
