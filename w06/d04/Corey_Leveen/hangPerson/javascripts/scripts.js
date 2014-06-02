@@ -3,12 +3,7 @@ var wordList = ["banana", "chevrolet", "beaches", "blueberries", "pigeons", "sta
 String.prototype.replaceAt=function(index, character) {
     return this.substr(0, index) + character + this.substr(index+character.length);
 }
-// The game selects a random word from a word list and makes that the secret word
-// The player guesses one letter at a time, trying to figure out what the word is
-// If the player guesses correctly, any instances of that letter are revealed in the secret word
-// If the player guesses incorrectly, they are penalized by taking away a guess
-// If a player reveals all of the letters of the secret word, they win
-// If a player makes 8 incorrect guesses before solving the secret word, they lose
+
 
 function hangPersonGame(randomWord) {
   this.randomWord = randomWord;
@@ -22,20 +17,27 @@ hangPersonGame.prototype = {
     for (var z = 0; z < this.randomWord.length; z++) {
       arr.push("X");
     }
+
     var secret = arr.join("");
     $('#secret-word').html(secret);
     var incorrectGuesses = 8;
+    var guessArray = [];
 
     for (var i = 0; i < this.randomWord.length; i++) {
     var guess=prompt("The secret word is " + this.randomWord.length + " letters long. Guess letter "+ (i+1)+"." + " You have " + incorrectGuesses + " incorrect guesses remaining.");
+
+    guessArray.push(guess);
+    $('#guessed-letters').html(guessArray.join(""));
+
     if (guess != this.randomWord[i]) {
       console.log("That's incorrect. You have " + incorrectGuesses + " wrong guesses left.");
       i--;
       incorrectGuesses--;
+
       if (incorrectGuesses < 0) {
         console.log("Sorry, you've run out of guesses. The secret word is " + this.randomWord + ".");
         break;
-      }
+        }
       }
     else {
       console.log("Correct! Letter "+ (i+1) + " is " + this.randomWord[i] + ".");
@@ -47,15 +49,22 @@ hangPersonGame.prototype = {
         }
       }
     }
+      $(function(){
+      $('#giveup').on('click', function(){
+        $('#secret-word').html(this.randomWord);
+    });
+  })
   }
 };
 
 $(function(){
-$('#begin').on('click', function(){
+  $('#begin').on('click', function(){
     var newGame = new hangPersonGame(wordList[Math.floor((Math.random())*wordList.length)]);
     newGame.begin();
 });
 })
+
+
 
 
 
