@@ -1,0 +1,190 @@
+
+<ul id="smileys">
+</ul>
+<input type="text" id="input">
+<ul id="students">
+  </ul>
+    <ul id="teachers">
+      <li class="teacher colorizable" id="aldric"> Aldric </li>
+      <li class="teacher" id="andrew"> Andrew </li>
+      <li class="teacher" id="matt"> Matt </li>
+    </ul>
+    <div>
+      The Rails 4 Way
+      <span>Everything you ever wanted to know</span>
+      <span>About building an Enterprise Class Rails app</span>
+    </div>
+    <div class="colorizable">Secrets of the JavaScript Ninja</div>
+    <div>Programming and Object Oriented Design in Ruby</div>
+
+    <script>
+      function filterByNodeType(num) {
+        var childNodes = document.body.childNodes;
+        for (var i = 0; i < childNodes.length; i++){
+          if (childNodes[i].nodeType == num){
+            console.log(childNodes[i])
+          }
+        }
+      }
+
+    function logChildNodes(){
+      var childNodes = document.body.childNodes;
+      for (var i = 0; i < childNodes.length; i++){
+        console.log(childNodes[i]);
+      }
+     }
+
+     function logChildren(){
+      var children = document.body.children;
+      for (var i = 0; i < children.length; i++){
+        console.log(children[i]);
+      }
+     }
+
+     function appendGreatness(ul) {
+      var childElementNodes = ul.children;
+      for (var i = 0; i < childElementNodes.length; i++) {
+        childElementNodes[i].innerHTML += '...the great';
+      }
+     }
+
+    function blueCircleBomb(ul) {
+      var childElementNodes = ul.children;
+      for (var i = 0; i < childElementNodes.length; i++) {
+        childElementNodes[i].innerHTML = "<div style='height: 20px; width: 20px; background-color:cyan; border-radius: 20px;'></div>"
+      }
+     }
+
+    function groovify(ul) {
+      var childElementNodes = ul.children;
+      for (var i = 0; i < childElementNodes.length; i++) {
+        childElementNodes[i].setAttribute('groovy', true);
+      }
+     }
+
+    function teacherfy(ul) {
+      var childElementNodes = ul.children;
+      for (var i = 0; i < childElementNodes.length; i++) {
+        childElementNodes[i].setAttribute('class', 'teacher');
+        // childElementNodes[i].className = 'teacher';
+      }
+     }
+
+     function readInputField(){
+      var input = document.getElementById('input');
+      return input.value;
+      // var textFieldInput = document.body.firstElementChild.value;
+      // return textFieldInput;
+     }
+
+     function changeTagFont(tagName, fontFamily) {
+        // var array = document.getElementsByTagName(tagName);
+        // for (var i = 0; i < array.length; i++)
+        //   array.style.fontFamily = fontFamily;
+      var elems = document.getElementsByTagName(tagName);
+            // get all instances of a tag
+      for (var i = 0; i < elems.length; i++) {
+            // iterate on the array of nodes
+        elems[i].style.fontFamily = fontFamily;
+             //set teh font family to be specified font
+      }
+     }
+
+     function colorize(color) {
+      var elems = document.getElementsByClassName('colorizable')
+      for (var i = 0; i < elems.length; i++){
+        elems[i].style.backgroundColor = color;
+      }
+    }
+
+    function buildSquares(num, size){
+      var elems = [];
+      for (var i = 0; i <num; i++) {
+        var square = document.createElement('div');
+        square.style.width = size +'px';
+        square.style.height = size +'px';
+        elems.push(square);
+      }
+      return elems;
+    }
+
+    function buildSmileyFaces(num, size){
+      var elems = [];
+      for (i = 0; i < num; i ++) {
+        var circle = document.createElement('div');
+        circle.style.width = size+'px';
+        circle.style.height = size+'px';
+        circle.style.borderRadius = size/2;
+        circle.style.backgroundColor = 'yellow';
+        var textNode = document.createTextNode('@_@');
+        circle.appendChild(textNode);
+        elems.push(circle);
+      }
+      return elems;
+    }
+
+    function appendSmileysToDom(num, size) {
+      var smileys = buildSmileyFaces(num, size);
+      var ul = document.getElementById('smileys');
+      for (var i = 0; i < smileys.length; i++) {
+        ul.appendChild(smileys[i]);
+      }
+    }
+
+    function randomColor() {
+      //return a random color from an array of colors
+      var colors = ['red', 'green', 'blue', 'yellow', 'orange', 'indigo', 'violet']
+      var randomIndex = parseInt(Math.random()* colors.length)
+      return colors[randomIndex]
+    }
+
+    function createLiNodes(arr){
+      var elems = []
+      //iterates on array
+      for (i = 0; i < arr.length; i++) {
+      //build lis and push into array
+
+        var textnode = document.createTextNode(arr[i]);
+        var li = document.createElement('li');
+        li.appendChild(textnode);
+        elems.push(li);
+      }
+      return elems
+    }
+
+    function prependLiNodes(arr) {
+      var elems = createLiNodes(arr);
+      var ul = document.getElementById('students');
+      for (var i = 0; i < elems.length; i++) {
+        ul.insertBefore(elems[i], elems[i-1]);
+      }
+    }
+
+    function findTeacher(teacherName) {
+      var teachersUl = document.getElementById('teachers');
+      var teacherLis = teachersUl.getElementsByTagName('li');
+      for ( i = 0; i < teacherLis.length; i++){
+        console.log('passed in name', teacherName);
+        console.log('Li Inner html:' , teacherLis[i].innerHTML);
+        if (teacherLis[i].innerHTML == teacherName){
+          return teachersLis[i];
+        }
+      }
+    }
+
+    function removeTeacher(teacherName){
+      var teacher = findTeacher(teacherName);
+      var teachersUlEl = document.getElementById('teachers');
+      teachersUlEl.removeChild(teacher);
+    }
+
+    function replaceTeacher(newTeacherName, oldTeacherName) {
+      var newTeacherLi = document.createElement('li');
+      newTeacherLi.innerHTML = newTeacherName;
+      var oldTeacherLi = findTeacher(oldTeacherName);
+      teachersUl().replaceChild(newTeacherLi, oldTeacherLi);
+    }
+      </script>
+  </body>
+</html>
+
