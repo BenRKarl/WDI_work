@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic ATM</title>
+    <link rel="stylesheet" href="stylesheets/foundation.css" />
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="picture" href="~/bash/code/wdi/WDI/WDI_NYC_Apr14_Proto/w06/d04/hwAtmApp/atmShutterstock.jpg">
+    <script src="javascripts/vendor/modernizr.js"></script>
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/scripts.js"></script>
+
+  </head>
+  <body>
+
+
+    <div class="row intro">
+      <div class="large-12 columns">
+        <div class="panel">
+          <h3>The Little Necesities?! </h3>
+          <p>I'd really love this to accordian. But that's what I get for trying to play with foundation withoud doing my research.</p>
+          <div class="row">
+            <div class="large-4 medium-4 columns">
+              <p><a href="http://foundation.zurb.com/docs">ATM Machine</a><br />Make a deposit. Make a withdrawl.</p>
+            </div>
+            <div class="large-4 medium-4 columns">
+              <p><a href="http://github.com/zurb/foundation">To Do</a><br />Basic To-Do List.</p>
+            </div>
+            <div class="large-4 medium-4 columns">
+              <p><a href="http://twitter.com/foundationzurb">HangMan ?</a><br />Might stick this here too.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<d1 class="accordion" data-accordion>
+  <dd id="atm">
+    <a hrev="#panel1">ATM Machine</a>
+    <div id="panel1" class="content active">
+      <div class="panel atm">
+        <div class = "row">
+          <div="large-12 columns">
+            <h1>ATM Machine  ~> </h1>
+          </div>
+        </div>
+
+
+        <div class="row">
+
+          <div class="large-4 medium-4 columns">
+            <div class="callout panel">
+              <img src="atmShutterstock.jpg" alt="ATM HERE!!">
+            </div>
+          </div>
+
+          <div class="large-8 medium-8 columns">
+            <div class="callout panel">
+              <p>Six columns</p>
+              <div class="panel">
+              <form>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <label>Select Box</label>
+                    <select>
+                      <option value="husker">Deposit</option>
+                      <option value="starbuck">Withdrawl</option>
+                    </select>
+                  </div>
+                </div>
+                <div class = "row">
+                  <div class="large-1 columns left">
+                    <label for="amount">Amount</label>
+                    <p>$$$</p>
+                  </div>
+                  <div class="large-9 columns">
+                    <label for="deposit-withdrawl">Deposit</label>
+                    <input type="text" placeholder="How much do you want to...">
+                  </div>
+                </div>
+              </form></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dd>
+
+  <dd id="basicToDo">
+    <a href="#panel2">Panel 2</a>
+
+    <div class="panel basic to-do">
+      <h1>To Do ~></h1>
+
+
+      <div class="row">
+        <div class="callout panel">
+
+          <form id="todo-form">
+            <input type="text" id="item-field">
+            <button id="add-item">Save</button>
+          </form>
+          <hr>
+          <h3>Inch by Inch... </h3>
+          <ul id="todo-list"></ul>
+
+        </div>
+      </div>
+
+    </div>
+  </dd>
+
+
+  <dd id="jsToDo">
+    <a href="#panel3">Panel 3</a>
+
+    <div class="panel basic jsToDo large-8 columns">
+      <div class = "large-6 columns js">
+        <h1>To Do ~></h1>
+
+
+        <div class="row">
+          <div class="callout panel">
+
+            <form id="jq-todo-form">
+              <input type="text" id="new-entry">
+              <button type="submit" id="add-it">Save</button>
+            </form>
+            <hr>
+            <h3>Row by Row...</h3>
+            <ul id="the-list"></ul>
+
+
+          </div>
+        </div>
+      </div>
+
+          <div class="large-5 columns js">
+            <h4>Completed Tasks</h4>
+            <hr>
+            <ul id="completed-list"></ul>
+          </div>
+
+    </div>
+  </dd>
+
+
+
+
+
+
+
+
+
+
+<script src="javascripts/vendor/jquery.js"></script>
+<script src="javascripts/foundation/foundation.js"></script>
+<script src="javascripts/foundation/foundation.accordion.js"></script>

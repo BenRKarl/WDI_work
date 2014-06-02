@@ -1,0 +1,19 @@
+body{
+  background-color: #324aab;
+  color: red;
+  font-weight: bold;
+
+}
+h1 {
+  background-color: black;
+}
+
+ol {
+  background-color: lightyellow;
+  padding-top: 22px;
+}
+.box {
+  background-color: yellow;
+  opacity: .9;
+  width: 70%;
+}

@@ -65,6 +65,30 @@ var WDility = {
     } 
     new_array = new_array.sort();
     return new_array;
-  }          
+  },
+
+  delete: function(array, value) {
+    var new_array = [];
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] != value) {
+        new_array.push(array[i]) ;  
+      }      
+    } 
+    return new_array;
+  },
+
+  deleteAt: function(array, index) {
+    array.splice(index, 1);
+    return array;
+  }, 
+  
+  include: function(array, num) {
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] === num) {
+        return true;
+      }
+    }
+    return false;
+  }               
 };
 
