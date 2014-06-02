@@ -2,12 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ATM with NO jQuery</title>
+  <title>ATM</title>
   <link rel="stylesheet" href="stylesheets/styles.css">
-  <script src='javascripts/scripts.js'></script>
+<script src="javascripts/scripts.js"></script>  
 </head>
 <body>
-<p id="startBalance">
-</p>  
+<center>
+    
+    <h1>ATM</h1> 
+    <p><img src="https://s3.amazonaws.com/f.cl.ly/items/0F2K0S0A02320c0N3I44/ATM.png" width="100" height="100"/></p>
+    
+    <p>
+        &nbsp;</p>
+        
+      <div style="float:center;">
+<fieldset style="width:35%">
+      <legend><b>Actions</b></legend>
+     
+       <div class="account cf" id="checking-account">
+       <div class="relative-balance-div">
+       <h3>Checking</h3>
+      <span class="balance" id="checking-balance">&nbsp;</span>
+        <input type="number" id="checking-delta" class="delta">
+      <button id="checking-withdrawal" class="withdrawal-btn">Withdraw</button>
+    <button id="checking-deposit" class="dep-btn">Deposit</button>
+    <button id="transfer-from-checking" class="transfer-btn">Transfer to Savings</button> 
+    
+    </div>
+  </div>
+
+
+  <div class="account cf" id="savings-account">
+    <h3>Savings</h3>
+    <span class="balance" id="savings-balance">&nbsp;</span>
+    <input type="number" id="savings-delta" class="delta">
+    <button id="savings-withdrawal" class="withdrawal-btn">Withdraw</button>
+    <button id="savings-deposit" class="dep-btn">Deposit</button>
+    <button id="transfer-from-savings" class="transfer-btn">Transfer to Checking</button>
+  </div>
+
+</fieldset>
+
 </body>
 </html>
