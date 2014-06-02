@@ -12,15 +12,14 @@ var hangman = {
 }
 
 var wordList = ["amused", "beaming", "blissful", "blithe", "buoyant", "carefree", "cheerful", "cheery", "content", "contented",
-"delighted", "ecstatic", "elated", "enraptured", "euphoric", "exhilarated", "exultant", "glad", "gleeful", "gratified", "grinning",
-"jolly", "jovial", "joyful", "joyous", "jubilant", "lighthearted", "merry", "overjoyed", "pleased", "radiant", "rapturous",
+"delighted", "ecstatic", "elated", "enraptured", "euphoric", "exhilarated", "excited", "exultant", "glad", "gleeful", "gratified",
+"grinning", "jolly", "jovial", "joyful", "joyous", "jubilant", "lighthearted", "merry", "overjoyed", "pleased", "radiant", "rapturous",
 "satisfied", "smiling", "sunny", "thrilled", "untroubled"]
 
 $(function () {
-  $('.play').on('click', function () {
+  $('.play').one('click', function () {
     return hangman.startGame();
   });
-
 
   $('.guess-submit').on('click', function () {
     var guess = $('.guess-input').val();
@@ -36,5 +35,9 @@ $(function () {
     $('.game-window').html("");
     return hangman.startGame();
   });
+
+  $('.give-up').on('click', function () {
+    // Show full word
+  })
 });
 
