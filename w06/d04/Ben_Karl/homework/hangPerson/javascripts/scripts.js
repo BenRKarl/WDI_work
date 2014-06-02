@@ -11,46 +11,61 @@ function HangWord(){
 
 function GuessCounter(){
   this.tries = 8;
-  this.el = $('<div>').html("Remaining Tries: " + this.tries);
+  this.el = $('<div class="num-tries">').html("Remaining Tries: " + this.tries);
 }
 
 function checkGuess(){
-  var guess = 3;
+  var guess = $('.guess-field').val();
+  var word = hangWord.word
+  return word.indexOf(guess)
+}
+
+function makeBlack(elem){
+  elem.css('color', 'black');
 }
 
 function guessIncrementer(GuessCounter){
-  if (false){
-    ///something for correct guess
+  var guess = $('.guess-field').val();
+  var guessField = $('.field-and-tries');
+  var wordDiv = $('.word-div');
+  if (checkGuess() >= 0){
+
+    updateWordColor(wordDiv, guess)
+
   } else {
-    GuessCounter.tries--;
+    newGuessCounter.tries--;
+    $('.num-tries').html("Remaining Tries: " + newGuessCounter.tries);
   }
-  return this;
 }
 
-// function changeColor(className){
-//   className.
-// }
+function updateWordColor(div, guess){
+  for (var i = 0; i > div.children().length; i++){
+    if (div.children().eq(i).text() === guess) {
+      div.children().eq(i).css('color', 'black');
+    }
+  }
+  $('.hang-word-container').html(hangWord.render().el);
+}
 
 HangWord.prototype.render = function(){
-  var divEl = $('<div id="word-div">');
+  var divEl = $('<div class="word-div">');
   for (var i = 0; i < this.word.length; i++){
     var pEl = $('<p>');
     pEl.html(this.word[i]);
     divEl.append(pEl);
   }
-
   this.el = divEl;
   return this;
 }
 
 function hangPerson(){
-  var wordContainer = $('#hang-word-container');
-  var guessAndTriesDiv = $('#field-and-tries');
+  //whoa there's a global variable here, things are getting weird!
+  hangWord = new HangWord();
+  newGuessCounter = new GuessCounter();
 
-  var hangWord = new HangWord();
+  var wordContainer = $('.hang-word-container');
+  var guessAndTriesDiv = $('.field-and-tries');
   var hangEl = hangWord.render().el;
-
-  var newGuessCounter = new GuessCounter();
 
   var guessField = $('<input class="guess-field">');
   guessField.attr('placeholder', 'Enter a letter');
@@ -64,6 +79,6 @@ function hangPerson(){
 }
 
 $(function(){
-  $('#start-button').on('click', hangPerson)
-  $('#guess-button').on('click', checkGuess)
+  $('.start-button').on('click', hangPerson);
+  $('.field-and-tries').on('click', '.guess-button', guessIncrementer);
 });
