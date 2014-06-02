@@ -1,0 +1,186 @@
+<html>
+<head>
+    <title>WDI, meet DOM</title>
+  </head>
+<body>
+  <ul>
+    <li>Aldric</li>
+    <li>Andrew</li>
+    <li>Matt</li>
+  </ul>
+
+<script>
+  function filterByNodeType(num){
+  var childNodes = document.body.childNodes;
+  for (var i = 0; i < childNodes.length; i++){
+    if (childNodes[i].nodeType == num) {
+    console.log(childNodes[i])
+      }
+    }
+  }
+
+  function showChildType(num){
+    var childNodes = document.body.childNodes;
+    for (var i = 0; i < childNodes.length; i++){
+    console.log(childNodes[i]);
+    }
+  }
+
+  function logChildren(){
+    var children = document.body.children;
+    for (var i = 0; i < children.length; i++){
+      console.log(children[i]);
+    }
+
+  function crystalBluePersuation(ul){
+    var childElementNodes = ul.children;
+    for (var i = 0; i < childElementNodes.length; i++){
+      childElementNodes[i].innerHTML += "<div style = 'width: 50px; height: 50px; background-color: blue; border-radius: 25px'></div>";
+    }
+
+  function makeChildrenGroovy(ul){
+    var childElementNodes = ul.children;
+    for (var i = 0; i < childElementNodes.length; i++){
+      childElementNodes[i].setAttribute('groovy','true')
+    }
+  }
+
+   function makeTeacherClass(ul){
+    var childElementNodes = ul.children;
+    for (var i = 0; i < childElementNodes.length; i++){
+      childElementNodes[i].setAttribute('class','teacher')
+    }
+
+    function textValue(field){
+      return field.value;
+    }
+  }
+
+  function getInput(){
+    var input = document.getElementById('input');
+    return input.value;
+  }
+
+  function changeTagFont(tagName, fontFamily){
+    tags = document.getElementsByTagName(tagName);
+    for (var i = 0; i < tag.length; i++){
+      tag[i].style.fontFamily = fontFamily;
+    }
+  }
+
+  function colorize(color){
+    elems = document.getElementsByClassName('colorizable');
+     for (var i = 0; i < elems.length; i++){
+      elems[i].style.color = color;
+  }
+
+  function buildSquares(num, size){
+    var elems = []
+    for (var i = 0; i < elems.length; i++){
+      var square = document.createElement('div');
+      square.style.width = size + 'px';
+      square.style.height = size + 'px';
+      elems.push(square);
+    }
+    return elems
+  }
+
+    function buildSmileyFace(num, size){
+      var elems = []
+      for (var i = 0; i < num; i++){
+        var circle = document.createElement('div');
+        circle.style.width = size;
+        circle.style.height = size;
+        circle.style.borderRadius = size/2;
+        circle.style.backgroundColor = 'yellow';
+        var textNode = document.createTextNode('^. _ .^');
+        circle.appendChild(textNode);
+        elems.push(circle);
+      }
+      return elems;
+    }
+
+    function appendSmileyToDom(num, size){
+      var smileys = buildSmileyFace(num, size);
+      var ul = document.getElementById('smileys');
+    }
+
+    function randomColor(){
+     return "rgb(" + Math.floor(Math.random() * 10) + ", " + Math.floor(Math.random() * 10) + ", " + Math.floor(Math.random() * 10)")"
+
+    }
+
+     var protos = [
+'Nessa Nguyen',
+'Jeff Winkler',
+'John Murphy',
+'Jeff Drakos',
+'Rebecca Strong',
+'Gardner Lonsberry' ,
+'Jonathan Gean',
+'Nathaniel Tuvera',
+'Tim Hannes',
+'Aziz Hasanov',
+'Chris Heuberger',
+'Dmitry Shamis' ,
+'Corey Leveen',
+'Paul Hiam',
+'Steven Doran',
+'Ben Karl',
+'Kristen Tonga',
+'Wake Lankard',
+'Carlos Pichardo' ,
+'Paul Gasberra',
+'Andrea Trapp',
+'Heidi Williams-Foy'
+]
+  function createLiNodes(arr){
+    arr2 = []
+    //iterates on array
+    for (var i = 0; i < arr.length; i++){
+      var textNode = document.createTextNode(arr[i]);
+      var li = document.createElement('li');
+      li.appendChild(textNode);
+      arr2.push(li);
+    }
+    return arr2;
+  }
+
+  function prependLiNodes(arr){
+    var elems = createLiNodes(arr);
+    var ul = document.getElementById('students');
+    for (var i = 0; i < elems.length; i++){
+      ul.insertBefore(elems[i], elems[i-1]);
+     }
+    }
+  }
+
+  function findTeacher(teacherName){
+    var teachersUL = dcoument.getElementById('teachers');
+    var teacherLis = teachersUl.getElementsByTagName('li');
+    for (var i = 0; i < teachersLis.length; i++) {
+      console.log("passed in name:", teacherName);
+      console.log("pa")
+      if teachersLis[i].innerHTML == teacherName) {
+        return teachersLis[i];
+      }
+    }
+  }
+
+  function removeTeacher(teacherName){
+    var teacher = find.Teacher(teacherName);
+    var teachersUl = teachersUl();
+    teachersUl.removeChild(teacher);
+  }
+
+  function replaceTeacher(newTeacherName, oldTeacherName){
+    var newTeacher = document.createElement('li');
+    newTeacherLi.innerHTML = newTeacherName;
+    var oldTeacherLi = findTeacher(oldTeacherName);
+    teachersUL().replaceChild(newTeacherLI, oldTeacherLi);
+  }
+
+  }
+</script>
+</body>
+</html>

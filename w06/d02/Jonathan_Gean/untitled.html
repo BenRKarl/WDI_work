@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Doc</title>
+</head>
+<body>
+  <input type="text" value="input a name">
+  <ul id = 'teachers'>
+  <li id='aldric' class='colorizable'>
+    Aldric
+  </li>
+  <li id='matt'>
+    Matt
+  </li>
+  <li id='andrew' class='colorizable'>
+    Andrew
+  </li>
+</ul>
+<ul id = 'students'>
+</ul>
+
+
+  <script>
+    function filterByNodetype(num){
+      var childNodes = document.body.childNodes;
+      for (var i = 0; i < childNodes.length; i++){
+          if (childNodes[i].nodetype == num){
+            console.log(childNodes[i])
+          }
+        }
+    }
+
+    function logchildNodes() {
+      var childNode = document.body.childNodes;
+      for (var i = 0; i < childNode.length; i++){
+        console.log(childNode[i]);
+      }
+    }
+    function logchildren() {
+      var children = document.body.children;
+      for (var i = 0; i < children.length; i++){
+        console.log(children[i]);
+      }
+    }
+    function ulTheGreat(ulNode) {
+      var listitems = document.body.firstElementChild.children;
+      for (var i = 0; i < listitems.length; i++){
+        listitems[i].setAttribute('groovy', true)      }
+
+    }
+     function classTeacher(ulNode) {
+      var listitems = document.body.firstElementChild.children;
+      for (var i = 0; i < listitems.length; i++){
+        listitems[i].setAttribute('class', 'teacher')      }
+
+    }
+    function getvalue(textfield){
+      console.log(textfield.value)
+    }
+    function changeTagFont(tagName, fontFamily){
+      var taglist = document.getElementsByTagName(tagName)
+      for (var i = 0; i < taglist.length; i++){
+        taglist[i].style.fontFamily = fontFamily
+      }
+    }
+    function colorize(color){
+      var colorlist = document.getElementsByClassName('colorizable')
+      for (var i = 0; i < colorlist.length; i++){
+        colorlist[i].style.color = color
+      }
+    }
+    function buildSquares(num, size){
+      var elems = []
+      for (var i=0;i < num;i++){
+        var divx = document.createElement('div')
+        divx.style.width = size;
+        divx.style.height = size+'px';
+        divx.style.backgroundColor = 'red'
+        elems.push(divx)
+    }
+      return elems
+    }
+
+    function buildSmileyFace(num, size){
+      var elems = [];
+      for (var i = 0; i < num; i++){
+        var circle = document.createElement('div');
+        circle.style.width = size + 'px';
+        circle.style.height = size + 'px' ;
+        circle.style.borderRadius = size/2 + 'px';
+        circle.style.backgroundColor = randomColor();
+        var textNode = document.createTextNode('0_0');
+        circle.appendChild(textNode);
+        elems.push(circle);
+      }
+      return elems;
+    }
+    function appendSmileysToDom(num,size){
+      var smileys = buildSmileyFace(num, size);
+      var li = document.getElementsByTagName('li');
+      var ul = document.getElementById('smileys');
+      for (var i = 0; i < smileys.length; i++){
+        ul.appendChild(smileys[i]);
+      }
+    }
+    function randomColor(){
+      var colorArray = ['red','blue','green','pink','yellow','black','orange','purple','grey']
+      return colorArray[Math.floor(Math.random() * colorArray.length)];
+    }
+
+    function createLiNodes(array){
+      arr = []
+
+  for (var i = 0; i < array.length; i++){
+    var name = document.createTextNode(array[i]);
+    var li = document.createElement('li');
+    li.appendChild(name);
+    arr.push(li);
+  }
+  return arr
+    }
+    function prependLiNodes(arr){
+    var elems = createLiNodes(arr);
+    var ul    = document.getElementById('students')
+    for (var i = 0; i < elems.length; i++){
+      ul.insertBefore(elems[i], elems[i-1]);
+    }
+    }
+
+    function findTeacher(teacherName){
+      var teachersUl = document.getElementById('teachers');
+      var teacherLis = teachersUl.getElementsByTagName('li');
+      for (var i = 0; i < teacherLis.length; i++){
+        if (teacherLis[i].innerHTML == teacherName){
+          return teacherLis[i];
+        }
+      }
+    }
+    function removeTeacher(teacherName){
+    var teacher = findTeacher(teacherName);
+    var teachersUL = document.getElementById('teachers');
+    teachersUL.removeChild(teacher);
+  }
+
+  function replaceTeacher(newTeacherName, oldTeacherName){
+    var newTeacherLi = document.createElement('li');
+    newTeacherLi.innerHTML = newTeacherName;
+    var oldTeacherLi = findTeacher(oldTeacherName);
+    teachersUl().replaceChild(newTeacherLi, oldTeacherLi);
+  }
+    </script>
+</body>
+</html>
