@@ -64,4 +64,4 @@ parseFloat
 ---
 
 ###Javascript The Good Parts
-- Watch this 1hr video: (http://youtu.be/hQVTIJBZook)[http://youtu.be/hQVTIJBZook]
+- Watch this 1hr video (if you didn't): (https://www.youtube.com/watch?v=hQVTIJBZook)[https://www.youtube.com/watch?v=hQVTIJBZook]
