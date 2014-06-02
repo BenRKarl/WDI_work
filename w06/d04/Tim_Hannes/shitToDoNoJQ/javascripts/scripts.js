@@ -2,7 +2,7 @@
 // console.log('Hello, user!')
 
 var todoApp = {
-  ToDoItem: function(shitText){
+  ToDoShit: function(shitText){
     this.shitText = shitText;
     this.el = undefined;
   },
@@ -10,12 +10,12 @@ var todoApp = {
     return document.getElementById('shit-todo');
   },
   createShit: function(shitText){
-    var shit = new this.ToDoItem(shitText);
+    var shit = new this.ToDoShit(shitText);
     this.shitsList().appendChild(shit.render().el);
     }
   };
 
-  todoApp.ToDoItem.prototype.render = function(){
+  todoApp.ToDoShit.prototype.render = function(){
     var liEl = document.createElement('li');
     var itemsEl = document.createElement('div');
     var actionsEl = document.createElement('div');
@@ -29,10 +29,10 @@ var todoApp = {
     liEl.style.backgroundColor= 'lightgrey';
     setTimeout(function(){
     olEl.removeChild(liEl);
-    }, 500);
+    }, 1000);
   })
 
-  buttonEl.innerHTML = 'Delete';
+  buttonEl.innerHTML = 'Completed';
 
   liEl.innerHTML = this.shitText;
   liEl.appendChild(buttonEl)

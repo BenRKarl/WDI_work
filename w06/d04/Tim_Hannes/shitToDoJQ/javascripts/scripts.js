@@ -9,7 +9,14 @@ var toDoApp = {
     var newNode = newItem.render().el;
     $('#todo-list').append(newNode);
     return false;
-  }
+  },
+
+
+  // deleteTask: function(){
+  //   var listItem = $('<li>').delete(this.taskText);
+  // }
+
+
 }
 
 toDoApp.Item.prototype.render = function(){
@@ -20,4 +27,10 @@ toDoApp.Item.prototype.render = function(){
 
 $(function(){                  // golf card       player    football
   $('#todo-form').on('submit', function(){ return toDoApp.createTask();});
+
+  //deletes list items
+  $('ul').on('click', 'li', function(){
+    $(this).remove();
+  });
+
 })
