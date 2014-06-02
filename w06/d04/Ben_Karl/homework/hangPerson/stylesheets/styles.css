@@ -1,0 +1,26 @@
+body {
+  text-align: center;
+}
+
+
+h1 {
+  text-decoration: underline;
+}
+
+.hang-word-container {
+  padding: 5px;
+  font-size: 5em;
+}
+
+.word-div p {
+  display: inline-block;
+  margin: 0;
+  width: 50px;
+  border-bottom: 3px solid black;
+  margin: 10px;
+  color: white;
+}
+
+.field-and-tries div {
+  padding: 1em;
+}
