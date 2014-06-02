@@ -85,7 +85,30 @@ var WDility = {
     }
     return newArray;
   },
+
+  include: function(array, value){
+    for (var i in array){
+      if (array[i] === value){
+        return true;
+      }
+    }
+    return false;
+  },
+//include: function(array, value){
+//  return (array.indexOf(value) != -1)
+//},
+//
+//include: function(array, value){
+//  if (value in array){
+//    return true;
+//  }
+//  return false;
+//}
+//include: function(array, value){
+// return (value in array);
+//}
 };
+
 
 
 
