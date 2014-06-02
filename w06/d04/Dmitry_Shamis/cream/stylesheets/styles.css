@@ -1,0 +1,12 @@
+body {
+  background-color: black;
+  background-image: url('http://www.thenorthernlight.org/wp-content/uploads/2013/11/filepicker_slUuHZxtS1afGRUZV2sV_wu_tang_clan_36_chambers.jpg');
+}
+
+.dollars {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  color: green;
+  font-size: 10em;
+}

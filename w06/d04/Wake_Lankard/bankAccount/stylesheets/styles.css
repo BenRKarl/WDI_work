@@ -1,0 +1,52 @@
+.account {
+  border: thin black solid;
+  background-color: gray;
+}
+.balance {
+  width:100px;
+  
+  left: 0;
+  float: left;
+}
+.relative-balance-div{
+  position: relative;
+}
+
+.delta{
+  width: 100px;
+  /*position: absolute;*/
+  float: left;
+}
+.withdrawal-btn{
+ 
+  /*position: absolute;*/
+  float: left;
+}
+.dep-btn{
+  
+ /* position: absolute;*/
+  float: left;
+}
+.transfer-btn{
+  
+ /* position: absolute;*/
+  float: left;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
