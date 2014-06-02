@@ -1,0 +1,8 @@
+body {
+  font-family: sans-serif;
+  background-color: lightgoldenrodyellow;
+}
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
