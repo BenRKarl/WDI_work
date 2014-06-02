@@ -9,7 +9,7 @@
 
 // ToDoItem.prototype.render = function(){
 //   var liEl = document.createElement('li');
-//   liEl.inerHTML = this.taskText;
+//   liEl.innerHTML = this.taskText;
 //   this.el = liEl;
 //   return this;
 // };
@@ -48,7 +48,7 @@ todoApp.ToDoItem.prototype.render = function(){
   var buttonEl = document.createElement('button');
 
   itemsEl.className = 'items';
-  actionsEl.className = 'actionss';
+  actionsEl.className = 'actions';
   metaDataEL.className = 'meta-data';
   buttonEl.className = 'complete';
 
