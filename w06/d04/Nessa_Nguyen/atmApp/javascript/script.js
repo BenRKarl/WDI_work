@@ -32,7 +32,7 @@ var atmApp = {
   updateBal: function(account, newBal) {
     var account_id =  account + '_bal' 
     var balance = document.getElementById(account_id);  
-    balance.innerHTML = newBal.toString();            
+    balance.innerHTML = newBal.toFixed(2).toString();            
   },
 
   transact: function(account, deposit, withdrawal) {
@@ -46,15 +46,14 @@ var atmApp = {
       var message = document.createTextNode('Please choose an account. ')
       error.appendChild(message);
     }
+    
+    balance = balance + deposit - withdrawal;
     if (withdrawal % 10 != 0) {
       error.innerHTML = 'Cannot withdraw this amount. See note*.'     
-    } 
-
-    balance = balance + deposit - withdrawal;
-    if (withdrawal > atmApp.checkingBal() + atmApp.savingBal()) {
+    } else if (withdrawal > atmApp.checkingBal() + atmApp.savingBal()) {
       error.innerHTML = 'Cannot perform transaction. Withdrawal amount is higher than your combined balance.';
     } else if (account === 'saving' && balance < 0) {       
-      error.innerHTML = 'Cannot perform transaction. Withdrawal amount is higher than your balance.'; 
+      error.innerHTML = 'Cannot perform transaction. Withdrawal amount is higher than your savings balance.'; 
     } else if (account === 'checking' && balance < 0) {
       var newSavingBal = atmApp.transact('saving', balance, 0);
       atmApp.updateBal('saving', newSavingBal);

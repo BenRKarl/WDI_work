@@ -1,8 +1,13 @@
 
 function setEventHandlers(){
-  var button = $('.random-palettes')[0];
+  var button = $('.new-palettes')[0];
   $(button).click(function(){ 
-    ajaxLoad('/palettes.json', displayColors);
+    ajaxLoad('/palettes.json', displayPalettes);
+  });
+
+  var randPalette = $('.random-palette')[0];
+  $(randPalette).click(function(){
+    ajaxLoad('/random.json', fillPalette);
   });
 }
 
@@ -14,16 +19,16 @@ function ajaxLoad(url, callback) {
   })
 }
 
-function displayColors(data) {
+function displayPalettes(data) {
+  $('.fill').empty();
+  $('.fill-name').empty();
   var resultArray = data;
-  console.log(resultArray[0]);
-
   for (var i = 0; i < resultArray.length; i++) {
     var paletteLink = $('<a>').attr('href', resultArray[i].url).html(resultArray[i].title);  
     var paletteName = $('<p>').append(paletteLink);
     var colorUl = $('<ul>').addClass('color-list');
     colorUl.append(paletteName);
-    $('.palettes').append(colorUl); 
+    $('.fill').append(colorUl); 
 
     var colorArray = resultArray[i].colors;    
     for (var j = 0; j < colorArray.length; j++) {
@@ -39,6 +44,18 @@ function displayColors(data) {
         colorUl.append(emptyLi);          
       }
     }    
+  }
+}
+
+function fillPalette(data) {
+  $('.fill').empty();
+  $('.fill-name').empty();
+  var title = $('<h2>').html(data[0].title);
+  $('.fill-name').append(title);
+  var colorArray = data[0].colors;
+  for (var i = 0; i < colorArray.length; i++) {
+    var newLi = $('<div>').html('&nbsp;').addClass('fill-color').css('background-color', '#'+colorArray[i]);
+      $('.fill').append(newLi);
   }
 }
 
