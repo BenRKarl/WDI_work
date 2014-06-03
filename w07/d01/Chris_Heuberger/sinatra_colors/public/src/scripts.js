@@ -1,9 +1,21 @@
-
 function setEventHandlers(){
   var button = $('.random-palettes')[0];
-  $(button).click(function(){console.log("something is happenging");});
+  $('.random-palettes').on('click', function() {
+    $.ajax({
+      url:'/palettes.json',
+      success: displayColors
+    });
+  });
 }
 
 $(function(){
   setEventHandlers();
 });
+
+function displayColors(data){
+  var colorArray = data[0].colors;
+  $.each(colorArray, function(idx, color) {
+    $('<div>').css("background-color", colorArray);
+  });
+
+};
