@@ -2,10 +2,12 @@ require 'spec_helper'
 
 describe Person do
 
-  describe 'huh' do
-    it 'works' do
-      expect(2).to eq(2)
+  describe "#to_s" do
+    it 'should return a formatted name' do
+      lich = Person.new({name: 'Lichard', email: 'lich@glichmail.com'})
+      actual = lich.to_s
+      expected = 'Lichard (lich@glichmail.com)'
+      expect(actual).to eq(expected)
     end
   end
-
 end
