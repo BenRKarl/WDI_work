@@ -22,7 +22,7 @@
 // ---
 
 function letterCheck(input){
-  return input.split('').length == 1 && jQuery.inArray(input, ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']) > -1
+  return input.split('').length == 1 && input.search(/[a-z]/) > -1
 }
 
 
@@ -124,14 +124,14 @@ SecretWord.prototype = {
 secret = new SecretWord()
 
 $(function(){
-
-  $('#guessButton').on('click', function() {
-    if (letterCheck($('#guessLetter').val())) {
-    secret.guess($('#guessLetter').val());
+  document.onkeypress = function(event){
+    var guess = String.fromCharCode(event.keyCode)
+    if (letterCheck(guess)) {
+    secret.guess(guess);
   } else {
     alert("Must input a lowercase letter");
   }
-  })
+  }
 
   $('#resetButton').on('click', function() {
     secret.reset();
@@ -145,7 +145,5 @@ $(function(){
 
   $('#guessedLetters').html('Guessed: ' + secret.guesses);
   $('#guessesLeft').html('Guesses Left: ' + secret.numberGuesses());
-
-
 })
 
