@@ -16,19 +16,15 @@
   $(function(){
     $('#input').on('keyup', function(){
     var text  = ($(this).val());
-    // var entry = $('h1').text(text);
+
     $h1El = $('#h1');
     $($h1El).text(text);
-    $($h1El).css('font-size', $($h1El).text().length+"px");
+    $h1El.css('font-size', $($h1El).text().length+"px");
 
+    });
   });
 
-})
 
-// var transferable = function(){
-//   var userInput = $('#input').val();
-//   $('body').append(userInput);
-// }
 
   </script>
 
