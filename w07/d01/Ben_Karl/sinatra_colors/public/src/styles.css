@@ -1,0 +1,9 @@
+.color {
+  width: 6em;
+  height: 6em;
+  display: inline-block;
+}
+
+body {
+  text-align: center;
+}
