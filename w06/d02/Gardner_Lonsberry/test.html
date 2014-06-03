@@ -1,0 +1,182 @@
+<html>
+  <head>  
+    <title>WDI</title>
+  </head>
+<body>
+  <input type="text" id="input">
+    <ul>
+      <li class="teacher colorizable" id="aldric"> Aldric </li>
+      <li class="teacher" id="andrew"> Andrew </li>
+      <li class="teacher" id="matt"> Matt </li>
+    </ul>
+    <div>
+      The Rails 4 Way
+      <span>Everything you ever wanted to know</span>
+      <span>About building an Enterprise Class Rails app</span>
+    </div>
+    <div class="colorizable">Secrets of the JavaScript Ninja</div>
+    <div>Programming and Object Oriented Design in Ruby</div>
+  <div id="students"></div>
+  <ul id="smileys">
+    <script>
+        function filterByNodeType(num){
+            var childNodes = document.body.childNodes;
+            for (var i = 0; i < childNodes.length; i++){
+                if (childNodes[i].nodeType == num){
+                    console.log(childNodes[i]);
+                }
+            }
+        }
+        
+        function logChildNodes(){
+            var childNodes = document.body.childNodes;
+            for (var i = 0; i < childNodes.length; i++){
+                    console.log(childNodes[i]);            
+            }
+        }
+        
+        function logChildren(){
+            var children = document.body.children;
+            for (var i = 0; i < children.length; i++){
+                    console.log(children[i]);            
+            }
+        }
+        
+        function theMan(ul){
+            var childElementNodes = ul.children;
+              for (var i = 0; i < childElementNodes.length; i++){
+                  children[i].innerHTML += 'is the mother funkin man';              
+              }
+        }
+        
+        function blueCircle(ul){
+            var childElementNodes = ul.children;
+              for (var i = 0; i < childElementNodes.length; i++){
+                  childElementNodes[i].innerHTML += "<div style='height: 20px; width: 20px; background-color: blue; border-radius: 20px'</div>"              
+              }
+        }
+        
+        function groovy(ul){
+          var childElementNodes = ul.children;
+              for (var i = 0; i < childElementNodes.length; i++){
+                  childElementNodes[i].setAttribute('groovy', true)
+              }
+        }
+        
+        function makeTeacher(ul){
+          var childElementNodes = ul.children;
+              for (var i = 0; i < childElementNodes.length; i++){
+                  childElementNodes[i].className('teacher')
+              }
+        }
+        
+        function getInput(ul){
+          var input = document.body.getElementById('input')
+              for (var i = 0; i < childTextValues.length; i++){
+                  childTextValues[i].value
+              }
+        }
+        
+        function changeTagFont(tagName, fontFamily){
+          var elems = document.getElementsByTagName(tagName);
+            for (var i = 0; i < elems.length; i++){
+                elems[i].style.fontFamily = fontFamily;
+            }
+        }
+        
+        function colorize(color){
+          var elems = document.getElementsByClassName('colorizable');
+          for (var i = 0; i < elems.length; i++){
+                elems[i].style.backgroundColor = color;
+          }
+        }
+        
+        function buildSquares(num, size){
+          var elems = []
+          for (var i = 0; i < num; i++){
+            var square  = document.createElement('div');
+            square.style.width = size;
+            square.style.height = size;
+            elems.push(square);
+          }
+            return elems;
+        }
+        
+        function buildSmileyFaces(num, size){
+          var elems = [];
+          for (var i = 0; i < num; i++){
+            var circle = document.createElement('div');
+            circle.style.width = size;
+            circle.style.height = size;
+            circle.style.borderRadius = size/2;
+            circle.style.backgroundColor = 'yellow';
+            circle.style.textAlign = "center";
+            circle.style.fontSize = size/2;
+            var textNode = document.createTextNode('o.O');
+            circle.appendChild(textNode);
+            elems.push(circle);
+          }
+          return elems;
+        }
+        
+        function appendSmileyToDom(num, size){
+          var smileys = buildSmileyFaces(num, size);
+          var ul      = document.getElementById('smileys');
+          for (var i = 0; i < smileys.length; i++){
+            ul.appendChild(smileys[i]);
+          }
+        }
+        
+        function randomColor(){
+          //return a random color from an array of colors
+           var colors = ['blue', 'red', 'green'];
+           var randomIndex = parseInt(Math.random()*colors.length);
+          return colors[randomIndex];
+        }
+
+        function createLiNodes(arr){
+           elems = []
+             for (var i = 0; i < arr.length; i++){
+              var textNode = document.createTextNode(arr[i]);
+              var li = document.createElement('li');
+              li.appendChild(textNode);
+              elems.push(li);
+              }
+            return elems;
+        }
+        function prependLiNodes(arr){
+          var elems = createLiNodes(arr)}
+          var ul = document.getElementById('students')
+          for (var i = 0; i < elems.length; i++){
+            ul.insertBefore(elems[i], elems[i-1]);
+          }
+        
+          var protos = [
+          'Nessa Nguyen',
+          'Jeff Winkler',
+          'John Murphy',
+          'Jeff Drakos',
+          'Rebecca Strong',
+          'Gardner Lonsberry' ,
+          'Jonathan Gean',
+          'Nathaniel Tuvera',
+          'Tim Hannes',
+          'Aziz Hasanov',
+          'Chris Heuberger',
+          'Dmitry Shamis' ,
+          'Corey Leveen',
+          'Paul Hiam',
+          'Steven Doran',
+          'Ben Karl',
+          'Kristen Tonga',
+          'Wake Lankard',
+          'Carlos Pichardo' ,
+          'Paul Gasberra',
+          'Andrea Trapp',
+          'Heidi Williams-Foy'
+          ]
+          
+    </script>
+</body>
+</html>     
+
