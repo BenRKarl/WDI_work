@@ -12,6 +12,10 @@ function makeDiv(data){
     var divPaletteHolder = $('<div>');
     var mainDiv = $('.palette');
     $(mainDiv).append(divPaletteHolder);
+    var titlePostDiv = $('<div>');
+    $(titlePostDiv).html(palette.title);
+  $(titlePostDiv).css({"color":"black", "font-family":"lucinda"});
+    $(divPaletteHolder).append(titlePostDiv);
 
     $.each(palette.colors, function(index, color){
 
