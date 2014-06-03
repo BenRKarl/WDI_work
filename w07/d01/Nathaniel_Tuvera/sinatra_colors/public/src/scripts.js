@@ -18,8 +18,8 @@ function setEventHandlers(){
 // $('.create-palettes').onclick=
 function colorBox(){
   var titleEl = $(''); //stil todo?
-    // for (var j = 0; j < colorWheel.responseJSON[j].length; j++){
-    //   var boxEl = $('<div>').html(colorWheel.responseJSON[j].title).addClass('color-name');
+    //for (var j = 0; j < colorWheel.responseJSON[j].length; j++){
+    //  var boxEl = $('<div>').html(colorWheel.responseJSON[j].title).addClass('color-name');
       for (var i = 0; i < colorWheel.responseJSON[i].colors.length; i++){
         var bgColor = '#' + colorWheel.responseJSON[i].colors[i];     //only iterates through first color JSON, but it's a start
 
