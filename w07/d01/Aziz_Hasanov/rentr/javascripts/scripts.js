@@ -31,7 +31,6 @@ var inputManager = {
   }
 };
 
-
 function displaySearchResults(data) {
   var movieArray = data.Search;
   for (var i =0; i < movieArray.length; i++) {
