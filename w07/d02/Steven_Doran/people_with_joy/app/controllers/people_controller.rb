@@ -23,6 +23,14 @@ class PeopleController < ApplicationController
     redirect_to person_path(person)
   end
 
+  def new
+  end
+
+  def destroy
+    Person.delete(params[:id])
+    redirect_to people_path 
+  end
+
   private
 
   def person_params

@@ -10,6 +10,7 @@ describe PeopleController do
       @andre.save
     end
 
+    # --- INDEX ---
     describe 'GET index' do
 
       before :each do
@@ -30,6 +31,7 @@ describe PeopleController do
 
     end # GET index
 
+    # --- SHOW ---
     describe 'GET show' do 
 
       before :each do 
@@ -54,6 +56,7 @@ describe PeopleController do
 
     end # GET show
 
+    # --- EDIT ---
     describe 'GET edit' do 
 
       before :each do 
@@ -78,6 +81,7 @@ describe PeopleController do
 
     end # Get edit
 
+    # --- UPDATE ---
     describe 'POST update' do
 
       before :each do 
@@ -103,21 +107,19 @@ describe PeopleController do
 
     end # POST update
 
+    # --- DELETE ---
     describe 'DELETE destroy' do 
 
       it 'destroys person record' do 
         expect { delete :destroy, {:id => @andre.id}}
-          .to change(person.by(-1)
+        .to change(Person, :count).by(-1)
       end
 
-      before :each do 
-        delete :destroy, {:id => @andre.id}
-      end
-
-    end
+    end # DELETE destroy
 
   end # given a person
 
+  # --- CREATE ---
   describe 'POST create' do 
     before :each do
       post :create, {:person => {name: 'Kathew Lamp', email: 'klool@tmail.com'}}
@@ -141,7 +143,38 @@ describe PeopleController do
 
   end # POST create
 
+  # --- NEW ---
+  describe 'GET new' do 
+
+    before :each do 
+      get :new
+    end
+
+    it 'resonds successfully' do 
+      actual = response.code
+      expected = '200'
+      expect(actual).to eq(expected)
+    end
+
+    it 'renders the new template' do
+      expect(response).to render_template('new')
+    end
+
+  end # GET new
+
 end # PeopleController
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
