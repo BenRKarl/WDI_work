@@ -1,0 +1,49 @@
+body {
+  font-family: Verdana;
+}
+
+.sidebar {   
+  background-color: blue;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.container {
+  background-color: green;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.palette {
+  float: left;
+  width: 24%;
+  margin: 2px;  
+  margin-bottom: 5px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.title {
+  background-color: lightblue;
+  clear: both;
+  text-align: center;
+}
+
+.userName {  
+  text-align: center;
+  font-size: 75%;
+}
+
+.colors {
+  margin: 0 auto;
+  background-color: white;
+}
+
+.hue {
+  float: left;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  margin: 5px;   
+  border: 1px solid black;
+}
