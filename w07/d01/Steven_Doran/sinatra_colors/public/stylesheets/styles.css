@@ -1,0 +1,65 @@
+body {
+   background-color: lightgrey;
+   font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+   text-align: center;
+   font-size: 60px;
+   font-family: 'Arvo', serif;
+   font-style: italic;
+   color: white;
+   -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: #2C2E2E;
+}
+
+.header {   
+   /*background-color: blue;*/
+   width: 960px;
+   margin: 0 auto;
+   margin-bottom: 10px;
+}
+
+.container {
+   /*background-color: green;*/
+   width: 960px;
+   margin: 0 auto;
+}
+
+.palettes {
+   /*background-color: white;*/
+   width: 25%;
+   float: left;
+   margin-bottom: 10px;
+}
+
+.title {
+   /*background-color: lightblue;*/
+   clear: both;
+   /*text-align: center;*/
+   font-size: 12px;
+   margin-top: 30px;
+}
+
+.creator {
+   /*background-color: turquoise;*/
+   /*text-align: center;*/
+   font-size: 12px;
+   margin-bottom: 20px;
+}
+
+.colors {
+   /*background-color: white;*/
+   margin: 0 auto;
+
+}
+
+.hue {
+   height: 20px;
+   width: 20px;
+   border-radius: 100%;
+   margin: 0 auto;
+   float: left;
+   border: solid 1px #2C2E2E;
+   margin-right: 2px;
+}
