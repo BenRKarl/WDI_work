@@ -13,7 +13,7 @@ function setEventHandlers(){
 }
 
 function displayColorBox(e){
-   var colorBox = $('<div>').addClass('color-box');
+   var colorBox = $('<div>').addClass('color-box').css('border', 'solid 2px white');
    $('.container').append(colorBox);
 
    // console.log($(this).data().colors.length);
