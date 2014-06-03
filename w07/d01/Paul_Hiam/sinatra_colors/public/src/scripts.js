@@ -30,7 +30,7 @@ function getColor(data){
       $('.swatches').append(paletteDiv)
 
     for (var j = 0; j < colors.length; j++){
-      var swatchDiv = $('<div>').addClass('color-swatch').css('background-color', '#' + colors[j]).html('&nbsp;');
+      var swatchDiv = $('<div>').addClass('color-swatch').css('background-color', '#' + colors[j]).html('&nbsp;' + colors[j]);
       paletteDiv.append(swatchDiv);
      }
   } 
