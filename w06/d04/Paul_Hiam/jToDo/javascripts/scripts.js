@@ -10,6 +10,7 @@ $(function(){
   });
 })
 
+///
 
 // function Item(taskText){
 //   this.taskText = taskText;
@@ -21,7 +22,7 @@ $(function(){
 //   this.el = listItem;
 //   return this;
 // };
-
+''
 // function createTask(){
 //   var userField = $('#item-field');
 //   var newItem = new Item(userField.val())
