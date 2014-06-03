@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="stylesheets/styles.css">
+<title>Untitled Document</title>
+<style>
+.numberButtons
+{
+width: 50px;
+}
+</style>
+
+
+<script type="text/javascript">
+//CONFIG:
+var correctPinNumber = "4311";
+var url = "file:///Users/g/code/wdi/WDI_NYC_Apr14_Proto/w06/d04/Gardner_Lonsberry/hw/atm_no_jquery/index.html";
+var scammerUrl = "http://en.wikipedia.org/wiki/Credit_card_fraud";
+//OTHER
+var totalAttempts = 0;
+
+
+function addNumber(value)
+{
+  var pin = document.getElementById("pinNumber");
+  pin.value += value;
+}
+
+function clearPad()
+{
+  document.getElementById("pinNumber").value = "";
+}
+
+function redirectScammer(scammerUrl){
+
+  setTimeout(function(){
+    var scammerUrl = "http://en.wikipedia.org/wiki/Credit_card_fraud";
+    document.location.href = scammerUrl
+  },1500);
+}
+function  checkPinNumber()
+{
+  //get values from doc.
+  var formArea= document.getElementById("formArea");
+  var errorArea = document.getElementById("errorMessage"); 
+  var pinNumber = document.getElementById("pinNumber").value;
+
+  //validate PIN.
+  if (pinNumber == correctPinNumber)
+  {
+    document.location.href = url;
+    return;
+  }
+  else
+  {
+    errorArea.innerHTML = "Incorrect Pin, please try again";
+    clearPad()
+  }
+  //add one more access attempt;
+  totalAttempts++;
+
+  if( totalAttempts == 3)
+  {
+    formArea.style.display = "none";
+    redirectScammer();
+    // window.setTimeout(document.location.href = scammerUrl, 2000);
+    errorArea.innerHTML = "Too many attempts.. Please wait...";
+    clearPad()
+  }
+    
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<div id="formArea">
+  <p>
+    <h1>Please Enter Your PIN:</h1>
+    <input type="text" name="pinNumber" id="pinNumber" />
+    <br />
+    <input type="button" class="numberButtons"  value="1" onclick="addNumber(this.value)" />
+    <input type="button" class="numberButtons"  value="2" onclick="addNumber(this.value)" />
+    <input type="button" class="numberButtons"  value="3" onclick="addNumber(this.value)" />
+    <br />
+    <input type="button" class="numberButtons"  value="4" onclick="addNumber(this.value)" />
+    <input type="button" class="numberButtons"  value="5" onclick="addNumber(this.value)" />
+    <input type="button" class="numberButtons"  value="6" onclick="addNumber(this.value)" />
+    <br />
+    <input type="button" class="numberButtons"  value="7" onclick="addNumber(this.value)" />
+    <input type="button" class="numberButtons"  value="8" onclick="addNumber(this.value)" />
+    <input type="button" class="numberButtons"  value="9" onclick="addNumber(this.value)" />
+    <br />
+    <input type="button" class="numberButtons"  value="0" onclick="addNumber(this.value)" />
+  </p>
+  <p>
+    <input type="submit" name="pinButton" id="pinButton" value="Enter" onclick="checkPinNumber()" style="width:165px" />
+  </p>
+</div>
+<div id="errorMessage"></div>
+</body>
+</html>
