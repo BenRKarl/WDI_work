@@ -23,61 +23,44 @@
 <body>
   <ul id="results"></ul>
   <script>
-  assert(true,   "----- BEFORE OUTER---------------");
-    /*TEST CODE*/
-    assert(typeof outer === 'function', "outer() is in scope" );
-    assert(typeof inner === 'function', "inner() is in scope" );
-    assert(typeof a === 'number', "var a is in scope");
-    assert(typeof b === 'number', "var b is in scope");
-    assert(typeof c === 'number', "var c is in scope");
-
-
-
-    function outer(){
-      assert(true, "----- INSIDE OUTER, BEFORE A -----");
-      /*TEST CODE*/
-    assert(typeof outer === 'function', "outer() is in scope" );
-    assert(typeof inner === 'function', "inner() is in scope" );
-    assert(typeof a === 'number', "var a is in scope");
-    assert(typeof b === 'number', "var b is in scope");
-    assert(typeof c === 'number', "var c is in scope");
-
-
-
-      var a = 1;
-      function inner(){};
-      var b = 2;
-      assert(true, "----- INSIDE OUTER, AFTER inner() AND b -----");
-      /*TEST CODE*/
-    assert(typeof outer === 'function', "outer() is in scope" );
-    assert(typeof inner === 'function', "inner() is in scope" );
-    assert(typeof a === 'number', "var a is in scope");
-    assert(typeof b === 'number', "var b is in scope");
-    assert(typeof c === 'number', "var c is in scope");
-
-
-      if (a == 1){
-        var c = 3;
-        assert(true, "----- INSIDE OUTER, INSIDE if -----");
-        /*TEST CODE*/
-    assert(typeof outer === 'function', "outer() is in scope" );
-    assert(typeof inner === 'function', "inner() is in scope" );
-    assert(typeof a === 'number', "var a is in scope");
-    assert(typeof b === 'number', "var b is in scope");
-    assert(typeof c === 'number', "var c is in scope");
-
-
+    function andrewSmells(){
+      return true;
     }
-      assert(true, "----- INSIDE OUTER, OUTSIDE if -----");
+    assert(andrewSmells.name === 'andrewSmells', 'the functions name attribute is andrewSmells');
+
+    var aldricSmellsGood = function() {
+      return true;
     }
-    outer();
-    assert(true, "------ AFTER OUTER ---------------");
-    /*TEST CODE*/
-    assert(typeof outer === 'function', "outer() is in scope" );
-    assert(typeof inner === 'function', "inner() is in scope" );
-    assert(typeof a === 'number', "var a is in scope");
-    assert(typeof b === 'number', "var b is in scope");
-    assert(typeof c === 'number', "var c is in scope");
+    assert(typeof window.aldricSmellsGood === 'function', 'its scope is the window');
+    assert(aldricSmellsGood.name === '', 'its name is aldricSmellsGood');
+    var mattSmells = function theBest(){return "or does he?"};
+    assert(mattSmells.name === 'theBest', "mattSmells is a reference to the function and we are calling the functions name attribute.");
+
+    function cell (){
+      assert(typeof prisoner === 'function', "visible before the function declaration");
+      function prisoner(){};
+      assert(typeof window.prisoner === 'function', 'the function is scoped globally');
+      var escapedPrisoner = prisoner;
+      assert(typeof window.escapedPrisoner === 'function', 'the prisoner has escaped the jail cell');
+    }
+    cell();
+
+    function destroyGluten(){return this};
+    assert(destroyGluten() === window, "this refers to the window in a globally scoped function");
+
+    var healIntestine = destroyGluten;
+    assert(healIntestine() === window, "what does 'this' refer to?");
+
+    var primalHuman1 = {
+      bePaleo: destroyGluten
+    }
+    assert(primalHuman1.bePaleo() === primalHuman1, "what does 'this' refer to?");
+
+    var primalHuman2 = {
+      bePaleo: primalHuman1.bePaleo
+    }
+
+    assert(primalHuman2.bePaleo() === primalHuman2, "Primal");
 
   </script>
 </body>
