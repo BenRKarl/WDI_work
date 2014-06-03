@@ -15,42 +15,29 @@ var sinatra_colors ={
                         .addClass('palatte')
                         .addClass(palatteName)
                         .css('margin', '5px')
-                        .css('float','right')
-                        .css('height', '100px')
-                        .css('width', '100px')
-                        .css('border-radius','50px')
-                        .css('background-color','#' + colorArr[0]);
-      var nextColor = '#' + colorArr[1];
-      $('.color-zone').append(palatteElem);
-      // $( "#clickme" ).click(function() {
-      // $( "#book" ).animate({
-      //   opacity: 0.25,
-      //   left: "+=50",
-      //   height: "toggle"
-      // }, 5000, function() {
-      //     // Animation complete.
-      //   });
-      // });
-      $(palatteElem).animate( { backgroundColor: "#000000"}, 2000);
+                        .css('float','right');
+                      //   .css('height', '100px')
+                      //   .css('width', '100px')
+                      //   .css('border-radius','50px');
+                      // //  .css('background-color', "#" + colorArr[0]);
       
-
-
-
+      
+      $('.color-zone').append(palatteElem);
 
       $.each(colorArr, function(i,color){
         console.log(color);
         var colorElem = $('<div>')
                         .addClass('color')
+                        .attr('title', '#' + color)
                         .css('background-color', '#' + color)
                         .css('height', '100px')
                         .css('width', '100px')
+                        //.css('display','inline')
                         .css('border-radius','50px');
-       // $(palatteElem).append(colorElem);
+       $(palatteElem).append(colorElem);
       })
     })
 
-      
-    
 
   },
 }
