@@ -77,8 +77,61 @@ describe PeopleController do
       end
 
     end # GET edit
+
+# --- UPDATE ---
+    describe 'POST update' do
+      before :each do
+        post :update, {:id => @andre.id, :person => {name: 'nondre'}}
+      end
+
+      it "responds with a redirect" do
+        actual = response.code
+        expected = '302'
+        expect(actual).to eq(expected)
+      end
+
+      it "updates the person record" do
+        @andre.reload
+        actual = @andre.name
+        expected = 'nondre'
+        expect(actual).to eq(expected)
+      end
+
+      it "redirects to show" do
+      response.should redirect_to person_path(@andre)
+      end
+
+    end #POST update
+
+# --- DELETE ---
+
+    describe 'DELETE destroy' do
+      it "destroy person record" do
+        expect { delete :destroy, {:id =>@andre.id} }
+        .to change(Person, :count).by(-1)
+      end
+
+    end # DELETE destroy
   end # given a person
 
+# --- NEW ---  NEED TO CHANGE
+    describe 'GET new' do
+      before :each do
+        get :new
+      end
+
+
+      it 'responds successfuly' do
+        actual = response.code
+        expected = '200'
+        expect(actual).to eq(expected)
+      end
+
+      it 'renders the new tempate' do
+        expect(response).to render_template('new')
+      end
+
+    end
 # --- CREATE ---
   describe "POST create" do
     before :each do
