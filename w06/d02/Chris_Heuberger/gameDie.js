@@ -1,4 +1,4 @@
-function GameDie (numSides){
+function GameDie(numSides){
   this.numSides = numSides;
 }
 
