@@ -5,8 +5,41 @@
   <title>Colors</title>
    <script src='lib/jquery.js'></script>
   <script src='src/scripts.js'></script>
+
+  <style type="text/css">
+  .color-list {
+    margin: 20px 15px; 
+    float: left;
+  }
+
+  .color-list li {
+    width: 80px;
+    height: 100px;
+    display: inline-block;
+    text-align: center;
+    color: #ccc;
+  }
+
+  .color-list li span {
+    display: block;
+    margin-top: 45%;
+  }
+
+  body {
+    font-family: 'Helvetica';
+  }  
+
+  a {
+    text-decoration: none;
+    color: blue;
+  }
+  </style>
 </head>
+
 <body>
   <button class="random-palettes">Unleash The Palettes</button>
+
+  <div class='palettes'></div>
+
 </body>
 </html>
