@@ -60,6 +60,6 @@ h1 {
    border-radius: 100%;
    margin: 0 auto;
    float: left;
-   border: solid 1px darkgrey;
+   border: solid 1px #2C2E2E;
    margin-right: 2px;
 }
