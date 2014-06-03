@@ -3,7 +3,7 @@ function setEventHandlers(){
 
    var button = $('.random-palettes')[0];
    $(button).click(function(){
-      $('.palettes').html('');
+      $('.palettes').remove();
       $.ajax({
          url: '/palettes.json',
          success: displayPalettes
