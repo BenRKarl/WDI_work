@@ -4,9 +4,6 @@ var toDoApp = {
     this.taskText = taskText;
     this.el       = undefined;
   },
-  TaskList: function(){
-    return document.getElementById('toDoList')
-  },
   addTask: function(){
     var userInput = $('#toDoInput');
     var newItem   = new this.Item(userInput.val())
@@ -19,7 +16,8 @@ var toDoApp = {
 
 toDoApp.Item.prototype.render = function(){
   var toDoItem = $('<li>').html(this.taskText);
-  var buttonEl = $('<button type="checkbox"></button>')
+  var buttonEl = $('<button>')
+
   this.el      = toDoItem;;
   return this;
 };
