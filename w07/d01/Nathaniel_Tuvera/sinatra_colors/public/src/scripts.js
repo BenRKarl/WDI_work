@@ -19,14 +19,15 @@ function setEventHandlers(){
 function colorBox(){
   var titleEl = $(''); //stil todo?
     // for (var j = 0; j < colorWheel.responseJSON[j].length; j++){
+    //   var boxEl = $('<div>').html(colorWheel.responseJSON[j].title).addClass('color-name');
       for (var i = 0; i < colorWheel.responseJSON[i].colors.length; i++){
         var bgColor = '#' + colorWheel.responseJSON[i].colors[i];     //only iterates through first color JSON, but it's a start
-        // var boxEl = $('<div>').html(colorWheel.responseJSON[i].title).addClass('color-name');
+
         var divEl  = $('<div>').css('backgroundColor', bgColor).addClass('cell');
 
         $('.color-container').append(divEl);
       }
-
+    // }
 }
 
 
