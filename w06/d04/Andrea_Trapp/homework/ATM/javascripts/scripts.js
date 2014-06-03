@@ -12,14 +12,14 @@ function BankAccount(accountHolderName, accounttype) {
   this.accountHolderName = accountHolderName;
   this.accounttype = accounttype;
   this.balance = 0;   
-  this.el = document.getElementById(accounttype + "-account");
+  //this.el = document.getElementById(accounttype + "-account");
 };
 
 BankAccount.prototype = {
 
   displayAccountHolder: function(){
     var displayAccountHolderField = document.getElementById("account-holder-name");
-    displayAccountHolderField.innerHTML = this.accountHolderName;
+    displayAccountHolderField.innerHTML = this.accountHolderName.value;
   },
 
   displayBalance: function(){
@@ -29,23 +29,25 @@ BankAccount.prototype = {
 
   makeDeposit: function(amount){
     this.balance = (parseFloat(this.balance) + parseFloat(amount)).toFixed(2);
-    return this.balance;
+    this.displayBalance();
   },
   
-  makeWithdrawal: function(amount){
+  makeWithdrawal: function(amount, otherAccount){
     if ((parseFloat(this.balance) - parseFloat(amount)).toFixed(2) >= 0){
       this.balance = (parseFloat(this.balance) - parseFloat(amount)).toFixed(2);
-      return this.balance;
-    }
-  },
+      this.displayBalance();     
+    } else {
+      if ( ( (parseFloat(this.balance) + parseFloat(otherAccount.balance)) - parseFloat(amount) ).toFixed(2) >= 0) {
 
-  render: function(){
-    var divItem = document.createElement('div');
-    divItem.style.backgroundColor = "lightblue";  
-    divItem.innerHTML = this.balance;
-    this.el = divItem;
-    return this;
+        otherAccount.balance = (parseFloat(otherAccount.balance) - ( parseFloat(amount) - parseFloat(this.balance) )).toFixed(2);
+        otherAccount.displayBalance();
+
+        this.balance = parseFloat(0).toFixed(2);
+        this.displayBalance();
+      }
+    }
   }
+
 }
 
 
@@ -65,33 +67,33 @@ window.onload = function(){
   });
 
   //////////   Checking Account    /////////////
-  var checkingAccountAmount = document.getElementById('checking-account-amount');
+  var checkingAccountAmount = document.getElementById('checking-account-amount');  
 
   var buttonCheckingAccountDeposit = document.getElementById('checking-account-deposit');
   buttonCheckingAccountDeposit.addEventListener('click', function(){    
-    newCheckingAccount.makeDeposit(checkingAccountAmount.value);
-    newCheckingAccount.displayBalance();
+    newCheckingAccount.makeDeposit(checkingAccountAmount.value); 
+    checkingAccountAmount.value = '';   
   });
 
   var buttonCheckingAccountWithdrawal = document.getElementById('checking-account-withdrawal');
   buttonCheckingAccountWithdrawal.addEventListener('click', function(){ 
-    newCheckingAccount.makeWithdrawal(checkingAccountAmount.value);
-    newCheckingAccount.displayBalance();
+    newCheckingAccount.makeWithdrawal(checkingAccountAmount.value, newSavingsAccount);
+    checkingAccountAmount.value = '';
   });
 
   ///////////   Savings Account   //////////////
   var savingsAccountAmount = document.getElementById('savings-account-amount');
-
+  
   var buttonSavingsAccountDeposit = document.getElementById('savings-account-deposit');
   buttonSavingsAccountDeposit.addEventListener('click', function(){
     newSavingsAccount.makeDeposit(savingsAccountAmount.value);
-    newSavingsAccount.displayBalance();
+    savingsAccountAmount.value = '';
   });
 
   var buttonSavingsAccountWithdrawal = document.getElementById('savings-account-withdrawal');
   buttonSavingsAccountWithdrawal.addEventListener('click', function(){
-    newSavingsAccount.makeWithdrawal(savingsAccountAmount.value);
-    newSavingsAccount.displayBalance();
+    newSavingsAccount.makeWithdrawal(savingsAccountAmount.value, newCheckingAccount);
+    savingsAccountAmount.value = '';
   });
 
 }
