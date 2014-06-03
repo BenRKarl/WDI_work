@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WDI, meet DOM</title>
+</head>
+<body>
+  <input type="text" value="Lots" id ="input">
+  <ul id = "smileys"></ul>
+  <ul id = "students"></ul>
+  <ul id = 'teachers'>
+    <li id = "aldric" class = "colorizable">Aldric</li>
+    <li class="colorizable">Andrew</li>
+    <li>Matt</li>
+  </ul>
+  <script>
+    function filterByNodeType(num){
+      var childNodes = document.body.childNodes;
+      for (var i = 0; i < childNodes.length; i++){
+        if (childNodes[i].nodeType == num){
+          console.log(childNodes[i])
+        }
+      }
+    }
+
+    function logChildNodes(){
+      var childNodes = document.body.childNodes;
+      for (var i = 0; i < childNodes.length; i++){
+          console.log(childNodes[i]);
+        }
+      }
+
+    function logChildren(){
+      var children = document.body.children;
+      for (var i = 0; i < children.length; i++){
+        console.log(children[i])
+      }
+    }
+
+    function appender(ulnode){
+      for (var i in ulnode.children) {
+        ulnode.children[i].innerHTML += " ... the great"
+      }
+  }
+
+    function blueCircle(ul){
+      var ulChildren = ul.children;
+      for (var i in ul_children) {
+        ulChildren[i].innerHTML = "<div style='width: 10px; height: 10px; border-radius: 5px; background-color: blue;'> </div>";
+      }
+    }
+
+    function setGroovy(ul){
+      var ulChildren = ul.children;
+      for (var i in ulChildren) {
+        console.log(i)
+        console.log(ulChildren[i])
+        ulChildren[i].setAttribute('groovy', true)
+      }
+    }
+
+    function setClassTeacher(ul){
+      var ulChildren = ul.children;
+      for (var i=0; i < ulChildren.length; i++) {
+        console.log(i)
+        ulChildren[i].setAttribute('class', 'teacher')
+      }
+    }
+
+    // function getValue(textField){
+    //   console.log(textField.value)
+    // }
+    function getInput() {
+      var input = document.getElementById('input');
+      return input.value;
+    }
+
+    function changeTagFont(tagName, fontFamily){
+      var tagElements = document.getElementsByTagName(tagName)
+      for (var i = 0; i < tagElements.length; i++) {
+        tagElements[i].style.fontFamily = fontFamily;
+      }
+    }
+
+    function colorize(color){
+      var colorElements = document.getElementsByClassName('colorizable')
+      for (var i = 0; i < colorElements.length; i++) {
+        colorElements[i].style.color = color;
+      }
+    }
+
+    function buildSquares(num, size){
+      var elems = []
+        for (var i = 0; i < num; i++) {
+          var square = document.createElement('div');
+          square.style.width = size+'px';
+          square.style.height = size+'px';
+          elems.push(square);
+        }
+      return elems
+    }
+
+    function buildSmileyFaces(num, size){
+      var elems = [];
+      for (var i = 0; i < num; i++){
+        var circle = document.createElement('div');
+        circle.style.width = size+'px';
+        circle.style.height = size+'px';
+        circle.style.borderRadius = size/2 +'px';
+        circle.style.backgroundColor = randomColor();
+        circle.style.textAlign = "center";
+        circle.style.fontSize = size/2 + 'px';
+        // circle.innerHTML = "^_^"
+        var textNode = document.createTextNode('^_^');
+        circle.appendChild(textNode);
+        elems.push(circle);
+      }
+      return elems
+    }
+
+    function appendSmileyToDom(num, size){
+      var smileys = buildSmileyFaces(num, size);
+      var ul = document.getElementById('smileys')
+      for (var i = 0; i < smileys.length; i++){
+        ul.appendChild(smileys[i]);
+      }
+    }
+
+    function randomColor(){
+      var colorArray = ['red','blue','green','yellow','orange']
+      return colorArray[Math.floor(Math.random() * colorArray.length)]
+    }
+
+    function createLiNodes(arr){
+      var arrNew = []
+      for (var i = 0; i < arr.length; i++){
+        var newLi = document.createElement('li');
+        arrNew.push(newLi)
+      }
+      return arrNew
+    }
+
+    function prependLiNodes(arr){
+      var arrNew = createLiNodes(arr)
+      ul = document.getElementById('students')
+      for (i=0; i < arrNew.length; i++){
+        arrNew[i].innerHTML = arr[i]
+        ul.insertBefore(arrNew[i], arrNew[i-1])
+      }
+    }
+
+    function findTeacher(teacherName){
+      var teachersUl = document.getElementById('teachers');
+      var teacherLis = teachersUl.getElementsByTagName('li');
+      for (i=0; i< teacherLis.length; i++) {
+        if (teacherLis[i].innerHTML == teacherName)
+          return teacherLis[i];
+      }
+    }
+
+    function removeTeacher(teacherName){
+      var teacher = findTeacher(teacherName);
+      var teachersUl = document.getElementById('teachers');
+      teachersUl.removeChild(teacher);
+    }
+
+    function teachersUl(){
+      return document.getElementById('teachers');
+    }
+
+    function replaceTeacher(newTeacherName, oldTeacherName){
+      var newTeacherLi = document.createElement('li');
+      newTeacherLi.innerHTML = newTeacherName;
+      var oldTeacherLi = findTeacher(oldTeacherName);
+      teachersUl().replaceChild(newTeacherLi, oldTeacherLi);
+    }
+
+  </script>
+</body>
+</html>
