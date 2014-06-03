@@ -64,6 +64,7 @@ HangGame.prototype = {
   }
 };
 
+
 $(function() {
   var game = new HangGame();
   game.start();
