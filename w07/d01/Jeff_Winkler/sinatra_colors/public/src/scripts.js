@@ -13,13 +13,16 @@ function verifyData(data) {
     //$(paletteDiv).css({"height":"80px", "width":"300px", "background-color":"blue"});
     $(paletteDiv).css("margin", "10px");
     $(paletteDiv).css("display", "inline-block");
-    $(paletteDiv).html(value.title);
+    var titleDiv = $('<div>');
+    $(titleDiv).html(value.title);
+    $(titleDiv).css({"color":"white", "font-style":"italic"});
+    $(paletteDiv).append(titleDiv);
     $('.container').append(paletteDiv);
     console.log(value.title);
     $.each(value.colors, function(i, color) {
       var currColor = ('#'+color);
       var colorDiv = $('<div>');
-      $(colorDiv).css({"height":"80px", "width":"60px", "background-color":currColor});
+      $(colorDiv).css({"height":"50px", "width":"50px", "background-color":currColor});
       $(colorDiv).css("display", "inline-block");
       $(paletteDiv).append(colorDiv);
     });
@@ -33,6 +36,7 @@ function setEventHandlers(){
   $(button).on('click', function() {
   getPalettes(verifyData);
   });
+  $('body').css("background-color", "#222222");
 
 }
 
