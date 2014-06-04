@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Asshurt template</title>
+<script>
+function assert(bool, desc) {
+  var text = document.createTextNode(desc);
+  var li = document.createElement('li');
+  li.appendChild(text);
+  li.className = bool ? 'pass' : 'fail';
+  var results = document.getElementById('results');
+  results.appendChild(li);
+}  
+
+</script>
+<style>
+  body {font-family: Courier new}
+  #results li.pass{color: chartreuse; font-weight: bold;}
+  #results li.fail{color: red; font-family: impact;}
+</style>
+</head>
+<body>
+  <ul id='results'>
+  </ul>
+  <script>
+    function andrewSmells(){
+      return true;
+    }
+    assert(andrewSmells.name ==='andrewSmells', 'the name attr is andrewSmells')
+    var aldricSmellsGood = function(){
+      return true;
+    }
+
+    assert(typeof window.aldricSmellsGood === 'function', 'its scope is the window');
+    assert(aldricSmellsGood.name === '', 'name is ...')
+
+    var mattSmells = function theBest(){return 'or does he?'};
+    assert(mattSmells.name === 'theBest', 'mattSmells is a reference to the function and we call the functions name attr')
+    function cell(){
+      assert(typeof prisoner === 'function', 'visible before function declaration')
+      function prisoner(){};
+      assert(typeof window.prisoner === 'undefined', 'the prisoner function is not scoped globally')
+      escapedPrisoner = prisoner;
+      assert(typeof window.escapedPrisoner === 'function', 'prisoner has escaped');
+    }
+    cell();
+
+    function destroyGluten(){return this};
+    assert(destroyGluten() === window, 'this refers to window in global func');
+    var healTumTum = destroyGluten;
+    assert(healTumTum() === window, 'what does this refer to in var w func on window?')
+    var primalHuman1 = {
+      bePaleo: destroyGluten
+    }
+    assert(primalHuman1.bePaleo() ===  primalHuman1, 'what does this refer to?');
+
+    var primalHuman2 = {
+      bePaleo: primalHuman1.bePaleo
+    }
+    assert(primalHuman2.bePaleo() ===  primalHuman2, 'primalHuman2 is calling the method');
+
+
+  </script>
+  
+</body>
+</html>
