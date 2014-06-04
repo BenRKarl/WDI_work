@@ -8,6 +8,7 @@ $( document ).ready(function() {
     display: function() {
       $(".form").submit(function(e) {
         e.preventDefault();
+        $("h1").html("");
         console.log("shit works");
         var input = $(".text").val();
         // $("h1").html(input);
@@ -16,7 +17,7 @@ $( document ).ready(function() {
     }
   }
 
-  var me = new MyName("");
-  me.display();
+  var user = new MyName("");
+  user.display();
 
 });
