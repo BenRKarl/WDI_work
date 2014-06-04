@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+</head>
+
+<body>
+  <input type='text' id='input'>
+  <h1></h1>
+
+  <script type="text/javascript">
+    $(function(){
+      $('#input').on('keyup', function(){
+        var input = $('#input').val();
+        var $h1 = $('h1');
+        $h1.text(input);
+        $h1.css('font-size', input.length+'px').css('font-family', 'Helvetica');
+      })
+    });
+  </script>
+</body>
+</html>
