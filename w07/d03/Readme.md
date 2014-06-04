@@ -4,7 +4,19 @@
 ---
 # Pizza Party
 ---
-# LOTR DOM Manipulation
+
+##Part 1: Model and Collection
+- Using your C.R.U.D. app from last night
+	- Implement a **model** and **collection** in javascript (as seen in class)
+		- The **model** must have a `el` attribute and a `render` function.  
+			- Do NOT place the elements on the screen.  Manually verify the model's behaviors in the console.
+		- The **collection** must have a `models` attribute and a `fetch` method. 
+			- `fetch` should make an ajax request to your rails app's sever.  After `fetch` is evaluated the models attribute of the collection should contain Javascript model's corresponding to each of your rows in your database. 
+			- Do NOT place the elements on the screen.  Call fetch in the console.  Manually verify the models are in the collection afterwards.
+
+---
+
+##Part 2: LOTR DOM Manipulation
 
 Create a function for each of the following steps to practice DOM Manipulation and JavaScript.
 
