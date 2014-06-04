@@ -15,144 +15,84 @@
 // the account, ignore the transaction.
 
 
-// function BankAccount(balance) {
-//     this.balance = balance;
-// }
-
-// BankAccount.prototype = {
-//   makeDeposit: function(amount){
-//     return (this.balance += amount);
-//   },
-//   makeWithdrawal: function(amount){
-//     if ((this.balance - amount) >= 0){
-//        return (this.balance -= amount);
-//     } 
-//   }
-// }
-
 // var newBankAccount = new BankAccount(0);
 // newBankAccount.makeDeposit(100);
 // newBankAccount.makeWithdrawal(150)
 
 
+function BankAccount(balance) {
+  this.balance = balance;
+  this.el = undefined;
+};
+
+BankAccount.prototype = {
+
+  getBankAccount: function(){
+    return this;
+  },
+  
+  makeDeposit: function(amount){
+    return (this.balance += amount);
+  },
+  
+  makeWithdrawal: function(amount){
+    if ((this.balance - amount) >= 0){
+       return (this.balance -= amount);
+    } 
+  },
+
+  render: function(){
+    var divItem = document.createElement('div');
+    divItem.style.backgroundColor = "lightblue";  
+    divItem.innerHTML = this.balance;
+    this.el = divItem;
+    return this;
+  }
+}
+
+
+
 /////////////////////////////////////////////////////////////////////////
-
-
-function CheckingAccount(accountHolderName){
-  this.accountHolderName = accountHolderName;
-  this.balance = 0;
-  this.el = undefined;
-};
-
-function SavingsAccount(accountHolderName){
-  this.accountHolderName = accountHolderName;
-  this.balance = 0;
-  this.el = undefined;
-};
-
-// CheckingAccount.prototype = {
-//   makeDeposit: function(amount){
-//     return (this.balance += amount);
-//   },
-//   makeWithdrawal: function(amount){
-//     if ((this.balance - amount) >= 0){
-//        return (this.balance -= amount);
-//     } 
-//   }
-// };
-
-CheckingAccount.prototype.render = function(){
-  var divItem = document.createElement('div');
-  divItem.style.backgroundColor = "green";  
-  divItem.innerHTML = this.balance;
-  this.el = divItem;
-  return this;
-};
-
-CheckingAccount.prototype.makeDeposit = function(amount){
-  return (this.balance += amount);
-};
-
-CheckingAccount.prototype.makeWithdrawal = function(amount){
-  if ((this.balance - amount) >= 0){
-     return (this.balance -= amount);
-  }   
-};
-
-// SavingsAccount.prototype = {
-//   makeDeposit: function(amount){
-//     return (this.balance += amount);
-//   },
-//   makeWithdrawal: function(amount){
-//     if ((this.balance - amount) >= 0){
-//        return (this.balance -= amount);
-//     } 
-//   }
-// };
-
-SavingsAccount.prototype.render = function(){
-  var divItem = document.createElement('div');
-  divItem.style.backgroundColor = "yellow";  
-  divItem.innerHTML = this.balance;
-  this.el = divItem;
-  return this;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 var atmApp = {
 
   createBankAccounts: function(accountHolderName){
-    var newCheckingAccount = new CheckingAccount(accountHolderName);
-    this.showBalanceCheckingAccount(newCheckingAccount);
+    // accountHolderName is not being used in this moment !!    
+    var newCheckingAccount = new BankAccount(0);    
 
-    var newSavingsAccount = new SavingsAccount(accountHolderName);
+
+
+
+newCheckingAccount.makeDeposit(100);
+newCheckingAccount.makeWithdrawal(ß50)
+
+    document.getElementById('checking-account-balance').appendChild(newCheckingAccount.render().el);
+
+
+    var newSavingsAccount = new BankAccount(0);
     this.showBalanceSavingsAccount(newSavingsAccount);
-  },
-
-  showBalanceCheckingAccount: function(newCheckingAccount){
-    this.checkingAccountBalance().appendChild(newCheckingAccount.render().el);
   },
 
   showBalanceSavingsAccount: function(newSavingsAccount){
     this.savingsAccountBalance().appendChild(newSavingsAccount.render().el);
   },
-
-  checkingAccountBalance: function(){
-    return document.getElementById('checking-account-balance');
-  },
-
   savingsAccountBalance: function(){
     return document.getElementById('savings-account-balance');
   },
 
-
-
-
-
-
-
+  
 
   depositCheckingAccount: function(amount){
   
-    var checkingAccount = this.CheckingAccount;
-    //this.makeDeposit(amount);
+    // // var myCheckingAccount = this.CheckingAccount;
+    // var myCheckingAccount = new BankAccount(0);
+    newCheckingAccount.makeDeposit(amount);
+    document.getElementById('checking-account-balance').appendChild(newCheckingAccount.render().el);
+
 
     
-    this.showBalanceCheckingAccount(checkingAccount);
+    // this.showBalanceCheckingAccount(checkingAccount);
   },
 
 
@@ -164,8 +104,8 @@ var atmApp = {
 
 
   withdrawCheckingAccount: function(amount){
-    this.makeWithdrawal(amount);
-    this.showBalanceCheckingAccount(newCheckingAccount);
+    // this.makeWithdrawal(amount);
+    // this.showBalanceCheckingAccount(newCheckingAccount);
   },
 
   depositSavingsAccount: function(amount){

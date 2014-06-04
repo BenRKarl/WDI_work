@@ -1,0 +1,45 @@
+def palindrome?(string)
+  string.gsub!(" ","")
+  if string.downcase == string.downcase.reverse
+    return true;
+  else
+    return false;
+  end
+end
+
+----------
+
+def palindrome?(string)
+  string.gsub!(" ","")
+  string.downcase == string.downcase.reverse
+end
+
+------------------
+
+
+var isPalindrome = function(string){
+  var i = 0;
+  var j = string.length-1;
+  while (i <= j){
+    if (string[i] != string[j]){
+      return false;
+    }
+    i++;
+    j--;
+  }
+  return true;
+}
+
+
+var isPalindrome2 = function(string){
+  for (var i = 0, var j = string.length-1; i = string.length/2; i++, j--){
+    if (string[i] != string[j]){
+      return false;
+    }
+  }
+  return true;
+}
+
+String.prototype.isPalindrome = function(){
+  return isPalindrome(this);
+}
