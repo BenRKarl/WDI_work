@@ -3,6 +3,10 @@ class PeopleController < ApplicationController
 
   def index
     @people = Person.all
+    respond_to do |format|
+      format.json {render :json => @people.to_json}
+      format.html
+    end
   end
 
   def show
