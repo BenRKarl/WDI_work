@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Wake's JS Practice</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <style>
+    body{ background-color: lightgoldenrodyellow;
+          font-family: sans-serif;}
+    .container{ width: 800px;
+                margin: 0 auto;}
+
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <h2>enter your name</h2>
+    <input type="text" class="input">
+    <button type="submit" class="inputBtn">Submit</button>
+    <div class="output"</div>
+  </div><!--container-->
+
+  <script>
+    function User(name) {
+      this.name = name;
+      this.el = $('<h1>').html(name + " rocks the house.");
+    };
+
+    $('.inputBtn').on('click', function(){
+        input = $('.input').val();
+        newUser = new User(input);
+        $('.output').append(newUser.el);
+     });
+
+  </script>
+</body>
+</html>

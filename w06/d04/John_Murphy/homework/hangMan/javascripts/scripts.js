@@ -21,6 +21,14 @@
 
 // ---
 
+function FortuneCookie(text){
+  var fortune = text;
+  this.breakOpen = function(){
+    return fortune;
+  }
+}
+
+
 function letterCheck(input){
   return input.split('').length == 1 && input.search(/[a-z]/) > -1
 }
