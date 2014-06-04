@@ -119,5 +119,32 @@ describe CarsController do
       expected = '200'
       expect(actual).to eq(expected)
     end
+
+    it 'renders the new template' do
+      expect(response).to render_template('new')
+    end
   end # GET new
+
+# CREATE
+  describe 'POST create' do
+    before :each do
+      post :create, {:car => {make: 'Pagani', year: 2011}}
+    end
+
+    it 'responds with a redirect' do
+      actual = response.code
+      expected = '302'
+      expect(actual).to eq(expected)
+    end
+
+    it 'inserts a car record' do
+      actual = Car.last.make
+      expected = 'Pagani'
+      expect(actual).to eq(expected)
+    end
+
+    it 'redirects to show' do
+      response.should redirect_to car_path(Car.last)
+    end
+  end # POST create
 end # CarsController

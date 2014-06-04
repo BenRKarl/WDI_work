@@ -134,7 +134,7 @@ describe PeopleController do
       expect(response).to render_template('new')
     end
 
-  end # GET edit
+  end # GET new
 
   # --- CREATE ---
   describe 'POST create' do

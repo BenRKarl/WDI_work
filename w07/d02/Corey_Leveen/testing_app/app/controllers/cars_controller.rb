@@ -11,6 +11,11 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
   end
 
+  def create
+    car = Car.create(car_params)
+    redirect_to car_path(car)
+  end
+
   def update
     car = Car.find(params[:id])
     car.update(car_params)
