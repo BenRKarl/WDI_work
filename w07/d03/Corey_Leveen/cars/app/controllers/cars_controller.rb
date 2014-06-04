@@ -1,6 +1,10 @@
 class CarsController < ApplicationController
   def index
     @cars = Car.all
+    respond_to do |format|
+      format.json { render :json => @cars.to_json }
+      format.html
+    end
   end
 
   def show

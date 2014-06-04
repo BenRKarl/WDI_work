@@ -25,6 +25,7 @@ function CarsCollection() {
   this.models = {};
 };
 
+
 CarsCollection.prototype.fetch = function() {
   var that = this;
 
