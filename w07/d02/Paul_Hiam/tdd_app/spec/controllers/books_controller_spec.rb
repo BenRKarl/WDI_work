@@ -1,10 +1,10 @@
 require 'spec_helper'
-describe PeopleController do
-  describe 'given a person' do
+describe BooksController do
+  describe 'given a book' do
     before :each do
-      @andre = Person.new()
-      @andre.name = 'Andre'
-      @andre.save
+      @oldman = Book.new()
+      @oldman.title = 'The Old Man and the Sea'
+      @oldman.save
     end
 
     describe 'GET index' do
@@ -17,80 +17,78 @@ describe PeopleController do
         expected = '200'
         expect(actual).to eq(expected);
       end
-      it 'assigns @people' do
-        actual = assigns(:people)
-        expected = [@andre]
+
+      it 'assigns @books' do
+        actual = assigns(:books)
+        expected = [@oldman]
         expect(actual).to eq(expected)
       end
-    end #Get index
-    # --- GET Show
+    end #Get Index
     describe 'GET show' do
       before :each do
-        get :show, :id => @andre.id
+        get :show, :id => @oldman.id
       end
       it 'responds successfully' do
         actual = response.code
         expected = '200'
         expect(actual).to eq(expected);
       end
-      it 'assigns @person' do
-        actual = assigns(:person)
-        expected = @andre
+      it 'assigns @book' do
+        actual = assigns(:book)
+        expected = @oldman
         expect(actual).to eq(expected)
       end
       it 'renders the show template' do
         expect(response).to render_template('show')
       end
-    end # Get show
-       # --- EDIT ---
+    end #Get show
     describe 'GET edit' do
       before :each do
-        get :edit, :id => @andre.id
+        get :edit, :id => @oldman.id
       end
-
       it 'responds successfully' do
         actual = response.code
         expected = '200'
         expect(actual).to eq(expected)
       end
-
-      it 'assigns @person' do
-        actual = assigns(:person)
-        expected = @andre
+      it 'assigns @book' do
+        actual = assigns(:book)
+        expected = @oldman
         expect(actual).to eq(expected)
       end
-
       it 'renders the edit template' do
         expect(response).to render_template('edit')
       end
+    end #Get Edit
 
-    end # GET edit
 
     describe 'POST update' do
       before :each do
-        post :update, {:id => @andre.id, :person => {name: 'nondre'}}
+        post :update, {:id => @oldman.id, :book => {title: 'goldman and me'}}
       end
+
       it "responds with a redirect" do
         actual = response.code
         expected = '302'
         expect(actual).to eq(expected)
-      end 
+      end
 
-      it 'updates a person record' do
-        @andre.reload
-        actual = @andre.name
-        expected = 'nondre'
+      it 'updates a books record' do
+        @oldman.reload
+        actual = @oldman.title
+        expected = 'goldman and me'
         expect(actual).to eq(expected)
       end
-    end #Post to Update
-    # -- delete
-      describe 'DELETE destroy' do
-        it "destroys a person record" do
-          expect { delete :destroy, {:id => @andre.id}}
-        end
-      end #delete
+    end #Post update
 
-  end #given a person
+    describe 'DELETE destroy' do
+      it 'destroys a book record' do
+        expect {delete :destroy, {:id => @oldman.id}}
+      end
+    end #Delete
+
+  end #given a book
+
   describe 'GET new' do
     before :each do
       get :new
@@ -104,29 +102,22 @@ describe PeopleController do
     it 'renders the new template' do
       expect(response).to render_template('new')
     end
-  end
-
-  #----Post to create
-  describe 'Post create' do
+  end # Get new
+  describe 'Post to create' do
     before :each do
-      post :create, {:person => {name: 'Kathew Lamp', email:'klool@lampmail.com'}}
+      post :create, {:book => {title:'The Crucible', author:'Arthur Miller'}}
     end
 
     it "responds with a redirect" do
       actual = response.code
       expected = '302'
       expect(actual).to eq(expected)
-    end 
-
-    it 'inserts a person record' do
-      actual = Person.last.name
-      expected = 'Kathew Lamp'
-      expect(actual).to eq(expected)
     end
 
     it "redirects to show" do
-      response.should redirect_to person_path(Person.last)
-    end 
-  end #Post create
-end #PeopleController
+      response.should redirect_to book_path(Book.last)
+    end
+  end
 
+
+end #BooksController
