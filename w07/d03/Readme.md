@@ -2,7 +2,8 @@
 #WORK IN YOUR OWN FOLDER ONLY!
 #Your pull-request title must start with `w07_d03_submission`
 ---
-# Pizza Party
+###Morning Ex: Pizza Party
+
 ---
 
 ##Part 1: Model and Collection
