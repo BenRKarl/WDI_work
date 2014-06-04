@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form id='name-form'>
+		<input type="text">
+		<input type="submit">
+
+	</form>
+
+	<ol id='name-items'>
+		
+	</ol>
+	
+
+
+
+	<script>
+		$(function(){
+		  $('#name-form').on('submit', function(){
+
+
+function listName(nameText){
+  this.nameText = nameText;
+  this.el = undefined;
+}
+
+listName.prototype.render = function(){
+  var liEl = document.createElement('li');
+  liEl.innerHTML = this.nameText;
+  this.el = liEl;
+  return this;
+};
+
+
+var nameApp = {
+  nameList: function(){
+    return document.getElementById('name-items');
+  },
+  createTask: function(nameText){
+    var nameRender = new listName(nameText);
+    nameRender.render();
+    this.nameList().appendChild(nameRender.el);
+  }
+}
+		    
+		  })
+		})
+
+	</script>
+</body>
+</html>

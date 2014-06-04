@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Practice</title>
+  <style>
+  body {
+    background-color: lightgreen;
+    font-family: sans-serif;
+  }
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <form class="name-form">
+    <input type="text" class="name-input" placeholder="What's your name?">
+    <input type="submit">
+  </form>
+
+  <h3>Visitors</h3>
+  <ol class="name-list">
+  </ol>
+
+  <script>
+  var signInApp = {
+    Person: function(name) {
+      this.name = name;
+      this.el = undefined
+    },
+
+    createPerson: function(name) {
+      var person = new this.Person(name);
+      var nameList = $('.name-list')
+      person.render();
+      nameList.append(person.el)
+    }
+  }
+
+  signInApp.Person.prototype.render = function render() {
+    var liEl = $('<li>').html(this.name);
+    this.el = liEl
+    return this
+  }
+
+  $(function () {
+    $('.name-form').on('submit', function(e) {
+      e.preventDefault();
+      var name = $('.name-input').val();
+      signInApp.createPerson(name);
+    })
+  })
+
+  </script>
+
+</body>
+</html>
