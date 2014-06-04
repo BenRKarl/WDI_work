@@ -1,0 +1,10 @@
+body {
+  text-align: center;
+}
+
+.user-name p {
+  color: #27408B;
+  font-size: 48px;
+  font-family: 'Francois One', sans-serif;
+}
+
