@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery Drill</title>
+	<script src='javascripts/jquery.js'></script>
+	<script src='javascripts/scripts.js'></script>
+	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+</head>
+<body>
+	<input id="input" type="text">
+	<h1 id="h1"></h1>
+	<script>
+  $(function(){
+  	$('#input').on('keyup', function(){
+  	var text = ($(this).val());
+  	h1El = $('#h1')
+  	$h1El.text(text);
+  //this is how we get text
+  //$('h1').text(); //the return of .text() has length atribute
+
+  //this is how can set the text
+  //$('h1').text("some new text");
+});
+  </script>
+</body>
+</html>
