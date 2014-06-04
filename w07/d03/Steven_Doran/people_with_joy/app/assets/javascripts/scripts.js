@@ -78,51 +78,47 @@ PeopleCollection.prototype.fetch = function(){
 
 $(function(){
 
-   var peopleCollection = new PeopleCollection();
+   // var peopleCollection = new PeopleCollection();
 
-   console.log('Before fetch', peopleCollection.models)
+   // console.log('Before fetch', peopleCollection.models)
 
-   setTimeout(function(){
-      peopleCollection.fetch();
-   }, 1000);
+   // setTimeout(function(){
+   //    peopleCollection.fetch();
+   // }, 1000);
 
-   setTimeout(function(){
-      console.log('After fetch', peopleCollection.models)
-   }, 2000);
+   // setTimeout(function(){
+   //    console.log('After fetch', peopleCollection.models)
+   // }, 2000);
 
-   setTimeout(function(){
-      for (i in peopleCollection.models){
-         var model = peopleCollection.models[i];
-         var newEle = model.render().el;
-         $('.people').append(newEle)
-      };
-   }, 3000);
+   // setTimeout(function(){
+   //    for (i in peopleCollection.models){
+   //       var model = peopleCollection.models[i];
+   //       var newEle = model.render().el;
+   //       $('.people').append(newEle)
+   //    };
+   // }, 3000);
 
-   setTimeout(function(){
-      $.ajax({
-         url: '/people',
-         method: 'post',
-         data: {person: {name: 'Liv', email: 'ler@bim.bim'}}
-      })
-   }, 4000); 
+   // setTimeout(function(){
+   //    $.ajax({
+   //       url: '/people',
+   //       method: 'post',
+   //       data: {person: {name: 'Liv', email: 'ler@bim.bim'}}
+   //    })
+   // }, 4000); 
 
-   setTimeout(function(){
-      console.log('yay')
-      peopleCollection.fetch();
-   }, 5000);
+   // setTimeout(function(){
+   //    console.log('yay')
+   //    peopleCollection.fetch();
+   // }, 5000);
 
-   setTimeout(function(){
-      $('.people').html('');
-      for (i in peopleCollection.models){
-      var model = peopleCollection.models[i];
-      var newEle = model.render().el;
-      $('.people').append(newEle)
-      };
-   }, 6000);
-
-
-
-
+   // setTimeout(function(){
+   //    $('.people').html('');
+   //    for (i in peopleCollection.models){
+   //    var model = peopleCollection.models[i];
+   //    var newEle = model.render().el;
+   //    $('.people').append(newEle)
+   //    };
+   // }, 6000);
 
 })
 
