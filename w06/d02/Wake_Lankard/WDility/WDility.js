@@ -50,5 +50,41 @@ var WDility = {
       sum = sum + array[i];
     }
     return sum;
+  },
+// also
+// reduce: function(array, func){
+//   var memo = array.shift();
+//   for  ( var i in array) {
+//     memo = func(memo, array[i]);
+//   }
+//   return memo;
+//   }
+// }
+  delete: function(array, val){
+    for (var i in array){
+      if (array[i] == val){
+        var index = array.indexOf(val);
+        if (index != -1){
+          array.splice(index,1);
+        }
+      }
+    }
+    return array;
+  },
+
+  deleteAt: function(array, index){
+    array.splice(index, 1);
+    return array;
+  },
+  include: function(array, value){
+    var in_array = false;
+    for (var i in array){
+      if (array[i] == value){
+        in_array = true;
+      }  
+    }
+    return in_array;
   }
+
+
 };

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assert Template</title>
+  <script>
+    function assert(bool, desc) {
+      var text = document.createTextNode(desc);
+      var li = document.createElement("li");
+      li.appendChild(text);
+      // if bool then "pass" else "fail"
+      li.className = bool ? "pass" : "fail";
+      var results = document.getElementById("results");
+      results.appendChild(li);
+    }
+  </script>
+  <style>
+    body {font-family: Verdana;}
+    #results li.pass{color: green;}
+    #results li.fail{color: red;}
+  </style>
+</head>
+<body>
+  <ul id="results"></ul>
+  <script>
+    function simple(callback) {return callback();}
+    function twoPlusTwo() {return 2 + 2;}
+    assert(simple(twoPlusTwo) === 4, "we know what a callback is");
+
+    function doSomethingToN(n, callback) {
+      return callback(n);
+    }
+
+    function square(n) {
+      return n*n;
+    }
+    assert(doSomethingToN(4, square) === 16, "callback is working");
+
+    function factorial(n) {
+      if (n <= 1) {
+        return 1;
+      }
+      return n * factorial(n - 1);
+    }
+    assert(doSomethingToN(5, factorial) === 120, "we have a working factorial");
+  </script>
+</body>
+</html>

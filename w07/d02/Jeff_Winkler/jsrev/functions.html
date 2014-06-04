@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assert Template</title>
+  <script>
+      function assert(bool, desc) {
+        var text = document.createTextNode(desc);
+        var li = document.createElement('li');
+        li.appendChild(text);
+        li.className = bool ? "pass" : "fail";
+        var results = document.getElementById('results');
+        results.appendChild(li);
+      }
+  </script>
+  <style>
+      body {background-color: black}
+      #results li.pass{color: green;}
+      #results li.fail{color: brown; text-decoration: line-through;}
+  </style>
+</head>
+<body>
+    <ul id="results"></ul>
+    <script>
+      function retTrue() {
+        return true;
+      }
+      assert(retTrue.name === 'retTrue', 'the name is retTrue');
+      var aSG = function () {
+        return true;
+      }
+      assert(typeof window.aSG === 'function', 'its scope is the window');
+      assert(aSG.name === '', 'its name is aSG');
+      var mS = function what() {
+        return true;
+      }
+      assert(mS.name === 'what', 'ok mS');
+
+      function cell() {
+        assert(typeof prisoner === 'function', 'ok cell');
+        function prisoner() {}
+        assert(typeof window.prisoner === 'function', 'what');
+      }
+
+
+
+    </script>
+</body>
+</html>
