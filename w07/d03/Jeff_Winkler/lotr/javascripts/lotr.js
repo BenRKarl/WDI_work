@@ -127,12 +127,53 @@ function theBalrog() {
   $(gLi).css({"background-color":"white", "border":"2px solid gray"});
 }
 
+function hornOfGondor() {
+  // pop up an alert that the horn of gondor has been blown
+  window.alert('Horn of Gondor has been blown!');
+  // Boromir's been killed by the Uruk-hai!
+  // put a linethrough on boromir's name
+  var borLi = $("li:contains('Boromir')");
+  borLi.css("text-decoration", "line-through");
+  // Remove the Uruk-Hai from the Baddies on the page
+  $("li:contains('Uruk')").remove();
+  // Remove Boromir from the Fellowship
+  borLi.remove();
+  // Put Boromir in the Footer
+  $('body').append($('<footer>'));
+  $('footer').append(borLi);
+}
 
+function itsDangerousToGoAlone(){
+  // take Frodo and Sam out of the fellowship and move them to Mordor
+  var froLi = $('li:contains("Frodo")');
+  var samLi = $('li:contains("Sam")');
+  $('#mordor-list').append(froLi);
+  $('#mordor-list').append(samLi);
+  // add a div with an id of 'mount-doom' to Mordor
+  var landIndex = lands.indexOf("Mordor");
+  var landArticleElement = $('#land_' + landIndex);
+  $(landArticleElement).append($('<div>', {id: 'mount-doom'}));
+}
 
+function weWantsIt() {
+  // Create a div with an id of 'gollum' and add it to Mordor
+  var landIndex = lands.indexOf("Mordor");
+  var landArticleElement = $('#land_' + landIndex);
+  $(landArticleElement).append($('<div>', {id: 'gollum'}));
+  // Remove the ring from Frodo and give it to Gollum
+  $('#gollum').append($('#the-ring'));
+  // Move Gollum into Mount Doom
+  $('#mount-doom').append($('#gollum'));
+}
 
-
-
-
+function thereAndBackAgain() {
+  // remove Gollum and the Ring from the document
+  $('#gollum').remove();
+  // remove all the baddies from the document
+  $('.baddie').remove();
+  // Move all the hobbits back to the shire
+  $('#shire-list').append($('.hobbit'));
+}
 
 
 
@@ -143,4 +184,5 @@ $(function(){
   keepItSecretKeepItSafe();
   makeBaddies(baddies);
   makeBuddies(buddies);
+  leaveTheShire();
 })
