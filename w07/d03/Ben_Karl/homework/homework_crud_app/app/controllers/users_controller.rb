@@ -1,7 +1,11 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
 
 def index
   @users = User.all
+  respond_to do |format|
+    format.json { render :json => @users.to_json }
+    format.html
+  end
 end
 
 def show
@@ -21,7 +25,7 @@ end
 def destroy
   @user = User.find(params[:id])
   @user.delete
-  redirect_to user_index_path
+  redirect_to users_path
 end
 
 def new
