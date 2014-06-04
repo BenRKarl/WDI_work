@@ -1,4 +1,4 @@
-function Person (name, age, mood){
+function Person(name, age, mood){
   this.name = name;
   this.age = age;
   this.mood = mood;
