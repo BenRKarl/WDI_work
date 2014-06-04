@@ -1,0 +1,39 @@
+class JuicesController < ApplicationController
+  def index
+    @juices = Juice.all
+  end
+
+  def show
+    @juice  = Juice.find(params[:id])
+  end
+
+  def edit
+    @juice  = Juice.find(params[:id])
+  end
+
+  def update
+    juice  = Juice.find(params[:id])
+    juice.update(juice_params)
+    redirect_to juice_path(juice)
+  end
+
+  def destroy
+    Juice.delete(params[:id])
+    redirect_to juices_path
+  end
+
+  def new
+  end
+
+  def create
+    juice = Juice.create(juice_params)
+    redirect_to juice_path(juice)
+  end
+
+  private
+
+  def juice_params
+    params.require(:juice).permit(:name, :flavor, :rating, :sizes, :niclevels, :recommend)
+  end
+
+end

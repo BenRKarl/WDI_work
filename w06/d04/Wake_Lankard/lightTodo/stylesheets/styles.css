@@ -1,0 +1,9 @@
+body {
+  background-color: #FCFCDA;
+  color: #10363F;
+  font-family: 'PT Sans Narrow', sans-serif;  
+}
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}

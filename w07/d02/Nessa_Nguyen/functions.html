@@ -1,0 +1,75 @@
+<html>
+<head>
+  <title>Assert template</title>
+
+  <script type="text/javascript">
+    function assert(bool, desc){
+      var text = document.createTextNode(desc);
+      var li = document.createElement('li');
+      li.appendChild(text);
+      li.className = bool ? 'pass' : 'fail';
+      var results = document.getElementById('results');
+      results.appendChild(li)
+    }
+  </script>
+
+  <style type="text/css">
+    body { 
+      font-family: Courier; 
+      background-color: #444;
+      font-weight: bold;
+    }
+    #results li.pass { color: chartreuse;}
+    #results li.fail { 
+      color: red;
+      text-decoration: line-through;
+    }
+
+  </style>
+</head>
+
+<body>
+  <ul id='results'></ul>
+
+  <script type="text/javascript">
+    function paulSmells(){
+      return true;
+    }
+    assert(paulSmells.name === 'paulSmells', 'the functions name attribute is paulSmells');
+
+    var aldricSmellsGood = function(){
+      return true;
+    }
+    assert(typeof window.aldricSmellsGood === 'function', 'its scope is the window');
+    assert(aldricSmellsGood.name === '', 'its name attribute is null');    
+
+    var mattSmells = function theBest(){ return 'or does he?' }
+    assert(mattSmells.name === 'theBest', 'mattSmells is the reference to the function, we\'re calling the functions name attribute');     
+
+    function cell(){
+      assert(typeof prisoner === 'function', 'visible before function declaration');
+      function prisoner(){}
+      var escapedPrisoner = prisoner;
+      assert(window.prisoner === undefined, 'the function is not scoped globally');   
+      assert(typeof window.escapedPrisoner === 'function', 'the prisoner has escaped the jail cell');          
+    }
+    cell();
+
+    function destroyGluten(){return this}
+    assert(destroyGluten() === window, 'this refers to the window in a globally scoped function');
+
+    var healIntestine = destroyGluten;
+    assert(healIntestine() === window, 'Still returns window');
+
+    var primalHuman1 = {
+      bePaleo: destroyGluten
+    };
+    assert(primalHuman1.bePaleo() === primalHuman1, 'Returns the object calling the method');
+
+    var primalHuman2 = {
+      bePaleo: primalHuman1.bePaleo
+    };
+    assert(primalHuman1.bePaleo() === primalHuman1, 'primalHuman2 is calling the method');    
+  </script>
+</body>
+</html>
