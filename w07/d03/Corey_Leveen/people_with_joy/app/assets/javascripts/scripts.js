@@ -11,6 +11,8 @@
 //   }});
 // });
 
+console.log('This is a message from a js file in the asset pipeline');
+
 //*****model*****
 function Person(id, name, email){
   this.name = name;
