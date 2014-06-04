@@ -118,7 +118,7 @@ require 'spec_helper'
 
 
 
-    end # given a person
+  end # given a person
 
     describe 'POST create' do
       before :each do

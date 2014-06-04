@@ -4,3 +4,7 @@ $ rails g rspec:install
 
 $ rails g model Person name:string email:string
 
+bin/rake db:create RAILS_ENV=test
+
+ config.formatter = 'documentation'  #in spec_helper
+
