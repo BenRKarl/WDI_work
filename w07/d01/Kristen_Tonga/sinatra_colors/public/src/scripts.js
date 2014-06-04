@@ -18,10 +18,13 @@ $(function(){
 function setEventHandlers(){
   var button = $('.random-palettes')[0];
   $(button).click(function(){
-    console.log("something is happenging");
-    var data = $.ajax({url: '/palettes.json', success:function(data){createColorDivs(data)}});
-
-
+    console.log("something is happening");
+    var data = $.ajax({
+      url: '/palettes.json',
+      success:function(data){
+        createColorDivs(data)
+      }
+    });
   });
 }
 
@@ -36,7 +39,7 @@ function createColorDivs(data){
     $(paletteDiv).append(titleHeader);
 
     arrOfColor.forEach(function(color, index){
-      var colorBox = $('<div>').css('background-color', "#" + color).css('width', '150px').css('height', '150px');
+      var colorBox = $('<div>').css('background-color', "#" + color).addClass("small-12 columns").css('height', '150px');
       $(paletteDiv).append(colorBox);
     });
 
