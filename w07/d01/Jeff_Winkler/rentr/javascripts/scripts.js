@@ -83,8 +83,15 @@ $(function(){
   $('.movies .search').on('submit', function(){
     var query = inputManager.getTextInput('.movies .search input[type="text"');
     omdbApi.request(query, 's', listIt);
+    keyTry();
     return false;
   });
 })
 
+function keyTry() {
+  var inputEl = $('.movies .search input[type="text"');
+  $(inputEl).keyup(function(e) {
+    console.log(e.keyCode);
+  });
 
+}

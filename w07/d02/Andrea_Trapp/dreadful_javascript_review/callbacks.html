@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assert Template</title>
+  <script>
+    function assert(bool, desc){
+      var text = document.createTextNode(desc);
+      var li   = document.createElement('li');
+      li.appendChild(text);
+      li.className = bool ? "pass" : "fail";
+      var results = document.getElementById('results');
+      results.appendChild(li);
+    }
+  </script>
+  <style>
+    body {font-family: Courier new}
+    #results li.pass{color: chartreuse; font-weight: bold;}
+    #results li.fail{color: red; text-decoration: line-through;}
+  </style>
+</head>
+<body>
+  <ul id="results">lsdfja asldlkfj</ul>
+  <script>
+    function simple(callback) {return callback();}
+    function twoPlusTwo() {return 2+2;}
+    assert(simple(twoPlusTwo) === 4, "we have a functioning callback");
+
+    function doSomethingToN(n, callback){
+      return callback(n);
+    }
+    // write a callback that returns the square of n
+    function square(n){
+      return n*n;
+    }
+    assert(doSomethingToN(4, square) === 16, "that should work :)");
+
+    // write a callback that returns the factorial of n --- a nice recursion !!! :)
+    function factorial(n){
+      if (n === 1) {
+        return 1;
+      }
+      return n * factorial(n-1);      
+    }
+    assert(doSomethingToN(5, factorial) === 120, "we have a working factorial recursion");
+
+    function nTimes(n){
+      return function(m){return m*n;}
+    }
+    var nTimes4 = nTimes(4);
+    assert(doSomethingToN(5, nTimes4) === 20, "this is a closure :))")
+
+  </script>
+</body>
+</html>
