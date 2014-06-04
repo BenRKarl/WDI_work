@@ -28,10 +28,8 @@
     this.pies = 0;
     // this.makePie= function(){
     //   this.pies++;
-    }
+    // }
   }
-
-
 
   Piazzaiolo.prototype = {
     makePie: function(){
@@ -41,11 +39,10 @@
     drinkEspresso: function(){
       this.name = this.name.toUpperCase();
     }
-  }
+  };
 
   var mario = new Piazzaiolo('mario');
   mario.makePie();
-  console.log(mario.pies;)
 
   var luigi = new Piazzaiolo('luigi');
 
@@ -53,8 +50,12 @@
     piazzaiolo.pies--;
     this.pies++;
   }
+
 mario.stealPie = luigi.stealPie;
- mario.stealPie(luigi);
+mario.stealPie(luigi);
+
+ mario.drinkEspresso();
+ luigi.drinkEspresso();
 
 
   </script>
