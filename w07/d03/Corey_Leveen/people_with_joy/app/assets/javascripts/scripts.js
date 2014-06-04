@@ -27,9 +27,9 @@ Person.prototype.render = function(){
 //*****collection*****
 function PeopleCollection(){
   this.models = {};
-}
+};
 
-People.prototype.fetch = function(){
+PeopleCollection.prototype.fetch = function(){
   var that = this;
   // can you do Person.this?
   $.ajax({
