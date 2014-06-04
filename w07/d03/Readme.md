@@ -19,7 +19,7 @@
 
 ##Part 2: LOTR DOM Manipulation
 
-Create a function for each of the following steps to practice DOM Manipulation and JavaScript.
+Create a function for each of the following steps to practice DOM Manipulation and JavaScript.  Feel free to use jQuery.
 
 ```
 // Dramatis Personae
