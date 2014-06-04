@@ -30,10 +30,10 @@
 
 
 
-console.log('I am a js file the asset pipeline')
+console.log('DEMO:  This is a message from a js file the asset pipeline')
 
 
-// ***** model *****
+// ***** Model *****
 function Person(id, name, email){
   this.id = id;
   this.name = name;
@@ -48,7 +48,9 @@ Person.prototype.render = function(){
 };
 
 
-// ***** collection *****
+
+
+// ***** Collection *****
 function PeopleCollection(){
   this.models = {};
 };
@@ -72,21 +74,28 @@ PeopleCollection.prototype.fetch = function(){
 
 
 
+
+//
 var peopleCollection = new PeopleCollection();
 
 $(function(){
+  console.log('DEMO:  document is ready')
 
-  console.log('Before fetch', peopleCollection.models)
+
+  console.log('DEMO:  Before fetch: peopleCollection.models: ', peopleCollection.models)
 
   setTimeout(function(){
+    console.log('FETCHING...')
     peopleCollection.fetch();
   }, 1000)
 
   setTimeout(function(){
-    console.log('After fetch', peopleCollection.models)
+    console.log('DEMO:  After fetch: peopleCollection.models: ', peopleCollection.models)
   }, 2000)
 
   setTimeout(function(){
+    console.log('DEMO:  Manually update the DOM with the model\'s rendered el')
+
     $('.people').html('')
     for(idx in peopleCollection.models){
       var model = peopleCollection.models[idx];
@@ -98,6 +107,8 @@ $(function(){
 
 
   setTimeout(function(){
+
+    console.log('DEMO:  Manually post to "/people" with the goal of creating a new person in database')
     $.ajax({
       url: '/people',
       method: 'post',
@@ -106,10 +117,12 @@ $(function(){
   }, 4000)
 
   setTimeout(function(){
+    console.log('DEMO:  FETCHING... again');
     peopleCollection.fetch();
   }, 5000)
 
   setTimeout(function(){
+    console.log('DEMO:  Manually update the DOM with the model\'s rendered el')
     $('.people').html('')
     for(idx in peopleCollection.models){
       var model = peopleCollection.models[idx];
@@ -118,5 +131,8 @@ $(function(){
     }
   }, 6000)
 
+  setTimeout(function(){
+    console.log('DEMO:  Smile :)')
+  }, 7000)
 
 })
