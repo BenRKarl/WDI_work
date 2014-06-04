@@ -1,4 +1,4 @@
-var wordArray = ['car', 'tree', 'drain', 'winter', 'vent', 'spray', 'left'];
+var wordArray = ['car', 'tree', 'drain', 'winter', 'vent', 'spray', 'left', 'sun', 'jupiter', 'oxygen', 'beer', 'stick', 'cars', 'pole'];
 
 function selectWord(wordArray){
   return wordArray[Math.floor(Math.random() * wordArray.length)];
@@ -10,8 +10,8 @@ function HangWord(){
 }
 
 function GuessCounter(){
-  this.tries = 8;
-  this.el = $('<div class="num-tries">').html("Remaining Tries: " + this.tries);
+  this.tries = 0;
+  this.el = $('<img class="hang-image" src="images/8_tries.jpeg">');
 }
 
 function checkGuess(){
@@ -28,13 +28,24 @@ function guessIncrementer(){
   var guess = $('.guess-field').val();
   var guessField = $('.field-and-tries');
   var wordDiv = $('.word-div');
+  var hangImageArray = [
+    "images/7_tries.jpeg",
+    "images/6_tries.jpeg",
+    "images/5_tries.jpeg",
+    "images/4_tries.jpeg",
+    "images/3_tries.jpeg",
+    "images/2_tries.jpeg",
+    "images/1_tries.jpeg",
+    "images/0_tries.jpeg",
+  ];
+
   if (checkGuess() >= 0){
 
     updateWordColor(wordDiv, guess)
 
   } else {
-    newGuessCounter.tries--;
-    $('.num-tries').html("Remaining Tries: " + newGuessCounter.tries);
+    newGuessCounter.tries++;
+    $('.hang-image').attr('src', hangImageArray[newGuessCounter.tries]);
   }
 }
 
@@ -73,6 +84,7 @@ function hangPerson(){
 
   wordContainer.append(hangEl);
   guessAndTriesDiv.append(newGuessCounter.el);
+  guessAndTriesDiv.append('</br>');
   guessAndTriesDiv.append(guessField);
   guessAndTriesDiv.append(guessButton);
 }
