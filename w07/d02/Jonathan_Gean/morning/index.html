@@ -6,10 +6,17 @@
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-<h1 id='header'>head</h1>
-<form>
-  <input type='text' name='form-field'>
-  <input type='submit' id='submit'>
-</form>
+<h1 id='h1'></h1>
+<input type="text" id='input-field'>
+<script>
+$(function(){
+  $('#input-field').on('keyup', function(){
+    var text = ($(this).val());
+    $h1El = $('#h1');
+    $h1El.text(text);
+    $h1El.css('font-size', $h1El.text().length+"px")
+  });
+})
+</script>
 </body>
 </html>
