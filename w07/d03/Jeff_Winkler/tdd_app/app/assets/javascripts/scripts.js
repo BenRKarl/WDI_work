@@ -1,7 +1,6 @@
 
 console.log("whattup");
 
-
 // *** model ***
 function Person(id, name, email){
   this.id = id;
@@ -32,35 +31,25 @@ People.prototype = {
       dataType: 'json',
       success: function(data) {
       $.each(data, function(index, value) {
-        //console.log(this);
-        //console.log(that);
         var currPerson = new Person(value.id, value.name, value.email);
         that.models[value.id] = currPerson;
-        //$(ulEl).append(currPerson.render().el);
         });
+      what();
       }
     });
   }
 };
 
 
-$(function() {
-
-  var ulEl = $('.people')[0];
-
-  allPeeps = new People;
-  allPeeps.fetch();
-  setTimeout(function(){},10000);
-  what();
-
-});
-
-function what() {
-  setTimeout(function(){
-  console.log('hello');
-  console.log(allPeeps.models);
-  }, 100);
-  for (idx in allPeeps.models) {
-    console.log(idx);
-  }
+function what(){
+  var ulEl = $('.people');
+  $.each(allPeeps.models, function(index, value) {
+    $(ulEl).append(value.render().el);
+  });
 }
+
+var allPeeps = new People;
+
+$(function() {
+  allPeeps.fetch();
+});
