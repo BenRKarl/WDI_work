@@ -32,8 +32,8 @@ PeopleCollection.prototype.fetch = function(){
     })
   }
 
-
 var peopleCollection;
+
 $(function(){
   peopleCollection = new PeopleCollection();
   console.log(peopleCollection.models);
