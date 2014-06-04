@@ -1,6 +1,11 @@
 class BooksController < ApplicationController
   def index
     @Books = Book.all
+
+    respond_to do |format|
+      format.json { render :json => @books.to_json }
+      format.html
+    end
   end
   def show
     @book = Book.find(params[:id])
