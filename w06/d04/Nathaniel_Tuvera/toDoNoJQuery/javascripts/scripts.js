@@ -11,11 +11,6 @@ var toDoApp = {
     return document.getElementById('doneList');
   },
   addTask: function(taskText){
-    // var userInput = document.body.getElementById('toDoItem');
-    // var newItem   = new this.Item(userInput.val());
-    // var newNode   = newItem.render().el;
-    // document.body.getElementById('toDoList').append(newNode);
-    // return false;
     var task = new this.Item(taskText);
     this.toDoList().appendChild(task.render().el);
   },
