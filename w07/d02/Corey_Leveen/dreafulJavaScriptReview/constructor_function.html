@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assert Template</title>
+  <script>
+    function assert(bool, desc){
+      var text = document.createTextNode(desc);
+      var li   = document.createElement('li');
+      li.appendChild(text);
+      li.className = bool ? "pass" : "fail";
+      var results = document.getElementById('results');
+      results.appendChild(li);
+    }
+  </script>
+  <style>
+    body {font-family: Courier new;}
+    #results li.pass{color: chartreuse;}
+    #results li.fail{color: firebrick;}
+
+  </style>
+</head>
+<body>
+  <ul id="results"></ul>
+  <script>
+  function Piazzaiolo(name){
+    this.name = name;
+    this.pies = 0;
+    // this.makePie= function(){
+    //   this.pies++;
+    }
+  }
+
+
+
+  Piazzaiolo.prototype = {
+    makePie: function(){
+      this.pies++;
+    }
+
+    drinkEspresso: function(){
+      this.name = this.name.toUpperCase();
+    }
+  }
+
+  var mario = new Piazzaiolo('mario');
+  mario.makePie();
+  console.log(mario.pies;)
+
+  var luigi = new Piazzaiolo('luigi');
+
+  luigi.stealPie = function stealPie(piazzaiolo){
+    piazzaiolo.pies--;
+    this.pies++;
+  }
+mario.stealPie = luigi.stealPie;
+ mario.stealPie(luigi);
+
+
+  </script>
+</body>
+</html>
