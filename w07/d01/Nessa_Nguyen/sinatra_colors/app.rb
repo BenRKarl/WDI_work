@@ -10,3 +10,9 @@ get '/palettes.json' do
   data = HTTParty.get('http://www.colourlovers.com/api/palettes/new?format=json')
   data.to_json
 end
+
+get '/random.json' do
+  content_type :json
+  data = HTTParty.get('http://www.colourlovers.com/api/palettes/random?format=json')
+  data.to_json
+end
