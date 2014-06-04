@@ -19,7 +19,7 @@ function createPalette(data) {
   var paletteArray = data;
   for (var i = 0; i < paletteArray.length; i++) {
     var paletteDiv = $('<div>').addClass('palette')
-                               .html(data[i].title)
+                               .html(paletteArray[i].title)
                                .css('float', 'left')
                                .css('margin', '10px')
                                .css('font-size', '12px')
