@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Callbacks</title>
+  <script>
+    function assert(bool, desc){
+      var text = document.createTextNode(desc);
+      var li   = document.createElement('li');
+      li.appendChild(text);
+      li.className = bool ? "pass" : "fail";
+      var results = document.getElementById('results');
+      results.appendChild(li);
+    }
+  </script>
+  <style>
+    body {font-family: Courier new}
+    #results li.pass{color:chartreuse;}
+    #results li.fail{color:red;}
+  </style>
+</head>
+<body>
+  <ul id="results"></ul>
+<script>
+  function simple(callback){return callback();}
+  function twoPlusTwo(){return 2+2;}
+  assert(simple(twoPlusTwo) === 4, "We know what a callback is.")
+
+
+
+  //callback here
+  function doSomethingToN(n, callback){
+    return callback(n);
+  }
+  function squareN(n){
+    return n*n;
+  }
+  assert(doSomethingToN(4, squareN) === 16, 'Our callback is working.');
+
+
+
+  //write a callback that returns the factorial of n.
+  function factorial(n){
+    if (n <= 1){
+      return 1;
+    }
+    return n * factorial(n-1);
+  }
+  assert(doSomethingToN(5, factorial) === 120, "we have a workin factorial")
+</script>
+</body>
+</html>
