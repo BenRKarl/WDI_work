@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>InputPlayground</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <script src='javascripts/jquery.js'></script>
+  <script src='javascripts/scripts.js'></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<h1 id="h1"></h1>
+
+<input type="text" id='text-field' placeholder='...Proportional Representation of Size'>
+
+<script>
+$(function(){
+
+  $('#text-field').on('keyup', function(){
+
+
+    var text = $('#text-field').val();
+    $h1El = $('#h1');
+    $($h1El).text(text);
+    $('h1').text(text);
+    $('$h1El').css('font-size', text.length +"px");
+
+
+  //this is how we can get text
+  // $('#h1').text(); //the return of .text() has a length attribute
+
+  //this is how we can set text
+  //$('#h1').text("some new text");
+
+  //this is how we can get the value of a text field
+  //$('#input').val();
+
+
+
+</script>
+
+</body>
+</html>
