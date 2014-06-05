@@ -9,7 +9,7 @@ function QuoteCollection() {
 }
 
 QuoteCollection.prototype.fetch = function() {
-  var offset = this.models.length;
+  var offset = (this.models.length % 134);
   var that = this;
   $.ajax({
     url: 'quotes/?offset='+offset,
@@ -20,6 +20,7 @@ QuoteCollection.prototype.fetch = function() {
         that.models.push(newQuote);
         var quoteView = new QuoteView(newQuote);
         $('#container').append(quoteView.render().el);
+        $(quoteView.el).fadeIn(5000);
 
       });
     }
@@ -32,12 +33,13 @@ function QuoteView(quoteModel) {
 }
 
 QuoteView.prototype.render = function() {
-  var $textAndAttributionDiv = $('<div>');
+  var $textAndAttributionDiv = $('<div>', {class: "quote-div"});
   var $textDiv = $('<div>').text(this.model.text);
   var $attributionDiv = $('<div>').text(this.model.attribution);
   $textAndAttributionDiv.append($textDiv);
   $textAndAttributionDiv.append($attributionDiv);
   $textAndAttributionDiv.append($('<br>'));
+  $textAndAttributionDiv.css("display", "none");
   this.el = $textAndAttributionDiv;
   return this;
 }
