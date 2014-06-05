@@ -4,7 +4,6 @@ class PeopleController < ApplicationController
     respond_to do |format|
       format.json { render :json => @people.to_json }
       format.html
-    end
   end
   def show
     @person = Person.find(params[:id])
