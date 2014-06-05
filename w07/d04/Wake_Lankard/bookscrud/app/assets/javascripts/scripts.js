@@ -1,37 +1,71 @@
 //***************** model *******************
-function Book(title, author){
-  this.title = title;
-  this.author = author;
+function Book(bookJSON){
+  this.title = bookJSON.title;
+  this.author = bookJSON.author;
   this.el = undefined;
 };
 
-Book.prototype.render = function(){
-  var newLi = $('<li>').html(this.title);
-  this.el = newLi;
+
+//********** View *************************
+function BookView(model){
+  this.model = model;
+  this.el = undefined;
+}
+
+BookView.prototype.render = function(){
+  var newElement = $('<div>').html(this.model.title);
+  this.el = newElement;
   return this;
-};
+}
+
 
 //************* collection ****************
 function BooksCollection() {
   this.models = {};
 };
 
+BooksCollection.prototype.add = function(bookJSON){
+  var newBook = new Book(bookJSON);
+  this.models[bookJSON.id] = newBook;
+  $(this).trigger('modelAdded');
+  return this;
+}
+
 BooksCollection.prototype.fetch = function(){
   var that = this;
   $.ajax({
     url: '/books',
-    datatype: 'json',
+    dataType: 'json',
     success: function(data){
-      console.log(data);
-      $(data).each(function(idx, ele){
-        var newBook = new Book(ele.title, ele.author);
-        that.models[ele.id] = newBook;
-      })
+        for (idx in data){
+          that.add(data[idx]);   
+      }
     }
   })
 };
 
+
+
+function clearAndDisplayBookList(){
+
+  $('.books').html('');
+
+  for(idx in booksCollection.models){
+    var book = booksCollection.models[idx];
+    var bookView = new BookView(book);
+    $('.books').append(bookView.render().el)
+  }
+}
+
+
+var booksCollection = new BooksCollection();
+
 $(function(){
-  var booksCollection = new BooksCollection();
   booksCollection.fetch();
+
+  $(booksCollection).on('modelAdded', function() {
+    clearAndDisplayBookList();
+  })
 })
+
+
