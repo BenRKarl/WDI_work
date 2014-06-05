@@ -51,7 +51,7 @@ function makeHobbits(hobbits) {
     $("[id='hobbits']").append(hobbitsLi);
   }
 }
-
+makeHobbits(hobbits)
 // #3
 
 function keepItSecretKeepItSafe() {
@@ -77,12 +77,68 @@ function makeBaddies(baddies) {
 
 function makeBuddies(buddies) {
   var aside = $('<aside>');
-  var buddiesUl = $('<ul>').attr('id', 'buddiesUl');
+  var buddiesUl = $('<ul>').attr('id', 'buddies');
+    aside.append(buddiesUl);
+
+    $('body').append(aside);
   for (var i = 0; i < buddies.length; i++) {
     var buddiesLi = $('<li>').text(buddies[i]);
-    // $('body').append(buddiesUl);
-    $('#buddiesUl').append(buddiesLi);
-    $("li:contains('Gandalf')").css('backgroundColor','grey')
+    buddiesUl.append(buddiesLi);
   }
+  $("li:contains('Gandalf')").css('backgroundColor','grey')
+
 }
 
+// #6
+
+function leaveTheShire() {
+  $('#Rivendell').append($('#hobbits'));
+}
+
+// #7
+
+function beautifulStranger() {
+  $("li:contains('Strider')").text('Aragon');
+}
+
+// #8
+
+function forgeTheFellowShip() {
+  $('#Rivendell').append($('#hobbits'));
+  $('#Rivendell').append($('#buddies'));
+}
+
+// #9
+
+function theBalrog() {
+  var gandalfMorph = $("li:contains('Gandalf')")
+  gandalfMorph.text("Gandalf the White");
+  gandalfMorph.css('backgroundColor','white').css('border','1px grey solid');
+}
+
+// #10
+
+function hornOfGondor(){
+  $('body').append($('<footer>'));
+  alert("The Horn of Gondor has been sounded!");
+  $("li:contains('Boromir')").css('text-decoration', 'line-through'); //add set time out?
+  $("li:contains('Uruk-hai')").remove();
+  $("li:contains('Boromir')").appendTo($('<footer>'))
+}
+
+// #11
+
+function itsDangerousToGoAlone(){
+  var mtDoom = $('<div>').attr('id', 'mount-doom'); //not visible mt-doom
+  $('#Mordor').append(mtDoom);
+  $("li:contains('Frodo')").appendTo($('#mount-doom'));
+  $("li:contains('Sam')").appendTo($('#mount-doom'));
+}
+
+// #12
+
+function weWantsIt() {
+  var gollumEl =$ ('<div>').attr('id','gollum');
+  $('#mount-doom').append(gollumEl);
+
+}
