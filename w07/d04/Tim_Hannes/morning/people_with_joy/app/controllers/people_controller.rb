@@ -17,12 +17,10 @@ class PeopleController < ApplicationController
 
   def create
     person = Person.create(person_params)
-
     respond_to do |format|
-      format.html {redirect_to person_path(person)}
-      format.json {render :json => person.to_json}
+      format.html { redirect_to person_path(person)}
+      format.json { render :json => person.to_json}
     end
-    redirect_to person_path(person)
   end
 
   def update
