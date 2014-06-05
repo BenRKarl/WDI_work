@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Assert Template</title>
+<script>
+  function assert(bool, desc){
+  var text = document.createTextNode(desc);
+  var li = document.createElement('li');
+  li.appendChild(text);
+  li.className = bool ? "pass" : "fail";
+  var results = document.getElementById('results');
+  results.appendChild(li);
+  }
+</script>
+<style>
+  body {
+    font-family: Courier new;
+    background-color: #333;
+    font-weight: bold;
+  }
+  #results li.pass{color: chartreuse;}
+  #results li.fail{color: red;}
+</style>
+</head>
+
+
+<body>
+<ul id="results"></ul>
+
+<script>  
+  function Pizzaziolo(name){
+    this.name = name;
+    this.pies = 0;
+  }  
+
+  Pizzaziolo.prototype.makePie = function(){
+    this.pies += 1;
+    return this;
+  }  
+
+  var pizzaPie = new Pizzaziolo('pizza pie');
+  pizzaPie.makePie();
+  pizzaPie.makePie();
+  assert(typeof pizzaPie === 'Pizzaziolo', 'Mario is a pizzaziolo');
+  assert(pizzaPie.__proto__ === Pizzaziolo.prototype, 'Mario\'s proto is the prototype of Pizzaziolo');
+
+
+  var pizooki = new Pizzaziolo('pizooki');
+  pizooki.stealPie = function stealPie(pizzaPie){
+    pizzaPie.pies--;
+    this.pies++;
+  };
+  pizooki.stealPie(pizzaPie);
+  assert(pizooki.pies === 1 && pizzaPie.pies === 1, 'Pizooki can steal pies');
+
+  pizzaPie.stealPie = pizooki.stealPie;
+  pizzaPie.stealPie(pizooki);
+  assert(pizzaPie.pies === 2 && pizooki.pies === 0, 'pizza pie steals pies back');
+
+
+  Pizzaziolo.prototype.drinkEspresso = function(){
+    this.name = this.name.toUpperCase();
+}
+  pizzaPie.drinkEspresso();
+  pizooki.drinkEspresso();
+  assert(pizzaPie.name === 'PIZZA PIE' && pizooki.name === 'PIZOOKI', 'Drinking espresso makes them cap');
+
+</script>
+
+</body>
+</html>
+

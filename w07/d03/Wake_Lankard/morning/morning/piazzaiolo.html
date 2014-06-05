@@ -1,0 +1,46 @@
+<!doctype>
+<html lang="en">
+<head>
+  <meta charset='utf-89'>
+  <title>Assert Template</title>
+  <script>
+  function assert(bool, desc){
+    var text = document.createTextNode(desc);
+    var li = document.createElement('li');
+
+    li.appendChild(text);
+    li.className = bool ? "pass" : "fail";
+    var results = document.getElementById('results');
+    results.appendChild(li);
+
+  }
+
+
+// function Pizzaiolo(name) {
+//   this.name = name;
+//   this.pies = 0;
+
+
+//   }
+//   Pizzaiolo.prototype.makePie = function(){
+//     this.pies++;
+//   }
+//   var mario = new Pizzaiolo('mario');
+//   assert(typeof mario === 'object', "mario is a pizzaiolo");
+
+//   assert(mario.__proto__ === Pizzaiolo.prototype, "mario's proto is the Pizzaiolo.prototype");
+
+
+
+  </script>
+  <style>
+  body {font-family: sans-serif;}
+  #results li.pass{color: green;}
+  #results li.fail{color: red;}
+  </style>
+</head>
+<body>
+  <ul id='results'></ul>
+
+</body>
+</hmtl>
