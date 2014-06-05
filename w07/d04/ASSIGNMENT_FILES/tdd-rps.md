@@ -1,6 +1,6 @@
 # TDD: Rock, Paper, Scissors
 
-On your own, create a Jasmine test suite to help you create the game Rock, Paper, Scissors. The rules are explained from small to big. Read them carefully and make sure there are no hidden or unclear requirements. If anything smells fishy... Ask!
+Create a Jasmine test suite to help you create the game Rock, Paper, Scissors. The rules are explained from small to big. Read them carefully and make sure there are no hidden or unclear requirements. If anything smells fishy... Ask!
 
 ## Guidelines
 * First make it work, then make it right, then make it small, then make it fast. 
