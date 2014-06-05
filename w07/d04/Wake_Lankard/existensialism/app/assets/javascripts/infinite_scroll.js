@@ -11,6 +11,6 @@ $(function(){
   var quoteCollection = new QuoteCollection();
   quoteCollection.fetch();
   $window.scroll(function(){
-    scrollHandler(quoteCollection);
+    scrollHandlerr(quoteCollection);
   });
 })
