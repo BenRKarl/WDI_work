@@ -4,7 +4,8 @@ var thatArray = ["Facebook Platform","Erlang Enthusiasts","Ex-Girlfriends","Mitt
 function randomThis(){
   var length = thisArray.length
   var number = Math.floor((Math.random() * length) + 1);
-
+  var random = thisArray.slice(number)
+  return random
 }
 
 // function randomThat(){
@@ -18,4 +19,4 @@ function randomThis(){
 // }
 
 
-console.log(number)
+console.log(random)
