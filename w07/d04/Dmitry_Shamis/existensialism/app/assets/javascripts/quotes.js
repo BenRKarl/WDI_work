@@ -12,8 +12,7 @@ QuoteView.prototype.render = function() {
   var $div = $('<div>').addClass('quote');
   var $textSpan = $('<span>').text(this.model.text).addClass('text');
   var $attrSpan = $('<span>').text(this.model.attribution).addClass('attribution');
-  $div.append($textSpan)
-  $div.append($attrSpan);
+  $div.append($textSpan).append($attrSpan).fadeIn(600);
   this.el = $div;
   return this;
 }

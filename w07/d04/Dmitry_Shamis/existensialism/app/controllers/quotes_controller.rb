@@ -1,7 +1,7 @@
 class QuotesController < ApplicationController
   def index
     offset = params[:offset] || 0
-    @quotes = Quote.limit(10).offset(params[:offset])
+    @quotes = Quote.limit(5).offset(params[:offset])
     respond_to do |format|
       format.html
       format.json {render json: @quotes.to_json}
