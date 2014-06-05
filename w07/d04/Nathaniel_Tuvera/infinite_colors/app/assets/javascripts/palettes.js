@@ -22,7 +22,7 @@ PaletteView.prototype.render = function(){
   return this;
 }
 
-// ****** Constructor ******
+// ****** Collection ******
 
 function PaletteCollection(){
   this.models = [];
