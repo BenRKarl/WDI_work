@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    function assert(bool, desc) {
+      var text = document.createTextNode(desc);
+      var li = document.createElement('li');
+      li.appendChild(text);
+      li.className = bool ? "pass" : "fail";
+      var results = document.getElementById('results');
+      results.appendChild(li);
+    }
+  </script>
+  <style>
+    body {font-family: Courier}
+    #results li.pass{color: lime;}
+    #results li.fail{color: red;}
+  </style>
+</head>
+<body>
+  <h1>Marcello and the Ghastly Crumb Testys</h1>
+  <ul id="results"></ul>
+  <script type="text/javascript">
+     assert(true,   "----- BEFORE OUTER---------------");
+    /*TEST CODE*/
+    assert(typeof outer === 'function', "outer() is in scope")
+    assert(typeof inner === 'function', "inner() is in scope")
+    assert(typeof a === 'number', "var a is in scope");
+    assert(typeof b === 'number', "var b is in scope");
+    assert(typeof c === 'number', "var c is in scope");
+    function outer(){
+      assert(true, "----- INSIDE OUTER, BEFORE A -----");
+      /*TEST CODE*/
+
+      var a = 1;
+      function inner(){};
+      var b = 2;
+      assert(true, "----- INSIDE OUTER, AFTER inner() AND b -----");
+      /*TEST CODE*/
+      if (a == 1){
+        var c = 3;
+        assert(true, "----- INSIDE OUTER, INSIDE if -----");
+        /*TEST CODE*/
+    }
+      assert(true, "----- INSIDE OUTER, OUTSIDE if -----");
+    }
+    outer();
+    assert(true, "------ AFTER OUTER ---------------");
+    /*TEST CODE*/
+  </script>
+</body>
+</html>
