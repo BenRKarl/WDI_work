@@ -21,3 +21,120 @@ var baddies = [
 ];
 
 var lands = ["The Shire", "Rivendell", "Mordor"];
+
+$(function(){
+  setTimeout(function(){makeMiddleEarth(lands)}, 1000);  
+  setTimeout(function(){makeHobbits(hobbits)}, 3000);
+  setTimeout(function(){keepItSecretKeepItSafe()}, 4000);
+  setTimeout(function(){makeBaddies(baddies)}, 6000);
+  setTimeout(function(){makeBuddies(buddies)}, 8000);
+  setTimeout(function(){leaveTheShire()}, 10000);
+  setTimeout(function(){beautifulStranger()}, 12000);
+  setTimeout(function(){forgeTheFellowShip()}, 13000);
+  setTimeout(function(){theBalrog()}, 17000);
+  setTimeout(function(){hornOfGondor()}, 19000);
+  setTimeout(function(){itsDangerousToGoAlone()}, 21000);
+})
+
+function makeMiddleEarth(lands) {
+  var earth = $('<section>').attr('id', 'middle-earth');
+  $('body').prepend(earth);
+  for (var i = 0; i < lands.length; i++){
+    var landEl = $('<article>');
+    landEl.html('<h1>'+lands[i]+'</h1>'); 
+    earth.append(landEl);
+  }
+}
+
+function makeHobbits(hobbits) {
+  var hobbitUl = $('<ul>').addClass('hobbit-list');
+  $('body').prepend(hobbitUl);
+  for (var i = 0; i < hobbits.length; i++){
+    var hobbitLi = $('<li>').addClass('hobbits').html(hobbits[i]); 
+    hobbitUl.append(hobbitLi);
+  }  
+}
+
+function keepItSecretKeepItSafe() {
+  var ring = $('<div>').attr('id', 'the-ring');
+  $($('.hobbits')[0]).append(ring);
+}
+
+function makeBaddies(baddies) {
+  var baddieUl = $('<ul>');
+  $('body').prepend(baddieUl);
+  for (var i = 0; i < baddies.length; i++){
+    var baddieLi = $('<li>').addClass('baddies').html(baddies[i]); 
+    baddieUl.append(baddieLi);
+  }  
+}
+
+function makeBuddies(buddies) {
+  var aside = $('<aside>');
+  var buddyUl = $('<ul>').addClass('buddy-list')
+  $('body').prepend(aside.append(buddyUl));
+  for (var i = 0; i < buddies.length; i++){
+    var buddyLi = $('<li>').addClass('buddies').html(buddies[i]); 
+    buddyUl.append(buddyLi);
+  }  
+  $($('.buddies')[0]).css('background-color','#ccc');
+}
+
+function leaveTheShire() {
+  $('h1')[1].appendChild($('.hobbit-list')[0]);  
+}
+
+function beautifulStranger(){
+  $('.buddies')[3].innerHTML = 'Aragorn';
+}
+
+function forgeTheFellowShip(){
+  $('h1')[1].appendChild($('.buddy-list')[0]);  
+  var fellowship = $('<div>').addClass('the-fellowship');
+  $('body').prepend(fellowship);
+  
+  var moveHobbits = undefined;
+  var moveBuddies = undefined;
+
+  function moveHobbit(){
+    var hobbits = $('.hobbit-list');
+    fellowship.append(hobbits.children()[0]);
+    if (hobbits.children().length === 0){
+      clearInterval(moveHobbits);
+      moveBuddies = setInterval(moveBuddy, 500);
+    }
+  }
+  moveHobbits = setInterval(moveHobbit, 500);
+  
+  function moveBuddy(){
+    var buddies = $('.buddy-list');
+    fellowship.append(buddies.children()[0]);
+    if (buddies.children().length === 0){
+      clearInterval(moveBuddies);
+      fellowship.append('Hobbits and buddies have joined the fellowship!');
+    }
+  }
+}
+
+function theBalrog() {
+  var gandalf = $($('.buddies')[0])
+  gandalf.css({'background-color':'#fff',
+               'border': '1px solid #ccc'});
+  gandalf.html('Gandalf the White');
+}
+
+function hornOfGondor() {
+  alert('The horn of Gondor has been blown! Boromir was killed by the Uruk-Hai');
+  var boromir = $('.buddies').last();
+  boromir.css('text-decoration', 'line-through');
+  $('.footer').append(boromir);
+}
+
+function itsDangerousToGoAlone(){
+  var fellows = $('.the-fellowship').children();
+  var mordor = $('h1')[2];
+  mordor.append(fellows[0]);
+  //mordor.append(fellowship.children()[1]);
+  // take Frodo and Sam out of the fellowship and move them to Mordor
+  // add a div with an id of 'mount-doom' to Mordor
+}
