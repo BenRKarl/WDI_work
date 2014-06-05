@@ -2,7 +2,7 @@ class JuicesController < ApplicationController
   def index
     @juices = Juice.all
     respond_to do |format|
-      format.json { render :json =>@juices.to_json}
+      format.json { render :json => @juices.to_json }
       format.html
     end
   end

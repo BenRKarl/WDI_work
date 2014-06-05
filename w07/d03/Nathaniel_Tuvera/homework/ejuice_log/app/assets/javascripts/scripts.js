@@ -34,7 +34,7 @@ JuicesCollection.prototype.fetch = function(){
           ele.rating, ele.sizes, ele.niclevels, ele.reccomend);
         that.models[ele.id] = newJuice;
       })
-    }
+    J}
   })
 };
 
@@ -46,7 +46,7 @@ $(function(){
   for (idx in juicesCollection.models){
     var model = JuicesCollection.modex[idx];
     var newEle= mode.render().el;
-    $('.juices').append(newEle);
+    // $('.juices').append(newEle);
   }
 })
 
