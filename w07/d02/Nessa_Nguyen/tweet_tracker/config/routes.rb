@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'tweets#index'
+  root 'welcome#index'
   resources :tweets, except: [:edit, :update]
   post '/tweets/search' => 'tweets#search'
 end

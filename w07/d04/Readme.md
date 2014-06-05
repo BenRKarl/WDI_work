@@ -20,4 +20,14 @@
 	* If the number is evenly divisibly by 3 and 5, it should print `cizzurp`.
 	* Otherwise, it should just print the number.
 * Assign the cizzurp function to the object's prototype.
+
+---
+
+##Part 1: 
+- Update your personal CRUD application to make use of a View (as seen in class).
+- Your Javascript should include a `model`, `collection`, and `view`
+
+###bonus:
+- implement the `create` function shown in class
+
 ---
