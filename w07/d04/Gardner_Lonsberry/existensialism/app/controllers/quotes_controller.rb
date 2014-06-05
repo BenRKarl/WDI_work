@@ -1,6 +1,7 @@
 class QuotesController < ApplicationController
   def index
-    quotes = Quote.all
+    offset = params[:offset] || 0
+    quotes = Quote.limit(5).offset(offset)
     respond_to do |format|
       format.html
       format.json {render json: quotes}

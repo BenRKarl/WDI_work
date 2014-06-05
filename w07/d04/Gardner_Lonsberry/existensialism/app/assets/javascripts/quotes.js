@@ -1,6 +1,6 @@
 function QuoteModel(data) {
-  this.title  = data.title;
-  this.quotes = data.quotes;
+  this.text  = data.text;
+  this.attribution = data.attribution;
 }
 
 function QuoteView(model) {
@@ -9,27 +9,27 @@ function QuoteView(model) {
 }
 
 QuoteView.prototype.render = function() {
-  var $div  = $('<div>').addClass('quote');
-  var $span = $('<span>').text(this.model.title).addClass('title');
+  var $div  = $('<div>').addClass('container');
+  var $span = $('<span>').text(this.model.text).addClass('container');
   $div.append($span);
   $.each(this.model.quotes, function(i, quote){
-    $div.append($quoteDiv)
-  })
+  $div.append($quoteDiv)
+})
   this.el = $div
   return this; 
 }
 
-function QuoteCollection(){
+function QuoteCollection() {
   this.models = [];
 }
 
-QuoteCollection.prototype.fetch = function(){
+QuoteCollection.prototype.fetch = function() {
+  var offset = this.models.length; 
   var that = this;
   $.ajax ({
-    url: '/quotes',
+    url: '/?offset'+offset,
     dataType: 'json',
     success: function(data){
-      alert('Success');
       $.each(data, function(i, datum){
         var quoteModel = new QuoteModel(datum);
         that.models.push(quoteModel)
