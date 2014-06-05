@@ -25,12 +25,6 @@ function withdrawl(amount){
 }
 //make deposit in selected account
 
-//make withdrawl
-  //no negatives
-  //when negative background goes red.
-
-//background gray when money in account.
-
 // function updateValue(value){
 //   var field = document.getElementById("balance");
 //   field.innerHTML = value;
