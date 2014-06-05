@@ -22,8 +22,8 @@ class PeopleController < ApplicationController
       format.html { redirect_to person_path(person) }
       format.json { render :json => person.to_json }
     end
-    redirect_to person_path(person)
   end
+
   def update
     person = Person.find(params[:id])
     person.update(person_params)

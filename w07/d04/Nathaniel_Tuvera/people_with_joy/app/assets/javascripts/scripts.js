@@ -36,17 +36,21 @@ PeopleCollection.prototype.add = function(personJSON){
   return this;
 }
 
+
 PeopleCollection.prototype.create = function(paramObject){
   var that = this;
   $.ajax({
     url: '/people',
     method: 'post',
+    dataType: 'json',
     data: {person: paramObject},
     success: function(data){
       that.add(data);
     }
   })
 }
+
+
 PeopleCollection.prototype.fetch = function(){
   var that = this;
   $.ajax({
