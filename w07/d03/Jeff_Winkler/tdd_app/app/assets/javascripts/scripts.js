@@ -26,7 +26,6 @@ People.prototype = {
   fetch: function(){
     var that = this;
     $.ajax({
-
       url: '/people',
       dataType: 'json',
       success: function(data) {
@@ -34,14 +33,13 @@ People.prototype = {
         var currPerson = new Person(value.id, value.name, value.email);
         that.models[value.id] = currPerson;
         });
-      what();
+      //displayPeeps();
       }
     });
   }
 };
 
-
-function what(){
+function displayPeeps(){
   var ulEl = $('.people');
   $.each(allPeeps.models, function(index, value) {
     $(ulEl).append(value.render().el);
