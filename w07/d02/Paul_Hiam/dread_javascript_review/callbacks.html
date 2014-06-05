@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Asshurt template</title>
+<script>
+function assert(bool, desc) {
+  var text = document.createTextNode(desc);
+  var li = document.createElement('li');
+  li.appendChild(text);
+  li.className = bool ? 'pass' : 'fail';
+  var results = document.getElementById('results');
+  results.appendChild(li);
+}  
+
+</script>
+<style>
+  body {font-family: Courier new}
+  #results li.pass{color: chartreuse; font-weight: bold;}
+  #results li.fail{color: red; font-family: impact;}
+</style>
+</head>
+<body>
+  <ul id='results'>
+  </ul>
+  <script>
+    function simple(callback){return callback();}
+    function twoPlusTwo(){return 2+2;}
+    assert(simple(twoPlusTwo)=== 4, "we know of a callback here");
+
+    function doSomethingToN(n, callback){
+      return callback(n);
+    }
+    function squareN(n){
+      return n*n;
+    }
+    assert(doSomethingToN(4, squareN) === 16, 'Our callback works');
+
+    function factorial(n){
+      if (n <= 1){
+        return 1;
+      }
+      return n * factorial(n-1);
+    }
+    assert(doSomethingToN(5, factorial) === 120, 'we has working factorial');
+
+  </script>
+</body>
+</html>

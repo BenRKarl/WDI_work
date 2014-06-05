@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="javascripts/scripts.js"></script>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" class="main-input"></input>
+  <h1 class="main"></h1>
+
+
+  <script>
+    var n = 12;
+
+    $(function(){
+      $('.main-input').on('keyup', function(){
+        n++;
+        var letter = $('.main-input').val();
+        $('.main').html(letter);
+        $('.main').css('fontSize', $('.main').text().length+'px');
+      })
+    });
+  </script>
+</body>
+</html>
