@@ -138,7 +138,18 @@ function itsDangerousToGoAlone(){
 // #12
 
 function weWantsIt() {
-  var gollumEl =$ ('<div>').attr('id','gollum');
+  var gollumEl = $('<div>').attr('id','gollum');
+  gollumEl.append($('.the-ring'))
   $('#mount-doom').append(gollumEl);
 
+}
+
+// #13
+
+function thereAndBackAgain() {
+  $("div:contains('gollum')").remove
+  var theShire = $("[id='The Shire']");
+  document.remove($('#buddies'));
+  document.remove($('#baddies'));
+  theShire.append($('#hobbits'));
 }
