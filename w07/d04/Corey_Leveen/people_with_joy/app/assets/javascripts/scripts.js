@@ -82,4 +82,10 @@ $(function() {
   $(peopleCollection).on('addFlare', function(){
     clearAndDisplayPeopleList();
   })
+
+  $('.name-form').on('submit', function(e){
+    e.preventDefault();
+    var name = $('.name-form input[name="name"]').val();
+
+  })
 })
