@@ -23,13 +23,11 @@ var baddies = [
 var lands =["The Shire", "Rivendell", "Mordor"];
 
 function makeMiddleEarth(lands){
-  middleEarth = $('<section>').attr('id', 'middleEarth')
+  var middleEarth = $('<section>').attr('id', 'middleEarth');
   for (var i = lands.length - 1; i >= 0; i--) {
-    lands[i] = $('<arti
-    .append(lands[i])
+    lands[i] = $('<article>').html('<h1>' + lands[i] +'</h1>');
+    $('#middleEarth').append(lands[i]);
   };
-    ).append()
 }
 
-lands[i] = $('<artimakeM
-.append(iddleEar)th(lands)
+
