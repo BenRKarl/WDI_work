@@ -16,11 +16,11 @@ Person.prototype.render(){
 }
 
 // **** collection ****
-function People(){
+function PeopleCollection(){
   this.models = {};
 }
 
-People.prototype.fetch = function(){
+PeopleCollection.prototype.fetch = function(){
   var that = this;
   $.ajax({
     url: '/people',
@@ -35,7 +35,11 @@ People.prototype.fetch = function(){
   })
 }
 
+$(function(){
 
+  var PeopleCollection = new PeopleCollection();
+  peopleCollection.fetch();
+})
 // $(function(){
 //   $.ajax({
 //     url:'/people',
@@ -51,3 +55,10 @@ People.prototype.fetch = function(){
 //   })
 
 // });
+
+
+
+$.ajax({
+  url: '/people',
+  method: 'post', data: {person: {name: Cichard DeGray'}}
+})
