@@ -12,7 +12,7 @@ function QuoteView(model){
 
 QuoteView.prototype.render = function(){
   var $div  = $('<div>').addClass('quote');
-  $div.text(this.model.text)
+  // $div.text(this.model.text)
   var $span = $('<span>').text(this.model.text).addClass('text');
   $div.append($span);
   var $attr = $('<div>').text(this.model.attribution);
