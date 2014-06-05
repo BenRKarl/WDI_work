@@ -38,7 +38,7 @@ PeopleCollection.prototype.add = function(personJSON){
 
 PeopleCollection.prototype.create = function(paramObject){
    var that = this;
-   
+
    $.ajax({
       url: '/people',
       method: 'post',
@@ -92,6 +92,12 @@ $(function(){
    $(peopleCollection).on('add', function(){
       clearAndDisplayPeopleList();
    })
+
+   $('.name-form').on('submit', function(e){
+      e.preventDefault();
+      var newName = $('.name-form input[name="name"]').val();
+      peopleCollection.create({name: newName});
+  })
 
 })
 
