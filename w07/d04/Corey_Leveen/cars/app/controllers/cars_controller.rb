@@ -18,8 +18,8 @@ class CarsController < ApplicationController
   def create
     car = Car.create(car_params)
     respond_to do |format|
-      form.html { redirect_to car_path(car) }
-      form.json { render :json => person.to_json }
+      format.html { redirect_to car_path(car) }
+      format.json { render :json => person.to_json }
     end
   end
 
@@ -34,7 +34,7 @@ class CarsController < ApplicationController
 
   def destroy
     Car.delete(params[:id])
-    redirect_to car_path
+    redirect_to cars_path
   end
 
   private
