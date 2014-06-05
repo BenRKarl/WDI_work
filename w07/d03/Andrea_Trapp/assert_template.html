@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assert Template</title>
+  <script>
+    function assert(bool, desc){
+      var text = document.createTextNode(desc);
+      var li   = document.createElement('li');
+      li.appendChild(text);
+      li.className = bool ? "pass" : "fail";
+      var results = document.getElementById('results');
+      results.appendChild(li);
+    }
+  </script>
+  <style>
+    body {font-family: Courier new}
+    #results li.pass{color: chartreuse;}
+    #results li.fail{color: red; text-decoration: line-through;}
+  </style>
+</head>
+<body>
+  <ul id="results"></ul>
+  <script>
+  function Piazzaiolo(name){
+    this.name = name;
+    this.pies = 0;
+  }
+    // this.makePie = function(){
+    //   this.pies++
+    // }
+  
+  Piazzaiolo.prototype.makePie = function(){
+    this.pies++
+  }
+
+  // Piazzaiolo.prototype.stealPie = function(otherPiazzaiolo){
+  //     otherPiazzaiolo.pies--;
+  //     this.pies++
+  // }
+  // Piazzaiolo.prototype = {
+  //   makePie: function(){
+  //     this.pies += 1
+  //   }
+  // }
+
+  Piazzaiolo.prototype.drinkEspressio = function(){
+    this.name = this.name.toUpperCase(); 
+  }
+
+  var mario = new Piazzaiolo('mario');
+  console.log(typeof mario);
+  assert(typeof mario === "object", "Mario is a Piazzaiolo");
+  assert(mario.__proto__ === Piazzaiolo.prototype, "mario's proto is the Piazzaiolo.prototype");
+  mario.makePie();
+  assert(mario.pies === 1, "the make pies function is working");
+  assert(mario.makePie.name === '', "makePie.name == undefined")
+
+  ///////////////////////////////
+
+  // mario.makePie();
+  // mario.makePie();
+  var luigi = new Piazzaiolo('luigi');
+
+  luigi.stealPie = function stealPie(otherPiazzaiolo){
+  // Piazzaiolo.prototype.stealPie = function(otherPiazzaiolo){
+    otherPiazzaiolo.pies--;
+    this.pies++
+  }
+
+  luigi.stealPie(mario);
+  assert(luigi.pies === 1 && mario.pies === 0, "luigi is a clever thief");
+  console.log("Mario's pies: " + mario.pies);
+  console.log("Luigi's pies: " + luigi.pies);
+
+  mario.stealPie = luigi.stealPie; // Mario gets the stealPie function from Luigi
+  mario.stealPie(luigi);
+  assert(luigi.pies === 0 && mario.pies === 1, "mario is a clever thief as well");
+  console.log("Mario's pies: " + mario.pies);
+  console.log("Luigi's pies: " + luigi.pies);
+  mario.drinkEspressio();
+  luigi.drinkEspressio();
+  assert(mario.name === "MARIO" && luigi.name === "LUIGI", "all is fair in pizza making and espresso drinking");
+  console.log(mario.name);
+  console.log(luigi.name);
+
+
+
+  </script>
+</body>
+</html>
