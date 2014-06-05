@@ -12,9 +12,11 @@ function QuoteView(model){
 
 QuoteView.prototype.render = function(){
   var $div  = $('<div>').addClass('quote');
+  $div.text(this.model.text)
   var $span = $('<span>').text(this.model.text).addClass('text');
   $div.append($span);
   var $attr = $('<div>').text(this.model.attribution);
+    $div.append($attr);
 
   this.el = $div;
   return this;
@@ -35,8 +37,12 @@ QuoteCollection.prototype.fetch = function(){
         var quoteModel = new QuoteModel(datum);
         that.models.push(quoteModel);
         var quoteView = new QuoteView(quoteModel)
-        $('#quotes').append(quoteView.render().el)
+        $('#container').append(quoteView.render().el)
       });
     }
   })
 }
+
+
+var start = new QuoteCollection();
+start.fetch();
