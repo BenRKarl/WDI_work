@@ -35,7 +35,11 @@ var lands = ["The Shire", "Rivendell", "Mordor"];
 
 function makeMiddleEarth(lands) {
     // create a section tag with an id of middle-earth
+      var newSection = document.createElement('section');   -JS
+      var newSection= $('<section>', { id: 'middle-earth', class: 'world'}) - jquery
+
     // add each land as an article tag
+      
     // inside each article tag include an h1 with the name of the land      
 }
 
