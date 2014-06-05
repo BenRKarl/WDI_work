@@ -81,10 +81,10 @@ $(function() {
     clearAndDisplayPeopleList();
   })
 
-$('.name=form').on('submit', function(e){
-  e.preventDefault();
-  var newName = $('.name-form input[name="name"]').val();
-  peopleCollection.create({name: newName});
-})
+  $('.name-form').on('submit', function(e){
+    e.preventDefault();
+    var newName = $('.name-form input[name="name"]').val();
+    peopleCollection.create({name: newName});
+  })
 
 })

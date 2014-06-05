@@ -1,5 +1,5 @@
-var $window = $(window);
-var $document = $(document);
+var $window = $(window),
+$document = $(document);
 
 function scrollHandler(collection) {
   if ($window.height() + $window.scrollTop() >= $document.height()) {
@@ -8,9 +8,9 @@ function scrollHandler(collection) {
 }
 
 $(function () {
-  var quoteCollection = new QuoteCollection();
-  quoteCollection.fetch();
+  var paletteCollection = new PaletteCollection();
+  paletteCollection.fetch();
   $window.scroll(function () {
-    scrollHandler(quoteCollection);
+    scrollHandler(paletteCollection);
   })
 })
