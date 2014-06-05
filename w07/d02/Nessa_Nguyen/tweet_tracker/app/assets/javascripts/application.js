@@ -1,16 +1,39 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+  var newFeed = new Feed();
+  newFeed.fetch();
+})
+
+function Tweet(handle, content, url){
+  this.handle  = handle;
+  this.content = content;
+  this.url     = url;
+  this.el      = undefined;
+}
+
+Tweet.prototype.render = function(){
+  var newLi = $('<li>').html(this.handle+': '+this.content+'<br/>'+this.url)
+  this.el = newLi;
+  return this;
+}
+
+function Feed(){
+  this.models = {};
+}
+
+Feed.prototype.fetch = function(){
+  var that = this;
+  $.ajax({
+    url: '/tweets',
+    dataType: 'json',
+    success: function(data){
+    for (var i = 0; i < data.length; i++){
+      var newTweet = new Tweet(data[i].handle, data[i].content, data[i].url);
+      that.models[i] = newTweet; 
+    }
+  }})
+};
