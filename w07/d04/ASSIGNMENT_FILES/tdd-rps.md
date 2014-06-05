@@ -3,9 +3,15 @@
 Create a Jasmine test suite to help you create the game Rock, Paper, Scissors. The rules are explained from small to big. Read them carefully and make sure there are no hidden or unclear requirements. If anything smells fishy... Ask!
 
 ## Guidelines
+### Code-writing
+* Do not use console.log. Just return strings where needed.
+### Meta-code-writing
 * First make it work, then make it right, then make it small, then make it fast. 
 * Red-Green-Refactor. Don't forget the refactor step. You don't HAVE to refactor at EVERY step, but you should always CONSIDER whether you need to refactor.
-* Do not use console.log. Just return strings where needed.
+### Code management
+* Commit after every test goes green.
+* Commit after every refactor.
+* Do not push too often. You may want to do a git reset and undo a commit or two if you realize you went down an unhappy path. If you find yourself wanting to reset/undo after you push, you'll want to check out the 'git revert' command, which creates a new commit with a set of changes to undo a particular commit.
 
 ## The rules of the game:
 
