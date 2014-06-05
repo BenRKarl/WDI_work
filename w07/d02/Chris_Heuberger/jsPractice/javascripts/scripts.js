@@ -1,11 +1,16 @@
+
+function Person (name) {
+  this.name = name;
+  this.el = $('<li>').html(this.name);
+}
+
+
 $(function(){
-  $('.text-input').on('click', function() {
+  $('.submit-button').on('click', function() {
     var text = ($(this).val());
-    function Person (text) {
-      this.name = $('.text-input');
-      this.el = $('<li>').html
-    }
-    var thePerson = new Person($('.text-input'));
-    $('.name-li').append(thePerson);
+    var thePerson = new Person($('.text-input').val());
+    $('.name-li').append(thePerson.el);
     });
 });
+
+
