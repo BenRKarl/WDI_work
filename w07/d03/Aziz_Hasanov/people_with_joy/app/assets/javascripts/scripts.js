@@ -1,0 +1,66 @@
+console.log("hello, world");
+
+// *** model *** //
+function Person(id, name, email) {
+  this.id = id;
+  this.name = name;
+  this.email = email;
+  this.el = undefined;        // ????????????????????????????????????????????
+}
+Person.prototype.render = function() { // y render???
+  var newLi = $("<li>").html(this.name);
+  this.el = newLi;
+  return this;                // ????????????????????????????????????????????
+}
+
+// *** collection *** //
+function PeopleCollection() {
+  this.models = {};           // ????????????????????????????????????????????
+}
+
+PeopleCollection.prototype.fetch = function() {
+  var that = this;            // ????????????????????????????????????????????
+
+  $.ajax({
+    url: "/people",
+    dataType: "json",
+    success: function(data) {
+      $(data).each(function(index, elem) {
+        var newPerson = new Person(elem.id, elem.name, elem.email);
+        that.models[elem.id] = newPerson;
+      })
+    }
+  })
+}
+
+// AFTER REFACTORING
+// $(function() {
+  var peopleCollection = new PeopleCollection();
+  peopleCollection.fetch();
+//   $.ajax({
+//     url: "/people",
+//     dataType: "json",
+//     success: function(data) {
+//       $(data).each(function(index, elem) {
+//         var newPerson = new Person(elem.name, elem.email);
+//         $(".people").append(newPerson.render().el);
+//       })
+//     }
+//   })
+// })
+
+// BEFORE REFACTORING
+// $(document).ready(function() {
+//   $(function() {
+//     $.ajax({
+//       url: "/people",
+//       dataType: "json",
+//       success: function(data) {
+//         $(data).each(function(index, elem) {
+//           var newLi = $("<li>").html(elem.name);
+//           $(".people").append(newLi);
+//         })
+//       }
+//     })
+//   })
+// })

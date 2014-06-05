@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assert Template</title>
+  <script>
+    function assert(bool, desc){
+      var text = document.createTextNode(desc);
+      var li   = document.createElement('li');
+      li.appendChild(text);
+      li.className = bool ? "pass" : "fail";
+      var results = document.getElementById('results');
+      results.appendChild(li);
+    }
+  </script>
+  <style>
+    body {font-family: Courier new;}
+    #results li.pass{color: chartreuse;}
+    #results li.fail{color: red;}
+  </style>
+</head>
+<body>
+  <ul id="results"></ul>
+
+<script>
+  function Piazzaiolo(name){
+    this.name = name;
+    this.pies = 0;
+  }
+
+  Piazzaiolo.prototype = {
+      makePie: function(){
+        this.pies++;
+      },
+
+      drinkEspresso: function(){
+        this.name = this.name.toUpperCase();
+      },
+
+      stealPie: function(Piazzaiolo){
+        Piazzaiolo.pies--;
+        this.pies++;
+      }
+  }
+
+  var mario = new Piazzaiolo('mario');
+  var luigi = new Piazzaiolo('luigi');
+
+  mario.makePie();
+  assert(mario.pies === 1, "Mario made himself a pie.");
+
+  luigi.stealPie(mario);
+  assert(mario.pies === 0 && luigi.pies === 1, "luigi stole marios pie.");
+
+  mario.stealPie(luigi);
+  assert(mario.pies === 1 && luigi.pies === 0, "mario stole his pie back from luigi.");
+
+  mario.drinkEspresso()
+  assert(mario.name === "MARIO", "mario drank an espresso and is pumped up.")
+  luigi.drinkEspresso()
+  assert(mario.name === "MARIO" && luigi.name === "LUIGI", 'mario and luigi drank an espresso and are friendly brothers again, but thiefs together nonetheless.')
+
+</script>
+
+
+</body>
+</html>
