@@ -44,7 +44,7 @@ makeMiddleEarth(lands)
 
 function makeHobbits(hobbits) {
 	// display an unordered list of hobbits in the shire
-	var list = $("<ul>");
+	var list = $("<ul id='hobbits'>");
 	// give each hobbit a class of hobbit
 	for (var i=0; i<hobbits.length; i++) {
 		var id = toDashed(hobbits[i]);
@@ -85,13 +85,61 @@ function makeBuddies(buddies) {
 	// create an aside tag 
 	var aside = $("<aside>");
 	// display an unordered list of buddies in the aside 
-		var list = $("<ul>");
-	for (var i=0; i<baddies.length; i++) {
-		var id = toDashed(baddies[i]);
-		var baddie = $("<li id='" + id + "'>"+baddies[i]+"</li>");
-		baddie.addClass("baddie");
-		baddie.appendTo(list);
+	var list = $("<ul id='buddies'>");
+	for (var i=0; i<buddies.length; i++) {
+		var id = toDashed(buddies[i]);
+		var buddy = $("<li id='" + id + "'>"+buddies[i]+"</li>");
+		buddy.addClass("buddy");
+		buddy.appendTo(list);
 	}
-	list.appendTo("#mordor");
+	list.appendTo(aside);
+	aside.appendTo("body");
 	// Make the Gandalf text node have a grey background
+	$("#gandalf-the-grey").css("backgroundColor","grey");
 }
+
+makeBuddies(buddies);
+
+function leaveTheShire() {
+	// assemble the hobbits and move them to Rivendell
+	var hobbits = $("#hobbits");
+	hobbits.remove();
+	$(hobbits).appendTo("#rivendell");
+}
+
+leaveTheShire();
+
+function beautifulStranger() {
+	// change the buddy 'Strider' textnode to "Aragorn"
+	$("#strider").replaceWith(
+		$("<li class='buddy' id='aragorn'>Aragorn</li>")
+	);
+}
+
+beautifulStranger();
+
+function forgeTheFellowShip() {
+	// move the hobbits and the buddies to Rivendell
+	var hobbits = $("#hobbits");
+	var buddies = $("#buddies");
+	hobbits.remove(); buddies.remove();
+	hobbits.appendTo("#rivendell");
+	buddies.appendTo("#rivendell");
+	// create a new div called 'the-fellowship'
+	var fellowship = $("<div id='the-fellowship'>");
+	// add each hobbit and buddy one at a time to 'the-fellowship'
+	// after each character is added make an alert that they have joined your party
+	function addToParty() {
+		$(this).remove();
+		fellowship.append($(this));
+		$(this).children().each(function() {
+			alert($(this).text() + " has joined your party!");
+		});
+	}
+	hobbits.each(addToParty);
+	buddies.each(addToParty);
+	$("#rivendell").append(fellowship);
+}
+
+forgeTheFellowShip();
+
