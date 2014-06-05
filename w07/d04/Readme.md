@@ -23,7 +23,7 @@
 
 ---
 
-##Part 1: 
+#CRUD VIEW
 - Update your personal CRUD application to make use of a View (as seen in class).
 - Your Javascript should include a `model`, `collection`, and `view`
 
@@ -31,3 +31,23 @@
 - implement the `create` function shown in class
 
 ---
+
+#The Infinite Void
+In your folder you will find a rails project.  It contains a `seeds.rb` file which scrapes a website of existential philosophy quotes and creates quote objects.  Each quote object has both `text` and `attribution` attributes.  Do not worry too much about this, simply run it with `rake db:seed`.  Then:
+
+1)  Configure your application to respond with JSON as we did in class today with the colors example.  You should only need to work inside of a single controller action.
+
+2)  Build a framework for managing your data on the client side.  This will include a:
+	- QuoteModel
+	- QuoteView
+	- QuoteCollection
+
+3) Implement infinite scroll
+
+Refer to today's in class example for more specific implementation details.  You are essentially recreating the app with a differnt set of data.
+
+***challenge:*** Can you take advantage of jQuery's animation functions to fade in new quotes?
+
+***challenge:*** Can you make the scrolling truly infinite? (i.e. we go the beginning of the collection once the last quote is rendered on the page)
+
+***super challenge:*** Can you seed your database with data from another API?  Or use Nokogiri to scrape a website for quote data?
