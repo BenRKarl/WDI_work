@@ -19,10 +19,6 @@ class HumansController < ApplicationController
   def create
     human = Human.create(human_params)
     redirect_to human_path(human)
-    respond_to do |format|
-      format.html { redirect_to human_path(person) }
-      format.json { render :json => human.to_json }
-    end
   end
 
   def update
