@@ -1,4 +1,4 @@
-// new User('Tim', $('#user-list'))
+// var Tim = new User('Tim', $('#user-list'))
 
 function User(name, container){
   this.name = name;
