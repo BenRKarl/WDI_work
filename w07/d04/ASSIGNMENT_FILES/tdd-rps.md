@@ -4,6 +4,8 @@ Create a Jasmine test suite to help you create the game Rock, Paper, Scissors. T
 
 ## Guidelines
 ### Code-writing
+* The absolute first thing you need to do is set up Jasmine in a new directory.
+* This might end up being a portfolio piece, so consider creating a new git repo for this under your projects directory.
 * Do not use console.log. Just return strings where needed.
 ### Meta-code-writing
 * First make it work, then make it right, then make it small, then make it fast. 
