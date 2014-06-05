@@ -18,7 +18,7 @@ console.log('I am a js file in the assets pipeline');
 
 
 // ***** model *****
-function Person(id,name, email){
+function person(id,name, email){
   this.id     = id;
   this.name   = name;
   this.email  = email;
@@ -63,7 +63,7 @@ $(function(){
   peopleCollection.fetch();
 
   for (idx in peopleCollection.models){
-    var model  = PpopleCollections.models[idx];
+    var model  = PeopleCollections.models[idx];
     var newEle = model.render().el;
     $('.people').append(newEle);
   }
