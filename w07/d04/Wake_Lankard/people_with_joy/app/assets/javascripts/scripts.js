@@ -1,14 +1,9 @@
-console.log('This works.');
-
-
-
 // ******* Model *********
 function Person(personJSON){
   this.name = personJSON.name;
   this.email = personJSON.email;
   this.id = personJSON.id;
-
-}
+};
 
 
 // ******* View *********
@@ -21,8 +16,6 @@ PersonView.prototype.render = function(){
 var newElement = $('<div>').html(this.model.name);
 this.el = newElement;
 return this;
-
-
 }
 
 
@@ -41,7 +34,6 @@ PeopleCollection.prototype.add = function(personJSON){
 
 PeopleCollection.prototype.fetch = function(){
   var that = this;
-
   $.ajax({
     url: '/people',
     dataType: 'json',
@@ -63,7 +55,7 @@ function clearAndDisplayPeopleList(){
     var personView =  new PersonView(person);
     $('.people').append(personView.render().el)
   }
-}
+};
 
 
 var peopleCollection = new PeopleCollection();
