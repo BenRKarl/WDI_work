@@ -1,14 +1,14 @@
 console.log('Test of scripts.js file in assets pipeline');
 
-function Juice(id, name, flavor, rating, sizes, niclevels, recommend){
-  this.id         = id;
-  this.name       = name;
-  this.flavor     = flavor;
-  this.rating     = rating;
-  this.sizes      = sizes;
-  this.niclevels  = niclevels;
-  this.recommend  = recommend;
-  this.el         = undefined;
+function Juice(juiceJSON){
+  this.id         = juiceJSON.id;
+  this.name       = juiceJSON.name;
+  this.flavor     = juiceJSON.flavor;
+  this.rating     = juiceJSON.rating;
+  this.sizes      = juiceJSON.sizes;
+  this.niclevels  = juiceJSON.niclevels;
+  this.recommend  = juiceJSON.recommend;
+  this.el         = juiceJSON.undefined;
 }
 
 Juice.prototype.render = function(){
@@ -29,12 +29,12 @@ JuicesCollection.prototype.fetch = function(){
     url: '/juices',
     dataType: 'json',
     success: function(data){
-      $(data).each(function(idx,ele){
-        var newJuice = new Juice(ele.id, ele.name, ele.flavor,
-          ele.rating, ele.sizes, ele.niclevels, ele.reccomend);
-        that.models[ele.id] = newJuice;
-      })
-    J}
+      for (idx in data){
+        var element = data[idx];
+        var newJuice = new Juice(element);;
+        that.models[element.id] = newJuice;
+      }
+    }
   })
 };
 
@@ -50,4 +50,4 @@ $(function(){
   }
 })
 
-dangerZone = new Juice({name: 'Danger Zone', flavor: 'Savory', rating: 4, sizes: '10, 30, 50', niclevels: '0-32, increments of 2', recommend: true})
+varr dangerZone = new Juice({name: 'Danger Zone', flavor: 'Savory', rating: 4, sizes: '10, 30, 50', niclevels: '0-32, increments of 2', recommend: true})
