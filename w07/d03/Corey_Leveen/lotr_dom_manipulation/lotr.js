@@ -180,10 +180,10 @@ hornOfGondor();
 
 function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
-  $('#the-fellowship')[0].remove();
-  $('#the-fellowship')[1].remove();
-  $('#middle-earth:last-child').html(hobbits[0]);
-  $('#middle-earth:last-child').html(hobbits[1]);
+  $('#the-fellowship:first-child').remove();
+  $('#the-fellowship:nth-child(2)').remove();
+  $('#middle-earth:last-child').append($('#hobbit-list:nth-child(1)'));
+  $('#middle-earth:last-child').append($('#hobbit-list:nth-child(2)'));
   // add a div with an id of 'mount-doom' to Mordor
   $('#middle-earth:last-child').append($('<div>').attr('id', 'mount-doom'));
 }
