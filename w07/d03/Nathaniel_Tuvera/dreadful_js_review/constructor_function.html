@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Constructor Asserts</title>
+  <script>
+    function assert(bool, desc){
+      var text = document.createTextNode(desc);
+      var li   = document.createElement('li');
+      li.appendChild(text);
+      li.className = bool ? "pass" : "fail";
+      var results = document.getElementById('results');
+      results.appendChild(li);
+    }
+  </script>
+  <style>
+    body {font-family: 'Courier new';}
+    #results li.pass{color: chartreuse;}
+    #results li.fail{color: red;}
+
+  </style>
+</head>
+<body>
+  <ul id='results'>
+
+
+  <script>
+    // var piazzaiolo = function(name){
+    //   this.name = name;
+    //   this.pies = 0;
+
+    // };
+    // piazzaiolo.prototype.makePie = function(){
+    //     this.pies ++;
+    //     return this;
+    //   }
+    // }
+
+    function Pizzaiolo(name){
+      this.name = name;
+      this.pies = 0;
+      // this.makePie = function(){
+      //   this.pies ++;
+      //   return this;
+      // }
+    }
+    Pizzaiolo.prototype.makePie = function(){
+      this.pies++;
+    }
+
+    var mario = new Pizzaiolo('mario');
+
+    assert(typeof mario === "object", "Mario is not a Pizzaiolo, but a project");
+    assert(mario.__proto__ === Pizzaiolo.prototype, "Mario's proto is the Pizzaiolo.prototype");
+
+    mario.makePie()
+
+    assert(mario.pies === 1, "the make pies function is working");
+    assert(mario.makePie.name === '', "makePie.name === undefined");
+
+    var luigi = new Pizzaiolo('luigi');
+
+    luigi.stealPie = function stealPie(pizzaiolo){
+      pizzaiolo.pies --;
+      this.pies ++;
+      return this;
+    }
+    luigi.stealPie(mario);
+    assert(luigi.pies === 1 && mario.pies === 0, "Luigi is steals a pie from Mario.  Now, Mario has nothing.")
+
+    mario.stealPie = luigi.stealPie;
+    mario.stealPie(luigi)
+    assert(mario.pies === 1 && luigi.pies === 0, "Mario learned to steal a pizza from Luigi.")
+
+    Pizzaiolo.prototype.drinkEspresso = function(){
+      this.name = this.name.toUpperCase();
+    }
+
+    mario.drinkEspresso();
+    luigi.drinkEspresso();
+
+    assert(mario.name === "MARIO" && luigi.name === "LUIGI", "after drinking espressio their names grew in font-size");
+  </script>
+
+
+  </ul>
+</body>
+</html>
