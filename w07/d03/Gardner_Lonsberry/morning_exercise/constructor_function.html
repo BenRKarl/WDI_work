@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assert Template</title>
+
+<script>
+
+  function assert(bool, desc){
+    var text = document.createTextNode(desc);
+    var li = document.createElement('li');
+    li.appendChild(text);
+    li.className = bool ? "pass" : "fail";
+    var results = document.getElementById('results');
+    results.appendChild(li);
+  }
+
+function Pizzaoilo(name) {
+  this.name = name;
+  this.pies = 0
+  // this.makePie = function(){
+  //   this.pies++;
+  //  }
+}
+Pizzaoilo.prototype.MakePie = function(){
+  this.pies++;
+}
+var mario = new Pizzaoilo('mario');
+
+assert(typeof === "object", "Mario is a Pizzaoilo");
+
+
+
+var luigi = new Pizzaoilo('luigi');
+
+
+luigi.stealPie = function stealPie(piazzaiolo) {
+  piazzaiolo.pies --;
+  this.pies++;
+}
+
+mario.StealPie = luigi.stealPie;
+mario.stealPie(luigi);
+
+Pizzaoilo.prototype.drinkEspresso = function(){
+  this.name = this.name.toUpperCase();
+}
+alert('mario');
+alert('luigi');
+
+
+
+
+
+
+
+  
+</script>
+</head>
+<style>
+  body {font-family: Courier new;}
+  #results li.pass{color: chartreuse;}
+  #results li.fail{color: red;}
+</style>
+
+<body>
+  <ul id="results"></ul>
+</body>
+</html>

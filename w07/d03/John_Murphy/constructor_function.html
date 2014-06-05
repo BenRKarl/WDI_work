@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assert Template</title>
+  <script>
+    function assert(bool, desc){
+      var text = document.createTextNode(desc);
+      var li   = document.createElement('li');
+      li.appendChild(text);
+      li.className = bool ? "pass" : "fail";
+      var results = document.getElementById('results');
+      results.appendChild(li);
+    }
+  </script>
+  <style>
+    body {font-family: Courier new;}
+    #results li.pass{color: green;}
+    #results li.fail{color: red;}
+  </style>
+</head>
+<body>
+  <ul id="results"></ul>
+  <script>
+
+
+    function Pizzaiolo(name) {
+      this.name = name;
+      this.pies = 0;
+    };
+
+    Pizzaiolo.prototype = {
+      makePie: function(){
+        this.pies += 1
+      },
+
+      drinkEspresso: function(){
+        this.name = this.name.toUpperCase();
+      }
+
+    };
+    var mario = new Pizzaiolo('mario');
+    console.log(typeof mario);
+    assert(typeof mario === "object", "Mario is an object");
+
+    assert(mario.__proto__ === Pizzaiolo.prototype, "mario's proto is the Pizzaiolo.prototype");
+
+    mario.makePie();
+
+    assert(mario.pies === 1, "the makePie function is working");
+    assert(mario.makePie.name === '', "makePie.name === undefined");
+
+    var luigi = new Pizzaiolo('luigi')
+
+    luigi.stealPie = function(target){
+        this.pies++
+        target.pies--
+    }
+
+    luigi.stealPie(mario);
+
+    assert(luigi.pies === 1 && mario.pies === 0, 'luigi is a clever thief');
+
+    mario.stealPie = luigi.stealPie;
+
+    mario.stealPie(luigi);
+
+    assert(mario.pies === 1 && luigi.pies === 0, 'mario is a clever thief too');
+
+    mario.drinkEspresso()
+    luigi.drinkEspresso()
+
+    assert(mario.name === 'MARIO' && luigi.name === 'LUIGI', "espresso drinking works")
+  </script>
+</body>
+</html>

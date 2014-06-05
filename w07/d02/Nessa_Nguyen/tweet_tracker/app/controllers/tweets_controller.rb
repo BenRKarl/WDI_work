@@ -1,6 +1,10 @@
 class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all
+    respond_to do |format|
+      format.json { render :json => @tweets.to_json }
+      format.html
+    end
   end
 
   def new

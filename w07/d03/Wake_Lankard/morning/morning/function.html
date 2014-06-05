@@ -1,0 +1,54 @@
+<!doctype>
+<html lang="en">
+<head>
+  <meta charset='utf-89'>
+  <title>Assert Template</title>
+  <script>
+  function assert(bool, desc){
+    var text = document.createTextNode(desc);
+    var li = document.createElement('li');
+
+    li.appendChild(text);
+    li.className = bool ? "pass" : "fail";
+    var results = document.getElementById('results');
+    results.appendChild(li);
+
+  }
+  </script>
+  <style>
+  body {font-family: sans-serif;}
+  #results li.pass{color: green;}
+  #results li.fail{color: red;}
+  </style>
+</head>
+<body>
+  <ul id='results'></ul>
+  <script>
+    function andrewSmells(){
+      return true;
+    }
+    var aldricSmellsGood = function() {
+      return true;
+
+    }
+    assert(typeof window.aldricSmellsGood === 'function',' the scope is the window');
+    assert( aldricSmellsGood.name === '', 'its name is nothing');
+
+    var mattSmells = function theBest(){return "or does he"};
+    assert(mattSmells.name = 'theBest', 'the name attribute of a variable is equal to the name of the function that is assigned to it.')
+
+    function cell(){
+      assert(typeof prisoner === 'function', "visible before function declaration");
+      function prisoner(){};
+      assert(typeof window.prisoner === 'function', 'the function is scoped globally.');
+
+
+    }
+    cell();
+
+    function destroyGluten(){return this};
+    assert(destroyGluten() === window, 'this referes to the the window')
+  </script>
+
+</body>
+</hmtl>
