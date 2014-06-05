@@ -3,12 +3,14 @@
 console.log('Great work.  Here we go.')
 
 
+
 // ************ Model *************
 function Person(personJSON){
   this.name = personJSON.name;
   this.email = personJSON.email;
   this.id = personJSON.id;
 }
+
 
 
 // ************ View *************
@@ -24,6 +26,7 @@ PersonView.prototype.render = function(){
 };
 
 
+
 // ************ Collection *************
 function PeopleCollection(){
   this.models = {};
@@ -35,7 +38,6 @@ PeopleCollection.prototype.add = function(personJSON){
   $(this).trigger('addFlare');     // shoot up in the air that add flare
   return this;
 }
-
 
 PeopleCollection.prototype.create = function(paramObject){
   var that = this;
@@ -49,7 +51,6 @@ PeopleCollection.prototype.create = function(paramObject){
     }
    })
 }
-
 
 PeopleCollection.prototype.fetch = function(){
   var that = this;
@@ -74,8 +75,8 @@ function clearAndDisplayPeopleList(){
 
   for(idx in peopleCollection.models){
     var person = peopleCollection.models[idx];
-     var personView = new PersonView(person);
-    $('.people').append(personView.render().el)
+    var personView = new PersonView(person);
+    $('.people').append(personView.render().el);
   }
 }
 
@@ -85,16 +86,16 @@ $(function(){
 
   peopleCollection.fetch();
 
-  // this for that add flare
+  // If you see the 'addFlare' shot in the sky!!!!
   $(peopleCollection).on('addFlare', function(){
-    console.log('')
     clearAndDisplayPeopleList();
-  })
+  });
 
 
   $('.name-form').on('submit', function(e){
     e.preventDefault();
     var newName = $('.name-form input[name="name"]').val();
+    $('.name-form input[name="name"]').val('');
     peopleCollection.create({name: newName});
   })
 
