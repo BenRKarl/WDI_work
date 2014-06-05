@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Assert Template</title>
+      <script>
+
+      function assert(bool, desc){
+         var text = document.createTextNode(desc);
+         var li = document.createElement('li');
+         li.appendChild(text);
+         li.className = bool ? 'pass' : 'fail';
+         var results = document.getElementById('results');
+         results.appendChild(li);
+      }
+
+   </script>
+   <style>
+      body {font-family: Adelle;}
+      #results li.pass{color: #00CED1;}
+      #results li.fail{color: red;text-decoration: line-through;}
+   </style>
+</head>
+<body>
+
+   <ul id="results"></ul>
+   
+
+   <script>
+
+      function Pizzaiolo(name){ 
+         this.name = name;
+         this.pies = 0;
+      };
+
+      Pizzaiolo.prototype.makePie = function(){
+         this.pies++;
+      };
+
+      Pizzaiolo.prototype.drinkEspresso = function(){
+         this.name = this.name.toUpperCase();
+      };
+
+      var mario = new Pizzaiolo('mario');
+
+      var luigi = new Pizzaiolo('luigi');
+
+      luigi.stealPie = function stealPie(pizzaiolo){
+         pizzaiolo.pies--;
+         this.pies++;
+      };
+
+      mario.borrowPie = luigi.stealPie;
+
+
+
+
+
+
+      assert(typeof mario === 'object', 'Mario is an object');
+
+      assert(mario.__proto__ === Pizzaiolo.prototype, "Mario's proto is the Pizzaiolo");
+
+      mario.makePie();
+
+      assert(mario.pies === 1, "Mario can make pies");
+
+      assert(mario.makePie.name === '', "makePie.name === empty string");
+
+      luigi.stealPie(mario);
+
+      assert(luigi.pies === 1 && mario.pies === 0, 'Luigi is a clever thief');
+
+      mario.borrowPie(luigi);
+
+      assert(mario.pies == 1 && luigi.pies === 0, 'Mario is a more cleverer thief, but he will probably give it back')
+
+      mario.drinkEspresso();
+      luigi.drinkEspresso();
+      console.log(mario.name)
+
+      assert(mario.name === 'MARIO' && luigi.name === 'LUIGI', 'They happily drink espresso')
+
+   </script>   
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

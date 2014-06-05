@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ashirt template</title>
+<script>
+function assert(bool, desc) {
+  var text = document.createTextNode(desc);
+  var li = document.createElement('li');
+  li.appendChild(text);
+  li.className = bool ? 'pass' : 'fail';
+  var results = document.getElementById('results');
+  results.appendChild(li);
+}  
+
+  
+
+
+</script>
+
+
+<style>
+  body {font-family: Courier new}
+  #results li.pass{color: chartreuse; font-weight: bold;}
+  #results li.fail{color: red; font-family: impact;}
+</style>
+</head>
+<body>
+  <ul id='results'>
+  </ul>
+
+  <script>
+  function Piazzolo(name){
+    this.name = name;
+    this.pies = 0;
+    //this.makePie = function(){this.pies++;}
+  }
+  //or do it here
+  Piazzolo.prototype = {
+    makePie: function(){
+      this.pies++;
+
+    }
+    
+  }
+
+var mario = new Piazzolo('mario');
+assert(typeof mario == Piazzolo, 'Mario is a ...');
+mario.makePie();
+assert(mario.pies === 1, "makepie is working");
+
+luigi = new Piazzolo('luigi')
+luigi.stealpie = function(victim){
+      this.pies++;
+      victim.pies--;
+    }
+luigi.stealpie(mario);
+
+assert(mario.pies === 0 && luigi.pies === 1, 'luigi stole a pie');
+mario.stealpie = luigi.stealpie
+mario.stealpie(luigi);
+assert(mario.pies === 1 && luigi.pies === 0, 'mario recuperated a pie');
+Piazzolo.prototype.drinkEspresso = function(){
+  this.name = this.name.toUpperCase();
+}
+mario.drinkEspresso();
+luigi.drinkEspresso();
+assert(mario.name == 'MARIO' && luigi.name == 'LUIGI', 'all good with an espresso and a friend')
+
+</script>
+</body>
+</html>
