@@ -10,11 +10,8 @@ function QuoteView(model) {
 
 QuoteView.prototype.render = function() {
   var $div  = $('<div>').addClass('container');
-  var $span = $('<span>').text(this.model.text).addClass('container');
+  var $span = $('<span>').text(this.model.text + " " + this.model.attribution).addClass('container');
   $div.append($span);
-  $.each(this.model.quotes, function(i, quote){
-  $div.append($quoteDiv)
-})
   this.el = $div
   return this; 
 }
@@ -27,14 +24,14 @@ QuoteCollection.prototype.fetch = function() {
   var offset = this.models.length; 
   var that = this;
   $.ajax ({
-    url: '/?offset'+offset,
+    url: 'quotes/?offset'+offset,
     dataType: 'json',
     success: function(data){
       $.each(data, function(i, datum){
         var quoteModel = new QuoteModel(datum);
         that.models.push(quoteModel)
-        var quoteView = new QuoteView(quoteModel);
-        $('#container').append(quoteView.render().el);
+         var quoteView = new QuoteView(quoteModel);
+         $('#container').append(quoteView.render().el);
       });
     }
   })
