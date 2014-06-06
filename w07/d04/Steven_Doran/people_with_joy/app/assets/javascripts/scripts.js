@@ -72,17 +72,17 @@ PeopleCollection.prototype.fetch = function(){
 
 function clearAndDisplayPeopleList(){
 
-      $('.people').html('');
+   $('.people').html('');
 
-      for (var i in peopleCollection.models){
-         var person = peopleCollection.models[i];
-         var personView = new PersonView(person);
-         $('.people').append(personView.render().el);         
-      };
+   for (var i in peopleCollection.models){
+      var person = peopleCollection.models[i];
+      var personView = new PersonView(person);
+      $('.people').append(personView.render().el);
+   };
 };
 
 
-var peopleCollection = new PeopleCollection;
+var peopleCollection = new PeopleCollection();
 
 
 $(function(){
