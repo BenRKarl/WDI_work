@@ -29,7 +29,9 @@ People.prototype.fetch = function(){
 
   })
 }
-
+// var newLi = $('<li>').html(elem.name, elem.email);
+//       var newPerson = new Person(elem.name, elem.email);
+//       $('#peoples').append(newPerson.render().el);
 
 // original layout/arrange
 // $(function(){
