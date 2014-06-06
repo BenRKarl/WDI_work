@@ -9,7 +9,7 @@ var mta = {
       url: '/lines/'+lineName,
       dataType: 'json',
       success: function(data) {
-        that.networkData[lineName] = data.stations;
+        that.networkData[lineName] = data;
         callback();
       }
     });
@@ -18,7 +18,7 @@ var mta = {
 
 function displayStationList(lineName, listCssSelector){
   $(listCssSelector).html('');
-  var stationArray = mta.networkData[lineName];
+  var stationArray = mta.networkData[lineName].stations;
   $.each(stationArray, function(index, station) {
     var $addressLi = $('<li>').text(station.address);
     $(listCssSelector).append($addressLi);
@@ -32,4 +32,14 @@ $(function(){
       displayStationList(lineName, '.stations-list');
     });
   });
+
+
+  $('.line').each(function(idx, element){
+    var color = $(element).data('color');
+    $(element).css('opacity', 0);
+    $(element).css('backgroundColor', color);
+    $(element).animate({
+      opacity: 1,
+    }, 500)
+  })
 });
