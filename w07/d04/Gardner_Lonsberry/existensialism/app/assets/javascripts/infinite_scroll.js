@@ -17,7 +17,7 @@ $(function(){
 
 
   $window.change(function(){
-    console.log("window scrolltop", window.scrollTop());
+    console.log("window scrollTop", window.scrollTop());
     console.log("window", window.height());
   })
 })

@@ -9,8 +9,8 @@ function QuoteView(model) {
 }
 
 QuoteView.prototype.render = function() {
-  var $div  = $('<div>').addClass('container');
-  var $span = $('<span>').text(this.model.text + " " + this.model.attribution).addClass('container');
+  var $div  = $('<div>').addClass('quote text');
+  var $span = $('<span>').text(this.model.text + " " + this.model.attribution).addClass('quote attribution');
   $div.append($span);
   this.el = $div
   return this; 
@@ -29,9 +29,10 @@ QuoteCollection.prototype.fetch = function() {
     success: function(data){
       $.each(data, function(i, datum){
         var quoteModel = new QuoteModel(datum);
-        that.models.push(quoteModel)
+        that.models.push(quoteModel);
          var quoteView = new QuoteView(quoteModel);
          $('#container').append(quoteView.render().el);
+        $('#container').fadeIn("slow");  
       });
     }
   })

@@ -3,7 +3,7 @@ class QuotesController < ApplicationController
     offset = params[:offset] || 0
     quotes = Quote.limit(30).offset(offset)
       respond_to do |format|
-      format.html
+      format.html # quotes/index.html.erb
       format.json {render json: quotes}
       end
   end
