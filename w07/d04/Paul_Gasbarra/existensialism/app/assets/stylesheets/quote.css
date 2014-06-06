@@ -13,6 +13,7 @@
 }
 .quote .attribution{
   font-family: 'Lato', sans-serif;
-  font-style: italic;
+  font-style: italic bold;
   text-align: right;
+  font-size: 1em;
 }
