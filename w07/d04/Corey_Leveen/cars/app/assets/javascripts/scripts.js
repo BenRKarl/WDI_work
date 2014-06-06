@@ -36,6 +36,7 @@ CarsCollection.prototype.add = function(carJSON) {
 }
 
 CarsCollection.prototype.create = function(paramObj) {
+  console.log(paramObj);
   var that = this;
   $.ajax({
     url: '/cars',
@@ -86,8 +87,10 @@ $(function(){
 
   $('.make-form').on('submit', function(e){
     e.preventDefault();
-    var newMake = $('.make-form input[make="make"]').val();
-    $('.make-form input[make="make"]').val('');
+    //var newMake = $('.make-form input[make="make"]').val();
+    var newMake = $('#new-car').val();
+    $('#new-car').val('');
+    console.log(newMake);
     carsCollection.create({make: newMake});
   })
 })

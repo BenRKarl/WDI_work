@@ -19,7 +19,7 @@ class CarsController < ApplicationController
     car = Car.create(car_params)
     respond_to do |format|
       format.html { redirect_to car_path(car) }
-      format.json { render :json => person.to_json }
+      format.json { render :json => car.to_json }
     end
   end
 
