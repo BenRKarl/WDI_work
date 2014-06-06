@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>CizzUrp</title>
+
+</head>
+<body>
+
+
+<script>
+function BoyPopStar(name, haircut){
+  this.name = name;
+  this.haircut = haircut;
+  this.moves = [];
+};
+
+BoyPopStar.prototype.learnMoves =function(move){
+  this.moves.push(move);
+
+};
+
+BoyPopStar.prototype.cizzurp = function(n){
+  var output = 0;
+  for(var i = 1; i <= n ; i++){
+    if ((i % 3 == 0) && (i % 5 == 0)){
+      output = "cizzurp";
+    }
+    else if (i % 3 == 0){
+      output = "cizz";
+    }
+    else if (i % 5 == 0){
+      output = "urp";
+    }
+    else {
+      output = i;
+    }
+    console.log(output);
+  }
+}
+
+</script>
+</body>
+</html>
