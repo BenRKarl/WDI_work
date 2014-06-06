@@ -13,10 +13,9 @@ QuoteView.prototype.render = function() {
   var $div = $('<div>').addClass('quote');
   var $span = $('<span>').text(this.model.attribution).addClass('attribution');
   $div.append($span);
-  $.each(this.model.text, function(i, text) {
-    var $textDiv = $('<div>').html(text).css('font-family', 'Helvetica');
-    $div.append($textDiv);
-  })
+  var $textDiv = $('<div>').html(this.model.text).css('font-family', 'cursive');
+  $div.append($textDiv);
+
   this.el = $div;
   return this;
 }
