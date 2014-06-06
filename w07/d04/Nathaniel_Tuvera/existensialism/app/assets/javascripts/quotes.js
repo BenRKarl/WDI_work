@@ -14,10 +14,10 @@ QuoteView.prototype.render = function(){
   var $div  = $('<div>').addClass('quote');
   // $div.text(this.model.text)
   var $span = $('<span>').text(this.model.text).addClass('text');
-  $div.append($span);
+  $div.append($span).fadeIn(1500);
   var $attr = $('<div>').text(this.model.attribution);
     $div.append($attr);
-
+// true infinite scroll logic here
   this.el = $div;
   return this;
 }
@@ -30,7 +30,7 @@ QuoteCollection.prototype.fetch = function(){
   var offset = this.models.length
   var that = this;
   $.ajax({
-    url: "quotes/?offset="+offset,
+    url: "/?offset=" + offset,
     dataType: "json",
     success: function(data){
       $.each(data, function(i, datum){
@@ -44,5 +44,3 @@ QuoteCollection.prototype.fetch = function(){
 }
 
 
-var start = new QuoteCollection();
-start.fetch();
