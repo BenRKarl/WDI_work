@@ -1,4 +1,5 @@
 class JuicesController < ApplicationController
+
   def index
     @juices = Juice.all
     respond_to do |format|
@@ -17,7 +18,10 @@ class JuicesController < ApplicationController
 
   def create
     juice = Juice.create(juice_params)
-    redirect_to juice_path(juice)
+    respond_to do |format|
+      format.html { redirect_to juice_path(juice) }
+      format.json { render :json => juice.to_json}
+    end
   end
 
   def update
