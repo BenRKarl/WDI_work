@@ -20,12 +20,17 @@ WEEK 07 DAY 05
 
 ---
 
-##Part 03: MTAR
+# MTA
 - Seen in class
 
 ---
 
-##Part 04: Jasmine Testing Drill!
+# Drag Drop
+- Seen in class
+
+---
+
+# Jasmine Testing Drill!
 - Set up a new Jasmine ready testing environment
 - Here is the goal:
 	- calculator.add(2, 3) should return 5
@@ -40,7 +45,7 @@ WEEK 07 DAY 05
 
 ---
 
-##Part 05: Kinder (Meow or Not Meow)
+#Kinder (Meow or Not Meow)
 - It is a kitten 'yay or nay' voting application
 - I want to judge kittens as 'meow' or 'not meow'!
 - A ruby `Kitten` should have a
@@ -60,11 +65,11 @@ WEEK 07 DAY 05
 
 ---
 
-##Part 06: TDD: Rock, Paper, Scissors
+# Rock, Paper, Scissors
 Create a Jasmine test suite to help you create the game Rock, Paper, Scissors. The rules are explained from small to big. Read them carefully and make sure there are no hidden or unclear requirements. If anything smells fishy... Ask!
 
 ## Guidelines
-* First make it work, then make it right, then make it small, then make it fast. 
+* First make it work, then make it right, then make it small, then make it fast.
 * Red-Green-Refactor. Don't forget the refactor step. You don't HAVE to refactor at EVERY step, but you should always CONSIDER whether you need to refactor.
 * Do not use console.log. Just return strings where needed.
 
@@ -113,20 +118,6 @@ Implement Rock-Paper-Scissors-Lizard-Spock :
 
 ---
 
-##Part 05: Jasmine Testing Drill!
-- Set up a new Jasmine ready testing environment
-	- Here is the goal:
-		- calculator.add(2, 3) should return 5
-		- calculator.subtract(2, 3) should return -1
-		- calculator.multiply(2, 3) should return 6
-	- FOLLOW THIS PATTERN (This is the exercise)
-		- Write a failing test (RED)
-		- Write code to pass the test (GREEN)
-		- Commit
-		- Refactor your code
-		- Commit
-
----
 
 ##Part 01: MTA
 - Seen in class
