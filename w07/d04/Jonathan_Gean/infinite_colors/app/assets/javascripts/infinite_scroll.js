@@ -10,10 +10,10 @@ function scrollHandler(collection){
 }
 
 $(function(){
-    var quoteCollection = new QuoteCollection();
-  quoteCollection.fetch();
+    var paletteCollection = new PaletteCollection();
+  paletteCollection.fetch();
   $window.scroll(function(){
-    scrollHandler(quoteCollection);
+    scrollHandler(paletteCollection);
   });
 
 })
