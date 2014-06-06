@@ -1,5 +1,7 @@
 console.log('Test of scripts.js file in assets pipeline');
 
+
+// ***** Model *****
 function Juice(juiceJSON){
   this.id         = juiceJSON.id;
   this.name       = juiceJSON.name;
@@ -50,4 +52,4 @@ $(function(){
   }
 })
 
-varr dangerZone = new Juice({name: 'Danger Zone', flavor: 'Savory', rating: 4, sizes: '10, 30, 50', niclevels: '0-32, increments of 2', recommend: true})
+var dangerZone = new Juice({name: 'Danger Zone', flavor: 'Savory', rating: 4, sizes: '10, 30, 50', niclevels: '0-32, increments of 2', recommend: true})

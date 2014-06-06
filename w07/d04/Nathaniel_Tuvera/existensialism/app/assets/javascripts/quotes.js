@@ -15,9 +15,9 @@ QuoteView.prototype.render = function(){
   // $div.text(this.model.text)
   var $span = $('<span>').text(this.model.text).addClass('text');
   $div.append($span).fadeIn(1500);
-  var $attr = $('<div>').text(this.model.attribution);
+  var $attr = $('<div>').text(this.model.attribution).addClass('attribution');
     $div.append($attr);
-// true infinite scroll logic here
+
   this.el = $div;
   return this;
 }
