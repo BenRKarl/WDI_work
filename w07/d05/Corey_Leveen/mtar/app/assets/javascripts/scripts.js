@@ -1,5 +1,5 @@
+console.log("A friendly message from scripts.js");
 
-console.log('Let Us Put Stuff Here')
 
 var mta = {
   networkData: {},
