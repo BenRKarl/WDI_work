@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    function assert(bool, desc) {
+      var text = document.createTextNode(desc);
+      var li = document.createElement('li');
+      li.appendChild(text);
+      li.className = bool ? "pass" : "fail";
+      var results = document.getElementById('results');
+      results.appendChild(li);
+    }
+  </script>
+  <style>
+    body {font-family: Courier}
+    #results li.pass{color: green;}
+    #results li.fail{color: red;}
+  </style>
+</head>
+<body>
+  <h1>Marcello and the Ghastly Crumb Testies</h1>
+  <ul id="results"></ul>
+<script type="text/javascript">
+  function Pizzaiolo (name){
+    this.name = name;
+    this.pies = 0;
+    // function makePiethis(){
+    //  this.pies++;
+   //}
+  }
+
+  Pizzaiolo.prototype.makePie = function(){
+    this.pies++
+  }
+
+  var mario = new Pizzaiolo('mario');
+  mario.makePie();
+
+  var luigi = new Pizzaiolo('luigi');
+
+  luigi.stealPie = function stealPie(pizzaiolo){
+    pizzaiolo.pies--;
+    this.pies++;
+  }
+
+  luigi.stealPie(mario);
+  assert (typeof mario === 'object', "Mario is a Pizzaiolo");
+  assert (luigi.pies === 1 && mario.pies === 0, "luigi is a clever thief");
+  mario.stealPie = luigi.stealPie;
+ mario.stealPie(luigi);
+  assert (luigi.pies === 0 && mario.pies === 1, "mario gets revenge");
+
+ Pizzaiolo.prototype.drinkEspressio = function() {
+   this.name = this.name.toUpperCase();
+ };
+
+  luigi.drinkEspressio();
+
+  assert (luigi.name === "LUIGI", "Luigi is high on caffine.");
+  </script>
+</body>
+</html>

@@ -99,4 +99,15 @@ $(hobbits).each(function(idx, elem){
 }
 leaveTheShire()
 
+function beautifulStranger() {
+  // change the buddy 'Strider' textnode to "Aragorn"
+  $("li:contains('Strider')").html("Aragorn");
+}
+beautifulStranger();
+function forgeTheFellowShip() {
+  // move the hobbits and the buddies to Rivendell
+  // create a new div called 'the-fellowship'
+  // add each hobbit and buddy one at a time to 'the-fellowship'
+  // after each character is added make an alert that they have joined your party
+}
 
