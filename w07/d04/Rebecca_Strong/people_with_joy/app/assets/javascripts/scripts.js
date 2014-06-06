@@ -29,7 +29,7 @@ PersonView.prototype.render = function(){
 
 
 //****Collection *****
-function PeopleCollection(){//has the ability to manage a bunch of models & has ability to...?
+function PeopleCollection(){//has the ability to manage a bunch of Person models & has ability to...?
   this.models = {};
 }
 
@@ -57,7 +57,7 @@ PeopleCollection.prototype.create = function(paramObject){
 
 
   PeopleCollection.prototype.fetch = function() {//who calls fetch? PeopleCollection.
-var that = this;//therefore in this moment, this is the PC FUNCTION
+var that = this;//therefore in this moment, 'this' is the PC FUNCTION & 'that' is the person
     $.ajax({
       url: '/people',
       dataType: 'json',
