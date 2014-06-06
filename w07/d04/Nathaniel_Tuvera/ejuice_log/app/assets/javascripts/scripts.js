@@ -31,7 +31,7 @@ function JuicesCollection(){
 
 JuicesCollection.prototype.add = function(juiceJSON){
   var newJuice = new Juice(juiceJSON);
-  this.models[juiceJSON.id] = new Juice;
+  this.models[juiceJSON.id] = newJuice;
   $(this).trigger('addFlare');
   return this;
 }
@@ -67,7 +67,7 @@ function clearAndDisplayJuicesList(){
   $('.juices').html('');
 
   for(idx in juicesCollection.models){
-    var juice = juiceCollection.model[idx];
+    var juice = juicesCollection.models[idx];
     var juiceView = new JuiceView(juice);
     $('.juices').append(juiceView.render().el);
   }
