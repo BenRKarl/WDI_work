@@ -1,0 +1,79 @@
+heidiwilliams=# CREATE DATABASE travel_log
+heidiwilliams-# ;
+
+CREATE DATABASE
+heidiwilliams=# CREATE TABLE journal_entries;
+                                        ^
+travel_log=# CREATE TABLE journal_entries (serial4 PRIMARY_KEY id, body varchar(1000), city_id INTEGER);
+
+ERROR:  syntax error at or near "id"
+LINE 1: CREATE TABLE journal_entries (serial4 PRIMARY_KEY id, body v...
+                                                          ^
+travel_log=# CREATE TABLE journal_entries (id serial4 PRIMARY KEY, body varchar(1000), city_id INTEGER);
+
+CREATE TABLE
+travel_log=# CREATE TABLE cities (id serial4 PRIMARY KEY, name varchar(100));
+
+CREATE TABLE
+travel_log=# 
+
+heidiwilliams=# CREATE DATABASE client_photos;
+CREATE DATABASE
+heidiwilliams=# CREATE TABLE clients (id serial4 PRIMARY KEY, name varchar(200));
+CREATE TABLE
+heidiwilliams=# CREATE TABLE events (wedding varchar(300), couples varchar(300), family varchar(300));
+CREATE TABLE
+heidiwilliams=# 
+
+
+heidiwilliams=# \c client_photos
+You are now connected to database "client_photos" as user "heidiwilliams".
+client_photos=# CREATE TABLE clients (id serial4 PRIMARY KEY, name varchar(200));
+CREATE TABLE
+client_photos=# CREATE TABLE events (id serial4 PRIMARY KEY, wedding varchar(300), couple varchar(300), family varchar(300));
+CREATE TABLE
+client_photos=# \d
+                 List of relations
+ Schema |      Name      |   Type   |     Owner     
+--------+----------------+----------+---------------
+ public | clients        | table    | heidiwilliams
+ public | clients_id_seq | sequence | heidiwilliams
+ public | events         | table    | heidiwilliams
+ public | events_id_seq  | sequence | heidiwilliams
+(4 rows)
+
+client_photos=# \q
+heidiwilliams ~/code/wdi/WDI_NYC_Apr14_Proto/w03/d03/Heidi_Williams-Foy on master[?$]
+$ psql
+
+heidiwilliams=# CREATE DATABASE grocery_store
+heidiwilliams-# ;
+CREATE DATABASE
+heidiwilliams=# CREATE TABLE cuisines (id serial4 PRIMARY KEY, polish varchar(200), spanish varchar(200), irish varchar(200), american varchar(200));
+CREATE TABLE
+heidiwilliams=# \d
+
+heidiwilliams=# \c grocery_store
+You are now connected to database "grocery_store" as user "heidiwilliams".
+grocery_store=# CREATE TABLE cuisines (id serial4 PRIMARY KEY, polish varchar(200), spanish varchar (200), irish varchar(200), american varchar(200)):
+grocery_store-# ;
+ERROR:  syntax error at or near ":"
+LINE 1: ...h varchar (200), irish varchar(200), american varchar(200)):
+                                                                      ^
+grocery_store=# CREATE TABLE cuisines (id serial4 PRIMARY KEY, polish varchar(200), spanish varchar(200), irish varchar(200), american varchar(200));
+CREATE TABLE
+grocery_store=# \d
+                  List of relations
+ Schema |      Name       |   Type   |     Owner     
+--------+-----------------+----------+---------------
+ public | cuisines        | table    | heidiwilliams
+ public | cuisines_id_seq | sequence | heidiwilliams
+(2 rows)
+
+grocery_store=# 
+
+
+
+
+ 
+
