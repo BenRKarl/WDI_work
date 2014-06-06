@@ -1,0 +1,29 @@
+<div class = "artist">
+  <h1 style="color: blue"><%= @data %></h1>
+
+
+  <h1><%= @artist %></h1>
+
+
+  <h1 style="color: pink">
+     <%= @name %> </h1>
+  <h1 style="color: blue">
+     <%= @hometown %> </h1>
+
+<h1 style="color: green">
+     <%= @id %> </h1>
+<h1 style = "color: red"><%= @tags %></h1>
+<h1 style = "color: red"></h1>
+ <h1 style="color: blue">
+     Discography </h1>
+     <ul>
+     <% @discography.each do |album| %>
+      <li> <%= album['title'] %>
+        <img src='http://coverartarchive.org/release/<%= album['id'] %>/front' alt = ''>
+      </li>
+
+
+     <% end  %>
+   </ul>
+</div>
+
