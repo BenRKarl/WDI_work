@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript CizzUrp</title>
+</head>
+<body>
+
+  <script>
+  console.log("Sippin on that sizzurp");
+
+  function BoyPopStar(name, haircut) {
+    this.name = name;
+    this.haircut = haircut;
+    this.moves = [];
+  }
+
+  BoyPopStar.prototype = {
+    learnMoves: function learnMoves(move) {
+      this.moves.push(move);
+    },
+
+    cizzurp: function cizzurp(n) {
+      for (var i = 1; i <= n; i++) {
+        var str = "";
+        if (i % 3 === 0) {
+          str += "cizz";
+        }
+        if (i % 5 === 0) {
+          str += "urp";
+        }
+        console.log(str || i);
+      };
+    }
+  }
+
+
+
+  </script>
+</body>
+</html>

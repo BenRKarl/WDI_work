@@ -1,4 +1,3 @@
-
 function showPalette(e) {
     var colors = $(this).data('colors').split(',');
     $('.palette').html('');
@@ -13,7 +12,6 @@ function showPalette(e) {
         $('.palette').append(colorDiv);
     });
 }
-
 
 $(function(){
   $('.color-generator').on('click', function() {
