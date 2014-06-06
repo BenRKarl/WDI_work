@@ -14,6 +14,7 @@ PaletteView.prototype.render = function(){
   var $div = $('<div>').addClass('palette');
   var $span = $('<span>').text(this.model.title).addClass('title');
   $div.append($span);
+  
   $.each(this.model.colors, function(idx, color){
     var $colorDiv = $('<div>').text('#'+color).css('background-color', '#'+color);
     $div.append($colorDiv);
