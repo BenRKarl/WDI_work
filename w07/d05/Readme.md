@@ -47,7 +47,7 @@ WEEK 07 DAY 05
 	- url (string)
 - A GET request to '/kittens/random' should display a random kitten
 	- Use `http://placekitten.com` for the image
-- A User should be able to vote as to whether or not a kitten is 'meow'
+- A user should be able to vote as to whether or not a kitten is 'meow'
 - If the kitten is 'meow', it should be saved to the database via AJAX request
 
 ###Challenge #1:
