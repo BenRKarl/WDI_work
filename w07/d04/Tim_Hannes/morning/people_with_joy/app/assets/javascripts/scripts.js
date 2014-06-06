@@ -1,4 +1,4 @@
-console.log('Do you commut to Manhattan via the GWB?')
+console.log('Do you commute to Manhattan via the GWB?')
 
 // ************ Model *************
 function Person(personJSON){
