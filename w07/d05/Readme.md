@@ -20,12 +20,25 @@ WEEK 07 DAY 05
 
 ---
 
+<<<<<<< HEAD
 ##Part 03: MTAR
+=======
+# MTA
+>>>>>>> 1f7d082102dc5edd9ac2cc11ec8c8b7efc68a877
 - Seen in class
 
 ---
 
+<<<<<<< HEAD
 ##Part 04: Jasmine Testing Drill!
+=======
+# Drag Drop
+- Seen in class
+
+---
+
+# Jasmine Testing Drill!
+>>>>>>> 1f7d082102dc5edd9ac2cc11ec8c8b7efc68a877
 - Set up a new Jasmine ready testing environment
 - Here is the goal:
 	- calculator.add(2, 3) should return 5
@@ -40,14 +53,22 @@ WEEK 07 DAY 05
 
 ---
 
+<<<<<<< HEAD
 ##Part 05: Kinder (Meow or Not Meow)
+=======
+#Kinder (Meow or Not Meow)
+>>>>>>> 1f7d082102dc5edd9ac2cc11ec8c8b7efc68a877
 - It is a kitten 'yay or nay' voting application
 - I want to judge kittens as 'meow' or 'not meow'!
 - A ruby `Kitten` should have a
 	- url (string)
 - A GET request to '/kittens/random' should display a random kitten
 	- Use `http://placekitten.com` for the image
+<<<<<<< HEAD
 - A User should be able to vote as to whether or not a kitten is 'meow'
+=======
+- A user should be able to vote as to whether or not a kitten is 'meow'
+>>>>>>> 1f7d082102dc5edd9ac2cc11ec8c8b7efc68a877
 - If the kitten is 'meow', it should be saved to the database via AJAX request
 
 ###Challenge #1:
@@ -60,11 +81,19 @@ WEEK 07 DAY 05
 
 ---
 
+<<<<<<< HEAD
 ##Part 06: TDD: Rock, Paper, Scissors
 Create a Jasmine test suite to help you create the game Rock, Paper, Scissors. The rules are explained from small to big. Read them carefully and make sure there are no hidden or unclear requirements. If anything smells fishy... Ask!
 
 ## Guidelines
 * First make it work, then make it right, then make it small, then make it fast. 
+=======
+# Rock, Paper, Scissors
+Create a Jasmine test suite to help you create the game Rock, Paper, Scissors. The rules are explained from small to big. Read them carefully and make sure there are no hidden or unclear requirements. If anything smells fishy... Ask!
+
+## Guidelines
+* First make it work, then make it right, then make it small, then make it fast.
+>>>>>>> 1f7d082102dc5edd9ac2cc11ec8c8b7efc68a877
 * Red-Green-Refactor. Don't forget the refactor step. You don't HAVE to refactor at EVERY step, but you should always CONSIDER whether you need to refactor.
 * Do not use console.log. Just return strings where needed.
 

@@ -2,6 +2,7 @@
   border-radius: .25em;
   margin: 1em;
   color: #333333;
+  display: none;
 }
 
 .quote .text{

@@ -1,0 +1,19 @@
+<h1>Users</h1>
+
+Create a new user <a href="/users/new">here</a>.
+
+Or here:
+
+<input type="text" id="new-user" placeholder="Username">
+<input type="text" id="new-user-email" placeholder="Email">
+<button id="new-user-button">Create</button>
+
+
+<% @users.each do |user| %>
+
+<h3><a href="/users/<%=user.id%>"><%= user.username %></a></h3>
+
+
+<% end %>
+
+<div class="users"></div>
