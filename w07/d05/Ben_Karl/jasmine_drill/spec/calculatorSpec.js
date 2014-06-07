@@ -1,7 +1,7 @@
 describe('The calculator', function(){
 
   beforeEach(function(){
-    var calculator = new calculator(2, 3);
+    calculator = new calculator(2, 3);
   });
 
   it('correctly adds two numbers', function(){
@@ -21,4 +21,4 @@ describe('The calculator', function(){
     var expected = 6;
     expect(actual).toEqual(expected);
   });
-})
+});

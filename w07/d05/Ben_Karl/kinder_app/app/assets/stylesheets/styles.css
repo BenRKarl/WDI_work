@@ -1,0 +1,10 @@
+.kitten-container {
+  display: inline-block;
+  height: 1000px;
+  width: 1000px;
+}
+
+body {
+  font-family: 'Philosopher', sans-serif;
+  text-align: center;
+}

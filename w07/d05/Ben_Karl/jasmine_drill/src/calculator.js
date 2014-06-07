@@ -7,12 +7,10 @@ calculator.prototype.add = function(){
   return this.num1 + this.num2;
 };
 
-calculator.prototype.subtract = function(){
-  return this.num1 - this.num2;
-};
+// calculator.prototype.subtract = function(){
+//   return this.num1 - this.num2;
+// };
 
-calculator.prototype.multiply = function(){
-  return this.num1 * this.num2;
-}
-
-var calculator = new calculator(2, 3)
+// calculator.prototype.multiply = function(){
+//   return this.num1 * this.num2;
+// }
