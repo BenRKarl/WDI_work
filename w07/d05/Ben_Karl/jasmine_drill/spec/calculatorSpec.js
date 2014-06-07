@@ -19,8 +19,20 @@ describe('The calculator', function(){
   });
 
   it('correctly multiplies two numbers', function(){
+    var calculator = new Calculator();
+    var num1 = 2;
+    var num2 = 3;
     var actual = calculator.multiply(num1, num2);
     var expected = 6;
+    expect(actual).toEqual(expected);
+  });
+
+  it('correctly divides two numbers', function(){
+    var calculator = new Calculator();
+    var num1 = 6;
+    var num2 = 2;
+    var actual = calculator.divide(num1, num2);
+    var expected = 3;
     expect(actual).toEqual(expected);
   });
 });
