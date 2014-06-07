@@ -1,0 +1,12 @@
+function BoyPopStar(name, haircut) {
+  this.name     = name;
+  this.haircut  = haircut;
+  this.moves = [];
+}
+
+BoyPopStar.prototype.learnMoves = function(move){
+  this.moves.push(move);
+  return this.moves;
+}
+
+
