@@ -1,0 +1,9 @@
+body {
+  font-family: sans-serif;
+  background-color: #CAC342;
+  color: #5B1C26;
+}
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
