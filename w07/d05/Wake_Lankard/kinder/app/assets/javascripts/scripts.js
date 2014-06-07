@@ -1,39 +1,50 @@
-function fetchKitten(){
+function Kitten(){
+  this.url = undefined;
+}
+
+Kitten.prototype.fetchKitten = function(){
   $.ajax({
     url: '/kittens/random',
     dataType: 'json',
     success: function(data){
-      showKitten(data.url);
+      kitten.url = data.url;
+      kitten.showKitten();
+      $(this).trigger('gotKitten');
     }
   })  
 };
 
-function showKitten(url){
+Kitten.prototype.showKitten = function(){
   $('.kitten').html('');
-  var kittenElem = $('<img>').attr('src',url).addClass('theKitten');
+  var kittenElem = $('<img>').attr('src',this.url).addClass('theKitten');
   $('.kitten').append(kittenElem);
 };
 
-function saveKitten(imageUrl){
+Kitten.prototype.saveKitten= function(){
+  $that = this;
   $.ajax({
-    url:'/kittens/create',
+    url:'/kittens',
     method: 'POST',
     dataType: 'json',
-    data: {url: imageUrl },
+
+    data: {kitten: {url: this.url} },
     success: function(){
-      fetchKitten()
+      $that.fetchKitten()
     }
   })
 };
 
+var kitten = new Kitten()
+
 $(function(){
-  fetchKitten();
-  var url = $('.theKitten').attr('src');
-debugger;
-  $('.meowBtn').click(function(url){
-    saveKitten(url);
+  kitten.fetchKitten();
+
+  
+
+  $('.meowBtn').click(function(){
+    kitten.saveKitten();
   });
   $('.notMeowBtn').click(function(){
-    fetchKitten()
+    kitten.fetchKitten()
   })
 })
