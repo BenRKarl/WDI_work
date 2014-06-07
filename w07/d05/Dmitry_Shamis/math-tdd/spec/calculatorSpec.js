@@ -8,4 +8,9 @@ describe("Calculator", function() {
     var difference = calculator.subtract(2, 3);
     expect(difference).toBe(-1);
   });
+
+  it("multiplies", function () {
+    var quotient = calculator.multiply(2, 3);
+    expect(quotient).toBe(6);
+  });
 });
