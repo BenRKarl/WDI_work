@@ -10,6 +10,9 @@ describe('The calculator', function(){
   });
 
   it('correctly subtracts two numbers', function(){
+    var calculator = new Calculator();
+    var num1 = 2;
+    var num2 = 3;
     var actual = calculator.subtract(num1, num2);
     var expected = -1;
     expect(actual).toEqual(expected);

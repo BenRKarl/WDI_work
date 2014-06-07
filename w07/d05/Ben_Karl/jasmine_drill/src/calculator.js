@@ -8,7 +8,7 @@ Calculator.prototype = {
   },
 
   subtract: function(num1, num2){
-    return num1 - this.num2;
+    return num1 - num2;
   },
 
   multiply: function(num1, num2){
