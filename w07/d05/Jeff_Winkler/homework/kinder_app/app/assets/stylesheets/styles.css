@@ -1,6 +1,37 @@
 
+html, body {
+  height: 100%;
+}
+
 .kitten-image {
   height: 100px;
   width: 100px;
   border-radius: 50px;
+}
+
+
+.container {
+  height: 500%;
+  width: 100%;
+}
+
+.no-meow {
+  float:left;
+  background-color: orange;
+  width: 30%;
+  height: 500%;
+}
+
+#kitten-div {
+  float: left;
+  background-color: gray;
+  width: 30%;
+  height: 500%;
+}
+
+.right-side {
+  float:right;
+  width: 40%;
+  height: 500%;
+  background-color: yellow;
 }
