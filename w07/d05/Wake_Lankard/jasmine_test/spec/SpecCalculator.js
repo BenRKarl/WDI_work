@@ -8,4 +8,13 @@ describe("Calculator", function(){
   expected = 5;
   expect(actual).toBe(expected)
   });
+
+  it("2 - 3 = -1", function(){
+    actual   = calculator(2, 3, "subtract");
+    expected = -1;
+    expect(actual).toBe(expected)
+  });
+
+
+
 });
