@@ -1,16 +1,17 @@
-function calculator(num1, num2){
-  this.num1 = num1;
-  this.num2 = num2;
+function Calculator(){
 };
 
-calculator.prototype.add = function(){
-  return this.num1 + this.num2;
-};
+Calculator.prototype = {
 
-// calculator.prototype.subtract = function(){
-//   return this.num1 - this.num2;
-// };
+  add: function(num1, num2){
+    return num1 + num2;
+  },
 
-// calculator.prototype.multiply = function(){
-//   return this.num1 * this.num2;
-// }
+  subtract: function(num1, num2){
+    return num1 - this.num2;
+  },
+
+  multiply: function(num1, num2){
+    return num1 * num2;
+  }
+}
