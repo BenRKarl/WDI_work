@@ -16,7 +16,7 @@ Kitten.prototype.fetchKitten = function(){
 
 Kitten.prototype.showKitten = function(){
   $('.kitten').html('');
-  var kittenElem = $('<img>').attr('src',this.url).addClass('theKitten');
+  var kittenElem = $('<img>').attr('src',this.url).addClass('theKitten').draggable();
   $('.kitten').append(kittenElem);
 };
 
@@ -26,7 +26,6 @@ Kitten.prototype.saveKitten= function(){
     url:'/kittens',
     method: 'POST',
     dataType: 'json',
-
     data: {kitten: {url: this.url} },
     success: function(){
       $that.fetchKitten()
@@ -37,9 +36,16 @@ Kitten.prototype.saveKitten= function(){
 var kitten = new Kitten()
 
 $(function(){
+  $that = this;
   kitten.fetchKitten();
 
-  
+  $('.meow').droppable({
+    drop: function(e, dropped){
+      var kat = $(dropped.draggable);
+      debugger;
+     // $(dropped).saveKitten();
+    }
+  })
 
   $('.meowBtn').click(function(){
     kitten.saveKitten();
