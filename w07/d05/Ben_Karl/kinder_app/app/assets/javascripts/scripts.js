@@ -16,6 +16,19 @@ Kitten.prototype.render = function(){
   return this;
 };
 
+Kitten.prototype.meowThisKitten = function(paramObject){
+  var that = this;
+  $.ajax({
+    url: '/kittens',
+    method: 'post',
+    dataType: 'json',
+    data: { kitten: paramObject },
+    success: function(data){
+      console.log(data + " was added to the database.");
+    }
+  });
+}
+
 function randomKittenUrl(){
   var url = 'http://placekitten.com/';
   var height = (Math.floor(Math.random() * (400 - 200 + 1)) + 200).toString();
@@ -23,8 +36,23 @@ function randomKittenUrl(){
   return url + width + '/' + height;
 };
 
-// function meowOrNotMeow(event, kitten){
+function meowOrNotMeow(event, kitten){
+  if (event === Meow){
+    kitten.meowThisKitten({url: kitten.url})
+    location.reload();
+  } else {
+    location.reload();
+  }
+}
 
-// }
+$('.meow').droppable({
+  drop: function(e, dropped){
+    debugger;
+  }
+})
 
-
+$('.not-meow').droppable({
+  drop: function(e, dropped){
+    debugger;
+  }
+})

@@ -1,10 +1,35 @@
-.kitten-container {
-  display: inline-block;
-  height: 1000px;
-  width: 1000px;
+html, body {
+  height: 100%;
 }
 
 body {
   font-family: 'Philosopher', sans-serif;
   text-align: center;
 }
+
+.main-container {
+  height: 100%;
+}
+
+.meow {
+  width: 20em;
+  height: 100%;
+  float: left;
+  background-color: green;
+  margin: 3em 0;
+}
+
+.kitten-container {
+  display: inline-block;
+  width: 30%;
+}
+
+.not-meow {
+  width: 20em;
+  height: 100%;
+  float: right;
+  background-color: pink;
+  margin: 3em 0;
+}
+
+
