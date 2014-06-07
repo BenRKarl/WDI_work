@@ -1,9 +1,9 @@
 describe ('Calculator', function() {
    
-   var calculator, num1, num2
+   var calculator, num1, num2;
 
    beforeEach(function() {
-      calculator = new Calculator;
+      calculator = new Calculator();
       num1 = 4;
       num2 = 2;
    });
