@@ -22,13 +22,14 @@ body {
 .kitten-container {
   display: inline-block;
   width: 30%;
+  margin: 3em 0;
 }
 
 .not-meow {
   width: 20em;
   height: 100%;
   float: right;
-  background-color: pink;
+  background-color: #FFA9C6;
   margin: 3em 0;
 }
 

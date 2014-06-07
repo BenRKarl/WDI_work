@@ -1,58 +1,60 @@
 $(function(){
   var kittenBin = $('.kitten-container');
-  var aNewKitten = new Kitten(randomKittenUrl());
-  kittenBin.append(aNewKitten.render().el);
+  fadeInKitten();
+
+  $('.meow').droppable({
+    drop: function(e, dropped){
+      $(this).animate({backgroundColor: 'white'}, 1000)
+      .animate({backgroundColor: 'green'}, 1000);
+      dropped.draggable.fadeOut(100);
+      var kittenUrl = dropped.draggable[0].src
+      var newKitten = new Kitten(kittenUrl);
+      newKitten.meowThisKitten(newKitten.url);
+      fadeInKitten();
+    }
+  })
+
+  $('.not-meow').droppable({
+    drop: function(e, dropped){
+      $(this).animate({backgroundColor: 'white'}, 1000)
+      .animate({backgroundColor: '#FFA9C6'}, 1000);
+      dropped.draggable.fadeOut(500);
+      fadeInKitten();
+    }
+  })
 });
 
 function Kitten(url){
   this.url = url;
-  this.el = undefined;
 };
 
-Kitten.prototype.render = function(){
-  var kittenImg = $('<img>').attr('src', this.url)
-        .addClass('kitten').draggable();
-  this.el = kittenImg;
-  return this;
-};
-
-Kitten.prototype.meowThisKitten = function(paramObject){
+Kitten.prototype.meowThisKitten = function(url){
   var that = this;
   $.ajax({
     url: '/kittens',
     method: 'post',
     dataType: 'json',
-    data: { kitten: paramObject },
+    data: { kitten: {url: url} },
     success: function(data){
-      console.log(data + " was added to the database.");
+      console.log('kitten with url "' + data.url + '" was added to the database.');
     }
   });
 }
 
+function fadeInKitten(){
+  var newImg = $('<img>');
+  var kittenImg = newImg.attr('src', randomKittenUrl());
+  kittenImg.addClass('kitten').draggable();
+  $('.kitten-container').append(kittenImg).hide().fadeIn(1000)
+}
+
 function randomKittenUrl(){
   var url = 'http://placekitten.com/';
-  var height = (Math.floor(Math.random() * (400 - 200 + 1)) + 200).toString();
-  var width = (Math.floor(Math.random() * (400 - 200 + 1)) + 200).toString();
+  var height = (Math.floor(Math.random() * (500 - 200 + 1)) + 200).toString();
+  var width = (Math.floor(Math.random() * (500 - 200 + 1)) + 200).toString();
   return url + width + '/' + height;
 };
 
-function meowOrNotMeow(event, kitten){
-  if (event === Meow){
-    kitten.meowThisKitten({url: kitten.url})
-    location.reload();
-  } else {
-    location.reload();
-  }
-}
 
-$('.meow').droppable({
-  drop: function(e, dropped){
-    debugger;
-  }
-})
 
-$('.not-meow').droppable({
-  drop: function(e, dropped){
-    debugger;
-  }
-})
+
