@@ -17,16 +17,23 @@ Kitten.prototype.create = function(paramObject){
   })
 }
 
-$(function () {
+function getKitten() {
+  $('#kitten.img').html('');
   var number = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
-  var kitten = $('<img>').attr('src', "http://placekitten.com/"+number+"/"+number)
+  var url = "http://placekitten.com/"+ number + "/" + number
+  var kitten = $('<img>').attr('src', url)
   .addClass('kitten')
   .draggable()
   .appendTo($('#kitten'));
+}
+
+$(function () {
+  getKitten();
 
   $('#not-meow').droppable({
     drop: function(e, dropped) {
       dropped.draggable.fadeOut(1000);
+      getKitten()
     }
   })
 
@@ -37,6 +44,7 @@ $(function () {
       var newKitten = new Kitten(newKiteenUrl);
       newKitten.create({url: newKiteenUrl})
       dropped.draggable.fadeOut(2000);
+      getKitten();
     }
   })
 })
