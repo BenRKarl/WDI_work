@@ -29,7 +29,7 @@ describe("calculator", function() {
   });
 
   it("multiplies numbers", function() {
-    result = calculator.subtract(2, 3)
+    result = calculator.multiply(2, 3)
     expect(result).toEqual(6);
   });
 
