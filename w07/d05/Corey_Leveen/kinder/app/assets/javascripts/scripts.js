@@ -1,18 +1,38 @@
 
-$function() {
+$(function() {
 
-  var a = function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
 
-  var kitten = $('<img>').attr('src',
-    "http://placekitten.com/"+a(200,500)+"/"+a(200,500))
+  var displayKitten = function() {
+
+    var a = function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+
+    $('<img>').attr('src',
+    "http://placekitten.com/"+a(100,300)+"/"+a(100,300))
     .addClass('kitten')
     .draggable();
+    return this;
+  }
 
+  $('#kitten-bin').append(displayKitten());
 
+  $('#meow').droppable({
+    drop: function(e, dropped) {
+      dropped.
+      dropped.draggable.fadeOut(3000);
+      history.go(0);
+    }
+  })
 
-}
+  $('#not-meow').droppable({
+    drop: function(e, dropped) {
+      dropped.draggable.fadeOut(3000);
+      history.go(0);
+    }
+  })
+
+})
 
 
 
