@@ -10,8 +10,8 @@ function CardView(model) {
 
 CardView.prototype.render = function() {
   var $div = $("<div>").addClass("card").addClass(this.model.suit);
-  var $topLeft = $("<div>").addClass("top left").text(this.model.suit + " " + this.model.name);
-  var $bottomRight = $("<div>").addClass("bottom right").text(this.model.suit + " " + this.model.name);
+  var $topLeft = $("<div>").addClass("top left").html("&" + this.model.suit + ";" + " " + this.model.name);
+  var $bottomRight = $("<div>").addClass("bottom right").html("&diams;" + this.model.suit + " " + this.model.name);
   $div.append($topLeft, $bottomRight);
   this.el = $div;
   return this;
