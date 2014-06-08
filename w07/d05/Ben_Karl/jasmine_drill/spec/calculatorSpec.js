@@ -1,13 +1,10 @@
 describe('The calculator', function(){
-var calculator;
-var num1;
-var num2;
 
   beforeEach(function(){
     calculator = new Calculator();
     num1 = 2;
     num2 = 3;
-  })
+  });
 
   it('correctly adds two numbers', function(){
     var actual = calculator.add(num1, num2);
@@ -29,7 +26,7 @@ var num2;
 
   it('correctly divides two numbers', function(){
     var num1 = 6;
-    var num2 = 2
+    var num2 = 2;
     var actual = calculator.divide(num1, num2);
     var expected = 3;
     expect(actual).toEqual(expected);
