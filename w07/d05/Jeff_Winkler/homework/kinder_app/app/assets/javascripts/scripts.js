@@ -24,7 +24,7 @@ function KittenCollection() {
 KittenCollection.prototype.add = function(kittenJSON) {
   var newKitten = new Kitten(kittenJSON);
   this.models[newKitten.id] = newKitten;
-  //$(this).trigger('add');
+  $(this).trigger("something");
   return this;
 }
 
@@ -41,6 +41,20 @@ KittenCollection.prototype.create = function(paramObject) {
   });
 }
 
+function displayKittens() {
+  $('.right-side').html('Meow');
+  for (index in kittenCollection.models) {
+    var url = kittenCollection.models[index].url;
+    var kittenEl = $('<img>').attr("src", url)
+                 .addClass("kept-kitten");
+    $('.right-side').append(kittenEl);
+  }
+}
+
+
+
+
+var kittenCollection = new KittenCollection;
 
 $(function() {
   var kittenImgEl = getRandomKittenImage('#kitten-div');
@@ -52,5 +66,21 @@ $(function() {
       });
     }
   });
+
+  $('.right-side').droppable({
+    drop: function(e, dropped) {
+      getRandomKittenImage('#kitten-div');
+      var url = dropped.draggable.attr('src');
+      kittenCollection.create({url: url});
+      dropped.draggable.remove();
+
+    }
+  });
+
+  $(kittenCollection).on("something", function() {
+    console.log("add it up");
+    displayKittens();
+  });
+
 });
 

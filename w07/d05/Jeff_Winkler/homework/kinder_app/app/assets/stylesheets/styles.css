@@ -10,6 +10,12 @@ html, body {
   margin-top: 80px;
 }
 
+.kept-kitten {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  float: right;
+}
 
 .container {
   height: 500%;
