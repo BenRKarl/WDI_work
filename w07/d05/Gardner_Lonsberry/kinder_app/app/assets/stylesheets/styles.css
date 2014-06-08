@@ -1,4 +1,8 @@
-.cat-bin{
+.kitten{
+  border-radius: 50px;
+}
+
+.kitten-bin{
   width: 1280px;
 }
 
@@ -12,3 +16,4 @@
   color: white;
   font-size: 30px;
   font-family: Helvetica;
+}
