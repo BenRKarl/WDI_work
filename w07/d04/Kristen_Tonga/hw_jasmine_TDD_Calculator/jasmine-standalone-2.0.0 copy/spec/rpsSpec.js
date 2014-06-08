@@ -1,25 +1,12 @@
-describe ("Rock, Paper, Scissors", function() {
+describe ("Calculator", function() {
 
   it("the test works", function(){
     expect(true).toBe(true);
   });
 
-  it("rock beats sissors", function(){
-    var moveAWins = beats('rock', 'sissors');
-    expect(moveAWins).toEqual(true)
+  it("adds numbers", function(){
+    var calculation = calculator.add(2, 3);
+    expect(calculation).toEqual(5)
   });
 
-  it("paper beats rock", function(){
-    var moveAWins = beats('paper', 'rock');
-    expect(moveAWins).toEqual(true)
-  })
-
-  it("sissors beats paper", function(){
-    var moveAWins = beats('paper', 'sissors');
-    expect(moveAWins).toEqual(false)
-  })
-
-  it('tie returns undefined', function(){
-    var moveAWins = beats
-  })
 })
