@@ -1,5 +1,5 @@
 $(function(){
-  var sheen = $('<img>').attr('src', 'http://placesheen.com/150/150')
+  var sheen = $('<img>').attr('src', 'http://placekitten.com/150/150')
       .addClass('sheen')
       .draggable();
 
