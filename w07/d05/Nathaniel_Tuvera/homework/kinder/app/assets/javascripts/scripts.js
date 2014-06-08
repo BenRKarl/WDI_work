@@ -68,6 +68,7 @@ var kittensCollection = new KittensCollection();
 
 $(function(){
 
+
     NewImage();
 
   $(kittensCollection).on('addFlare', function(){
