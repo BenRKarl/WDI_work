@@ -12,20 +12,34 @@ describe PeopleController do
 
     # --- INDEX ---
     describe 'GET index' do
-      before :each do
-        get :index
+
+      describe 'requesting html' do
+        before :each do
+          get :index
+        end
+
+        it 'responds successfully' do
+          actual = response.code
+          expected = '200'
+          expect(actual).to eq(expected)
+        end
+
+        it 'assigns @people' do
+          actual = assigns(:people)
+          expected = [@andre]
+          expect(actual).to eq(expected)
+        end
       end
 
-      it 'responds successfully' do
-        actual = response.code
-        expected = '200'
-        expect(actual).to eq(expected)
-      end
-
-      it 'assigns @people' do
-        actual = assigns(:people)
-        expected = [@andre]
-        expect(actual).to eq(expected)
+      describe 'requesting json with xhr' do
+        before :each do
+          xhr :get, :index, format: :json
+        end
+        it 'renders the json' do
+          actual = response.body
+          expected = [@andre].to_json
+          expect(actual).to eq(expected)
+        end
       end
 
     end # GET index
