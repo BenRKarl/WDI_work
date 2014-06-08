@@ -1,9 +1,10 @@
 console.log("console test for Kinder")
 // ***** New Image *****
 function NewImage(){
-  var randNum = Math.floor(Math.random() * (500 - 100 + 1)) + 100;
+  var randNum = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
   var kittenImage = $('<img>').attr('src', 'http://www.placekitten.com/'+ randNum + '/' + randNum)
                               .addClass('kitten')
+                              .css('height', '500px').css('width','500px')
                               .draggable();
   kittenImage.appendTo($('.view'))
 }
@@ -21,7 +22,8 @@ function KittenView(model){
 }
 
 KittenView.prototype.render = function(){
-  var newElement = $('<li>').html(this.model.url);
+  var newElement = $('<img>').attr('src', this.model.url)
+                             .css('height','100px').css('width','100px');
   this.el = newElement
   return this;
 };
@@ -51,6 +53,17 @@ KittensCollection.prototype.create = function(paramObject){
   })
 }
 
+function displaySavedKittens(){
+
+  $('.saved').html('')
+  for(idx in kittensCollection.models){
+    var kitten = kittensCollection.models[idx];
+    var kittenView = new KittenView(kitten);
+    $('.saved').append(kittenView.render().el);
+  }
+
+
+}
 KittensCollection.prototype.fetch = function(){
   var that = this;
   $.ajax({
@@ -68,6 +81,7 @@ var kittensCollection = new KittensCollection();
 
 $(function(){
 
+  displaySavedKittens(); // need to figure out how to display them below
 
     NewImage();
 
@@ -83,7 +97,7 @@ $(function(){
   $('#accept').droppable({
     drop: function(e, dropped){
       $(this).animate({backgroundColor: 'green'}, 100)
-      .animate({backgroundColor: 'white'}, 500);
+      .animate({backgroundColor: '#0095FF'}, 500);
       dropped.draggable.fadeOut(100);
       var newData = $('.kitten').attr('src')
       var kittensCollection = new KittensCollection();
@@ -95,7 +109,7 @@ $(function(){
     $('#reject').droppable({
     drop: function(e, dropped){
       $(this).animate({backgroundColor: 'red'}, 100)
-      .animate({backgroundColor: 'white'}, 500);
+      .animate({backgroundColor: '#0095FF'}, 500);
       dropped.draggable.fadeOut(100);
       NewImage();
     }

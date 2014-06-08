@@ -23,7 +23,7 @@
 
 }
 .choice{
-  background-color: blue;
+  background-color: #0095FF;
   }
 .left {
   color:white;
@@ -70,6 +70,15 @@
   bottom: 0px;
 }
 
+.saved {
+  background-color: lightgray;
+  border: 1px black solid;
+  height:100px;
+  width:600px;
+  margin: 20px auto;
+  bottom: 0px;
+}
+
 .rotate90{
   -webkit-transform:rotate(90deg);
   -moz-transform:rotate(90deg);
@@ -85,3 +94,4 @@ img {
   margin: 0 auto;
   display: block;
 }
+
