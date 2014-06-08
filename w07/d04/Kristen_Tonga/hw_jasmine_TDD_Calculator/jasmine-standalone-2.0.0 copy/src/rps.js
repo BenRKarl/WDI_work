@@ -2,8 +2,12 @@
 
 var calculator = {
   add: function(a, b){
-    var result = a + b;
-    return result;
+    var equals = a + b;
+    return equals;
+  },
+  subtract: function(a, b){
+    var equals = a - b;
+    return equals;
   }
 }
 

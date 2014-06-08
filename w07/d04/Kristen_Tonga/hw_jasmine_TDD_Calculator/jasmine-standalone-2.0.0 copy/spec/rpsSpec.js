@@ -9,4 +9,9 @@ describe ("Calculator", function() {
     expect(calculation).toEqual(5)
   });
 
+  it("subtracts numbers", function(){
+    var calculation = calculator.subtract(2, 3);
+    expect(calculation).toEqual(-1)
+  });
+
 })
