@@ -1,6 +1,29 @@
 
-$(function() {
+function Kitten(url) {
+  this.url = url;
+}
 
+Kitten.prototype.add = function(url) {
+  var newKitten = new Kitten(url);
+  return this;
+};
+
+Kitten.prototype.create = function(kittenURL) {
+  var that = this;
+  $.ajax({
+    url: '/kittens/random',
+    method: 'post',
+    dataType: 'json',
+    data: { kitten: {url: kittenURL }},
+    success: function(data) {
+      that.add(data);
+    }
+  })
+};
+
+
+var akitten = new Kitten();
+$(function() {
 
   var displayKitten = function() {
 
@@ -8,30 +31,33 @@ $(function() {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     };
 
-    $('<img>').attr('src',
+    kitten = $('<img>').attr('src',
     "http://placekitten.com/"+a(100,300)+"/"+a(100,300))
     .addClass('kitten')
     .draggable();
-    return this;
+
+    return kitten;
   }
 
   $('#kitten-bin').append(displayKitten());
 
   $('#meow').droppable({
     drop: function(e, dropped) {
-      dropped.
-      dropped.draggable.fadeOut(3000);
-      history.go(0);
+      newKittenURL = dropped.draggable.attr('src');
+      dropped.draggable.fadeOut('slow', function() {
+        akitten.create(newKittenURL);
+      })
     }
   })
 
   $('#not-meow').droppable({
     drop: function(e, dropped) {
-      dropped.draggable.fadeOut(3000);
-      history.go(0);
+      dropped.draggable.fadeOut('slow', function() {
+        $(this).remove();
+        $('#kitten-bin').append(displayKitten());
+      })
     }
   })
-
 })
 
 
