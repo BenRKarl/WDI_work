@@ -1,0 +1,55 @@
+$(function(){
+  
+  //var kitten = $('<img>').attr('src', 'http://placekitten.com/#{rand(100..200)}/#{rand(100..200)}').addClass('kitten').draggable();
+  var kitten = $('.kitten_img').draggable();
+  // $('sheen-bin').append(sheen);
+  kitten.appendTo($('#kitten')).hide().fadeIn(3000);
+
+
+  $('#not_meow').droppable({
+    drop: function(e, dropped){
+      //debugger;
+      $(this).animate({backgroundColor: 'white'}, 500).animate({backgroundColor: 'red'}, 1500);
+      dropped.draggable.fadeOut(3000);
+    }
+  });
+
+  $('#meow').droppable({
+    drop: function(e, dropped){
+      //debugger;
+      $(this).animate({backgroundColor: 'white'}, 500).animate({backgroundColor: 'green'}, 1500);
+      dropped.draggable.fadeOut(3000);
+    }
+  });
+
+})
+
+////////////////////////////////////////////////////////
+
+
+// $(function(){
+//   var sheen = $('<img>').attr('src', 'http://placesheen.com/100/100').addClass('sheen').draggable();
+  
+//   // $('sheen-bin').append(sheen);
+//   sheen.appendTo($('#sheen-bin')).hide().fadeIn(3000);
+
+
+//   $('#fade').droppable({
+//     drop: function(e, dropped){
+//       //debugger;
+//       $(this).animate({backgroundColor: 'red'}, 500).animate({backgroundColor: 'blue'}, 1500);
+//       dropped.draggable.fadeOut(3000);
+//     }
+//   })
+
+//   $('#shrink').droppable({
+//     drop: function(e, dropped){
+//       //debugger;
+//       $(dropped.draggable).animate({
+//         width: '-=25px',
+//         height: '-=25px'
+//       }, 1000)
+//     }
+//   })
+
+// })
