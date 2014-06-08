@@ -1,5 +1,7 @@
 .kitten{
   border-radius: 50px;
+  text-align: center;
+  clear: left;
 }
 
 .kitten-bin{
@@ -16,4 +18,12 @@
   color: white;
   font-size: 30px;
   font-family: Helvetica;
+}
+
+#keep{
+  float: left;
+}
+
+#toss{
+  float: right;
 }
