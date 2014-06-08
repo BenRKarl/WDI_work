@@ -14,4 +14,9 @@ describe ("Calculator", function() {
     expect(calculation).toEqual(-1)
   });
 
+  it("multiplies numbers", function(){
+    var calculation = calculator.multiply(2, 3);
+    expect(calculation).toEqual(6)
+  })
+
 })
