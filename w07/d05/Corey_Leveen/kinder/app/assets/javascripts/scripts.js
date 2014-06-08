@@ -46,6 +46,8 @@ $(function() {
       newKittenURL = dropped.draggable.attr('src');
       dropped.draggable.fadeOut('slow', function() {
         akitten.create(newKittenURL);
+        $(this).remove();
+        $('#kitten-bin').append(displayKitten());
       })
     }
   })
