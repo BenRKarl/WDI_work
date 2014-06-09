@@ -41,7 +41,6 @@ function setEventHandlers(button){
 }
 
 
-
 //ON LOAD
 $(function(){
   $('.dismiss').on('click', setEventHandlers($('.dismiss')))

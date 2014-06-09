@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'kittens#index'
-  resources :kittens, only: [:index]
+  resources :kittens
 
 end
 
@@ -12,7 +12,7 @@ end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  # Example of regular route:
+  # Example of regular route:, only: [:view]
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
