@@ -18,7 +18,7 @@ console.log('I am a js file in the assets pipeline');
 
 
 // ***** model *****
-function person(id,name, email){
+function Person(id,name, email){
   this.id     = id;
   this.name   = name;
   this.email  = email;
