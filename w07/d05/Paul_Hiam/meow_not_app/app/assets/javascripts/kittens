@@ -1,0 +1,91 @@
+//model
+function Kitten(kittenJSON){
+  this.url = kittenJSON.url;
+  
+}
+//view
+function KittenView(model){
+  this.model = model;
+  this.el    = undefined;
+}
+KittenView.prototype.render = function()
+{
+  // var random1 = Math.floor(Math.random() * 200);
+  // var random2 = Math.floor(Math.random() * 200);
+  // var $img = $("<img src='http://placekitten.com/"+ random1 +"/"+ random2 +"'>")
+   var $url = $('<li>').html(this.model.url);
+  this.el = $img
+  return this;
+}
+//collection .. ?
+function KittenCollection(){
+  this.models = [];
+}
+
+KittenCollection.prototype.add = function(kittenJSON){
+  var newKitten = new Kitten(kittenJSON);
+  this.models[kittenJSON.url] = newKitten;
+  $(this).trigger('add');     // shoot up an add flare !
+  return this;
+}
+KittenCollection.prototype.create = function(paramObject){
+  var that = this;
+   $.ajax({
+    url: '/kittens',
+    method: 'post',
+    dataType: 'json',
+    data: {kitten: paramObject},
+    success: function(data){
+      that.add(data);
+    }
+   })
+}
+
+KittenCollection.prototype.fetch = function(){
+  var that = this;
+  $.ajax({
+    url: '/kittens',
+    dataType: 'json',
+    success: function(data){
+      for (idx in data){
+        that.add(data[idx]);
+      }
+    }
+  })
+};
+
+KittenCollection.prototype.random = function(paramObject){
+  var random1 = 1 + Math.floor(Math.random() * 900);
+  var random2 = 1 + Math.floor(Math.random() * 900);
+  var that = this;
+   $.ajax({
+    url: 'http://placekitten.com/'+ random1 +'/'+ random2,
+    method: 'get',
+    dataType: 'json',
+    data: {kitten: paramObject},
+    success: function(data){
+      that.render(data);
+    }
+   })
+}
+
+function clearAndDisplayKittenList(){
+
+  $('.kittens').html('');
+
+  for(idx in kittenCollection.models){
+    var kitten = kittenCollection.models[idx];
+    var kittenView = new kittenView(kitten);
+    $('#kittens').append(kittenView.render().el);
+  }
+}
+
+
+var kittenCollection = new KittenCollection();
+
+$(function(){
+  
+  $('#meowit').click(function(){
+    Kittencollection.add();
+  });
+})
