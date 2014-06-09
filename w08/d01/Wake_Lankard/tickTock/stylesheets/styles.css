@@ -17,11 +17,13 @@ body{
   width: 1px;
   height: 95px;
   z-index: 0;
+  top:15px;
 }
 .minute-hand{
   width: 3px;
   height: 95px;
   z-index: 1;
+  top: 15px;
 
 }
 .hour-hand{
