@@ -1,0 +1,17 @@
+.sheen{
+  border-radius: 150px
+}
+
+.bin{
+  height:200px;
+  width:200px;
+  background-color:black;
+  border-radius: 5px;
+  box-shadow: 0px 0px 7px 7px darkgrey;
+  float: left;
+  margin: 20px;
+  color:white;
+  font-size:20px;
+  font-family:Helvetica;
+}
+
