@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require turbolinks
-//= require jquery_ui
-//= require scripts
+//= require kinder
 //= require_tree .

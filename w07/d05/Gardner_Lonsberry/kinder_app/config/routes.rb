@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
-   get '/' => 'kittens#index'
-   get '/update' => 'kittens#update'
+  root 'kittens#random'
+  get 'kittens/random' => 'kittens#random'
+  post 'kittens'       => 'kittens#create'
 end

@@ -12,9 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery.ui.all
  *= require_styles
- *= require_jquery_ui
  *= require_skeleton
  *= require_base
  *= require_layout
+ *= require font-awesome
  */
+
