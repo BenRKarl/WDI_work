@@ -1,0 +1,58 @@
+.palette {
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+  margin: 10px;
+  float: left;
+  position: relative;
+}
+
+.palette div {
+  border: 1px solid black;
+  float: left;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.palette div:nth-child(1) {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  position: absolute;
+  z-index: 10;
+}
+
+.palette div:nth-child(2) {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  position: absolute;
+  z-index: 7;
+}
+
+.palette div:nth-child(3) {
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
+  position: absolute;
+  z-index: 5;
+}
+
+.palette div:nth-child(4) {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  position: absolute;
+  z-index: 3;
+}
+
+.palette div:nth-child(5) {
+  height: 250px;
+  width: 250px;
+  border-radius: 125px;
+  position: absolute;
+  z-index: 1;
+}
