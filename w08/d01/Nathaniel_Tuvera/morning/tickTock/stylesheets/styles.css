@@ -12,3 +12,7 @@ body {
 #clockFace{
   margin: 0 auto;
 }
+
+#hourHand{
+  position: relative;
+}
