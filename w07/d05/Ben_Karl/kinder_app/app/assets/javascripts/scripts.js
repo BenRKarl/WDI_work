@@ -5,12 +5,14 @@ $(function(){
   $('.meow').droppable({
     drop: function(e, dropped){
       $(this).animate({backgroundColor: 'white'}, 1000)
-      .animate({backgroundColor: 'green'}, 1000);
-      dropped.draggable.fadeOut(100);
+      .animate({backgroundColor: '#339933'}, 1000);
+      dropped.draggable.fadeOut(1000);
       var kittenUrl = dropped.draggable[0].src
       var newKitten = new Kitten(kittenUrl);
       newKitten.meowThisKitten(newKitten.url);
-      fadeInKitten();
+      setTimeout(function(){
+        fadeInKitten();
+      }, 1600);
     }
   })
 
@@ -18,8 +20,10 @@ $(function(){
     drop: function(e, dropped){
       $(this).animate({backgroundColor: 'white'}, 1000)
       .animate({backgroundColor: '#FFA9C6'}, 1000);
-      dropped.draggable.fadeOut(500);
-      fadeInKitten();
+      dropped.draggable.fadeOut(1000);
+      setTimeout(function(){
+        fadeInKitten();
+      }, 1600);
     }
   })
 });
