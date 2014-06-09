@@ -1,53 +1,35 @@
 //model
-function Kitten(kittenJSON){
-  this.url = kittenJSON.url;
+function Kitten(url){
+  this.url = url;
   
 }
-//view
-function KittenView(model){
-  this.model = model;
-  this.el    = undefined;
-}
-KittenView.prototype.render = function()
-{
-  // var random1 = Math.floor(Math.random() * 200);
-  // var random2 = Math.floor(Math.random() * 200);
-  // var $img = $("<img src='http://placekitten.com/"+ random1 +"/"+ random2 +"'>")
-   var $img = $("<img src='"+this.url+"'>")
-  this.el = $img
-  return this;
-}
-//collection .. ?
-function KittenCollection(){
-  this.models = [];
-}
 
-KittenCollection.prototype.add = function(personJSON){
-  var newKitten = new Kitten(kittenJSON);
-  this.models[kittenJSON.id] = newKitten;
-  $(this).trigger('add');     // shoot up an add flare !
-  return this;
-}
-
-KittenCollection.prototype.fetch = function(){
+Kitten.prototype.create = function(paramObject){
   var that = this;
-  $.ajax({
+   $.ajax({
     url: '/kittens',
+    method: 'post',
     dataType: 'json',
+    data: {kitten: paramObject},
     success: function(data){
-      for (idx in data){
-        that.add(data[idx]);
-      }
+      console.log(data);
     }
-  })
-};
+    
+   })
+}
+
+
+function getKitten(){
+  
+}
+
 
 
 
 
 $(function(){
-  var collection = new KittenCollection;
-  $('#randoKit').click(function(){
-    collection.fetch();
+  
+  $('#meowit').click(function(){
+    Kittencollection.add();
   });
 })
