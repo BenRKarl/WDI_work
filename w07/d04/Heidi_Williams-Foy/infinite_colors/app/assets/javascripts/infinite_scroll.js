@@ -1,0 +1,17 @@
+var $window = $(window),
+    $document = $(document);
+
+function scrollHandler(){
+	if ($window.height() + $window.scrollTop() >= $document.height.()-200){
+		collection.fetch();
+	}
+}
+
+$(function(){
+	var paletteCollection = new PaletteCollection();
+	paletteCollection.fetch();
+	//$window.on('scroll', function(){})
+	$window.scroll(function(){
+		scrollHandler(paletteCollection);
+	});
+})
