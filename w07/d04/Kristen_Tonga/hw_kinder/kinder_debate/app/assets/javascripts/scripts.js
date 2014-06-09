@@ -2,37 +2,50 @@ $(function(){
   console.log("You're learning...")
 })
 
-//MODEL
+//MODEL - saved
+function savedKitten(kittenJSON){
+  this.id = kittenJSON.id;
+  this.url = kittenJSON.url;
+  return this;
+}
 
+var newKitten = {
+
+  getURL: function(){
+    var randomWidth = Math.floor(Math.random() * 1000) + 200;
+    var randomHeight = Math.floor(Math.random() * 500) + 200;
+    var url = 'http://www.placekitten.com/'+randomHeight+'/'+randomWidth;
+    return url;
+  },
 
 //VIEWS
-
-
-//CONTROLLER
-function setEventHandlers(){
-  var newButton = $('.getRandomKitten')[0];
-
-  $(newButton).click(function(){
-    $('.randomImage').html("")
-    var randomWidth = Math.floor(Math.random() * 500) + 100;
-    var randomHeight = Math.floor(Math.random() * 500) + 100;
-    var url = 'http://www.placekitten.com/'+randomHeight+'/'+randomWidth;
+  showKitten: function(){
+    url = newKitten.getURL()
+    $('.randomImage').html("");
     console.log('kitten coming!');
     var image = $('<img>').attr('src', url).addClass("small-12 columns kitten");
     $('.randomImage').append(image)
+    return url;
+    debugger
+  }
+};
+
+//CONTROLLER
+function setEventHandlers(button){
+  var getRandomKitten = $('.getRandomKitten')[0];
+  $(button).click(function(){
+      var url = newKitten.getURL();
+      var elem = newKitten.showKitten();
+
   });
 }
 
-// function createKittenImage(){
-//   data.forEach(function(kitten, index){
-
-//   })
-// }
 
 
 //ON LOAD
 $(function(){
-  setEventHandlers();
+  $('.dismiss').on('click', setEventHandlers($('.dismiss')))
+  $('.getRandomKitten').on('click', setEventHandlers($('.getRandomKitten')))
 })
 
 
