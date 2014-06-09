@@ -12,7 +12,7 @@ $(function() {
    $('#shrink').droppable({
       drop: function(e, dropped){
          $(dropped.draggable).animate({
-            width: '-=15px',
+            width: '-=15px', 
             height: '-=15px'
          }, 1000)
       }
