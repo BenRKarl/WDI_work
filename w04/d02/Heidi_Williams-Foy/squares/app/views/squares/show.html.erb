@@ -1,0 +1,14 @@
+<h1>Square <%= @square.id %></h1>
+
+<div style="
+	height: <%= @square.side_length %>px;
+	width: <%= @square.side_length %>px;
+	border-radius: <%= @square.border_radius %>px;
+	background-color: <%= @square.color %>;
+">
+</div>
+
+<form action="<%= square_path(@square) %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete">
+</form>

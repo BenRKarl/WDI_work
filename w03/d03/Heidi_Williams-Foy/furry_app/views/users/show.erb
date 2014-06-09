@@ -1,0 +1,13 @@
+<h2><%= @user.username %><h2>
+
+<% @user.furry.each do |furry| %>
+<p>
+<%= furry.message %>
+<form action="/users/<%= @user.id %>/caws/<% caw.id %>" method='post'>
+<input type-="hidden" name='_method' value='delete'>
+<button type='submit'>Delete</button>
+</p>
+<% end %>
+<a href="/users/<%= @user.id %>/caws/new">Furry Time</a>
+</a>
+
