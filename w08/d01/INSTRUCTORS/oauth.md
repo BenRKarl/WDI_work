@@ -44,7 +44,7 @@ Valuable resources:
 * [Omniauth](https://github.com/intridea/omniauth)
 * [List of strategies](https://github.com/intridea/omniauth/wiki/List-of-Strategies)
 * [Omniauth Twitter](https://github.com/arunagw/omniauth-twitter)
-* [Omniauth Instagram]([https://github.com/ropiku/omniauth-instagram)
+* [Omniauth Instagram](https://github.com/ropiku/omniauth-instagram)
 
 #### Bonus: done early? Set up the routes and logic yourself!
 
