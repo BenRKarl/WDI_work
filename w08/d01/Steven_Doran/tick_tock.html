@@ -90,15 +90,17 @@
 
    h2 {
       text-align: center;
+      font-family: "Helvetica", sans-serif;
    }
 
    h3 {
       text-align: center;
+      font-family: "Helvetica", sans-serif;
    }
 
 </style>
 
-<script>
+<script> // I borrowed this from the internet
    function startTime() {
        var today=new Date();
        var h=today.getHours();
@@ -118,7 +120,7 @@
 </head>
 <body onload="startTime()">
    
-   <h2>This is the time.</h2>
+   <h2>This is the time</h2>
    <h3 id="txt"></h3>
 
    <div class="clock">
@@ -146,9 +148,9 @@
          var k = hours*108000;
 
          setInterval(function() {
-            $second.css('transform','rotate(' + i*6 + 'deg)');
-            $minute.css('transform','rotate(' + j/10 + 'deg)');
-            $hour.css('transform','rotate(' + k/3600 + 'deg)');
+            $second.css({transform:'rotate(' + i*6 + 'deg)', transition: 'all 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55)'});
+            $minute.css({transform:'rotate(' + j/10 + 'deg)', transition: 'all 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55)'});
+            $hour.css({transform:'rotate(' + k/3600 + 'deg)', transition: 'all 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55)'});
             i++;
             j++;
             k++;
