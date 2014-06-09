@@ -4,7 +4,7 @@ function CardModel(jsonData) {
 }
 
 
-function CardView() {
+function CardView(model) {
   this.model = model;
   this.el    = undefined;
 }
@@ -19,11 +19,11 @@ CardView.prototype.render = function() {
 }
 
 
-function CardsCollection() {
+function CardCollection() {
   this.models = [];
 }
 
-CardsCollection.prototype.fetch = function() {
+CardCollection.prototype.fetch = function() {
   var that = this;
   $.ajax({
     url: '/',
@@ -44,7 +44,8 @@ CardsCollection.prototype.fetch = function() {
 
 
 $(function(){
+  var collection = new CardCollection();
   $('#button').click(function(){
-    CardsCollection.fetch();
+    collection.fetch();
   });
 })
