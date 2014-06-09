@@ -1,0 +1,50 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  font-family: 'Helvetica';
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+#cards {
+  margin-top: 20px;   
+}
+
+.card { 
+  margin: 1em;
+  width: 6em;
+  height: 10em;
+  border: 1px solid #000;
+  border-radius: .5em;
+  display: inline-block;
+  font-size: 2em;
+}
+
+.bottom.right{
+  float: right;
+  position: absolute;
+  margin-bottom: -7.5em;
+}
+
+
+.Clubs {
+
+}
+
+.Spades {
+
+}
+
+.Hearts{
+  color: red;
+}
+
+.Diamonds {
+  color: red;
+}

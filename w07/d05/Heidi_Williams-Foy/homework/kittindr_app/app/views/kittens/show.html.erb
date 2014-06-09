@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<image src="<%= @kitten.url %>" alt="Kitten Photo">
+
+<p>
+  <strong>Url:</strong>
+  <%= @kitten.url %>
+</p>
+
+<p>
+  <strong>Meow:</strong>
+  <%= @kitten.meow %>
+</p>
+
+<p>
+  <strong>Not meow:</strong>
+  <%= @kitten.not_meow %>
+</p>
+
+<%= link_to 'Edit', edit_kitten_path(@kitten) %> |
+<%= link_to 'Back', kittens_path %>

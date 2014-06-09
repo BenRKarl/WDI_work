@@ -116,7 +116,7 @@ function beautifulStranger() {
 	);
 }
 
-beautifulStranger();
+beautifulStranger(); //beautiful stranger
 
 function forgeTheFellowShip() {
 	// move the hobbits and the buddies to Rivendell
@@ -142,4 +142,14 @@ function forgeTheFellowShip() {
 }
 
 forgeTheFellowShip();
+
+function theBalrog() { 
+  // change the 'Gandalf' textNode to 'Gandalf the White' 
+    $("#gandalf-the-grey").replaceWith(
+	$("<li class='buddies' id='gandalf-the-white'>Gandalf The White</li>")
+	);
+  // apply style to the element // make the background 'white',
+  //add a grey border }
+}
+
 
