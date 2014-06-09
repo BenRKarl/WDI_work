@@ -1,0 +1,14 @@
+body {
+  background-color: #000000;
+  color: white;
+}
+
+.container{
+  height: 500px;
+  width:  500px;
+  margin: 0 auto;
+}
+
+#clockFace{
+  margin: 0 auto;
+}
