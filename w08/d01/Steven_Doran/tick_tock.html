@@ -44,53 +44,82 @@
     margin: 0 auto;
  }
 
- .hour::before {
-   position: absolute;
-   content: "";
-   background: #262626;
-   height: 60px;
-   width: 4px;
-   top: 25px;
-}
+   .hour::before {
+      position: absolute;
+      content: "";
+      background: #262626;
+      height: 60px;
+      width: 4px;
+      top: 25px;
+   }
 
-.minute {
-   width: 4px;
-   height: 100%;
-   position: absolute;
-   left: 0;
-   right: 0;
-   margin: 0 auto;
-}
-.minute::before {
-   position: absolute;
-   content: "";
-   background: #262626;
-   height: 70px;
-   width: 4px;
-   top: 15px;
-}
+   .minute {
+      width: 4px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+   }
+   .minute::before {
+      position: absolute;
+      content: "";
+      background: #262626;
+      height: 70px;
+      width: 4px;
+      top: 15px;
+   }
 
-.second {
-   width: 2px;
-   height: 100%;
-   position: absolute;
-   left: 0;
-   right: 0;
-   margin: 0 auto;
-}
+   .second {
+      width: 2px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+   }
 
-.second::before {
-   position: absolute;
-   content: "";
-   background: red;
-   height: 73px;
-   width: 2px;
-   top: 12px;
-}
+   .second::before {
+      position: absolute;
+      content: "";
+      background: red;
+      height: 73px;
+      width: 2px;
+      top: 12px;
+   }
+
+   h2 {
+      text-align: center;
+   }
+
+   h3 {
+      text-align: center;
+   }
+
 </style>
 
+<script>
+   function startTime() {
+       var today=new Date();
+       var h=today.getHours();
+       var m=today.getMinutes();
+       var s=today.getSeconds();
+       m = checkTime(m);
+       s = checkTime(s);
+       document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+       var t = setTimeout(function(){startTime()},500);
+   }
+
+   function checkTime(i) {
+       if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+       return i;
+   }
+</script>
 </head>
-<body>
+<body onload="startTime()">
+   
+   <h2>This is the time.</h2>
+   <h3 id="txt"></h3>
 
    <div class="clock">
       <div class="center"></div>
@@ -105,29 +134,28 @@
       var $hour = $('.hour');
       var $minute = $('.minute')
       var $second = $('.second')
+      var date = new Date();
+      var seconds = date.getSeconds();
+      var minutes = date.getMinutes();
+      var hours = Math.abs(12 - date.getHours());
 
       $(function() {
 
-         for (var i = 0; i <= 60; i++) {
-            setTimeout(function() {
-               $second.css('transform','rotate(' + i*6 + 'deg)')
-            }, 1000)         
-         };
-                   
+         var i = seconds;
+         var j = minutes*60;
+         var k = hours*108000;
 
+         setInterval(function() {
+            $second.css('transform','rotate(' + i*6 + 'deg)');
+            $minute.css('transform','rotate(' + j/10 + 'deg)');
+            $hour.css('transform','rotate(' + k/3600 + 'deg)');
+            i++;
+            j++;
+            k++;
+         }, 1000)          
       })
 
-
-
-
-
-
-
-
    </script>
-
-
-
 
 </body>
 </html>
