@@ -40,9 +40,9 @@ $(function () {
   $('#meow').droppable({
     drop: function(e, dropped) {
       $(this).animate({backgroundColor: 'fuchsia'}, 300).animate({backgroundColor: 'red'}, 300);
-      var newKiteenUrl = dropped.draggable[0].src;
-      var newKitten = new Kitten(newKiteenUrl);
-      newKitten.create({url: newKiteenUrl})
+      var newKittenUrl = dropped.draggable[0].src;
+      var newKitten = new Kitten(newKittenUrl);
+      newKitten.create({url: newKittenUrl})
       dropped.draggable.fadeOut(2000);
       getKitten();
     }
