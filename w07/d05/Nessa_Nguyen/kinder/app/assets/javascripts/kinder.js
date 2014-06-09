@@ -38,7 +38,7 @@ function clickChoice(choiceSelector){
 
 function flashChoice(choice){
   $('.choice').html(choice);
-  var text = $('.choice').first()
+  var text = $('.choice').first();
   $(text).hide().fadeIn(500).fadeOut(500)
 }
 
@@ -63,7 +63,7 @@ $(function(){
   $('.right').droppable({
     drop: function(e, dropped){
       var currentKitten = dropped.draggable
-      flashChoice('MEOW');
+      flashChoice('MEOW!');
       $(currentKitten).fadeOut(600);
       
       var newKitten = new Kitten($(currentKitten).attr('src'));
@@ -77,9 +77,25 @@ $(function(){
 
   $('.meow').on('click', function(){ 
     clickChoice('.meow');
+    flashChoice('MEOW!');
+    var currentKitten = $('.picture img')
+    var newKitten = new Kitten($(currentKitten).attr('src'));
+    newKitten.create();
+    $(currentKitten).fadeOut(600);
+    setTimeout(function(){ 
+      $(currentKitten).remove();
+    }, 600);
+    nextKitten();
   })
 
   $('.not-meow').on('click', function(){ 
     clickChoice('.not-meow');
+    flashChoice('NOPE');
+    var currentKitten = $('.picture img');
+    $(currentKitten).fadeOut(600);
+    setTimeout(function(){ 
+      $(currentKitten).remove();
+    }, 600); 
+    nextKitten();     
   })  
 })

@@ -1,0 +1,13 @@
+<header>
+  <h1><a href='/'>Kinder</a></h1>
+    
+</header>
+
+<div class="matches">
+  
+  <h2>Your matches</h2>
+  <% @kittens.each do |kitten| %>
+    <img class='match' src="<%= kitten.url %>" />
+  <% end %>
+
+</div>
