@@ -6,6 +6,7 @@
   margin: 10px;
   font-size: 20px;
   text-align: center;
+  border-radius: 5%;
 }
 
 #not-meow {
@@ -21,4 +22,9 @@ h2 {
 }
 
 img {
+  border-radius: 5%;
+}
+
+body {
+  background-color: oldlace;
 }

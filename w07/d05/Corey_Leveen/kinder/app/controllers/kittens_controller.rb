@@ -8,8 +8,8 @@ class KittensController < ApplicationController
   def create
     kitten = Kitten.create(kitten_params)
     respond_to do |format|
-      form.html { redirect_to kitten_path(kitten) }
-      form.json { render :json => kitten.to_json }
+      format.html { redirect_to kitten_path(kitten) }
+      format.json { render :json => kitten.to_json }
     end
   end
 

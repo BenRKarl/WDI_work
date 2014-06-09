@@ -23,6 +23,7 @@ Kitten.prototype.create = function(kittenURL) {
 
 
 var akitten = new Kitten();
+
 $(function() {
 
   var displayKitten = function() {
