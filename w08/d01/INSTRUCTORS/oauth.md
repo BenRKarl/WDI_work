@@ -25,6 +25,9 @@
 	* [Using Reverse Auth](https://dev.twitter.com/docs/ios/using-reverse-auth)
 * Want to issue authenticated requests on behalf of the application itself 
 	* [Application-only authentication ](https://dev.twitter.com/docs/auth/application-only-auth)
+	
+## Instagram OAuth (2.0)
+* [Instagram](http://instagram.com/developer/authentication/)
 
 ## Omniauth
 * [Omniauth](https://github.com/intridea/omniauth)
