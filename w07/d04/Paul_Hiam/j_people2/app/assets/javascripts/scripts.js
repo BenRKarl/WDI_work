@@ -13,7 +13,7 @@ function PersonView(model){
 };
 
 PersonView.prototype.render = function(){
-  var newElement = $("<div>").html(this.modelame);
+  var newElement = $("<div>").html(this.model.name);
   this.el = newElement;
   return this;
 };
