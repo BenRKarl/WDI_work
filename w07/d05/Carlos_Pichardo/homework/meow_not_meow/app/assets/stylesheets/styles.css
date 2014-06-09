@@ -1,0 +1,26 @@
+.choose, .bin {
+  height: 150px;
+  width: 150px;
+  border: 1px solid black;
+  margin: 10px;
+  float: left;
+  
+}
+#meow {
+  border: 2px solid black;
+  margin-left: 150px;
+}
+
+#not_meow {  
+  border: 2px solid black;
+  margin: 100px ;
+}
+
+#kittens {  
+  display: none;
+  clear: both;
+}
+
+img {
+  width: 100%;
+}
