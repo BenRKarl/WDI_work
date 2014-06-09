@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+<head>
+
+  <title>Teachers of DOM</title>
+
+</head>
+<body>
+  <input type="text" id="input">
+  <ul id="students"></ul>
+  <ul id="smileyFaces"></ul>
+
+    <ul id="teachers">
+      <li class="teacher colorizable" id="aldric"> Aldric </li>
+      <li class="teacher" id="andrew"> Andrew </li>
+      <li class="teacher" id="matt"> Matt </li>
+    </ul>
+    <div>
+      The Rails 4 Way
+      <span>Everything you ever wanted to know</span>
+      <span>About building an Enterprise Class Rails app</span>
+    </div>
+    <div class="colorizable">Secrets of the JavaScript Ninja</div>
+    <div>Programming and Object Oriented Design in Ruby</div>
+  <script>
+function filterByNodeType(num){
+
+  var childNodes = document.body.childNodes;
+  for (var i = 0; i < childNodes.length; i++){
+    if (childNodes[i].nodeType == num){
+      console.log(childNodes[i])
+  }
+}
+
+function logChildNodes(){
+  var childNodes = document.body.childNodes;
+  for (var i = 0; i < childNodes.length; i++){
+    console.log(childNodes[i]);
+  }
+}
+
+function logChildren(){
+  var children = document.body.children;
+  for (var i = 0; i < children.length; i++){
+    console.log(children[i]);
+  }
+}
+
+function theGreat(ul){
+  var childElementNodes = ul.children;
+  for (var i = 0; i < children.length; i++){
+   childElementNodes[i].innerHTML += '...the great';
+ }
+}
+
+function theGreat(ul){
+  var childElementNodes = ul.children;
+  for (var i = 0; i < children.length; i++){
+   childElementNodes[i].innerHTML = "<div style=
+'height: 20px; width: 20px; backgroundColor: cyan: 1px; borderRadius: 50px;'">
+</div>
+
+ }
+}
+
+function groovyTruesday(ul){
+  var childElementNodes = ul.children;
+  for (var i = 0; i < children.length; i++){
+   childElementNodes[i].setAttribute ('groovy', 'true');
+
+ }
+}
+
+
+function setClassToTeacher(ul){
+  var childElementNodes = ul.children;
+  for (var i = 0; i < children.length; i++){
+   childElementNodes[i].className = 'teacher';
+   // childElementNodes[i].setAttribute ('')
+
+ }
+}
+
+
+function returnValueOfTextField(textField){
+  var input = document.body.getElementById('input');
+  return input.value;
+  }
+}
+
+function getInput() {
+  var input = document.getElementById('input');
+  return input.value;
+  }
+}
+
+
+function changeTagFont(tagName, fontFamily){
+  var tag = document.getElementsByTag;
+  for (var i = 0; i < elems.length; i++){
+    elems[i].style.fontFamily = fontFamily;
+  }
+}
+
+
+function colorize(color){
+  //get all elements w/ colorizable class
+  var colorizablearray = document.getElementsByClass('colorizable');
+  for (var i = 0; i < colorizablearray.length; i++){
+    colorizablearray[i].style.backgroundColor = color;
+  }
+}
+
+
+  function buildSquares(num, size){
+    var squares = []
+    for (var i = 0; i < num; i++){
+      var square = document.createElement('div');
+      square.style.width = size+'px';
+      square.style.height = size+'px';
+      elems.push(square);
+    }
+    return squares;
+}
+
+function buildSmileyFaces(num, size){
+  var elems = [];
+  for (var i = 0); i < num; i++){
+  var circle = document.createElement('div');
+  circle.style.width = size+'px';
+  circle.style.height = size+'px';
+  circle.style.borderRadius = size/2;
+  circle.style.backgroundColor= randomColor();
+  circle.style.textAlign = 'center';
+  circle.style.fontSize = size/2;
+  var textNode = document.createTextNode('^_^');
+  circle.appendChild(textNode);
+  elems.push(circle);
+
+  }
+  return elems;
+}
+
+function appendSmileysToDom(num, size){
+  var smileys = buildSmileyFaces(num, size);
+  var ul      = document.getElementById('smileys');
+  for (var i = 0; i < smileys.length; i++){
+    ul.appendChild(smileys[i]);
+  }
+}
+
+function randomColors(){
+  //return a random color from an array of colors
+  var randomColors = ['green', 'chartreuse', 'cyan', 'lightgreen', 'red' 'purple'];
+  var randomIndex = parseInt(Math.random()*colors.length)
+  return colors[randomIndex];
+  }
+}
+
+function createLiNodes(arr){
+  elems = []
+  //iterates on array
+  for (var i = 0; i < arr.length; i++{
+    var textNode = document.createTextNode(arr[i]);
+    var li       = document.createElement('li';
+      li.appendChild(textNode);
+
+      elems.push(li);
+ }
+ //build lis and push into array
+ return elems;
+
+
+
+
+  function prependLiNodes (arr){
+
+    var elems = createLiNodes(arr);
+    var ul    = document.getElementById('protos');
+    for (var i = 0; i < elems.length; i++){
+      ul.insertBefore(elems[i], elems[i-1]);
+    }
+  }
+
+
+function prependLiNodes() {
+    protos.reverse();
+    document.getElementById("demo").innerHTML = protos;
+  }
+
+}
+
+var protos = ["Nessa Nguyen", "Jeff Winkler", "John Murphy", "Jeff Drakos", "Rebecca Strong", "Gardner Lonsberry", "Jonathan Gean", "Nathaniel Tuvera", "Tim Hannes", "Aziz Hasanov", "Chris Heuberger", "Dmitry Shamis", "Corey Leveen", "Paul Hiam", "Steven Doran", "Ben Karl", "Kristen Tonga", "Wake Lankard", "Carlos Pichardo", "Paul Gambarra", "Andrea Trapp", "Heidi Williams-Foy"];
+
+
+function findTeacher(teacherName){
+  var teachersUl = document.getElementById('teachers');
+  var teacherLis = teachersUl.getElementsByTagName('li');
+  for (var i = ); i < teacherLis.length; i++{
+    console.log("passed in name", teacherName);
+    console.log("Li Inner html: ", teacherName);
+    if (teacherLis[i].innerHTML.replace(/ /g, '') == teacherName){
+      return teacherLis[i];
+    }
+  }
+}
+
+function teachersUL(){
+  return document.getElemendById('teachers');
+}
+
+function removeTeacher(teacherName){
+  var teacher = findTeacher(teacherName);
+  var teachersUlEl = teachersUL();
+  teachersULEl.removeChild(teacher);
+}
+//replace
+//parentElem.replaceChild(elem)
+function replaceTeacher(newTeacherName, oldTeacherName){
+  var newTeacherLi = document.createElement('li')
+  newTeacherLi.innerHTML = newTeacherName;
+  var oldTeacherLi = findTeacher(oldTeacherName);
+  teachersUl().replaceChild(newTeacherLi, oldTeacherLi);
+
+}
+  </script>
+</body>
+</html>
