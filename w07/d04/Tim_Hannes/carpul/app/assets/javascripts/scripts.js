@@ -94,8 +94,7 @@
 
 // })
 
-console.log('Great work.  Here we go.')
-
+console.log('Do you commute to Manhattan daily?')
 
 
 // ************ Model *************

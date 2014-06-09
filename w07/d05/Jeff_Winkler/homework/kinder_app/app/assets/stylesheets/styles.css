@@ -1,0 +1,45 @@
+
+html, body {
+  height: 100%;
+}
+
+.kitten-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  margin-top: 80px;
+}
+
+.kept-kitten {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  float: right;
+}
+
+.container {
+  height: 500%;
+  width: 100%;
+}
+
+.no-meow {
+  float:left;
+  background-color: orange;
+  width: 30%;
+  height: 500%;
+}
+
+#kitten-div {
+  float: left;
+  background-color: #222222;
+  width: 30%;
+  height: 500%;
+  text-align: center;
+}
+
+.right-side {
+  float:right;
+  width: 40%;
+  height: 500%;
+  background-color: #00ff99;
+}
