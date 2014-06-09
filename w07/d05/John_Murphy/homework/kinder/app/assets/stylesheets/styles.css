@@ -1,0 +1,10 @@
+.bin{
+  width: 400px;
+  height: 1000px;
+  display: inline-block;
+  border: solid black 1px;
+}
+
+#kitten-window {
+  text-align: center;
+}
