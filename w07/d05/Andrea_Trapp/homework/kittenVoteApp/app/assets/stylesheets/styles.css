@@ -1,0 +1,29 @@
+
+.vote, .bin {
+  float: left;
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+#not_meow {  
+  border: 5px solid red;
+  margin-right: 150px ;
+  background: red;
+}
+
+#meow {
+  border: 5px solid green;
+  margin-left: 150px;
+  background: green;
+}
+
+#kitten_hidden {
+  display: none;
+}
+
+img {
+  width: 100%;
+}

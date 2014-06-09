@@ -1,0 +1,4 @@
+
+my_user = User.create({username: 'Lichard'})
+my_furry = Furry.create({message: 'Choppin Brocoli'})
+my_user.furry << my_furry
