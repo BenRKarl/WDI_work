@@ -1,0 +1,26 @@
+body {
+  font-family: sans-serif;
+  background-color: #CAC342;
+  color: #5B1C26;
+}
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+.box {
+  float: left;
+}
+
+.choice{
+  width: 200px;
+  height: 500px;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+.meow {
+  background-color: green;
+
+}
+.not-meow{
+  background-color: red;
+}
