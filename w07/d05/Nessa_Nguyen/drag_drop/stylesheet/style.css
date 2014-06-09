@@ -1,0 +1,28 @@
+.sheen {
+  border-radius: 50%;
+  overflow: auto;
+}
+
+.bins {
+  height: 300px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 5px;
+  float: left;
+}
+
+#fade {
+  background-color: lightblue;
+}
+
+#shrink {
+  background-color: pink;
+}
+
+#grow {
+  background-color: chartreuse;
+}
+
+#clone {
+  background-color: purple;
+}
