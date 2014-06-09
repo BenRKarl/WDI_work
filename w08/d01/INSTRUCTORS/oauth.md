@@ -7,6 +7,8 @@
 	* [OAuth client must present server with a TOKEN. Server will return a COOKIE. Give the cookie to the MONKEY. The monkey will lead you to a MAP](https://twitter.com/avdi/status/473960505162219520)
 * [Wiki entry](http://en.wikipedia.org/wiki/OAuth)
 * [Oauth Bible](http://oauthbible.com/)
+* [OAuth main website](http://oauth.net/)
+* [OAuth official doc](http://oauth.net/documentation/)
 
 ## Twitter OAuth flows list
 [Twitter Flow list](https://dev.twitter.com/docs/auth/obtaining-access-tokens)
@@ -41,8 +43,6 @@ Use the Omniauth gem with a simple Sinatra app, and the Twitter and Instagram st
 6. Yep, it's called a "callback". It's the endpoint where the third-service party ... Calls back your app. It's not the same as a Javascript callback, but it's the same idea.
 
 #### The following material is very valuable
-* [OAuth main website](http://oauth.net/)
-* [OAuth official doc](http://oauth.net/documentation/)
 * [A sample client/server pair for OAuth in sinatra](https://github.com/halorgium/sinatra-oauth) 
 * [Oauth 2.0: The good, the bad, the ugly](http://code.tutsplus.com/articles/oauth-20-the-good-the-bad-the-ugly--net-33216)
 * [Eran Hammer: Introducing OAuth 2.0](http://hueniverse.com/2010/05/15/introducing-oauth-2-0/)
