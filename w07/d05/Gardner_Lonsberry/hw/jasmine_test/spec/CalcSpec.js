@@ -3,21 +3,21 @@ describe("Calculator", function(){
     expect(true).toBe(true);
   });
 
- it("2 + 2 = 5", function(){
-  actual   = calculator(2, 3, "add");
-  expected = 5;
-  expect(actual).toBe(expected)
+ it("adds 2 numbers", function(){
+  var actual = calculator.add(2,3);
+  var expected = 5;
+  expect(actual).toBe(expected);
   });
 
-it("2 - 3 = 5", function(){
-  actual = calculator(2, 3, "subtract");
-  expected = -1;
+it("subtracts 1 number from the other", function(){
+  var actual = calculator.subtract(2,3);
+  var expected = -1;
   expect(actual).toBe(expected)
 });
 
-it("2 x 3 = 6", function(){
-  actual = calculator(2, 3, "multiply");
-  expected = 6;
+it("multiply 2 numbers", function(){
+  var actual = calculator.multiply(2,3);
+  var expected = 6;
   expect(actual).toBe(expected)
 });
 
