@@ -1,6 +1,4 @@
-.calc {
-  background-color: lightblue;
-}
+
 
 .calcForm {
   border: 2px solid black;
@@ -12,4 +10,8 @@
 
 .evaluate {
   width: 80px;
+}
+
+.calc {
+  background-color: lightblue;
 }
