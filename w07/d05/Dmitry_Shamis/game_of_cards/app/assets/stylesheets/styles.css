@@ -1,0 +1,32 @@
+button {
+  font-size: 24px;
+  background-color: blue;
+  color: white;
+  width: 1250px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.cards {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 95px;
+  height: 130px;
+  border: 1px solid black;
+  float: left;
+  display: table;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap:break-word;
+  font-size: 22px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+span {
+  display: table-cell;
+  vertical-align: middle;
+}

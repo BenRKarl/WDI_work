@@ -1,0 +1,16 @@
+
+.sheen{
+  border-radius: 50px;
+}
+
+.bins{
+  height: 200px;
+  width: 200px;
+  background-color: lightblue;
+  border-radius: 5px;
+  margin: 10px;
+  color: white;
+  font-size: 30px;
+  font-family: Helvetica;
+  display: inline-block;
+}

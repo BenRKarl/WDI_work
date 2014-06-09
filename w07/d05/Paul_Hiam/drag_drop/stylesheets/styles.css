@@ -1,0 +1,18 @@
+body {
+  background-color: black;
+}
+
+.sheen {
+  border-radius: 10%;
+}
+
+.bins {
+  height:300px;
+  width:300px;
+  background-color: blue;
+  border-radius: 10px;
+  margin: 10px;
+  float: left;
+  display: inline-block;
+  overflow: auto;
+}
