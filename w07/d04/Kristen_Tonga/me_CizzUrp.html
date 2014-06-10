@@ -1,0 +1,45 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CizzUrp</title>
+
+  <script>
+    function BoyPopStar(name, haircut){
+      this.name = name;
+      this.haircut = haircut;
+      this.moves = [];
+    }
+    BoyPopStar.prototype.learnMoves = function(newMove){
+      this.moves.push(newMove);
+      return this.moves;
+    }
+
+    BoyPopStar.prototype.cizzurp = function(n){
+      //
+    // function Cizzurp(n) {
+      for (var i=1; i <= n; i ++){
+        var string = ""
+        if (i % 3 === 0){
+          string += 'cizz';
+        }
+        if ( i % 5 === 0){
+          string += 'urp';
+        }
+        console.log(string || i)
+    }
+
+    // }
+    }
+
+    // for (var i=1; i<=100; console.log((i%3?'':'Fizz')+(i%5?'':'Buzz')||i), i++);
+
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -12,6 +12,7 @@ class KittensController < ApplicationController
   end
 
   def create
+    binding.pry
     kitten = Kitten.create(kitten_params)
     respond_to do |format|
       format.html
