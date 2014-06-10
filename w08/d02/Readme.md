@@ -36,6 +36,7 @@ Using the built in method (`save_as filename, contents`) and string (`txt`) prov
 
 # Resources
 ## Regular Expressions
+* http://www.confreaks.com/videos/2862-rubyconf2013-beneath-the-surface-harnessing-the-true-power-of-regular-expressions-in-ruby
 * http://rubular.com/
 * http://www.ruby-doc.org/core-2.1.1/Regexp.html
 * http://regexpal.com/
