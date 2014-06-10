@@ -58,6 +58,9 @@ body {
 .meow, .not-meow {
   margin: 0 20px;
 }
+.meow:hover, .not-meow:hover {
+  cursor: pointer;
+}
 
 header {
   overflow: auto;

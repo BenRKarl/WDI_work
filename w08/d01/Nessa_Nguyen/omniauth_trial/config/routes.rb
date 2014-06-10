@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root 'sessions#index'
-  get ''
+  post 'sessions' => 'sessions#create'
+  get 'auth/:provider' => 'sessions#authorize'
+  get 'auth/:provider/callback' => 'sessions#log'
 end

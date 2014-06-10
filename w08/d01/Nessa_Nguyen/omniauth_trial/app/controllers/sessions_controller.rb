@@ -4,13 +4,17 @@ class SessionsController < ApplicationController
       session[:user_id] = user.user_id
       redirect_to root_path
     else
-      "Log in failed. Try again"
+      flash[:notice] = "Log in failed. Try again"
       redirect_to login_path
     end    
   end
 
+  def authorize
+    client_id = "1438652769722187"
+  end
+
   def log
     data = request.env['omniauth.auth']
-  render :json => data.to_json
+    render :json => data.to_json
  end
 end
