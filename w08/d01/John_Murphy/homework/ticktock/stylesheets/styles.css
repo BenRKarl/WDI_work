@@ -1,0 +1,42 @@
+#clock{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  border: solid black 1px;
+}
+
+#minute{
+  width: 5px;
+  height: 198px;
+  border-radius: 100px;
+  border: solid black 1px;
+  margin: 0 auto;
+  position: fixed;
+  left: 102.5px;
+}
+
+#minute-center{
+  width: 5px;
+  height: 100px;
+  border-radius: 100px;
+  border: solid black 1px;
+  margin: 0 auto;
+}
+
+#second{
+  width: 1px;
+  height: 200px;
+  border-radius: 100px;
+  border: solid black 1px;
+  margin: 0 auto;
+  position: fixed;
+  left: 105px;
+}
+
+#second-center{
+  width: 1px;
+  height: 100px;
+  border-radius: 100px;
+  border: solid blue 1px;
+  margin: 0 auto;
+}

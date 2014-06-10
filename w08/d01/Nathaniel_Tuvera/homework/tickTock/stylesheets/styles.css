@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Rouge+Script);
+
+body {
+  background-color: #000000;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  color: #C3D8EE;
+  font-family: Rouge Script;
+  font-size: 72px;
+}
+
+.container{
+  height: 500px;
+  width:  500px;
+  margin: 20px auto;
+
+}
+
+#clockFace{
+  margin: 0 auto;
+}
+
+#hourHand{
+  position: relative;
+}

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Tick Tock</title>
+   <link href='http://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+   <style>
+    .clock {
+      position: relative;
+      height: 400px;
+      width: 400px;
+      box-sizing: border-box;
+      border-radius: 100%;
+      border: 5px solid darkgrey;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+   }
+
+    .center {
+      position: absolute;
+      height: 7px;
+      width: 7px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: limegreen;
+      border-radius: 100%;
+      z-index: 1;
+   }
+
+  .hour {
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+ }
+
+   .hour::before {
+      position: absolute;
+      content: "";
+      background: #262626;
+      height: 160px;
+      width: 4px;
+      top: 60px;
+   }
+
+   .minute {
+      width: 5px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+   }
+   .minute::before {
+      position: absolute;
+      content: "";
+      background: blue;
+      height: 200px;
+      width: 4px;
+      top: 20px;
+   }
+
+   .second {
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+   }
+
+   .second::before {
+      position: absolute;
+      content: "";
+      background: red;
+      height: 210px;
+      width: 2px;
+      top: 10px;
+   }
+
+   h2 {
+      text-align: center;
+      font-family: 'Quicksand', sans-serif;   
+    }
+
+
+   h3 {
+      text-align: center;
+      font-family: 'Quicksand', sans-serif;   
+    }
+
+</style>
+
+<script> // I borrowed this from the internet
+   function startTime() {
+       var today=new Date();
+       var h=today.getHours();
+       var m=today.getMinutes();
+       var s=today.getSeconds();
+       m = checkTime(m);
+       s = checkTime(s);
+       document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+       var t = setTimeout(function(){startTime()},500);
+   }
+
+   function checkTime(i) {
+       if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+       return i;
+   }
+</script>
+</head>
+<body onload="startTime()">
+   
+   <h2>THIS IS THE TIME</h2>
+   <h3 id="txt"></h3>
+
+   <div class="clock">
+      <div class="center"></div>
+      <div class="hour"></div>
+      <div class="minute"></div>
+      <div class="second"></div>
+   </div>
+
+
+   <script>
+
+      var $hour = $('.hour');
+      var $minute = $('.minute')
+      var $second = $('.second')
+      var date = new Date();
+      var seconds = date.getSeconds();
+      var minutes = date.getMinutes();
+      var hours = Math.abs(12 - date.getHours());
+
+      $(function() {
+
+         var i = seconds;
+         var j = minutes*60;
+         var k = hours*108000;
+
+         setInterval(function() {
+            $second.css({transform:'rotate(' + i*6 + 'deg)', transition: 'all 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55)'});
+            $minute.css({transform:'rotate(' + j/10 + 'deg)', transition: 'all 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55)'});
+            $hour.css({transform:'rotate(' + k/3600 + 'deg)', transition: 'all 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55)'});
+            i++;
+            j++;
+            k++;
+         }, 1000)          
+      })
+
+   </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
