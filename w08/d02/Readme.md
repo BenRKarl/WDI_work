@@ -31,6 +31,7 @@ Using the built in method (`save_as filename, contents`) and string (`txt`) prov
 * Write the validateAge(), validatePhone(), and validateEmail() functions
 * Display the information submitted if everything validates
 * Add clear functionality to get rid of what is being displayed
+
 =======
 
 # Resources
