@@ -1,0 +1,7 @@
+<h1>New Square</h1>
+<%= form_for @square, url: {action: "create"} do |f| %>
+  <%= f.number_field :side_length %>
+  <%= f.number_field :border_radius %>
+  <%= f.text_field :color %>
+  <%= f.submit "Create" %>
+<% end %>

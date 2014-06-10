@@ -1,0 +1,7 @@
+<h1>Meowwww...</h1>
+<a href="/kittens/random">Random</a>
+<% @kittens.each do |kitten| %>
+
+  <img src="<%= kitten.url %>" alt="">
+
+<% end %>

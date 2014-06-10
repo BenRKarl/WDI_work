@@ -1,0 +1,97 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.header {
+  background-color: lightgray;
+  border: 1px black solid;
+  height:100px;
+  width:600px;
+  margin: 20px auto;
+
+}
+.choice{
+  background-color: #0095FF;
+  }
+.left {
+  color:white;
+  border: 1px black solid;
+  height:500px;
+  width:200px;
+  margin-left: -10px;
+  text-align:right;
+  float:left;
+}
+
+.right {
+  color:white;
+  border: 1px black solid;
+  height:500px;
+  width:200px;
+  margin-right: -10px;
+  float:right;
+
+}
+
+.view {
+  background-color: lightgray;
+  border: 1px black solid;
+  margin: 20px auto;
+  height: 500px;
+  width: 500px;
+  position:relative;
+}
+
+#kitten {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+
+.footer {
+  background-color: lightgray;
+  border: 1px black solid;
+  height:100px;
+  width:600px;
+  margin: 20px auto;
+  bottom: 0px;
+}
+
+.saved {
+  background-color: lightgray;
+  border: 1px black solid;
+  height:100px;
+  width:600px;
+  margin: 20px auto;
+  bottom: 0px;
+}
+
+.rotate90{
+  -webkit-transform:rotate(90deg);
+  -moz-transform:rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+.rotate270{
+  -webkit-transform:rotate(270deg);
+  -moz-transform:rotate(270deg);
+  -o-transform: rotate(270deg);
+}
+img {
+
+  margin: 0 auto;
+  display: block;
+}
+

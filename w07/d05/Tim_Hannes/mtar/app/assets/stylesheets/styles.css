@@ -3,6 +3,7 @@ h2 {
   font-weight: 400;
   line-height: 46px;
   font-size: 40px;
+  margin: 3% 0 0 10%;
 }
 h3 {
   font-family: 'Dosis', sans-serif;
@@ -22,12 +23,16 @@ ul {
   right: 0px;
   background-color: #f0f0f0;
   text-align: center;
+  margin-right:10%;
 }
 
 .stations{
-  width: 75%;
+  margin-left: 10%;
+  margin-bottom: 3%;
+  width: 55%;
   position: absolute;
   left: 0px;
-  background-color: #fffff0;
+  background-color: lightgrey;
+  min-height:1170px;
 }
 
