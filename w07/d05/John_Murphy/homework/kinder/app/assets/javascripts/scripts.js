@@ -4,8 +4,9 @@ function randomNumber() {
 
 $(function(){
 
-  $('#kitten').draggable()
+  // console.log('main')
 
+  $('#kitten').draggable()
 
 
   $('.not-meow').droppable({
@@ -36,7 +37,8 @@ $(function(){
             method: 'post',
             dataType: 'json',
             data: {kitten: newKitten},
-            success: function(){
+            success: function(response){
+              console.log(response)
               var newUrl = 'http://www.placekitten.com/' + randomNumber() + '/' + randomNumber()
               console.log(newUrl)
               setTimeout(function(){$('#kitten').remove()}, 3000)

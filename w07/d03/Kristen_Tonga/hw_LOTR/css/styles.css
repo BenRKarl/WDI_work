@@ -1,0 +1,33 @@
+#the-ring {
+  background-color: white;
+  border: 3px solid yellow;
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+}
+
+.left {
+  float: left;
+  width: 45%;
+}
+
+.right {
+  float: right;
+  width: 45%
+}
+
+.footer {
+  display: inline-block;
+  width: 100%;
+}
+
+.gollum {
+  background-color: grey;
+  height: 25px;
+}
+
+.mountDoom {
+  background-color: orange;
+  height: 40px;
+  padding: 10px;
+}
