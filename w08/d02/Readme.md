@@ -31,3 +31,16 @@ Using the built in method (`save_as filename, contents`) and string (`txt`) prov
 * Write the validateAge(), validatePhone(), and validateEmail() functions
 * Display the information submitted if everything validates
 * Add clear functionality to get rid of what is being displayed
+=======
+
+# Resources
+## Regular Expressions
+* http://rubular.com/
+* http://www.ruby-doc.org/core-2.1.1/Regexp.html
+* http://regexpal.com/
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
+## Form validation
+* http://diveintohtml5.info/forms.html
+* http://alistapart.com/article/forward-thinking-form-validation
+* https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Data_form_validation#Validating_forms_using_JavaScript
