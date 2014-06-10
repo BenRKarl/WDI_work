@@ -4,7 +4,7 @@ function PaletteModel(data){
   this.colors = data.colors;
 }
 
-//collection
+//view
 function PaletteView(model){
   this.model  = model;
   this.el     = undefined;
@@ -22,6 +22,7 @@ PaletteView.prototype.render = function(){
   return this;
 };
 
+//collection
 function PaletteCollection(){
   this.models = [];
 }

@@ -1,5 +1,6 @@
 function CardModel(model){
-  this.suit = suit
+  this.name = jsonData.name;
+  this.suit = jsonData.suit;
 }
 
 function CardView(model){
@@ -9,37 +10,61 @@ function CardView(model){
 
 CardView.prototype.render = function(suit, name){
   var $div = $('<div>').addClass('card').addClass(this.model.suit);
-  var $topLeft = $('<div>').addClass('top left').text(this.model.suit + " " + this.model.name);
-  var $bottomRight = $('<div>').addClass('bottom right').text(this.model.suit + " " + this.model.name);
+  if (this.model.suit === "diamonds"){
+    var $topLeft = $('<div>').addClass('top left').html("&diams;"+this.model.suit + " " + this.model.name);
+    var $bottomRight = $('<div>').addClass('bottom right').html("&diams;" + " " + this.model.name);
+  } else {
+    var $topLeft = $('<div>').addClass('top left').html("&"+this.model.suit+";"+" "+this.model.name);
+    var $bottomRight = $('<div>').addClass('bottom right').html("&" + this.model.suit + ";" + " " + this.model.name);
+  }
   $div.append($topLeft, $bottomRight);
   this.el = $div;
   return this;
 }
 
-function Deck(){
+function CardCollection(){
   this.models = [];
 }
 
-Deck.prototype.fetch = function(){
+CardCollection.prototype.fetch = function(){
+  console.log("fetch called")
   var that = this;
   $.ajax({
     url: '/cards',
     dataType: 'json',
-    success: function(data){
-      createAndRenderCards(deal);
-        $.each(data, function(i, datum){
+    success: function(data) {
+      $.each(data, function(i, datum){
+  console.log("Making cards")
         var cardModel = new CardModel(datum);
         that.models.push(cardModel);
         var cardView = new CardView(cardModel);
-        $('.cards').append(card.render().el);
-      })
+        console.log("Making cards")
+        $('#cards').append(cardView.render().el);
+      });
     }
   })
+
 }
 
 
 $(function(){
-  $('.deal').on('click', function(){
-
-  })
+   var collection = new CardCollection();
+  $('.deal').click(function(){
+  console.log("button clicked")
+    collection.fetch();
+  });
 })
+
+
+suits = ['clubs', 'spades', 'hearts', 'diamonds']
+names = ['ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king']
+
+def flush
+  hand = []
+  5.times do
+    card = []
+    card << suits.sample
+    hand << names.sample
+    print hand
+  end
+end

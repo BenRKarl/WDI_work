@@ -1,0 +1,17 @@
+
+
+.calcForm {
+  border: 2px solid black;
+  width: 90px;
+  padding: 10px;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.evaluate {
+  width: 80px;
+}
+
+.calc {
+  background-color: lightblue;
+}
