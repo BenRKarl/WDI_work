@@ -16,3 +16,13 @@ text = f.read
 f.close
 
 binding.pry
+
+# samcount = text.scan(/Sam[^-]/).count
+# save_as('samcount.txt', samcount)
+
+# samjammy = puts text.gsub(/Sam-I-Am/, "Sam Jammy")
+
+ samjammy = text.gsub("Sam-I-am", "Sam Jammy")
+
+ 
+
