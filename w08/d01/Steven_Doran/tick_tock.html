@@ -3,13 +3,14 @@
 <head>
    <meta charset="UTF-8">
    <title>Tick Tock</title>
+   <link href='http://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
    <style>
-   .clock {
+    .clock {
       position: relative;
-      height: 160px;
-      width: 160px;
+      height: 400px;
+      width: 400px;
       box-sizing: border-box;
       border-radius: 100%;
       border: 5px solid darkgrey;
@@ -20,7 +21,7 @@
       margin: auto;
    }
 
-   .center {
+    .center {
       position: absolute;
       height: 7px;
       width: 7px;
@@ -30,13 +31,13 @@
       top: 0;
       bottom: 0;
       margin: auto;
-      background: #262626;
+      background: limegreen;
       border-radius: 100%;
       z-index: 1;
    }
 
-   .hour {
-    width: 4px;
+  .hour {
+    width: 5px;
     height: 100%;
     position: absolute;
     left: 0;
@@ -48,13 +49,13 @@
       position: absolute;
       content: "";
       background: #262626;
-      height: 60px;
+      height: 160px;
       width: 4px;
-      top: 25px;
+      top: 60px;
    }
 
    .minute {
-      width: 4px;
+      width: 5px;
       height: 100%;
       position: absolute;
       left: 0;
@@ -64,14 +65,14 @@
    .minute::before {
       position: absolute;
       content: "";
-      background: #262626;
-      height: 70px;
+      background: blue;
+      height: 200px;
       width: 4px;
-      top: 15px;
+      top: 20px;
    }
 
    .second {
-      width: 2px;
+      width: 1px;
       height: 100%;
       position: absolute;
       left: 0;
@@ -83,20 +84,21 @@
       position: absolute;
       content: "";
       background: red;
-      height: 73px;
+      height: 210px;
       width: 2px;
-      top: 12px;
+      top: 10px;
    }
 
    h2 {
       text-align: center;
-      font-family: "Helvetica", sans-serif;
-   }
+      font-family: 'Quicksand', sans-serif;   
+    }
+
 
    h3 {
       text-align: center;
-      font-family: "Helvetica", sans-serif;
-   }
+      font-family: 'Quicksand', sans-serif;   
+    }
 
 </style>
 
@@ -120,7 +122,7 @@
 </head>
 <body onload="startTime()">
    
-   <h2>This is the time</h2>
+   <h2>THIS IS THE TIME</h2>
    <h3 id="txt"></h3>
 
    <div class="clock">
