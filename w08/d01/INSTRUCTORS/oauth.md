@@ -7,6 +7,8 @@
 	* [OAuth client must present server with a TOKEN. Server will return a COOKIE. Give the cookie to the MONKEY. The monkey will lead you to a MAP](https://twitter.com/avdi/status/473960505162219520)
 * [Wiki entry](http://en.wikipedia.org/wiki/OAuth)
 * [Oauth Bible](http://oauthbible.com/)
+* [OAuth main website](http://oauth.net/)
+* [OAuth official doc](http://oauth.net/documentation/)
 
 ## Twitter OAuth flows list
 [Twitter Flow list](https://dev.twitter.com/docs/auth/obtaining-access-tokens)
@@ -24,13 +26,10 @@
 * Want to issue authenticated requests on behalf of the application itself 
 	* [Application-only authentication ](https://dev.twitter.com/docs/auth/application-only-auth)
 
+## Instagram OAuth (2.0)
+* [Instagram](http://instagram.com/developer/authentication/)
+
 ## Omniauth
-* [Omniauth](https://github.com/intridea/omniauth)
-* [List of strategies](https://github.com/intridea/omniauth/wiki/List-of-Strategies)
-* [Omniauth Twitter](https://github.com/arunagw/omniauth-twitter)
-* [Omniauth Instagram]([https://github.com/ropiku/omniauth-instagram)
-
-
 Use the Omniauth gem with a simple Sinatra app, and the Twitter and Instagram strategies, to authenticate a user. Store the information in the session for now, don't worry about the database. Assume the user is the only user (and you are, after all.) Points of note:
 
 1. Twitter uses OAuth 1.0
@@ -40,9 +39,18 @@ Use the Omniauth gem with a simple Sinatra app, and the Twitter and Instagram st
 5. You're not an island. Ask for help. Pair if you want. Or group up. Whatever.
 6. Yep, it's called a "callback". It's the endpoint where the third-service party ... Calls back your app. It's not the same as a Javascript callback, but it's the same idea.
 
-#### The following material is very valuable
-* [OAuth main website](http://oauth.net/)
-* [OAuth official doc](http://oauth.net/documentation/)
+Valuable resources:
+
+* [Omniauth](https://github.com/intridea/omniauth)
+* [List of strategies](https://github.com/intridea/omniauth/wiki/List-of-Strategies)
+* [Omniauth Twitter](https://github.com/arunagw/omniauth-twitter)
+* [Omniauth Instagram](https://github.com/ropiku/omniauth-instagram)
+
+#### Bonus: done early? Set up the routes and logic yourself!
+
+
+### The following material is very valuable
+* [Pretty good guide as recommended by Avdi Grimm](http://aaronparecki.com/articles/2012/07/29/1/oauth2-simplified)
 * [A sample client/server pair for OAuth in sinatra](https://github.com/halorgium/sinatra-oauth) 
 * [Oauth 2.0: The good, the bad, the ugly](http://code.tutsplus.com/articles/oauth-20-the-good-the-bad-the-ugly--net-33216)
 * [Eran Hammer: Introducing OAuth 2.0](http://hueniverse.com/2010/05/15/introducing-oauth-2-0/)
