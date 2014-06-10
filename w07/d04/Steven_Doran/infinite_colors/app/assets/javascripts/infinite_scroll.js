@@ -10,7 +10,7 @@ function scrollHandler(collection){
 }
 
 $(function() {
-   var paletteCollection = new PaletteCollection();
+   paletteCollection = new PaletteCollection();
    paletteCollection.fetch();
    $window.on('scroll', function() {
       scrollHandler(paletteCollection);
