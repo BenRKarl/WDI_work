@@ -22,7 +22,13 @@ binding.pry
 
 # samjammy = puts text.gsub(/Sam-I-Am/, "Sam Jammy")
 
- samjammy = text.gsub("Sam-I-am", "Sam Jammy")
+ # samjammy = text.gsub("Sam-I-am", "Sam Jammy")
 
- 
+ # \bSam(?!-)
 
+ # mattsub = text.gsub(/\bSam(?!-)/, "Matt")
+# save_as("matt.txt", mattsub)
+
+
+# dementia = text.gsub(/^(.*)(\r?\n\1)+$/, "")
+# save_as("dementia.txt", dementia)
