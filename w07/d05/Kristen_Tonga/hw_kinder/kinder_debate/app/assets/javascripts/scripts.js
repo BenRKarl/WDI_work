@@ -8,7 +8,6 @@ function Kitten(){
   this.url = undefined;
   return this;
 };
-
 //VIEWS
 Kitten.prototype.getURL = function(){
     var randomWidth = Math.floor(Math.random() * 1000) + 200;
@@ -30,9 +29,9 @@ Kitten.prototype.showKitten = function(){
 function setEventHandlers(button){
   // var that = this
   $(button).click(function(){
-    debugger
-      // var url = Kitten.getURL;
-      // var elem = Kitten.showKitten();
+
+      var url = Kitten.getURL;
+      var elem = Kitten.showKitten();
       console.log(this);
   });
 };

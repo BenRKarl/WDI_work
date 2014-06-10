@@ -1,3 +1,24 @@
+var suits = [heart, diamond, club, spade]
+suits.sample
+
+
+var faceCards = [ 11 : jack
+                  12 : queen
+                  13 : king
+                  14 : ace    ]
+
+
+function flush(arr){
+  var cards = arr.sort();
+  if arr[0].suit === arr[1].suit === arr[2].suit === suit[3] === suit[4] && Math.min(arr) +1 ===
+
+
+  $(arr).each {
+    if suit
+  }
+}
+
+
 class Card < ActiveRecord::Base
 
 # attr_accessor :name, :suite
