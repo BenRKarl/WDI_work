@@ -1,23 +1,50 @@
-.clock{
-background-color: tan;
-height: 250px;
-width: 250px;
-border-radius: 125px;
+body {
+  background-color: lightgrey;
+  text-align: center;
+  color: green;
 }
 
-.hour{
-width: .25em;
-height: 100px;
-background-color: black;
+.clock {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid green;
+  margin: 0 auto;
+  position: relative;
 }
 
-.minute{
-width: .25em;
-height: 125px;
-background-color: black;
+.hour, .minute, .second {
+  font-family: arial;
+  font-size: 90px;
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  left: 88px;
+  transform-origin: bottom;
+  -webkit-transform-origin: bottom;
 }
 
-.second{
-
+.centerDot{
+  background-color: black;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  display: inline-block;
+  position: absolute;
+  top: 88px;
+  left: 88px;
+  z-index: 1;
+}
+.hour {
+  z-index: 1;
+  font-size: 85px;
 }
 
+.minute {
+  z-index: 3;
+}
+
+.second {
+  z-index: 5;
+  color: black;
+}
