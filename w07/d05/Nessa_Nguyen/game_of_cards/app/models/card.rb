@@ -33,5 +33,18 @@ class Card < ActiveRecord::Base
     return cards 
   end
 
+  def self.flush?(array)
+    arr = array.map do |card|
+      card.suit 
+    end
+    arr.length == array.length
+    # arr.uniq == 1    
+  end
+  def self.flush_hash(array)
+    hash = Hash.new(0)
+    suit = array.first.suit
+    array.each { |card| hash[card.suit] += 1 }
+    hash.keys.length == 1 && hash[suit] == 5
+  end
 
 end
