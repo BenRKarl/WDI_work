@@ -38,7 +38,7 @@ Kitten.prototype.meowThisKitten = function(url){
     url: '/kittens',
     method: 'post',
     dataType: 'json',
-    data: { kitten: {url: url} },
+    data: { kitten: {url: url } },
     success: function(data){
       console.log('kitten with url "' + data.url + '" was added to the database.');
     }

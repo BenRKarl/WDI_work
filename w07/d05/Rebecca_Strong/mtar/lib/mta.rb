@@ -39,7 +39,7 @@ module MTA
       ["G", "green"],
       ["2", 'red'],
       ["3", 'red'],
-      ["4", 'red'],
+      ["4", 'green'],
       ["5", 'purple'],
       ["N", 'yellow'],
       ["R", 'yellow'],

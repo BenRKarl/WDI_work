@@ -1,0 +1,40 @@
+body {
+  background-color: darkblue;
+  text-align: center;
+  color: yellow;
+  font-family: cursive;
+}
+
+.clock {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid yellow;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hour, .minute, .second {
+  font-family: arial;
+  font-size: 90px;
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  left: 88px;
+  transform-origin: bottom;
+  -webkit-transform-origin: bottom;
+}
+
+.hour {
+  z-index: 1;
+  font-size: 85px;
+}
+
+.minute {
+  z-index: 3;
+}
+
+.second {
+  z-index: 5;
+  color: black;
+}
