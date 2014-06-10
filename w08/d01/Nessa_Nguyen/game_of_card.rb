@@ -1,15 +1,10 @@
-class Card < ActiveRecord::Base
-
   def self.random_straight
     start = rand(1..13)
     name_array = []
     name_array.push(start)
 
     (1..4).each do |i| 
-      name_array[i] = name_array[i-1] % 13 + 1  
-#      if name_array[i] > 13
-#        name_array[i] = name_array[i] - 13
-#      end    
+      name_array[i] = name_array[i-1] % 13 + 1     
     end
       
     name_array.map! do |name|
@@ -32,6 +27,3 @@ class Card < ActiveRecord::Base
 
     return cards 
   end
-
-
-end
