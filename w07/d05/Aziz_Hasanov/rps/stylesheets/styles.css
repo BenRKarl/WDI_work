@@ -1,0 +1,24 @@
+body {
+  background-color: #ccc;
+  text-align: center;
+}
+
+/*.player-moves {
+  width: 370px;
+  height: 150px;
+  margin: 0 auto;
+}*/
+
+.rock, .scissors, .paper {
+  height: 130px;
+  width: 100px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 10px;
+  text-transform: capitalize;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
