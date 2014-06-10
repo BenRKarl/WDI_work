@@ -29,6 +29,7 @@ function CardSuit(){
 }
 
 CardSuit.prototype.display = function(data){
+  $('#cards').empty();
   for (var i = 0; i < data.length; i++){
     var cardModel  = new CardModel(data[i]);
     this.models[i] = cardModel;
