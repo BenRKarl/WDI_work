@@ -11,5 +11,9 @@ end
 
 
 get '/' do
+'test'
+end
 
+get '/auth/twitter/callback' do
+"ROOOOOAAAAR ur In!"    
 end
