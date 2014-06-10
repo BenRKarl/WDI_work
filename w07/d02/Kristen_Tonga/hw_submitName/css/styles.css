@@ -1,0 +1,49 @@
+.lightblue {
+  background-color: lightblue;
+  padding: 15px;
+  background-image: url('http://upload.wikimedia.org/wikipedia/commons/0/0f/Brooklyn_Bridge_Park_and_Manhattan.jpg');
+}
+.title {
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+}
+
+.subtitle {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.rounded {
+   border-radius: 40px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.gray {
+  background-color: black;
+  padding: 15px;
+}
+
+.icon {
+  height: 40px;
+}
+
+.end {
+  margin: 0 auto;
+}
+
+.nick {
+  float: right;
+  width: 50%;
+  position: relative;
+
+}
+
