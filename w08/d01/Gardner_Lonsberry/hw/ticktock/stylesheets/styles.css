@@ -1,0 +1,23 @@
+.clock{
+background-color: tan;
+height: 250px;
+width: 250px;
+border-radius: 125px;
+}
+
+.hour{
+width: .25em;
+height: 100px;
+background-color: black;
+}
+
+.minute{
+width: .25em;
+height: 125px;
+background-color: black;
+}
+
+.second{
+
+}
+
