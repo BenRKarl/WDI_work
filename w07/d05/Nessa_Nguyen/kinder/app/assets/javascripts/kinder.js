@@ -1,3 +1,8 @@
+//
+//= require jquery
+//= require jquery.ui.all
+//
+
 function Kitten(url){
   this.url = url;
 }
