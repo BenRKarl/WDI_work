@@ -1,0 +1,7 @@
+<h2>You've authorized Twitter</h2>
+
+<p><%= @data %></p>
+<form action='/auth/twitter/status_update' method='post'>
+  <input type='text' name='status' placeholder='Tweet content'></input>
+  <input type='submit' value='Post to Twitter'></input>
+</form>
