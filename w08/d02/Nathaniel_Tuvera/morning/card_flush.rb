@@ -1,4 +1,14 @@
-class Card < ActiveRecord::Base
+def flush?(array)
+  array.each do |card|
+    if card.suit == card.suit
+      return true;
+    else
+      return false;
+    end
+  end
+end
+
+# --- class answers ---
   def self.flush_john(array)
     suit=array[0].suit
     array.ea do |card|
@@ -27,6 +37,5 @@ class Card < ActiveRecord::Base
   def self.flush_wake(array)
     hash = Hash.new(0)
     array.each{|card| has[card.suit] += 1}
-    hash.keys.length == 1 && hash[suit] == 5
+    hash.keys == 1 && hash[suit] == 5
   end
-end
