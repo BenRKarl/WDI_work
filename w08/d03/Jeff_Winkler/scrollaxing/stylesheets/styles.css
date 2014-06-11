@@ -8,3 +8,26 @@ body {
 img {
   position: relative;
 }
+
+.tmt-div {
+  width: 100%;
+  overflow: hidden;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.info {
+  height: 8em;
+  background-color: lightblue;
+}
+
+
+.image-div {
+  height: 15em;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}

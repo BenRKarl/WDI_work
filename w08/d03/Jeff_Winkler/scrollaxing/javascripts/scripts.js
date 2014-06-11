@@ -17,7 +17,13 @@ function fadeBackgroundColor() {
 }
 
 
+function updateBannerImage() {
+  $('.zpic').each(function(index, value){
+    var scrollTop = $(window).scrollTop();
+    $(value).css('top', scrollTop);
 
+  });
+}
 
 
 
@@ -25,6 +31,7 @@ $(window).on('scroll', function(){
   var scrollTop = $(window).scrollTop();
   fadeBackgroundColor();
   $('#tmt').css('left', scrollTop);
+  updateBannerImage();
 
 
 
