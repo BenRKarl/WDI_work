@@ -1,3 +1,5 @@
+> save_as('matt.txt', text.gsub(/Sam/, "Matt").gsub(/-am/, "-Say").gsub(/green eggs and ham/, "coconut oil and lamb"))
+
 I am Matt
 
 I am Matt
