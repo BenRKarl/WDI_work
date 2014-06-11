@@ -1,0 +1,27 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+
+ *
+ *= require_tree .
+ *= require_self
+ *= require jquery.ui.all
+ */
+.rate {
+  height: 400px;
+  width: 33%;
+  float: left;
+  
+}
+ .meow {
+  
+ }
+
+ .not-meow {
+
+ }
+ .present-kit {
+  background-color: lime;
+  
+ }
+ 
