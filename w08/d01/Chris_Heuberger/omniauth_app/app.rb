@@ -16,7 +16,6 @@ end
 use Rack::Session::Cookie,
   :secret => 'xxx'
 
-
 # use OmniAuth::Builder do
 #   provider :twitter, ENV.fetch('TWITTER_KEY'), ENV.fetch('TWITTER_SECRET')
 #   provider :instagram, ENV.fetch('INSTAGRAM_ID'), ENV.fetch('INSTAGRAM_SECRET')
