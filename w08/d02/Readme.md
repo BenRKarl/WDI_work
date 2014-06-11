@@ -31,10 +31,12 @@ Using the built in method (`save_as filename, contents`) and string (`txt`) prov
 * Write the validateAge(), validatePhone(), and validateEmail() functions
 * Display the information submitted if everything validates
 * Add clear functionality to get rid of what is being displayed
+
 =======
 
 # Resources
 ## Regular Expressions
+* http://www.confreaks.com/videos/2862-rubyconf2013-beneath-the-surface-harnessing-the-true-power-of-regular-expressions-in-ruby
 * http://rubular.com/
 * http://www.ruby-doc.org/core-2.1.1/Regexp.html
 * http://regexpal.com/
