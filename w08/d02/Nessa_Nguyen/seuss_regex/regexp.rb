@@ -42,17 +42,3 @@ def repeats
   end  
   new_array.compact
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
