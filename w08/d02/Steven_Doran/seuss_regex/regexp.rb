@@ -16,3 +16,7 @@ text = f.read
 f.close
 
 binding.pry
+
+
+
+# Sams = text.scan(/Sam[^-]/).count 

@@ -20,3 +20,7 @@ var pokemon = {
   totalStats : function(name){
   }
 }
+
+
+pokemon.pokemnList
+
