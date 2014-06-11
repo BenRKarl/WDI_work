@@ -1,0 +1,41 @@
+1) Card.where name: "A"
+
+2) Card.where suit: ' of Spades'
+
+3) Card.where name: 'J'
+
+4) Card.where suit: ' of Hearts'
+
+5) Card.order(:name)
+
+6)  def flush
+      suit = [' of Hearts', ' of Spades', ' of Diamonds', ' of Clubs'].sample
+      Card.where(suit).sample(5)
+    end
+
+7) Card.where('name = ? OR name = ?), 'J', "Q").count
+
+8) Card.where(name: "3".."7")
+
+9)
+
+def straight
+  rand = rand(0..8)
+  rand_suit = [' of Spades', ' of Diamonds', ' of Clubs', ' of Hearts'].sample
+  Card.where(suit: rand_suit)[rand..(rand+5)]
+end
+
+10) Flush method in class:
+
+def self.is_flush(array)
+  suit_array = []
+  array.each do |card|
+    suit_array << card.suit
+  end
+  suit_array.uniq.length == 1
+end
+
+flush = Card.where(suit: " of Hearts").sample(5)
+Card.is_flush(flush)
+=> true
+

@@ -24,12 +24,34 @@ function KittenCollection(){
   this.models = {};
 }
 
+KittenCollection.prototype.add = function(kitten){
+  
+}
+
 function presentKitten(){
   var kittenModel = new KittenModel();
   var kittenView  = new KittenView(kittenModel);
   kittenView.render().el.appendTo($('.picture')).fadeIn(1000);
 }
 
+function removeKitten(el){
+  el.fadeOut(1000).remove();
+}
+
+function admireKitten(url){
+
+}
+
+var kittenCollection = new KittenCollection();
+
 $(function(){
   presentKitten();
+  $('.not-meow').droppable({
+    drop: function(e, dropped)
+    removeKitten(dropped.draggable);
+  }),
+  hoverClass: 'drop-hover' //style drop-hover in CSS
+
+
+
 })

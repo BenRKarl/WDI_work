@@ -1,38 +1,113 @@
-//Validate the Name. It should return true if the name is greater than or equal 3 characters. If not, it should show the error and return false.
-function validateName(name){}
 
-// Validate the Age. It should return true if the age is a number. If not, it should show the error and return false.
-function validateAge(age){}
 
-// Validate the Phone Number. It should return true if the phone number matches the regular expression. If not, it should show the error and return false.
-function validatePhone(phone){}
+function validateName(name){
+  if (name.search(/\w{3}/) > -1){
+    return true;
+  } else {
+    $('#user_name_error').show();
+    return false;
+  }
+};
 
-// Validate the Email. It should return true if the email matches the regular expression. If not, it should show the error and return false.
-function validateEmail(email){}
 
-//Write a function so that when the clear button is clicked, any data being displayed is erased.
-function clearData(){}
+function validateAge(age){
+  if (age.search(/^[1-9][0-9]?$/) > -1){
+    console.log('yay')
+    return true;
+  } else {
+    $('#user_age_error').show();
+    return false;
+  }
+};
+
+
+function validatePhone(phone){
+  if (phone.search(/\(?([0-9]{3})?\)?([ .-]?)([0-9]{3})([ .-]?)([0-9]{4})/) > -1){
+    return true;
+  } else {
+    $('#user_ph_error').show();
+    return false;
+  }
+};
+
+
+function validateEmail(email){
+  if (email.search(/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/)> -1){
+    return true;
+  } else {
+    $('#user_email_error').show();
+    return false;
+  }
+};
+
+
+function clearData(){
+
+  $('#user_name').val('');
+  $('#user_age').val('');
+  $('#user_email').val('');
+  $('#user_ph').val('');    
+
+};
 
 //Display function blanks out what is currently being displayed in the display_data area then displays the submitted user data as a list
-function display(){}
+function display(){
+  var userName = $('#user_name').val();
+  var userAge = $('#user_age').val();
+  var userEmail = $('#user_email').val();
+  var userPhone = $('#user_ph').val();  
+
+  var nameEl = $('<li>').attr('id', 'name').html(userName);
+  var ageEl = $('<li>').attr('id', 'age').html(userAge);
+  var emailEl = $('<li>').attr('id', 'email').html(userEmail);
+  var phoneEl = $('<li>').attr('id', 'phone').html(userPhone);
+
+  $('#display_data').append(nameEl);
+  $('#display_data').append(ageEl);
+  $('#display_data').append(emailEl);
+  $('#display_data').append(phoneEl);
+
+  $('#user_name').val();
+  $('#user_age').val();
+  $('#user_email').val();
+  $('#user_ph').val();  
+
+};
 
 
 $(document).ready(function(){
-  //Store the appropriate items you will be selecting from the DOM into variables for easy usage
-
-  // Initially hide the errors.  Check the HTML to see how to select all the items that are error messages.
 
 
-  //set event handler
-  $add_user_data_form.submit(function(){
-    //Get values from user inputs
+  var userNameError = $('#user_name_error');
+  var userAgeError = $('#user_age_error');
+  var userEmailError = $('#user_email_error');
+  var userPhoneError = $('#user_ph_error');
 
-    // If all of the items validate, you should update the name, age, phone and email of the user and display it
-    if(validateName() && validateAge() && validatePhone() && validateEmail()) {
+
+
+  userNameError.hide();
+  userAgeError.hide();
+  userEmailError.hide();
+  userPhoneError.hide();
+
+
+  $(add_user_data).submit(function(e){
+    e.preventDefault();
+
+    var userName = $('#user_name').val();
+    var userAge = $('#user_age').val();
+    var userEmail = $('#user_email').val();
+    var userPhone = $('#user_ph').val();
+
+    if(validateName(userName) && validateAge(userAge) && validatePhone(userPhone) && validateEmail(userEmail)) {
       display();
     }
-    return false; //This stops the form from processing (page reload). An alternative to preventDefault();
+    
   });
+
+  $('#clear_box').click(function(){
+    clearData();
+  })
 
 });
 
