@@ -33,6 +33,11 @@ $(window).on('scroll', function(){
   $('#tmt').css('left', scrollTop);
   updateBannerImage();
 
+  var d = $(window).scrollTop() / $(document).height() * 360;
+  $('.record').css({
+    '-webkit-transform': 'rotate('+d+'deg)'
+  });
+
 
 
 
