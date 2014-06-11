@@ -1,18 +1,24 @@
 //Validate the Name. It should return true if the name is greater than or equal 3 characters. If not, it should show the error and return false.
 function validateName(name){
-  regex = /[a-zA-Z]{3}/
+  var regex = /[a-zA-Z]{3}/;
   if (regex.test(name)){
     return true;
   } else {
     $("#user_name_error").show();
     return false;
   }
-
 }
 
 // Validate the Age. It should return true if the age is a number. If not, it should show the error and return false.
 function validateAge(age){
-  return true;
+  debugger;
+  var regex = /\d/;
+  if (regex.test(age)){
+    return true;
+  } else {
+    $("#user_age_error").show();
+    return false;
+  }
 }
 
 // Validate the Phone Number. It should return true if the phone number matches the regular expression. If not, it should show the error and return false.
