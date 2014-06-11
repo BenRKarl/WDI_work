@@ -1,6 +1,6 @@
 text.scan(/(Sam)[^-]/).count
 
-arr   = text.scan(/not eat.*/)
+arr   = text.scan(/not eat.*/\b)
 arr2  = arr.map { |name| name.split }
 list  = arr2.map { |name| name.pop }
 
