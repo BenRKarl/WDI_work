@@ -1,18 +1,18 @@
-p I am Sam
+I am Sam
 
 I am Sam
 Sam I am
 
-That Sam-I-am
-That Sam-I-am
+That Sam Jammy
+That Sam Jammy
 I do not like
-that Sam-I-am
+that Sam Jammy
 
 Do you like
 green eggs and ham
 
 I do not like them,
-Sam-I-am.
+Sam Jammy.
 I do not like
 green eggs and ham.
 
@@ -26,7 +26,7 @@ anywhere.
 I do not like
 green eggs and ham.
 I do not like them,
-Sam-I-am
+Sam Jammy
 
 Would you like them
 in a house?
@@ -42,7 +42,7 @@ here or there.
 I do not like them
 anywhere.
 I do not like green eggs and ham.
-I do not like them, Sam-I-am.
+I do not like them, Sam Jammy.
 
 
 Would you eat them
@@ -57,7 +57,7 @@ Not with a mouse.
 I would not eat them here or there.
 I would not eat them anywhere.
 I would not eat green eggs and ham.
-I do not like them, Sam-I-am.
+I do not like them, Sam Jammy.
 
 Would you? Could you?
 in a car?
@@ -84,7 +84,7 @@ I do mot like them with a mouse
 I do not like them here or there.
 I do not like them anywhere.
 I do not like green eggs and ham.
-I do not like them, Sam-I-am.
+I do not like them, Sam Jammy.
 
 A train! A train!
 A train! A train!
@@ -99,7 +99,7 @@ I will not eat them with a mouse
 I will not eat them in a house.
 I will not eat them here or there.
 I will not eat them anywhere.
-I do not like them, Sam-I-am.
+I do not like them, Sam Jammy.
 
 
 Say!
@@ -128,7 +128,7 @@ green eggs and ham?
 
 I do not
 like them,
-Sam-I-am.
+Sam Jammy.
 
 Could you, would you,
 with a goat?
@@ -157,7 +157,7 @@ I do not like
 green eggs and ham!
 
 I do not like them,
-Sam-I-am.
+Sam Jammy.
 
 You do not like them.
 SO you say.
@@ -172,7 +172,7 @@ You will see.
 
 Say!
 I like green eggs and ham!
-I do!! I like them, Sam-I-am!
+I do!! I like them, Sam Jammy!
 And I would eat them in a boat!
 And I would eat them with a goat...
 And I will eat them in the rain.
@@ -191,4 +191,4 @@ I do so like
 green eggs and ham!
 Thank you!
 Thank you,
-Sam-I-am.
+Sam Jammy.

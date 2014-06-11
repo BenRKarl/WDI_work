@@ -1,10 +1,9 @@
-p I am Sam
+I am Sam
 
 I am Sam
 Sam I am
 
-That Sam-I-am
-That Sam-I-am
+
 I do not like
 that Sam-I-am
 
@@ -43,7 +42,6 @@ I do not like them
 anywhere.
 I do not like green eggs and ham.
 I do not like them, Sam-I-am.
-
 
 Would you eat them
 in a box?
@@ -86,8 +84,7 @@ I do not like them anywhere.
 I do not like green eggs and ham.
 I do not like them, Sam-I-am.
 
-A train! A train!
-A train! A train!
+
 Could you, would you
 on a train?
 
@@ -100,7 +97,6 @@ I will not eat them in a house.
 I will not eat them here or there.
 I will not eat them anywhere.
 I do not like them, Sam-I-am.
-
 
 Say!
 In the dark?
