@@ -1,7 +1,7 @@
-p I am Sam
+I am Matt
 
-I am Sam
-Sam I am
+I am Matt
+Matt I am
 
 That Sam-I-am
 That Sam-I-am
@@ -92,7 +92,7 @@ Could you, would you
 on a train?
 
 Not on a train! Not in a tree!
-Not in a car! Sam! Let me be!
+Not in a car! Matt! Let me be!
 I would not, could not, in a box.
 I could not, would not, with a fox.
 I will not eat them with a mouse
@@ -117,7 +117,7 @@ in the rain?
 I would not, could not, in the rain.
 Not in the dark. Not on a train,
 Not in a car, Not in a tree.
-I do not like them, Sam, you see.
+I do not like them, Matt, you see.
 Not in a house. Not in a box.
 Not with a mouse. Not with a fox.
 I will not eat them here or there.
@@ -165,7 +165,7 @@ Try them! Try them!
 And you may.
 Try them and you may I say.
 
-Sam!
+Matt!
 If you will let me be,
 I will try them.
 You will see.
