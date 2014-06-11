@@ -1,8 +1,23 @@
 //Validate the Name. It should return true if the name is greater than or equal 3 characters. If not, it should show the error and return false.
-function validateName(name){}
+function validateName(name){
+  if (name.length >= 3) {
+    return true;
+  } else {
+    $("#user_name_error").css("display", "inline");
+    return false;
+  }
+}
 
 // Validate the Age. It should return true if the age is a number. If not, it should show the error and return false.
-function validateAge(age){}
+function validateAge(age){
+  var checkAge = /^\d{1,3}$/;
+  if (age.match(checkAge) !== null) {
+    return true;
+  } else {
+    $("#user_age_error").css("display", "inline");
+    return false;
+  }
+}
 
 // Validate the Phone Number. It should return true if the phone number matches the regular expression. If not, it should show the error and return false.
 function validatePhone(phone){}
@@ -11,7 +26,11 @@ function validatePhone(phone){}
 function validateEmail(email){}
 
 //Write a function so that when the clear button is clicked, any data being displayed is erased.
-function clearData(){}
+function clearData(){
+  $("#clear").on("click", function(){
+    $("input").html("").empty();
+  })
+}
 
 //Display function blanks out what is currently being displayed in the display_data area then displays the submitted user data as a list
 function display(){}
@@ -21,6 +40,7 @@ $(document).ready(function(){
   //Store the appropriate items you will be selecting from the DOM into variables for easy usage
 
   // Initially hide the errors.  Check the HTML to see how to select all the items that are error messages.
+  $("span").css("display", "none");
 
 
   //set event handler
