@@ -2,6 +2,7 @@
 function validateName(name){
   var regex = /[a-zA-Z]{3}/;
   if (regex.test(name)){
+    $("#user_name_error").hide();
     return true;
   } else {
     $("#user_name_error").show();
@@ -11,9 +12,9 @@ function validateName(name){
 
 // Validate the Age. It should return true if the age is a number. If not, it should show the error and return false.
 function validateAge(age){
-  debugger;
   var regex = /\d/;
   if (regex.test(age)){
+    $("#user_age_error").hide();
     return true;
   } else {
     $("#user_age_error").show();
@@ -23,18 +24,37 @@ function validateAge(age){
 
 // Validate the Phone Number. It should return true if the phone number matches the regular expression. If not, it should show the error and return false.
 function validatePhone(phone){
-  return true;
+  var regex = /\d{3}-\d{3}-\d{4}/;
+  if (regex.test(phone)){
+    $('#user_ph_error').hide();
+    return true;
+  } else {
+    $('#user_ph_error').show();
+    return false;
+  }
 }
 
 // Validate the Email. It should return true if the email matches the regular expression. If not, it should show the error and return false.
 function validateEmail(email){
-  return true;
+  var regex = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/
+  if (regex.test(email)){
+    $('#user_email_error').hide();
+    return true;
+  } else {
+    $('#user_email_error').show();
+    return false;
+  }
+
 }
 
 //Write a function so that when the clear button is clicked, any data being displayed is erased.
 function clearData(){
   var ul = $('#display_data');
+  var inputs = $('#user_name, #user_age, #user_ph, #user_email');
+  var spans = $('span');
   ul.html("");
+  inputs.val("");
+  spans.hide();
 }
 
 //Display function blanks out what is currently being displayed in the display_data area then displays the submitted user data as a list
