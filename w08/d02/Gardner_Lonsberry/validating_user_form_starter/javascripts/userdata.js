@@ -18,15 +18,35 @@ function display(){}
 
 
 $(document).ready(function(){
+  $add_user_data_form = $('#add_user_data')
+
+
   //Store the appropriate items you will be selecting from the DOM into variables for easy usage
 
-  // Initially hide the errors.  Check the HTML to see how to select all the items that are error messages.
 
 
+$('#user_email_error').hide()  // Initially hide the errors.  Check the HTML to see how to select all the items that are error messages.
+$('#user_name_error').hide()
+$('#user_age_error').hide()
+$('#user_ph_error').hide()
   //set event handler
   $add_user_data_form.submit(function(){
     //Get values from user inputs
+var user_name = $('#user_name').val();
+// $('#user_name').attr('#user_name');
+// $('user_name').html(value);
+// $("#user_name").keyup(function(){
 
+
+$(".submit").on("click", function(){
+
+})
+
+    drop: function(e, dropped){
+      admireKitten(dropped.draggable.attr('src'));
+    },
+    hoverClass: "drop-hover"
+  })
     // If all of the items validate, you should update the name, age, phone and email of the user and display it
     if(validateName() && validateAge() && validatePhone() && validateEmail()) {
       display();

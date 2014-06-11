@@ -20,6 +20,8 @@ binding.pry
 # samcount = text.scan(/Sam[^-]/).count
 # save_as('samcount.txt', samcount)
 
+# I do not like them( .*)$
+  
 # samjammy = puts text.gsub(/Sam-I-Am/, "Sam Jammy")
 
  # samjammy = text.gsub("Sam-I-am", "Sam Jammy")
