@@ -1,8 +1,9 @@
 var kittenCollection = new KittenCollection();
 function presentKittenForJudgement(){
-  var kittenModel = new KittenModel()
-  var kittenView  = new KittenView(kittenModel)
-  kittenView.render().el.hide().appendTo($('.kitten-presenter')).fadeIn().draggable();
+function presentKittenForJudgement(){
+  var kittenModel = new KittenModel();
+  var kittenView  = new KittenView(kittenModel);
+  kittenView.render().el.hide().appendTo($('.kitten-presenter')).fadeIn(1000).draggable();
 }
 
 function removeKitten(el){
@@ -33,7 +34,6 @@ function setEventHandlers(){
       console.log('meow')
     }
   })
-
 
 }
 

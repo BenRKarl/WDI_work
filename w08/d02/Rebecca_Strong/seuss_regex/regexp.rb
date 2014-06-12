@@ -16,3 +16,10 @@ text = f.read
 f.close
 
 binding.pry
+
+# def count_sams(text)
+#   result_array = text.scan(/(?!Sam-I-am)(Sam)/)
+#   puts "I am Rebecca and I counted #{result_array.length} Sams!"
+# end
+
+# count_sams(text)
