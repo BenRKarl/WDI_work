@@ -7,8 +7,14 @@ class WizardsController < ApplicationController
   end
 
   def create
-    @wizard = Wizard.create(wizard_params)
-    redirect_to login_path
+    @wizard = Wizard.new(wizard_params)
+
+    if @wizard.save
+      redirect_to login_path
+    else
+      render :new
+    end
+    
   end
 
   def profile
