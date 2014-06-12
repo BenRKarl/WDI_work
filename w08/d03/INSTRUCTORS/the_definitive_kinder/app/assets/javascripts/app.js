@@ -26,6 +26,8 @@ function setEventHandlers(){
   $(".meow").droppable({
     drop: function(e, dropped){
       admireKitten(dropped.draggable.attr('src'));
+      removeKitten(dropped.draggable);
+      presentKittenForJudgement();
     },
     hoverClass: "drop-hover"
   })
