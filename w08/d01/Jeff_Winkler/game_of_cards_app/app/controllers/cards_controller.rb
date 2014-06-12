@@ -11,7 +11,13 @@ class CardsController < ApplicationController
     #cards = Card.get_flush
     #cards = Card.get_jq
     #cards = Card.three_seven
-    cards = Card.get_straight
+    #cards = Card.get_straight
+    cards = cards.sample(5)
+    suits = []
+    cards.each do |card|
+      suits << card.suit
+    end
+    @flush = Card.flush?(suits)
     respond_to do |format|
       format.html
       format.json {render json: cards.to_json}
