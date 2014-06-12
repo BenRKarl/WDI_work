@@ -84,3 +84,6 @@ li {
 	border-bottom:1px dotted #ccc;
 	padding:2px;
 }
+.error {
+	display: none;
+}
