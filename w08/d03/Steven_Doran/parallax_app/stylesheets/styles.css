@@ -1,0 +1,39 @@
+body {
+   height: 1000em;
+   padding: 0;
+   margin: 0;
+}
+
+img{
+   position: relative;
+}
+
+.spaceship-box{
+   max-width: 100%;
+   overflow: hidden;
+}
+
+p {
+   margin: 0;
+   padding: 0;
+   color: white;
+   text-align: center;
+}
+
+.information-block{
+   background-color: darkgreen;
+   height: 8em;
+   margin: 0;
+   padding: 0;
+}
+
+.flying-image {
+   float:right;
+}
+
+.image-banner {
+   height: 15em;
+   overflow: hidden;
+   margin: 0;
+   padding: 0;
+}
