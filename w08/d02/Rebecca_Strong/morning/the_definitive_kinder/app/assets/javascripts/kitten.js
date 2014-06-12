@@ -38,5 +38,11 @@ function KittenCollection(){
 
 KittenCollection.prototype.add = function(kitten){
 
+$.ajax({
+url: '/kittens',
+
+
+})
+KittenCollection
 
 }
