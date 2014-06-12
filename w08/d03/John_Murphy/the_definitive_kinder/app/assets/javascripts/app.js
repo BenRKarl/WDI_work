@@ -1,6 +1,5 @@
 var kittenCollection = new KittenCollection();
 function presentKittenForJudgement(){
-function presentKittenForJudgement(){
   var kittenModel = new KittenModel();
   var kittenView  = new KittenView(kittenModel);
   kittenView.render().el.hide().appendTo($('.kitten-presenter')).fadeIn(1000).draggable();

@@ -45,7 +45,8 @@ $(function(){
     _.each(pokemon.findAllTypes(), function(type){
       $('#poke-bin').append($('<div>').addClass('pokeball').html(type))
         $('.pokeball').on('click', function(event){
-    console.log(event.target)
+    console.log(event.targetls
+      l)
     // _each.(foundPokemonByType(event.target.html), function(monster){
       // event.target.append($('<img>').attr('src', monster.img))
     // })
