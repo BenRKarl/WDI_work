@@ -32,3 +32,93 @@ Your job is to fill in each of the functions stubbed out in the `pokemon.js` fil
 
 
 ---
+
+##Group Rails Single Model C.R.U.D.
+
+---
+
+##Stage 1
+- Decide on your TEAM's CRUD application's single model
+- Pick your team's:
+	- President
+	- Captain
+	- Leader
+
+---
+
+##Stage 2
+
+###Captain
+- Create a new rails application
+- `git init`
+- Create your controller
+- Write all your crud app's empty actions:
+
+####For Example:
+```ruby
+
+def index
+end
+
+def show
+end
+
+def create
+end
+
+```
+
+- git add, commit
+
+
+###Leader
+- Create a new github repository
+- Add your team members to the repo as collaborators
+
+###President
+- Create a Trello board
+- Create user stories for your CRUD application
+- Share the Trello board with your group members
+
+---
+
+####STAND-UP!
+
+---
+
+##Stage 3
+
+###TEAM - Sync up with Github!
+- Get the project on github and on everyone's computer
+
+---
+
+#####***NOTE:  From this point on, you git add, commit, & push EVERYTIME a task is completed, i.e. OFTEN***
+
+---
+
+##Stage 4
+
+###Captain
+- Get the project on heroku
+
+###Leader
+- Implement `index`, `new`, `create` actions
+- Implement the corresponding views
+
+###President
+- Implement `show`, `edit`, `update`, `destroy` actions
+- Implement the corresponding views
+
+---
+
+####STAND-UP!
+
+---
+
+##Stage 5
+- Distribute the following tasks:
+	- Refactor the `new` and `edit` page to use a `_form` partial
+	- Edit the Readme for the project
+	- Get it all working on Heroku
+	- Style

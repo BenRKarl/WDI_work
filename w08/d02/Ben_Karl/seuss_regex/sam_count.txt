@@ -1,0 +1,3 @@
+> save_as('sam_count.txt', text.scan(/Sam[^\-I-am]/).count)
+
+6

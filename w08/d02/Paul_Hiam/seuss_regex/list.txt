@@ -1,0 +1,8 @@
+box
+fox
+house
+mouse
+tree
+boat
+goat
+train

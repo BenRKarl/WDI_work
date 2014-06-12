@@ -1,0 +1,3 @@
+[["house"], ["mouse"], ["box"], ["fox"], ["car"], ["tree"], ["train"], ["goat"], ["boat"], ["dark"], ["rain"]]
+
+#"anywhere" and #"here and there" aren't really places.  

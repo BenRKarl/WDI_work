@@ -61,5 +61,25 @@ class Card < ActiveRecord::Base
 
   end
 
+  def self.flush?(suits)
+    return suits.uniq.length == 1
+  end
+
+
+  def self.flushold(cards)
+    first_suit = cards[0].suit
+    check = 0
+    cards.each do |card|
+      if card.suit != first_suit
+        check = 1
+      end
+    end
+    if check == 0
+      return true
+    else
+      return false
+    end
+  end
+
 
 end
