@@ -1,4 +1,4 @@
-// var kittenCollection = new KittenCollection();
+var kittenCollection = new KittenCollection();
 
 function presentKittenForJudgement() {
   var kittenModel = new KittenModel();
@@ -10,8 +10,8 @@ function removeKitten(el) {
   el.fadeOut(1000).remove();
 }
 
-function admireKitten() {
-  var kitten = new KittenModel(url);
+function admireKitten(url) {
+  var kitten = new KittenModel({url: url});
   kittenCollection.add(kitten);
 }
 
@@ -27,6 +27,8 @@ function setEventHandlers() {
     $('.meow').droppable({
     drop: function(e, dropped) {
       admireKitten(dropped.draggable.attr('src'));
+      removeKitten(dropped.draggable);
+      presentKittenForJudgement();
     },
     hoverClass: "drop-hover"
   })
