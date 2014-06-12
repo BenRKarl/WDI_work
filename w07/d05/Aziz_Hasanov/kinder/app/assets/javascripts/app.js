@@ -1,4 +1,4 @@
-// var kittenCollection = new KittenCollection();
+var kittenCollection = new KittenCollection();
 
 function presentKittenForJudgement() {
   var kittenModel = new KittenModel();
@@ -11,7 +11,7 @@ function removeKitten(kitten) {
 }
 
 function admireKitten(url) {
-  var kitten = new KittenModel(url);
+  var kitten = new KittenModel({url: url});
   kittenCollection.add(kitten);
 }
 
