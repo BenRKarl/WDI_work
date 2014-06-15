@@ -1,0 +1,9 @@
+source "http://rubygems.org"
+
+gem 'sinatra'
+gem 'sinatra-reloader'
+gem 'pry'
+gem 'pg'
+gem 'httparty'
+gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
+gem 'omniauth-twitter'

@@ -1,0 +1,48 @@
+body {
+  background-color: black;
+}
+#rim {
+ margin: 0 auto;
+  text-align: center;
+  color: lime;
+  width: 410px;
+  height: 410px;
+  border-radius: 50%;
+  border: 10px solid lime;
+  position: relative;
+  background: url(http://static.tumblr.com/hpfjqvd/hybm9ah0g/tumblr_m8kljqwmcy1rb4atao4_250.png);
+  background-size: cover;
+}
+#sec {
+  margin: 0 auto;
+  width: 4px;
+  height: 200px;
+  background-color: green;
+  position: absolute;
+  left: 203px;
+  top: 0px;
+}
+#min {
+  margin: 0 auto;
+  width: 10px;
+  height: 180px;
+  background-color: limegreen;
+  position: absolute;
+  left: 200px;
+  top: 20px;
+  /*transform: rotate(0deg);
+  transform-origin:bottom;
+  -webkit-transform: rotate(0deg);
+  -webkit-transform-origin: bottom;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);*/
+
+}
+#hour {
+  margin: 0 auto;
+  width: 15px;
+  height: 140px;
+  background-color: lime;
+  position: absolute;
+  left: 198px;
+  top: 60px;

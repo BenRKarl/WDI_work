@@ -1,0 +1,8 @@
+ Card.where(name: "ace")
+ Card.where(suit: "spades")
+ Card.where(name: "jack")
+ Card.where(suit: "hearts")
+ Card.order(:name)
+
+ Card.where("name = ? OR name = ?", "jack", "queen")
+Card.where(name: "3".."7") 

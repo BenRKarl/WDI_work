@@ -1,0 +1,62 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+
+
+
+
+
+
+console.log('Let Us Put Stuff Here')
+
+var mta = {
+  networkData: {}, //store station strings key value pair in here
+  getLineData: function(lineName, callback){
+    //make ajax request and place info into mta network data
+  }
+};
+
+function displayStationList(lineName, listCssSelector){
+
+  //code to clear and display a line's stations
+  //put the clicked lines data on screen
+}
+
+$(function(){
+
+  $('.line').on('click', function(e){
+    //obtain lines name that was clicked
+    //var lineName = ?
+
+    mta.getLineData(lineName, function(){
+      displayStationList(lineName, '.stations-list')
+    })
+  })
+
+})

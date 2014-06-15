@@ -1,0 +1,124 @@
+
+/*
+ *= require jquery.ui.all
+ *= require_tree .
+ *= require_self
+ */
+
+
+body {
+  margin: 0;
+}
+
+* {
+  font-family: 'Roboto';  
+}
+ 
+.container {
+  min-width: 750px;
+  max-width: 900px;
+  min-height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.left, .right {
+  float: left;
+  width: 33%;
+  height: 300px;
+  background-color: #fff;
+}
+
+.picture {
+  width: 34%;
+  height: 300px;
+  min-width: 250px;
+  float: left;
+  background-color: none;
+  text-align: center;
+
+}
+
+.picture img {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);  
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.buttons {
+  margin: 20px 0 0 0;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fe4b03; 
+}
+
+.meow, .not-meow {
+  margin: 0 20px;
+}
+.meow:hover, .not-meow:hover {
+  cursor: pointer;
+}
+
+header {
+  overflow: auto;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 20px 0 30px 30px;
+  color: #fe4b03;
+  width: 150px;
+  float: left;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #fe4b03;
+}
+
+.choice { 
+  width: 100px;
+  position: absolute;
+  z-index: 1;
+  margin: 55px 0 0 45%;
+  text-align: center; 
+  font-size: 30px;
+  color: #fe4b03;
+  font-weight: bold;
+}
+
+/* Index page */
+.matches {
+  max-width: 980px;
+  min-width: 740px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin: 0 0 20px 20px;
+}
+
+img.match {
+  width: 200px;
+  margin: 10px 20px;
+}
+
+header h3 {
+  width: 200px;
+  float: right;
+  margin: 30px 20px 0 0;
+}
+
+h3 a {
+  text-decoration: none;
+  color: #555;
+}
+
+h3 a:hover {
+  color: #777;
+}
