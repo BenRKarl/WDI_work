@@ -8,7 +8,9 @@ end
 post '/submit' do
   query = params.map do |key, value|
     "#{key}=#{value}"
-  end.join("&")
+
+    binding.pry
+  end
   redirect "/success?#{query}"
 end
 
