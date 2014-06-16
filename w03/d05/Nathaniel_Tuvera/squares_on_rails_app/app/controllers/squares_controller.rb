@@ -10,7 +10,7 @@ class SquaresController < ApplicationController
   def create
     # new_square = Square.create({:side_length => params[:side], :border_radius => params[:border], :color => params[:color]})
     # new_square = Square.create(params.require().permit(:side_length, :border_radius, :color))
-    new_sqaure = Square.create(square_params)
+    new_square = Square.create(square_params)
     redirect_to "/squares/#{new_square.id}"
   end
 
