@@ -54,7 +54,7 @@ psql gutenberg < three_tables.sql
 ```
 psql
 \c gutenberg
-SELECT count(*) FROM work_count;
+SELECT count(*) FROM word_counts;
 
 ```
 #### *** Takes Some Time ***
