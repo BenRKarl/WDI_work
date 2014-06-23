@@ -9,12 +9,13 @@
 #### *** Takes Some Time ***
 
 ###Move Them!
-- Place the two files your `~/code/wdi/` director (i.e. NOT the class repository.)
+- Place the sql.zip in your `~/code/wdi/` director (i.e. NOT the class repository.)
 
 ###Unzip Them!
 
 ```bash
 
+cd ~/code/wdi/
 unzip sql.zip
 tar -xjf three_tables.tbz2
 ```
