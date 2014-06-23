@@ -24,6 +24,22 @@ function KittenCollection() {
   this.kittens = {};
 }
 
+KittenCollection.prototype.fetch = function() {
+  var that = this;
+  $.ajax({
+    url: "/kittens",
+    method: "get",
+    dataType: "json",
+    success: function(data) {
+      $.each(data, function(i, datum) {
+        var kitten = new KittenModel(datum);
+        that.kittens[kitten.id] = kitten;
+      });
+      $(that).trigger("change");
+    }
+  })
+}
+
 KittenCollection.prototype.add = function(kitten) {
   var that = this;
   $.ajax({
@@ -35,6 +51,10 @@ KittenCollection.prototype.add = function(kitten) {
       // console.log(data);
       var kitten = new KittenModel(data);
       that.kittens[kitten.id] = kitten;
+      $(that).trigger("change");
     }
   })
 }
+
+
+
