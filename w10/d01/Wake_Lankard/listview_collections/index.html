@@ -8,10 +8,21 @@
     <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
     <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+<!--templates -->
+    <script type="text/template" id="ingredient-template">
+      name: <%- ingredient.name %>, amount: <%- ingredient.amount %> 
+    </script>
+
+
     <!--  Da App -->
     <script type="text/javascript" src='javascripts/app.js'></script>
+
   </head>
   <body>
+    <ul id="ingredient-list">
+    </ul>
+
+
   </body>
 
 </html>
