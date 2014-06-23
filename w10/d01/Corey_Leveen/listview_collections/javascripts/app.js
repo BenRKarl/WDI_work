@@ -44,11 +44,6 @@ $(function(){
   var listView = new IngredientListView({collection: ingredients, el: $('#ingredient-list')});
   var tumeric = new Ingredient({name: 'tumeric', amount: 30});
   ingredients.add(tumeric);
-  ingredients.on('add', function(){
-    listView.render();
-  });
-  ingredients.on('remove', function(){
-    listView.render();
-  });
+
 })
 
