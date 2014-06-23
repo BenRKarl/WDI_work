@@ -6,6 +6,8 @@
 ###Download Them
 - https://www.dropbox.com/sh/fw6acwf5bwlao60/AADNw74Od9rsrfqp101JnCZQa
 
+#### *** Takes Some Time ***
+
 ###Move Them!
 - Place the two files your `~/code/wdi/` director (i.e. NOT the class repository.)
 
@@ -13,8 +15,12 @@
 
 ```bash
 
-tar -xjf big_table.tbz2
+unzip sql.zip
+tar -xjf three_tables.tbz2
 ```
+
+#### *** Takes Some Time ***
+
 
 ###Create a `gutenburg` database
 
@@ -29,11 +35,23 @@ CREATE DATABASE gutenburg;
 
 ```bash
 
-psql gutenburg < big_table.sql
+psql gutenburg < sql.sql
 ```
-###THIS MAY TAKE A LONG TIME!!!
+
+#### *** Takes Some Time ***
 
 ---
 
-###There errors do not matter at this time:
+###These errors do not matter at this time:
 - `ERROR:  role does not exist`
+
+---
+
+###Verify Success!
+
+```
+psql
+\c gutenburg
+SELECT count(*) FROM books;
+
+```
