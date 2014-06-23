@@ -3,7 +3,7 @@
 - https://www.dropbox.com/sh/fw6acwf5bwlao60/AADNw74Od9rsrfqp101JnCZQa
 
 ###Move Them!
-- Place the two files your ~/code/wdi/ director (i.e. NOT the class repository.)
+- Place the two files your `~/code/wdi/` director (i.e. NOT the class repository.)
 
 ###Unzip Them!
 
