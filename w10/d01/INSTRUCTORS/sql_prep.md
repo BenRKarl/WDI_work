@@ -54,9 +54,10 @@ psql gutenberg < three_tables.sql
 ```
 psql
 \c gutenberg
-SELECT count(*) FROM books;
+SELECT count(*) FROM work_count;
 
 ```
+#### *** Takes Some Time ***
 
 ##Should be: `132706698`
 
