@@ -15,6 +15,27 @@
  *= require_self
  */
 
+<<<<<<< HEAD
+
+.rate {
+   width: 33%;
+   height: 500px;
+   float: left;
+}
+
+.meow {
+   background-color: green;
+}
+
+.not-meow {
+   background-color: red;
+}
+
+.kitten-presenter {
+   background-color: lightblue;
+}
+
+=======
 .rate{
   width: 33%;
   height: 500px;
@@ -37,3 +58,4 @@
 
 
 
+>>>>>>> b7e7a7d102bdf6bf63402721797d5d7cea783a68
