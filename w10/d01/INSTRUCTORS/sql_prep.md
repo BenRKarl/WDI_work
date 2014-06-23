@@ -10,7 +10,6 @@
 ```bash
 
 tar -xjf big_table.tbz2
-
 ```
 
 ###Create a `gutenburg` database
@@ -20,7 +19,6 @@ tar -xjf big_table.tbz2
 psql
 CREATE DATABASE gutenburg;
 \q
-
 ```
 
 ###Load in the sql dump data
@@ -28,7 +26,6 @@ CREATE DATABASE gutenburg;
 ```bash
 
 psql gutenburg < big_table.sql
-
 ```
 
 #THIS MAY TAKE A LONG TIME
