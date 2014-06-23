@@ -1,4 +1,4 @@
-##The Gutenburg Prep
+##The Gutenberg Prep
 
 ---
 
@@ -23,12 +23,12 @@ tar -xjf three_tables.tbz2
 #### *** Takes Some Time ***
 
 
-###Create a `gutenburg` database
+###Create a `gutenberg` database
 
 ```bash
 
 psql
-CREATE DATABASE gutenburg;
+CREATE DATABASE gutenberg;
 \q
 ```
 
@@ -36,7 +36,7 @@ CREATE DATABASE gutenburg;
 
 ```bash
 
-psql gutenburg < three_tables.sql
+psql gutenberg < three_tables.sql
 ```
 
 #### *** Takes Some Time ***
@@ -53,7 +53,7 @@ psql gutenburg < three_tables.sql
 
 ```
 psql
-\c gutenburg
+\c gutenberg
 SELECT count(*) FROM books;
 
 ```
