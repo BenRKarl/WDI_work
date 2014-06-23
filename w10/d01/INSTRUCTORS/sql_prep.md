@@ -35,7 +35,7 @@ CREATE DATABASE gutenburg;
 
 ```bash
 
-psql gutenburg < sql.sql
+psql gutenburg < three_tables.sql
 ```
 
 #### *** Takes Some Time ***
