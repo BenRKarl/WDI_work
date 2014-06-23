@@ -42,7 +42,7 @@ var JuiceView = Backbone.View.extend({
   render: function(){
     //this.$el.html(this.template({ juice: this.model.get('name')}));
    this.$el.html(this.template({ juice: this.model.toJSON()}));
-    var listView = new IngredientListView({collection: this.model.attributes.ingredients, el: $('#ingredient-list')})
+    var listView = new IngredientListView({collection: this.model.attributes.ingredients, el: $('#juice_name')})
     listView.render();
 
     return this;
@@ -60,7 +60,7 @@ $(function(){
   var cabbage = new Ingredient({name: 'cabbage', amount: 1 });
   ingredients.add(cabbage);
 
-  var listView = new IngredientListView({collection: ingredients, el: $('#ingredient-list')})
+  //var listView = new IngredientListView({collection: ingredients, el: $('#ingredient-list')})
   var tumeric = new Ingredient({name: 'tumeric', amount: 30});
   // listView.collection.add(tumeric);
   // listView.collection.remove(strawberry);

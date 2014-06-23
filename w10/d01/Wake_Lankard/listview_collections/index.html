@@ -9,12 +9,13 @@
     <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
 <!--templates -->
-    <script type="text/template" id="ingredient-template">
-      name: <%- ingredient.name %>, amount: <%- ingredient.amount %> 
-    </script>
+
     <script type="text/template" id="juice-template">
       Juice name: <%- juice.name %> 
-      
+
+  
+     
+      ingredients: <%- ingredient.name %>, amount: <%- ingredient.amount %> 
     </script>
 
 
@@ -23,8 +24,7 @@
 
   </head>
   <body>
-    <ul id="ingredient-list">
-    </ul>
+
       <ul id="juice-name">
     </ul>
 
