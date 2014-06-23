@@ -7,7 +7,7 @@ Congratulations on joining us at General Assembly for the Web Development Immers
 
 ---
 
-#We are: 
+#We are:
 ![image](./WDIProto.png)
 
 ---
@@ -21,7 +21,7 @@ Congratulations on joining us at General Assembly for the Web Development Immers
 * <andrew@generalassemb.ly>
 
 
-###Matt Marcello 
+###Matt Marcello
 * <matt.marcello@generalassemb.ly>
 
 ---
@@ -31,9 +31,5 @@ Congratulations on joining us at General Assembly for the Web Development Immers
 - [Two Model Rails 4 CRUD](http://youtu.be/u4V4uPb9K2A)
 - [One Model Rails 4 CRUD with_form partial](http://youtu.be/m8ssT1G2Gtg)
 - [TDD Hangman in Javascript](http://www.youtube.com/playlist?list=PLb_aHcWo1ZgL7d57z7jsshrYQlmZZJ10C) and [git repository](https://github.com/Trevoke/tdd-js-hangman)
-
-
-
-
-
-
+- [Scratch My Backbone](http://youtu.be/lfDVSjwYxVc)
+- [Backbone_0_one](http://youtu.be/kmC2b6NDBn0)
