@@ -39,5 +39,12 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'jquery-ui-rails'
+<<<<<<< HEAD
+gem 'pry'
+
+
+
+=======
+>>>>>>> b7e7a7d102bdf6bf63402721797d5d7cea783a68
 
 
