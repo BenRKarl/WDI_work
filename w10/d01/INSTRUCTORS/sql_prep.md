@@ -31,7 +31,9 @@ CREATE DATABASE gutenburg;
 
 psql gutenburg < big_table.sql
 ```
+###THIS MAY TAKE A LONG TIME!!!
 
-#THIS MAY TAKE A LONG TIME
-###Does not matter here: `ERROR:  role "aldric" does not exist`
+---
 
+###There errors do not matter at this time:
+- `ERROR:  role does not exist`
