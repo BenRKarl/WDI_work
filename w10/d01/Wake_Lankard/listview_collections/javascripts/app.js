@@ -22,7 +22,7 @@ var IngredientListView = Backbone.View.extend({
   render: function(){
     var that = this;
     this.$el.empty();
-    _.each(this.collection.models,function(ingredient){
+    _.each(this.collection.models, function(ingredient){
       var ingredientView = new IngredientView({model: ingredient});
       that.$el.append(ingredientView.render().el);
     });
@@ -36,10 +36,21 @@ var JuiceCollection = Backbone.Collection.extend({
   model: Juice
 });
 
+var JuiceView = Backbone.View.extend({
+
+  template: _.template($("#juice-template").html()),
+  render: function(){
+    //this.$el.html(this.template({ juice: this.model.get('name')}));
+   this.$el.html(this.template({ juice: this.model.toJSON()}));
+
+    return this;
+  }
+})
+
 
 $(function(){
   var ingredients = new IngredientCollection();
-  var strawberry = new Ingredient({name: 'straberry', amount: 13});
+  var strawberry = new Ingredient({name: 'strawberry', amount: 13});
   ingredients.on('add',function(){console.log("something was added")});
   ingredients.add(strawberry);
   ingredients.on('remove',function(){console.log("we lost one")});
@@ -49,8 +60,19 @@ $(function(){
 
   var listView = new IngredientListView({collection: ingredients, el: $('#ingredient-list')})
   var tumeric = new Ingredient({name: 'tumeric', amount: 30});
-  listView.collection.add(tumeric);
-  listView.collection.remove(strawberry);
+  // listView.collection.add(tumeric);
+  // listView.collection.remove(strawberry);
+
+  var juices = new JuiceCollection();
+  var juice1 = new Juice({name: 'Big Juice', ingredients: ingredients});
+
+  juices.add(juice1);
+  var juiceView = new JuiceView({model: juice1, el: $('#juice-name')});
+debugger;
+
+  juiceView.render();
+
+
 
 
 })
