@@ -30,3 +30,17 @@ Build out functionality for a:
 	- renders all juice views
 
 You do not need to build a UI for the creation of these objects.  Create some of them in a window onload callback to verify that they are working.
+
+---
+
+##Videos:
+
+###Scratch My Backbone
+- A relativly brief intro to backbone Model + View
+- http://youtu.be/lfDVSjwYxVc
+
+###Backbone_0_one
+- Backbone Model, View, & Collection
+- http://youtu.be/kmC2b6NDBn0
+
+---
