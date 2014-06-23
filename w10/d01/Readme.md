@@ -27,6 +27,6 @@ Build out functionality for a:
 	- creates new IngredientListView and passe the JuiceView's ul as the el of the IngredientListView.
 	- calls render on the new ingredient list view.
 - JuiceListView
+	- renders all juice views
 
-
----
+You do not need to build a UI for the creation of these objects.  Create some of them in a window onload callback to verify that they are working.
