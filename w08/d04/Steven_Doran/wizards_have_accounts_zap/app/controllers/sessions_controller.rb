@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
   def create #login
 
     wizard = login(params[:email], params[:password])
-
     if wizard
       redirect_to root_path
     else

@@ -8,7 +8,7 @@ class WizardsController < ApplicationController
 
   def create
     @wizard = Wizard.new(wizard_params)
-
+    binding.pry
     if @wizard.save
       redirect_to login_path
     else
