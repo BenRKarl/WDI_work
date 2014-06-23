@@ -47,6 +47,7 @@ psql gutenburg < three_tables.sql
 
 ---
 
+
 ###Verify Success!
 
 ```
@@ -55,3 +56,9 @@ psql
 SELECT count(*) FROM books;
 
 ```
+
+##Should be: `132706698`
+
+---
+
+###Thank you
