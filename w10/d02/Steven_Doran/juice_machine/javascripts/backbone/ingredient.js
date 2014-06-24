@@ -1,3 +1,4 @@
+
 // *** INGREDIENT MODEL ***
 
 var Ingredient = Backbone.Model.extend({
