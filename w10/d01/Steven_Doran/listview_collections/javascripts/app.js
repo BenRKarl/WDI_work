@@ -1,3 +1,5 @@
+// *** INGREDIENT ***
+
 var Ingredient = Backbone.Model.extend({});
 
 var IngredientCollection = Backbone.Collection.extend({
@@ -21,6 +23,7 @@ var IngredientListView = Backbone.View.extend({
    render: function(){
       var that = this;
       this.$el.empty();
+
       _.each(this.collection.models, function(ingredient){
          var ingredientView = new IngredientView({model: ingredient});
          that.$el.append(ingredientView.render().el);
@@ -29,25 +32,77 @@ var IngredientListView = Backbone.View.extend({
    }
 })
 
+// *** JUICE ***
+
+// var Juice = Backbone.Model.extend({
+//    ingredients: IngredientCollection
+// });
+
+// var JuiceCollection = Backbone.Collection.extend({
+//    model: Juice
+// });
+
+// var JuiceView = Backbone.View.extend({
+
+//    template: _.template($('#juice-template').html()),
+//    render: function(){
+
+//       var juices = this.$el.html(this.template());
+//       $('body').append(juices)   
+
+
+
+//       var listView = new IngredientListView({collection: this.model.attributes.ingredients, el: this.template()})
+//       listView.render();
+//       return this;
+//    }
+// })
+
+// var JuiceListView = Backbone.View.extend({
+//    render: function(){
+//       var that = this;
+//       this.$el.empty();
+
+//       _.each(this.collection.models, function(juice){
+//          var juiceView = new JuiceView({model: juice});
+//          that.$el.append(juiceView.render().el);
+//       });
+//       return this;
+//    }
+// })
+
+
+//  *** ON LOAD ***
 
 $(function(){
-   var ingredients = new IngredientCollection();
+    juiceIngredients = new IngredientCollection();
    var strawberry = new Ingredient({name: 'strawberry', amount: 13});
 
-   ingredients.on('add', function(){console.log('something was added')});
-   ingredients.add(strawberry);
+   juiceIngredients.on('add', function(){console.log('something was added')});
+   juiceIngredients.add(strawberry);
 
-   ingredients.on('remove', function(){console.log('something was removed')});
-   // ingredients.remove(strawberry);
+   juiceIngredients.on('remove', function(){console.log('something was removed')});
+   // juiceIngredients.remove(strawberry);
 
    var cabbage = new Ingredient({name: 'cabbage', amount: 1})
-   ingredients.add(cabbage);
+   juiceIngredients.add(cabbage);
 
-   var listView = new IngredientListView({collection: ingredients, el: $("#ingredient-list")});
+   var listView = new IngredientListView({collection: juiceIngredients, el: $("#ingredient-list")});
    var turmeric = new Ingredient({name: 'turmeric', amount: 30});
-   listView.collection.add(turmeric);
+   juiceIngredients.add(turmeric);
 
    setTimeout(function(){
-      listView.collection.remove(strawberry)
+      juiceIngredients.remove(strawberry)
    },1500);
+
+   //  grossJuice = new Juice({name: "Gross Juice", ingredients: juiceIngredients});
+   //  goodJuice = new Juice({name: 'Good Juice', ingredients: juiceIngredients})
+   //  juiceCollection = new JuiceCollection();
+   // juiceCollection.add(grossJuice);
+   // juiceCollection.add(goodJuice);
+
+   // var collectionView = new JuiceListView({collection: juiceCollection, el: $("#ingredient-list")});
+   // collectionView.render();
+
+
 })
