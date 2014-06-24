@@ -1,29 +1,24 @@
-$(function(){
-  console.log("hello")
 
-  // Set up a setInterval that runs every second, minute, hour (1000ms = 1s).
-  function moveSecond() {
-    var second = setInterval(clockAnimate("second-hand"), 1000);
-    return second;
-  }
-  moveSecond();
-
-  function moveMinute() {
-    var minute = setInterval(clockAnimate("minute-hand"), 60000);
-  }
-  moveMinute();
-
-  function moveHour() {
-    var hour = setInterval(clockAnimate("hour-hand"), 3600000);
-  }
-  moveHour();
-
+$(function() {
+  // Set up a setInterval that runs every second (1000ms).
   // It should call an animate function that moves the clock hands.
-  function clockAnimate(hand) {
-    // var clockHand = document.getElementById(hand);
-    var moveIt = $("#"+hand).css("transform", "rotate(6deg)");
-  }
-
   // It may be necessary to keep track of elapsed seconds in a variable.
+  var secondCount = 0;
+  setInterval(function() {
+    secondCount += 6;
+    $('#second-hand').css('transform', 'rotate(' + secondCount + 'deg)')
+  }, 1000);
 
+  var minuteCount = 0;
+  setInterval(function() {
+    minuteCount += 6;
+    $('#minute-hand').css('transform', 'rotate(' + minuteCount + 'deg)')
+  }, 60000);
+
+
+  var hourCount = 0;
+  setInterval(function() {
+    hourCount += 30;
+    $('#hour-hand').css('transform', 'rotate(' + hourCount + 'deg)')
+  }, 3600000);
 })
