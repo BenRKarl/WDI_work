@@ -21,7 +21,7 @@ var IngredientListView = Backbone.View.extend({
   template: _.template('Juice Ingredients: '),
   render: function(){
     var that = this;
-    this.$el.empty();
+    // this.$el.empty();
     this.$el.append(this.template());
     _.each(this.collection.models, function(ingredient){
       var ingredientView = new IngredientView({model: ingredient});
@@ -59,7 +59,7 @@ var JuiceView = Backbone.View.extend({
 var JuiceListView = Backbone.View.extend({
   render: function(){
     var that = this;
-    _.each(this.models, function(juiceModel){
+    _.each(this.collection.models, function(juiceModel){
       var juiceMenu = new JuiceView({model: juiceModel});
       juiceMenu.render();
     });
