@@ -19,8 +19,9 @@ get '/stock/:ticker' do |ticker|
 end
 
 post '/stock/:ticker' do
-  ticker = params[:ticker]      # params[????]
-  redirect "/stock/#{params[ticker]}"
+  binding.pry
+  ticker = params[:ticker_name]      # params[????]
+  redirect "/stock/#{ticker}"
   end
 
 
