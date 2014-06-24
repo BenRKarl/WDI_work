@@ -4,12 +4,12 @@ class MoviesController < ApplicationController
 
   def search
     movie_name = params.fetch :name
-    @movies.sort_by! { |movie| movie.title}
-    @movie = Movie.find(movie_name)
-    @movies = [
-    Movie.new('The Matrix'),
-    Movie.new ('The Other Matrix')
-  ]
+    # @movies.sort_by! { |movie| movie.title}
+    # @movie = Movie.find(movie_name)
+  #   @movies = [
+  #   Movie.new('The Matrix'),
+  #   Movie.new ('The Other Matrix')
+  # ]
   end
 
   def show

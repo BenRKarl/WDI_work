@@ -36,7 +36,39 @@ function KittenCollection(){
 }
 
 
+KittenCollection.prototype.fetch = function(kitten){
+  $.ajax({
+    url: '/kittens',
+    method: 'get',
+    dataType: 'json',
+    success: function(data){
+      $.each(data, function(i, datum)
+{
+  var kitten = new KittenModel(datum);
+  that.kittens[kitten.id] = kitten;
+});
+      $(that).trigger('change')
+    }
+  })
+}
+
+
 KittenCollection.prototype.add = function(kitten){
 
+$.ajax({
+    url: '/kittens',
+    method: 'post',
+    dataType: 'json',
+    data: {kitten: kitten},
+
+    success: function(data){
+
+  var kitten = new KittenModel(data);
+  that.kittens[kitten.id] = kitten;
+      $(that).trigger('change');
+    }
+  })
+}
+KittenCollection
 
 }

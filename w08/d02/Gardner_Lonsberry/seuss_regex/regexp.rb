@@ -17,20 +17,22 @@ f.close
 
 binding.pry
 
-# samcount = text.scan(/Sam[^-]/).count
-# save_as('samcount.txt', samcount)
+samcount = text.scan(/Sam[^-]/).count
+save_as('samcount.txt', samcount)
 
-# I do not like them( .*)$
-  
-# samjammy = puts text.gsub(/Sam-I-Am/, "Sam Jammy")
+I do not like them( .*)$
 
- # samjammy = text.gsub("Sam-I-am", "Sam Jammy")
+samjammy = puts text.gsub(/Sam-I-Am/, "Sam Jammy")
+
+ samjammy = text.gsub("Sam-I-am", "Sam Jammy")
+
+
+ mattsub = text.gsub(/\bSam(?!-)/, "Matt")
+save_as("matt.txt", mattsub)
+
+
+dementia = text.gsub(/^(.*)(\r?\n\1)+$/, "")
+save_as("dementia.txt", dementia)
+
 
  # \bSam(?!-)
-
- # mattsub = text.gsub(/\bSam(?!-)/, "Matt")
-# save_as("matt.txt", mattsub)
-
-
-# dementia = text.gsub(/^(.*)(\r?\n\1)+$/, "")
-# save_as("dementia.txt", dementia)
