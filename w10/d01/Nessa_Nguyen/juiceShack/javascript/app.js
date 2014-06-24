@@ -29,8 +29,8 @@ var JuiceView = Backbone.View.extend({
   render : function () {
     var that = this;
     this.$el.empty();
-    console.log(this.model.attributes);
-    _.each(this.model.attributes.ingredients, function(ingredient) {
+    this.$el.append(that.model.attributes.name);
+    _.each(this.model.attributes.ingredients.models, function(ingredient) {
         var ingredientView = new IngredientView({ model: ingredient });
         that.$el.append(ingredientView.render().el);
     });
@@ -72,8 +72,8 @@ $(function() {
 
   var juiceCollection = new JuiceCollection();
   juiceCollection.add([appleJuices, berryJuice]);
-  var juiceView = new JuiceView({ collection: juiceCollection });
 
   var juiceListView = new JuiceListView({collection: juiceCollection, el: $('.juice-list')});
+  console.log(juiceListView.render().el);
   juiceListView.render();
 });
