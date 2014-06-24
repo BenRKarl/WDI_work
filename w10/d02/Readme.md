@@ -67,4 +67,10 @@ authorListView.render().el;
 // This produces a HTML ul node with author names listed
 ```
 
+
+###Stage 3
+- A form allows for new authors to be created
+- When new author is created, the view updates
+
+
 ---
