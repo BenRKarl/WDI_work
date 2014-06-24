@@ -1,5 +1,10 @@
 // *** Model *** create a model with backbone abilities and set it equal to variable Ingredient
-var Ingredient = Backbone.Model.extend({});
+var Ingredient = Backbone.Model.extend({
+  defaults: {
+    name: '',
+    amount: 0
+  }
+});
 
 // *** Collection *** create a collectinon with backbone abilities and set it equal to variablle IngredientCollection
 var IngredientCollection = Backbone.Collection.extend({
@@ -11,15 +16,16 @@ var IngredientView = Backbone.View.extend({     // passing in a new model, retri
   tagName: 'li',                                // creating HTML markup  !!! manages creations of a dom view for a single elemtn
   template: _.template($('#ingredient-template').html()),
   render: function(){
-    this.$el.html(this.template({ingredient: this.model.toJSON()}));
+    this.$el.html();
+    var renderedhtml = (this.template(this.model.attributes));
+    this.$el.html(html)
     return this;
   }
 });
 
 var IngredientListView = Backbone.View.extend({   // pass to a jquery selected element, creates pathway that starts where we can append
   initialize: function(){                        //  new elements !!! manages the collection of all created Elements from IngredientView
-    this.listenTo(this.collection, 'add', this.render);       // to the DOM
-    this.listenTo(this.collection, 'remove', this.render);
+    this.listenTo(this.collection, 'all', this.render);       // to the DOM
   },
   render: function(){
     var that = this;
