@@ -1,0 +1,20 @@
+
+
+<%= form_tag "/sites", method: 'post' do %>
+  <%= text_field_tag :url, nil, placeholder: "Paste site url" %>
+  <%= submit_tag "Find emails" %>
+<% end %>
+
+<h2>Saved sites</h2>
+<% @sites.each do |site| %>
+  <div>
+  <h3>
+    <%= site.url %>
+  </h3>
+  <% site.people.each do |person| %>
+  <p>
+    <a href="mailto:<%= person.email %>"><%= person.email %></a>
+  </p>
+  <% end %>
+  </div>
+<% end %>

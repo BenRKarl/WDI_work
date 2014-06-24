@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3-Bar Graph</title>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+  <script>
+
+  //shape format? qgis to convert shape file to geojson?
+
+  var canvas = d3.select('body').append('svg')
+  .attr("width", 760)
+  .attr("height", 700)
+
+  d3.json('sweden.geojson', function(data) {
+    var group = canvas.selectAll('g')
+      .data(data.ARRAYNAME)
+      .enter()
+      .append('g')
+
+    D3 has many geo projections (google)
+    var projection = d3.geo.mercator().scale(7300).translate([0,1980]);
+    var path = d3.geo.path().projection(projection) // geographic path generator
+
+    var areas = group.append('path')
+    .attr('d', path)
+    .attr('class', 'area')
+    .attr('fill', 'steelblue')
+
+    group.append('text')
+    .attr('x', function (d) {
+      return path.centroid(d)[0];
+    })
+    .attr('y', function (d) {
+      return path.centroid(d)[1];
+    })
+    .attr('text-anchor', 'middle')
+    .text(function(d) { return d.properties.LMNAM;})
+  });
+
+  </script>
+</body>
+</html>

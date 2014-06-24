@@ -11,7 +11,7 @@ function removeKitten(el){
 }
 
 function admireKitten(url){
-  var kitten = new KittenModel(url);
+  var kitten = new KittenModel({url: url});
   kittenCollection.add(kitten);
 }
 

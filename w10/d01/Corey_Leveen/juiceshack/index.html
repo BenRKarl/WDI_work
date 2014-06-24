@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Juice Shack</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <!-- Libraries -->
+    <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+    <!-- Templates -->
+    <script type="text/template" id="ingredient-template">
+      name: <%- ingredient.name %>, amount: <%- ingredient.amount %>
+    </script>
+
+    <script type="text/template" id="juice-template">
+      <h3>name: <%- juice.name %></h3>
+      <% _.each(juice.ingredients.models, function(ingredient) { %>
+        <%- ingredient.get('name') %>
+        <%- ingredient.get('amount') %>
+      <% }) %>
+
+
+
+    </script>
+
+    <!-- App -->
+    <script type="text/javascript" src='javascripts/app.js'></script>
+
+  </head>
+  <body>
+    <h1>Ingredients</h1>
+    <ul id="ingredient-list"></ul>
+
+    <h1>Juices</h1>
+    <ul id="juice-list"></ul>
+  </body>
+
+</html>
