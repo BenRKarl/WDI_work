@@ -21,6 +21,28 @@ var bankAccount = {
 };
 
 
+//function BankAccount(balance) {
+//   this.balance = balance;
+
+//   BankAccount.prototype = {
+//     makeDeposit: function(amount){
+//       return(this.balance += amount);
+
+
+//     }
+//   }
+// }
+// makeWithdrawal: function(amount){
+//   if((this.balance - amount) >=0){
+//     return(this.balance -= amount);
+//   }
+// }
+// }
+
+// var newBankAccount = new BankAccount(0);
+// newBankAccount.makeDeposit(100);
+// newBankAccount.makeWithdrawal(150)
+
 
 // Create a bank account object
 // Include attributes:

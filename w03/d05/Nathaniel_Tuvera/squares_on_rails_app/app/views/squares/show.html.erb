@@ -10,6 +10,7 @@
 </div>
 
 <form action="/squares/<%= @square.id %>" method="post">
+  <%= token_tag %>
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete square">
 </form>
