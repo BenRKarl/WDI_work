@@ -11,9 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
 //= require jquery.ui.all
+//= require jquery_ujs
+//= kitten
+//= require turbolinks
 //= require_tree .
 
 
