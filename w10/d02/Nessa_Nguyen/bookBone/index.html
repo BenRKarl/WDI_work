@@ -4,25 +4,40 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="stylesheet/style.css">
-  <script type='text/template' id='ingredient-template'>
-    ingredient: <%- ingredient.name %>, quantity: <%- ingredient.quantity %>
+  <script type='text/template' id='author-template'>
+    <h3>Author: <%- name %></h3>
+    <button name='delete'>Remove</button>
+    <ul class='my-books'></ul>
   </script>
-  <script type='text/template' id='juice-template'>
-    name: <%- juice.name %>
-    //ingredients: <%- juice.ingredients %>
+
+  <script type='text/template' id='book-template'>
+    <p>Title: <%- title %></p>
+    <button name='delete'>Remove</button>
   </script>
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src='javascript/library/underscore.js'></script>
   <script src='javascript/library/backbone.js'></script>
 
   <script src='javascript/app.js'></script>
-  <title>Juice Shack</title>
+  <title>Book Table</title>
 </head>
 
 
 <body>
+<form class='new-author'>
+  <input type="text" class='author-name' placeholder='Author name'>
+  <input type="submit">
+</form>
 
-<div class="juice-list"></div>
+<div class="author-list">
+  <h2>The authors</h2>
+</div>
+
+<ul class="book-list">
+  <h2>My books</h2>
+</ul>
+
 
 </body>
 </html>

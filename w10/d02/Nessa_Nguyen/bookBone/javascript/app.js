@@ -1,79 +1,105 @@
-var Ingredient = Backbone.Model.extend({});
-var IngredientCollection = Backbone.Collection.extend({
-  model: Ingredient
+var Author = Backbone.Model.extend({
+  this.set('books', new BookCollection());
 });
-var IngredientView = Backbone.View.extend({
+var AuthorCollection = Backbone.Collection.extend({
+  model: Author
+});
+var AuthorView = Backbone.View.extend({
   tagName: 'li',
-  template: _.template($('#ingredient-template').html()),
+  template: _.template($('#author-template').html()),
   render: function() {
-    this.$el.html(this.template({
-      ingredient: this.model.toJSON() })
-    );
-    return this;
-  }
-});
-
-var Juice = Backbone.Model.extend({
-  ingredients: IngredientCollection,
-});
-
-var JuiceCollection = Backbone.Collection.extend({
-  model: Juice
-});
-var JuiceView = Backbone.View.extend({
-  tagName: 'ul',
-//  template: _.template($('#juice-template').html()),
-//  initialize: function() {
-//    this.listenTo(this.collection, 'add', this.render);
-//  },
-  render : function () {
-    var that = this;
-    this.$el.empty();
-    this.$el.append(that.model.attributes.name);
-    _.each(this.model.attributes.ingredients.models, function(ingredient) {
-        var ingredientView = new IngredientView({ model: ingredient });
-        that.$el.append(ingredientView.render().el);
+    var html = this.template(this.model.attributes);
+    var renderedTemp = this.$el.html(html);
+//    this.$el.html( this.template({
+//      author: this.model.toJSON() })
+//    );
+    var bookListView = new BookListView({
+      collection: this.model.get('books'),
+      el: this.$el.find('.my-books')
     });
-    return this;
+    bookListView.render();
+  },
+  events: {
+    'click button': 'removeAuthor'
+  },
+  removeAuthor: function() {
+    this.model.destroy();
+    this.remove();
   }
 });
 
-var JuiceListView = Backbone.View.extend({
+var AuthorListView = Backbone.View.extend({
   initialize: function() {
     this.listenTo(this.collection, 'add', this.render);
   },
   render: function() {
     var that = this;
     this.$el.empty();
-    _.each(this.collection.models, function(juice) {
-      var juiceView = new JuiceView({model: juice});
-      that.$el.append(juiceView.render().el);
+    _.each(this.collection.models, function(author) {
+      var authorView = new AuthorView({ model: author });
+      that.$el.append(authorView.render().el);
     });
     return this;
   }
 });
 
+var Book = Backbone.Model.extend({});
+var BookCollection = Backbone.Collection.extend({
+  model: Book
+});
+var BookView = Backbone.View.extend({
+  tagName: 'li',
+  template: _.template($('#book-template').html()),
+  render: function() {
+    var html = this.template(this.model.attributes);
+    var renderedTemp = this.$el.html(html);
+    return this;
+  }
+});
 
-$(function() {
-  var apple5 = new Ingredient({name: 'apple', quantity: '5 fruit'});
-  var celery = new Ingredient({name: 'celery', quantity: '2 stalks'});
-  var orange = new Ingredient({name: 'orange', quantity: '2 fruit'});
-  var appleCrisp = new IngredientCollection();
-  appleCrisp.add([apple5, celery, orange]);
+var BookListView = Backbone.View.extend({
+  tagName: 'ul',
+  initialize: function() {
+    this.listenTo(this.collection, 'add', this.render)
+  },
+  render: function() {
+    var that = this;
+    this.$el.empty();
+    _.each(this.collection.models, function(book) {
+      var bookView = new BookView({model: book})
+      that.$el.append(bookView.render().el);
+    });
+    return this;
+  }
+})
 
-  var apple2 = new Ingredient({name: 'apple', quantity: '2 fruit'});
-  var lime = new Ingredient({name: 'celery', quantity: '1/2 fruit'});
-  var strawberries = new Ingredient({name: 'strawberry', quantity: '3 cups'});
-  var berryApeeling = new IngredientCollection();
-  berryApeeling.add([apple2, lime, strawberries]);
 
-  var appleJuices = new Juice({name: 'apple juices', ingredients: appleCrisp});
-  var berryJuice  = new Juice({name: 'berry juice',ingredients: berryApeeling});
+$(function () {
+  var lichard = new Author({name: 'Lichard Grey'});
+  var lichardView = new AuthorView({model: lichard});
+  lichardView.render().el;
+  var katthew = new Author({name: 'Katthew Bod'});
+  var kathewView = new AuthorView({model: katthew});
 
-  var juiceCollection = new JuiceCollection();
-  juiceCollection.add([appleJuices, berryJuice]);
+  var authorCollection = new AuthorCollection();
+  authorCollection.add([lichard, katthew]);
+  var authorListView = new AuthorListView({collection: authorCollection, el: '.author-list'});
 
-  var juiceListView = new JuiceListView({collection: juiceCollection, el: $('.juice-list')});
-  console.log(juiceListView.render().el);
-  juiceListView.render();
+  $('.new-author').on('submit', function(e) {
+    e.preventDefault();
+    var authorName = $('.author-name').val();
+    console.log($('.author-name'));
+    $('.author-name').val('');
+    authorCollection.add({name: authorName});
+  });
+
+  var sweetBook = new Book({title: 'Peachy cream'});
+  var sweetBookView = new BookView({model: sweetBook});
+  var sourBook = new Book({title: 'Plum pie'});
+  var sourBookView = new BookView({model: sourBook});
+
+  var bookCollection = new BookCollection();
+  bookCollection.add(sweetBook);
+  var bookListView = new BookListView({collection: bookCollection, el: '.book-list'});
+  bookCollection.add(sourBook);
 });
