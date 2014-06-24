@@ -7,16 +7,37 @@ var AuthorCollection = Backbone.Collection.extend({
 });
 
 var AuthorView = Backbone.View.extend({
+  initialize : function() {
+    this.listenTo(this.model, 'all', this.render);
+  },
   tagName : 'li',
   template : _.template($('#author-template').html()),
   render : function(){
     var html = this.template( {author : this.model.toJSON()});
     this.$el.html(html);
     return this;
+  },
+  events : {
+    'click button' : 'removeAuthor',
+    'mouseover' : 'fadeSome',
+    'mouseleave' : 'fadeNone'
+  },
+  removeAuthor : function(){
+    this.model.destroy();
+    this.remove();
+  },
+  fadeSome : function(){
+    this.$el.css('opacity', 0.2);
+  },
+  fadeNone : function(){
+    this.$el.css('opacity', 1.0);
   }
 });
 
 var AuthorListView = Backbone.View.extend({
+  initialize : function(){
+    this.listenTo(this.collection, 'all', this.render);
+  },
   tagName : 'ul',
   render : function(){
     var that = this;
@@ -30,13 +51,21 @@ var AuthorListView = Backbone.View.extend({
 });
 
 $(function(){
-  var lichard = new Author( {name : 'Lichard DeGray'} );
-  var lichardView = new AuthorView( {model : lichard} );
+  lichard = new Author( {name : 'Lichard DeGray'} );
+  lichardView = new AuthorView( {model : lichard} );
   lichardView.render().el;
 
-  var authorCollection = new AuthorCollection();
+  authorCollection = new AuthorCollection();
   authorCollection.add( lichard );
   authorCollection.add( {name : 'Kathew Bod'} );
-  var authorListView = new AuthorListView( {collection : authorCollection, el : $('#author-list')} );
+  authorListView = new AuthorListView( {collection : authorCollection, el : $('#author-list')} );
   authorListView.render().el;
+
+  $('form.author-name').on('submit', function(e){
+    e.preventDefault();
+    var authorNameField = $('#author-name');
+    var authorName = authorNameField.val();
+    authorNameField.val('');
+    authorCollection.add({name: authorName})
+  })
 })

@@ -11,6 +11,7 @@
     <!-- Templates -->
     <script type="text/template" id="author-template">
       Author name: <%- author.name %>
+      <button name='free-button'>Free button</button>
     </script>
 
 
@@ -20,6 +21,10 @@
   </head>
   <body>
   <ul id="author-list"></ul>
+
+  <form class='author-name'>
+    Add author<input type="text" placeholder='author name' id='author-name'>
+  </form>
   </body>
 
 </html>
