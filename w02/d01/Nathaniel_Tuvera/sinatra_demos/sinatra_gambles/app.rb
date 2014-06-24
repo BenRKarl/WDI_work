@@ -34,6 +34,6 @@ get '/rps/throw'                        # first option you throw rock, ai random
   @throw = params[:throw]               #
   @result = [].sample                   # second option you throw scissors, ai randoms 3 cases
   erb :rps                              #
-end                                     #
+                             #
 
 
