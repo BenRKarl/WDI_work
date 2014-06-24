@@ -34,7 +34,7 @@ var AuthorCollection = Backbone.Collection.extend({
 
 var AuthorListView = Backbone.View.extend({
   initialize: function() {
-    this.listenTo(this.collection, 'all', this.render);
+    //this.listenTo(this.collection, 'add', this.render);
   },
   tagName: 'ul',
   render: function() {
@@ -50,7 +50,7 @@ var AuthorListView = Backbone.View.extend({
 
 $(function() {
   authorCollection = new AuthorCollection();
-  var authorListView = new AuthorListView(
+  authorListView = new AuthorListView(
     {collection: authorCollection,
     el: $('#street')});
   //authorCollection.add({name: 'Lichard DeGray'});
