@@ -19,5 +19,12 @@ $(function(){
     nameField.val('')
     juiceCollection.add({name: juiceName});
   })
+  $('.new-ingredient').on('submit', function(e){
+    e.preventDefault();
+    var nameField =  $('.ingredient-name'); 
+    var juiceName = nameField.val();
+    nameField.val('')
+    juiceCollection.add({name: juiceName});
+  })
 
 })

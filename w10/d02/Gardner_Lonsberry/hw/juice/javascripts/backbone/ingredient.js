@@ -24,7 +24,7 @@ var IngredientView = Backbone.View.extend({
   tagName: 'li',
   template: _.template( $('#ingredient-template').html() ),
   render: function(){
-    this.$el.empty();
+  
     this.$el.html( this.template( this.model.attributes ) )
     return this;
   },
