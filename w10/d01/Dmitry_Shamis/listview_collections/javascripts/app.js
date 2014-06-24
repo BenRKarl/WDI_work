@@ -30,9 +30,8 @@ var JuiceView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template({juice: this.model.toJSON()}))
     var juiceIngredients = this.model.attributes.ingredients;
-    var juiceIngredientsList = new IngredientListView({collection: juiceIngredients, el: $('.juice-ingredients')});
+    var juiceIngredientsList = new IngredientListView({collection: juiceIngredients, el: $(this.el).find('ul')});
     juiceIngredientsList.render(); // The el is not being passed through...
-    debugger
     return this;
   }
 });
