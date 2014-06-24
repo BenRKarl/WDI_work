@@ -82,4 +82,14 @@ authorListView.render().el;
   - List View
 
 ---
+
+
+#Juice App
+
+Using Andrews Authors and Books example from class today, upgrade your Juice app.  
+
+# Major development goals:
+  - Create a juice from user text input
+  - Add ingredients to a juice from user text input
+	
 ---
