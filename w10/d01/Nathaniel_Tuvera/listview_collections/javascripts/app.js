@@ -53,6 +53,7 @@ var JuiceView = Backbone.View.extend({
   template: _.template($('#juice-template').html()),
   render: function(){
     console.log(this);
+    var IngredientList = new Ingredient({model: this.model.attributes.name ,el: $('#juice-ingredients')});
     this.$el.html(this.template({ juice: this.model.attributes.name}));
     return this;
   }
@@ -95,7 +96,8 @@ $(function(){
 
 
   var juices    = new JuiceCollection();
-  var JavaJuice = new Juice({name: 'Java Juice', Ingredients: ''});
+  var JavaJuice = new Juice({name: 'Java Juice', ingredients: ''});
+  var RubyRed   = new Juice({name: 'Ruby Red', ingredients: ''})
   juices.on('add', function(){console.log('juice added to collection')});
   juices.add(JavaJuice);
   var pineapple = new Ingredient({name: 'pineapple', amount: 1});
