@@ -37,17 +37,33 @@ var JuiceCollection = Backbone.Collection.extend({
 });
 
 var JuiceView = Backbone.View.extend({
-
+  tagName: 'ul',
   template: _.template($("#juice-template").html()),
   render: function(){
-    //this.$el.html(this.template({ juice: this.model.get('name')}));
+    
    this.$el.html(this.template({ juice: this.model.toJSON()}));
-    var listView = new IngredientListView({collection: this.model.attributes.ingredients, el: $('#juice_name')})
+
+   var listView = new IngredientListView({collection: this.model.attributes.ingredients, el: $(this.el).find('ul')});
+    
+
     listView.render();
 
     return this;
   }
-})
+});
+
+var JuiceListView = Backbone.View.extend({
+
+  render: function(){
+    var that = this;
+    this.$el.empty();
+    _.each(this.collection.models, function(juice){
+      var juiceView = new JuiceView({ model:juice });
+      that.$el.append(juiceView.render().el);
+    });
+    return this;
+  }
+});
 
 
 $(function(){
@@ -70,7 +86,15 @@ $(function(){
 
   juices.add(juice1);
   var juiceView = new JuiceView({model: juice1, el: $('#juice-name')});
-debugger;
+
+  var mega_ingredients = new IngredientCollection();
+  var cacao = new Ingredient({name: 'cacao', amount: 7 });
+  var chia_pets = new Ingredient({ name: 'chia pets', amount: 9});
+  var durian = new Ingredient({ name: "durian", amount: 1});
+  var juice2 = new Juice({name: 'Mega Juice', ingredients: mega_ingredients });
+  juices.add(juice2);
+
+  
 
   juiceView.render();
 
