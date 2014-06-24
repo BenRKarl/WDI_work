@@ -29,6 +29,8 @@ var IngredientListView = Backbone.View.extend({
   }
 })
 
+
+
 // ** Model **
 var Juice = Backbone.Model.extend({
   defaults:{
