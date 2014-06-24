@@ -16,6 +16,14 @@
       name: <%- ingredient.name %>, amount: <%- ingredient.amount %>
     </script>
 
+    <script type="text/template" id="juice-list-template">
+      <ul>
+      <% _.each([1, 2, 3], function(num){ %>
+        <li> <%- num %> </li>
+      <% }); %>
+      </ul>
+    </script>
+
     <!--  Da App -->
     <script type="text/javascript" src='javascripts/app.js'></script>
 
@@ -23,7 +31,7 @@
 
   <body>
 
-    <ul id="ingredient-list"></ul>
+    <!-- <ul id="ingredient-list"></ul> -->
 
   </body>
 
