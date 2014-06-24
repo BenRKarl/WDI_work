@@ -1,0 +1,57 @@
+<html>
+   <head>
+      <title>Matt's Juice Bar</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="stylesheets/styles.css">
+
+      <!-- ***** Libraries ***** -->
+      <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+      <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+      <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+
+      <!-- ***** Templates ***** -->
+      <script id='juice-template' type='text/template'>
+      <h2>
+         <%- name %>
+         <button>Trash Juice</button>
+      </h2>
+      <form>
+         <input type='text' placeholder='Ingredient Name...' class="ingredient-name" name='name'></input>
+         <input type='text' placeholder='Ingredient Amount...' class="ingredient-amount" name='amount'></input>
+         <input type="submit" value="submit">
+      </form>
+      <ul class="juice-ingredients"></ul>
+      </script>
+
+
+      <script id="ingredient-template" type="text/template">
+      name: <%- name %>, amount: <%- amount %>
+      </script>
+
+  
+
+      <!-- ***** Juice ***** -->
+      <script src='javascripts/backbone/juice.js'></script>
+
+      <!-- ***** Ingredient ***** -->
+      <script src='javascripts/backbone/ingredient.js'></script>
+
+      <!--  ***** App ***** -->
+      <script type="text/javascript" src='javascripts/app.js'></script>
+
+   </head>
+
+   <body>
+      
+      <h1>Juice Machine</h1>
+
+      <form class='juice-form'>
+         <input type="text" placeholder='Juice Name...' class="juice-name">
+         <input type="submit" value='Submit'>
+      </form>
+
+      <ul class="juice-counter"></ul>
+
+   </body>
+
+</html>
