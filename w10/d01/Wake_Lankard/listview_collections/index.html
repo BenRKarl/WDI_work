@@ -13,7 +13,10 @@
       name: <%- ingredient.name %>, amount: <%- ingredient.amount %> 
     </script>
     <script type="text/template" id="juice-template">
-      Juice name: <%- juice.name %> 
+      <h1>Juice:<%- juice.name %></h1>
+      <ul class="juice-title"></ul> 
+
+
       
     </script>
 
@@ -23,10 +26,9 @@
 
   </head>
   <body>
-    <ul id="ingredient-list">
-    </ul>
-      <ul id="juice-name">
-    </ul>
+
+      <div id="juice-name">
+    </div>
 
 
   </body>
