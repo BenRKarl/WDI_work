@@ -4,8 +4,9 @@ function randomUrl(){
   return "http://placekitten.com/"+width+'/'+height;
 }
 
-function KittenModel(url){
-  this.url = url || randomUrl;
+function KittenModel(obj){
+  this.url = obj.url || randomUrl();
+  this.id  = obj.id || undefined;
 }
 
 function KittenView(model){
@@ -25,7 +26,17 @@ function KittenCollection(){
 }
 
 KittenCollection.prototype.add = function(kitten){
-  
+  var that = this;
+  $.ajax({
+    url: '/kittens',
+    method: 'post',
+    dataType: 'json',
+    data: {kitten: kitten},
+    success: function(data){
+      var kitten = KittenModel(data);
+      that.models[] = 
+    }
+  })   
 }
 
 function presentKitten(){

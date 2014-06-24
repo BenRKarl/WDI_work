@@ -1,0 +1,16 @@
+  <form action="/sites" method='post'>
+    <%= token_tag %>
+    <input type="hidden" name='url' value='<%= @url %>'>
+    <% @emails.each do |email| %>
+    <input type="hidden" name='email' value='<%= email %>'>
+    <% end %>
+    <input type="submit" value='Save record'>
+  </form>
+
+<h3>Results for <a href="<%= @url %>"><%= @url %></a>:</h3>
+<% @emails.each do |email| %>
+  <div>
+    <p><%= email %></p>
+  </div>
+<% end %>
+

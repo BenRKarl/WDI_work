@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="stylesheet/style.css">
+  <script type='text/template' id='ingredient-template'>
+    ingredient: <%- ingredient.name %>, quantity: <%- ingredient.quantity %>
+  </script>
+  <script type='text/template' id='juice-template'>
+    name: <%- juice.name %>
+    //ingredients: <%- juice.ingredients %>
+  </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src='javascript/library/underscore.js'></script>
+  <script src='javascript/library/backbone.js'></script>
+
+  <script src='javascript/app.js'></script>
+  <title>Juice Shack</title>
+</head>
+
+
+<body>
+
+<div class="juice-list"></div>
+
+</body>
+</html>
