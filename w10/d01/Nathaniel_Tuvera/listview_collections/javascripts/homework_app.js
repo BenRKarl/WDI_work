@@ -1,5 +1,5 @@
 // ** Model **
-var JuiceModel = Backbone.Model.extend({});
+var Juice = Backbone.Model.extend({});
 
 // ** View **
 
