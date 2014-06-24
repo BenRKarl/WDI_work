@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Paul's Juice Bar</title>
+    <title>Matt's Juice Bar</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheets/styles.css">
 
@@ -12,14 +12,14 @@
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
 
     <!-- Templates -->
-    <script id = "ingredient-template" type="text/template"> name: <%-ingredient.name %>, amount: <%- ingredient.amount %></script>
+   <script id="ingredient-template" type="text/template">
+      name: <%- ingredient.name %>, amount: <%- ingredient.amount %>
+    </script>
 
-    <script id = "juice-template" type="text/template"> name: <%-juice.name %>, ingredients: <%- ingredients.collection %></script>
-
-    <!--  The App -->
+    <!--  Da App -->
     <script type="text/javascript" src='javascripts/app.js'></script>
-  </head>
 
+  </head>
   <body>
     <ul id="ingredient-list"></ul>
   </body>
