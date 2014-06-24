@@ -34,7 +34,7 @@ var AuthorCollection = Backbone.Collection.extend({
 
 var AuthorListView = Backbone.View.extend({
   initialize: function() {
-    //this.listenTo(this.collection, 'add', this.render);
+    this.listenTo(this.collection, 'all', this.render);
   },
   tagName: 'ul',
   render: function() {
@@ -47,6 +47,39 @@ var AuthorListView = Backbone.View.extend({
     return this;
   }
 });
+
+var Book = Backbone.Model.extend({});
+
+var BookView = Backbone.View.extend({
+  tagName: 'li',
+  template: _.template($('#book_template').html()),
+  render: function() {
+    this.$el.html(this.template(this.model.attributes));
+    return this;
+  }
+});
+
+var BookCollection = Backbone.Collection.extend({
+  model: Book
+});
+
+
+var BookListView = Backbone.View.extend({
+  initialize: function() {
+    this.listenTo(this.collection, 'all', this.render);
+  },
+  tagName: 'ul',
+  render: function() {
+    var that=this;
+    this.$el.empty();
+    _.each(this.collection.models, function(book) {
+      var bookView = new BookView({model: book});
+      that.$el.append(bookView.render().el);
+    });
+    return this;
+  }
+});
+
 
 $(function() {
   authorCollection = new AuthorCollection();
