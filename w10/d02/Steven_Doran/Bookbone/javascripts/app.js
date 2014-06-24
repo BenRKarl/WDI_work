@@ -1,4 +1,7 @@
-// ******* MODEL *******
+
+
+
+// ******* AUTHOR MODEL *******
 
 var Author = Backbone.Model.extend({
    defaults: {
@@ -7,14 +10,14 @@ var Author = Backbone.Model.extend({
 });
 
 
-// ******* COLLECTION *******
+// ******* AUTHOR COLLECTION *******
 
 var AuthorCollection = Backbone.Collection.extend({
    model: Author
 });
 
 
-// ******* VIEWS *******
+// ******* AUTHOR VIEWS *******
 
 var AuthorView = Backbone.View.extend({
    initialize: function(){
@@ -23,6 +26,7 @@ var AuthorView = Backbone.View.extend({
    tagName: 'li',
    template: _.template($("#author-template").html()),
    render: function(){
+      this.$el.empty();
       var html = (this.template(this.model.attributes));
       this.$el.html(html);
       return this;
@@ -59,6 +63,52 @@ var AuthorListView = Backbone.View.extend({
       return this;
    }
 });
+
+// ******* BOOK MODEL *******
+
+var Book = Backbone.Model.extend({
+   defaults : {
+      title: ''
+   }
+});
+
+
+// ******* BOOK COLLECTION *******
+
+var BookCollection = Backbone.Collection.extend({
+   model: Book
+});
+
+
+// ******* BOOK VIEWS *******
+
+var BookView = Backbone.View.extend({
+   tagName: 'li',
+   template: _.template($('#book-template').html()),
+   render: function(){
+      this.$el.empty();
+      var html = (this.template(this.model.attributes));
+      this.$el.html(html);
+      return this;
+   } 
+});
+
+
+var BookListView = Backbone.View.extend({
+   initialize: function(){
+      this.listenTo(this.collection, 'all', this.render);
+   },
+   render: function(){
+      var that = this;
+      this.$el.empty();
+      _.each(this.collection.models, function(bookModel){
+         var bookView = new BookView({model: bookModel});
+         that.$el.append(bookView.redner().el);
+      });
+      return this;
+   }
+});
+
 
 
 
