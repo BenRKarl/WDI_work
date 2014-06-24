@@ -1,9 +1,9 @@
-function kittenCollection = new kittenCollection();
+function kittenCollection = new KittenCollection();
 
 function presentKittenForJudgement(){
   var kittenModel = new KittenModel();
   var kittenView = new KittenView(kittenModel);
-  kittenView.render().el.appendTo($('.kitten-presenter')).fadeIn(1000);
+  kittenView.render().el.appendTo($('.kitten-presenter')).fadeIn(1000).draggable();
 }
 
 function removeKitten(el){
@@ -11,7 +11,7 @@ function removeKitten(el){
 }
 
 function admireKitten(url){
-  var kitten = new KittenModel(url);
+  var kitten = new KittenModel({url: url});
   kittenCollection.add(kitten);
 }
 
