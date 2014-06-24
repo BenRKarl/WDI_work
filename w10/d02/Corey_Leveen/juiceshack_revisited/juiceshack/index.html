@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Bookbone</title>
+    <title>Juice Shack</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheets/styles.css">
 
@@ -9,29 +9,31 @@
     <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
     <!-- Templates -->
-    <script type="text/template" id="author-template">
-      Author name: <%- author.name %>
-      <button name='free-button'>Free button</button>
+    <script type="text/template" id="ingredient-template">
+      name: <%- ingredient.name %>, amount: <%- ingredient.amount %>
     </script>
 
-    <script type="text/template" id="book-template">
-    Book title: <%- book.title %>
-    </script>
+    <script type="text/template" id="juice-template">
+      <h3>name: <%- juice.name %></h3>
+      <% _.each(juice.ingredients.models, function(ingredient) { %>
+        <%- ingredient.get('name') %>
+        <%- ingredient.get('amount') %>
+      <% }) %>
 
+
+
+    </script>
 
     <!-- App -->
     <script type="text/javascript" src='javascripts/app.js'></script>
 
   </head>
   <body>
-  <ul id="author-list"></ul>
+    <h1>Ingredients</h1>
+    <ul id="ingredient-list"></ul>
 
-  <form class='author-name'>
-    Add author<input type="text" placeholder='author name' id='author-name'>
-  </form>
+    <h1>Juices</h1>
+    <ul id="juice-list"></ul>
   </body>
-
-
-  <ul id="book-list"></ul>
 
 </html>

@@ -13,7 +13,7 @@ var AuthorView = Backbone.View.extend({
   tagName : 'li',
   template : _.template($('#author-template').html()),
   render : function(){
-    var html = this.template( {author : this.model.toJSON()});
+    var html = this.template( {author : this.model.toJSON()} );
     this.$el.html(html);
     return this;
   },
@@ -50,10 +50,60 @@ var AuthorListView = Backbone.View.extend({
   }
 });
 
+
+
+var Book = Backbone.Model.extend({
+
+});
+
+var BookCollection = Backbone.Collection.extend({
+  model : Book
+});
+
+var BookView = Backbone.View.extend({
+  tagName : 'li',
+  template : _.template( $('#book-template').html() ),
+  render : function(){
+    var html = this.template( {book : this.model.toJSON()} );
+    this.$el.html(html);
+    return this;
+  }
+});
+
+var BookListView = Backbone.View.extend({
+  tagName : 'ul',
+  render : function(){
+    var that = this;
+    this.$el.empty();
+    _.each(this.collection.models, function(book){
+      var bookView = new BookView( {model : book} );
+      that.$el.append( bookView.render().el );
+    });
+    return this;
+  }
+});
+
+
+
+
 $(function(){
   lichard = new Author( {name : 'Lichard DeGray'} );
   lichardView = new AuthorView( {model : lichard} );
   lichardView.render().el;
+
+  theFountainhead = new Book ( {title : 'The Fountainhead'} );
+  gravitysRainbow = new Book ( {title : 'Gravitys Rainbow'} );
+
+  theFountainheadView = new BookView( {model : theFountainhead} );
+  theFountainheadView.render().el;
+
+  library = new BookCollection();
+  library.add(theFountainhead);
+  library.add(gravitysRainbow);
+  libraryView = new BookListView( {collection : library, el : $('#book-list')} );
+  libraryView.render().el;
+
+
 
   authorCollection = new AuthorCollection();
   authorCollection.add( lichard );
