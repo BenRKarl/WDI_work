@@ -1,0 +1,64 @@
+
+body {
+  height: 100em;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  position: relative;
+}
+
+.tmt-div {
+  width: 100%;
+  overflow: hidden;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.info {
+  height: 8em;
+  background-color: lightblue;
+}
+
+
+.image-div {
+  height: 15em;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.record{
+  border: 1px solid grey;
+  width: 22em;
+  height: 22em;
+  border-radius: 50%;
+  background: url('../images/congruent_outline.png');
+  overflow: hidden;
+}
+
+.record-label{
+  text-align: center;
+  padding: 2em;
+  left: 6em;
+  top: 6em;
+  position: relative;
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.record-hole{
+  left: 2em;
+  top: 1em;
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background-color: black;
+}
