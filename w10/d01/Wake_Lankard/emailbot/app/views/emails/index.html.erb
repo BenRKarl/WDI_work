@@ -1,0 +1,19 @@
+<%= form_tag '/people', method: 'post' do %>
+<%= text_field_tag :url %>
+<%= submit_tag 'Find emails' %>
+<% end %>
+
+<table>
+    <% @emails.each do |email| %>
+    <tr>
+      <td><%= person.email %></td>
+      <td>
+        <ul>
+          <% email.urls do |url| %>
+          <li><%= url.url %></li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+    <% end %>
+    </table>
