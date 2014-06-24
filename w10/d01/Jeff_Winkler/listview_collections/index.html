@@ -9,9 +9,20 @@
     <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
     <!--  Da App -->
+    <script id="ingredient_template" type="text/template">
+      name: <%- ingredient.name %>, amount: <%- ingredient.amount%>
+    </script>
+    <script id="juice_template" type="text/template">
+      name: <%- juice.name %> <ul></ul>
+    </script>
     <script type="text/javascript" src='javascripts/app.js'></script>
   </head>
   <body>
+
+      <ul id="recipe"></ul>
+      <div id="juices"></div>
+
+
   </body>
 
 </html>

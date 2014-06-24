@@ -3,19 +3,24 @@ var pokemon = {
   pokemonList : allPokemon,
 
   printAllPokemonNamesToConsole : function(){
+     // pokomenList.each do |monster|
+     //end
+
     _.each(pokemon.pokemonList, function(monster){
       console.log(monster.name);
-    });
+    })
   },
-
   findPokemonByName : function(name){
-    var pokemonIwant = _.find(pokemon.pokemonList, function(monster){
+    //look into _.find
+    var pokemonIWant = _.find(pokemon.pokemonList, function(monster){
       return monster.name == name;
     });
-    return pokemonIwant;
+    return pokemonIWant;
   },
 
   findStrongestPokemon : function(){
+    // look into _.max
+    //i.e. which monster has the strongest attack?
     var strongest = _.max(pokemon.pokemonList, function(monster){
       return parseInt(monster.stats.attack);
     });
@@ -23,19 +28,26 @@ var pokemon = {
   },
 
   findPokemonByType : function(type){
-    var containsType = _.filter(pokemon.pokemonList, function(monster){
+    //_.filter / _.contains
+    return _.filter(pokemon.pokemonList, function(monster){
       return _.contains(monster.type, type);
     });
-    return containsType;
   },
 
   findAllTypes : function(){
-    var allTypes = _.map(pokemon.pokemonList, function(monster){
+    // _.map / _.flatten / _.uniq
+    var types = _.map(pokemon.pokemonList, function(monster){
       return monster.type;
     });
-    _.uniq(_.flatten(allTypes));
+    return _.uniq(_.flatten(types));
   },
 
   totalStats : function(name){
+    // finds total stats for a given pokemon
+    // _.reduce
+    var foundPokemon = pokemon.findPokemonByName(name);
+    return _.reduce(foundPokemon.stats, function(memo, stat) {
+      return memo + parseInt(stat);
+    }, 0);
   }
 }
