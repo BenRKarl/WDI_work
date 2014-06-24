@@ -67,4 +67,19 @@ authorListView.render().el;
 // This produces a HTML ul node with author names listed
 ```
 
+
+###Stage 3
+- A form allows for new authors to be created
+- When new author is created, the view updates
+
+###Stage 4
+- Book
+  - Model
+    - `new Book({title: 'The Great Book'})`
+  - Collection
+  - Model View
+    - use a template on index.html
+  - List View
+
+---
 ---
