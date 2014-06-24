@@ -64,10 +64,12 @@ var JuiceView = Backbone.View.extend({
 
     this.$el.find('form').on('submit', function(e){
       e.preventDefault();
-      debugger;
+    
       var newIngredient = that.$el.find('.ingredient-input').val();
       var newAmount = that.$el.find('.amount-input').val();
       that.model.get('ingredients').add({name: newIngredient, amount: newAmount});
+      that.$el.find('.ingredient-input').val('');
+      that.$el.find('.amount-input').val('');
     })
 
     return this;
@@ -114,6 +116,7 @@ $(function(){
 
     var newJuice = $('.juice-input').val();
     juiceCollection.add({name: newJuice});
+    $('.juice-input').val('');
 
   })
 
