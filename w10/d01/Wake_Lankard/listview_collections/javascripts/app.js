@@ -37,14 +37,15 @@ var JuiceCollection = Backbone.Collection.extend({
 });
 
 var JuiceView = Backbone.View.extend({
+
   tagName: 'ul',
   template: _.template($("#juice-template").html()),
   render: function(){
     
-   this.$el.html(this.template({ juice: this.model.toJSON()}));
+   this.$el.html(this.template({ juice: this.model.toJSON()})).addClass('juice-box');
 
    var listView = new IngredientListView({collection: this.model.attributes.ingredients, el: $(this.el).find('ul')});
-    
+
 
     listView.render();
 
@@ -55,6 +56,7 @@ var JuiceView = Backbone.View.extend({
 var JuiceListView = Backbone.View.extend({
 
   render: function(){
+    
     var that = this;
     this.$el.empty();
     _.each(this.collection.models, function(juice){
@@ -67,36 +69,28 @@ var JuiceListView = Backbone.View.extend({
 
 
 $(function(){
+  var juices = new JuiceCollection();
+
   var ingredients = new IngredientCollection();
   var strawberry = new Ingredient({name: 'strawberry', amount: 13});
-  ingredients.on('add',function(){console.log("something was added")});
-  ingredients.add(strawberry);
-  ingredients.on('remove',function(){console.log("we lost one")});
-  // ingredients.remove(strawberry);
   var cabbage = new Ingredient({name: 'cabbage', amount: 1 });
-  ingredients.add(cabbage);
 
-  //var listView = new IngredientListView({collection: ingredients, el: $('#ingredient-list')})
   var tumeric = new Ingredient({name: 'tumeric', amount: 30});
-  // listView.collection.add(tumeric);
-  // listView.collection.remove(strawberry);
+  ingredients.add([strawberry, cabbage, tumeric]);
 
-  var juices = new JuiceCollection();
   var juice1 = new Juice({name: 'Big Juice', ingredients: ingredients});
 
-  juices.add(juice1);
-  var juiceView = new JuiceView({model: juice1, el: $('#juice-name')});
-
-  var mega_ingredients = new IngredientCollection();
+  var ingredients2 = new IngredientCollection();
   var cacao = new Ingredient({name: 'cacao', amount: 7 });
   var chia_pets = new Ingredient({ name: 'chia pets', amount: 9});
   var durian = new Ingredient({ name: "durian", amount: 1});
-  var juice2 = new Juice({name: 'Mega Juice', ingredients: mega_ingredients });
-  juices.add(juice2);
+  ingredients2.add([cacao, chia_pets, durian]);
+  var juice2 = new Juice({name: 'Mega Juice', ingredients: ingredients2 });
+  juices.add([juice1, juice2]);
 
-  
+  var juiceListView = new JuiceListView({collection: juices, el: $('#juice-name')});
 
-  juiceView.render();
+  juiceListView.render();
 
 
 
