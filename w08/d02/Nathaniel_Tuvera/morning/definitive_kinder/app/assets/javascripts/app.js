@@ -1,4 +1,4 @@
-// var kittenCollection = new KittensCollection;
+var kittenCollection = new KittensCollection;
 
 function presentKittenForJudgement(){
   var kittenModel = new KittenModel()
@@ -11,7 +11,8 @@ function removeKitten(el){
   el.fadeOut(1000).remove();
 }
 function admireKitten(url){
-  var kitte = new KittenModel(url);
+  var kitten = new KittenModel({url: url});
+  kittenCollection.add(kitten);
 }
 
 

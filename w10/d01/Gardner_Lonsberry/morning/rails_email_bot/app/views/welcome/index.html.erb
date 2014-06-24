@@ -1,0 +1,10 @@
+<form>
+  <input type="text" name="search-url">
+  <input type="submit">
+</form>
+
+
+<% form_for :person, :url => { :action => "update" } do |f| %>
+ <%= f.label :site, 'Site' %>:
+    <%= f.text_field :site %><br />
+<% end %>
