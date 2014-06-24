@@ -49,12 +49,12 @@ var JuiceCollection = Backbone.Collection.extend({
 // ** View **
 
 var JuiceView = Backbone.View.extend({
-  tagName: 'li',
+  tagName: 'ul',
   template: _.template($('#juice-template').html()),
   render: function(){
     console.log(this);
-    var IngredientList = new Ingredient({model: this.model.attributes.name ,el: $('#juice-ingredients')});
-    this.$el.html(this.template({ juice: this.model.attributes.name}));
+    // var IngredientList = new Ingredient({model: this.model.attributes.name ,el: $('#juice-ingredients')});
+    this.$el.html(this.template({ juice: this.model.attributes.name, ingredients: IngredientView}));
     return this;
   }
 });
@@ -69,7 +69,9 @@ var JuiceListView = Backbone.View.extend({
     this.$el.empty();
     _.each(this.collection.models, function(juice){
       var juiceView = new JuiceView({model: juice});
+      var ingredientView = new IngredientView({model: Ingredient});
       that.$el.append(juiceView.render().el);
+      that.$el.append(ingredientView.render().el);
     });
     return this;
   }
@@ -81,34 +83,34 @@ var JuiceListView = Backbone.View.extend({
 
 
 $(function(){
-  var ingredients = new IngredientCollection();
-  var strawberry  = new Ingredient({name: 'strawberry', amount: 13});
+  ingredients = new IngredientCollection();
+  strawberry  = new Ingredient({name: 'strawberry', amount: 13});
   ingredients.on('add', function(){console.log('something was added')});
   ingredients.add(strawberry);
   ingredients.on('remove', function(){console.log('something was removed')});
-  var cabbage = new Ingredient({name: 'cabbage', amount: 'one'});
+  cabbage = new Ingredient({name: 'cabbage', amount: 'one'});
   ingredients.add(cabbage);
 
-  var listView = new IngredientListView({collection: ingredients, el: $('#ingredient-list')});
-  var turmeric = new Ingredient({name: 'turmeric', amount: 30});
+  listView = new IngredientListView({collection: ingredients, el: $('#ingredient-list')});
+  turmeric = new Ingredient({name: 'turmeric', amount: 30});
   ingredients.add(turmeric);
   ingredients.remove(cabbage);
 
 
-  var juices    = new JuiceCollection();
-  var JavaJuice = new Juice({name: 'Java Juice', ingredients: ''});
-  var RubyRed   = new Juice({name: 'Ruby Red', ingredients: ''})
+  juices    = new JuiceCollection();
+  JavaJuice = new Juice({name: 'Java Juice', ingredients: ''});
+  RubyRed   = new Juice({name: 'Ruby Red', ingredients: ''})
   juices.on('add', function(){console.log('juice added to collection')});
   juices.add(JavaJuice);
-  var pineapple = new Ingredient({name: 'pineapple', amount: 1});
-  var starfruit = new Ingredient({name: 'starfruit', amount: 2});
-  var wheatgrass= new Ingredient({name: 'wheatgrass', amount: 10});
-  var JavaIngredients = new IngredientCollection();
+  pineapple = new Ingredient({name: 'pineapple', amount: 1});
+  starfruit = new Ingredient({name: 'starfruit', amount: 2});
+  wheatgrass= new Ingredient({name: 'wheatgrass', amount: 10});
+  JavaIngredients = new IngredientCollection();
   JavaIngredients.add(pineapple);
   JavaIngredients.add(starfruit);
   JavaIngredients.add(wheatgrass);
-  JavaJuice.set('Ingredients', JavaIngredients);
+  JavaJuice.set('ingredients', JavaIngredients);
 
-  var juiceListView = new JuiceListView({collection: juices, el: $('#juice-list')});
+  juiceListView = new JuiceListView({collection: juices, el: $('#juice-list')});
 
 })
