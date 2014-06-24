@@ -5,7 +5,7 @@ describe("pokemon", function(){
   });
 
   it("can find the pokemon with the highest attack", function(){
-    expect(pokemon.findStrongestPokemon().name).toBe("Dragonite");
+    expect(pokemon.findStrongestPokemon()).toBe("Dragonite");
   });
 
   it("can find pokemon by type", function(){

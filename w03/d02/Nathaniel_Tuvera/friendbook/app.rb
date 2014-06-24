@@ -6,7 +6,7 @@ require_relative './config'
 
 
 #index
-get '/friends' do
+get '/' do
   @friends = Friend.all
   erb :index
 end

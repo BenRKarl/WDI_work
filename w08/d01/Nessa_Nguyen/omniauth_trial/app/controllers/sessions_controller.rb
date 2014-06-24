@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
   end
 
   def authorize
-    client_id = "1438652769722187"
   end
 
   def log

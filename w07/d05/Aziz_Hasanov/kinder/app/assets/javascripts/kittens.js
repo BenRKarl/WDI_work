@@ -4,8 +4,9 @@ function randomUrl() {
   return "http://placekitten.com/" + width + "/" + height;
 }
 
-function KittenModel(url) {
-  this.url = url || randomUrl();
+function KittenModel(obj) {
+  this.url = obj ? obj.url : randomUrl();
+  this.id = obj ? obj.id : undefined;
 }
 
 function KittenView(model) {
@@ -23,6 +24,37 @@ function KittenCollection() {
   this.kittens = {};
 }
 
-KittenCollection.prototype.add = function(kitten) {
-
+KittenCollection.prototype.fetch = function() {
+  var that = this;
+  $.ajax({
+    url: "/kittens",
+    method: "get",
+    dataType: "json",
+    success: function(data) {
+      $.each(data, function(i, datum) {
+        var kitten = new KittenModel(datum);
+        that.kittens[kitten.id] = kitten;
+      });
+      $(that).trigger("change");
+    }
+  })
 }
+
+KittenCollection.prototype.add = function(kitten) {
+  var that = this;
+  $.ajax({
+    url: "/kittens",
+    method: "post",
+    dataType: "json",
+    data: {kitten: kitten},
+    success: function(data) {
+      // console.log(data);
+      var kitten = new KittenModel(data);
+      that.kittens[kitten.id] = kitten;
+      $(that).trigger("change");
+    }
+  })
+}
+
+
+
