@@ -12,16 +12,21 @@
     <script id='ingredient-template' type="text/template">
       name: <%- ingredient.name %>, amount: <%- ingredient.amount %>
     </script>
-    <script id='juice-template', type='text/template'>
-      name: <%- juice.name %>, ingredients: <%- juice.ingredients %>
+
+    <script id='juice-template' type='text/template'>
+      <h2> name: <%- juice.name %> </h2>
+       <h3>ingredients:</h3>
+       <ul id='juice-ingredients'>
+
+       </ul>
     </script>
     <!--  Da App -->
     <script type="text/javascript" src='javascripts/app.js'></script>
 
   </head>
   <body>
-
-    <ul id='ingredient-list'></ul>
+    <ul id='juice-list'></ul>
+    <!-- <ul id='ingredient-list'></ul> -->
 
   </body>
 

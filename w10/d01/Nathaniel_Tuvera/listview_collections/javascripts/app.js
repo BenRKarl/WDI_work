@@ -1,10 +1,14 @@
-// *** Model ***
+// *** Model *** create a model with backbone abilities and set it equal to variable Ingredient
 var Ingredient = Backbone.Model.extend({});
 
-// *** View ***
+// *** Collection *** create a collectinon with backbone abilities and set it equal to variablle IngredientCollection
+var IngredientCollection = Backbone.Collection.extend({
+  model: Ingredient                                         // set what the collection is made of
+});
+
+// *** View *** create the object to be visible on the DOM
 var IngredientView = Backbone.View.extend({     // passing in a new model, retrieve template, but not referecing and existing DOM and then appending mark up to it
   tagName: 'li',                                // creating HTML markup  !!! manages creations of a dom view for a single elemtn
-  // template: _.template('<li>this is a template <%- %></li>');
   template: _.template($('#ingredient-template').html()),
   render: function(){
     this.$el.html(this.template({ingredient: this.model.toJSON()}));
@@ -28,30 +32,51 @@ var IngredientListView = Backbone.View.extend({   // pass to a jquery selected e
   }
 })
 
-// ** Juices MVC **
+
+// ***** Juice MVC *****
 
 // ** Model **
-var JuiceModel = Backbone.Model.extend({});
+var Juice = Backbone.Model.extend({
+  ingredients: IngredientCollection
+});
+
+// ** Collection **
+
+var JuiceCollection = Backbone.Collection.extend({
+  model: Juice
+});
 
 // ** View **
 
 var JuiceView = Backbone.View.extend({
   tagName: 'li',
-  template: _.template($)// need to put something here
-
+  template: _.template($('#juice-template').html()),
+  render: function(){
+    console.log(this);
+    this.$el.html(this.template({ juice: this.model.attributes.name}));
+    return this;
+  }
 });
 
-var JuiceListView = Backbone.View.extend({});
-
-// ** Collection **
-
-var JuiceCollection = Backbone.Collection.extend({}I);
-
-
-// *** Collection ***
-var IngredientCollection = Backbone.Collection.extend({
-  model: Ingredient
+var JuiceListView = Backbone.View.extend({
+  intialize: function(){
+    this.listenTo(this.collection, 'add', this.render);
+    this.listenTo(this.collection, 'remove', this.render);
+  },
+  render: function(){
+    var that = this;
+    this.$el.empty();
+    _.each(this.collection.models, function(juice){
+      var juiceView = new JuiceView({model: juice});
+      that.$el.append(juiceView.render().el);
+    });
+    return this;
+  }
 });
+
+
+
+
 
 
 $(function(){
@@ -59,15 +84,29 @@ $(function(){
   var strawberry  = new Ingredient({name: 'strawberry', amount: 13});
   ingredients.on('add', function(){console.log('something was added')});
   ingredients.add(strawberry);
-
   ingredients.on('remove', function(){console.log('something was removed')});
-  // ingredients.remove(strawberry);
   var cabbage = new Ingredient({name: 'cabbage', amount: 'one'});
   ingredients.add(cabbage);
 
-  var listView = new IngredientListView({collection: ingredients, el : $('#ingredient-list')});
-  listView.render();
+  var listView = new IngredientListView({collection: ingredients, el: $('#ingredient-list')});
   var turmeric = new Ingredient({name: 'turmeric', amount: 30});
-  listView.collection.add(turmeric);
+  ingredients.add(turmeric);
   ingredients.remove(cabbage);
+
+
+  var juices    = new JuiceCollection();
+  var JavaJuice = new Juice({name: 'Java Juice', Ingredients: ''});
+  juices.on('add', function(){console.log('juice added to collection')});
+  juices.add(JavaJuice);
+  var pineapple = new Ingredient({name: 'pineapple', amount: 1});
+  var starfruit = new Ingredient({name: 'starfruit', amount: 2});
+  var wheatgrass= new Ingredient({name: 'wheatgrass', amount: 10});
+  var JavaIngredients = new IngredientCollection();
+  JavaIngredients.add(pineapple);
+  JavaIngredients.add(starfruit);
+  JavaIngredients.add(wheatgrass);
+  JavaJuice.set('Ingredients', JavaIngredients);
+
+  var juiceListView = new JuiceListView({collection: juices, el: $('#juice-list')});
+
 })
