@@ -1,0 +1,30 @@
+<h1>Email Bot</h1>
+
+<%= form_tag '/emails', method: 'post' do %>
+  <%= text_field_tag :url %>
+  <%= submit_tag 'Find Emails' %>
+<% end %>
+
+<!-- <form action="/emails" class="site-search">
+  <input type="text" name="site_name" class="site-name"></input>
+  <button class="site-submit">Search</button>
+</form>
+
+<h2 class="search-site"></h2>
+<div class="emails"></div>
+ -->
+
+ <table>
+   <% @website.each do |website| %>
+   <tr>
+     <td><%= website.url %></td>
+     <td>
+       <ul>
+         <% website.emails do |email| %>
+         <li><%= email.email %></li>
+         <% end %>
+       </ul>
+     </td>
+   </tr>
+   <% end %>
+ </table>

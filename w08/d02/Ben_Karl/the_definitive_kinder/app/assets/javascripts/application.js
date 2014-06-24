@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.ui.all
+//= require kitten.js
+//= require app.js
 //= require_tree .
