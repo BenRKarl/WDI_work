@@ -79,7 +79,7 @@ var BookView = Backbone.View.extend({
   template: _.template($('#book-template').html()),
   render: function(){
     this.$el.empty();
-    var renderedHTML = this.template ( this.model.attributes);
+    var renderedHTML = this.template(this.model.attributes);
     this.$el.html(renderedHTML);
     return this;
   }

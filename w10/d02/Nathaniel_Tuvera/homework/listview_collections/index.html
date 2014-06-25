@@ -10,28 +10,45 @@
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
 
     <!-- Templates -->
-    <script id='ingredient-template' type="text/template">
-      name: <%- ingredient.name %>, amount: <%- ingredient.amount %>
-    </script>
-
     <script id='juice-template' type='text/template'>
-      <h2> name: <%- name %> </h2>
-       <button id='remove-juice'>Remove Juice</button>
+      <h2><%- juice.name %>
+       <button name='remove-juice'>Remove Juice</button>
+      </h2>
+      <form class='ingredients-list'>
+        <input type='text' class='ingredient-name' name='ingredient-name' placeholder='Enter Ingredient'></input>
+        <input type='text' class='ingredient-amount' name='ingredient-amount' placeholder='Enter Amount'></input>
+        <button type='submit'>Add Juice Ingredients</button>
+      </form>
+
+      <ul class='juice-ingredients'>
+      </ul>
     </script>
 
-    <!-- Juice Backbone -->
-    <script src='javascripts/libraries/backbone/juice.js'></script>
+    <script id='ingredient-template' type="text/template">
+      <p>ingredient: <%- ingredient.name %>, amount: <%- ingredient.amount %>
+      </p>
+    </script>
 
     <!-- Ingredient Backbone -->
-    <script src='javascripts/libraries/backbone/ingredient.js'></script>
+    <script src='javascripts/backbone/ingredient.js'></script>
+
+    <!-- Juice Backbone -->
+    <script src='javascripts/backbone/juice.js'></script>
 
     <!--  Da App -->
     <script type="text/javascript" src='javascripts/app.js'></script>
 
   </head>
   <body>
+
+    <h1>Matt's Juice Stand</h1>
+
+    <form class='juice-maker'>
+      <input type='text' class='juice-name' placeholder="Create a new Juice Name"></input>
+      <button type='submit' class='create-juice'>Make Juice</button>
+    </form>
+
     <ul id='juice-list'></ul>
-    <!-- <ul id='ingredient-list'></ul> -->
 
   </body>
 

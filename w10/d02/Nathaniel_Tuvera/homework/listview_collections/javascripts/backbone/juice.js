@@ -3,7 +3,9 @@
 
 // ** Model **
 var Juice = Backbone.Model.extend({
-  ingredients: IngredientCollection
+  initialize: function(){
+  this.set('ingredient', new IngredientCollection());
+  }
 });
 
 // ** Collection **
@@ -15,29 +17,62 @@ var JuiceCollection = Backbone.Collection.extend({
 // ** View **
 
 var JuiceView = Backbone.View.extend({
-  tagName: 'ul',
+  initialize: function(){
+    this.listenTo(this.model, 'all', this.render);
+  },
+  tagName: 'li',
   template: _.template($('#juice-template').html()),
   render: function(){
-    console.log(this);
-    // var IngredientList = new Ingredient({model: this.model.attributes.name ,el: $('#juice-ingredients')});
-    this.$el.html(this.template({ juice: this.model.attributes.name, ingredients: IngredientView}));
-    return this;
+    var that = this;
+    var renderedhtml = this.template({juice: this.model.toJSON()});
+    this.$el.html(renderedhtml);
+
+    var ingredientListView = new IngredientListView({
+      collection: this.model.get('ingredient'),
+      el: this.$el.find('.juice-ingredients')
+    });
+    ingredientListView.render();
+
+
+    this.$el.find('.ingredients-list').on('submit', function(e){
+      e.preventDefault();
+      var ingredientName    = that.$el.find('.ingredient-name');
+      var newIngredientName = ingredientName.val();
+      ingredientName.val('');
+
+      var ingredientAmount    = that.$el.find('.ingredient-amount');
+      var newIngredientAmount = ingredientAmount.val();
+      ingredientAmount.val('');
+
+      that.model.get('ingredient').add({
+        name: newIngredientName,
+        amount: newIngredientAmount});
+      ingredientListView.render();
+    })
+        return this;
+  },
+  events: {
+    "click button[name='remove-juice']": 'removeJuice'
+    // "click button[name='remove-juice']": remove
+  },
+  removeJuice: function(){
+    this.model.destroy();
+    this.remove();
   }
 });
 
 var JuiceListView = Backbone.View.extend({
   intialize: function(){
-    this.listenTo(this.collection, 'add', this.render);
-    this.listenTo(this.collection, 'remove', this.render);
+    this.listenTo(this.collection, 'all', this.render);
   },
+  // tagName: 'ul',
   render: function(){
     var that = this;
     this.$el.empty();
     _.each(this.collection.models, function(juice){
       var juiceView = new JuiceView({model: juice});
-      var ingredientView = new IngredientView({model: Ingredient});
+      // var ingredientView = new IngredientView({model: Ingredient});
       that.$el.append(juiceView.render().el);
-      that.$el.append(ingredientView.render().el);
     });
     return this;
   }
