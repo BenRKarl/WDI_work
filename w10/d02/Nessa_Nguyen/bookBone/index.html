@@ -7,6 +7,10 @@
   <script type='text/template' id='author-template'>
     <h3>Author: <%- name %></h3>
     <button name='delete'>Remove</button>
+    <form>
+      <input type='text' placeholder='Book title' name='title'></input>
+      <button>Add +</button>
+    </form>
     <ul class='my-books'></ul>
   </script>
 
@@ -18,7 +22,8 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src='javascript/library/underscore.js'></script>
   <script src='javascript/library/backbone.js'></script>
-
+  <script src='javascript/backbone/author.js'></script>
+  <script src='javascript/backbone/book.js'></script>
   <script src='javascript/app.js'></script>
   <title>Book Table</title>
 </head>
@@ -33,10 +38,6 @@
 <div class="author-list">
   <h2>The authors</h2>
 </div>
-
-<ul class="book-list">
-  <h2>My books</h2>
-</ul>
 
 
 </body>
