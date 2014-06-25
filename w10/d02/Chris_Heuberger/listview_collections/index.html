@@ -8,52 +8,30 @@
     <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
     <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
-
-    <!-- Templates -->
-    <script id="ingredient-template" type="text/template">
-      <div class='ingredient'>
-        <h3 class='juice-name'>
-          <%- name %>
-          <button data-price=0 name='remove'>remove</button>
-        </h3>
-      </div>
+    <!--  Da App -->
+    <script id="ingredient_template" type="text/template">
+      <%- ingredient.name %>, amount: <%- ingredient.amount%>
     </script>
-    <script id="juice-template" type="text/template">
-      <div class='juice'>
-        <h2 class='juice-name'>
-          <%- name %>
-        </h2>
-        <form>
-          <p>
-            <input type='text' placeholder='ingredient' name='ingredient'>
-          </p>
-        </form>
-        <ul class='ingredients'>
-        </ul>
-      </div>
+    <script id="juice_template" type="text/template">
+      <%- juice.name %> <button class="drink_button">Drink</button>
+      <form>
+          <input class="ingred" type='text' placeholder='ingredient'></input>
+          <input class="amount" type='text' placeholder='amount'></input>
+          <button type="submit">Submit</button>
+      </form>
+      <ul></ul>
     </script>
-
-    <!-- Juice -->
-    <script type="text/javascript" src='javascripts/backbone/juice.js'></script>
-
-    <!-- Ingredients -->
-    <script type="text/javascript" src='javascripts/backbone/ingredients.js'></script>
-
-    <!-- App -->
     <script type="text/javascript" src='javascripts/app.js'></script>
   </head>
   <body>
+      <form>
+          <input type="text" id="juice_input">
+          <button type="submit" id="juice_button">New Juice!</button>
+      </form>
 
-    <h1>
-      JUICE BAR
-    </h1>
+      <ul id="recipe"></ul>
+      <div id="juices"></div>
 
-    <form class='new-juice'>
-      <input type="text" placeholder='juice-name' class='juice-name'>
-    </form>
-
-    <ul class='juice-bar'>
-    </ul>
 
   </body>
 
