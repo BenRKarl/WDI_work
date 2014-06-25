@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="stylesheet/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+
+  <script type='text/template' id='juice-template'>
+    <h2><%- name %></h2>
+    <button name='remove'>Remove juice</button>
+    <form>
+      <input type='text' placeholder='Ingredient'></input>
+      <input type='text' placeholder='Quantity'></input>
+      <button>Add stuff</button>
+    </form>
+    <ul class='ingredient-list'></ul>
+  </script>
+
+  <script type='text/template' id='ingredient-template'>
+    <%- name %>: <%- quantity %>
+    <button name='remove'>Remove ingredient</button>
+  </script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src='javascript/library/underscore.js'></script>
+  <script src='javascript/library/backbone.js'></script>
+
+  <script src='javascript/backbone/ingredient.js'></script>
+  <script src='javascript/backbone/juice.js'></script>
+  <script src='javascript/app.js'></script>
+  <title>Juice Shack</title>
+</head>
+
+
+<body>
+
+<div class="wrapper">
+
+  <form class='new-juice'>
+    <input type="text" class='juice-name' placeholder='Connocation'></input>
+    <button>Add +</button>
+  </form>
+
+  <h1>Pure Goodness Shack</h1>
+
+  <div class="juice-list"></div>
+
+</div>
+
+
+</body>
+</html>

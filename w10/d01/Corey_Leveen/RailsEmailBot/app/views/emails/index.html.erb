@@ -1,0 +1,31 @@
+<h1>hello world</h1>
+
+
+<%= form_tag '/emails', method: 'post' do %>
+  <%= text_field_tag :url %>
+  <%= submit_tag 'Find emails' %>
+<% end %>
+
+
+
+<table>
+  <%= @emails.each do |email| %>
+  <tr>
+    <td>
+      <%= email.address %>
+    </td>
+    <td>
+      <ul>
+        <li>
+          <% email.address.each do |site| %>
+          <li>
+            <%= site.url %>
+            <% end %>
+          </li>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <% end %>
+
+</table>

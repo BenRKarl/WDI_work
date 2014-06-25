@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bookbone</title>
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+  <!-- Libraries -->
+  <script src='javascripts/libraries/jquery.js'></script>
+  <script src='javascripts/libraries/underscore.js'></script>
+  <script src='javascripts/libraries/backbone.js'></script>
+
+  <script id="author-template" type="text/template">
+    <h2><%- name %></h2>
+    <button>Remove</button>
+  </script>
+  <script id="book-template" type="text/template">
+  <h3><%- title %></h3>
+  </script>
+  <!-- APP -->
+  <script src='javascripts/app.js'></script>
+
+</head>
+<body>
+  <form action="">
+    <input class="author-name" type="text">
+    <input type="submit">
+  </form>
+  <ul></ul>
+</body>
+</html>
