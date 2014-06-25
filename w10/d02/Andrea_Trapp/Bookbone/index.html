@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bookbone</title>
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+ 
+ <!-- LIBRARIES -->
+  <!-- when jquery is found, more things / tools come in from backbone .. --> 
+  <script src='javascripts/libraries/jquery.js'></script>
+  <script src='javascripts/libraries/underscore.js'></script>
+  <!-- underscore is a dependence for backbone, therefore it has to be loaded before (hard dependency)-->
+  <script src='javascripts/libraries/backbone.js'></script>
+
+    <!-- Templates -->
+    <script type="text/template" id="author-template">
+      <h2>
+        <%- author.name %>
+        <button name="free-button">Free</button>
+      </h2>
+      <form>
+        <input type="text" placeholder="Book Title" name="title">        
+      </form>
+      <ul class='author-books'>
+      </ul>
+    </script>
+
+
+    <script type="text/template" id="book-template">
+      <h3 class="book">
+        <%- title %>
+      </h3>
+    </script>
+
+
+
+<script  src='javascripts/backbone/author.js'></script>
+<script  src='javascripts/backbone/book.js'></script>
+
+<!-- the APP js -->
+  <script  src='javascripts/app.js'></script>
+
+</head>
+<body>
+
+    <form class='new-author'> 
+      <input type="text" class="author-name" placeholder="Author Name...">       
+    </form>
+
+    <div>
+      <ul id="authors-list">        
+      </ul>  
+    </div>
+  
+<!--     <div>
+      <ul id="books-list">        
+      </ul>  
+    </div> -->
+
+</body>
+</html>
