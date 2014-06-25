@@ -4,6 +4,7 @@ WEEK 10 DAY 03
 ---
 #Morning RegEx
 
+
 ##HTML Tag Scanner
 
 In a file, `tag_scanner.rb`
