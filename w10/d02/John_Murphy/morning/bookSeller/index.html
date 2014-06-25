@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Seller</title>
+
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+
+
+  <script src="javascripts/libraries/jquery.js"></script>
+  <script src="javascripts/libraries/underscore.js"></script>
+  <script src="javascripts/libraries/backbone.js"></script>
+
+  <script type="text/template" id="author-template">
+
+      <h2> name: <%- author.name %></h2>
+      <button name="free-button">Free</button>
+
+  </script>
+
+  <script type="text/template" id="book-template">
+
+      <h2> name: <%- book.title %></h2>
+      <button name="delete-book">Delete</button>
+
+  </script>
+  <script src="javascripts/app.js"></script>
+
+
+</head>
+<body>
+  <form id="author-form">
+    <input type="text" class="author">
+    <input type="submit" class="author-button">
+  </form>
+
+  <ul id="author-list">
+
+  </ul>
+
+</body>
+</html>
