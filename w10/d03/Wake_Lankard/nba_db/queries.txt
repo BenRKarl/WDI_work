@@ -92,15 +92,9 @@ LIMIT(15);
 
 SELECT b.title, a.name, SUM(w.count)
 FROM books AS b INNER JOIN authors AS a ON a.id = b.author_id INNER JOIN word_counts AS w ON w.book_id = b.id
+WHERE b.title LIKE '% Love %'
 GROUP BY b.title, a.name
 ORDER BY SUM(w.count) ASC
 
 
- Column |         Type          |                      Modifiers                       
---------+-----------------------+------------------------------------------------------
- id     | integer               | not null default nextval('players_id_seq'::regclass)
- name   | character varying(50) | not null
- age    | integer               | not null
- team   | character varying(50) | 
- games  | integer               | not null
- points | integer               | not null
+
