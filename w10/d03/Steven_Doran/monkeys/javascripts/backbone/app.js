@@ -14,6 +14,15 @@ Bananapp.initialize = function(){
       nameField.val('');
       monkeys.add({name: newName});
    })
+
+   $('h1').mouseenter(function() {
+      $('h1').css('transform', 'scale(1.3,1.3) rotate('+((Math.random() * 20)-10)+'deg)');
+   });
+
+   $('h1').mouseleave(function() {
+      $('h1').css('transform', 'scale(1,1)');
+   });
+      
 };
 
 $(function(){
