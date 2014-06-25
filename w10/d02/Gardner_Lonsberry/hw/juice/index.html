@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Bookbone</title>
+    <title>Juicy</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link href="http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Alegreya:700" rel="stylesheet" type="text/css" />
@@ -14,28 +14,21 @@
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
 
     <!-- ************ Templates ************ -->
-    <script type='text/template' id='juice-template'>
-      <div class='juice'>
-        <h3 class='ingredients'>
+    <script id='juice-template' type='text/template'>
           <%- name %>
+        <form>
+            <input type='text' placeholder='ingredient-list' name='name'>
+        </form>
+        
           <button data-price=0 name='free'>Free</button>
-        </h3>
-      </div>
+        
+        <ul id='ingredients'>
+        </ul>
     </script>
 
-    <script type='text/template' id='ingredient-template'>
-      <div class='juice'>
-        <h2 class='ingredients'>
-          <%- name %>
-        </h2>
-        <form>
-          <p>
-            <input type='text' placeholder='ingredient' name='ingredient'>
-          </p>
-        </form>
-        <ul class='ingredients'>
-        </ul>
-      </div>
+    <script id='ingredient-template' type='text/template'>
+          name: <%- name %>
+      
     </script>
 
     <!-- ************ INGREDIENT ************ -->
@@ -49,21 +42,12 @@
 
 
   </head>
-
   <body>
-
-    <h1>
-      Drink Yo Juice
-    </h1>
 
     <form class='new-juice'>
       <input type="text" placeholder='juice-name' class='juice-name'>
     </form>
     
-    <form class='new-ingredient'>
-      <input type="text" placeholder='ingredient-name' class='ingredient-name'>
-    </form>
-
     <ul class='street-cart'>
     </ul>
 

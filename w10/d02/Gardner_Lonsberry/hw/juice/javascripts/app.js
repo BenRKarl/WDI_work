@@ -1,6 +1,6 @@
 var jucieCollection;
 var juiceListView;
-var ingredientCollection = new IngredientCollection({ingredient: "strawberry"});
+// var ingredientCollection = new IngredientCollection({ingredient: "strawberry"});
 
 
 
@@ -19,12 +19,4 @@ $(function(){
     nameField.val('')
     juiceCollection.add({name: juiceName});
   })
-  $('.new-ingredient').on('submit', function(e){
-    e.preventDefault();
-    var nameField =  $('.ingredient-name'); 
-    var juiceName = nameField.val();
-    nameField.val('')
-    juiceCollection.add({name: juiceName});
-  })
-
 })

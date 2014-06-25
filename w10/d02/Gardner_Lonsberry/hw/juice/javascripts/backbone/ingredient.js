@@ -2,11 +2,8 @@
 
 
 //  ******* Model *******
-var Ingredient = Backbone.Model.extend({
-  defaults:{
-    name: '',
-  }
-});
+var Ingredient = Backbone.Model.extend({});
+
 
 
 //  ******* Collection *******
@@ -15,27 +12,19 @@ var IngredientCollection = Backbone.Collection.extend({
 });
 
 
-//  ******* View *******
+//  ******* Model View *******
 var IngredientView = Backbone.View.extend({
-  initialize: function(){
-    this.listenTo(this.model, 'all', this.render)
-    this.listenTo(this.model, 'destroy', this.remove)
-  },
   tagName: 'li',
-  template: _.template( $('#ingredient-template').html() ),
+  template: _.template( $('#ingredient-template').html()),
   render: function(){
-  
-    this.$el.html( this.template( this.model.attributes ) )
-    return this;
-  },
-  events: {
-    'click button[name="free"]': 'removeIngredient'
-  },
-  removeIngredient: function(){
-    this.model.destroy();
+    this.$el.empty();
+    var renderedHTML = this.template( this.model.attributes );
+    this.$el.html( renderedHTML );
     return this;
   }
 });
+
+// ****** List View ******
 
 var IngredientListView = Backbone.View.extend({
   initialize: function(){
