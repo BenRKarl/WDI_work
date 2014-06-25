@@ -29,6 +29,7 @@ aBathingApp.Views.MonkeyView = Backbone.View.extend({
       e.preventDefault();
       var nameField = that.$el.find('input');
       var newName = nameField.val();
+      nameField.val('');
       that.model.set('name', newName)
 
     })
