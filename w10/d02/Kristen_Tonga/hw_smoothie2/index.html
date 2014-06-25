@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smoothie-Recipe-Book</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/libraries/jquery.js"></script>
+  <script src="js/libraries/underscore.js"></script>
+  <script src="js/libraries/backbone.js"></script>
+
+  <!-- TEMPLATES -->
+  <script type='text/template' id="juice-template">
+    <li>Juice: <%- name %></li>
+    <form>
+      <p>
+        <input type="text" placeholder="ingredient" name="ingredient">
+      </p>
+    </form>
+    <ul class='ingredients'></ul>
+  </script>
+  <script type='text/template' id="ingredient-template">
+    <li><%- ingredient %></li>
+
+  </script>
+
+  <!-- MY FILES -->
+  <script src="js/backbone/juice.js"></script>
+  <script src="js/backbone/ingredient.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body>
+
+  <h2>It's all connected...</h2>
+  <ul class="juice-test"></ul>
+  <ul class="ingredient-list-test"></ul>
+
+  <hr>
+
+  <form class="new-juice">
+    <input type="text" placeholder="juice-name" class="juice-name">
+  </form>
+  <div class="juice-collection"></div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BookBone Book Table</title>
+  <!-- scripts order matters -->
+  <script src='javascripts/libraries/jquery.js'></script>
+  <script src='javascripts/libraries/underscore.js'></script>
+  <script src='javascripts/libraries/backbone.js'></script>
+  <!-- styles -->
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+  <!-- template must go before your app.js script -->
+  <script id="author-template" type="text/template">
+    <h2><%- name %></h2>
+    <button name="free-button">Free</button>
+  </script>
+
+  <script id="book-template" type="text/template">
+    <h2><%- title %></h2>
+  </script>
+
+  <!-- App -->
+  <script src='javascripts/app.js'></script>
+
+</head>
+<body>
+  <h1 class='welcome'>Bookbone</h1>
+
+  <div class="author-form">
+    <h4>Add an author:</h4>
+    <form class='new-author'>
+      <input type="text" placeholder="Add Author Name" class='author-name'>
+    </form>
+  </div>
+
+
+  <ul class="street-side-table"></ul>
+</body>
+</html>
