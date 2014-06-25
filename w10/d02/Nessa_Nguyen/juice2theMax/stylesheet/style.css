@@ -1,0 +1,27 @@
+* {
+  font-family: 'Helvetica';
+}
+
+body {
+  font-size: 16px;
+  background-image: url('http://www.mrwallpaper.com/wallpapers/Fresh-pressed-Juices-1920x1080.jpg');
+  background-size: cover;
+}
+
+.wrapper {
+  background-color: rgba(255,255,255,.8);
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3,
+button {
+  font-family: 'Gloria Hallelujah';
+}
+
+h2 {
+  width: 4em;
+  display: inline;
+}
