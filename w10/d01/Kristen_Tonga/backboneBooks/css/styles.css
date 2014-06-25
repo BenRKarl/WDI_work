@@ -1,0 +1,20 @@
+body {
+background-image: url(http://www.darwinproject.ac.uk/wp-content/uploads/2009/11/Beagle-books_scaled2.jpg);
+}
+
+h2 {
+  color: blue;
+}
+
+.book-sock {
+  background-color: white;
+  opacity: .8;
+}
+
+.black-book-sock {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  opacity: .8;
+}
