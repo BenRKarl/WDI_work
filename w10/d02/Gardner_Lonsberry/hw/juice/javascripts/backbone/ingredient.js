@@ -21,6 +21,13 @@ var IngredientView = Backbone.View.extend({
     var renderedHTML = this.template( this.model.attributes );
     this.$el.html( renderedHTML );
     return this;
+  },
+  events: {
+    'click button[name="free"]': 'removeBook'
+  },
+  removeBook: function(){
+    this.model.destroy();
+    return this;
   }
 });
 
