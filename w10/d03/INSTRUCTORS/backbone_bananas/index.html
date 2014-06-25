@@ -12,8 +12,14 @@
       <!-- Templates -->
       <script type='text/template' id='monkey-template'>
         <%- name %> ... is a monkey
+        <button data-action='release'>Free</button>
+        <button data-action='edit'>Rename</button>
       </script>
-
+      <script type='text/template' id='edit-monkey-template'>
+        <form>
+          <input type='text' placeholder='<%- name %>'>
+        </form>
+      </script>
 
       <!-- Bananapp -->
       <script type="text/javascript" src='javascripts/backbone/app.js'></script>
