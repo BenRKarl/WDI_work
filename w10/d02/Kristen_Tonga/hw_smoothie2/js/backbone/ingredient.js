@@ -25,19 +25,19 @@ var IngredientView = Backbone.View.extend({
     this.$el.html(this.template( this.model.attributes) )
     return this;
   },
-  events: {
-    'click button[name="delete"]': 'removeIngredient'
-  },
-  removeIngredient: function(){
-    this.model.destory();
-    return this;
-  }
+  // events: {
+  //   'click button[name="delete"]': 'removeIngredient'
+  // },
+  // removeIngredient: function(){
+  //   this.model.destory();
+  //   return this;
+  // }
 });
 
 var IngredientListView = Backbone.View.extend({
-  // initialize: function(){
-  //   this.listenTo(this.collection, 'all', this.render);
-  // },
+  initialize: function(){
+     this.listenTo(this.collection, 'all', this.render);
+  },
   render: function(){
     var that = this;
     this.$el.empty();

@@ -9,7 +9,7 @@ $(function(){
   });
 
   var rad = new Juice({name: 'Rad Rool'});
-  // rad.get('ingredient').add({ingredient: 'radish'});
+  rad.get('ingredients').add({ingredient: 'radish'});
   // rad.get('ingredient').add({ingredient: 'rutabaga'});
   // rad.get('ingredient').add({ingredient: 'rasberry'});
   var radView = new JuiceView({model: rad});

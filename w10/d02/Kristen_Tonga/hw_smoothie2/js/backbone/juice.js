@@ -30,8 +30,8 @@ var JuiceView = Backbone.View.extend({
 
     this.$el.html( this.template( this.model.attributes ))
 
-    // var listView = new IngredientListView({collection: this.model.get('books'), el: this.$el.find('.ingredients')})
-    // listView.render();
+    var listView = new IngredientListView({collection: this.model.get('ingredients'), el: this.$el.find('.ingredients')})
+    listView.render();
 
     // this.$el.find('form').on('submit', function(e){
     //   e.preventDefault();
