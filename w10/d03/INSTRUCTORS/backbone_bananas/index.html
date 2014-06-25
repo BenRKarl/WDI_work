@@ -10,6 +10,10 @@
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
 
       <!-- Templates -->
+      <script type='text/template' id='monkey-template'>
+        <%- name %> ... is a monkey
+      </script>
+
 
       <!-- Bananapp -->
       <script type="text/javascript" src='javascripts/backbone/app.js'></script>
@@ -26,5 +30,13 @@
 
   </head>
   <body>
+
+  <form class='monkey-form'>
+    <input type="text" name='monkey-name'>
+  </form>
+
+  <ul class='monkeys'>
+  </ul>
+
   </body>
 </html>
