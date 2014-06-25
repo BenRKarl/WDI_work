@@ -34,23 +34,27 @@ var JuiceView = Backbone.View.extend({
 
     this.$el.find('form').submit(function(event){
       event.preventDefault();
-      var juiceNameField = that.$el.find('input');
-      var juiceName = juiceNameField.val();
-      juiceNameField.val('');
-      that.model.get('ingredients').add({name: juiceName});
+      var ingredientNameField = that.$el.find('input.new-ingredient-name');
+      var ingredientName = ingredientNameField.val();
+      var ingredientAmountField = that.$el.find('input.new-ingredient-amount');
+      var ingredientAmount = ingredientAmountField.val();
+      ingredientNameField.val('');
+      ingredientAmountField.val('');
+      that.model.get('ingredients').add({
+              name: ingredientName,
+              amount: ingredientAmount
+            });
     });
-
     return this;
+  },
+  events:{
+    "click button[name='delete-juice']":"removeJuice"
+  },
+  removeJuice: function(){
+    this.model.destroy();
+    this.$el.empty();
   }
 });
 
-// //Juice Collection View
-// var JuiceCollectionView = Backbone.View.extend({
-//   render: function(){
-//     var that = this;
-//     _.each(this.collection.models, function(juiceModel){
-//       var juiceMenu = new JuiceView({model: juiceModel});
-//       juiceMenu.render();
-//     });
-//   }
-// });
+// Juice Collection View
+// ..... nothing, didn't need it I suppose

@@ -19,15 +19,16 @@
         <button name='delete-juice'>Delete Dis Juice</button>
       </h2>
       <form>
-        <input type="text" placeholder="Ingredient name" name="new-ingredient-name"></input>
-        <input type="text" placeholder="Ingredient amount" name="new-ingredient-amount"></input>
+        <input type="text" placeholder="Ingredient name" class="new-ingredient-name"></input>
+        <input type="text" placeholder="Ingredient amount" class="new-ingredient-amount"></input>
+        <input type="submit" value="Add New Ingredient"></input>
       </form>
       <ul class="ingredient-list">
       </ul>
     </script>
 
     <script type="text/template" id="ingredient-template">
-      Name: <%- name %>, Amount: <%- amount %> <button name="delete-ingredient">Remove Ingredient</button>
+      <strong>Name:</strong> <%- name %>, <strong>Amount:</strong> <%- amount %> <button name="delete-ingredient">Remove Ingredient</button>
     </script>
 
     <!--  Da App -->

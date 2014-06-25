@@ -25,11 +25,10 @@ $(function(){
     var newJuice = new JuiceModel({name: newJuiceName});
     //create a new Juice View and provide the new Juice to it
     var newJuiceView = new JuiceView({
-          model: newJuice,
-          el: $('.juice-list')
+          model: newJuice
         });
-    //render the new Juice on the screen
-    newJuiceView.render().el;
+    //render the new Juice and append it to the screen
+    $('.juice-list').append(newJuiceView.render().el);
   })
 
 });
