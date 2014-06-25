@@ -11,14 +11,14 @@ In a file, `tag_scanner.rb`
 
 * Write an html_tags method in ruby.  It should take a string of html and return an array of unique html tags contained within that string.
 
-	- Given:`"<div class='three columns offset-by-two'><br/><ul id='contacts-links-documents'>"`
-	- Return:`["div", "br", "ul"]`
+  - Given:`"<div class='three columns offset-by-two'><br/><ul id='contacts-links-documents'>"`
+  - Return:`["div", "br", "ul"]`
 
 
 *  Use HTTParty to pull HTML from a URI and then scan it for tags using your method.
 
 
-## NBA DB
+# NBA DB
 
 ### Part 1
 
@@ -50,17 +50,3 @@ Figure out the appropriate SQL commands to find out the following, and keep trac
 ###Bonus
 1. Age and the average points per game for that age, ordered from youngest to oldest
 2. Team and the the number of players who score above 12 points per game on that team, ordered from most to least
-
-## Gutenberg
-
-Here is a small set of additional `GROUP BY` exercises using the Gutenberg data set.
-
-GROUP BY:
-1. top 20 group count of books by author_id, order by count descending
-2. number of authors grouped by first letter of name
-3. top 20 authors grouped by book count in descending order
-
-###Bonus
-
-4. top 15 books with 'love' in title, grouped by author
-5. List of book titles containing the word "love", along with their author, grouped by total word count in ascending order
