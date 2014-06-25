@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Matt's Juice Bar</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <!-- Libraries -->
+    <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+    <!-- templates -->
+    <script id='juice_temp' type='text/template'><h3><%- juice.name %></h3><button name="blend">Toss</button>
+    <form class="ingredient-form">
+    <input type="text" placeholder="Add ingredient" name="ingredient-name" class="name"></input>
+    <input type="text" placeholder="How many pieces?" name="ingredient-amount" class="amount"></input>
+    <ul class="juice-ingredients"></ul>
+    </form>
+    </script>
+     <script id='ingred_temp' type='text/template'>
+      name: <%- ingredient.name %>, amount: <%- ingredient.amount %>
+    </script>
+
+    <!--  Da App -->
+     <script type="text/javascript" src='javascripts/ingredients.js'></script>
+     <script type="text/javascript" src='javascripts/juice.js'></script>
+    <script type="text/javascript" src='javascripts/app.js'></script>
+
+   
+
+  </head>
+  <body>
+    <form class="make-juice">
+      <input type="text" class="juice-name">
+      <button class="juice-button">Blend!</button>
+    </form>
+    <ul id="juices"></ul>
+  </body>
+
+</html>
