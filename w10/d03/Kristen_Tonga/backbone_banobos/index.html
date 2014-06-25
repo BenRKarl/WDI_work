@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Backbone_banobos</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- LIBRARIES -->
+  <script src="js/libraries/jquery.js"></script>
+  <script src="js/libraries/underscore.js"></script>
+  <script src="js/libraries/backbone.js"></script>
+
+  <!-- TEMPLATES -->
+  <script type="template" class="monkey-template">
+    <h1>
+      <%- name %> <em>... is a monkey.</em>
+      <button data-action='release'>Bye.</button>
+      <button data-action='edit'>Change.</button>
+    </h1>
+  </script>
+  <script type="template" class="edit-monkey-template">
+    <form>
+      <input type="text" placeholder="<%- name %>">
+    </form>
+  </script>
+
+
+  <!-- APP -->
+  <script src="js/backbone/app.js"></script>
+  <!-- MODELS -->
+  <script src="js/backbone/models/monkey.js"></script>
+  <!-- COLLECTIONS -->
+  <script src="js/backbone/collections/monkeyCollection.js"></script>
+  <!-- VIEWS -->
+  <script src="js/backbone/views/monkeys/monkeyView.js"></script>
+  <script src="js/backbone/views/monkeys/monkeyListView.js"></script>
+</head>
+<body>
+
+  <h1>We're here...</h1>
+  <ul class="testing"></ul>
+
+  <form class="monkey-form">
+    <input type="text" class="monkey-name">
+    <input type="submit">
+  </form>
+  <ul class="monkeys">
+    <h1>Are there monkeys?</h1>
+  </ul>
+</body>
+</html>
