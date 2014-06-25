@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BookBone-JS</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <!-- ********Libraries********* -->
+  <script src="javascripts/libraries/jquery.js"></script>
+  <script src="javascripts/libraries/underscore.js"></script>
+  <script src="javascripts/libraries/backbone.js"></script>
+  
+   <!-- Templates -->
+
+   <script id="author-template" type="text/template">
+      Master Scribe: <%- name %>
+      <button name='die button'>Die</button>
+    </script>
+
+    <script id="book-template" type="text/template">
+      MasterWork: <%- title %>
+      <button name='discard'>Discard</button>
+    </script>
+
+  <script type="text/javascript" src="javascripts/app.js"></script>
+
+   
+   
+</head>
+<body>
+<form class="new-author">
+  <input class="author-name" type="text" placeholder="author-name">
+
+</form>
+<form class="new-book">
+  <input class="book-title" type="text" placeholder="book-title">
+
+</form>
+<ul id="table">
+  
+</ul>
+<ul id="shelf">
+  
+</ul>
+
+</body>
+</html>
