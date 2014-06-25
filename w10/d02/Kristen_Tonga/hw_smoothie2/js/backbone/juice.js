@@ -33,13 +33,13 @@ var JuiceView = Backbone.View.extend({
     var listView = new IngredientListView({collection: this.model.get('ingredients'), el: this.$el.find('.ingredients')})
     listView.render();
 
-    // this.$el.find('form').on('submit', function(e){
-    //   e.preventDefault();
-    //   var ingredientField = that.$el.find('input[name="ingredient"]');
-    //   var ingredient = ingredientField.val();
-    //   ingredientField.val('');
-    //   that.model.get('ingredients').add({ingredient: ingredient})
-    // })
+    this.$el.find('form').on('submit', function(e){
+      e.preventDefault();
+      var ingredientField = that.$el.find('input[name="ingredient"]');
+      var ingredient = ingredientField.val();
+      ingredientField.val('');
+      that.model.get('ingredients').add({ingredient: ingredient})
+    })
     return this;
   }
 });

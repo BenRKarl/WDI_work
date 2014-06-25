@@ -8,13 +8,22 @@ $(function(){
     el: $('.juice-collection')
   });
 
+  ingredientCollection = new IngredientCollection();
+  ingredientListView = new IngredientListView({
+    collection: ingredientCollection,
+    el: $('.ingredient-list-test')
+  });
+
   var rad = new Juice({name: 'Rad Rool'});
-  rad.get('ingredients').add({ingredient: 'radish'});
+  var radish = new Ingredient({ingredient: 'radish'});
+  rad.get('ingredients').add(radish);
   // rad.get('ingredient').add({ingredient: 'rutabaga'});
   // rad.get('ingredient').add({ingredient: 'rasberry'});
   var radView = new JuiceView({model: rad});
-  $('.juice-test').append(radView.render().el);
-  juiceCollection.add(rad)
+  var radishView = new IngredientView({model: radish})
+  $('.juice-test').append(radishView.render().el);
+  juiceCollection.add(rad);
+  ingredientCollection.add(radish);
 
   $('.new-juice').on('submit', function(e){
     e.preventDefault();
