@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Matt's Juice Bar</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <!-- Libraries -->
+    <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+
+    <!-- Templates -->
+    <script id="juice-template" type="text/template">
+      <%- name %>
+      <form>
+        <input type="text" placeholder="one ingredient at a time">
+      </form>
+      <ul id="ingredient-list"></ul>
+    </script>
+
+    <script id="ingredient-template" type="text/template">
+      name: <%- name %>
+    </script>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src='javascripts/ingredient.js'></script>
+    <script type="text/javascript" src='javascripts/juice.js'></script>
+    <script type="text/javascript" src='javascripts/app.js'></script>
+  </head>
+  <body>
+    <form class="juice-form">
+      <input type="text" placeholder="juice name">
+    </form>
+    <ul id="juice-list"></ul>
+  </body>
+
+</html>
