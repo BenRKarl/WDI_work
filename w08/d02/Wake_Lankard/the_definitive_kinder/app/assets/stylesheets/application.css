@@ -1,0 +1,25 @@
+/*
+
+
+*= require jquery.ui.all
+*= require_tree .
+*= require_self
+*/
+
+
+
+.rate {
+  width: 33%;
+  height: 500px;
+  float: left;
+}
+.meow{
+  background-color: green;
+
+}
+.not-meow{
+  background-color: red;
+}
+.kitten-presenter{
+  background-color: lightblue;
+}

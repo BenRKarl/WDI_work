@@ -1,0 +1,38 @@
+body{
+  height: 1000em;
+  padding: 0;
+  margin: 0;
+}
+
+img{
+  width: 100%;
+  position: relative;
+}
+
+.image-cage{
+  width: 100%;
+  overflow: hidden;
+}
+
+/* nb. overflow: hidden and position: relatve; */
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.information-block{
+  height: 8em;
+  background-color: lightblue;
+  margin: 0;
+  padding: 0;
+}
+
+.image-banner{
+
+  height: 15em;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+
+}

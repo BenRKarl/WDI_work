@@ -1,5 +1,4 @@
 var kittenCollection = new KittenCollection();
-
 function presentKittenForJudgement(){
   var kittenModel = new KittenModel();
   var kittenView  = new KittenView(kittenModel);
@@ -11,24 +10,30 @@ function removeKitten(el){
 }
 
 function admireKitten(url){
-  var kitten = new KittenModel(url);
-  kittenCollection.add(kitten);
+  var kitten = new KittenModel({url: url});
+  kittenCollection.add(kitten)
 }
 
 function setEventHandlers(){
-  $(".not-meow").droppable({
+  $('.not-meow').droppable({
     drop: function(e, dropped){
       removeKitten(dropped.draggable);
       presentKittenForJudgement();
+      console.log('not-meow')
+
     },
     hoverClass: "drop-hover"
   })
-  $(".meow").droppable({
+  $('.meow').droppable({
     drop: function(e, dropped){
-      admireKitten(dropped.draggable.attr('src'));
-    },
-    hoverClass: "drop-hover"
+      admireKitten(dropped.draggable.attr('src'))
+      removeKitten(dropped.draggable);
+      presentKittenForJudgement();
+
+      console.log('meow')
+    }
   })
+
 }
 
 $(function(){
