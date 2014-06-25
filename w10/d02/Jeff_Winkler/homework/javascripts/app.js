@@ -51,14 +51,17 @@ var JuiceView = Backbone.View.extend({
 
     this.$el.find('form').on('submit', function(e) {
       e.preventDefault();
-      that.model.get('recipe').add({name: that.$el.find('input').val()});
+      that.model.get('recipe').add({name: that.$el.find('input.ingred').val(),
+                                    amount: that.$el.find('input.amount').val()});
       that.$el.find('input').val('');
+      that.$el.find('input.amount').val('');
+      return false;
 
     });
     return this;
   },
   events: {
-    'click button': 'drinkJuice'
+    'click button.drink_button': 'drinkJuice'
   },
   drinkJuice: function() {
     this.model.destroy();
