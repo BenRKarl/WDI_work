@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="stylesheet/style.css">
+  <script type='text/template' id='author-template'>
+    <h3>Author: <%- name %></h3>
+    <button name='delete'>Remove</button>
+    <form>
+      <input type='text' placeholder='Book title' name='title'></input>
+      <button>Add +</button>
+    </form>
+    <ul class='my-books'></ul>
+  </script>
+
+  <script type='text/template' id='book-template'>
+    <p>Title: <%- title %></p>
+    <button name='delete'>Remove</button>
+  </script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src='javascript/library/underscore.js'></script>
+  <script src='javascript/library/backbone.js'></script>
+  <script src='javascript/backbone/author.js'></script>
+  <script src='javascript/backbone/book.js'></script>
+  <script src='javascript/app.js'></script>
+  <title>Book Table</title>
+</head>
+
+
+<body>
+<form class='new-author'>
+  <input type="text" class='author-name' placeholder='Author name'>
+  <input type="submit">
+</form>
+
+<div class="author-list">
+  <h2>The authors</h2>
+</div>
+
+
+</body>
+</html>
