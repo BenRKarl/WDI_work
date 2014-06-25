@@ -1,0 +1,51 @@
+<html>
+  <head>
+
+    <title>Juice Shack 2.0</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <!-- Libraries -->
+    <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+    <!-- Templates -->
+
+    <script class='juice-template' type="text/template">
+      <h2>
+        <%- name %>
+        <button name='free-button'>Free</button>
+      </h2>
+
+      <form>
+        <input type='text' placeholder='ingredient-name' name='name'></input>
+      </form>
+
+      <ul class='ingredients-for-juices'></ul>
+    </script>
+
+    <script class="ingredient-template" type='text/template'>
+      <h3 class='ingredient'>
+        <%- name %>
+      </h3>
+    </script>
+
+    <script src='javascripts/backbone/ingredient.js'></script>
+    <script src='javascripts/backbone/juice.js'></script>
+
+    <!-- App -->
+    <script src='javascripts/app.js'></script>
+
+  </head>
+
+  <body>
+
+    <form class="new-juice">
+      <input type="text" placeholder='juice-name' class='juice-name'>
+    </form>
+
+    <h1>Juices</h1>
+    <ul class='juice-cart'></ul>
+
+  </body>
+</html>

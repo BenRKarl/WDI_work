@@ -3,7 +3,7 @@ class KittensController < ApplicationController
   def index
     @kittens = Kitten.all
     respond_to do |format|
-      format.json{ render :json => kitten.to_json }
+      format.json{ render :json => @kittens.to_json }
       format.html
     end
   end
@@ -14,8 +14,8 @@ class KittensController < ApplicationController
   def create
     @kitten = Kitten.find(params[:id])
     respond_to do |format|
-      format.json{ render :json => kitten.to_json }
-      format.html{ redirect_to kittens_path(kitten) }
+      format.json{ render :json => @kitten.to_json }
+      format.html{ redirect_to kittens_path(@kitten) }
     end
   end
   def new

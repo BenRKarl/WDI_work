@@ -1,0 +1,10 @@
+body {
+  background-color: lightblue;
+}
+
+.collection {
+  background-color: white;
+  width: 40%;
+  float: left;
+  margin: 10px;
+}
