@@ -81,15 +81,20 @@ authorListView.render().el;
     - use a template on index.html
   - List View
 
+###Stage 5
+- Give authors an attributes of books
+- books is a book collection
+- Update the author view to display all the books of that author
+
 ---
 
 
 #Juice App
 
-Using Andrews Authors and Books example from class today, upgrade your Juice app.  
+Using Andrews Authors and Books example from class today, upgrade your Juice app.
 
 # Major development goals:
   - Create a juice from user text input
   - Add ingredients to a juice from user text input
-	
+
 ---
