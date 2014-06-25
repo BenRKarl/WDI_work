@@ -34,10 +34,10 @@ var IngredientView = Backbone.View.extend({
   }
 });
 
-var BookListView = Backbone.View.extend({
-  initialize: function(){
-    this.listenTo(this.collection, 'all', this.render);
-  },
+var IngredientListView = Backbone.View.extend({
+  // initialize: function(){
+  //   this.listenTo(this.collection, 'all', this.render);
+  // },
   render: function(){
     var that = this;
     this.$el.empty();

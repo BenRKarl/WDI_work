@@ -9,6 +9,8 @@ var Juice = Backbone.Model.extend({
   }
 });
 
+// **** COLLECTION ****
+
 var JuiceCollection = Backbone.Collection.extend({
   model: Juice
 });
@@ -16,10 +18,10 @@ var JuiceCollection = Backbone.Collection.extend({
 
 // **** VIEW ****
 
-var JuiceView = Backbone.Model.extend({
-  // initialize: function(){
-  //   this.listenTo(this.model, 'all', this.render)
-  // },
+var JuiceView = Backbone.View.extend({
+  initialize: function(){
+    this.listenTo(this.model, 'all', this.render)
+  },
   tagName: 'li',
   template: _.template( $('#juice-template').html() ),
   render: function(){
@@ -28,16 +30,16 @@ var JuiceView = Backbone.Model.extend({
 
     this.$el.html( this.template( this.model.attributes ))
 
-    var listView = new IngredientListView({collection: this.model.get('books'), el: this.$el.find('.ingredients')})
-    listView.render();
+    // var listView = new IngredientListView({collection: this.model.get('books'), el: this.$el.find('.ingredients')})
+    // listView.render();
 
-    this.$el.find('form').on('submit', function(e){
-      e.preventDefault();
-      var ingredientField = that.$el.find('input[name="ingredient"]');
-      var ingredient = ingredientField.val();
-      ingredientField.val('');
-      that.model.get('ingredients').add({ingredient: ingredient})
-    })
+    // this.$el.find('form').on('submit', function(e){
+    //   e.preventDefault();
+    //   var ingredientField = that.$el.find('input[name="ingredient"]');
+    //   var ingredient = ingredientField.val();
+    //   ingredientField.val('');
+    //   that.model.get('ingredients').add({ingredient: ingredient})
+    // })
     return this;
   }
 });
