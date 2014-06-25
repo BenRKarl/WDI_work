@@ -26,7 +26,7 @@ var JuiceView = Backbone.View.extend({
   render : function(){
     var that = this;
 
-    this.$el.html(this.template({ juice: this.model.toJSON() }));
+    this.$el.html(this.template( this.model.attributes ));
 
     var ingredientListView = new IngredientListView({
       collection : this.model.get('ingredients'),

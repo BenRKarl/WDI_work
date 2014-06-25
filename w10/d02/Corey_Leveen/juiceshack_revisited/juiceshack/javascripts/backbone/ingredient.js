@@ -4,7 +4,7 @@
 // Model
 var Ingredient = Backbone.Model.extend({
   defaults : {
-    name : ''
+    name : '',
   }
 });
 
@@ -20,7 +20,7 @@ var IngredientView = Backbone.View.extend({
   render : function(){
     this.$el.empty();
     debugger;
-    this.$el.html(this.template( this.model.toJSON() ));
+    this.$el.html(this.template( this.model.attributes ));
     return this;
   }
 });
@@ -34,7 +34,6 @@ var IngredientListView = Backbone.View.extend({
     var that = this;
     this.$el.empty();
     _.each(this.collection.models, function(ingredient){
-      debugger;
       var ingredientView = new IngredientView( {model : ingredient} );
       that.$el.append(ingredientView.render().el);
     });
