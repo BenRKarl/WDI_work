@@ -19,7 +19,6 @@ var IngredientView = Backbone.View.extend({
   template : _.template($('.ingredient-template').html()),
   render : function(){
     this.$el.empty();
-    debugger;
     this.$el.html(this.template( this.model.attributes ));
     return this;
   }
@@ -27,7 +26,7 @@ var IngredientView = Backbone.View.extend({
 
 // List View
 var IngredientListView = Backbone.View.extend({
-  intialize : function(){
+  initialize : function(){
     this.listenTo(this.collection, 'all', this.render);
   },
   render : function(){
