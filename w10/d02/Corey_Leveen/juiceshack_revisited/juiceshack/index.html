@@ -1,6 +1,7 @@
 <html>
   <head>
-    <title>Juice Shack</title>
+
+    <title>Juice Shack 2.0</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheets/styles.css">
 
@@ -9,31 +10,42 @@
     <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
     <!-- Templates -->
-    <script type="text/template" id="ingredient-template">
-      name: <%- ingredient.name %>, amount: <%- ingredient.amount %>
+
+    <script class='juice-template' type="text/template">
+      <h2>
+        <%- juice.name %>
+        <button name='free-button'>Free</button>
+      </h2>
+
+      <form>
+        <input type='text' placeholder='ingredient-name' name='name'></input>
+      </form>
+
+      <ul class='ingredients-for-juices'></ul>
     </script>
 
-    <script type="text/template" id="juice-template">
-      <h3>name: <%- juice.name %></h3>
-      <% _.each(juice.ingredients.models, function(ingredient) { %>
-        <%- ingredient.get('name') %>
-        <%- ingredient.get('amount') %>
-      <% }) %>
-
-
-
+    <script class="ingredient-template" type='text/template'>
+      <h3 class='ingredient'>
+        <%- ingredient.name %>
+      </h3>
     </script>
+
+    <script src='javascripts/backbone/ingredient.js'></script>
+    <script src='javascripts/backbone/juice.js'></script>
 
     <!-- App -->
-    <script type="text/javascript" src='javascripts/app.js'></script>
+    <script src='javascripts/app.js'></script>
 
   </head>
+
   <body>
-    <h1>Ingredients</h1>
-    <ul id="ingredient-list"></ul>
+
+    <form class="new-juice">
+      <input type="text" placeholder='juice-name' class='juice-name'>
+    </form>
 
     <h1>Juices</h1>
-    <ul id="juice-list"></ul>
-  </body>
+    <ul class='juice-cart'></ul>
 
+  </body>
 </html>
