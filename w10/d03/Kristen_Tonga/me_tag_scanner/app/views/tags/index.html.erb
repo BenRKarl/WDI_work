@@ -1,0 +1,7 @@
+<h1>Find those tags:</h1>
+
+<h2>IN WHAT WEBSITE?</h2>
+<%= form_tag '/tags', mathod: 'post' do %>
+  <%= text_field_tag :url %>
+  <%= submit_tag 'Find Tags' %>
+<% end %>
