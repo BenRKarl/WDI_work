@@ -1,0 +1,27 @@
+<h2>Hello World!</h2>
+
+<%= form_tag '/people', method: 'post' do %>
+  <%= text_field_tag :url %>
+  <%= submit_tag 'Find Emails' %>
+<% end %>
+
+<table>
+  <% @people.each do |person| %>
+  <tr>
+    <td><%= person.email %></td>
+    <td><ul>
+      <% person.sites.each do |site| %>
+      <li><%= site.url %></li>
+      <% end %>
+    </ul></td>
+  </tr>
+  <% end %>
+</table>
+
+
+<hr>
+
+<input type="text" class="url_input" placeholder="Put url here to extract email addresses" >
+
+<p>Here's a regular experession: [A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}</p>
+<p>Here's the <a href="http://www.webmonkey.com/2008/08/four_regular_expressions_to_check_email_addresses/">source.</a></p>
