@@ -26,7 +26,7 @@ template: _.template('<h2><%= title %></h2><h3><%= author %></h3>'),
     //above means give me a primed, clean canvas on which to work
 
 this.$el.html( this.template( this.model.attributes))
-//relates to line 19, template: _.template('<h2>.....')
+//relates to line 22, template: _.template('<h2>.....')
 
 return this;
 

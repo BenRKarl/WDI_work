@@ -42,17 +42,12 @@ var BookView = Backbone.View.extend({
     return this;
   }
 })
-
-// var myBook = new Book({title: "Dune", author: "Frank Herbert"});
-// var bookPainter = new BookView({model: myBook});
-
-// $(function(){
-//   bookPainter.render();
-// })
-var classicBook = new Book({ title: 'The Lichard in the Rye', author: 'Lichard DeGray'});
+.
+var myBook = new Book({title: "Dune", author: "Frank Herbert"});
+var bookPainter = new BookView({model: myBook});
 
 $(function(){
-  var classicBookPainter = new BookPainter({el: $('.book-sock'), model: classicBook});
-  classicBookPainter.render();
+  bookPainter.render();
 })
+
 

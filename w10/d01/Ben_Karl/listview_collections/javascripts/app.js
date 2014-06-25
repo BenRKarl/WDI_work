@@ -21,7 +21,6 @@ var IngredientListView = Backbone.View.extend({
   template: _.template('Juice Ingredients: '),
   render: function(){
     var that = this;
-    // this.$el.empty();
     this.$el.append(this.template());
     _.each(this.collection.models, function(ingredient){
       var ingredientView = new IngredientView({model: ingredient});
