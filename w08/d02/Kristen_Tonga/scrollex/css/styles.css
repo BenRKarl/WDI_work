@@ -1,0 +1,42 @@
+body {
+  height: 500em;
+  padding: 0;
+  margin: 20px;
+}
+
+.top {
+  background-color: lightblue;
+  height: 5em;
+}
+
+img {
+  position: relative;
+
+}
+
+.flying-image{
+  width: 30%;
+}
+
+.image-cage{
+  width: 100%;
+  overflow: hidden;
+}
+
+p{
+  margin: 0;
+  padding: 0;
+}
+.information-block {
+  background-color: lightblue;
+  height: 8em;
+  margin: 0;
+  padding: 0;
+}
+
+.image-banner {
+  height: 15em;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
