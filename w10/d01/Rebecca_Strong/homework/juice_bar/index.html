@@ -11,21 +11,60 @@
     <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
 
+    <script type='text/template' id='ingredient-template'>
+      <div class='ingredient'>
+        <h4 class='name'>
+          <%- name %>
+          <button>remove</button>
+        </h4>
+      </div>
+    </script>
+
+    <script type='text/template' id='juice-template'>
+      <div class='juice'>
+        <h2 class='fruit'>
+          <%- name %>
+        </h2>
+        <form>
+          <p>
+            <input type='text' placeholder='ingredient fruit' name='fruit'>
+          </p>
+        </form>
+        <ul class='ingredients'>
+        </ul>
+      </div>
+    </script>
+
     <!-- Templates -->
    <script id="ingredient-template" type="text/template">
       name: <%- ingredient.name %>, amount: <%- ingredient.amount %>
     </script>
     <script id="juice-template" type="text/template">
-      name: <%- juice.name %>, amount: <%- juice.amount %>
+      name: <%- juice.name %>, ingredient: <%- juice.ingredient %>
     </script>
 
+    <!-- Da Juice -->
+    <script type="text/javascript" src='javascripts/backbone/juice.js'></script>
+    <!-- Da Fruit -->
+    <script type="text/javascript" src='javascripts/backbone/ingredient.js'></script>
     <!--  Da App -->
     <script type="text/javascript" src='javascripts/app.js'></script>
 
   </head>
   <body>
-    <ul id="ingredient-list"></ul>
-    <ul id="juice-template"></ul>
+    <!-- <ul id="ingredient-list"></ul>
+    <ul id="juice-template"></ul> -->
+
+    <h1>
+      Juice Bar
+    </h1>
+
+    <form class='new-juice'>
+      <input type="text" placeholder='juice-name' class='juice-name'>
+    </form>
+
+    <ul class='juice-bar'></ul>
+
   </body>
 
 </html>

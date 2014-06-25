@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Matt's Juice Bar</title>
+    <meta charset="utf-8">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <!-- Libraries -->
+    <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+
+
+    <!-- TEMPLATES -->
+    <script type="text/template" id='juice-template'>
+      <h2>
+        Juice: <%- name %>
+        <button name='delete-juice'>Delete Dis Juice</button>
+      </h2>
+      <form>
+        <input type="text" placeholder="Ingredient name" class="new-ingredient-name"></input>
+        <input type="text" placeholder="Ingredient amount" class="new-ingredient-amount"></input>
+        <input type="submit" value="Add New Ingredient"></input>
+      </form>
+      <ul class="ingredient-list">
+      </ul>
+    </script>
+
+    <script type="text/template" id="ingredient-template">
+      <strong>Name:</strong> <%- name %>, <strong>Amount:</strong> <%- amount %> <button name="delete-ingredient">Remove Ingredient</button>
+    </script>
+
+    <!--  Da App -->
+    <script type="text/javascript" src='javascripts/backbone/ingredient.js'></script>
+    <script type="text/javascript" src='javascripts/backbone/juice.js'></script>
+    <script type="text/javascript" src='javascripts/app.js'></script>
+
+  </head>
+
+  <body>
+
+    <form class="new-juice-form">
+      <input type="text" placeholder="New juice idea?" class="new-juice-name" >
+    </form>
+
+    <ul class="juice-list">
+    </ul>
+
+  </body>
+
+</html>

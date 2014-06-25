@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Matt's Juice Bar</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <!-- Libraries -->
+    <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+
+    <!-- Templates -->
+    <script type="text/template" id="ingredient-template">
+      name: <%- ingredient.name %>, amount: <%- ingredient.amount %>
+    </script>
+
+    <script type="text/template" id="juice-template">
+    <% _.each(juices, function(juice){ %>
+      <h1><%= juice.get('name') %></h1>
+    <% }) %>
+    </script>
+
+
+    <!--  Da App -->
+    <script type="text/javascript" src='javascripts/app.js'></script>
+    
+  </head>
+  <body>
+    
+    <div>
+      <ul id="ingredient-list">        
+      </ul>  
+    </div>
+
+    <div>
+      <ul id="juices-list">        
+      </ul>  
+    </div>
+
+    <div>
+      <ul id="juice">        
+      </ul> 
+    </div>
+
+  </body>
+
+</html>
