@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework</title>
+
+	<script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+    <script type="text/javascript" src='javascripts/app.js'></script>
+
+
+
+	 <!-- ************ Templates ************ -->
+    <script type='text/template' id='ingredients-template'>
+      <div class='ingredient'>
+        <h2 class='name'>
+          Name: <%- ingredient. name %>, Amount: <%- ingredient.amount %>
+        </h2>
+      </div>
+    </script>
+
+    <script type='text/template' id='juices-template'>
+      <div class='juice'>
+        <h2 class=''>
+          <%- name %>
+        </h2>
+        <form>
+          <p>
+            <input type='text' placeholder='indredient name' name='ingredient-name'>
+          </p>
+        </form>
+        <ul class='ingredients'>
+        </ul>
+      </div>
+    </script>
+
+
+
+	<!-- ************ Ingredients ************ -->
+	<script type="text/javascript" src='javascripts/backbone/ingredients.js'></script>
+
+    <!-- ************ Juices ************ -->
+    <script type="text/javascript" src='javascripts/backbone/juices.js'></script>
+
+    <!-- ************ app ************ -->
+    <script type="text/javascript" src='javascripts/app.js'></script>
+
+</head>
+<body>
+	<form class='new-juice'>
+      <input type="text" placeholder='add-juice' class='add-juice'>
+    </form>
+    <ul class='juices'></ul>
+
+    <form class='new-ingredient'>
+      <input type="text" placeholder='add-ingredient' class='add-ingredient'>
+    </form>
+</body>
+</html>
