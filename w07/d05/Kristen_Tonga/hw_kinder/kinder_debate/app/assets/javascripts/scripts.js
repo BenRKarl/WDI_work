@@ -2,101 +2,98 @@ $(function(){
   console.log("You're learning...")
 })
 
-//MODEL - saved
-function savedKitten(kittenJSON){
-  this.id = kittenJSON.id;
-  this.url = kittenJSON.url;
+
+//MODEL - new
+function Kitten(){
+  this.url = undefined;
   return this;
-}
-
-var newKitten = {
-
-  getURL: function(){
+};
+//VIEWS
+Kitten.prototype.getURL = function(){
     var randomWidth = Math.floor(Math.random() * 1000) + 200;
     var randomHeight = Math.floor(Math.random() * 500) + 200;
-    var url = 'http://www.placekitten.com/'+randomHeight+'/'+randomWidth;
-    return url;
-  },
+    this.url = 'http://www.placekitten.com/'+randomHeight+'/'+randomWidth;
+    return this.url;
+};
 
-//VIEWS
-  showKitten: function(){
-    url = newKitten.getURL()
+Kitten.prototype.showKitten = function(){
+    url = Kitten.getURL()
     $('.randomImage').html("");
     console.log('kitten coming!');
     var image = $('<img>').attr('src', url).addClass("small-12 columns kitten");
     $('.randomImage').append(image)
-    return url;
-    debugger
+    return this;
   }
-};
 
 //CONTROLLER
 function setEventHandlers(button){
-  var getRandomKitten = $('.getRandomKitten')[0];
+  // var that = this
   $(button).click(function(){
-      var url = newKitten.getURL();
-      var elem = newKitten.showKitten();
 
+      var url = Kitten.getURL;
+      var elem = Kitten.showKitten();
+      console.log(this);
   });
-}
-
+};
 
 //ON LOAD
 $(function(){
+  // kittenCollection.fetch();
   $('.dismiss').on('click', setEventHandlers($('.dismiss')))
   $('.getRandomKitten').on('click', setEventHandlers($('.getRandomKitten')))
 })
 
 
 
+// function SavedKitten(){
+// };
+
+// //MODEL - saved
+// SavedKitten.prototype = {
+//   savedKitten: function(kittenJSON){
+//     this.id = kittenJSON.id;
+//     this.url = kittenJSON.url;
+//     return this;
+//   },
+//   //VIEWS
+//   showSavedKittens: function(model){
+//     this.model = model;
+//     this.el = undefined;
+//   }
+// };
+
+// SavedKitten.prototype.render = function(){
+//   var image = $('<img>').attr('src', this.model.url).addClass("small-3 columns saved");
+//   this.el = image;
+//   return this;
+// };
 
 
 
 
+// //CONTROLLER - saved
+// function KittenCollection(){
+//   this.models = {};
+// };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $(function(){
-//   var kitten = $('<img>').attr('src', 'http://placekitten.com/300/200')
-//       .addClass('newKitten')
-//   $('randomImage').append(kitten);
-//   kitten.appendTo($('randomImage')).hide().fadeIn(3000);
-// })
-
-
-
-
-
-// KittenCollector.prototype.fetchSaved = function(){
-//   var that = this;
-//   $ajax({
+// KittenCollection.prototype.fetch = function(){
+//   var that = this
+//   $.ajax({
 //     url: '/kittens',
 //     dataType: 'json',
-//     sucess: function(data){
-//       for (index in data){
-//         var element = data[index];
-//         var newKitten = new Kitten(element);
-//         that.models[element.id] = newKitten;
-//       }
+//     success: function(data){
+//       console.log(data)
 //     }
 //   })
-// }
+// };
+
+// KittenCollection.prototype.add = function(kittenJSON){
+//   var newKitten = new Kitten(kittenJSON);
+//   this.models[kittenJSON.id]=newKitten;
+//   $(this).trigger('add Flare');
+//   return this;
+// };
 
 
-// // READY ON
-// $(function(){
-// })
+
+// var kittenCollection = new KittenCollection();
