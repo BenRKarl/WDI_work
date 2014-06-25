@@ -30,7 +30,7 @@ PaletteCollection.prototype.fetch = function(){
   var that = this
   console.log(offset)
   $.ajax({
-    url: 'palettes/?offset='+offset,
+    url: 'lines/'+offset,
     dataType: 'json',
     async: false,
     success: function(data){
