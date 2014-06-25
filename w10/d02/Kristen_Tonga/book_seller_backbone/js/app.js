@@ -12,10 +12,28 @@ var AuthorCollection = Backbone.Collection.extend({
 
 // VIEW
 var AuthorView = Backbone.View.extend({
-  template: _.template('<li><%= name %></li>'),
+  initialize: function(){
+    this.listenTo(this.model, 'all', this.render);
+  },
+  template: _.template('<li><%= name %></li><button class=delete>Free</button>'),
   render: function(){
     this.$el.html( this.template (this.model.attributes))
     return this
+  },
+  events: {
+    'click': 'scream',
+    'click button.delete': 'remove',
+    'mouseleave': 'fadeSome',
+    'mouseover': 'fadeNone'
+  },
+  scream: function(){
+    console.log('A HA!!')
+  },
+  fadeSome:function(){
+    this.$el.css('opacity', 0.5);
+  },
+  fadeNone:function(){
+    this.$el.css('opacity', 1);
   }
 });
 
@@ -37,6 +55,30 @@ var AuthorListView = Backbone.View.extend({
 
 
 
+
+
+// BOOKS
+// Models
+
+var Book = Backbone.Model.extend({
+  defaults: { title: 'undefined' }
+});
+
+var BookCollection = Backbone.Collection.extend({
+  model: Book
+})
+
+// Views
+
+var BookView = Backbone.View.extend({
+  template: _.template("<div class='book'><%- title %></div>"),
+  tender: function(){
+    this.$el.html( this.template( this.model.attributes ))
+    return this
+  }
+});
+
+
 // ON PAGE LOAD
 
 var authorCollection
@@ -47,6 +89,7 @@ $(function(){
 
   var lich = new Author({name: 'Lich G'});
   var lichView = new AuthorView({model: lich});
+
   $('.lich').append(lichView.render().el);
   console.log(lichView.render().el);
 
@@ -56,5 +99,16 @@ $(function(){
     el: $('.list-view')
   });
 
-  authorCollection.add({name: 'Lich'});
+  $('form.author-input').on('submit', function(e){
+    e.preventDefault();
+    console.log('click');
+    var authorNameField = $('.author-name');
+    var authorName = authorNameField.val();
+    authorNameField.val('');
+    authorCollection.add({name: authorName })
+  })
+
+  var greatness = new Book({title: 'The Great Book'});
+  var greatView = new BookView
+
 })

@@ -2,7 +2,9 @@ body {
   background-color: lightblue;
 }
 
-.author-collection {
+.collection {
   background-color: white;
   width: 40%;
+  float: left;
+  margin: 10px;
 }
