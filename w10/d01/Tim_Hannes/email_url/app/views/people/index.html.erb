@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Url Finder</title>
+</head>
+<body>
+
+  <h1>Email Url Finder</h1>
+    <h4>Insert URL</h4>
+      <%= form_tag '/people', method: 'post' do %>
+        <%= text_field_tag :url %>
+        <%= submit_tag 'Find Emails!' %>
+      <% end %>
+
+      <table>
+        <% @people.each do |person| %>
+          <tr>
+            <td><%= person.email %></td>
+            <td>
+              <ul>
+                <% person.sites.each do |site| %>
+                  <li><%= site.url %></li>
+                <% end %>
+              </ul>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+
+</body>
+</html>
