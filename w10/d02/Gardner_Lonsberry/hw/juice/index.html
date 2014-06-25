@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Juicy</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Alegreya:700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans|Dosis:400,800" rel="stylesheet" type="text/css" />
+
+
+
+    <!-- ************ Libraries ************ -->
+    <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+
+    <!-- ************ Templates ************ -->
+    <script id='juice-template' type='text/template'>
+          <%- name %>
+        <form>
+            <input type='text' placeholder='ingredient-list' name='name'>
+        </form>
+        
+          <button data-price=0 name='free'>Free</button>
+        
+        <ul id='ingredients'>
+        </ul>
+    </script>
+
+    <script id='ingredient-template' type='text/template'>
+          name: <%- name %>
+      <button data-price=0 name='free'>Free</button>
+    </script>
+
+    <!-- ************ INGREDIENT ************ -->
+    <script type="text/javascript" src='javascripts/backbone/ingredient.js'></script>
+
+    <!-- ************ JUICE ************ -->
+    <script type="text/javascript" src='javascripts/backbone/juice.js'></script>
+
+    <!-- ************ app ************ -->
+    <script type="text/javascript" src='javascripts/app.js'></script>
+
+
+  </head>
+  <body>
+
+    <form class='new-juice'>
+      <input type="text" placeholder='juice-name' class='juice-name'>
+    </form>
+    
+    <ul class='street-cart'>
+    </ul>
+
+  </body>
+</html>

@@ -8,10 +8,52 @@
     <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
     <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+
+    <!--  Templates -->
+    <script type="text/template" class="ingredient-template">
+      name: <%- ingredient.name %>, amount: <%- ingredient.amount%>
+    </script>
+
+    <script type="text/template" class="juice-template">
+      <h2> <%= title %> </h2>
+      <ul>
+      <% _.each(ingredients, function(ingredient){ %>
+          <li> <%= ingredient.get('name') %>, Amount: <%= ingredient.get('amount')%> </li>
+      <% }) %>
+      </ul>
+    </script>
+
+
     <!--  Da App -->
     <script type="text/javascript" src='javascripts/app.js'></script>
+
   </head>
   <body>
+
+    <div class="background">
+      <h2>Ingredient List:</h2>
+      <div class="ingredient-list">
+        <ul class="ingredients"></ul>
+      </div>
+
+
+      <div class="juices">
+        <h2>THIS IS A LIST OF JUICES...</h2>
+        <h3>Can't you see them?</h3>
+        <p>Well... when you click on one, the inner html of the right div changes to show those juices ingredients...</p>
+      </div>
+
+      <div class="juice">
+      </div>
+
+      <div class="form">
+        <p>JUICE NAME:</p><input type="text" value="Juice NAME" >
+        <input type="text" value="Ingredient #1" >
+        <input type="text" value="Ingredient #2" >
+        <input type="submit">
+      </div>
+      <div class="removal-alert">Something has been removed!</div>
+    </div>
   </body>
 
 </html>
