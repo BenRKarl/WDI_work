@@ -1,0 +1,136 @@
+<div class="eventlist">
+
+  <span id="this_is_list"></span>
+  <span id="filter_string" style="display:none"><%=@filter_string%></span>
+  <span id="start_date_for_range" style="display:none"><%=@start%></span>
+  <span id="end_date_for_range" style="display:none"><%=@end%></span>
+
+  <div class="search-bar">
+      <div class="tab">
+        <p>S<br>e<br>a<br>r<br>c<br>h<br></p>
+      </div>
+      <div class="search-form">
+        <%= render "search" %>
+      </div>
+  </div>
+
+
+
+  <div class="nav">
+    <div class="title">
+      <h1><em>LineItUp</em></h1>
+    </div>
+
+    <%= render 'account' %>
+  </div>
+
+  <div class="logo">
+    <%= image_tag "logo1.png" %>
+  </div>
+
+  <div class="help">
+    <p>I'M <br /> NEW</p>
+  </div>
+
+  <!--.......................... -->
+
+
+  <div class="container">
+    <div class="container white">
+
+
+      <div id="tabs" class="sixteen columns right">
+        <ul>
+          <li><a id="search_tab_for_click" href="#tabs-list">List</a></li>
+          <li title="Come directly from 'List' - we show all search results... Come from your 'SAVED EVENTS' - we map those instead!"><a id="map_tab_for_click" href="#tabs-map" >Map</a></li>
+          <li class='saved-events-tab'><a id="user_tab_for_click" href="#tabs-list-columns" >SAVED EVENTS</a></li>
+        </ul>
+
+<!-- ------------------------------------- -->
+
+        <div id="tabs-list" class="container">
+        <div class="intro">
+          <%= render "introchart" %>
+        </div>
+
+ <div class="display_results">
+        <p id="pretty_result_string" style="display:none">  <%= @starting %>
+        <%= @ending %><%=@search_word %>
+         <%= @location %>
+      <%= @radius %>
+
+      </div>
+
+
+        <div class="four columns left">
+          <ul id="event-list"></ul>
+        </div>
+
+        <div class="eight columns right">
+
+          <div class="eventInfo eight columns right">
+            <div class="event-details-tab">
+              D<br/>e<br/>s<br/>c<br/>r<br/>i<br/>p<br/>t<br/>i<br/>o<br/>n
+            </div>
+            <div class="event-details">
+            <%= render "eventdetails" %>
+            </div></div>
+          </div>
+        </div>
+
+
+
+        <div id="tabs-map">
+          <%= render "map" %>
+          <span id="saved_from_map" style="display:none"></span>
+        </div>
+
+
+        <div id="tabs-list-columns">
+          <h2>Your line up...</h2>
+          <p><em></em></p>
+
+          <div class="four columns left">
+            <ul id="user-event-list"></ul>
+          </div>
+          <div class="four columns right">
+            <div class="eventInfo four columns">
+              <%= render "userdetails" %>
+            </div>
+          </div>
+
+          <div class=" two column right sortable-categories">
+            <hr>
+            <h4>Coming Soon: Make your own categories</h4>
+            <div class="column">
+              <div class="portlet">
+                <div class="portlet-header">Category 1</div>
+                <div class="portlet-content">Event 1 <br /> Event 2 <br /> Event 3</div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="portlet">
+                <div class="portlet-header">Category 2</div>
+                <div class="portlet-content">Event 1 <br /> Event 2 <br /> Event 3</div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="portlet">
+                <div class="portlet-header">Category 3</div>
+                <div class="portlet-content">Event 1 <br /> Event 2 <br /> Event 3</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <%= token_tag %>
+
+</div>
+
+<span id="from-where" style="display:none">search</span>
+
