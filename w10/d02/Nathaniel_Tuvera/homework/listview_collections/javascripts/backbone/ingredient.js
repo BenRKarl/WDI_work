@@ -11,7 +11,7 @@ var IngredientView = Backbone.View.extend({     // passing in a new model, retri
   tagName: 'li',                                // creating HTML markup  !!! manages creations of a dom view for a single elemtn
   template: _.template($('#ingredient-template').html()),
   render: function(){
-    this.$el.empty();
+    this.$el.html();
     var renderedHTML = (this.template({ingredient: this.model.toJSON()}));
     this.$el.html(renderedHTML)
     return this;
