@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Backbone Bananas</title>
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+  <!-- Libraries -->
+  <script src = 'javascripts/libraries/jquery.js'></script>
+  <script src = 'javascripts/libraries/underscore.js'></script>
+  <script src = 'javascripts/libraries/backbone.js'></script>
+
+
+<!--Templates-->
+<script id = "monkey-template" type="text/template">
+  <%- name %> ... is a monkey
+</script>
+
+<!-- Bananapp -->
+<script type="text/javascript" src='javascripts/backbone/app.js'></script>
+
+<!--Models-->
+<script type="text/javascript" src='javascripts/backbone/models/monkey.js'></script>
+
+<!--Collections-->
+<script type="text/javascript" src='javascripts/backbone/collections/monkeyCollection.js'></script>
+
+<!--Views-->
+<script type="text/javascript" src='javascripts/backbone/views/monkeys/monkeyView.js'></script>
+<script type="text/javascript" src='javascripts/backbone/views/monkeys/monkeyListView.js'></script>
+
+</head>
+<body>
+  <h1>I AM A BANANA!</h1>
+
+<div class = ".monkey-list"></div>
+
+</body>
+</html>
