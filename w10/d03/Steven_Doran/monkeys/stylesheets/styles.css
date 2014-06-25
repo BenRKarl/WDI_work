@@ -1,0 +1,13 @@
+body {
+   background-color: steelblue;
+   font-size: 150%;
+   font-family: 'Whitney';
+   color: white;
+}
+
+h1 {
+   font-family: 'Hiruko Pro Outline';
+   font-size: 4em;
+   text-align: center;
+   color: orange;
+}
