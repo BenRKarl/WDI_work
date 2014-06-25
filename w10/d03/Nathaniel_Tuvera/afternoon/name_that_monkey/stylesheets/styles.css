@@ -1,0 +1,10 @@
+body{
+  background-color:lightblue;
+}
+
+.monkey-listed{
+  background-color:lightyellow;
+  padding:10px;
+  border-radius: 5px;
+  margin: 5px;
+}
