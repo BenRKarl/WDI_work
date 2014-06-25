@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Backbone</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <script src="javascripts/libraries/jquery.js"></script>
+  <script src="javascripts/libraries/underscore.js"></script>
+  <script src="javascripts/libraries/backbone.js"></script>
+
+  <script id="author_template" type="text/template">
+      <h2><%- author.name %></h2>
+      <button name="free_button">Free</button>
+  </script>
+
+<script id="book_template" type="text/template">
+      <h2><%- title %></h2>
+</script>
+
+
+  <script src="javascripts/app.js"></script>
+</head>
+<body>
+
+<form>
+  <input type="text" id="author_input">
+  <button type="submit" id="author_button">Submit</button>
+</form>
+  <ul id="street"></ul>
+
+</body>
+</html>
