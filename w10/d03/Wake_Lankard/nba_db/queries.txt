@@ -56,6 +56,44 @@ WHERE (points/games) > 12
 GROUP BY team
 ORDER BY count DESC;
 
+--GUTENBERG
+
+--1. top 20 group count of books by author_id, order by count descending
+
+SELECT author_id, count(*) FROM books
+GROUP BY author_id
+ORDER BY count(*) DESC
+LIMIT(20);
+
+--2. number of authors grouped by first letter of name 
+
+SELECT LEFT(name, 1) as first_letter, count(*) FROM authors
+GROUP BY first_letter;
+
+--3. top 20 authors grouped by book count in descending order
+
+SELECT a.name, count(b.*)
+FROM authors AS a INNER JOIN books AS b ON a.id = b.author_id
+GROUP BY a.name
+ORDER BY count(b.*) DESC; 
+
+--BONUS
+
+--1.top 15 books with 'love' in title, grouped by author
+
+SELECT b.id, b.title, a.name
+FROM books AS b INNER JOIN authors AS a ON a.id = b.author_id
+WHERE b.title LIKE '% Love %'
+GROUP BY a.name, b.id
+ORDER BY b.id ASC
+LIMIT(15);
+
+--2.List of book titles containing the word "love", along with their author, grouped by total word count in ascending order
+
+SELECT b.title, a.name, SUM(w.count)
+FROM books AS b INNER JOIN authors AS a ON a.id = b.author_id INNER JOIN word_counts AS w ON w.book_id = b.id
+GROUP BY b.title, a.name
+ORDER BY SUM(w.count) ASC
 
 
  Column |         Type          |                      Modifiers                       
