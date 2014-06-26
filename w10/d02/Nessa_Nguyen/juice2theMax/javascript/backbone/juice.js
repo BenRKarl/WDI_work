@@ -26,9 +26,10 @@ var JuiceView = Backbone.View.extend({
     return this;
   },
   events: {
-    'click button[name="remove"]': 'removeJuice',
+    'click button[name="remove-juice"]': 'removeJuice',
     'submit form': 'addIngredient'
   },
+
   addIngredient: function(e) {
     e.preventDefault();
     var inputField = this.$el.find('input');
@@ -39,7 +40,8 @@ var JuiceView = Backbone.View.extend({
     return this;
   },
   removeJuice: function() {
-
+    this.model.destroy();
+    this.remove();
   }
 });
 

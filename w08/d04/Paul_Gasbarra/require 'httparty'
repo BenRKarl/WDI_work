@@ -1,0 +1,8 @@
+require 'httparty'
+require 'pry'
+
+def find_emails(url)
+  data = HTTParty.get(url)
+  emails = data.scan(/(\w+@\w+[.]\w*)/);
+end
+

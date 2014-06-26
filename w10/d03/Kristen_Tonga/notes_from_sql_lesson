@@ -1,0 +1,10 @@
+gutenberg=# SELECT count(b.*) FROM books AS b INNER JOIN authors AS a ON a.id = b.author_id WHERE a.name LIKE 'Aldrich, Thomas Bailey';
+ count
+-------
+   153
+(1 row)
+
+
+               Divide by 3...
+
+

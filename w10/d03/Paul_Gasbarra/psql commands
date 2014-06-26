@@ -1,0 +1,15 @@
+psql commands
+
+SELECT COUNT(b.*) FROM books AS b
+INNER JOIN authors AS a ON a.id = b.author_id
+WHERE a.name LIKE 'Aldrich, Thomas Bailey';
+
+SELECT SUM(w.count) FROM word_counts AS w INNER JOIN books AS b ON w.book_id = b.id WHERE b.title LIKE "Secret Societies and Subversive Movements";
+
+SELECT a.name, b.title FROM books AS b
+INNER JOIN authors AS a ON a.id = b.author_id
+WHERE a.name IN ('Wells, H. G. (Herbert George')');
+
+gutenberg=# SELECT wc.id, wc.word, b.title FROM word_counts AS wc
+gutenberg-# INNER JOIN books AS b ON b.id = wc.book_id
+gutenberg-# LIMIT 12;

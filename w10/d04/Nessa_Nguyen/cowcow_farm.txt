@@ -1,0 +1,9 @@
+SELECT * FROM cows WHERE name LIKE '%ooo%';
+
+SELECT * FROM farmers INNER JOIN cows ON farmers.id=cows.farmer_id;
+
+SELECT farmers.name FROM farmers INNER JOIN cows ON farmers.id=cows.farmer_id GROUP BY farmers.name ORDER BY COUNT(cows) DESC LIMIT 1;
+
+SELECT name FROM farmers
+WHERE (SELECT count(*) FROM cows
+       WHERE farmer_id = farmers.id) > 1;
