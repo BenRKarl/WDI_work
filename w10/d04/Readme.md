@@ -64,3 +64,37 @@ SELECT * FROM cows INNER JOIN farmers ON farmers.id = cows.farmer_id;
   SELECT name FROM farmers
   WHERE (SELECT count(*) from cows where farmer_id=farmers.id) > 1;
 ```
+
+---
+
+###Gutenberg on rails with backbone
+- Use your gutenberg and build a backbone app from scratch that obtains author from the database
+- Each author should have a books collection that is fetched only when books button is hit
+
+- Models
+  - Author
+  - Book
+- Views
+  - Author
+    - AuthorView
+    - AuthorListView
+  - Book
+    - BookView
+    - BookListView
+- Collections
+  - AuthorColletion
+  - BookColletion
+
+`A working example of this has been posted to the instructors folder.  Get your own working.  References the example seldom.`
+
+---
+
+##Shapes:
+- Trick out your shapes app (optionally).
+
+---
+
+###Portfolio Prep
+- Much of tomorrow will be spent working on your personal portfolio
+- Bring your resume
+- Know your linked-in password
