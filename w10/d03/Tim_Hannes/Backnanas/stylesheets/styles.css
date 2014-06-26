@@ -1,0 +1,14 @@
+body{
+  background-color: lightgrey;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.main-container{
+  width: 80%;
+  margin: 0 auto;
+}
+li{
+  background-color:darkgrey;
+  margin: 5px 0 5px 0;
+  border: 1px solid black;
+}
