@@ -13,3 +13,36 @@
 7) SELECT AVG(age) FROM players WHERE games > 40;
 
 8) SELECT team, SUM(points) FROM players GROUP BY team ORDER BY SUM(points) DESC;
+
+BONUS:
+
+1) SELECT age, AVG(points/games) FROM players GROUP BY age ORDER BY age ASC;
+
+2) SELECT team, COUNT(*) FROM players WHERE points/games > 12 GROUP BY team  ORDER BY count DESC;
+
+GUTENBERG STUFF:
+
+1) SELECT author_id, COUNT(*) FROM books GROUP BY author_id ORDER BY COUNT(*) DESC LIMIT 20;
+
+2) SELECT LEFT(name, 1) AS first_initial, COUNT(*) FROM authors GROUP BY first_initial;
+
+3) SELECT a.name, COUNT(b.*) FROM books as b
+INNER JOIN authors AS a ON a.id=b.author_id
+GROUP BY a.name
+ORDER BY COUNT(b.*) DESC;
+
+BONUS:
+
+1) SELECT b.title, a.name FROM books AS b
+INNER JOIN authors AS a on a.id=b.author_id
+WHERE b.title LIKE '% Love %'
+GROUP BY a.name, b.title
+ORDER BY a.name ASC
+LIMIT 15;
+
+2) SELECT b.title, a.name, SUM(wc.count) FROM books AS b
+INNER JOIN authors AS a ON b.author_id=a.id
+INNER JOIN word_counts AS wc ON wc.book_id=b.id
+WHERE b.title LIKE '% Love %'
+GROUP BY b.title, a.name, wc.count
+ORDER BY sum ASC;
