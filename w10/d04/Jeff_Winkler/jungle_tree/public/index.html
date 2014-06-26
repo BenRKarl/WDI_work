@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Backbone</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+  <script src="javascripts/libraries/jquery.js"></script>
+  <script src="javascripts/libraries/underscore.js"></script>
+  <script src="javascripts/libraries/backbone.js"></script>
+
+  <!-- Templates -->
+
+  <script id="monkey_template" type="text/template">
+    <%- name %> ...the monkey
+    <button data-action='release'>Free</button>
+    <button data-action='edit'>Edit</button>
+  </script>
+
+  <script id="edit_monkey_template" type="text/template">
+    <form>
+        <input type="text">
+    </form>
+  </script>
+
+
+
+
+  <script src="javascripts/backbone/app.js"></script>
+
+  <script src="javascripts/backbone/models/monkey.js"></script>
+
+  <script src="javascripts/backbone/collections/monkeyCollection.js"></script>
+
+  <script src="javascripts/backbone/views/monkeys/monkeyView.js"></script>
+  <script src="javascripts/backbone/views/monkeys/monkeyListView.js"></script>
+
+
+
+
+</head>
+<body>
+  <form class="monkey_form">
+    <input type="text" id="new_monkey_input">
+  </form>
+
+  <ul id="monkeys"></ul>
+
+</body>
+</html>

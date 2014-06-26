@@ -1,0 +1,28 @@
+body {
+   background-color: steelblue;
+   font-size: 150%;
+   font-family: 'Whitney';
+   color: white;
+}
+
+h1 {
+   font-family: 'Hiruko Pro Outline';
+   width: 100%;
+   font-size: 4em;
+   text-align: center;
+   color: orange;
+   text-shadow: 3px 3px 2px #d6e3e1;
+}
+
+li {
+   width: 50%;
+   text-align: center;
+   background-color: #ffc656;
+   margin: 5px;
+   padding: 3px;
+   border-radius: 5px;
+   box-shadow: 3px 3px 2px #d6e3e1;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
