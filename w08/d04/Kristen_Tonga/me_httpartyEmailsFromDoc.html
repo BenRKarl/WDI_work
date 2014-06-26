@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>
+  ALL THE EMAILS!!
+  </title>
+  <script>
+
+  require 'httparty'
+
+  def find_emails(url)
+    response = HTTParty.get(url)
+    response.scan(/\w+@\w+/)
+  end
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+require
+httparty.get(url)
+respo.scan()
