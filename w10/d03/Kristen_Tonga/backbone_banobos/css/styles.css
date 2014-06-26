@@ -45,10 +45,10 @@ body {
 .name {
   background-color: lightblue;
   height: 25px;
-  width: 50px;
+  width: 75px;
   position: relative;
   top: -38px;
-  left: 75px;
+  left: 70px;
 }
 
 img {

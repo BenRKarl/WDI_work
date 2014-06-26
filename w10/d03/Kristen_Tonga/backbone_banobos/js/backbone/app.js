@@ -1,5 +1,8 @@
 var Bananapp = Bananapp || {Models: {}, Collections: {}, Views: {} };
 
+
+
+
 Bananapp.initialize = function(){
   // collection, listview, events
   var monkeys = new Bananapp.Collections.MonkeyCollection();
@@ -8,9 +11,9 @@ Bananapp.initialize = function(){
     collection: monkeys
   });
 
-  $('form[name="monkey-name"]').on('submit', function(e){
+  $('form.monkey-form').on('submit', function(e){
     e.preventDefault();
-    var nameField = $('form[name="monkey-name"] input');
+    var nameField = $('form.monkey-form input');
     var newName = nameField.val();
     nameField.val('');
     monkeys.add({name:newName});
