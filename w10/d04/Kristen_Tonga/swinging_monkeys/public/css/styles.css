@@ -16,34 +16,35 @@ body {
   border: 1 dotted white;
 }
 
-.monkey {
+.monkey0, .monkey1, .monkey2, .monkey3, .monkey4 {
   width: 150px;
   height: 150px;
   position: relative;
+  margin: 40px;
 }
 
-.one {
+.monkey0 {
   top: -40px;
   left: 120px;
 }
 
-.three {
+.monkey1 {
   top: -80px;
   left: 150px;
 }
 
-.four {
-  top: -300px;
-  left: 350px;
+.monkey2 {
+  top: -100px;
+  left: 250px;
 }
 
-.five {
-  top: -300px;
-  left: 380px;
+.monkey3 {
+  top: -200px;
+  left: 300px;
 }
 
 .name {
-  background-color: lightblue;
+  background-color: white;
   height: 25px;
   width: 75px;
   position: relative;
@@ -52,6 +53,19 @@ body {
   em: .5;
 }
 
+.buttons {
+  position: relative;
+  top: -80px;
+  left: 145px;
+  width: 30px;
+  z-index: 100;
+}
+
+button {
+  background-color: none;
+  border-radius: 25px;
+  margin: 0;
+}
 img {
   width: 100%;
 

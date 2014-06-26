@@ -15,7 +15,7 @@ Bananapp.Views.MonkeyView = Backbone.View.extend({
   events:{
     'click [data-action="release"]' : 'releaseMonkey',
     'click [data-action="edit"]' : 'renderEditForm',
-    'mouseover' : 'wiggle',
+    // 'mouseover' : 'wiggle',
   },
   releaseMonkey: function(){
     this.model.destroy();
