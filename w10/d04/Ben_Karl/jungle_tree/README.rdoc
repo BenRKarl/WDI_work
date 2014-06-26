@@ -1,0 +1,11 @@
+HOW TO  ADD BACKBONE APP TO RAILS -
+
+- change 'exception' to 'null_session' in Application Controller
+
+- Add 'index URL  to Collection'
+
+- Add collection.fetch(); in app.js (here the collection is called monkeys, so 'monkey.fetch();')
+
+- Change collection.add to collection.save in app.js (where you are adding a monkey to the collection)
+
+- Add model.save underneath model.set in Model View.
