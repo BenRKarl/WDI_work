@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Paul's Juice Bar</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <!-- Libraries -->
+    <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+
+    <!-- Templates -->
+    <script id = "juice-template" type="text/template">
+    <h2>
+        <%- name %>
+        <button name = "trash-button">Pour This Out</button>
+    </h2>
+    <form>
+      <input id='ingredientName' type='text' placeholder='ingredient name' name='ingredientName'></input>
+      <input id='ingredientAmount' type='text' placeholder='quantity' name='ingredientAmount'></input>
+      <input type="submit" value="Add ingredient">
+    </form>
+    <ul class = 'ingredients-in-juice'></ul>
+    </script>
+
+    <script id='ingredient-template' type='text/template'>
+      <h3 class='ingredient'>
+        <%- ingredientName %>: &nbsp; <%- ingredientAmount %>
+      </h3>
+    </script>
+
+
+    <!--  The App -->
+    <script type="text/javascript" src='javascripts/app.js'></script>
+  </head>
+
+  <body>
+    <form class='new-juice'>
+      <input type="text" placeholder='juice-name' class = 'juice-name'>
+    </form>
+
+    <ul class="juice-menu"></ul>
+
+  </body>
+</html>
