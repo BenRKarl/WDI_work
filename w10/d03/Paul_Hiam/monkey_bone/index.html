@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>monkey</title>
+
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+  <!-- Libraries -->
+  <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+  <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+  <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+  <!-- templates -->
+
+   <script id="monkey-template" type="text/template">
+      Ape: <%- name %>
+      <button name='free-button'>free</button>
+      <button name='rename-button'>rename</button>
+    </script>
+
+       <script id="edit-monkey-template" type="text/template">
+       <form>
+       <input type='text' placeholder=' <%- name %>'>
+       </form>
+     
+      
+    </script>
+
+   <!-- ZooApp -->
+    
+    <script type="text/javascript" src='javascripts/backbone/app.js'></script>
+  <!-- Models -->
+     <script type="text/javascript" src='javascripts/backbone/models/monkey.js'></script>
+  <!-- Collections -->
+      <script type="text/javascript" src='javascripts/backbone/collections/monkeyCollection.js'></script>
+  <!-- Views -->
+    <script type="text/javascript" src='javascripts/backbone/views/monkeys/monkeyView.js'></script>
+    <script type="text/javascript" src='javascripts/backbone/views/monkeys/monkeyListView.js'></script>
+</head>
+
+<body>
+  <form class="new-monkey">
+  <input class="monkey-name" type="text" placeholder="Ape's Name">
+
+</form>
+<ul id="cage">
+  
+</ul>
+
+</body>
+</html>
