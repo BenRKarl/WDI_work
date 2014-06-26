@@ -1,0 +1,19 @@
+GROUP BY:
+1. top 20, group count of books by author_id, order by count descending
+  SELECT author_id, COUNT(*) FROM books GROUP BY author_id ORDER BY COUNT(*) DESC LIMIT 20;
+
+2. number of authors grouped by first letter of name
+  SELECT LOWER(LEFT(name, 1)), COUNT(*) FROM authors GROUP BY LOWER(LEFT(name, 1)) ORDER BY LOWER(LEFT(name, 1)) ASC;
+
+
+3. top 20 authors grouped by book count in descending order
+  ***** This is better. It explains the top three. ******
+   SELECT a.name, COUNT(b.*) FROM books AS b INNER JOIN authors AS a ON a.id = b.author_id GROUP BY a.name, b.author_id ORDER BY COUNT(b.*) DESC LIMIT 20;
+
+Bonus
+
+1. top 15 books with 'love' in title, grouped by author
+  SELECT a.name, b.title FROM books AS b INNER JOIN authors AS a ON a.id=b.author_id WHERE title LIKE '%love%' GROUP BY a.name, b.title ORDER BY a.name LIMIT 15;
+
+
+2. List of book titles containing the word "love", along with their author, grouped by total word count in ascending order
