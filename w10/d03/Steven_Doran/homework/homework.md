@@ -56,7 +56,13 @@ SELECT a.name, COUNT(b.title) FROM authors AS a INNER JOIN books AS b ON a.id = 
 
 Not quite sure what you're asking here...
 
-SELECT a.name, COUNT(b.title) FROM authors AS a INNER JOIN books AS b ON b.author_id = a.id WHERE LOWER(b.title) LIKE '% love %' OR LOWER(b.title) LIKE '% love' OR LOWER(b.title) LIKE 'love %' OR LOWER(b.title) LIKE 'love' GROUP BY a.name ORDER BY count DESC LIMIT 15;
+SELECT a.name, COUNT(b.title) FROM authors 
+AS a INNER JOIN books AS b ON b.author_id = a.id 
+WHERE LOWER(b.title) LIKE '% love %' OR 
+LOWER(b.title) LIKE '% love' OR 
+LOWER(b.title) LIKE 'love %' OR 
+LOWER(b.title) LIKE 'love' 
+GROUP BY a.name ORDER BY count DESC LIMIT 15;
 
 Not a lot of repeat offenders here:
 
