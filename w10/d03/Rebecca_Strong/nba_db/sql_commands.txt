@@ -1,0 +1,124 @@
+All columns for all players from the New York Knicks (NYK)
+nba_db=# SELECT * FROM players WHERE team LIKE 'NYK';
+ id  |       name       | age | team | games | points
+-----+------------------+-----+------+-------+--------
+  17 | Carmelo Anthony  |  27 | NYK  |    55 |   1245
+  26 | Renaldo Balkman  |  27 | NYK  |    14 |     42
+  42 | Mike Bibby       |  33 | NYK  |    39 |    103
+  85 | Tyson Chandler   |  29 | NYK  |    62 |    699
+ 105 | Baron Davis      |  32 | NYK  |    29 |    178
+ 119 | Toney Douglas    |  25 | NYK  |    38 |    237
+ 144 | Landry Fields    |  23 | NYK  |    66 |    580
+ 155 | Dan Gadzuric     |  33 | NYK  |     2 |      0
+ 189 | Josh Harrellson  |  22 | NYK  |    37 |    162
+ 237 | Jared Jeffries   |  30 | NYK  |    39 |    170
+ 257 | Jerome Jordan    |  25 | NYK  |    21 |     42
+ 278 | Jeremy Lin       |  23 | NYK  |    35 |    512
+ 331 | Steve Novak      |  28 | NYK  |    54 |    477
+ 385 | Iman Shumpert    |  21 | NYK  |    59 |    563
+ 395 | J.R. Smith       |  26 | NYK  |    35 |    436
+ 407 | Amare Stoudemire |  29 | NYK  |    47 |    823
+ 442 | Bill Walker      |  24 | NYK  |    32 |    189
+(17 rows)
+
+
+All columns for all players from the Indiana Pacers (IND) who are under 26 years old
+nba_db=# SELECT * FROM players WHERE team LIKE 'IND' and age < 26;
+ id  |       name       | age | team | games | points
+-----+------------------+-----+------+-------+--------
+  91 | Darren Collison  |  24 | IND  |    60 |    621
+ 143 | Kyrylo Fesenko   |  25 | IND  |     3 |      8
+ 164 | Paul George      |  21 | IND  |    66 |    798
+ 203 | Roy Hibbert      |  25 | IND  |    65 |    834
+ 207 | George Hill      |  25 | IND  |    50 |    481
+ 350 | Jeff Pendergraph |  24 | IND  |    20 |     34
+ 357 | A.J. Price       |  25 | IND  |    44 |    172
+ 403 | Lance Stephenson |  21 | IND  |    42 |    106
+(8 rows)
+
+
+All columns for all players, ordered from least points scored to most points scored
+nba_db=# SELECT * FROM players ORDER BY points ASC;
+id  |        name         | age | team | games | points
+-----+---------------------+-----+------+-------+--------
+ 324 | Hamady NDiaye       |  25 | WAS  |     3 |      0
+ 155 | Dan Gadzuric        |  33 | NYK  |     2 |      0
+ 390 | Brian Skinner       |  35 | MEM  |     1 |      0
+  41 | Keith Benson        |  23 | GSW  |     3 |      0
+ 417 | Malcolm Thomas      |  23 | SAS  |     3 |      1
+ 168 | Mickell Gladness    |  25 | MIA  |     8 |      2
+ 103 | Erick Dampier       |  36 | ATL  |    15 |      2
+ 130 | Francisco Elson     |  35 | PHI  |     5 |      2
+ 243 | Armon Johnson       |  22 | POR  |     1 |      2
+ 116 | Ike Diogu           |  28 | SAS  |     2 |      2
+ 147 | Jeff Foote          |  24 | NOH  |     4 |      4
+ 113 | Justin Dentmon      |  26 | SAS  |     2 |      4
+  31 | Earl Barron         |  30 | GSW  |     2 |      4
+ 434 | Ben Uzoh            |  23 | CLE  |     2 |      4
+ 211 | Darington Hobson    |  24 | MIL  |     5 |      4
+ 216 | Dennis Horner       |  23 | NJN  |     8 |      5
+ 413 | Hasheem Thabeet     |  24 | HOU  |     5 |      6
+ 255 | Solomon Jones       |  27 | LAC  |    10 |      6
+ 427 | Ronny Turiaf        |  29 | WAS  |     4 |      6
+ 397 | Jerry Smith         |  24 | NJN  |     5 |      7
+  24 | Kelenna Azubuike    |  28 | DAL  |     3 |      7
+ 143 | Kyrylo Fesenko      |  25 | IND  |     3 |      8
+ 366 | Ryan Reid           |  25 | OKC  |     5 |      8
+ 137 | Christian Eyenga    |  22 | CLE  |     6 |      9
+  73 | Derrick Byars       |  27 | SAS  |     2 |     10
+   3 | Blake Ahearn        |  27 | UTA  |     4 |     10
+ 386 | Xavier Silas        |  24 | PHI  |     2 |     11
+:
+
+
+Name and Points per game (points/games), for the players with the top 20 points per game
+
+nba_db=# SELECT name, points FROM players ORDER BY points DESC LIMIT 20;
+       name        | points
+-------------------+--------
+ Kevin Durant      |   1850
+ LeBron James      |   1683
+ Kobe Bryant       |   1616
+ Russell Westbrook |   1558
+ Kevin Love        |   1432
+ Blake Griffin     |   1368
+ Dirk Nowitzki     |   1342
+ Brandon Jennings  |   1260
+ Carmelo Anthony   |   1245
+ Josh Smith        |   1239
+ Rudy Gay          |   1232
+ LaMarcus Aldridge |   1191
+ Chris Paul        |   1189
+ Paul Pierce       |   1181
+ Al Jefferson      |   1170
+ DeMarcus Cousins  |   1160
+ Danny Granger     |   1159
+ Deron Williams    |   1154
+ David Lee         |   1147
+ Joe Johnson       |   1129
+(20 rows)
+
+
+The average age for all players
+nba_db=# SELECT AVG (age) FROM players;
+         avg
+---------------------
+ 26.6443514644351464
+(1 row)
+
+The average age for all players on the Oklahoma City Thunder (OKC)
+nba_db=# SELECT AVG (age) FROM players WHERE team LIKE 'OKC';
+         avg
+---------------------
+ 25.4000000000000000
+(1 row)
+
+The average age for all players who played more than 40 games
+nba_db=# SELECT AVG (age) FROM players WHERE games > 40;
+         avg
+---------------------
+ 26.4561403508771930
+(1 row)
+
+The team and total points scored from all players on that team (team points), ordered from most team points to least
+SELECT player.id count (*) FROM points GROUP BY team ORDER BY SUM (points) DESC;
