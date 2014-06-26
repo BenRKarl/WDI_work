@@ -2,13 +2,49 @@ var App = {
   Models: {},
   Collections: {},
   Views: {},
+  Router: null,
+  initialize: function(){
+    this.viewManager = new App.Views.ViewManager({el: $('body')});
+    this.router = new App.Router();
+    Backbone.history.start();
+  }
+
+
+}
+
+App.Router = Backbone.Router.extend({
   initialize: function(){
     this.collection = new App.Collections.ShapeCollection();
-    seedCollection(3000, this.collection);
-    var view  = new App.Views.ShapeListView({collection: this.collection, el: $('body')});
-    view.render();
+    seedCollection(10000, this.collection);
+  },
+  routes : {
+    ''            : 'index',
+    'shape/:type' : 'filterByShape'
+  },
+  index: function(){
+    var indexView = new App.Views.ShapeListView({collection: this.collection});
+    App.viewManager.display(indexView);
+  },
+  filterByShape: function(){
+    var shapes = this.collection.where({type: type})
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.View.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
   }
-}
+});
+
+App.Views.ViewManager = Backbone.View.extend({
+  display: function(view){
+    var previousView = this.currentView || null
+    //if there is a current view, assign it to the variable previous view
+    var nextView = view;
+    if (previousView){
+      previousView.remove();
+    }
+    nextView.render().$el.appendTo(this.$el);
+    this.currentView = nextView;
+  }
+})
 
 App.Models.Shape = Backbone.Model.extend({});
 
