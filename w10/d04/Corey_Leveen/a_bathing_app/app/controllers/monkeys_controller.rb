@@ -25,7 +25,6 @@ class MonkeysController < ApplicationController
     monkey = Monkey.find(params[:id])
     monkey.destroy!
     render json: monkey.to_json
-    redirect_to monkeys_path
   end
 
   private

@@ -8,12 +8,14 @@ aBathingApp.initialize = function(){
     el : $('.monkey-house')
   });
 
+  monkeyCollection.fetch();
+
   $('form.new-monkey').on('submit', function(e){
     e.preventDefault();
     var monkeyNameField = $('.monkey-name');
     var monkeyName = monkeyNameField.val();
     monkeyNameField.val('');
-    monkeyCollection.add( {name : monkeyName} );
+    monkeyCollection.create( {name : monkeyName} );
   })
 
 };
