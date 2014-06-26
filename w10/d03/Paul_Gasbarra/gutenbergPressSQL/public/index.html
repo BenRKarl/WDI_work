@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gutenberg Press</title>
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+  <!-- Libraries -->
+  <script src='javascripts/backbone'
+
+ <!-- Templates -->
+ <script type="text/template" id='book-template'></script>
+ <%- title %>
+</script>
+<script type = "text/template" id='author-template'>
+<h3><%-name %></h3>
+<ul class='books'></ul>
+</script>
+
+
+  <!-- APP -->
+  <script src='javascripts/backbone/app.js'></script>
+
+  <!-- MODELS -->
+ <script src='javascripts/backbone/models/author.js'></script>
+ <script src='javascripts/backbone/models/book.js'></script>
+
+<!-- COLLECTIONS -->
+  <script src='javascripts/backbone/collections/AuthorCollection.js'></script>
+  <script src='javascripts/backbone/collections/BookCollection.js'></script>
+
+<!-- VIEWS -->
+  <script src='javascripts/backbone/views/authors/AuthorView.js'></script>
+  <script src='javascripts/backbone/views/authors/AuthorListView.js'></script>
+  <script src='javascripts/backbone/views/authors/BookView.js'></script>
+  <script src='javascripts/backbone/views/authors/BookListView.js'></script>
+
+
+</head>
+<body>
+
+  loading...
+
+  <ul class='author-lounge'></ul>
+
+</body>
+</html>
