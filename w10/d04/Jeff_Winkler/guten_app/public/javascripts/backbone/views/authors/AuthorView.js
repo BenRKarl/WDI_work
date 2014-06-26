@@ -13,6 +13,20 @@ GutenbergApp.Views.AuthorView = Backbone.View.extend({
     'click [data-action="get_books"]': 'getBooks'
   },
   getBooks: function () {
-    console.log(this.model.get('id'));
+    var that = this;
+    authorID = this.model.get('id');
+    var thisAuthorsBooks = new GutenbergApp.Collections.BookCollection();
+    var thisAuthorsBookListView = new GutenbergApp.Views.BookListView({
+      collection: thisAuthorsBooks
+    });
+    thisAuthorsBooks.url = "/authors/" + authorID + "/books";
+    thisAuthorsBooks.fetch({success: function(data) {
+      //console.log(data);
+      thisAuthorsBookListView.render();
+      //console.log(thisAuthorsBookListView.el);
+      that.$el.append(thisAuthorsBookListView.el);
+      }
+    });
+
   }
 });
