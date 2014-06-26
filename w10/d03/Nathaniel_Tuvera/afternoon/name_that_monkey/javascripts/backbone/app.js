@@ -14,7 +14,6 @@ Bananapp.initialize = function(){
   // Set up Events for the form
     $('form.monkey-form').on('submit', function(e){
     e.preventDefault();
-    console.log('monkey submitted, will he stick?')
     var nameField   = $('.monkey-name');
     var monkeyName  = nameField.val();
     nameField.val('');

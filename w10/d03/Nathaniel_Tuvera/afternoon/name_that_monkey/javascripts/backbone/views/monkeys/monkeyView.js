@@ -37,6 +37,7 @@ Bananapp.Views.MonkeyView = Backbone.View.extend({
   wiggleMonkey: function(){
     var deg = (Math.random() *2) -1;
     this.$el.css('transform', 'rotate('+deg+'deg');
+    this.$el.css('box-shadow', '10px 5px 5px 5px #888888')
     return this;
   }
 });
