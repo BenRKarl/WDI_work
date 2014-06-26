@@ -1,0 +1,30 @@
+Farmer Lichard DeGray has two cows...Moooona Lisa and Mooontgomery
+
+
+Farmer Kathew Bod has one cow...Moark
+
+Farmer Huooman IsaSwerses has ... no cows ...hmmm?
+
+
+list ALL the cows with "ooo" in their name
+SELECT * FROM cows WHERE name LIKE '%ooo%';
+
+
+list ALL the farmers and their cows
+SELECT * FROM farmers, cows
+WHERE farmers.id = farmer_id;
+
+OR...
+
+SELECT * FROM cows
+INNER JOIN FARMERS
+ON farmers.id = cows.farmer_id;
+SELECT * FROM farmers, cows;
+
+list ALL the farmers names that have more than 1 cow
+SELECT name FROM farmers
+WHERE (SELECT count(*) FROM cows WHERE farmer_id = farmers.id) > 1;
+
+Write the sql to create these records
+
+
