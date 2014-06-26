@@ -79,6 +79,24 @@ App.Views.ShapeView = Backbone.View.extend({
     var fn = this['render'+this.model.get('type')];
     return fn.call(this);
   },
+  events: {
+    'mouseover' : 'wiggle',
+    'click' : 'changeBackgroundColor',
+    // 'dblclick' : 'changeBackgroundImage'
+  },
+    wiggle: function() {
+    var deg = Math.random()*360 -1;
+    this.$el.css('transform', 'rotate('+deg+'deg)')
+    return this;
+  },
+  changeBackgroundColor: function() {
+    this.$el.css('background-color', randomColor)
+  },
+  // changeBackgroundImage: function() {
+  //   this.$el.animate({
+  //     backgroundImage: '../images/tiny_grid.png'
+  //   }, 500)
+  // },
   rendersquare: function(){
     this.$el.css('background-color', this.model.get('color'));
     return this;
@@ -88,12 +106,33 @@ App.Views.ShapeView = Backbone.View.extend({
     this.$el.css('border-radius', this.model.get('size')/2);
     return this;
   },
-  rendertriangle: function(){
+  rendertriangleup: function(){
     this.$el.width(0);
     this.$el.height(0);
     this.$el.css('border-left', ((this.model.get('size'))/2)+"px solid transparent");
     this.$el.css('border-right', ((this.model.get('size'))/2)+"px solid transparent");
     this.$el.css('border-bottom', this.model.get('size')+"px solid "+this.model.get('color'));
+    return this;
+  },
+    rendertriangledown: function(){
+    this.$el.width(0);
+    this.$el.height(0);
+    this.$el.css('border-left', ((this.model.get('size'))/2)+"px solid transparent");
+    this.$el.css('border-right', ((this.model.get('size'))/2)+"px solid transparent");
+    this.$el.css('border-top', this.model.get('size')+"px solid "+this.model.get('color'));
+    return this;
+  },
+  renderpacman: function() {
+    this.$el.width(0);
+    this.$el.height(0);
+    this.$el.css('border-right', ((this.model.get('size')+"px solid transparent")));
+    this.$el.css('border-top', ((this.model.get('size')+"px solid yellow")));
+    this.$el.css('border-left', ((this.model.get('size')+"px solid yellow")));
+    this.$el.css('border-bottom', ((this.model.get('size')+"px solid yellow")));
+    this.$el.css('border-top-left-radius', this.model.get('size'));
+    this.$el.css('border-top-right-radius', this.model.get('size'));
+    this.$el.css('border-bottom-left-radius', this.model.get('size'));
+    this.$el.css('border-bottom-right-radius', this.model.get('size'));
     return this;
   }
 })
@@ -122,7 +161,7 @@ function randomColor(){
 // }
 
 function randomShape(){
-  return _.sample(["square", "triangle", "circle"])
+  return _.sample(["square", "triangleup", "triangledown", "circle", "pacman"])
 }
 
 function seedCollection(numShapes, collection){
@@ -130,7 +169,7 @@ function seedCollection(numShapes, collection){
     var shape = new App.Models.Shape({
       type: randomShape(),
       color: randomColor(),
-      size: _.sample([ 50, 100, 150, 200])
+      size: _.sample([50, 60, 70, 80, 90, 100])
     });
     collection.add(shape);
   }
