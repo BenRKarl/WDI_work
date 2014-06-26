@@ -17,6 +17,13 @@ var IngredientView = Backbone.View.extend({
     this.$el.html(object);
     return this;
   }
+  events: {
+    'click button[name="remove"]': 'removeIngredient'
+  },
+  removeIngredient: function() {
+    this.model.destroy();
+    this.remove();
+  }
 });
 
 var IngredientListView = Backbone.View.extend({
