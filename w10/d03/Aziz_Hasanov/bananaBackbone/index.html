@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Banana Bone</title>
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+  <!-- Libraries -->
+  <script src='javascripts/libraries/jquery.js'></script>
+  <script src='javascripts/libraries/underscore.js'></script>
+  <script src='javascripts/libraries/backbone.js'></script>
+
+  <!-- Templates -->
+  <script id="monkey-template" type="text/template">
+    <%= name %> is a Monkey
+    <button data-action="release">remove</button>
+    <button data-action="edit">edit</button>
+  </script>
+
+  <script id="edit-monkey-template" type="text/template">
+    <form>
+      <input type="text" placeholder="<%= name %>">
+    </form>
+  </script>
+
+  <!-- Bananapp -->
+  <script src='javascripts/backbone/app.js'></script>
+
+  <!-- Models -->
+  <script src='javascripts/backbone/models/monkeyModel.js'></script>
+
+  <!-- Collections -->
+  <script src='javascripts/backbone/collections/monkeyCollection.js'></script>
+
+  <!-- Views -->
+  <script src='javascripts/backbone/views/monkeys/monkeyView.js'></script>
+  <script src='javascripts/backbone/views/monkeys/monkeyListView.js'></script>
+
+</head>
+<body>
+  
+  <form class="monkey-form">
+    <input type="text" name="monkey-name">
+  </form>
+
+  <ul class="monkey-list"></ul>
+
+</body>
+</html>
+
