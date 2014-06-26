@@ -28,9 +28,11 @@ Bananapp.Views.MonkeyView = Backbone.View.extend({
       var nameField = that.$el.find('input');
       var newName = nameField.val();
       that.model.set('name', newName)
-    })
+    }),
     return this;
-
-
+  },
+  wiggle: function(){
+    var deg = (Math.random()*2) - 1;
+    this.$el.css('transform', 'rotate('degr)
   }
 })

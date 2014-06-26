@@ -1,10 +1,47 @@
 body {
   background-color: yellow;
 }
+
 .testing {
   color: orange;
 }
 
+.tree {
+  position: absolute;
+  z-index: -200;
+  height: 750px;
+  width: ;
+}
 .monkeys {
   border: 1 dotted white;
+}
+
+.monkey {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+.one {
+  top: -40px;
+  left: 120px;
+}
+
+.three {
+  top: -80px;
+  left: 150px;
+}
+
+.four {
+  top: -300px;
+  left: 350px;
+}
+
+.five {
+  top: -300px;
+  left: 380px;
+}
+
+img {
+  width: 100%;
 }
