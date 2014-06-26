@@ -21,7 +21,7 @@ var AuthorView = Backbone.View.extend({
 
   },
   events: {
-    'click button': 'removeA' // or removeA
+    'click button': 'removeA' // or remove
   },
   removeA: function(){
     this.model.destroy();
@@ -46,7 +46,7 @@ var AuthorListView = Backbone.View.extend({
 });
 
 
-
+//BOOK MODEL
 
 var Book = Backbone.Model.extend({
    defaults: {
@@ -54,10 +54,12 @@ var Book = Backbone.Model.extend({
   }
 });
 
+//BOOK COLLECTION
 var BookCollection = Backbone.Collection.extend({
   model: Book
 })
 
+//BOOK VIEW
 var BookView = Backbone.View.extend({
   tagname: "li",
   template: _.template($('#book-template').html()),
@@ -68,7 +70,7 @@ render: function(){
 
 },
 events: {
-    'click button': 'removeA' // or removeA
+    'click button': 'removeA' // or remove
   },
   removeA: function(){
     this.model.destroy();
@@ -76,6 +78,7 @@ events: {
   }
 });
 
+//BOOK LIST VIEW
 var BookListView = Backbone.View.extend({
   initialize: function(){
     this.listenTo(this.collection, 'all', this.render);
