@@ -1,4 +1,4 @@
-require 'HTTParty'
+
 
 def html_tags(html)
 
