@@ -3,6 +3,7 @@
 var Ingredient = Backbone.Model.extend({
   defaults:{
     ingredient: '',
+    amount: '',
   }
 });
 

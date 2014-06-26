@@ -15,10 +15,10 @@ $(function(){
   });
 
   var rad = new Juice({name: 'Rad Rool'});
-  var radish = new Ingredient({ingredient: 'radish'});
+  var radish = new Ingredient({ingredient: 'radish', amount: '5'});
   rad.get('ingredients').add(radish);
-  // rad.get('ingredient').add({ingredient: 'rutabaga'});
-  // rad.get('ingredient').add({ingredient: 'rasberry'});
+  rad.get('ingredients').add({ingredient: 'rutabaga', amount: '1'});
+  rad.get('ingredients').add({ingredient: 'rasberry', amount: '10'});
   var radView = new JuiceView({model: rad});
   var radishView = new IngredientView({model: radish})
   $('.juice-test').append(radishView.render().el);
