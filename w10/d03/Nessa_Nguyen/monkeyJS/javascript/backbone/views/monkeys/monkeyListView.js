@@ -11,7 +11,12 @@ BananaApp.Views.MonkeyListView = Backbone.View.extend({
     _.each(this.collection.models, function(monkey) {
       var monkeyView = new BananaApp.Views.MonkeyView({model: monkey});
       that.$el.append(monkeyView.render().el);
-      return this;
     });
+  },
+  events: {
+    //'submit form': 'addMonkey',
+  },
+  addMonkey: function(e) {
+    e.preventDefault();
   }
 })

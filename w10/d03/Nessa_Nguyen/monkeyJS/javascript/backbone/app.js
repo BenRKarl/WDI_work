@@ -12,12 +12,10 @@ BananaApp.initialize = function() {
     var name = $('.monkey-name').val();
     var age  = $('.monkey-age').val();
     var toy  = $('.monkey-toy').val();
-    console.log(name);
     _.each($('.new-monkey').find('input[type="text"]'), function(inputField) {
       $(inputField).val('');
     });
     monkeys.add({name: name, age: age, toy: toy});
-    console.log('submit');
   });
 };
 

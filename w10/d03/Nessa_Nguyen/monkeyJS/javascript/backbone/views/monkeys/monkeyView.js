@@ -6,24 +6,32 @@ BananaApp.Views.MonkeyView = Backbone.View.extend({
   },
   tagName: 'li',
   template: _.template($('#monkey-template').html()),
+  editTemplate: _.template($('#edit-template').html()),
   render: function() {
     var monkeyObj = this.template(this.model.attributes);
     this.$el.append(monkeyObj);
     return this;
   },
   events: {
-    'submit form': 'addMonkey'
+    'click [data-action="free"]': 'releaseMonkey',
+    'click [data-action="edit"]': 'showEditForm'
   },
-  addMonkey: function(e) {
-    e.preventDefault();
-    var inputs = $(e.target).parent().find('input');
-    var name = $(inputs[0]).val();
-    var age  = $(inputs[1]).val();
-    var toy  = $(inputs[2]).val();
-    console.log(name);
-    _.each(inputs, function(inputField) {
-      //inputField.val('');
-    });
-    this.collection.add({name: name, age: age, toy: toy});
+  releaseMonkey: function() {
+    this.model.destroy();
+    this.remove();
+  },
+  showEditForm: function() {
+    var that = this;
+    this.$el.html( this.editTemplate( this.model.attributes ) );
+    this.$el.find('form').on('submit', function(e) {
+      e.preventDefault();
+      var fields = that.$el.find('input');
+      var newName   = $('.new-name').val();
+      var newAge   = $('.new-age').val();
+      var newToy   = $('.new-toy').val();
+      that.model.set('name', newName)
+                 .set('age', newAge)
+                 .set('toy', newToy);
+    })
   }
-})
+});

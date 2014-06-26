@@ -6,8 +6,17 @@
   <link rel="stylesheet" href="stylesheet/style.css">
   <script type='text/template' id='monkey-template'>
     <%- name %>, <%- age %>. Fave toy: <%- toy %>
+    <button data-action='free'>Free</button>
+    <button data-action='edit'>Edit</button>
   </script>
-
+  <script type='text/template' id='edit-template'>
+    <form>
+    <input type='text' class='new-name' placeholder='<%- name %>'>
+    <input type='text' class='new-age' placeholder='<%- age %>'>
+    <input type='text' class='new-toy' placeholder='<%- toy %>'>
+    <button data='save'>Save</button>
+    </form>
+  </script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src='javascript/library/underscore.js'></script>
   <script src='javascript/library/backbone.js'></script>
@@ -30,9 +39,8 @@
   <input type="submit" value='Add buddy'>
 </form>
 
-<div class="monkey-list">
   <h2>Monkeys</h2>
-</div>
+  <div class="monkey-list"></div>
 
 
 </body>
