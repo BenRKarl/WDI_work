@@ -1,0 +1,19 @@
+<h1>Email Lookup</h1>
+
+<%= form_tag("/user", method: "post") do %>
+  <%= label_tag(:q, "Search Url:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<table>
+  <% @people.each do |person| %>
+  <tr>
+    <td><%= person.email %></td>
+    <td>
+      <ul>
+        <% person.sites do |site| %>
+        <li><%= site.url %></li>
+      </ul>
+    </td>
+  </tr>
