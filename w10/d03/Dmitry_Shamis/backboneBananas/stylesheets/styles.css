@@ -1,0 +1,10 @@
+body {
+  background-color: lightgoldenrodyellow;
+}
+
+li {
+  background-color: lightblue;
+  box-shadow: 3px 3px;
+  width: 400px;
+  height: 40px;
+}

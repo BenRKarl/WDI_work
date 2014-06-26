@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bookbone</title>
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+  <!-- Libraries -->
+  <script src = 'javascripts/libraries/jquery.js'></script>
+  <script src = 'javascripts/libraries/underscore.js'></script>
+  <script src = 'javascripts/libraries/backbone.js'></script>
+
+<!--Templates-->
+<script id = "author-template" type = "text/template"> <h2> name: <%-author.name %></h2></script>
+<script id = "book-template" type = "text/template"> <h2> name: <%-book.name %></h2></script>
+
+<!--The APP js -->
+<script src='javascripts/app.js'></script>
+
+</head>
+<body>
+
+  <form id="new-author" placeholder="author name" action="" method="post">
+    Author Name: <input type="text" name="author-name" />
+    <input type="submit" value="Submit">
+  </form>
+
+  <div class = '.street-side-table'></div>
+
+<form id="new-book" placeholder="book name" action="" method="post">
+    Book Name: <input type="text" name="book-name" />
+    <input type="submit" value="Submit">
+  </form>
+
+
+
+</body>
+</html>
