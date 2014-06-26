@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Backbone Bananas</title>
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+ 
+ <!-- LIBRARIES -->
+  <script src='javascripts/libraries/jquery.js'></script>
+  <script src='javascripts/libraries/underscore.js'></script>
+  <script src='javascripts/libraries/backbone.js'></script>
+
+    <!-- Templates -->
+    <!-- in HTML5 you can use the tag <TEMPLATE> -->
+    <script type="text/template" id="monkey-template">
+      <ul class="monkey">
+        <%- name %> ... the monkey.  
+        <button data-action='release'>Free</button>
+        <button data-action='edit'>Rename</button>
+      </ul>
+    </script>
+
+    <script type="text/template" id="edit-monkey-template">      
+      <form class="edit-monkey-form"> 
+        <input type="text" placeholder='<%- name %>'>       
+      </form>
+    </script>
+
+
+    <!-- backbone banana app -->
+    <script type="text/javascript" src='javascripts/backbone/app.js'></script>
+
+    <!-- Models --> 
+    <script type="text/javascript" src='javascripts/backbone/models/monkey.js'></script>
+
+
+    <!-- Collections -->
+    <script type="text/javascript" src='javascripts/backbone/collections/monkeyCollection.js'></script>
+
+
+    <!-- Views -->
+    <script type="text/javascript" src='javascripts/backbone/views/monkeys/monkeyView.js'></script>
+    <script type="text/javascript" src='javascripts/backbone/views/monkeys/monkeyListView.js'></script>
+
+
+</head>
+<body>
+  
+    <div class='monkey-pic'>
+      <img src='images/monkey.jpg' alt='Monkey pic'>
+    </div>
+    
+    <form class="monkey-form"> 
+      <input type="text" name="monkey-name" placeholder="Monkeys Name...">       
+    </form>
+
+    <ul class="monkeys">
+    </ul>
+
+<!--     <div>
+      <ul id="monkeys-list">        
+      </ul>  
+    </div> -->
+  
+</body>
+</html>

@@ -16,7 +16,10 @@
     <%- title %>
   </script>
   <script type="text/template" id='author-template'>
-    <h3><%- name %></h3>
+    <h3>
+      <%- name %>
+      <button class='show-books'>Books</button>
+    </h3>
     <ul class='books'></ul>
   </script>
 
@@ -32,10 +35,10 @@
   <script src='javascripts/backbone/collections/BookCollection.js'></script>
 
   <!-- Views -->
-  <script src='javascripts/backbone/views/book/BookView.js'></script>
+  <script src='javascripts/backbone/views/books/BookView.js'></script>
+  <script src='javascripts/backbone/views/books/BookListView.js'></script>
   <script src='javascripts/backbone/views/authors/AuthorView.js'></script>
-  <script src='javascripts/backbone/views/BookListView.js'></script>
-  <script src='javascripts/backbone/views/AuthorListView.js'></script>
+  <script src='javascripts/backbone/views/authors/AuthorListView.js'></script>
 
 </head>
 <body>
