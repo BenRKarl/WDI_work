@@ -1,6 +1,0 @@
-//THIS DESIGNATES THE NAMESPACE
-var Bananapp = Bananapp || { Models: {}, Collections: {}, Views: {} };
-
-Bananapp.Collections.MonkeyCollection = Backbone.Collection.extend({
-  model: Bananapp.Models.Monkey
-})

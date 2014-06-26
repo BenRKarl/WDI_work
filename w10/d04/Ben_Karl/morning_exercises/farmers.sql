@@ -1,3 +1,7 @@
+PART 1!!!!
+
+
+
 cowcow_farm=# CREATE TABLE farmers(
 cowcow_farm(# name varchar(100),
 cowcow_farm(# id SERIAL PRIMARY KEY);
@@ -16,6 +20,11 @@ cowcow_farm=# \d
  public | farmers        | table    | benrkarl
  public | farmers_id_seq | sequence | benrkarl
 (4 rows)
+
+
+PART 2!!!!!!
+
+
 
 cowcow_farm=# INSERT INTO farmers VALUES ('Lichard DeGray')
 cowcow_farm-# ;
@@ -155,9 +164,34 @@ cowcow_farm=# SELECT * FROM cows WHERE name LIKE '% ooo %', '%ooo%' OR '% ooo%' 
 ERROR:  syntax error at or near ","
 LINE 1: SELECT * FROM cows WHERE name LIKE '% ooo %', '%ooo%' OR '% ...
                                                     ^
-cowcow_farm=# SELECT * FROM cows WHERE name LIKE '%ooo%';
-     name     | id | farmer_id
---------------+----+-----------
- Mooona Lisa  |  2 |         1
- Mooontgomery |  3 |         1
-(2 rows)
+
+
+PART 3!!!
+
+
+1)
+SELECT * FROM cows WHERE name LIKE '%ooo%';
+             name     | id | farmer_id
+        --------------+----+-----------
+         Mooona Lisa  |  2 |         1
+         Mooontgomery |  3 |         1
+        (2 rows)
+
+
+
+
+2)
+SELECT c.name, f.name FROM cows AS c
+INNER JOIN farmers AS f ON f.id = c.farmer_id;
+         name     |      name
+    --------------+----------------
+     Mooona Lisa  | Lichard DeGray
+     Mooontgomery | Lichard DeGray
+     Moark        | Kathew Bod
+    (3 rows)
+
+
+
+3)
+SELECT name FROM farmers
+WHERE ( SELECT count(*) FROM cows WHERE farmer_id = farmers.id ) > 1;
