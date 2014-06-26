@@ -1,0 +1,21 @@
+* {
+  font-family: Helvetica;
+}
+
+h1 {
+  text-align: center;
+}
+
+.new-monkey {
+  width: 650px;
+  margin: 40px auto;
+}
+
+.new-monkey input[type='text'] {
+  width: 120px;
+  margin: 0 5px;
+}
+
+.monkey-list {
+
+}
