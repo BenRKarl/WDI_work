@@ -12,8 +12,13 @@
 
   <!-- TEMPLATES -->
   <script type="template" class="monkey-template">
+    <div class="monkey one">
+      <img src="images/monkey<%- number %>.png" alt="">
+      <%- number %> is the number
+      <div class="name"><%- name %></div>
+    </div>
     <p>
-      <%- name %> <em>... is a monkey.</em>
+      <%= name %> <em>... is a monkey.<%= number %></em>
       <button data-action='release'>Bye.</button>
       <button data-action='edit'>Change.</button>
     </p>
@@ -36,7 +41,7 @@
   <script src="js/backbone/views/monkeys/monkeyListView.js"></script>
 </head>
 <body>
-<<div class="tree"><img src="tree.png" alt="" class="tree-img"></div>>
+<<div class="tree"><img src="images/tree.png" alt="" class="tree-img"></div>>
   <h1>We're here...</h1>
   <ul class="testing"></ul>
 
@@ -51,23 +56,23 @@
   </ul>
 
     <div class="monkey one">
-      <img src="monkey0.png" alt="">
+      <img src="images/monkey0.png" alt="">
       <div class="name 0"></div>
     </div>
     <div class="monkey two">
-      <img src="monkey1.png" alt="">
+      <img src="images/monkey1.png" alt="">
       <div class="name 1"></div>
     </div>
     <div class="monkey three">
-      <img src="monkey2.png" alt="">
+      <img src="images/monkey2.png" alt="">
       <div class="name 2"></div>
     </div>
     <div class="monkey four">
-      <img src="monkey3.png" alt="">
+      <img src="images/monkey3.png" alt="">
       <div class="name 3"></div>
     </div>
     <div class="monkey five">
-      <img src="monkey4.png" alt="">
+      <img src="images/monkey4.png" alt="">
       <div class="name 4"></div>
     </div>
 </body>
