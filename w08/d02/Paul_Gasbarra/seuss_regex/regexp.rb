@@ -15,4 +15,13 @@ f = File.new "seuss.txt", "r"
 text = f.read
 f.close
 
-binding.pry
+def samCount
+  puts text.scan(/Sam[^-]/).count
+end
+
+def bannedList
+  text.scan((\+w))
+
+
+
+#binding.pry

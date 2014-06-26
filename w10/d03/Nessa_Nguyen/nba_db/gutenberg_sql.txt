@@ -1,0 +1,16 @@
+SELECT authors.id, COUNT(books) FROM authors INNER JOIN books ON authors.id=books.author_id GROUP BY authors.id ORDER BY COUNT(books) DESC LIMIT 20;
+
+2. number of authors grouped by first letter of name
+SELECT name FROM authors WHERE name LIKE '_%' ORDER BY name ASC;
+
+SELECT COUNT(name) FROM authors WHERE name LIKE '_/%' GROUP BY name ORDER BY name ASC;
+
+SELECT authors.name, COUNT(books) FROM authors INNER JOIN books ON authors.id=books.author_id GROUP BY authors.name ORDER BY COUNT(books) DESC LIMIT 20;
+
+
+SELECT books.title FROM books INNER JOIN authors ON books.author_id=authors.id WHERE books.title LIKE '% love %' OR books.title LIKE 'Love%' GROUP BY books.id, authors.id ORDER BY books.title ASC LIMIT 15;
+
+SELECT books.title, authors.name FROM books
+INNER JOIN authors ON books.author_id=authors.id
+INNER JOIN word_counts ON books.id = word_counts.book_id
+WHERE books.title LIKE '% love %' OR books.title LIKE 'Love%'
