@@ -13,8 +13,16 @@
 
 
 <!--Templates-->
-<script id = "monkey-template" type="text/template">
+<script  type="text/template" id = "monkey-template">
   <%- name %> ... is a monkey
+  <button data-action ='release'>Release</button>
+  <button data-action ='edit'>Edit</button>
+</script>
+
+<script  type="text/template" id ='edit-monkey-template' >
+  <form>
+    <input type='input' placeholder='<%- name %>'>
+  </form>
 </script>
 
 <!-- Bananapp -->
@@ -34,7 +42,11 @@
 <body>
   <h1>I AM A BANANA!</h1>
 
-<div class = ".monkey-list"></div>
+<form class = "monkey-form">
+<input type="text" name="monkey-name">
+</form>
+
+<ul class='monkeys'></ul>
 
 </body>
 </html>

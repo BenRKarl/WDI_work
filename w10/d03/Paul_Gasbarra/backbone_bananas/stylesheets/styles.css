@@ -1,5 +1,9 @@
 body{
   background-color: darkblue;
   color: orange;
-  font: "Palatino Linotype";
+  font-family: Palatino;
+}
+
+li {
+  background-color: goldenrod;
 }
