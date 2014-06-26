@@ -33,7 +33,7 @@ var JuiceView = Backbone.View.extend({
     });
     ingredientListView.render();
 
-
+// form for ingredients from template
     this.$el.find('.ingredients-list').on('submit', function(e){
       e.preventDefault();
       var ingredientName    = that.$el.find('.ingredient-name');
@@ -68,7 +68,7 @@ var JuiceListView = Backbone.View.extend({
   // tagName: 'ul',
   render: function(){
     var that = this;
-    this.$el.empty();
+    this.$el.html();
     _.each(this.collection.models, function(juice){
       var juiceView = new JuiceView({model: juice});
       // var ingredientView = new IngredientView({model: Ingredient});
