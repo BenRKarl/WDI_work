@@ -1,0 +1,12 @@
+* {
+  font-family: Helvetica;
+}
+
+.new-author {
+  margin: 40px;
+  text-align: center;
+}
+
+.author-list {
+  margin: 50px 60px;
+}
