@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gutenberg</title>
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+  <script src='javascripts/libraries/jquery.js'></script>
+  <script src='javascripts/libraries/underscore.js'></script>
+  <script src='javascripts/libraries/backbone.js'></script>
+
+  <script type='text/template' class='book-template'>
+    <%- title %>
+  </script>
+
+  <script type='text/template' class='author-template'>
+    <h3><%- name %></h3>
+    <ul class='books'></ul>
+  </script>
+
+  <script src='javascripts/backbone/app.js'></script>
+
+  <script src='javascripts/backbone/models/Author.js'></script>
+  <script src='javascripts/backbone/models/Book.js'></script>
+
+  <script src='javascripts/backbone/collections/AuthorCollection.js'></script>
+  <script src='javascripts/backbone/collections/BookCollection.js'></script>
+
+  <script src='javascripts/backbone/views/AuthorView.js'></script>
+  <script src='javascripts/backbone/views/BookView.js'></script>
+  <script src='javascripts/backbone/views/AuthorListView.js'></script>
+  <script src='javascripts/backbone/views/BookListView.js'></script>
+
+</head>
+<body>
+
+
+<ul class="author-lounge"></ul>
+</body>
+</html>
