@@ -1,3 +1,17 @@
 body {
   background-color: lightblue;
 }
+
+form {
+  float: right;
+}
+
+form.new-juice {
+  float: left;
+  width: 100%;
+}
+
+span {
+  font-size: 1.2em;
+  font-style: italic;
+}
