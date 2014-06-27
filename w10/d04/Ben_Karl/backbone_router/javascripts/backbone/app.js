@@ -2,13 +2,69 @@ var App = {
   Models: {},
   Collections: {},
   Views: {},
+  Router: null,
   initialize: function(){
-    this.collection = new App.Collections.ShapeCollection();
-    seedCollection(3000, this.collection);
-    var view  = new App.Views.ShapeListView({collection: this.collection, el: $('body')});
-    view.render();
+    this.viewManager = new App.Views.ViewManager({el: $('body')});
+    this.router = new App.Router();
+    Backbone.history.start();
   }
 }
+
+// FUN STUFF VIEW MANAGER & ROUTER STUFF
+App.Router = Backbone.Router.extend({
+  initialize: function(){
+    this.collection = new App.Collections.ShapeCollection();
+    seedCollection(1000, this.collection);
+  },
+  routes:{
+    ''                        :'index',
+    'shapes/:type'            :'filterByShape',
+    'size/:size'              :'filterBySize',
+    'shapes/:type/size/:size' :'filterBySizeAndShape',
+    'shape/:id'              :'findById'
+  },
+  index: function(){
+    var indexView = new App.Views.ShapeListView({collection: this.collection});
+    App.viewManager.display(indexView);
+  },
+  filterByShape: function(type){
+    var shapes = this.collection.where({type: type});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
+  },
+  filterBySize: function(size){
+    var shapes = this.collection.where({size: parseInt(size)});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
+  },
+  filterBySizeAndShape: function(type, size){
+    var shapes = this.collection.where({type: type, size: parseInt(size)});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
+  },
+  findById: function(id){
+    var shape = this.collection.get('c' + id);
+    var shapeView = new App.Views.ShapeView({model: shape});
+    App.viewManager.display(shapeView);
+  }
+});
+
+//VIEW MANAGER STUFF
+App.Views.ViewManager = Backbone.View.extend({
+  display: function(view){
+    var previousView = this.currentView || null;
+    var nextView = view;
+    if (previousView){
+      previousView.remove();
+    }
+    nextView.render().$el.hide().appendTo(this.$el).fadeIn();
+    this.currentView = nextView;
+  }
+});
+//END VIEW MANAGER AND ROUTER STUFF
 
 App.Models.Shape = Backbone.Model.extend({});
 
