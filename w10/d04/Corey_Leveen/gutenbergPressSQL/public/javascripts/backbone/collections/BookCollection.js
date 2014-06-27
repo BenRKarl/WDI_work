@@ -1,5 +1,6 @@
-// var GutenbergApp = GutenbergApp || { Models : {}, Views : {}, Collections : {} }
+var GutenbergApp = GutenbergApp || { Models : {}, Views : {}, Collections : {} };
 
-// GutenbergApp.Collections.BookCollection = Backbone.Collection.extend({
-//   model : Book
-// })
+GutenbergApp.Collections.BookCollection = Backbone.Collection.extend({
+  model : GutenbergApp.Models.Book,
+  url : '/books'
+});
