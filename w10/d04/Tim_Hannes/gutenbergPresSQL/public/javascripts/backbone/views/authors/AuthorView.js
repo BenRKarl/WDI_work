@@ -6,5 +6,12 @@ GutenbergApp.Views.AuthorView = Backbone.View.extend({
   render: function(){
     this.$el.html(this.template( this.model.attributes ));
     return this;
+  },
+  events:{
+    'click button.show-books' : 'getBooks'
+  },
+  getBooks: function(){
+    this.model.get('books').fetch();
+    return this;
   }
 });

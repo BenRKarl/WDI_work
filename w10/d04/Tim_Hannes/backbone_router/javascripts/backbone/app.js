@@ -19,17 +19,37 @@ App.Router = Backbone.Router.extend({
   },
   routes : {
     ''            : 'index',
-    'shape/:type' : 'filterByShape'
+    'shape/:type' : 'filterByShape',
+    'size/:size'  : 'filterBySize',
+    'size/:size/:shape'  : 'filterBySizeAndShape',
+    'shapes/:id'  : 'findById'
   },
   index: function(){
     var indexView = new App.Views.ShapeListView({collection: this.collection});
     App.viewManager.display(indexView);
   },
-  filterByShape: function(){
-    var shapes = this.collection.where({type: type})
+  filterByShape: function(type){
+    var shapes = this.collection.where({type: type});
     var shapeCollection = new App.Collections.ShapeCollection(shapes);
-    var shapeListView = new App.View.ShapeListView({collection: shapeCollection});
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
     App.viewManager.display(shapeListView);
+  },
+  filterBySize: function(size){
+    var shapes = this.collection.where({size: parseInt(size)});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
+  },
+  filterBySizeAndShape: function(size, type){
+    var shapes = this.collection.where({size: parseInt(size), type: type});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
+  },
+  findById: function(id){
+    var shape = this.collection.get(id);
+    var shapeView = new App.Views.ShapeView({model: shape});
+    App.viewManager.display(shapeView);
   }
 });
 
