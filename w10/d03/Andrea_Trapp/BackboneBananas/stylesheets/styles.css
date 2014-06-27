@@ -1,0 +1,42 @@
+body {
+  background: url('../images/green_cup.png');
+}
+
+ul.monkeys {
+  list-style-type: none;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  width: 50%;
+}
+
+.monkey {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;  
+  background: url('../images/skulls.png'); 
+}
+
+.monkey-form {
+  margin: 10px;
+  padding: 10px;  
+  height: 73px;
+  background: url('../images/congruent_outline.png');
+}
+
+.monkey-form input {
+  margin-left: 50px;
+  margin-top: 20px;
+  font-size: 20px;
+  width: 300px;
+}
+
+.monkey-pic {
+  float: left;
+  /*margin: 0;
+  padding: 0;*/
+  width: 100px; 
+}
+
+img {
+  width: 100%;
+}
