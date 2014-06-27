@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gut Press</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+  <script src="javascripts/libraries/jquery.js"></script>
+  <script src="javascripts/libraries/underscore.js"></script>
+  <script src="javascripts/libraries/backbone.js"></script>
+
+  <!-- Templates -->
+
+  <script id="book_template" type="text/template">
+    <%- title %>
+  </script>
+
+  <script id="author_template" type="text/template">
+    <%- name %>
+    <button data-action='get_books'>Books!</button>
+    <ul class="books"></ul>
+  </script>
+
+
+
+  <script src="javascripts/backbone/app.js"></script>
+
+  <script src="javascripts/backbone/models/Author.js"></script>
+  <script src="javascripts/backbone/models/Book.js"></script>
+
+  <script src="javascripts/backbone/collections/AuthorCollection.js"></script>
+  <script src="javascripts/backbone/collections/BookCollection.js"></script>
+
+  <script src="javascripts/backbone/views/authors/AuthorView.js"></script>
+  <script src="javascripts/backbone/views/books/BookView.js"></script>
+  <script src="javascripts/backbone/views/authors/AuthorListView.js"></script>
+  <script src="javascripts/backbone/views/books/BookListView.js"></script>
+
+
+</head>
+<body>
+hello
+  <ul class="author_list"></ul>
+
+</body>
+</html>
