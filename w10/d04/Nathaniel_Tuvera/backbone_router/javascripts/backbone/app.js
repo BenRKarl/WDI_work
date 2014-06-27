@@ -15,7 +15,7 @@ var App = {
 App.Router = Backbone.Router.extend({
   initialize: function(){
     this.collection = new App.Collections.ShapeCollection();
-    seedCollection(7000, this.collection);
+    seedCollection(5000, this.collection);
   },
   routes: {
     ''                        : 'index',
@@ -27,7 +27,7 @@ App.Router = Backbone.Router.extend({
   },
   index: function(){
     var indexView = new App.Views.ShapeListView({collection: this.collection});
-    App.ViewManager.display(indexView);
+    App.viewManager.display(indexView);
   },
   filterByShape: function(type){
     var shapes = this.collection.where({type: type})
@@ -66,6 +66,11 @@ App.Router = Backbone.Router.extend({
           parseInt(model.get('color').substr(1,2), 16) < 100 &&
           parseInt(model.get('color').substr(5,2), 16) < 100
         )
+      } else if (color == "blue") {
+        return(
+          parseInt(model.get('color').substr(5,2), 16) > 200 &&
+          parseInt(model.get('color').substr(1,2), 16) < 100 &&
+          parseInt(model.get('color').substr(3,2), 16) < 100)
       }
     });
     var shapeCollection = new App.Collections.ShapeCollection(shapes);
@@ -84,7 +89,7 @@ App.Views.ViewManager = Backbone.View.extend({
     if (previousView){
       previousView.remove();
     }
-    nextView.render().$el.appendTo(this.$el).fadeIn();
+    nextView.render().$el.appendTo(this.$el).fadeIn('slow');
     this.currentView = nextView;
   },
 })
