@@ -4,24 +4,29 @@
   <meta charset="UTF-8">
   <title>Backbone_banobos</title>
   <link rel="stylesheet" href="css/styles.css">
-
+  <link rel="stylesheet" href="css/libraries/jquery-ui-1.10.4.custom.css">
   <!-- LIBRARIES -->
   <script src="js/libraries/jquery.js"></script>
+  <script src="js/libraries/jquery-ui-1.10.4.custom.js"></script>
   <script src="js/libraries/underscore.js"></script>
   <script src="js/libraries/backbone.js"></script>
 
   <!-- TEMPLATES -->
   <script type="template" class="monkey-template">
-    <div class="monkey one">
+    <div class="monkey1 draggable">
       <img src="images/monkey<%- number %>.png" alt="">
-      <%- number %> is the number
-      <div class="name"><%- name %></div>
+
+      <div class="name">
+        <p><%- name %>, <%- number %></p>
+      </div>
+      <div class="buttons">
+        <button data-action='release'>Bye.</button>
+        <button data-action='edit'>Change.</button>
+      </div>
+
     </div>
-    <p>
-      <%= name %> <em>... is a monkey.<%= number %></em>
-      <button data-action='release'>Bye.</button>
-      <button data-action='edit'>Change.</button>
-    </p>
+
+
   </script>
   <script type="template" class="edit-monkey-template">
     <form>
@@ -40,9 +45,15 @@
   <script src="js/backbone/views/monkeys/monkeyView.js"></script>
   <script src="js/backbone/views/monkeys/monkeyListView.js"></script>
 </head>
+
+
+
+
+
 <body>
+
 <<div class="tree"><img src="images/tree.png" alt="" class="tree-img"></div>>
-  <h1>We're here...</h1>
+  <h1 title="drag me?" class="draggable" >We're here...</h1>
   <ul class="testing"></ul>
 
   <form class="monkey-form">
@@ -55,7 +66,7 @@
 
   </ul>
 
-    <div class="monkey one">
+<!--     <div class="monkey one">
       <img src="images/monkey0.png" alt="">
       <div class="name 0"></div>
     </div>
@@ -74,6 +85,6 @@
     <div class="monkey five">
       <img src="images/monkey4.png" alt="">
       <div class="name 4"></div>
-    </div>
+    </div> -->
 </body>
 </html>

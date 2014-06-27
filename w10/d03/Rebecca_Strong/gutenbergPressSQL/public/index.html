@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Glutenberg</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <!-- Libraries -->
+    <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+
+      <!-- Templates -->
+      <script type='text/template' id='book-template'>
+      <%- title %>
+      </script>
+      <script type='text/template' id='author-template'>
+      <h3>
+      <%- name %>
+      <button class="show-books">Glutenbooks</button>
+      </h3>
+        <ul class='books'></ul>
+      </script>
+
+      <!-- Glutenbergapp -->
+      <script type="text/javascript" src='javascripts/backbone/app.js'></script>
+
+      <!-- Models -->
+      <script type="text/javascript" src='javascripts/backbone/models/Author.js'></script>
+      <script type="text/javascript" src='javascripts/backbone/models/Book.js'></script>
+
+      <!-- Collections -->
+      <script type="text/javascript" src='javascripts/backbone/collections/AuthorCollection.js'></script>
+      <script type="text/javascript" src='javascripts/backbone/collections/BookCollection.js'></script>
+
+      <!-- Views -->
+      <script type="text/javascript" src='javascripts/backbone/views/authors/AuthorView.js'></script>
+      <script type="text/javascript" src='javascripts/backbone/views/authors/AuthorListView.js'></script>
+      <script type="text/javascript" src='javascripts/backbone/views/books/BookView.js'></script>
+      <script type="text/javascript" src='javascripts/backbone/views/books/BookListView.js'></script>
+
+  </head>
+  <body>
+
+  <ul class='authors-lounge'>
+  </ul>
+
+
+  </body>
+</html>

@@ -2,7 +2,7 @@ var GutenbergApp = GutenbergApp || { Models : {}, Views : {}, Collections : {} }
 
 GutenbergApp.initialize = function(){
   var authors = new GutenbergApp.Collections.AuthorCollection();
-  var authorsListView = new GutenbergApp.Views.AuthorListView({
+  var authorListView = new GutenbergApp.Views.AuthorListView({
     collection : authors,
     el : $('.author-lounge')
   });
@@ -10,6 +10,9 @@ GutenbergApp.initialize = function(){
   authors.fetch({success : function(){
     authorListView.render();
   }});
+
+  GutenbergApp.authors = authors;
+  GutenbergApp.authorListView = authorListView;
 
 };
 
