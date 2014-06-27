@@ -11,17 +11,11 @@ GutenbergApp.Views.AuthorView = Backbone.View.extend({
     });
     return this;
   },
-    events:{
-    'click button.show-books' : 'toggleBooks'
+  events:{
+    'click button.show-books' : 'getBooks'
   },
-    toggleBooks: function(){
-      if( $(this.$el).find('.books').html() == '') {
-        this.model.get('books').fetch();
-        $( '.books').show();
-        return this;
-      } else {
-        $(this.$el).find('.books li').hide();
-        // this.$el.empty()
-      } 
-   }
+  getBooks: function(){
+    this.model.get('books').fetch();
+    return this;
+  }
 });

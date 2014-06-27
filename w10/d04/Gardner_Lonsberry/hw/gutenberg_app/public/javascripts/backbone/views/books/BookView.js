@@ -5,12 +5,9 @@ GutenbergApp.Views.BookView = Backbone.View.extend({
     this.listenTo(this.model, 'all', this.render)
   },
   tagName:'li',
-  template: _.template($ ('#book-template').html()),
-    render: function(){
-      this.$el.html( this.template( this.model.attributes ) );
-      return this;
-    },
-    events:{
-    'click button.show-books' : 'toggleBooks'
+  template: _.template( $('#book-template').html() ),
+  render: function(){
+    this.$el.html( this.template( this.model.attributes ) );
+    return this;
   }
-});
+})
