@@ -1,0 +1,10 @@
+li {
+  background-color: lightgreen;
+  border-radius: 10%;
+  padding:2px;
+  margin:5px;
+}
+
+ul{
+  display: inline-block;
+}
