@@ -96,7 +96,27 @@ App.Views.ShapeView = Backbone.View.extend({
     this.$el.css('border-right', ((this.model.get('size'))/2)+"px solid transparent");
     this.$el.css('border-bottom', this.model.get('size')+"px solid "+this.model.get('color'));
     return this;
+  },
+  renderrectangle: function(){
+    this.$el.width(this.model.get('size')*2);
+    this.$el.css('background-color', this.model.get('color'));
+    return this;
+  },
+  events: {
+    'mouseover':'flyAway'
+  },
+  flyAway: function(){
+    this.$el.animate({
+      top: ((Math.random() * 200) - 50) + '%',
+      left: ((Math.random() * 200) - 50) + '%',
+      opacity: 0
+      }, 2000, 'linear', function(){ $(this).remove(); }
+    );
   }
+  // Trying to add infinity
+  // renderinfinity: function(){
+  //   this.$el.width(this.model.get('size')*2.12);
+  //}
 })
 
 App.Views.ShapeListView = Backbone.View.extend({
@@ -123,7 +143,7 @@ function randomColor(){
 // }
 
 function randomShape(){
-  return _.sample(["square", "triangle", "circle"])
+  return _.sample(["square", "triangle", "circle", "rectangle"])
 }
 
 function seedCollection(numShapes, collection){
