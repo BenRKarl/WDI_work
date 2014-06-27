@@ -21,9 +21,9 @@ App.Router = Backbone.Router.extend({
     ''                        : 'index',
     'shape/:type'             : 'filterByShape',
     'size/:size'              : 'filterBySize',
-    'size/:size/shape/:type' : 'filterbySizeAndShape',
+    'size/:size/shape/:type' : 'filterBySizeAndShape',
     'find/:id'                : 'findById',
-    'color/:hexcolor'            : 'filterByColor'
+    'color/:color'            : 'filterByColor'
   },
   index: function(){
     var indexView = new App.Views.ShapeListView({collection: this.collection});
@@ -52,11 +52,25 @@ App.Router = Backbone.Router.extend({
     var shapeView = new App.Views.ShapeView({model: shape});
     App.viewManager.display(shapeView);
   },
-  filterByColor: function(hexcolor){
-    var shapeColor = this.collection.where({color: '#' + hexcolor});
-    var colorShapeCollection = new App.Collections.ShapeCollection(shapeColor);
-    var colorListView = new App.Views.ShapeListView({ collection: colorShapeCollection});
-    App.viewManager.display(colorListView);
+  filterByColor: function(color){
+    var shapes = _.filter(this.collection.models, function(model){
+      if (color === "red") {
+        return (
+          parseInt(model.get('color').substr(1,2), 16 ) > 200 &&
+          parseInt(model.get('color').substr(3,2), 16 ) < 100 &&
+          parseInt(model.get('color').substr(5,2), 16 ) < 100
+        )
+      } else if (color == "green") {
+        return (
+          parseInt(model.get('color').substr(3,2), 16) > 200 &&
+          parseInt(model.get('color').substr(1,2), 16) < 100 &&
+          parseInt(model.get('color').substr(5,2), 16) < 100
+        )
+      }
+    });
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({ collection: shapeCollection})
+    App.viewManager.display(shapeListView);
   }
 });
 

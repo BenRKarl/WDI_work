@@ -28,5 +28,5 @@ top 15 books with 'love' in title, grouped by author
 
 List of book titles containing the word "love", along with their author, grouped by total word count in ascending order
   SELECT b.title, a.name FROM books AS b
-
+  INNER JOIN authors AS a WHERE
   ORDER BY COUNT(word_count) ASC;
