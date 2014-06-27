@@ -11,8 +11,10 @@ GutenbergApp.initialize = function(){
     authorListView.render()
   }});
 
+  GutenbergApp.authors = authors;
+  GutenbergApp.authorListView = authorListView;
 
-}
+};
 
 $(function(){
 

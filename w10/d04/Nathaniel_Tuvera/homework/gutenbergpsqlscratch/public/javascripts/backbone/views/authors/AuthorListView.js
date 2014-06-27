@@ -1,6 +1,9 @@
 var GutenbergApp = GutenbergApp || { Models: {}, Collections: {}, Views: {} }
 
   GutenbergApp.Views.AuthorListView = Backbone.View.extend({
+    initialize: function(){
+      this.listenTo(this.collection, 'change', this.render);
+    },
     render: function(){
       var that = this;
       this.$el.empty();
