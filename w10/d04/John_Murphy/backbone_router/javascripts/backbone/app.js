@@ -2,13 +2,74 @@ var App = {
   Models: {},
   Collections: {},
   Views: {},
+  Router: null,
   initialize: function(){
-    this.collection = new App.Collections.ShapeCollection();
-    seedCollection(3000, this.collection);
-    var view  = new App.Views.ShapeListView({collection: this.collection, el: $('body')});
-    view.render();
+    this.ViewManager = new App.Views.ViewManager({el: $('body')});
+    this.router = new App.Router();
+    Backbone.history.start();
+    // this.collection = new App.Collections.ShapeCollection();
+    // seedCollection(3000, this.collection);
+    // var view  = new App.Views.ShapeListView({collection: this.collection, el: $('body')});
+    // view.render();
   }
 }
+
+App.Router = Backbone.Router.extend({
+  initialize: function(){
+    this.collection = new App.Collections.ShapeCollection();
+    seedCollection(100000, this.collection)
+  },
+  routes : {
+    ''                         : 'index',
+    'shape/:type'              : 'filterByShape',
+    'size/:size'               : 'filterBySize',
+    'size/:size/shape/:shape'  : 'filterBySizeAndShape',
+    'shapes/:id'               : 'findById'
+  },
+  index: function(){
+    var indexView = new App.Views.ShapeListView( { collection: this.collection } );
+    App.ViewManager.display(indexView);
+  },
+  filterByShape: function(type){
+    var shapes = this.collection.where({type: type});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.ViewManager.display(shapeListView);
+  },
+  filterBySize: function(size){
+    var shapes = this.collection.where({size: parseInt(size)});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.ViewManager.display(shapeListView);
+  },
+    filterBySizeAndShape: function(size, type){
+    var shapes = this.collection.where({size: parseInt(size), type: type});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.ViewManager.display(shapeListView);
+  },
+  findById: function(id){
+    var shape = this.collection.get( 'c' + id );
+    var shapeView = new App.Views.ShapeView({model: shape});
+    App.ViewManager.display(shapeView);
+  }
+})
+
+App.Views.ViewManager = Backbone.View.extend({
+  initialize: function(){
+
+
+  },
+  display: function(view){
+    var previousView = this.currentView || null;
+    var nextView = view;
+    if (previousView) {
+      previousView.remove();
+    };
+    nextView.render().$el.appendTo(this.$el);
+    this.currentView = nextView;
+  }
+})
 
 App.Models.Shape = Backbone.Model.extend({});
 
@@ -75,7 +136,7 @@ function seedCollection(numShapes, collection){
     var shape = new App.Models.Shape({
       type: randomShape(),
       color: randomColor(),
-      size: _.sample([ 50, 100, 150, 200])
+      size: _.sample([ 10, 50, 100, 150, 200])
     });
     collection.add(shape);
   }
