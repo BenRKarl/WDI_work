@@ -16,6 +16,7 @@ Bananapp.initialize = function(){
     var nameField = $('form.monkey-form input');
     var newName = nameField.val();
     nameField.val('');
+    var number = Math.floor((Math.random() * 5))
     monkeys.add({name:newName});
   })
 
