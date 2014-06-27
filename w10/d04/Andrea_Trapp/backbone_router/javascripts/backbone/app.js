@@ -2,13 +2,69 @@ var App = {
   Models: {},
   Collections: {},
   Views: {},
-  initialize: function(){
-    this.collection = new App.Collections.ShapeCollection();
-    seedCollection(3000, this.collection);
-    var view  = new App.Views.ShapeListView({collection: this.collection, el: $('body')});
-    view.render();
+  Router: null,
+  initialize: function(){   
+    this.viewManager = new App.Views.ViewManager({el: $('body')});
+    this.router = new App.Router();   
+    Backbone.history.start();
   }
 }
+
+App.Router = Backbone.Router.extend({
+  initialize: function(){
+    this.collection = new App.Collections.ShapeCollection();
+    seedCollection(1000, this.collection);
+  },
+  routes : {
+    ''              : 'index',
+    'shape/:type'   : 'filterByShape',
+    'size/:size'    : 'filterBySize',
+    'size/:size/shape/:shape' : 'filterBySizeAndShape',
+    'shapes/:id'    : 'findById'
+  },
+  index: function(){
+    var indexView = new App.Views.ShapeListView({collection: this.collection});
+    App.viewManager.display(indexView);
+  },
+  filterByShape: function(type){
+    var shapes = this.collection.where({type: type});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
+  },
+  filterBySize: function(size){
+    var shapes = this.collection.where({size: parseInt(size)});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
+  },
+  filterBySizeAndShape: function(size, type){
+    var shapes = this.collection.where({size: parseInt(size), type: type});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
+  },
+  findById: function(id){
+    var shape = this.collection.get('c'+id);
+    var shapeView = new App.Views.ShapeView({model: shape});
+    App.viewManager.display(shapeView);  
+  }
+})
+
+App.Views.ViewManager = Backbone.View.extend({
+  // initialize: function(){
+  
+  // },
+  display: function(view){
+    var previousView = this.currentView || null
+    var nextView = view;
+    if (previousView) {
+      previousView.remove();
+    }
+    nextView.render().$el.hide().appendTo(this.$el).fadeIn();
+    this.currentView = nextView;
+  } 
+})
 
 App.Models.Shape = Backbone.Model.extend({});
 
@@ -39,6 +95,18 @@ App.Views.ShapeView = Backbone.View.extend({
     this.$el.css('border-left', ((this.model.get('size'))/2)+"px solid transparent");
     this.$el.css('border-right', ((this.model.get('size'))/2)+"px solid transparent");
     this.$el.css('border-bottom', this.model.get('size')+"px solid "+this.model.get('color'));
+    return this;
+  },
+  events: {   
+    'mouseover' : 'grow',
+    'mouseout'  : 'shrink',
+  },  
+  grow: function(){    
+    this.$el.css('transform', 'scale(1.25,1.25)');
+    return this;
+  },
+  shrink: function(){   
+    this.$el.css('transform', 'scale(0.5,0.5)');
     return this;
   }
 })

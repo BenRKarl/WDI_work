@@ -1,1 +1,5 @@
-var GutenbergApp = GutenbergApp || (Models: {}, Views: {}, Collections: {})
+var GutenbergApp = GutenbergApp || {Models: {}, Views: {}, Collections: {}}
+
+GutenbergApp.Models.Book = GutenbergApp.Model.extend({
+
+});
