@@ -13,13 +13,13 @@
   <script type="text/javascript" src="javascripts/backbone/app.js"></script>
 
   <!-- TEMPLATES -->
-  <script type="text/template" id="book-template">
-    <%- title %>
+  <script type="text/template" id="author-template">
+    <h3><%- name %>   <button class="see-books">See books</button></h3>
+    <ul class='books'></ul>
   </script>
 
-  <script type="text/template" id="author-template">
-    <h3><%- name %></h3>
-    <ul class='books'></ul>
+  <script type="text/template" id="book-template">
+    <%- title %>
   </script>
 
   <!-- Models -->
