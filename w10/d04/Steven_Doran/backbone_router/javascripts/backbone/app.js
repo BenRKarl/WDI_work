@@ -63,12 +63,15 @@ App.Views.ViewManager = Backbone.View.extend({
   }
 });
 
+// *** MODEL ***
 App.Models.Shape = Backbone.Model.extend({});
 
+// *** COLLECTION ***
 App.Collections.ShapeCollection = Backbone.Collection.extend({
   model: App.Models.Shape
 });
 
+// *** VIEW ***
 App.Views.ShapeView = Backbone.View.extend({
   className: 'shape',
   render: function(){
@@ -96,6 +99,7 @@ App.Views.ShapeView = Backbone.View.extend({
   }
 })
 
+// *** LIST VIEW ***
 App.Views.ShapeListView = Backbone.View.extend({
   initialize: function(){
     this.listenTo(this.collection, "change", this.render)
