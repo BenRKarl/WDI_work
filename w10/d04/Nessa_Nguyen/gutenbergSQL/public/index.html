@@ -7,12 +7,12 @@
   <link rel="stylesheet" href="stylesheet/style.css">
   <script type='text/template' id='author-template'>
     <h3><%- name %></h3>
-    <button class='show-books'>Books</button>
+    <button class='show-books' data-author='<%- id %>'>Books</button>
     <ul class='books'></ul>
   </script>
 
   <script type='text/template' id='book-template'>
-    <%- title %>
+    <%-title %>
   </script>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

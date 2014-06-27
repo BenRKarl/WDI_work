@@ -6,7 +6,6 @@ GutenbergApp.Views.AuthorListView = Backbone.View.extend({
     this.listenTo(this.collection, 'change', this.render);
   },
   render: function() {
-    console.log('Hi');
     var that = this;
     this.$el.empty();
     _.each(this.collection.models, function(author) {
