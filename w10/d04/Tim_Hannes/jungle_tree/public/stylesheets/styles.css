@@ -1,0 +1,24 @@
+body{
+  background-color: lightgrey;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.main-container{
+  width: 80%;
+  margin: 0 auto;
+}
+li{
+  background-color:darkgrey;
+  margin: 10px 10% 10px 10%;
+  border: 2px solid black;
+}
+li button{
+  float:right;
+}
+
+.monkey-form{
+  padding-left:10%;
+}
+ #name{
+  width: 500px;
+ }

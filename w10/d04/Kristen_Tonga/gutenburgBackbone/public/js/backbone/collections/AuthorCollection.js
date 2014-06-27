@@ -1,6 +1,7 @@
 var GutenbergApp = GutenbergApp || {Models: {}, Views: {}, Collections: {}};
 
-GutenbergApp.Model.Author = Backbone.Model.extend({
-
+GutenbergApp.Collections.AuthorCollection = Backbone.Collection.extend({
+  model: GutenbergApp.Models.Author,
+  url: '/authors'
 });
 

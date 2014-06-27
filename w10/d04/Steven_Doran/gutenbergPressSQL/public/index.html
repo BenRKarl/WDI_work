@@ -12,15 +12,15 @@
    <script src="javascripts/libraries/backbone.js"></script>
    
    <!-- TEMPLATES -->
-   <script type="text/template" id="book-template">
-      <%- title %>
-   </script>
-   
-   <script type="text/template" id="author-template">
+      <script type="text/template" id="author-template">
       <h3><%- name %></h3>
+      <button class='show-books'>Books</button>
       <ul class="books"></ul>
    </script>
 
+   <script type="text/template" id="book-template">
+      <%- title %>
+   </script>
 
    <!-- APP -->
    <script src='javascripts/backbone/app.js'></script>
