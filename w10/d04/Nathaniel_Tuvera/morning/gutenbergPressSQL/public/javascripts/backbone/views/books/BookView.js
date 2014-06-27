@@ -1,13 +1,13 @@
-var Gutenberg = Gutenberg || {  Models: {}, Collections: {}, Views: {} };
+var GutenbergApp = GutenbergApp || { Models: {}, Views: {}, Collections: {} };
 
-Gutenberg.Views.BookView = Backbone.View.extend({
-  intialize: function(){
+GutenbergApp.Views.BookView = Backbone.View.extend({
+  initialize: function(){
     this.listenTo(this.model, 'all', this.render)
   },
   tagName: 'li',
-  template: _.template($('#book-template').html()),
+  template: _.template( $('#book-template').html() ),
   render: function(){
-    this.$el.html(this.template( this.model.attributes));
+    this.$el.html( this.template( this.model.attributes ) );
     return this;
   }
 })
