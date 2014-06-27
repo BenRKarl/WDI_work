@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bookbone Bananaas</title>
+
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+  <!-- libraries -->
+  <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+  <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+  <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+
+
+  <!-- templates -->
+  <script class="monkey-template" type='text/template'>
+    <h3 class='monkey'>
+      <%- name %> the monkey
+    </h3>
+        <button data-action='release'>Release</button>
+        <button data-action='edit'>Rename</button>
+  </script>
+
+  <script class="edit-monkey-template" type='text/template'>
+    <form>
+      <input type="text" placeholder='<%- name %>'>
+    </form>
+  </script>
+
+  <!-- a bathing app -->
+  <script type="text/javascript" src='javascripts/backbone/app.js'></script>
+
+  <!-- models -->
+  <script type="text/javascript" src='javascripts/backbone/models/monkey.js'></script>
+
+  <!-- collections -->
+  <script type="text/javascript" src='javascripts/backbone/collections/monkeyCollection.js'></script>
+
+  <!-- views -->
+  <script type="text/javascript" src='javascripts/backbone/views/monkeys/monkeyView.js'></script>
+  <script type="text/javascript" src='javascripts/backbone/views/monkeys/monkeyListView.js'></script>
+
+</head>
+
+<body>
+
+  <form class='new-monkey'>
+    <input type="text" placeholder='monkey name' class='monkey-name'>
+  </form>
+
+  <ul class="monkey-house"></ul>
+</body>
+</html>
