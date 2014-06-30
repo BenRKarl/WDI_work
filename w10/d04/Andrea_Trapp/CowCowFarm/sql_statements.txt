@@ -1,0 +1,62 @@
+1. Create a database
+====================
+
+CREATE DATABASE cowcow_farm;
+
+2. Create tables
+================
+
+CREATE TABLE farmers(id SERIAL PRIMARY KEY, name varchar(100));
+CREATE TABLE cows(id SERIAL PRIMARY KEY, farmer_id integer references farmers(id), name varchar(100));
+
+      ----------------------
+      id SERIAL PRIMARY KEY
+      farmer_id integer references farmers(id)
+
+          CREATE TABLE table_name(
+             column1 datatype,
+             column2 datatype,
+             column3 datatype,
+             .....
+             columnN datatype,
+             PRIMARY KEY( one or more columns )
+          );
+      ----------------------
+
+3. add cows to farmers
+======================
+
+INSERT INTO farmers (name) VALUES ('Lichard DeGray');
+INSERT INTO farmers (name) VALUES ('Kathew Bod');
+INSERT INTO farmers (name) VALUES ('Huoooman IsaSwerses');
+
+
+INSERT INTO cows (farmer_id, name) VALUES ((SELECT id FROM farmers WHERE name = 'Lichard DeGray' LIMIT 1), 'Mooona Lisa');
+  or
+  INSERT INTO cows (farmer_id, name) VALUES (1, 'Mooona Lisa');
+
+
+INSERT INTO cows (farmer_id, name) VALUES ((SELECT id FROM farmers WHERE name = 'Lichard DeGray' LIMIT 1), 'Mooontgomery');
+  or
+  INTO cows (farmer_id, name) VALUES (1, 'Mooontgomery');
+
+
+INSERT INTO cows (farmer_id, name) VALUES ((SELECT id FROM farmers WHERE name = 'Kathew Bod' LIMIT 1), 'Moark');
+  or
+  INSERT INTO cows (farmer_id, name) VALUES (2, 'Moark');
+
+
+4. select statements
+====================
+
+4.1. SELECT name FROM cows WHERE name LIKE '%ooo%';
+
+4.2. SELECT f.name, c.name FROM farmers AS f INNER JOIN cows AS c ON f.id = c.farmer_id;
+
+4.3. SELECT name FROM farmers WHERE (SELECT count(*) FROM cows WHERE farmer_id = farmers.id) > 1;
+
+
+
+
+
+

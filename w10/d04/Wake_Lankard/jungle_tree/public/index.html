@@ -1,0 +1,51 @@
+<!DOCTYPE hml>
+<html>
+<head>
+  <title>backbone Bananas</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+  <script type="text/javascript" src="javascripts/libraries/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/libraries/underscore.js"></script>
+  <script type="text/javascript" src="javascripts/libraries/backbone.js"></script>
+
+<!--templates -->
+<script type='text/template' id='monkey-template'>
+  <%- name %>... is a monkey
+  <button data-action='release'>free</button>
+  <button data-action='edit'>Rename</button>
+</script>
+<script type='text/template' id='edit-monkey-template'>
+  <form>
+    <input type='text' placeholder='<%- name %>'>
+  </form>
+</script>
+
+
+<!-- Bananapp --> 
+<script type="text/javascript" src="javascripts/backbone/app.js"></script>
+
+<!-- Models -->
+<script type="text/javascript" src="javascripts/backbone/models/monkey.js"></script>
+
+
+<!--Collections -->
+<script type="text/javascript" src="javascripts/backbone/collections/monkeyCollection.js"></script>
+
+<!-- Views -->
+<script type="text/javascript" src="javascripts/backbone/views/monkeys/monkeyView.js"></script>
+<script type="text/javascript" src="javascripts/backbone/views/monkeys/monkeyListView.js"></script>
+
+
+
+</head>
+
+<body>
+  <form class="monkey-form">
+    <input type="textfield" class="monkey-name-input">
+    <button type="submit">Add A Ape</button>
+  </form>
+  <ul class="monkeys">
+  </ul>
+
+</body>
+</html>
