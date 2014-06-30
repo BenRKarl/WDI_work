@@ -5,6 +5,7 @@ GutenbergApp.Views.AuthorView = Backbone.View.extend({
   tagName: 'li',
   render: function(){
     this.$el.html( this.template( this.model.attributes ) );
+    debugger;
     var bookListView = new GutenbergApp.Views.BookListView({
       collection: this.model.get('books'),
       el: this.$el.find('.books')
