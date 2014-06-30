@@ -5,7 +5,7 @@ var App = {
   initialize: function(){
     this.collection = new App.Collections.ShapeCollection();
     seedCollection(3000, this.collection);
-    var view  = new App.Views.ShapeListView({collection: this.collection, el: $('body')});
+    var view  = new App.Views.  ShapeListView({collection: this.collection, el: $('body')});
     view.render();
   }
 }
