@@ -6,7 +6,7 @@ Bananapp.initialize =  function(){
   var router = new Bananapp.Routers.MonkeyRouter({
   });
 
-  Backbone.history.start();
+  Backbone.history.start({pushState: true});
 
 }
 
