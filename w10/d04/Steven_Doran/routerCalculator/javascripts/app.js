@@ -1,4 +1,7 @@
 var Router = Backbone.Router.extend({
+   initialize: function() {
+      this.$body = $('body');
+   },
    routes: {
       ''                : 'index',
       'hello/:name'     : 'hello',
@@ -8,22 +11,22 @@ var Router = Backbone.Router.extend({
       'divide/:x/:y'    : "divide" 
    },
    index: function() {
-      $('body').html('welcome to my calculator');
+      this.$body.html('welcome to my calculator');
    },
    hello: function(name) {
-      $('body').html('hello, '+name);
+      this.$body.html('hello, '+name);
    },
    add: function(x, y) {
-      $('body').html(parseInt(x)+parseInt(y));
+      this.$body.html(parseInt(x)+parseInt(y));
    },
    subtract: function(x, y) {
-      $('body').html(parseInt(x)-parseInt(y));
+      this.$body.html(parseInt(x)-parseInt(y));
    },
    multiply: function(x, y) {
-      $('body').html(parseInt(x)*parseInt(y));
+      this.$body.html(parseInt(x)*parseInt(y));
    },
    divide: function(x, y) {
-      $('body').html(parseInt(x)/parseInt(y));
+      this.$body.html(parseInt(x)/parseInt(y));
    },   
 
 });

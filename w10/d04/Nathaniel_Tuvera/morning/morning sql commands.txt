@@ -1,0 +1,64 @@
+CREATE DATABASE cowcow_farm;
+
+CREATE TABLE farmers(
+id SERIAL PRIMARY KEY,
+name varchar(100)
+);
+
+CREATE TABLE cows(
+id SERIAL PRIMARY KEY,
+name varchar(100),
+farmer_id integer references farmers(id)
+);
+
+-------------------
+
+INSERT INTO farmers(name)
+VALUES
+('Lichard DeGray');
+
+INSERT INTO farmers(name)
+VALUES
+('Katthew Bod');
+
+INSERT INTO farmers(name)
+VALUES
+('Huoooman IsaSwerses');
+
+INSERT INTO cows(name, farmer_id)
+VALUES
+('Mooona Lisa', (SELECT id FROM farmers WHERE name LIKE 'Lichard DeGray' LIMIT 1));
+
+INSERT INTO cows(name, farmer_id)
+VALUES
+('Mooontgomery', (SELECT id FROM farmers WHERE name LIKE 'Lichard DeGray' LIMIT 1));
+
+INSERT INTO cows(name, farmer_id)
+VALUES
+('Moark Lisa', (SELECT id FROM farmers WHERE name LIKE 'Katthew Bod' LIMIT 1));
+
+--------------------
+
+SELECT * FROM cows WHERE name LIKE '%ooo%';
+
+SELECT f.name, c.name FROM farmers AS f
+INNER JOIN cows AS c ON f.id = c.farmer_id;
+>>>>>
+SELECT * FROM cows
+INNER JOIN farmers ON farmers.id = cows.farmer_id;
+
+-- failed attempts --
+SELECT f.name FROM farmers AS f
+INNER JOIN cows AS c ON c.farmer_id = f.id
+WHERE COUNT(c.*) > 2;
+
+SELECT f.name FROM farmers AS f
+INNER JOIN cows AS c ON c.farmer_id = f.id
+GROUP BY f.name
+HAVING COUNT(c.*) >2)
+-- failed attempts --
+
+SELECT name FROM farmers
+WHERE (SELECT COUNT(*) FROM cows WHERE farmer_id = farmers.id) > 1;
+
+

@@ -13,11 +13,14 @@ var App = {
 App.Router = Backbone.Router.extend({
   initialize: function(){
     this.collection = new App.Collections.ShapeCollection();
-    seedCollection(1000, this.collection);
+    seedCollection(100000, this.collection);
   },
   routes : {
-    ''                : 'index',
-    'shape/:type'     : 'filterByShape'
+    ''                          : 'index',
+    'shape/:type'               : 'filterByShape',
+    'size/:size'                : 'filterBySize',
+    'size/:size/shape/:shape'   : 'filterBySizeAndShape',
+    'shapes/:id'                : 'findById'
   },
   index: function(){
     console.log('this is really happening');
@@ -29,6 +32,23 @@ App.Router = Backbone.Router.extend({
     var shapeCollection = new App.Collections.ShapeCollection(shapes);
     var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
     App.viewManager.display(shapeListView);
+  },
+  filterBySize: function(size){
+    var shapes = this.collection.where({size: parseInt(size)});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
+  },
+  filterBySizeAndShape: function(size, type){
+     var shapes = this.collection.where({size: parseInt(size), type: type });
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
+  },
+  findById: function(id){
+    var shape  =   this.collection.get('c'+id);
+    var shapeView = new App.Views.ShapeView({model: shape});
+    App.viewManager.display(shapeView);
   }
 })
 
@@ -110,7 +130,7 @@ function seedCollection(numShapes, collection){
     var shape = new App.Models.Shape({
       type: randomShape(),
       color: randomColor(),
-      size: _.sample([ 50, 100, 150, 200])
+      size: _.sample([ 5, 10, 15, 20])
     });
     collection.add(shape);
   }

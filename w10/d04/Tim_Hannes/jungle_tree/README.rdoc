@@ -1,0 +1,4 @@
+What is really happening, when we our fetch is evaluated:
+  -sends request to server for all monkeys,
+  -monkeys get collected, and sent back in json,
+  -we render json and display on page
