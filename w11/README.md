@@ -11,6 +11,7 @@
   - Screenshot[s]
 
 ##Minimal Components
+
 ###RAILS CRUD
   - Include two associated models
   - Controllers are tested with rspec
