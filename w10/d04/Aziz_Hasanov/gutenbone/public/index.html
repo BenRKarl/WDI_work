@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gutenbone</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <!-- Libraries -->
+  <script src='javascripts/libraries/jquery.js'></script>
+  <script src='javascripts/libraries/underscore.js'></script>
+  <script src='javascripts/libraries/backbone.js'></script>
+
+  <!-- Templates -->
+  <script id="author-template" type="text/template">
+    <%- name %>
+    <button id='show-books'>Books</button>
+    <ul class="book-list"></ul>
+  </script>
+
+  <script id="book-template" type="text/template">
+    <%- title %>
+  </script>
+
+  <!-- App -->
+  <script src='javascripts/backbone/app.js'></script>
+
+  <!-- Models -->
+  <script src='javascripts/backbone/models/authorModel.js'></script>
+  <script src='javascripts/backbone/models/bookModel.js'></script>
+
+  <!-- Collections -->
+  <script src='javascripts/backbone/collections/authorCollection.js'></script>
+  <script src='javascripts/backbone/collections/bookCollection.js'></script>
+
+  <!-- Views -->
+  <script src='javascripts/backbone/views/authors/authorView.js'></script>
+  <script src='javascripts/backbone/views/authors/authorListView.js'></script>
+  <script src='javascripts/backbone/views/books/bookView.js'></script>
+  <script src='javascripts/backbone/views/books/bookListView.js'></script>
+</head>
+<body>
+  
+  <ul class="author-list"></ul>
+
+</body>
+</html>

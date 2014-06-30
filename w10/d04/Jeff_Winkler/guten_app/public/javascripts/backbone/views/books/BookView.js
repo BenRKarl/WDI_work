@@ -1,7 +1,7 @@
 var GutenbergApp = GutenbergApp || { Models: {}, Views: {}, Collections: {} };
 
 
-GutenbergApp.Views.AuthorView = Backbone.View.extend({
+GutenbergApp.Views.BookView = Backbone.View.extend({
   tagName: 'li',
   template: _.template($('#book_template').html()),
   render: function() {

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="stylesheet/style.css">
+  <script type='text/template' id='author-template'>
+    <h3><%- name %></h3>
+    <button class='show-books' data-author='<%- id %>'>Books</button>
+    <ul class='books'></ul>
+  </script>
+
+  <script type='text/template' id='book-template'>
+    <%-title %>
+  </script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src='javascript/library/underscore.js'></script>
+  <script src='javascript/library/backbone.js'></script>
+
+  <script src='javascript/backbone/models/author.js'></script>
+  <script src='javascript/backbone/collections/authorCol.js'></script>
+  <script src='javascript/backbone/views/authors/authorView.js'></script>
+  <script src='javascript/backbone/views/authors/authorListView.js'></script>
+  <script src='javascript/backbone/models/book.js'></script>
+  <script src='javascript/backbone/collections/bookCol.js'></script>
+  <script src='javascript/backbone/views/books/bookView.js'></script>
+  <script src='javascript/backbone/views/books/bookListView.js'></script>
+  <script src='javascript/backbone/app.js'></script>
+
+  <title>Gutenberg Press</title>
+</head>
+
+
+<body>
+  <h1>The Gutenberg Press</h1>
+
+  <ul class="author-list"></ul>
+
+
+</body>
+</html>
