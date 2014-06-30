@@ -17,18 +17,23 @@
   - Controllers are tested with rspec
   - Use Rails Form helpers
   - **Extra Challenge**: Allow for nested resources
+
 ###Sinatra CRUD application
   - **Extra Challenge**: Use ActiveRecord to create migrations
+
 ###Backbone+Rails CRUD
   - All CRUD functionality possible using a single page application
   - Rails controllers are tested
   - **Extra Challenge**: Backbone JS is tested via Jasmine
+
 ###Static Pages (feels dynamic)
   - Could be your portfolio
   - **Extra Challenge**: Responsive Design
+
 ###Node
   - Node express for a CRUD app
   - **Extra Challenge**: Create a sql AND nosql app (2 versions)
+
 ###d3 Demo
   - Visualize a dataset
   - Demonstrate an understanding of:
@@ -39,6 +44,7 @@
   - **Extra Challenge**: Use a HUGE dataset
   - **Extra Challenge**: Provide multiple visualizations for the same data
   - **Extra Challenge**: Compute something to visualize, i.e. manipulate the data
+
 ###Gem
   - Create a ruby gem
 
