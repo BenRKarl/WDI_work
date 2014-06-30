@@ -27,7 +27,7 @@ App.Router = Backbone.Router.extend({
     var shapes = this.collection.where({type: type});
     var shapeCollection = new App.Collections.ShapeCollection(shapes);
     var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
-    App.viewManager.display(shapeListView);
+ g
   }
 });
 
