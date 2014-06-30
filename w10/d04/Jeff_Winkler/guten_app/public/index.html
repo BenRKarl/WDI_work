@@ -12,17 +12,14 @@
 
   <!-- Templates -->
 
-  <script id="book_template" type="text/template">
-    <%- title %>
-  </script>
-
   <script id="author_template" type="text/template">
     <%- name %>
     <button data-action='get_books'>Books!</button>
-    <ul class="books"></ul>
   </script>
 
-
+  <script id="book_template" type="text/template">
+    <%- title %>
+  </script>
 
   <script src="javascripts/backbone/app.js"></script>
 

@@ -1,6 +1,6 @@
 var Router = Backbone.Router.extend({
   initialize: function(){
-    this.$body = $('body')
+    this.$body = $('body');
   },
   routes:{
     '' : 'index',
@@ -32,7 +32,7 @@ var Router = Backbone.Router.extend({
   },
 
   divide: function(x, y){
-    $('body').html(parseInt(x)/parseInt(y));
+    this.$body.html(parseInt(x)/parseInt(y));
   }
 
 });

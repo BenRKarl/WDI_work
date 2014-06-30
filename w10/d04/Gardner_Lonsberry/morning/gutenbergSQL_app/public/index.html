@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gutenburg</title>
+
+<link rel="stylesheet" href="stylesheets/styles.css">
+
+
+<!-- Libraries -->
+<script src="javascripts/libraries/jquery.js"></script>
+<script src="javascripts/libraries/underscore.js"></script>
+<script src="javascripts/libraries/backbone.js"></script>
+
+<!-- Templates -->
+<script type="text/template" id="book-template"></script>
+  <%- title %>
+</script>
+
+<script type="text/template" id="book-template"></script>
+  <h2><%- name %></h2>
+  <ul class="books"></ul>
+</script>
+
+App
+<script src="javascripts/backbone/app.js"></script>
+Models
+<script src="javascripts/backbone/models/Author.js"></script>
+<script src="javascripts/backbone/models/Book.js"></script>
+Views
+<script src="javascripts/backbone/views/authors/AuthorView.js"></script>
+<script src="javascripts/backbone/views/authors/AuthorListView.js"></script>
+<script src="javascripts/backbone/views/books/BookListView.js"></script>
+<script src="javascripts/backbone/views/books/BookView.js"></script>
+
+</head>
+<body>
+  <ul class="authors-lounge"></ul>
+</body>
+</html>
