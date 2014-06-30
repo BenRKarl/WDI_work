@@ -18,7 +18,8 @@ Bananapp.initialize = function(){
     var nameField = $('form.monkey-form input');
     var newName = nameField.val();
     nameField.val('');
-    monkeys.create({name:newName});
+    var number = Math.floor((Math.random() * 5))
+    monkeys.create({name:newName, number:number});
   })
 
 
@@ -31,6 +32,8 @@ Bananapp.initialize = function(){
 };
 
 $(function(){
-  console.log('posture? posturing?')
+  console.log('posture? posturing?');
+  $( ".draggable" ).draggable();
+  $(document).tooltip();
   Bananapp.initialize();
 })

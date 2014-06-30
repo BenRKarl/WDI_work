@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gutenberg Press</title>
+
+  <link rel='stylesheets' href='stylesheets/styles.css'>
+
+  <!-- Libraries -->
+    <script type='text/javascript' src='javascripts/libraries/jquery.js'></script>
+    <script type='text/javascript' src='javascripts/libraries/underscore.js'></script>
+    <script type='text/javascript' src='javascripts/libraries/backbone.js'></script>
+
+  <!-- Templates -->
+    <script type='text/template' id='author-template'>
+      <h2><%- name %></h2><button class='show-books'>Show Books</button>
+        <ul class='books'></ul>
+    </script>
+
+    <script type='text/template' id='book-template'>
+      <h4><%- title %></h4>
+    </script>
+
+  <!-- Application -->
+    <script type='text/javascript' src='javascripts/backbone/app.js'></script>
+
+  <!-- Models -->
+    <script type='text/javascript' src='javascripts/backbone/models/Author.js'></script>
+    <script type='text/javascript' src='javascripts/backbone/models/Book.js'></script>
+
+  <!-- Collections -->
+    <script type='text/javascript' src='javascripts/backbone/collections/AuthorCollection.js'></script>
+    <script type='text/javascript' src='javascripts/backbone/collections/BookCollection.js'></script>
+
+  <!-- Views -->
+    <script type='text/javascript' src='javascripts/backbone/views/authors/AuthorView.js'></script>
+    <script type='text/javascript' src='javascripts/backbone/views/books/BookView.js'></script>
+
+    <script type='text/javascript' src='javascripts/backbone/views/authors/AuthorListView.js'></script>
+    <script type='text/javascript' src='javascripts/backbone/views/books/BookListView.js'></script>
+
+
+
+</head>
+<body>
+
+  <ul class='author-lounge'>
+    loading...
+  </ul>
+
+</body>
+</html>

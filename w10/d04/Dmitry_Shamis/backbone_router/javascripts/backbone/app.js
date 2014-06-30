@@ -2,13 +2,68 @@ var App = {
   Models: {},
   Collections: {},
   Views: {},
+  Router: null,
   initialize: function(){
-    this.collection = new App.Collections.ShapeCollection();
-    seedCollection(3000, this.collection);
-    var view  = new App.Views.ShapeListView({collection: this.collection, el: $('body')});
-    view.render();
+    this.viewManager = new App.Views.ViewManager({el: $('body')});
+    this.Router = new App.Router();
+    Backbone.history.start();
   }
 }
+
+App.Router = Backbone.Router.extend({
+  initialize: function() {
+    this.collection = new App.Collections.ShapeCollection();
+    seedCollection(10000, this.collection);
+  },
+  routes: {
+    ''                        : 'index',
+    'shape/:type'             : 'filterByShape',
+    'size/:size'              : 'filterBySize',
+    'shape/:type/size/:size'  : 'filterShapeBySize',
+    'shapes/:id'              : 'filterById'
+  },
+  index: function() {
+    var indexView = new App.Views.ShapeListView({
+      collection: this.collection
+    });
+    App.viewManager.display(indexView);
+  },
+  filterByShape: function(type) {
+    var shapes = this.collection.where({type: type});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
+  },
+  filterBySize: function(size) {
+    var shapes = this.collection.where({size: parseInt(size)});
+    var shapeCollection = new App.Collections.ShapeCollection(shapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.viewManager.display(shapeListView);
+  },
+  filterShapeBySize: function(type, size) {
+   var shapes = this.collection.where({size: parseInt(size), type: type});
+   var shapeCollection = new App.Collections.ShapeCollection(shapes);
+   var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+   App.viewManager.display(shapeListView);
+ },
+ filterById: function(id) {
+  var shape = this.collection.get('c'+id);
+  var shapeView = new App.Views.ShapeView({model: shape});
+  App.viewManager.display(shapeView);
+ }
+})
+
+App.Views.ViewManager = Backbone.View.extend({
+  display: function(view) {
+    var previousView = this.currentView || null
+    var nextView = view;
+    if (previousView) {
+      previousView.remove();
+    }
+    nextView.render().$el.hide().appendTo(this.$el).fadeIn();
+    this.currentView = nextView;
+  }
+})
 
 App.Models.Shape = Backbone.Model.extend({});
 
@@ -24,6 +79,24 @@ App.Views.ShapeView = Backbone.View.extend({
     var fn = this['render'+this.model.get('type')];
     return fn.call(this);
   },
+  events: {
+    'mouseover' : 'wiggle',
+    'click' : 'changeBackgroundColor',
+    // 'dblclick' : 'changeBackgroundImage'
+  },
+    wiggle: function() {
+    var deg = Math.random()*360 -1;
+    this.$el.css('transform', 'rotate('+deg+'deg)')
+    return this;
+  },
+  changeBackgroundColor: function() {
+    this.$el.css('background-color', randomColor)
+  },
+  // changeBackgroundImage: function() {
+  //   this.$el.animate({
+  //     backgroundImage: '../images/tiny_grid.png'
+  //   }, 500)
+  // },
   rendersquare: function(){
     this.$el.css('background-color', this.model.get('color'));
     return this;
@@ -33,12 +106,33 @@ App.Views.ShapeView = Backbone.View.extend({
     this.$el.css('border-radius', this.model.get('size')/2);
     return this;
   },
-  rendertriangle: function(){
+  rendertriangleup: function(){
     this.$el.width(0);
     this.$el.height(0);
     this.$el.css('border-left', ((this.model.get('size'))/2)+"px solid transparent");
     this.$el.css('border-right', ((this.model.get('size'))/2)+"px solid transparent");
     this.$el.css('border-bottom', this.model.get('size')+"px solid "+this.model.get('color'));
+    return this;
+  },
+    rendertriangledown: function(){
+    this.$el.width(0);
+    this.$el.height(0);
+    this.$el.css('border-left', ((this.model.get('size'))/2)+"px solid transparent");
+    this.$el.css('border-right', ((this.model.get('size'))/2)+"px solid transparent");
+    this.$el.css('border-top', this.model.get('size')+"px solid "+this.model.get('color'));
+    return this;
+  },
+  renderpacman: function() {
+    this.$el.width(0);
+    this.$el.height(0);
+    this.$el.css('border-right', ((this.model.get('size')+"px solid transparent")));
+    this.$el.css('border-top', ((this.model.get('size')+"px solid yellow")));
+    this.$el.css('border-left', ((this.model.get('size')+"px solid yellow")));
+    this.$el.css('border-bottom', ((this.model.get('size')+"px solid yellow")));
+    this.$el.css('border-top-left-radius', this.model.get('size'));
+    this.$el.css('border-top-right-radius', this.model.get('size'));
+    this.$el.css('border-bottom-left-radius', this.model.get('size'));
+    this.$el.css('border-bottom-right-radius', this.model.get('size'));
     return this;
   }
 })
@@ -67,7 +161,7 @@ function randomColor(){
 // }
 
 function randomShape(){
-  return _.sample(["square", "triangle", "circle"])
+  return _.sample(["square", "triangleup", "triangledown", "circle", "pacman"])
 }
 
 function seedCollection(numShapes, collection){
@@ -75,7 +169,7 @@ function seedCollection(numShapes, collection){
     var shape = new App.Models.Shape({
       type: randomShape(),
       color: randomColor(),
-      size: _.sample([ 50, 100, 150, 200])
+      size: _.sample([50, 60, 70, 80, 90, 100])
     });
     collection.add(shape);
   }

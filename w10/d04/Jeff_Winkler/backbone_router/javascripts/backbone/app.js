@@ -1,14 +1,75 @@
-var App = {
+App = {
   Models: {},
   Collections: {},
   Views: {},
+  Router: null,
   initialize: function(){
-    this.collection = new App.Collections.ShapeCollection();
-    seedCollection(3000, this.collection);
-    var view  = new App.Views.ShapeListView({collection: this.collection, el: $('body')});
-    view.render();
+    console.log(this);
+    App.ViewManager = new App.Views.ViewManager({el: $('body')});
+    this.router = new App.Router();
+    Backbone.history.start();
   }
 }
+
+App.Router = Backbone.Router.extend({
+  initialize: function() {
+    this.collection = new App.Collections.ShapeCollection();
+    seedCollection(1000, this.collection);
+  },
+  routes : {
+    '' : 'index',
+    'shape/:type' : 'filterByShape',
+    'size/:size'  : 'filterBySize',
+    'shape/:type/size/:size' : 'filterByBoth'
+  },
+  index : function() {
+    var indexView = new App.Views.ShapeListView({collection: this.collection});
+    App.ViewManager.display(indexView);
+  },
+  filterByShape : function(type) {
+    console.log("here");
+    myShapes = this.collection.where({type: type});
+    var shapeCollection = new App.Collections.ShapeCollection(myShapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.ViewManager.display(shapeListView);
+  },
+  filterBySize : function(size) {
+    myShapes = this.collection.where({size: parseInt(size)});
+    var shapeCollection = new App.Collections.ShapeCollection(myShapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.ViewManager.display(shapeListView);
+  },
+  filterByBoth : function(type, size) {
+    myShapes = this.collection.where({type: type, size: parseInt(size)});
+    var shapeCollection = new App.Collections.ShapeCollection(myShapes);
+    var shapeListView = new App.Views.ShapeListView({collection: shapeCollection});
+    App.ViewManager.display(shapeListView);
+  }
+});
+
+
+App.Views.ViewManager = Backbone.View.extend({
+  initialize: function() {
+
+  },
+  display: function(view) {
+    var previousView = this.currentView || null;
+    var nextView = view;
+    if (previousView) {
+      previousView.remove();
+    }
+    nextView.render().$el.appendTo(this.$el);
+    this.currentView = nextView;
+  }
+});
+
+
+
+
+
+
+
+
 
 App.Models.Shape = Backbone.Model.extend({});
 
@@ -84,4 +145,5 @@ function seedCollection(numShapes, collection){
 
 $(function(){
   App.initialize();
+  console.log("hello");
 });
