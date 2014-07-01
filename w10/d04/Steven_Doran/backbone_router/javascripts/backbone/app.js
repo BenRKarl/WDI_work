@@ -51,6 +51,7 @@ App.Router = Backbone.Router.extend({
   }
 });
 
+// *** VIEW MANAGER ***
 App.Views.ViewManager = Backbone.View.extend({
   display: function(view) {
     var previousView = this.currentView || null;
