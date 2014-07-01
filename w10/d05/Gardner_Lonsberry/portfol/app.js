@@ -155,3 +155,4 @@
 // // and on window resize
 // $(window).on('resize', adjustImagePositioning);
 
+$( "#tagline" ).delay(3000)
