@@ -111,7 +111,6 @@ header p {
     position: absolute;
     top: 5%;
     right: 5%;
-    opacity: .5;
     margin: 40px 0 0 0;
     padding: 0;
     line-height: .65;
@@ -128,13 +127,12 @@ nav {
     padding: 20px;
     background: #000;
     border-radius: 40px;
-    opacity: .4;
     cursor: pointer;
     z-index: 1000;
 }
 
 nav:hover {
-    opacity: .6;
+    /*opacity: .6;*/
 }
 
 .next-icon {
@@ -156,18 +154,16 @@ nav:hover {
 
 /* Codrops Header Style */
 .codrops-top {
-    line-height: 24px;
-    font-size: 11px;
     background: #fff;
-    background: rgba(255, 255, 255, 0.5);
-    text-transform: uppercase;
+    background: rgba(206, 45, 8, 1);
+    opacity: .65;
     z-index: 9999;
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    font-family: Cambria, Georgia, serif;
+    /*font-family: Cambria, Georgia, serif;*/
     box-shadow: 1px 0px 2px rgba(0,0,0,0.2);
 }
 .codrops-top a {
@@ -190,26 +186,30 @@ nav:hover {
 /* End Codrops Header Style */
 
 #quick-bio {
-    margin: 0 auto;
+    height: 400px;
+    margin: 300px auto;
     text-align: left;   
     /*height: 200px;*/
     font-family: 'Josefin Sans';
+    color: white;
     font-weight: 100;
     /*margin: 40px 0 0 0;*/
-    padding: 0;
-    font-size: 4em;
-    overflow: hidden; 
+    font-size: 5em;
     text-align: center;
+    -webkit-animation-delay: 1s; /* Safari and Chrome */
+    animation-delay: 1s;
 }
 #tagline {
-    margin: 0 auto;
+    height: 200px;
+    margin: 50px auto;
     text-align: left;   
     /*height: 100px;*/
     font-family: 'Josefin Sans';
     font-weight: 100;
-    
     padding: 0;
-    font-size: 1.5em;
+    font-size: 2em;
     overflow: hidden; 
     text-align: center;
+    -webkit-animation-delay: 3s; /* Safari and Chrome */
+    animation-delay: 3s;
 }
