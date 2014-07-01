@@ -213,15 +213,15 @@ nav:hover {
     animation-delay: 2s;
 }
 #icons-container {
-    width: 400px;
     text-align: center;
+    white-space: nowrap;
     -webkit-animation-delay: 3s; /* Safari and Chrome */
     animation-delay: 3s;
 }
 
 #icons-container img {
-    width: 100%;
-    height: auto
-    display: inline;
-    
+    width: auto;
+    height: 50px;
+    text-align: center;
+    margin: 20px;
 }
