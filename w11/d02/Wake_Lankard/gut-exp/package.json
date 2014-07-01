@@ -1,0 +1,10 @@
+{
+"name" : "gut-exp",
+"description" : "connect to gutenberg db with express",
+"version" : "0.0.1",
+"private" : true,
+"dependencies" : {
+  "express": "3.x"
+}
+
+}
