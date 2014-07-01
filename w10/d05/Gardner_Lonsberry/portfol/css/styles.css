@@ -186,12 +186,12 @@ nav:hover {
 /* End Codrops Header Style */
 
 #quick-bio {
-    height: 400px;
-    margin: 300px auto;
-    text-align: left;   
+    height: 50px;
+    /*margin: 350px auto;*/
+    margin-top: 300px;
     /*height: 200px;*/
     font-family: 'Josefin Sans';
-    color: white;
+    color: rgba(255,255,255, 100);
     font-weight: 100;
     /*margin: 40px 0 0 0;*/
     font-size: 5em;
@@ -200,16 +200,28 @@ nav:hover {
     animation-delay: 1s;
 }
 #tagline {
-    height: 200px;
-    margin: 50px auto;
-    text-align: left;   
+    /*margin: 50px auto;*/
     /*height: 100px;*/
     font-family: 'Josefin Sans';
     font-weight: 100;
-    padding: 0;
+    /*padding: 0;*/
     font-size: 2em;
-    overflow: hidden; 
+    /*overflow: hidden; */
+    text-align: center;
+    color: rgba(255,255,255, 100);
+    -webkit-animation-delay: 2s; /* Safari and Chrome */
+    animation-delay: 2s;
+}
+#icons-container {
+    width: 400px;
     text-align: center;
     -webkit-animation-delay: 3s; /* Safari and Chrome */
     animation-delay: 3s;
+}
+
+#icons-container img {
+    width: 100%;
+    height: auto
+    display: inline;
+    
 }
