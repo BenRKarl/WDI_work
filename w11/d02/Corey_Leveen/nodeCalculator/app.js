@@ -13,10 +13,10 @@ app.get('/:op/:x/:y', function(req, res){
     'multiply': function (x,y)   {return (x*y)},
     'add'     : function (x,y)   {return (x+y)},
     'subtract': function (x,y)   {return (x-y)}
-  }
+  };
   console.log(stringToOperator[op](x,y));
-})
+});
 
 app.listen(8000, function(){
   console.log('app is listening on port 8000');
-})
+});
