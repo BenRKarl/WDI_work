@@ -4,3 +4,9 @@ WEEK 11 DAY 01
 ---
 
 ---
+
+###Read Max Cantor's email and complete specified tasks.
+
+###See week README.md
+
+---
