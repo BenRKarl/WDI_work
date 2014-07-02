@@ -9,10 +9,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 var colors = ["red", "yellow", "blue"];
 
-// handle your requests here
+app.post("/colors", function(req, res) {
+   var color = req.body.color;
+   colors.push(color);
+   res.send("received color");
+});
 
-
+app.get("/colors", function(req, res) {
+   res.send(colors);
+});
 
 app.listen(8000, function(){
   console.log("app is listening on port 8000");
-})
+});
