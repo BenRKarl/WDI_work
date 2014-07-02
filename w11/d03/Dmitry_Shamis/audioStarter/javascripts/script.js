@@ -105,6 +105,6 @@ window.onload = function(){
             .attr('height', '500px');
 
   audioContext = new webkitAudioContext();
-  loadFile('audio/sweep.m4a');
+  loadFile('audio/04 Stairway To Heaven.mp3');
 }
 
