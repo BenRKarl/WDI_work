@@ -11,7 +11,51 @@
     <input id="submit" type="submit">
   </p>
   <script>
-    // do some stuff here
+    function postColor(){
+      var color = $('#color-input').val();
+      $.ajax({
+        url: '/colors',
+        method: 'post',
+        dataType: 'json',
+        data: {color: color},
+        success: function(data){
+          console.log(data);
+        }
+      })
+    }
+
+ // do some stuff here
+    function getColors(){
+      $.ajax({
+        method: 'GET',
+        url: '/colors',
+        dataType: 'json',
+        data: {'text': text},
+        success: function(){
+          $('body').css('background-color', color);
+        },
+        error: function(){
+          console.log("error")
+        },
+      });
+    }
+    function setColor(array){
+
+    }
+
+    $(function(){
+      $('#submit').click(function(){
+        postColor();
+        var input = $('input[type=text]');
+        var color = input.val();
+        input.val('');
+      })
+    })
+
+
+      //select a random color
+      //set background color to that random color
+      //repeat every second
   </script>
 </body>
 </html>
