@@ -66,7 +66,7 @@ function setAudioHandlers() {
 
 var colorGradient = d3.scale.linear()
     .domain([0.5, 0.75, 1])
-    .range(['#ff0000', '#0000ff', '#00ff00']);
+    .range(['#ffa92a', '#7dffec', '#ff9bf6']);
 
 
 function d3Project(data){
@@ -101,10 +101,14 @@ window.onload = function(){
 
   svg = d3.select('body')
           .append('svg')
-            .attr('width', '900px')
-            .attr('height', '500px');
+            .attr('width', '100%')
+            .attr('height', '100%');
 
   audioContext = new webkitAudioContext();
-  loadFile('audio/sweep.m4a');
+  // loadFile('audio/sweep.m4a');
+  // loadFile('audio/sweep.m4a');
+  loadFile('audio/01 Tavener_ Funeral Canticle (Excerpt).mp3');
+  // loadFile('audio/01 Feels Like Magic feat. B. Slade (Vocal Mix).mp3');
+  // loadFile('audio/02 1901.mp3');
 }
 
