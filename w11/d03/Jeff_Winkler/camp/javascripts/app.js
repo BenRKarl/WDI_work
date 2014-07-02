@@ -19,9 +19,9 @@ function projectData(data) {
                       .transition()
                         .duration(500)
                       .attr('r', function(data) {
-                        return data + 'px';
+                        return data.r + 'px';
                         })
-                      .attr('cx', function() {return Math.random()*100 + '%';})
+                      .attr('cx', function(data) {return data.x + '%';})
                       .attr('cy', function() {return Math.random()*100 + '%';})
                       .style('opacity', function() { return Math.random() + 1; })
                       .style('fill', function() { return crayola.sample().hex; });
@@ -40,6 +40,15 @@ $(function() {
     .style('border', '1px solid black');
 
   setInterval(function() {
-    projectData([10, 20, 15]);
-  }, 1000);
+    projectData([{r: 30, x: 10},
+                 {r: 30, x: 20},
+                 {r: 30, x: 30},
+                 {r: 30, x: 40},
+                 {r: 30, x: 50},
+                 {r: 30, x: 60},
+                 {r: 30, x: 70},
+                 {r: 30, x: 80},
+                 {r: 30, x: 90}
+                 ]);
+  }, 500);
 });
