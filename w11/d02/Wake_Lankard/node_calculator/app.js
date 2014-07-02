@@ -23,7 +23,7 @@ calculator = function(op,x,y){
 }
 
 
-app.get('/:op/:x/:y', function(req, res){
+app.get('/:op/:x/:y?', function(req, res){
   var x = parseInt(req.params.x);
   var y = parseInt(req.params.y);
   var op = req.params.op;
