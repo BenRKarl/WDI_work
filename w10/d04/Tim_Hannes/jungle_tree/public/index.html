@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Backnananas</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+  <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+  <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+
+  <!-- Template -->
+  <script id="monkey-template" type="text/template">
+      <%-name%> ... is a monkey
+      <button data-action="release">Release Me!</button>
+      <button data-action="edit">Rename Me</button>
+  </script>
+  <script id="edit-monkey-template" type="text/template">
+      <form>
+        <input id="name" type="text" placeholder='<%- name %>'>
+      </form>
+  </script>
+
+
+  <!-- BananApp -->
+  <script type="text/javascript" src='javascripts/backbone/app.js'></script>
+
+  <!-- Models -->
+  <script type="text/javascript" src='javascripts/backbone/models/monkey.js'></script>
+
+  <!-- Collection -->
+  <script type="text/javascript" src='javascripts/backbone/collections/monkeyCollection.js'></script>
+
+  <!-- Views -->
+  <script type="text/javascript" src='javascripts/backbone/views/monkeys/monkeyView.js'></script>
+  <!-- ListView -->
+  <script type="text/javascript" src='javascripts/backbone/views/monkeys/monkeyListView.js'></script>
+
+</head>
+<body>
+  <div class="main-container">
+    <h1>Monkeys</h1>
+  </div>
+
+  <form class='monkey-form'>
+    <input type="text" placeholder="Create a monkey!" class="monkey-name">
+  </form>
+
+  <ul class="monkeys">
+  </ul>
+
+</body>
+</html>
