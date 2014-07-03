@@ -1,7 +1,7 @@
 var express   = require('express');
 var request   = require('request');
 var path      =require('path');
-var methodOverride = require('method-override');
+//var methodOverride = require('method-override');
 
 var app = express();
 
@@ -17,6 +17,6 @@ app.get('/planets' , function(req,res) {
 });
 
   app.listen(8000, function(){
-    console.log("running on 8000");
+    console.log('running on 8000');
   });
 
