@@ -1,0 +1,97 @@
+require 'minitest/autorun'
+require_relative '../app'
+require 'date'
+
+describe Parser do
+  before do
+
+    @parser        = Parser.new
+    @pipeFileName  = "pipe_delimited.txt"
+    @commaFileName = "comma_delimited.txt"
+    @spaceFileName = "space_delimited.txt"
+    @path          = "../"
+    @pipeData      = "Smith | Steve | D | M | Red | 3-3-1985"
+    @commaData     = "Abercrombie, Neil, Male, Tan, 2/13/1943"
+    @spaceData     = "Kournikova Anna F F 6-3-1975 Red"
+    @pipeHash      = { 
+                        :l_name   => "Smith",
+                        :f_name    => "Steve",
+                        :mid_init  => "D",
+                        :gender    => "male",
+                        :fav_color => "Red",
+                        :b_date    => Date.parse("3rd March 1985")
+                      }
+    @commaHash     = {  
+                        :l_name    => "Abercrombie",
+                        :f_name    => "Steve",
+                        :mid_init  => "",
+                        :gender    => "male",
+                        :fav_color => "Tan",
+                        :b_date    => Date.parse("13th Feb 1943")
+                      }
+    @spaceHash     = { 
+                        :l_name    => "Kournikova",
+                        :f_name    => "Anna",
+                        :mid_init  => "F", 
+                        :gender    => "female", 
+                        :fav_color => "Red", 
+                        :b_date    => Date.parse("13th June 1975")
+                      }
+
+  end
+
+  describe "when given a pipe-delimited file" do
+
+    it "can open it and get data" do
+      file_contents = ""
+      file_contents = @parser.readFile(@path + @pipeFileName)
+      file_contents.wont_equal ""
+    end
+
+    it "can write the contents to an array by line" do
+      file_contents = []
+      file_contentsArr = @parser.parseFile(@path + @pipeFileName)
+      file_contentsArr[0].must_equal @pipeData
+    end
+  end
+
+  describe "when given a line of data" do
+
+    it "can identify the pipe delimiter" do 
+      @parser.identifyDelimiter(@pipeData).must_equal "|"
+    end
+
+    it "can identify the comma delimiter" do 
+      @parser.identifyDelimiter(@commaData).must_equal ","
+    end
+
+    it "can identify the space delimiter" do 
+      @parser.identifyDelimiter(@spaceData).must_equal "space"
+    end
+
+    it "can parse the pipe-delimited data correctly into a hash" do
+      test_b_date = Date.parse ("3/3/1985")
+      @parser.strToHash(@pipeData).must_equal @pipeHash
+    end
+
+    it "can parse the comma-delimited data correctly into a hash" do
+      test_b_date = Date.parse ("3/3/1985")
+      @parser.strToHash(@commaData).must_equal @pipeHash
+    end
+
+    it "can parse the space-delimited data correctly into a hash" do
+      test_b_date = Date.parse ("3/3/1985")
+      @parser.strToHash(@spaceData).must_equal @pipeHash
+    end
+
+
+
+
+  end
+
+
+end
+
+
+
+
