@@ -31,13 +31,7 @@ class Parser
                   }   
     @dateDelimiters = [ "/", "-" ]
 
-    # @singleRecord = []
   end  
-
-
-  # def readFile(filename)
-  #   file_contents = File.open(filename).read()
-  # end
 
   def parseFile(filename)
     resultsArr = []
@@ -81,31 +75,56 @@ class Parser
     return Date.new(dateArr[2].to_i, dateArr[0].to_i, dateArr[1].to_i)
   end
 
-  def sortRecord(record)
-
-end
-
-# class Array
-#   def sortRecord(sort_by1, order1, sort_by2 = "", order2 = "")
-
-#     Array.sort_by({|h| h[:gender], -h[:l_name])
-
-#   end
-# end
-
-
-parser = Parser.new
-  fileArr = ["pipe_delimited.txt", "comma_delimited.txt", "space_delimited.txt"]
-  singleRecord = []
-
-  fileArr.each do |file|
-    contentsArr = parser.parseFile(file)
-    contentsArr.each do |line|
-      singleRecord << parser.strToHash(line)
+  def printRecord(record)
+    record.each do |line|
+      print line[:l_name] + " "
+      print line[:f_name] + " "
+      print line[:gender] + " "
+      print line[:b_date].to_s + " "
+      print line[:fav_color] + " "
+      puts
     end
   end
 
-puts singleRecord
+
+
+
+
 
 end
+
+parser = Parser.new
+
+fileArr = ["pipe_delimited.txt", "comma_delimited.txt", "space_delimited.txt"]
+singleRecord = []
+
+fileArr.each do |file|
+  contentsArr = parser.parseFile(file)
+  contentsArr.each do |line|
+    singleRecord << parser.strToHash(line)
+  end
+end
+
+puts "output0"
+parser.printRecord(singleRecord)
+puts
+
+puts "output1"
+singleRecord.sort_by! { |h| [h[:gender], h[:l_name]] }
+parser.printRecord(singleRecord)
+puts
+
+puts "output2"
+singleRecord.sort_by! { |h| [:b_date] }
+parser.printRecord(singleRecord)
+puts
+
+puts "output3"
+singleRecord.sort_by! { |h| h[:l_name].reverse }
+parser.printRecord(singleRecord)
+puts
+
+
+
+
 
