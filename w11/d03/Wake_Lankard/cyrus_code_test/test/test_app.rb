@@ -35,7 +35,7 @@ describe Parser do
                         :mid_init  => "F", 
                         :gender    => "female", 
                         :fav_color => "Red", 
-                        :b_date    => Date.parse("3rd June 1975")
+                        :b_date    => Date.parse("3th June 1975")
                       }
 
   end
@@ -87,20 +87,21 @@ describe Parser do
 
   describe "when given a single record" do
 
-    it "can sort by gender (femals before males, and by last name ascending" do
+    it "can sort by two records, asceding or descending" do
+      singleRecord = []
+      singleRecord.push(@pipe.hash)
+      singleRecord.push(@commaHash)
+      singleRecord.push(@spaceHash)
+
+      testRecord = []
+      testRecord.push(@spaceHash)
+      testRecord.push(@pipeHash)
+      testRecord.push(@commaHash)
+
+      @parser.sortRecord(gender, a, l_name ,d). must_equal testRecord
     end
 
-    it "can sort by birthdate ascending"
-    end
 
-    it "can sort by last name descending"
-    end
-
-    it "can display in this order: last name, first name, gender, DOB, favorite color"
-    end
-
-    it "can display the date in M/D/YYYY order"
-    end
 
 
 

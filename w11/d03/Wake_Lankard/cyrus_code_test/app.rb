@@ -1,4 +1,5 @@
 require 'pry-byebug'
+require 'date'
 class Parser
 
   def initialize
@@ -29,16 +30,18 @@ class Parser
                     " "        => spaceMap
                   }   
     @dateDelimiters = [ "/", "-" ]
+
+    # @singleRecord = []
   end  
 
 
-  def readFile(filename)
-    file_contents = File.open(filename).read()
-  end
+  # def readFile(filename)
+  #   file_contents = File.open(filename).read()
+  # end
 
   def parseFile(filename)
     resultsArr = []
-    file_contents = readFile(filename)
+    file_contents = File.open(filename).read()
     resultsArr = file_contents.split("\n")
   end
 
@@ -76,12 +79,33 @@ class Parser
     delimiter = identifyDelimiter(str, @dateDelimiters)
     dateArr = str.split(delimiter)
     return Date.new(dateArr[2].to_i, dateArr[0].to_i, dateArr[1].to_i)
-
   end
 
-
-
-
-
+  def sortRecord(record)
 
 end
+
+# class Array
+#   def sortRecord(sort_by1, order1, sort_by2 = "", order2 = "")
+
+#     Array.sort_by({|h| h[:gender], -h[:l_name])
+
+#   end
+# end
+
+
+parser = Parser.new
+  fileArr = ["pipe_delimited.txt", "comma_delimited.txt", "space_delimited.txt"]
+  singleRecord = []
+
+  fileArr.each do |file|
+    contentsArr = parser.parseFile(file)
+    contentsArr.each do |line|
+      singleRecord << parser.strToHash(line)
+    end
+  end
+
+puts singleRecord
+
+end
+
