@@ -1,30 +1,35 @@
+require 'pry-byebug'
 class Parser
 
-def initialize
-  @pipeMap    = { :l_name    => 0,
-                  :f_name    => 1,
-                  :mid_init  => 2,
-                  :gender    => 3,
-                  :fav_color => 4,
-                  :b_date    => 5
-                }
-  @commaMap   = { :l_name    => 0,
-                  :f_name    => 1,
-                  # :mid_init  => 2,
-                  :gender    => 2,
-                  :fav_color => 3,
-                  :b_date    => 4
-                }
-  @spaceMap   = { :l_name    => 0,
-                  :f_name    => 1,
-                  :mid_init  => 2,
-                  :gender    => 3,
-                  :fav_color => 5,
-                  :b_date    => 4
-                }
+  def initialize
+    pipeMap    = {  :l_name    => 0,
+                    :f_name    => 1,
+                    :mid_init  => 2,
+                    :gender    => 3,
+                    :fav_color => 4,
+                    :b_date    => 5
+                  }
+    commaMap   = {  :l_name    => 0,
+                    :f_name    => 1,
+                    :gender    => 2,
+                    :fav_color => 3,
+                    :b_date    => 4
+                  }
+    spaceMap   = {  :l_name    => 0,
+                    :f_name    => 1,
+                    :mid_init  => 2,
+                    :gender    => 3,
+                    :fav_color => 5,
+                    :b_date    => 4
 
-  @delimiters = ["|", ","]   
-end  
+                  }
+
+    @masterMap =  { "|"        => pipeMap,
+                    ","        => commaMap,
+                    " "        => spaceMap
+                  }   
+    @dateDelimiters = [ "/", "-" ]
+  end  
 
 
   def readFile(filename)
@@ -37,31 +42,24 @@ end
     resultsArr = file_contents.split("\n")
   end
 
-  def identifyDelimiter(data)
-    delimiters = ["|", ","]      
-    @delimiters.each do |d|
+  def identifyDelimiter(data,delimiterArr)
+    delimiterArr.each do |d|
       return d if data.include? d
     end
-    return "space"
+    return " "
   end
 
   def strToHash(str)
     resultHash = {}
     arr = []
-    arr = str.split(/\|/).each { |x| x.strip! }
+    delimiter = identifyDelimiter(str, @masterMap.keys)
+    arr = str.split(delimiter).each { |x| x.strip! }
+    map = @masterMap[delimiter]
 
-    @pipeMap.each { |k,v| resultHash[k] = arr[v] }
-    # resultHash[:gender] = processGender(resultHash[:gender])
-    processGender!(resultHash[:gender])
+    map.each { |k,v| resultHash[k] = arr[v] }
 
-    resultHash[:b_date] = Date.parse(resultHash[:b_date])
-  
-    # resultHash[:l_name] = arr[0]
-    # resultHash[:f_name] = arr[1]
-    # resultHash[:mid_init] = arr[2]
-    # resultHash[:gender] = processGender(arr[3])
-    # resultHash[:fav_color] = arr[4]
-    # resultHash[:b_date] = Date.parse(arr[5])
+    resultHash[:gender] = processGender(resultHash[:gender])
+    resultHash[:b_date] = processDate(resultHash[:b_date])
 
     resultHash
   end
@@ -72,6 +70,16 @@ end
     return "female" if str == "f"
     return str
   end
+
+  def processDate(str)
+    date = Date.new
+    delimiter = identifyDelimiter(str, @dateDelimiters)
+    dateArr = str.split(delimiter)
+    return Date.new(dateArr[2].to_i, dateArr[0].to_i, dateArr[1].to_i)
+
+  end
+
+
 
 
 

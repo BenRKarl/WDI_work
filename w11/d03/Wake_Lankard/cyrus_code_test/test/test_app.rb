@@ -13,6 +13,7 @@ describe Parser do
     @pipeData      = "Smith | Steve | D | M | Red | 3-3-1985"
     @commaData     = "Abercrombie, Neil, Male, Tan, 2/13/1943"
     @spaceData     = "Kournikova Anna F F 6-3-1975 Red"
+    @delimiters    = ["|", ",", " "]
     @pipeHash      = { 
                         :l_name   => "Smith",
                         :f_name    => "Steve",
@@ -23,8 +24,7 @@ describe Parser do
                       }
     @commaHash     = {  
                         :l_name    => "Abercrombie",
-                        :f_name    => "Steve",
-                        :mid_init  => "",
+                        :f_name    => "Neil",
                         :gender    => "male",
                         :fav_color => "Tan",
                         :b_date    => Date.parse("13th Feb 1943")
@@ -35,7 +35,7 @@ describe Parser do
                         :mid_init  => "F", 
                         :gender    => "female", 
                         :fav_color => "Red", 
-                        :b_date    => Date.parse("13th June 1975")
+                        :b_date    => Date.parse("3rd June 1975")
                       }
 
   end
@@ -58,30 +58,48 @@ describe Parser do
   describe "when given a line of data" do
 
     it "can identify the pipe delimiter" do 
-      @parser.identifyDelimiter(@pipeData).must_equal "|"
+      @parser.identifyDelimiter(@pipeData, @delimiters).must_equal "|"
     end
 
     it "can identify the comma delimiter" do 
-      @parser.identifyDelimiter(@commaData).must_equal ","
+      @parser.identifyDelimiter(@commaData, @delimiters).must_equal ","
     end
 
     it "can identify the space delimiter" do 
-      @parser.identifyDelimiter(@spaceData).must_equal "space"
+      @parser.identifyDelimiter(@spaceData, @delimiters).must_equal " "
     end
 
     it "can parse the pipe-delimited data correctly into a hash" do
-      test_b_date = Date.parse ("3/3/1985")
+     # test_b_date = Date.parse ("3/3/1985")
       @parser.strToHash(@pipeData).must_equal @pipeHash
     end
 
     it "can parse the comma-delimited data correctly into a hash" do
-      test_b_date = Date.parse ("3/3/1985")
-      @parser.strToHash(@commaData).must_equal @pipeHash
+     # test_b_date = Date.parse ("3/3/1985")
+      @parser.strToHash(@commaData).must_equal @commaHash
     end
 
     it "can parse the space-delimited data correctly into a hash" do
-      test_b_date = Date.parse ("3/3/1985")
-      @parser.strToHash(@spaceData).must_equal @pipeHash
+      #test_b_date = Date.parse ("3/3/1985")
+      @parser.strToHash(@spaceData).must_equal @spaceHash
+    end
+  end
+
+  describe "when given a single record" do
+
+    it "can sort by gender (femals before males, and by last name ascending" do
+    end
+
+    it "can sort by birthdate ascending"
+    end
+
+    it "can sort by last name descending"
+    end
+
+    it "can display in this order: last name, first name, gender, DOB, favorite color"
+    end
+
+    it "can display the date in M/D/YYYY order"
     end
 
 
