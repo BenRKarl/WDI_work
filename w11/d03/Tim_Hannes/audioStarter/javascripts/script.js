@@ -1,7 +1,4 @@
-
-// ************************************
 // *********** Global Stuff ***********
-// ************************************
 
 // -- global Audio Vars --
 var audioContext;
@@ -14,11 +11,7 @@ var samples = 1024;
 var svg;
 
 
-
-
-// ************************************
 // ********* Audio Handling ***********
-// ************************************
 
 function loadFile(mp3file) {
     var reqest = new XMLHttpRequest();
@@ -53,16 +46,7 @@ function setAudioHandlers() {
 }
 
 
-
-
-
-// ************************************
 // *** Data-Driven-Documents Domain ***
-// ************************************
-
-// var colorGradient = d3.scale.linear()
-//     .domain([0.5, 1])
-//     .range(['#ff0000', '#0000ff']);
 
 var colorGradient = d3.scale.linear()
     .domain([0.5, 0.75, 1])
@@ -90,12 +74,7 @@ function d3Project(data){
     return svg;
 }
 
-
-
-
-// ************************************
 // **** Let's get it started... Ha ****
-// ************************************
 
 window.onload = function(){
 
