@@ -42,12 +42,6 @@ describe Parser do
 
   describe "when given a pipe-delimited file" do
 
-    it "can open it and get data" do
-      file_contents = ""
-      file_contents = @parser.readFile(@path + @pipeFileName)
-      file_contents.wont_equal ""
-    end
-
     it "can write the contents to an array by line" do
       file_contents = []
       file_contentsArr = @parser.parseFile(@path + @pipeFileName)
@@ -84,30 +78,6 @@ describe Parser do
       @parser.strToHash(@spaceData).must_equal @spaceHash
     end
   end
-
-  describe "when given a single record" do
-
-    it "can sort by two records, asceding or descending" do
-      singleRecord = []
-      singleRecord.push(@pipe.hash)
-      singleRecord.push(@commaHash)
-      singleRecord.push(@spaceHash)
-
-      testRecord = []
-      testRecord.push(@spaceHash)
-      testRecord.push(@pipeHash)
-      testRecord.push(@commaHash)
-
-      @parser.sortRecord(gender, a, l_name ,d). must_equal testRecord
-    end
-
-
-
-
-
-
-  end
-
 
 end
 

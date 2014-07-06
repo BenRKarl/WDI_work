@@ -93,36 +93,36 @@ class Parser
 
 end
 
-parser = Parser.new
+# parser = Parser.new
 
-fileArr = ["pipe_delimited.txt", "comma_delimited.txt", "space_delimited.txt"]
-singleRecord = []
+# fileArr = ["pipe_delimited.txt", "comma_delimited.txt", "space_delimited.txt"]
+# singleRecord = []
 
-fileArr.each do |file|
-  contentsArr = parser.parseFile(file)
-  contentsArr.each do |line|
-    singleRecord << parser.strToHash(line)
-  end
-end
+# fileArr.each do |file|
+#   contentsArr = parser.parseFile(file)
+#   contentsArr.each do |line|
+#     singleRecord << parser.strToHash(line)
+#   end
+# end
 
-puts "output0"
-parser.printRecord(singleRecord)
-puts
+# puts "output0"
+# parser.printRecord(singleRecord)
+# puts
 
-puts "output1"
-singleRecord.sort_by! { |h| [h[:gender], h[:l_name]] }
-parser.printRecord(singleRecord)
-puts
+# puts "output1"
+# singleRecord.sort_by! { |h| [h[:gender], h[:l_name]] }
+# parser.printRecord(singleRecord)
+# puts
 
-puts "output2"
-singleRecord.sort_by! { |h| [:b_date] }
-parser.printRecord(singleRecord)
-puts
+# puts "output2"
+# singleRecord.sort_by! { |h| h[:b_date] }
+# parser.printRecord(singleRecord)
+# puts
 
-puts "output3"
-singleRecord.sort_by! { |h| h[:l_name].reverse }
-parser.printRecord(singleRecord)
-puts
+# puts "output3"
+# singleRecord.sort_by! { |h| h[:l_name] }.reverse
+# parser.printRecord(singleRecord)
+# puts
 
 
 
