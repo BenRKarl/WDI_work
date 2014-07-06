@@ -1,11 +1,11 @@
 require 'minitest/autorun'
-require_relative '../app'
+require_relative '../FileDump.rb'
 require 'date'
 
-describe Parser do
+describe FileDump do
   before do
 
-    @parser        = Parser.new
+    @fileDump        = FileDump.new
     @pipeFileName  = "pipe_delimited.txt"
     @commaFileName = "comma_delimited.txt"
     @spaceFileName = "space_delimited.txt"
@@ -44,7 +44,7 @@ describe Parser do
 
     it "can write the contents to an array by line" do
       file_contents = []
-      file_contentsArr = @parser.parseFile(@path + @pipeFileName)
+      file_contentsArr = @fileDump.filetoArr(@path + @pipeFileName)
       file_contentsArr[0].must_equal @pipeData
     end
   end
@@ -52,30 +52,27 @@ describe Parser do
   describe "when given a line of data" do
 
     it "can identify the pipe delimiter" do 
-      @parser.identifyDelimiter(@pipeData, @delimiters).must_equal "|"
+      @fileDump.identifyDelimiter(@pipeData, @delimiters).must_equal "|"
     end
 
     it "can identify the comma delimiter" do 
-      @parser.identifyDelimiter(@commaData, @delimiters).must_equal ","
+      @fileDump.identifyDelimiter(@commaData, @delimiters).must_equal ","
     end
 
     it "can identify the space delimiter" do 
-      @parser.identifyDelimiter(@spaceData, @delimiters).must_equal " "
+      @fileDump.identifyDelimiter(@spaceData, @delimiters).must_equal " "
     end
 
     it "can parse the pipe-delimited data correctly into a hash" do
-     # test_b_date = Date.parse ("3/3/1985")
-      @parser.strToHash(@pipeData).must_equal @pipeHash
+      @fileDump.strToHash(@pipeData).must_equal @pipeHash
     end
 
     it "can parse the comma-delimited data correctly into a hash" do
-     # test_b_date = Date.parse ("3/3/1985")
-      @parser.strToHash(@commaData).must_equal @commaHash
+      @fileDump.strToHash(@commaData).must_equal @commaHash
     end
 
     it "can parse the space-delimited data correctly into a hash" do
-      #test_b_date = Date.parse ("3/3/1985")
-      @parser.strToHash(@spaceData).must_equal @spaceHash
+      @fileDump.strToHash(@spaceData).must_equal @spaceHash
     end
   end
 
