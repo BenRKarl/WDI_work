@@ -50,9 +50,10 @@ class FileDump
   end
 
   def fileToArr(filename)
+    abort(filename + " does not exist.") unless File.exists?(filename)
+
     resultsArr = []
-    file_contents = File.open(filename).read()
-    resultsArr = file_contents.split("\n")
+    results_arr = File.open(filename).read().split("\n")
   end
 
   def identifyDelimiter(data,delimiterArr)
@@ -89,6 +90,8 @@ class FileDump
     delimiter = identifyDelimiter(str, @dateDelimiters)
     dateArr = str.split(delimiter)
     return Date.new(dateArr[2].to_i, dateArr[0].to_i, dateArr[1].to_i)
+  rescue
+    abort(dateArr.to_s + " is an invalid date.")
   end
 
   def printAll(recordArr)

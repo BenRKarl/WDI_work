@@ -40,10 +40,10 @@ describe FileDump do
 
   end
 
-  describe "when given a pipe-delimited file" do
+  describe "when given a file" do
 
     it "can write the contents to an array by line" do
-      file_contents = []
+      file_contentsArr = []
       file_contentsArr = @fileDump.fileToArr(@path + @pipeFileName)
       file_contentsArr[0].must_equal @pipeData
     end
