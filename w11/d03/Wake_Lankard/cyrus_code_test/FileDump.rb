@@ -2,36 +2,52 @@ require 'pry-byebug'
 require 'date'
 class FileDump
 
-  def initialize
-    pipeMap    = {  :l_name    => 0,
-                    :f_name    => 1,
-                    :mid_init  => 2,
-                    :gender    => 3,
-                    :fav_color => 4,
-                    :b_date    => 5
-                  }
-    commaMap   = {  :l_name    => 0,
-                    :f_name    => 1,
-                    :gender    => 2,
-                    :fav_color => 3,
-                    :b_date    => 4
-                  }
-    spaceMap   = {  :l_name    => 0,
-                    :f_name    => 1,
-                    :mid_init  => 2,
-                    :gender    => 3,
-                    :fav_color => 5,
-                    :b_date    => 4
+  def initialize()
 
-                  }
+    pipeMap         = { :l_name    => 0,
+                        :f_name    => 1,
+                        :mid_init  => 2,
+                        :gender    => 3,
+                        :fav_color => 4,
+                        :b_date    => 5
+                      }
 
-    @masterMap =  { "|"        => pipeMap,
-                    ","        => commaMap,
-                    " "        => spaceMap
-                  }   
+    commaMap        = { :l_name    => 0,
+                        :f_name    => 1,
+                        :gender    => 2,
+                        :fav_color => 3,
+                        :b_date    => 4
+                      }
+
+    spaceMap        = { :l_name    => 0,
+                        :f_name    => 1,
+                        :mid_init  => 2,
+                        :gender    => 3,
+                        :fav_color => 5,
+                        :b_date    => 4
+                      }
+
+    @masterMap      = { "|"        => pipeMap,
+                        ","        => commaMap,
+                        " "        => spaceMap
+                      } 
+
     @dateDelimiters = [ "/", "-" ]
 
   end  
+
+  def combineFiles(fileNameArr)
+    combinedRecord = []
+
+    fileNameArr.each do |file|
+      contentsArr = fileToArr(file)
+      contentsArr.each do |record|
+        combinedRecord << strToHash(record)
+      end
+    end
+
+    combinedRecord
+  end
 
   def fileToArr(filename)
     resultsArr = []
@@ -62,9 +78,9 @@ class FileDump
   end
 
   def processGender(str)
-    str.downcase!
-    return "male" if str == "m"
-    return "female" if str == "f"
+    str.capitalize!
+    return "Male" if str == "M"
+    return "Female" if str == "F"
     return str
   end
 
@@ -80,15 +96,9 @@ class FileDump
       print line[:l_name] + " "
       print line[:f_name] + " "
       print line[:gender] + " "
-      print line[:b_date].to_s + " "
+      print line[:b_date].mon.to_s + "/" + line[:b_date].mday.to_s + "/" + line[:b_date].year.to_s + " "
       print line[:fav_color] + " "
       puts
     end
   end
-
-
-
-
-
-
 end

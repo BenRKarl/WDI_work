@@ -18,14 +18,14 @@ describe FileDump do
                         :l_name   => "Smith",
                         :f_name    => "Steve",
                         :mid_init  => "D",
-                        :gender    => "male",
+                        :gender    => "Male",
                         :fav_color => "Red",
                         :b_date    => Date.parse("3rd March 1985")
                       }
     @commaHash     = {  
                         :l_name    => "Abercrombie",
                         :f_name    => "Neil",
-                        :gender    => "male",
+                        :gender    => "Male",
                         :fav_color => "Tan",
                         :b_date    => Date.parse("13th Feb 1943")
                       }
@@ -33,7 +33,7 @@ describe FileDump do
                         :l_name    => "Kournikova",
                         :f_name    => "Anna",
                         :mid_init  => "F", 
-                        :gender    => "female", 
+                        :gender    => "Female", 
                         :fav_color => "Red", 
                         :b_date    => Date.parse("3th June 1975")
                       }
@@ -44,7 +44,7 @@ describe FileDump do
 
     it "can write the contents to an array by line" do
       file_contents = []
-      file_contentsArr = @fileDump.filetoArr(@path + @pipeFileName)
+      file_contentsArr = @fileDump.fileToArr(@path + @pipeFileName)
       file_contentsArr[0].must_equal @pipeData
     end
   end
