@@ -13,26 +13,22 @@ var samples = 1024;
 // -- global var for svg --
 var svg;
 
-
-
-
 // ************************************
 // ********* Audio Handling ***********
 // ************************************
 
 function loadFile(mp3file) {
-    var reqest = new XMLHttpRequest();
-    reqest.open("GET", mp3file,true);
-    reqest.responseType = "arraybuffer";
-    reqest.onload = function() {
-      audioContext.decodeAudioData(reqest.response, function(buffer) {
+    var request = new XMLHttpRequest();
+    request.open("GET", mp3file, true);
+    request.responseType = "arraybuffer";
+    request.onload = function() {
+      audioContext.decodeAudioData(request.response, function(buffer) {
         audioBuffer = buffer;
         setAudioHandlers();
       });
     };
-    reqest.send();
+    request.send();
 }
-
 
 function setAudioHandlers() {
 
@@ -52,17 +48,9 @@ function setAudioHandlers() {
     }, 10) // repeat rendering project
 }
 
-
-
-
-
 // ************************************
 // *** Data-Driven-Documents Domain ***
 // ************************************
-
-// var colorGradient = d3.scale.linear()
-//     .domain([0.5, 1])
-//     .range(['#ff0000', '#0000ff']);
 
 var colorGradient = d3.scale.linear()
     .domain([0.5, 0.75, 1])
@@ -90,9 +78,6 @@ function d3Project(data){
     return svg;
 }
 
-
-
-
 // ************************************
 // **** Let's get it started... Ha ****
 // ************************************
@@ -105,6 +90,16 @@ window.onload = function(){
             .attr('height', '500px');
 
   audioContext = new webkitAudioContext();
-  loadFile('audio/sweep.m4a');
-}
 
+  var dropdown = document.querySelector('.songChoice');
+
+  dropdown.addEventListener("change", function(){
+    var selected = document.querySelector('.songChoice option:checked');
+    var music = {
+      "Brooklyn": "/audio/Brooklyn.m4a",
+      "Danger": "/audio/Danger.mp3",
+      "Frankie": "/audio/Frankie.mp3"
+    };
+    loadFile(music[selected.innerHTML]);
+  });
+}
