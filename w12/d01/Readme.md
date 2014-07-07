@@ -3,6 +3,7 @@
 ###Upload your resume to: https://drive.google.com/a/generalassemb.ly/?tab=wo#folders/0BwyOfEL7dYaRUXNLZloyZGpNNmM
 - Name the file your name
 
+
 ---
 
 ###Reread and follow instructions from Katie's email!
@@ -44,4 +45,10 @@ http://www.cyrusinnovation.com/code-test-ruby/
 ---
 
 #####Read the Project 3 Description:
+
+---
+
+#####Pick out your Wednesday picture day outfit :)
+
+---
 
