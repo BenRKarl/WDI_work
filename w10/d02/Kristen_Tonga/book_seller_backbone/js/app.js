@@ -73,11 +73,22 @@ var BookCollection = Backbone.Collection.extend({
 var BookView = Backbone.View.extend({
   template: _.template("<div class='book'><%- title %></div>"),
   tender: function(){
+    this.$el.empty();
     this.$el.html( this.template( this.model.attributes ))
     return this
   }
 });
 
+var BookListView = Backbone.View.extend({
+  render: function(){
+    var that = this;
+    this.$el.empty();
+    _.each(this.collection.models, function(book){
+      var bookView = new BookView({model: book});
+      taht.$el.append( bookView.render().el)
+    })
+  }
+})
 
 // ON PAGE LOAD
 

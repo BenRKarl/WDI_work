@@ -10,7 +10,8 @@ GutenbergApp.Views.AuthorView = Backbone.View.extend({
       var bookCollection = new GutenbergApp.Collections.BookCollection();
       bookCollection.author_id = that.model.attributes.id;
       bookCollection.url = 'authors/' + bookCollection.author_id + '/books';
-      bookCollection.fetch();
+      bookCollection.fetch({async: false});
+      debugger
       var newbookListView = new GutenbergApp.Views.BookListView({
         collection: bookCollection,
         el: that.$el.find($('.books'))
