@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Node Colors</title>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
   <p>
@@ -11,7 +11,32 @@
     <input id="submit" type="submit">
   </p>
   <script>
-    // do some stuff here
+
+    $('#submit').on('click', function(e){
+      e.preventDefault();
+      var newColor = $('#color-input').val();
+      $.post('/', {color: newColor});
+    });
+
+    //LONG FORM AJAX CALL MORE EXPLICIT AND COOLER
+    // $.ajax({
+    //   url: '/colors',
+    //   method: 'post',
+    //   dataType: 'json',
+    //   data: {color: color},
+    //   success: function(data){
+    //     consle.log(data);
+    //   }
+    // })
+
+    setInterval(function(){
+      $.get('/colors', function(data){
+        console.log(data);
+        var background = data[Math.floor(Math.random()*data.length)];
+        $('body').css('background-color', background);
+      });
+    }, 1000);
+
   </script>
 </body>
 </html>

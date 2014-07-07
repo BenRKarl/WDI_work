@@ -12,6 +12,36 @@
   </p>
   <script>
     // do some stuff here
+    setInterval(function(){
+      $.ajax({
+        url: '/colors',
+        dataType: 'json',
+        error: function(err){
+          console.log("error", err)
+          console.log(err.responseText)
+          $('body').css('background-color', err.responseText)
+        },
+        success: function(data){
+          console.log("success");
+          console.log(data)
+          $('body').css('background-color', data.color)
+        }
+      });
+    }, 1000)
+
+    $('#submit').on('click', function(){
+      var newColor = $('#color-input').val()
+      $('#color-input').val('')
+      $.ajax({
+        url: '/colors',
+        method: 'post',
+        dataType: 'json',
+        data: {color: newColor},
+        success: function(data){
+          console.log(data)
+        }
+      })
+    })
   </script>
 </body>
 </html>
