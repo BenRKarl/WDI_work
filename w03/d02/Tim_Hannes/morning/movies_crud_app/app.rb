@@ -1,47 +1,72 @@
 require 'bundler'
-Bundler.require #brings in all dependencies
+Bundler.require
 
-require_relative 'models/movie' #brings in movie.rb to our /movies get request
+require_relative 'models/movie'
 
 
-
-ActiveRecord::Base.establish_connection( #connects ActiveRecord
-  :adapter => 'postgresql', #we are using postgres
-  :database => 'movies_app' #name of our db
-  )
-
+ActiveRecord::Base.establish_connection(
+  :adapter => 'postgresql',
+  :database => 'movies_app'
+)
 
 
 get '/' do
-  erb :index #refer to index.erb
+  redirect '/movies'
 end
+
 
 # index
 get '/movies' do
-  @movies = Movie.all #display all movies
-  erb :movies #refer to movies.erb
+  @movies = Movie.all
+  erb :index
 end
 
+
+
+
 # new
-get '/movies/new' do  #adding a new movie
+get '/movies/new' do
   erb :new
 end
 
 # create
-# post '/movies' do
-#   # create a new movie and add it
-#   # based on the info entered in the form.
-#   title = params['movie_title']
-#   director = params['movie_director']
-#   screenwriter = params['movie_screenwriter']
-#   Movie.create({:title => title, :director => director, :screenwriter => screenwriter})
-#   # the above uses .create from AR to create a new item in db using params from the form.
-#   redirect '/movies'
-# end
 post '/movies' do
   title = params['movie_title']
   director = params['movie_director']
   screenwriter = params['movie_screenwriter']
   Movie.create({:title => title, :director => director, :screenwriter => screenwriter})
+  redirect '/movies'
+end
+
+
+
+
+# show
+get '/movies/:id' do
+  @movie = Movie.find(params[:id])
+  erb :show
+end
+
+
+# edit
+get '/movies/:id/edit' do
+  @movie = Movie.find(params[:id])
+  erb :edit
+end
+
+# update
+put '/movies/:id' do
+  movie = Movie.find(params[:id])
+  movie.title = params['movie_title']
+  movie.director = params['movie_director']
+  movie.screenwriter = params['movie_screenwriter']
+  movie.save
+  redirect "/movies/#{movie.id}"
+end
+
+
+# delete
+delete '/movies/:id' do
+  Movie.delete(params[:id])
   redirect '/movies'
 end
