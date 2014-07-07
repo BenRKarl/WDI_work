@@ -1,5 +1,18 @@
+# Code test
+Take the weekend to do this code test. Aldric will review a few of them anonymously in front of the class on Tuesday morning from the point of view of a professional developer vetting a candidate. Follow the instructions carefully. Except for the bit about emailing your code test.
 
-##Build Your Portfolio
+## URL
+http://www.cyrusinnovation.com/code-test-ruby/
+
+## Submitting it
+Call the zip file cyrus.zip, put the zip file in your directory for w11/d03, and open a pull request.
+
+## Deadline
+If the pull request is not open by Monday July 7th 2014, 9AM EDT, your code will not count as submitted for review.
+
+---
+
+#Build Your Portfolio
 - Write a, **from scratch**, EACH of these application.
 - Write **beautiful** code!
   - Clean
@@ -49,7 +62,7 @@
   - Create a ruby gem
 
 
-##Additional Tasks
+#Additional Tasks
 
 
 ###Update Linked-In

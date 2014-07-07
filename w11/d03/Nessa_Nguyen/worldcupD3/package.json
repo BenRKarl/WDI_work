@@ -1,0 +1,12 @@
+{
+  "name": "worldcupD3",
+  "version": "0.0.0",
+  "description": "Visualize goals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Nessa",
+  "license": "BSD"
+}
