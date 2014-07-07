@@ -21,26 +21,39 @@ class SinglyLinkedList
 
   def prepend(value)
     #prepend to the beginning
+    new_head = Node.new(value)
+    new_head.next_node = @head
   end
 
   def append(value)
     # append to the end
+    tail = Node.new(value)
+    @head.next_node = tail
   end
 
   def remove
     # removes the first node
+    self.shift
+    @head = @head.next_node
   end
 
   def last
     # get's the last node
+    return self.last
   end
 
   def length
     # calculates the length of the list
+    return self.length
   end
 
   def find(input)
     # returns the node with that value or nil if none found
+    i = 0
+    while i < self.length do
+      return self[i].value == input ? self[i] || nil
+      i += 1
+    end
   end
 
 end
