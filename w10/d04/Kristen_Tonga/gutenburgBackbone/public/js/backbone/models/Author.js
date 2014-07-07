@@ -8,5 +8,3 @@ GutenbergApp.Models.Author = Backbone.Model.extend({
     this.set('books', books);
   }
 });
-
-}
