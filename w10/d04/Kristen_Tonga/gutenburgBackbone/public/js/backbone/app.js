@@ -4,13 +4,13 @@ GutenbergApp.initialize = function(){
 
   var authors = new GutenbergApp.Collections.AuthorCollection();
 
-  var authorsListView = new GutenbergApp.Views.authorsListView({
+  var authorListView = new GutenbergApp.Views.AuthorListView({
     collection: authors,
     el: $('.author-list')
   });
 
   authors.fetch({success: function(){
-    authorsListView.render()
+    authorListView.render()
   }});
 
   GutenbergApp.authors = authors;
