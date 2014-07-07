@@ -1,3 +1,5 @@
+require 'benchmark'
+
 # Starting with 1 1 2
 def r_fibonacci(n)
   if n == 1 || n == 2
@@ -21,3 +23,17 @@ def i_fibonacci(n)
 end
 
 puts i_fibonacci(7)
+
+Benchmark.bmbm do |bm|
+  bm.report("recursive") do
+    r_fibonacci(40)
+  end
+
+  bm.report("iterative") do
+    i_fibonacci(40)
+  end
+end
+
+#                 user     system      total        real
+# recursive  54.820000   0.000000  54.820000 ( 54.892401)
+# iterative   0.000000   0.000000   0.000000 (  0.000035)
