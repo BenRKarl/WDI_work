@@ -50,6 +50,12 @@ function buildSVG(data) {
       .scale(window.yAxisScale)
       .orient('left');
 
+   window.svg.append('text')      
+      .text('World Cup 2014 Goals For And Against')
+         .attr('x', width/2 - 270)
+         .attr('y', -31)
+         .style('font-size', '2em');
+
    window.svg.append('g')
          .attr('class', 'x axis')
          .attr('transform', 'translate(0,'+height+')')
@@ -58,13 +64,6 @@ function buildSVG(data) {
       .text("Goals Against")
          .attr('x', width/2)
          .attr('y', 50);
-
-   window.svg.append('text')      
-      .text('World Cup 2014 Goals For And Against')
-         .attr('x', width/2 - 270)
-         .attr('y', -31)
-         .style('font-size', '2em');
-
 
    window.svg.append('g')
          .attr('class', 'y axis')
