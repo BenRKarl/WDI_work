@@ -61,6 +61,7 @@ parsePipe(pipe_array).each { |person| master_list.push(person) }
 parseComma(comma_array).each { |person| master_list.push(person) }
 parseSpace(space_array).each { |person| master_list.push(person) }
 
+
 # Sorting methods
 def sort_birthdate(list)
   list.sort! do |person_hash1, person_hash2|
@@ -78,12 +79,13 @@ end
 
 
 def sort_gender(list)
+  puts list
   females = []
   males = []
   list.each do |person_hash|
-    if person_hash[:gender] == 'Female'
+    if person_hash[:gender][0] == 'F'
       females.push(person_hash)
-    else
+    elsif person_hash[:gender][0] == 'M'
       males.push(person_hash)
     end
   end
@@ -101,16 +103,24 @@ def sort_gender(list)
   return sorted_list
 end
 
+# def sort_gender(list)
+#   list.sort! { |person_hash1, person_hash2|
+#     person_hash1[:gender] <=> person_hash2[:gender] && person_hash1[:lname] <=> person_hash2[:lname]
+#   }
+#   return list
+# end
+
 def display(sorted_list)
   sorted_list.each do |person_hash|
-    if person_hash[:gender] == 'M'
+    if person_hash[:gender][0] == 'M'
       person_hash[:gender] = 'Male'
-    else
+    elsif person_hash[:gender][0] == 'F'
       person_hash[:gender] = 'Female'
     end
     puts "#{person_hash[:lname]} #{person_hash[:fname]} #{person_hash[:gender]} #{person_hash[:bdate]} #{person_hash[:color]}"
   end
 end
+
 
 # Display sorted lists
 puts "Output 1:"

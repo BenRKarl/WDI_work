@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(methodOverride());
-app.use(express.static(__dirname + '/public'));
+// app.use(express.static(__dirname + '/public'));
 app.use(express.static(path.join(__dirname), '/public'));
 
 var monkeysController = require(path.join(__dirname, 'monkeysController'));
