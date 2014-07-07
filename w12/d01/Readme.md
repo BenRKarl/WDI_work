@@ -52,3 +52,15 @@ http://www.cyrusinnovation.com/code-test-ruby/
 
 ---
 
+
+#Recursion
+
+### [Fibonacci numbers](http://en.wikipedia.org/wiki/Fibonacci_number)
+* Write a recursive function that calculates the nth fibonnaci number
+* Write an iterative (non-recursive) function that calculates the nth fibonnaci number
+* Compare them using benchmark
+
+### Array Sum
+* Write a recursive function that sums the elements of an array
+* Write an iterative function that does the same
+* Compare them using benchmark
