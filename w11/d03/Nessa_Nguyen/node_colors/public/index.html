@@ -6,12 +6,46 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
-  <p>
-    <input id="color-input" type="text">
+  <form method='post' id='new-color'>
+    <input id="color-input" type="text" name='color'>
     <input id="submit" type="submit">
-  </p>
+  </form>
+
   <script>
-    // do some stuff here
+    $(function() {
+      $('#new-color').submit(function(e) {
+        e.preventDefault();
+        var newColor = $('#color-input').val();
+        $('#color-input').val('');
+        console.log(newColor);
+
+        $.ajax({
+          method: 'POST',
+          url:    '/colors',
+          dataType: 'json',
+          data: { color: newColor },
+          success: function(data) { console.log(data); }
+        });
+
+        $.ajax({
+          method: 'GET',
+          url:    '/colors',
+          dataType: 'json',
+          success: displayColors
+        });
+      });
+
+      function displayColors(data) {
+        var colors = data['colors'];
+        setInterval(function() {
+          var i = colors.length;
+          var random = Math.floor(Math.random() * i);
+          $('body').css('backgroundColor', colors[random]);
+        }, 1500);
+      }
+
+    });
   </script>
+
 </body>
 </html>

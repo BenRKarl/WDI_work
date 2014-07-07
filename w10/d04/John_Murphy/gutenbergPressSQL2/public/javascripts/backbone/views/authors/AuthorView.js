@@ -21,7 +21,7 @@ GutenbergApp.Views.AuthorView = Backbone.View.extend({
     var that = this;
     this.$el.html( this.template({author: this.model.attributes } ) );
     this.$el.find('.show-button').on('click', function(){
-      GutenbergApp.router.navigate("#authors/" + that.model.get('id'), true);
+      GutenbergApp.router.navigate("#authors/" + that.model.get('id'), {trigger: true});
     })
     var bookListView = new GutenbergApp.Views.BookListView({
       collection: this.model.get('books'),
