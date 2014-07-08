@@ -11,7 +11,39 @@
     <input id="submit" type="submit">
   </p>
   <script>
-    // do some stuff here
+    $('#submit').click(function(){
+      var input = $('#color-input').val();
+      $('#color-input').val('');
+      //console.log(input);
+      $.ajax({
+        method: 'POST',
+        url: '/',
+        dataType: 'json',
+        data: {'color': input},
+        success: function(data) {
+          $('body').css("backgroundColor", input);
+          //console.log(data);
+          //setInterval(function(){
+            // var color = data[Math.floor(Math.random()*data.length)];
+           // $('body').css("backgroundColor", color);
+          //}, 1000);
+        }
+      });
+    });
+    //$(function(){
+    setInterval(function(){
+      $.ajax({
+        method: 'GET',
+        url: '/colors',
+        dataType: 'json',
+        success: function(data) {
+          //console.log(data);
+          var color = data[Math.floor(Math.random()*data.length)];
+          $('body').css("backgroundColor", color);
+        }
+      });
+      }, 1000);
+  //});
   </script>
 </body>
 </html>
