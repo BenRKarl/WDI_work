@@ -1,7 +1,7 @@
 var Bananapp = Bananapp || { Models: {}, Collections: {}, Views: {}, };
 
 
-Bananapp.initialize =  function(){
+Bananapp.initialize = function(){
 
   var collection = new Bananapp.Collections.MonkeyCollection();
 
@@ -16,7 +16,7 @@ Bananapp.initialize =  function(){
     e.preventDefault();
     var monkeyName = $('input').val();
     $('input').val('');
-    collection.create({name: monkeyName})
+    collection.create({name: monkeyName});
   })
 
 }

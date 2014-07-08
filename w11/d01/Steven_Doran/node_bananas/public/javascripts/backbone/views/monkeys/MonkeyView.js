@@ -1,4 +1,5 @@
 var Bananapp = Bananapp || { Models: {}, Collections: {}, Views: {}, }
+
 Bananapp.Views.MonkeyView = Backbone.View.extend({
   tagName: 'li',
   template: _.template($('#monkey-template').html()),

@@ -18,4 +18,4 @@ class KittensController < ApplicationController
   def kitten_params
     params.require(:kitten).permit(:url)
   end
-end
+end 

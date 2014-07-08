@@ -1,0 +1,11 @@
+{
+  "name": "fifa_d3",
+  "version": "0.0.0",
+  "description": "A summary of goals for and against in the 2014 World Cup",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steven",
+  "license": "ISC"
+}

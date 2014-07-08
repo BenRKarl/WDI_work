@@ -12,7 +12,7 @@ sql_statement = 'SELECT * FROM books;'
 response = connection.exec(sql_statement)
 
 @books = response.map do |book|
-{'title'=>book['title'], 'author'=>book['author']}
+   {'title'=>book['title'], 'author'=>book['author']}
 end
 
 connection.close
