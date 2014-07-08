@@ -7,7 +7,7 @@ var Router = Backbone.Router.extend({
     "hello/:name"      : 'hello',
     "add/:x/:y"        : 'add',
     "subtract/:x/:y"   : 'subtract',
-    "multiplt/:x/:y"   : 'multiply',
+    "multiply/:x/:y"   : 'multiply',
     "divide/:x/:y"     : 'divide',
 
   },
