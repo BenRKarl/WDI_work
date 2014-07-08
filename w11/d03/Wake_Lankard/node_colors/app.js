@@ -11,6 +11,21 @@ var colors = ["red", "yellow", "blue"];
 
 // handle your requests here
 
+app.get ('/colors', function(req,res){
+  res.send(colors);
+});
+
+app.post('/colors', function(req,res){
+  console.log("received: " + req.body.color);
+  colors.push(req.body.color);
+  res.send(colors);
+
+})
+
+// exports.index = function(req,res){
+//   console.log(colors);
+//   res.send(colors);
+// }
 
 
 app.listen(8000, function(){
