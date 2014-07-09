@@ -1,13 +1,25 @@
-    class StudentsController < ApplicationController
-    def index
-    @students = Students.all
-    end
-    def show
-      @sudent = params[:student]
-    end
-    def new
-      new_student = Student.new(parmas)
-      student = Student.create
-      house << student
-      redirect to 'idnex'
-    end
+class StudentsController < ApplicationController
+
+  def index
+    @students = Student.all
+  end
+
+  def show
+    @student = Student.find(params[:id])
+  end
+
+  def new
+    new_student = Student.new
+  end
+
+  def create
+    name = params[:name]
+    new_student = Student.create({name: name})
+    house = Houses.find(1 + rand(4))
+    house.students << new_student
+    redirect_to '/'
+  end
+
+private
+
+end
